@@ -1,0 +1,355 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{15c09714-f0de-4ec2-8fff-d4d7623cf1ad}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;png;jpg;wav</Extensions>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{eed8ab7e-7c89-4fb3-9b96-1dde9fdee2b6}</UniqueIdentifier>
+      <Extensions>h;hpp;c;cpp;inc;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Scripts">
+      <UniqueIdentifier>{862b7a84-369c-4b92-a1f2-247aff238320}</UniqueIdentifier>
+      <Extensions>bat;cmd;vbs;ps1;def</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\FreeAPI.def">
+      <Filter>Scripts</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resources\Resource.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Typedef.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\FreeAPI.Typedef.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\StrX.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamAppList.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamApps.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamAppTicket.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamClient.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamController.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\isteamfriends.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\isteamgameserver.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamGameServerStats.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamHTMLSurface.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamHTTP.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamInput.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamInventory.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamMatchmaking.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\isteammusic.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\isteammusicremote.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\isteamnetworking.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\isteamparentalsettings.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\isteamremoteplay.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamRemoteStorage.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamScreenshots.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamUGC.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\isteamunifiedmessages.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamUser.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamUserStats.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamUtils.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamVideo.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamGameCoordinator.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamPS3OverlayRenderer.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamMasterServerUpdater.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamTV.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamNetworkingUtils.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamNetworkingSockets.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamNetworkingMessages.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamNetworkingSocketsSerialized.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamAppList.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamApps.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamAppTicket.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamClient.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamController.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamFriends.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamGameServer.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamGameServerStats.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamHTMLSurface.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamHTTP.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamInput.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamInventory.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamMatchmaking.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamMusic.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamMusicRemote.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamNetworking.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamParentalSettings.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamRemotePlay.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamRemoteStorage.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamScreenshots.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamUGC.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamUnifiedMessages.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamUser.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamUserStats.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamUtils.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamVideo.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamGameCoordinator.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamPS3OverlayRenderer.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamMasterServerUpdater.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamTV.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamNetworkingUtils.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamNetworkingSockets.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamNetworkingMessages.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamNetworkingSocketsSerialized.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources\Resource.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\StrX.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamAppList.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamApps.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamAppTicket.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamClient.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamController.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamFriends.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamGameServer.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamGameServerStats.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamHTMLSurface.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamHTTP.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamInput.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamInventory.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamMatchmaking.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamMusic.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamMusicRemote.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamNetworking.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamParentalSettings.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamRemotePlay.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamRemoteStorage.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamScreenshots.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamUGC.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamUnifiedMessages.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamUser.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamUserStats.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamUtils.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamVideo.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamGameCoordinator.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamPS3OverlayRenderer.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamMasterServerUpdater.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamTV.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamNetworkingUtils.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamNetworkingSockets.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamNetworkingMessages.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamNetworkingSocketsSerialized.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\FreeAPI.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

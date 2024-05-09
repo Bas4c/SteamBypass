@@ -1,0 +1,21 @@
+# Visual Studio Cache Directory
+.vs/**
+
+# Output
+**/[Ww][Ii][Nn]32/**
+**/[Xx]64/**
+**/[Aa][Rr][Mm]/**
+**/[Aa][Rr][Mm]64/**
+
+# Visual Studio Generated
+*.aps
+*.user
+*.userosscache
+*.rsuser
+*.suo
+*.sln.docstates
+
+# IDL Source
+*_i.c
+*_p.c
+*_h.h

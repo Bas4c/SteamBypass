@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{548fe244-b98e-4b03-b803-dc168f5e79f4}</ProjectGuid>
+    <RootNamespace>FreeAPI</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <ProjectName>FreeAPI</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PreferredToolArchitecture>x86</PreferredToolArchitecture>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PreferredToolArchitecture>x86</PreferredToolArchitecture>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PreferredToolArchitecture>x86</PreferredToolArchitecture>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PreferredToolArchitecture>x86</PreferredToolArchitecture>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(ProjectDir)$(Platform)\$(Configuration)\Output\</OutDir>
+    <IntDir>$(ProjectDir)$(Platform)\$(Configuration)\Temp\</IntDir>
+    <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
+    <PreLinkEventUseInBuild>false</PreLinkEventUseInBuild>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+    <TargetName>steam_api</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(ProjectDir)$(Platform)\$(Configuration)\Output\</OutDir>
+    <IntDir>$(ProjectDir)$(Platform)\$(Configuration)\Temp\</IntDir>
+    <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
+    <PreLinkEventUseInBuild>false</PreLinkEventUseInBuild>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+    <TargetName>steam_api</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(ProjectDir)$(Platform)\$(Configuration)\Output\</OutDir>
+    <IntDir>$(ProjectDir)$(Platform)\$(Configuration)\Temp\</IntDir>
+    <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
+    <PreLinkEventUseInBuild>false</PreLinkEventUseInBuild>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+    <TargetName>steam_api64</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(ProjectDir)$(Platform)\$(Configuration)\Output\</OutDir>
+    <IntDir>$(ProjectDir)$(Platform)\$(Configuration)\Temp\</IntDir>
+    <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
+    <PreLinkEventUseInBuild>false</PreLinkEventUseInBuild>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+    <TargetName>steam_api64</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <StringPooling>true</StringPooling>
+      <FloatingPointModel>Strict</FloatingPointModel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(CoreLibraryDependencies)</AdditionalDependencies>
+      <UACUIAccess>false</UACUIAccess>
+      <StackReserveSize>2097152</StackReserveSize>
+      <ModuleDefinitionFile>$(ProjectDir)Scripts\FreeAPI.def</ModuleDefinitionFile>
+    </Link>
+    <CustomBuildStep>
+      <Message />
+    </CustomBuildStep>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+    <ResourceCompile>
+      <NullTerminateStrings>true</NullTerminateStrings>
+      <PreprocessorDefinitions>_WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <StringPooling>true</StringPooling>
+      <FloatingPointModel>Strict</FloatingPointModel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>$(CoreLibraryDependencies)</AdditionalDependencies>
+      <UACUIAccess>false</UACUIAccess>
+      <StackReserveSize>2097152</StackReserveSize>
+      <ModuleDefinitionFile>$(ProjectDir)Scripts\FreeAPI.def</ModuleDefinitionFile>
+    </Link>
+    <CustomBuildStep>
+      <Message />
+    </CustomBuildStep>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+    <ResourceCompile>
+      <NullTerminateStrings>true</NullTerminateStrings>
+      <PreprocessorDefinitions>_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN64;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <StringPooling>true</StringPooling>
+      <FloatingPointModel>Strict</FloatingPointModel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(CoreLibraryDependencies)</AdditionalDependencies>
+      <UACUIAccess>false</UACUIAccess>
+      <StackReserveSize>2097152</StackReserveSize>
+      <ModuleDefinitionFile>$(ProjectDir)Scripts\FreeAPI.def</ModuleDefinitionFile>
+    </Link>
+    <CustomBuildStep>
+      <Message />
+    </CustomBuildStep>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+    <ResourceCompile>
+      <NullTerminateStrings>true</NullTerminateStrings>
+      <PreprocessorDefinitions>_WIN64;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <StringPooling>true</StringPooling>
+      <FloatingPointModel>Strict</FloatingPointModel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>$(CoreLibraryDependencies)</AdditionalDependencies>
+      <UACUIAccess>false</UACUIAccess>
+      <StackReserveSize>2097152</StackReserveSize>
+      <ModuleDefinitionFile>$(ProjectDir)Scripts\FreeAPI.def</ModuleDefinitionFile>
+    </Link>
+    <CustomBuildStep>
+      <Message />
+    </CustomBuildStep>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+    <ResourceCompile>
+      <NullTerminateStrings>true</NullTerminateStrings>
+      <PreprocessorDefinitions>_WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="Scripts\FreeAPI.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resources\Resource.h" />
+    <ClInclude Include="Source\Typedef.h" />
+    <ClInclude Include="Source\FreeAPI.Typedef.h" />
+    <ClInclude Include="Source\StrX.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamAppList.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamApps.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamAppTicket.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamClient.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamController.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamFriends.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamGameServer.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamGameServerStats.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamHTMLSurface.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamHTTP.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamInput.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamInventory.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamMatchmaking.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamMusic.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamMusicRemote.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamNetworking.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamParentalSettings.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamRemotePlay.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamRemoteStorage.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamScreenshots.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamUGC.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamUnifiedMessages.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamUser.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamUserStats.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamUtils.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamVideo.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamGameCoordinator.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamPS3OverlayRenderer.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamMasterServerUpdater.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamTV.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamNetworkingUtils.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamNetworkingSockets.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamNetworkingMessages.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamNetworkingSocketsSerialized.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamAppList.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamApps.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamAppTicket.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamClient.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamController.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamFriends.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamGameServer.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamGameServerStats.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamHTMLSurface.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamHTTP.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamInput.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamInventory.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamMatchmaking.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamMusic.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamMusicRemote.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamNetworking.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamParentalSettings.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamRemotePlay.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamRemoteStorage.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamScreenshots.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamUGC.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamUnifiedMessages.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamUser.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamUserStats.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamUtils.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamVideo.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamGameCoordinator.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamPS3OverlayRenderer.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamMasterServerUpdater.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamTV.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamNetworkingUtils.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamNetworkingSockets.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamNetworkingMessages.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamNetworkingSocketsSerialized.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources\Resource.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\StrX.c" />
+    <ClCompile Include="Source\IFreeAPI\SteamAppList.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamApps.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamAppTicket.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamClient.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamController.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamFriends.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamGameServer.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamGameServerStats.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamHTMLSurface.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamHTTP.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamInput.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamInventory.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamMatchmaking.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamMusic.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamMusicRemote.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamNetworking.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamParentalSettings.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamRemotePlay.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamRemoteStorage.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamScreenshots.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamUGC.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamUnifiedMessages.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamUser.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamUserStats.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamUtils.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamVideo.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamGameCoordinator.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamPS3OverlayRenderer.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamMasterServerUpdater.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamTV.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamNetworkingUtils.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamNetworkingSockets.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamNetworkingMessages.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamNetworkingSocketsSerialized.cpp" />
+    <ClCompile Include="Source\FreeAPI.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

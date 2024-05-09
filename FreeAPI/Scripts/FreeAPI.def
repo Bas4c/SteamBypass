@@ -1,0 +1,54 @@
+EXPORTS
+; -----------------------------------------------------------------------------
+; FreeAPI Functions
+; -----------------------------------------------------------------------------
+ SteamAPI_GetHSteamPipe
+ GetHSteamPipe = SteamAPI_GetHSteamPipe
+ SteamAPI_GetHSteamUser
+ GetHSteamUser = SteamAPI_GetHSteamUser
+ SteamAPI_Init
+ SteamAPI_Shutdown
+ SteamAPI_InitAnonymousUser
+ SteamAPI_InitSafe
+ SteamAPI_IsSteamRunning
+ SteamAPI_GetSteamInstallPath
+ SteamAPI_RestartAppIfNecessary
+ SteamAPI_RegisterCallback
+ SteamAPI_UnregisterCallback
+ SteamAPI_RegisterCallResult
+ SteamAPI_UnregisterCallResult
+ SteamAPI_RunCallbacks
+ SteamAPI_ReleaseCurrentThreadMemory
+ SteamAPI_SetTryCatchCallbacks
+ SteamAPI_UseBreakpadCrashHandler
+ SteamAPI_SetBreakpadAppID
+ SteamAPI_ManualDispatch_Init
+ SteamAPI_ManualDispatch_RunFrame
+ SteamAPI_ManualDispatch_GetNextCallback
+ SteamAPI_ManualDispatch_FreeLastCallback
+ SteamAPI_ManualDispatch_GetAPICallResult
+; -----------------------------------------------------------------------------
+; FreeAPI Internals
+; -----------------------------------------------------------------------------
+ SteamInternal_ContextInit
+ SteamInternal_CreateInterface
+ SteamInternal_FindOrCreateGameServerInterface
+ SteamInternal_FindOrCreateUserInterface
+ SteamInternal_GameServer_Init
+; -----------------------------------------------------------------------------
+; Crash Dump Functions
+; -----------------------------------------------------------------------------
+ SteamAPI_WriteMiniDump
+ SteamAPI_SetMiniDumpComment
+; -----------------------------------------------------------------------------
+; Steam Game Server Functions
+; -----------------------------------------------------------------------------
+ SteamGameServer_Init
+ SteamGameServer_InitSafe
+ SteamGameServer_GetHSteamPipe
+ SteamGameServer_GetHSteamUser
+ SteamGameServer_BSecure
+ SteamGameServer_GetIPCCallCount
+ SteamGameServer_GetSteamID
+ SteamGameServer_RunCallbacks
+ SteamGameServer_Shutdown
