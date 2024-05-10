@@ -34,7 +34,7 @@ public:
 	virtual void StopVoiceRecording() = 0;
 
 	/* Read Voice Audio */
-	virtual EVoiceResult GetAvailableVoice(/* [out] */ pUint32 pcbCompressed, /* [out] */ pUint32 pcbUncompressed_Deprecated = 0, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
+	virtual EVoiceResult GetAvailableVoice(/* [out] */ pUint32 pcbCompressed, /* [out] */ pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
 	virtual EVoiceResult GetVoice(Bool bWantCompressed, /* [out] */ pVoid pvDest, Uint32 cbDestSize, /* [out] */ pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, /* [out] */ pVoid pUncompressedDest_Deprecated, /* [out] */ Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
 	/* PCM (16-Bit) Voice Audio */
 	virtual EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, /* [out] */ pVoid pvDest, Uint32 cbDestSize, /* [out] */ pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;

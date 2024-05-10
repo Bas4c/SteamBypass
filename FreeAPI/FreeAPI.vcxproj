@@ -121,7 +121,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>$(CoreLibraryDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Shell32.lib;$(CoreLibraryDependencies)</AdditionalDependencies>
       <UACUIAccess>false</UACUIAccess>
       <StackReserveSize>2097152</StackReserveSize>
       <ModuleDefinitionFile>$(ProjectDir)Scripts\FreeAPI.def</ModuleDefinitionFile>
@@ -156,7 +156,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>false</GenerateDebugInformation>
-      <AdditionalDependencies>$(CoreLibraryDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Shell32.lib;$(CoreLibraryDependencies)</AdditionalDependencies>
       <UACUIAccess>false</UACUIAccess>
       <StackReserveSize>2097152</StackReserveSize>
       <ModuleDefinitionFile>$(ProjectDir)Scripts\FreeAPI.def</ModuleDefinitionFile>
@@ -186,7 +186,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>$(CoreLibraryDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Shell32.lib;$(CoreLibraryDependencies)</AdditionalDependencies>
       <UACUIAccess>false</UACUIAccess>
       <StackReserveSize>2097152</StackReserveSize>
       <ModuleDefinitionFile>$(ProjectDir)Scripts\FreeAPI.def</ModuleDefinitionFile>
@@ -221,7 +221,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>false</GenerateDebugInformation>
-      <AdditionalDependencies>$(CoreLibraryDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Shell32.lib;$(CoreLibraryDependencies)</AdditionalDependencies>
       <UACUIAccess>false</UACUIAccess>
       <StackReserveSize>2097152</StackReserveSize>
       <ModuleDefinitionFile>$(ProjectDir)Scripts\FreeAPI.def</ModuleDefinitionFile>
