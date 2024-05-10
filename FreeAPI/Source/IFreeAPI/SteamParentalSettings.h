@@ -7,12 +7,12 @@
 #include "IFreeAPI.Contract\ISteamParentalSettings.h"
 // -----------------------------------------------------------------------------
 
-typedef class _SteamParentalSettings_ : _ISteamParentalSettings_ {
+typedef class _SteamParentalSettings_ : public _ISteamParentalSettings_ {
 public:
 
 	_SteamParentalSettings_() = default;
-	_SteamParentalSettings_(_SteamParentalSettings_&) = delete;
-	_SteamParentalSettings_& operator=(_SteamParentalSettings_&) = delete;
+	_SteamParentalSettings_(const _SteamParentalSettings_&) = delete;
+	_SteamParentalSettings_& operator=(const _SteamParentalSettings_&) = delete;
 
 	Bool BIsParentalLockEnabled() override;
 	Bool BIsParentalLockLocked() override;

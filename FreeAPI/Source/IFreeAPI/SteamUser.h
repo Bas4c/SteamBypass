@@ -9,12 +9,12 @@
 #include "IFreeAPI.Contract\ISteamUser.h"
 // -----------------------------------------------------------------------------
 
-typedef class _SteamUser_ : _ISteamUser_ {
+typedef class _SteamUser_ : public _ISteamUser_ {
 public:
 
 	_SteamUser_() = default;
-	_SteamUser_(_SteamUser_&) = delete;
-	_SteamUser_& operator=(_SteamUser_&) = delete;
+	_SteamUser_(const _SteamUser_&) = delete;
+	_SteamUser_& operator=(const _SteamUser_&) = delete;
 
 	HSteamUser GetHSteamUser() override;
 	Bool BLoggedOn() override;

@@ -7,12 +7,12 @@
 #include "IFreeAPI.Contract\ISteamMusicRemote.h"
 // -----------------------------------------------------------------------------
 
-typedef class _SteamMusicRemote_ : _ISteamMusicRemote_ {
+typedef class _SteamMusicRemote_ : public _ISteamMusicRemote_ {
 public:
 
 	_SteamMusicRemote_() = default;
-	_SteamMusicRemote_(_SteamMusicRemote_&) = delete;
-	_SteamMusicRemote_& operator=(_SteamMusicRemote_&) = delete;
+	_SteamMusicRemote_(const _SteamMusicRemote_&) = delete;
+	_SteamMusicRemote_& operator=(const _SteamMusicRemote_&) = delete;
 
 	Bool RegisterSteamMusicRemote(const pStrA pchName) override;
 	Bool DeregisterSteamMusicRemote() override;

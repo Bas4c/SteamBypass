@@ -7,12 +7,12 @@
 #include "IFreeAPI.Contract\ISteamMusic.h"
 // -----------------------------------------------------------------------------
 
-typedef class _SteamMusic_ : _ISteamMusic_ {
+typedef class _SteamMusic_ : public _ISteamMusic_ {
 public:
 
 	_SteamMusic_();
-	_SteamMusic_(_SteamMusic_&) = delete;
-	_SteamMusic_& operator=(_SteamMusic_&) = delete;
+	_SteamMusic_(const _SteamMusic_&) = delete;
+	_SteamMusic_& operator=(const _SteamMusic_&) = delete;
 
 	Bool BIsEnabled() override;
 	Bool BIsPlaying() override;
