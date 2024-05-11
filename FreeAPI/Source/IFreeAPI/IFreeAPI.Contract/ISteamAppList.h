@@ -4,16 +4,16 @@
 #include "..\..\FreeAPI.Typedef.h"
 
 // -----------------------------------------------------------------------------
-// Purpose: This is a restricted Int32erface that can only be used by previously approved apps,
+// Purpose: This is a restricted interface that can only be used by previously approved apps,
 //  contact your Steam Account Manager if you believe you need access to this API.
-//  This Int32erface lets you detect installed apps for the local Steam client, useful for debugging tools
+//  This interface lets you detect installed apps for the local Steam client, useful for debugging tools
 //   to offer lists of apps to debug via Steam.
 // -----------------------------------------------------------------------------
 typedef class _ISteamAppList_ {
 public:
 
 	virtual Uint32 GetNumInstalledApps() = 0;
-	virtual Uint32 GetInstalledApps(pAppId_t pnAppId, Uint32 nAppId) = 0;
+	virtual Uint32 GetInstalledApps(/* [out] */ pAppId_t pnAppId, Uint32 nAppId) = 0;
 	/* Returns (-1): Name not Found */
 	virtual Int32 GetAppName(AppId_t iAppId, /* [out] */ pStrA pchName, Int32 cchNameMax) = 0;
 	/* Returns (-1): Install Directory not Found */

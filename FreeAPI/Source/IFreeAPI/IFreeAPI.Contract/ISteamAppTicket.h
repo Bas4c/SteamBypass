@@ -13,9 +13,9 @@ typedef class _ISteamAppTicket_ {
 public:
 
 	virtual Uint32 GetAppOwnershipTicketData(
-		AppId_t iAppId, /* [out] */ pVoid pvData, Uint32 cbDataSize,
-		/* [out] */ pAppId_t piAppId, /* [out] */ pSteamId_t piSteamId,
-		/* [out] */ pUint32 piSignature, Uint32 pcbSignature
+		AppId_t iAppId, /* [out] */ pVoid pvTicket, Uint32 cbTicket,
+		/* [out] */ pUint32 piAppId, /* [out] */ pUint32 piSteamId,
+		/* [out] */ pUint32 piSignature, pUint32 pcbSignature
 	) = 0;
 
 } ISteamAppTicket, *IpSteamAppTicket;

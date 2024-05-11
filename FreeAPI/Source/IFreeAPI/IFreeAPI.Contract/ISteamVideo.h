@@ -12,7 +12,7 @@ public:
 	virtual void GetVideoURL(AppId_t iVideoAppId) = 0;
 	virtual Bool IsBroadcasting(/* [out] */ pInt32 pnNumViewers) = 0;
 	virtual void GetOPFSettings(AppId_t iVideoAppId) = 0;
-	virtual Bool GetOPFStringForApp(AppId_t iVideoAppId, /* [out] */ pStrA pchOPFString, pInt32 pnOPFString) = 0;
+	virtual Bool GetOPFStringForApp(AppId_t iVideoAppId, /* [out] */ pStrA pchOPFString, /* [in/out] */ pInt32 pnOPFString) = 0;
 
 } ISteamVideo, *IpSteamVideo;
 

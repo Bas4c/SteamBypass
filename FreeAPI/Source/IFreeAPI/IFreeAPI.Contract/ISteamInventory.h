@@ -45,7 +45,7 @@ public:
 	   k_EResultInvalidParam - ERROR: invalid API call parameters
 	   k_EResultServiceUnavailable - ERROR: service temporarily down, you may retry later
 	   k_EResultLimitExceeded - ERROR: operation would exceed per-user inventory limits
-	   k_EResultFail - ERROR: nknown / generic error */
+	   k_EResultFail - ERROR: unknown / generic error */
 	virtual EResult GetResultStatus(SteamInventoryResult_t hSteamInventoryResult) = 0;
 	virtual Bool GetResultItems(SteamInventoryResult_t hSteamInventoryResult, /* [out] */ pSteamItemDetails_t pSteamItemDetails, /* [in/out] */ pUint32 pnItemsArraySize) = 0;
 	virtual Bool GetResultItemProperty(SteamInventoryResult_t hSteamInventoryResult, Uint32 iItem, const pStrA pchPropertyName, /* [out] */ pStrA pchValue, /* [in/out] */ pUint32 pnValueSize) = 0;

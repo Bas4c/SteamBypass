@@ -575,7 +575,7 @@ _FREE_API_ void __cdecl SteamGameServer_RunCallbacks(
 	void
 ) {
 
-	/* Empty Function */
+	SteamAPI_RunCallbacks();
 
 }
 
@@ -583,7 +583,7 @@ _FREE_API_ void __cdecl SteamGameServer_Shutdown(
 	void
 ) {
 
-	/* Empty Function */
+	SteamAPI_Shutdown();
 
 }
 
