@@ -47,10 +47,16 @@ _FREE_API_ Bool WINAPI DllMain(
 				(Dword)(StrW_Count(g_pchModuleDirectory));
 
 			while (cchCount != 0) {
-				if (g_pchModuleDirectory[cchCount - 1] == L'\\')
+
+				if (g_pchModuleDirectory[cchCount - 1] == L'\\') {
+					g_pchModuleDirectory[cchCount - 1] = L'\0';
+					cchCount--;
 					break;
+				}
+
 				g_pchModuleDirectory[cchCount - 1] = L'\0';
 				cchCount--;
+
 			}
 
 			Int32 nUTF8 = WideCharToMultiByte(

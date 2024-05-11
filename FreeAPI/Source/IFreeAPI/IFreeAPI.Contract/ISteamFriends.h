@@ -149,7 +149,7 @@ typedef enum _ECommunityProfileItemProperty_ {
 	k_ECommunityProfileItemProperty_Title,
 	k_ECommunityProfileItemProperty_Description,
 	k_ECommunityProfileItemProperty_AppId,
-	k_ECommunityProfileItemProperty_TypeID,
+	k_ECommunityProfileItemProperty_TypeId,
 	k_ECommunityProfileItemProperty_Class,
 	k_ECommunityProfileItemProperty_MovieWebM,
 	k_ECommunityProfileItemProperty_MovieMP4,
@@ -185,7 +185,7 @@ public:
 	virtual EPersonaState GetFriendPersonaState(SteamId_t SteamIdFriend) = 0;
 	virtual const pStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
 
-	virtual Bool GetFriendGamePlayed( SteamId_t SteamIdFriend, /* [out] */ pFriendGameInfo_t pFriendGameInfo) = 0;
+	virtual Bool GetFriendGamePlayed(SteamId_t SteamIdFriend, /* [out] */ pFriendGameInfo_t pFriendGameInfo) = 0;
 	/* Returns (empty string) when their are no more items in the history */
 	virtual const pStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
 	virtual Int32 GetFriendSteamLevel(SteamId_t SteamIdFriend) = 0;
@@ -204,8 +204,8 @@ public:
 	virtual SteamId_t GetClanByIndex(Int32 iClan) = 0;
 	virtual const pStrA GetClanName(SteamId_t SteamIdClan) = 0;
 	virtual const pStrA GetClanTag(SteamId_t SteamIdClan) = 0;
-	virtual Bool GetClanActivityCounts(SteamId_t SteamIdClan, pInt32 pnOnline, pInt32 pnInGame, pInt32 pnChatting) = 0;
-	virtual SteamAPICall_t DownloadClanActivityCounts(/* [out] */ pSteamId_t pnSteamIdClans, Int32 nClansToRequest) = 0;
+	virtual Bool GetClanActivityCounts(SteamId_t SteamIdClan, /* [out] */ pInt32 pnOnline, /* [out] */ pInt32 pnInGame, /* [out] */ pInt32 pnChatting) = 0;
+	virtual SteamAPICall_t DownloadClanActivityCounts(pSteamId_t pnSteamIdClans, Int32 nClansToRequest) = 0;
 
 	virtual Int32 GetFriendCountFromSource(SteamId_t SteamIdSource) = 0;
 	virtual SteamId_t GetFriendFromSourceByIndex(SteamId_t SteamIdSource, Int32 iFriend) = 0;
@@ -259,7 +259,7 @@ public:
 	virtual Int32 GetClanChatMemberCount(SteamId_t SteamIdClan) = 0;
 	virtual SteamId_t GetChatMemberByIndex(SteamId_t SteamIdClan, Int32 iUser) = 0;
 	virtual Bool SendClanChatMessage(SteamId_t SteamIdClanChat, const pStrA pchText) = 0;
-	virtual Int32 GetClanChatMessage(SteamId_t SteamIdClanChat, Int32 iMessage, /* [out] */ pVoid prgchText, Int32 cchTextMax, /* [out] */ pEChatEntryType peChatEntryType, /* [out] */ pSteamId_t pSteamIdChatter) = 0;
+	virtual Int32 GetClanChatMessage(SteamId_t SteamIdClanChat, Int32 iMessage, /* [out] */ pStrA pchText, Int32 cchTextMax, /* [out] */ pEChatEntryType peChatEntryType, /* [out] */ pSteamId_t pSteamIdChatter) = 0;
 	virtual Bool IsClanChatAdmin(SteamId_t SteamIdClanChat, SteamId_t SteamIdUser) = 0;
 
 	virtual Bool IsClanChatWindowOpenInSteam(SteamId_t SteamIdClanChat) = 0;
@@ -268,7 +268,7 @@ public:
 
 	virtual Bool SetListenForFriendsMessages(Bool bInterceptEnabled) = 0;
 	virtual Bool ReplyToFriendMessage(SteamId_t SteamIdFriend, const pStrA pchMsgToSend) = 0;
-	virtual Int32 GetFriendMessage(SteamId_t SteamIdFriend, Int32 iMessageID, /* [out] */ pVoid pvData, Int32 cbData, /* [out] */ pEChatEntryType peChatEntryType) = 0;
+	virtual Int32 GetFriendMessage(SteamId_t SteamIdFriend, Int32 iMessageId, /* [out] */ pVoid pvData, Int32 cbData, /* [out] */ pEChatEntryType peChatEntryType) = 0;
 
 	virtual SteamAPICall_t GetFollowerCount(SteamId_t SteamId) = 0;
 	virtual SteamAPICall_t IsFollowing(SteamId_t SteamId) = 0;
