@@ -8,9 +8,9 @@ typedef Uint32 HTMLBrowser, *pHTMLBrowser;
 
 typedef enum _EHTMLMouseButton_ {
 
-	eHTMLMouseButton_Left,
-	eHTMLMouseButton_Right,
-	eHTMLMouseButton_Middle
+	k_EHTMLMouseButton_Left,
+	k_EHTMLMouseButton_Right,
+	k_EHTMLMouseButton_Middle
 
 } EHTMLMouseButton, *pEHTMLMouseButton;
 
@@ -114,7 +114,7 @@ public:
 	virtual void JSDialogResponse(HTMLBrowser hHTMLBrowser, Bool bResult) = 0;
 	virtual void FileLoadDialogResponse(HTMLBrowser hHTMLBrowser, const pStrA *pchSelectedFiles) = 0;
 	
-	virtual ~_ISteamHTMLSurface_() {}
+	virtual ~_ISteamHTMLSurface_() = default;
 
 } ISteamHTMLSurface, *IpSteamHTMLSurface;
 

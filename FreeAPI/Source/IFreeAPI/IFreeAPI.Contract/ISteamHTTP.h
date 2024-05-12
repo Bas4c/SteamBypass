@@ -47,7 +47,7 @@ public:
 
 	virtual Bool ReleaseHTTPRequest(HTTPRequestHandle hRequest) = 0;
 	virtual Bool GetHTTPDownloadProgressPct(HTTPRequestHandle hRequest, /* [out] */ pFloat pPercent) = 0;
-	virtual Bool SetHTTPRequestRawPostBody(HTTPRequestHandle hRequest, const pStrA pchContentType, pUint8 pbBody, Uint32 nbBody) = 0;
+	virtual Bool SetHTTPRequestRawPostBody(HTTPRequestHandle hRequest, const pStrA pchContentType, pUint8 pbBody, Uint32 cbBody) = 0;
 
 	/* Creates a cookie container handle which you must later free with ReleaseCookieContainer(). If bAllowResponsesToModify=true
 	    than any response to your requests using this cookie container may add new cookies which may be transmitted with
