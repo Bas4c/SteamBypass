@@ -221,17 +221,19 @@ ESteamNetworkingConfigValue _SteamNetworkingUtils_::IterateGenericEditableConfig
 void _SteamNetworkingUtils_::SteamNetworkingIPAddr_ToString(const pSteamNetworkingIPAddr pAddr, pStrA pchStr, SizeOF cchStr, Bool bWithPort) {
 
 	/* "0000:0000:0000:0000:0000:0000:0000:0000%12345" */
-	const SizeOF cchIPv6Addr = 16U * 2U + 7U + 1U + 3U;
+	const SizeOF cchIPv6Addr = 16U * 2U + 7U + 1U + 5U + 1U;
 
-	if (pAddr != NULL && pchStr != NULL && cchStr > cchIPv6Addr) {
+	if (pAddr != NULL && pchStr != NULL && cchStr >= cchIPv6Addr) {
 
 		pchStr[0] = '\0';
 
 		for (SizeOF i = 0; i < sizeof(pAddr->IPv6); i++) {
 
+			const pStrA pchHex = (const pStrA)("0123456789ABCDEF");
+
 			CharA chByte[3] = { 0 };
-			chByte[0] = ((pAddr->IPv6[i] & 0xF0) >> 4);
-			chByte[1] = ((pAddr->IPv6[i] & 0x0F));
+			chByte[0] = pchHex[((pAddr->IPv6[i] & 0xF0) >> 4)];
+			chByte[1] = pchHex[((pAddr->IPv6[i] & 0x0F))];
 			chByte[2] = '\0';
 
 			StrA_Cat(pchStr, cchStr, chByte);
