@@ -9,15 +9,15 @@ public:
 	/*Returns:
 	  k_EREsultOK on success.
 	  k_EResultNoConnection */
-	virtual EResult SendMessageToUser(const pSteamNetworkingIdentity pRemote, const pVoid pbData, Uint32 cbData, Int32 nSendFlags, Int32 nRemoteChannel) = 0;
+	virtual EResult SendMessageToUser(const pSteamNetworkingIdentity pIdentityRemote, const pVoid pvData, Uint32 cbData, Int32 nSendFlags, Int32 nRemoteChannel) = 0;
 
-	virtual Int32 ReceiveMessagesOnChannel(Int32 nLocalChannel, /* [out] */ pSteamNetworkingMessage_t *ppOutMessages, Int32 nMaxMessages) = 0;
-	virtual Bool AcceptSessionWithUser(const pSteamNetworkingIdentity pRemote) = 0;
+	virtual Int32 ReceiveMessagesOnChannel(Int32 nLocalChannel, /* [out] */ pSteamNetworkingMessage_t *ppMessages, Int32 nMessages) = 0;
+	virtual Bool AcceptSessionWithUser(const pSteamNetworkingIdentity pIdentityRemote) = 0;
 	
-	virtual Bool CloseSessionWithUser(const pSteamNetworkingIdentity pRemote) = 0;
-	virtual Bool CloseChannelWithUser(const pSteamNetworkingIdentity pRemote, Int32 nLocalChannel) = 0;
+	virtual Bool CloseSessionWithUser(const pSteamNetworkingIdentity pIdentityRemote) = 0;
+	virtual Bool CloseChannelWithUser(const pSteamNetworkingIdentity pIdentityRemote, Int32 nLocalChannel) = 0;
 	
-	virtual ESteamNetworkingConnectionState GetSessionConnectionInfo(const pSteamNetworkingIdentity pRemote, /* [out] */ pSteamNetConnectionInfo_t pConnectionInfo, /* [out] */ pSteamNetConnectionRealTimeStatus_t pQuickStatus) = 0;
+	virtual ESteamNetworkingConnectionState GetSessionConnectionInfo(const pSteamNetworkingIdentity pIdentityRemote, /* [out] */ pSteamNetConnectionInfo_t pConnectionInfo, /* [out] */ pSteamNetConnectionRealTimeStatus_t pQuickStatus) = 0;
 
 } ISteamNetworkingMessages, *IpSteamNetworkingMessages;
 

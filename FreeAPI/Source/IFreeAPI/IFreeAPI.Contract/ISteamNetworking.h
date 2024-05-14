@@ -90,7 +90,7 @@ public:
 	virtual Bool IsP2PPacketAvailable(/* [out] */ pUint32 pcbMsgSize, Int32 nChannel) = 0;
 
 	/* Reads in a packet that has been sent from another user via SendP2PPacket()
-	    returns the size of the message and the steamID of the user who sent it in the last two parameters
+	    returns the size of the message and the SteamId of the user who sent it in the last two parameters
 	    if the buffer passed in is too small, the message will be truncated
 	    this call is not blocking, and will return false if no data is available */
 	virtual Bool ReadP2PPacket(/* [out] */ pVoid pbDest, Uint32 cbDest, /* [out] */ pUint32 pcbMsgSize, /* [out] */ pSteamId_t pSteamIdRemote, Int32 nChannel) = 0;

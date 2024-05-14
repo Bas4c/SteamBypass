@@ -9,14 +9,14 @@ public:
 	virtual void SendP2PRendezvous(SteamId_t SteamIdRemote, Uint32 ConnectionIdSrc, const pVoid pMsgRendezvous, Uint32 cbRendezvous) = 0;
 	virtual void SendP2PConnectionFailure(SteamId_t SteamIdRemote, Uint32 nConnectionIdDest, Uint32 nReason, const pStrA pchReason) = 0;
 	virtual SteamAPICall_t GetCertAsync() = 0;
-	virtual Int32 GetNetworkConfigJSON(/* [out] */ pVoid pvBuf, Uint32 cbSize, const pStrA pchLauncherPartner) = 0;
-	virtual void CacheRelayTicket(const pVoid pTicket, Uint32 cbTicket) = 0;
+	virtual Int32 GetNetworkConfigJSON(/* [out] */ pVoid pvJSON, Uint32 cbSize, const pStrA pchLauncherPartner) = 0;
+	virtual void CacheRelayTicket(const pVoid pvTicket, Uint32 cbTicket) = 0;
 	virtual Uint32 GetCachedRelayTicketCount() = 0;
-	virtual Int32 GetCachedRelayTicket(Uint32 iTicket, /* [out] */ pVoid pvBuf, Uint32 cbSize) = 0;
+	virtual Uint32 GetCachedRelayTicket(Uint32 iTicket, /* [out] */ pVoid pvTicket, Uint32 cbTicket) = 0;
 	virtual void PostConnectionStateMsg(const pVoid pMsg, Uint32 cbMsg) = 0;
-	virtual Bool GetSTUNServer(Int32 x, /* [out] */ pStrA pchBuf, Uint32 cchBuf) = 0;
+	virtual Bool GetSTUNServer(Int32 nNumPort, /* [out] */ pStrA pchSTUN, Uint32 cchSTUN) = 0;
 	virtual Bool BAllowDirectConnectToPeer(pSteamNetworkingIdentity pSteamNetworkingIdentity) = 0;
-	virtual Int32 BeginAsyncRequestFakeIP(Int32 x) = 0;
+	virtual Bool BeginAsyncRequestFakeIP(Int32 nNumPorts) = 0;
 
 } ISteamNetworkingSocketsSerialized, *IpSteamNetworkingSocketsSerialized;
 

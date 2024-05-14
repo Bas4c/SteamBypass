@@ -514,7 +514,7 @@ typedef struct _SteamNetworkingIPAddr_ {
 typedef enum _ESteamNetworkingIdentityType_ {
 
 	k_ESteamNetworkingIdentityType_Invalid = 0,
-	k_ESteamNetworkingIdentityType_SteamID = 16,
+	k_ESteamNetworkingIdentityType_SteamId = 16,
 	k_ESteamNetworkingIdentityType_XboxPairwiseId = 17,
 	k_ESteamNetworkingIdentityType_SonyPSN = 18,
 	k_ESteamNetworkingIdentityType_GoogleStadia = 19,
@@ -855,7 +855,7 @@ typedef Uint32 HSteamNetPollGroup, *pHSteamNetPollGroup;
 typedef Int64 SteamNetworkingMicroseconds, *pSteamNetworkingMicroseconds;
 typedef struct _SteamNetworkingMessage_t_ {
 
-	pVoid pData;
+	pVoid pvData;
 	Int32 cbSize;
 	HSteamNetConnection hSteamNetConnection;
 	SteamNetworkingIdentity IdentityPeer;
@@ -890,7 +890,7 @@ typedef enum _ESteamNetworkingAvailability_ {
 } ESteamNetworkingAvailability, *pESteamNetworkingAvailability;
 typedef struct _SteamNetworkPingLocation_t_ {
 
-	Uint8 Data[512];
+	Byte cbData[512];
 
 } SteamNetworkPingLocation_t, *pSteamNetworkPingLocation_t;
 
@@ -919,7 +919,7 @@ typedef struct _SteamNetConnectionInfo_t_ {
 	SteamNetworkingIdentity IdentityRemote;
 	Int64 nUserData;
 	HSteamListenSocket hListenSocket;
-	SteamNetworkingIPAddr addrRemote;
+	SteamNetworkingIPAddr AddrRemote;
 	Uint16 Padding;
 	SteamNetworkingPOPID IdPOPRemote;
 	SteamNetworkingPOPID IdPOPRelay;
@@ -946,7 +946,7 @@ typedef struct _SteamNetConnectionRealTimeStatus_t_ {
 	Int32 cbPendingReliable;
 	Int32 cbSentUnackedReliable;
 	SteamNetworkingMicroseconds QueueTime;
-	Uint32 reserved[16];
+	Uint32 Reserved[16];
 
 } SteamNetConnectionRealTimeStatus_t, *pSteamNetConnectionRealTimeStatus_t;
 
@@ -1101,6 +1101,7 @@ typedef struct _SteamDatagramGameCoordinatorServerLogin_ {
 	RTime32 Time;
 	Int32 cbAppData;
 	Byte AppData[k_cbMaxSteamDatagramGameCoordinatorServerLoginAppData];
+
 } SteamDatagramGameCoordinatorServerLogin, *pSteamDatagramGameCoordinatorServerLogin;
 
 #define k_cbSteamDatagramMaxSerializedTicket ((Int32)(512))
