@@ -32,6 +32,9 @@
     <ClInclude Include="Source\StrX.h">
       <Filter>Source</Filter>
     </ClInclude>
+    <ClInclude Include="Source\WindowsEx.h">
+      <Filter>Source</Filter>
+    </ClInclude>
     <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamAppList.h">
       <Filter>Source</Filter>
     </ClInclude>
@@ -244,6 +247,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\StrX.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\WindowsEx.c">
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Source\IFreeAPI\SteamAppList.cpp">

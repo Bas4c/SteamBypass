@@ -2,6 +2,7 @@
 #include <Windows.h>
 // -----------------------------------------------------------------------------
 #include "FreeAPI.Typedef.h"
+#include "WindowsEx.h"
 #include "StrX.h"
 // -----------------------------------------------------------------------------
 
@@ -22,10 +23,6 @@ pStrA g_pchModuleDirectoryUTF8 = NULL;
 
 #pragma region internal
 
-_Success_(return != NULL) pStrW __stdcall LoadModuleNameW(
-	_In_ HMODULE hModule
-);
-
 _FREE_API_ Bool WINAPI DllMain(
 	_In_ HINSTANCE hInstance, _In_ DWORD dwReason,
 	_In_opt_ LPVOID lpReserved
@@ -40,24 +37,8 @@ _FREE_API_ Bool WINAPI DllMain(
 			);
 		#endif
 
-		g_pchModuleDirectory = LoadModuleNameW(hInstance);
+		g_pchModuleDirectory = LoadModuleNameW(hInstance, True);
 		if (g_pchModuleDirectory != NULL) {
-
-			Dword cchCount =
-				(Dword)(StrW_Count(g_pchModuleDirectory));
-
-			while (cchCount != 0) {
-
-				if (g_pchModuleDirectory[cchCount - 1] == L'\\') {
-					g_pchModuleDirectory[cchCount - 1] = L'\0';
-					cchCount--;
-					break;
-				}
-
-				g_pchModuleDirectory[cchCount - 1] = L'\0';
-				cchCount--;
-
-			}
 
 			Int32 nUTF8 = WideCharToMultiByte(
 				CP_UTF8, WC_COMPOSITECHECK, (LPWSTR)(g_pchModuleDirectory), -1,
@@ -108,71 +89,6 @@ _FREE_API_ Bool WINAPI DllMain(
 	}
 
 	return TRUE;
-
-}
-
-_Success_(return != NULL) pStrW __stdcall LoadModuleNameW(
-	_In_ HMODULE hModule
-) {
-
-	Dword nModuleName = MAX_PATH;
-	const Dword nMax = Uint32_MAX / sizeof(CharW);
-
-	pStrW pchModuleName = (pStrW)(LocalAlloc(
-		LPTR, nModuleName * sizeof(CharW)
-	));
-
-	if (pchModuleName == NULL) {
-		SetLastError(ERROR_NOT_ENOUGH_MEMORY);
-		return NULL;
-	}
-
-	Dword nChar = GetModuleFileNameW(
-		hModule, ((LPWSTR)(pchModuleName)),
-		nModuleName
-	);
-
-	while (True) {
-
-		if (nChar != nModuleName) {
-			break;
-		}
-
-		LocalFree(pchModuleName);
-
-		Dword nFree = nMax - nModuleName;
-		if (nFree == 0U) {
-			SetLastError(ERROR_NOT_ENOUGH_MEMORY);
-			return NULL;
-		}
-
-		nModuleName += (nModuleName / 2 > nFree) ?
-			nFree : nModuleName / 2;
-
-		pchModuleName = (pStrW)(LocalAlloc(
-			LPTR, nModuleName * sizeof(CharW)
-		));
-
-		if (pchModuleName == NULL) {
-			SetLastError(ERROR_NOT_ENOUGH_MEMORY);
-			return NULL;
-		}
-
-		nChar = GetModuleFileNameW(
-			hModule, ((LPWSTR)(pchModuleName)),
-			nModuleName
-		);
-
-	}
-
-	if (nChar == 0U) {
-		/* LastError is Set By GetModuleFileNameW */
-		LocalFree(pchModuleName);
-		return NULL;
-	}
-
-	SetLastError(ERROR_SUCCESS);
-	return pchModuleName;
 
 }
 

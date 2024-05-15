@@ -248,24 +248,24 @@ void _SteamNetworkingUtils_::SteamNetworkingIPAddr_ToString(const pSteamNetworki
 
 			CharA chPort[6] = { 0 };
 
-			Uint16 Digit = 10000;
-			Uint16 Port = pAddr->Port;
+			Uint16 divisor = 10000;
 			Bool bConvert = False;
+			Uint16 n = pAddr->Port;
 
 			SizeOF i = 0;
-			while (Digit != 0) {
+			while (divisor != 0) {
 
-				if (Port / Digit != 0) {
+				if (n / divisor != 0) {
 					bConvert = True;
 				}
 
 				if (bConvert == True) {
-					chPort[i] = (Port / Digit) + '0';
+					chPort[i] = (n / divisor) + '0';
 					i++;
 				}
 
-				Port %= Digit;
-				Digit /= 10;
+				n %= divisor;
+				divisor /= 10;
 
 			}
 
@@ -324,10 +324,10 @@ Bool _SteamNetworkingUtils_::SteamNetworkingIPAddr_ParseString(pSteamNetworkingI
 						pAddr->IPv4.cbIPv4[3] = netAdrr.Ipv4Address.sin_addr.S_un.S_un_b.s_b4;
 						pAddr->Port = ((Uint16)(((pByte)(&netAdrr.Ipv4Address.sin_port))[0]) << 8) |
 							((Uint16)((((pByte)(&netAdrr.Ipv4Address.sin_port))[1])));
-
+						
 					} else {
 
-						for (SizeOF i = 0; i < 16U; i++) {
+						for (SizeOF i = 0; i < sizeof(pAddr->IPv6); i++) {
 							pAddr->IPv6[i] = netAdrr.Ipv6Address.sin6_addr.u.Byte[i];
 						}
 
