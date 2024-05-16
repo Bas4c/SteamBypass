@@ -365,7 +365,7 @@ typedef class _ISteamParties_ {
 public:
 
 	virtual Uint32 GetNumActiveBeacons() = 0;
-	virtual PartyBeaconId_t GetPartyBeaconIdByIndex(Uint32 i) = 0;
+	virtual PartyBeaconId_t GetPartyBeaconIdByIndex(Uint32 iBeacon) = 0;
 	virtual Bool GetBeaconDetails(PartyBeaconId_t PartyBeaconId, /* [out] */ pSteamId_t pSteamIdBeaconOwner, /* [out] */ pSteamPartyBeaconLocation_t pLocation, /* [out] */ pStrA pchMetadata, Int32 cchMetadata) = 0;
 	virtual SteamAPICall_t JoinParty(PartyBeaconId_t PartyBeaconId) = 0;
 
@@ -378,7 +378,7 @@ public:
 	virtual SteamAPICall_t ChangeNumOpenSlots(PartyBeaconId_t PartyBeaconId, Uint32 nOpenSlots) = 0;
 	virtual Bool DestroyBeacon(PartyBeaconId_t PartyBeaconId) = 0;
 
-	virtual Bool GetBeaconLocationData(SteamPartyBeaconLocation_t BeaconLocation, ESteamPartyBeaconLocationData eData, /* [out] */ pStrA pchDataString, Int32 cchDataString) = 0;
+	virtual Bool GetBeaconLocationData(SteamPartyBeaconLocation_t BeaconLocation, ESteamPartyBeaconLocationData eSteamPartyBeaconLocationData, /* [out] */ pStrA pchDataString, Int32 cchDataString) = 0;
 
 } ISteamParties, *IpSteamParties;
 
