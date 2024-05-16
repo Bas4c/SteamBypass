@@ -56,7 +56,7 @@ public:
 	    pcbTicket retrieves the length of the actual ticket.
 	    SteamNetworkingIdentity is an optional parameter to hold the public IP address of the entity you are connecting to
 	     if an IP address is passed Steam will only allow the ticket to be used by an entity with that IP address */
-	virtual HAuthTicket GetAuthSessionTicket(/* [out] */ pVoid pbTicket, Int32 cbMaxTicket, /* [out] */ pUint32 pcbTicket, /* [out] */ const pSteamNetworkingIdentity pSnId) = 0;
+	virtual HAuthTicket GetAuthSessionTicket(/* [out] */ pVoid pvTicket, Int32 cbMaxTicket, /* [out] */ pUint32 pcbTicket, /* [out] */ const pSteamNetworkingIdentity pSnId) = 0;
 	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pbAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
 	virtual void EndAuthSession(SteamId_t SteamId) = 0;
 	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
@@ -69,8 +69,8 @@ public:
 	virtual void GetGameplayStats() = 0;
 	virtual SteamAPICall_t GetServerReputation() = 0;
 	virtual SteamIPAddress_t GetPublicIP() = 0;
-	virtual Bool HandleIncomingPacket(/* [out] */ const pVoid pbData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) = 0;
-	virtual Int32 GetNextOutgoingPacket(/* [out] */ pVoid pOut, Int32 cbMaxOut, pUint32 pNetAdrr, pUint16 pPort) = 0;
+	virtual Bool HandleIncomingPacket(const pVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) = 0;
+	virtual Int32 GetNextOutgoingPacket(/* [out] */ pVoid pvOut, Int32 cbMaxOut, pUint32 pNetAdrr, pUint16 pPort) = 0;
 
 	virtual SteamAPICall_t AssociateWithClan(SteamId_t SteamIdClan) = 0;
 	virtual SteamAPICall_t ComputeNewPlayerCompatibility(SteamId_t SteamIdNewPlayer) = 0;
@@ -83,7 +83,7 @@ public:
 	virtual void SendUserDisconnect(SteamId_t SteamIdUser) = 0;
 
 	/* Return Value: True if successful, False if failure(ie, SteamIdUser wasn't for an active player) */
-	virtual Bool BUpdateUserData(SteamId_t SteamIdUser, const pStrA pchPlayerName, Uint32 uScore) = 0;
+	virtual Bool BUpdateUserData(SteamId_t SteamIdUser, const pStrA pchPlayerName, Uint32 Score) = 0;
 
 	virtual void SetMasterServerHeartbeatInterval_DEPRECATED(Int32 iHeartbeatInterval) = 0;
 	virtual void ForceMasterServerHeartbeat_DEPRECATED() = 0;

@@ -389,6 +389,7 @@ typedef enum _EDenyReason_ {
 
 typedef Uint32 HAuthTicket, *pHAuthTicket;
 #define k_HAuthTicket_Invalid ((HAuthTicket)(0x00000000))
+#define k_HAuthTicket_Fake_Ticket ((HAuthTicket)(0xFADECAFE))
 
 // ----
 // Results From BeginAuthSession

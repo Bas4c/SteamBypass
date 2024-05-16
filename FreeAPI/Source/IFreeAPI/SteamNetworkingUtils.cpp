@@ -164,7 +164,7 @@ SteamNetworkingMicroseconds _SteamNetworkingUtils_::GetLocalTimestamp() {
 	GetSystemTimeAsFileTime((LPFILETIME)(&UTCTime));
 
 	return (SteamNetworkingMicroseconds)(
-		UTCTime / 10
+		UTCTime / 10U
 	);
 
 }
