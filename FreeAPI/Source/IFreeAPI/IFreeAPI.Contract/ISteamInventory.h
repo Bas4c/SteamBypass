@@ -53,7 +53,6 @@ public:
 	virtual Bool CheckResultSteamId(SteamInventoryResult_t hSteamInventoryResult, SteamId_t SteamIdExpected) = 0;
 	virtual void DestroyResult(SteamInventoryResult_t hSteamInventoryResult) = 0;
 
-
 	virtual Bool GetAllItems(/* [out] */ pSteamInventoryResult_t phSteamInventoryResult) = 0;
 	virtual Bool GetItemsById(/* [out] */ pSteamInventoryResult_t phSteamInventoryResult, const pSteamItemInstanceId_t pSteamItemInstanceId, Uint32 nCountSteamItemInstanceId) = 0;
 	virtual Bool SerializeResult(SteamInventoryResult_t hSteamInventoryResult, /* [out] */ pVoid pvData, pUint32 pnData) = 0;
