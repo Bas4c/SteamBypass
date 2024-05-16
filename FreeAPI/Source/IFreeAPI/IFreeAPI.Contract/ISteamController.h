@@ -523,7 +523,7 @@ public:
 
 	/* Returns the associated controller handle for the specified emulated gamepad - can be used with the above 2 Functions
 	    to identify controllers presented to your game over Xinput. Returns 0 if the Xinput index isn't associated with Steam Input */
-	virtual ControllerHandle_t GetControllerForGamepadIndex(Int32 i) = 0;
+	virtual ControllerHandle_t GetControllerForGamepadIndex(Int32 iController) = 0;
 	/* Returns the associated gamepad index for the specified controller, if emulating a gamepad or -1 if not associated with an Xinput index */
 	virtual Int32 GetGamepadIndexForController(ControllerHandle_t hController) = 0;
 
