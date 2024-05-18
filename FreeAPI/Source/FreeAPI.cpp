@@ -2,7 +2,7 @@
 #include <Windows.h>
 // -----------------------------------------------------------------------------
 #include "FreeAPI.Typedef.h"
-#include "WindowsEx.h"
+#include "CommonX.h"
 #include "StrX.h"
 // -----------------------------------------------------------------------------
 
@@ -31,36 +31,22 @@ _FREE_API_ Bool WINAPI DllMain(
 	if (dwReason == DLL_PROCESS_ATTACH) {
 
 		#ifdef DEBUG
-			MessageBoxA(
-				HWND_DESKTOP, "FreeAPI Loaded", 
-				"Attach Debugger", MB_OK
-			);
+		MessageBoxA(
+			HWND_DESKTOP, "FreeAPI Loaded",
+			"Attach Debugger", MB_OK
+		);
 		#endif
 
-		g_pchModuleDirectory = LoadModuleNameW(hInstance, True);
+		g_pchModuleDirectory =
+			LoadModuleNameW(hInstance, True);
+
 		if (g_pchModuleDirectory != NULL) {
 
-			Int32 nUTF8 = WideCharToMultiByte(
-				CP_UTF8, WC_COMPOSITECHECK, (LPWSTR)(g_pchModuleDirectory), -1,
-				NULL, 0, NULL, NULL
-			);
+			g_pchModuleDirectoryUTF8 =
+				WideCharToMultiByteAlloc(g_pchModuleDirectory);
 
-			if (nUTF8 != 0) {
-
-				g_pchModuleDirectoryUTF8 =
-					(pStrA)(LocalAlloc(LPTR, nUTF8));
-
-				if (g_pchModuleDirectoryUTF8 != NULL) {
-
-					WideCharToMultiByte(
-						CP_UTF8, WC_COMPOSITECHECK, (LPWSTR)(g_pchModuleDirectory), -1,
-						(LPSTR)(g_pchModuleDirectoryUTF8), nUTF8, NULL, NULL
-					);
-
-					return TRUE;
-
-				}
-
+			if (g_pchModuleDirectoryUTF8 != NULL) {
+				return TRUE;
 			}
 
 			LocalFree(g_pchModuleDirectory);

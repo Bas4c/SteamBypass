@@ -245,7 +245,7 @@
     <ClInclude Include="Source\Typedef.h" />
     <ClInclude Include="Source\FreeAPI.Typedef.h" />
     <ClInclude Include="Source\StrX.h" />
-    <ClInclude Include="Source\WindowsEx.h" />
+    <ClInclude Include="Source\CommonX.h" />
     <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamAppList.h" />
     <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamApps.h" />
     <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamAppTicket.h" />
@@ -320,7 +320,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\StrX.c" />
-    <ClCompile Include="Source\WindowsEx.c" />
+    <ClCompile Include="Source\CommonX.c" />
     <ClCompile Include="Source\IFreeAPI\SteamAppList.cpp" />
     <ClCompile Include="Source\IFreeAPI\SteamApps.cpp" />
     <ClCompile Include="Source\IFreeAPI\SteamAppTicket.cpp" />

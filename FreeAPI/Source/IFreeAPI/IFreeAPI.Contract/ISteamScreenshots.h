@@ -29,7 +29,7 @@ typedef enum _EVRScreenshotType_ {
 typedef class _ISteamScreenshots_ {
 public:
 
-	virtual ScreenshotHandle WriteScreenshot(pVoid pbRGB, Uint32 cbRGB, Int32 Cx, Int32 Cy) = 0;
+	virtual ScreenshotHandle WriteScreenshot(const pVoid pvRGB, Uint32 cbRGB, Int32 Cx, Int32 Cy) = 0;
 	virtual ScreenshotHandle AddScreenshotToLibrary(const pStrA pchFilename, const pStrA pchThumbnailFilename, Int32 Cx, Int32 Cy) = 0;
 	virtual void TriggerScreenshot() = 0;
 	virtual void HookScreenshots(Bool bHook) = 0;

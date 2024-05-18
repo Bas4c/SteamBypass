@@ -106,7 +106,7 @@ InputDigitalActionHandle_t _SteamInput_::GetDigitalActionHandle(const pStrA pszA
 
 InputDigitalActionData_t _SteamInput_::GetDigitalActionData(InputHandle_t hController, InputDigitalActionHandle_t hDigitalAction) {
 
-	InputDigitalActionData_t inputDigitalActionData;
+	InputDigitalActionData_t inputDigitalActionData{};
 	inputDigitalActionData.bActive = False;
 	inputDigitalActionData.bState = False;
 
@@ -136,7 +136,7 @@ InputAnalogActionHandle_t _SteamInput_::GetAnalogActionHandle(const pStrA pszAct
 
 InputAnalogActionData_t _SteamInput_::GetAnalogActionData(InputHandle_t hController, InputAnalogActionHandle_t hAnalogAction) {
 
-	InputAnalogActionData_t inputAnalogActionData;
+	InputAnalogActionData_t inputAnalogActionData{};
 	inputAnalogActionData.bActive = False;
 	inputAnalogActionData.eInputSourceMode = k_EInputSourceMode_None;
 	inputAnalogActionData.x = 0.0F;
@@ -2226,7 +2226,7 @@ void _SteamInput_::StopAnalogActionMomentum(InputHandle_t hController, InputAnal
 
 InputMotionData_t _SteamInput_::GetMotionData(InputHandle_t hController) {
 
-	InputMotionData_t inputMotionData;
+	InputMotionData_t inputMotionData{};
 
 	inputMotionData.posAccelX = 0.0F;
 	inputMotionData.posAccelY = 0.0F;

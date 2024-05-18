@@ -76,7 +76,7 @@ ControllerDigitalActionHandle_t _SteamController_::GetDigitalActionHandle(const 
 
 ControllerDigitalActionData_t _SteamController_::GetDigitalActionData(ControllerHandle_t hController, ControllerDigitalActionHandle_t hDigitalAction) {
 
-	ControllerDigitalActionData_t controllerDigitalActionData;
+	ControllerDigitalActionData_t controllerDigitalActionData{};
 	controllerDigitalActionData.bActive = False;
 	controllerDigitalActionData.bState = False;
 
@@ -98,7 +98,7 @@ ControllerAnalogActionHandle_t _SteamController_::GetAnalogActionHandle(const pS
 
 ControllerAnalogActionData_t _SteamController_::GetAnalogActionData(ControllerHandle_t hController, ControllerAnalogActionHandle_t hAnalogAction) {
 
-	ControllerAnalogActionData_t controllerAnalogActionData;
+	ControllerAnalogActionData_t controllerAnalogActionData{};
 	controllerAnalogActionData.bActive = False;
 	controllerAnalogActionData.eInputSourceMode = k_EInputSourceMode_None;
 	controllerAnalogActionData.x = 0.0F;
@@ -2064,7 +2064,7 @@ void _SteamController_::StopAnalogActionMomentum(ControllerHandle_t hController,
 
 ControllerMotionData_t _SteamController_::GetMotionData(ControllerHandle_t hController) {
 
-	ControllerMotionData_t controllerMotionData;
+	ControllerMotionData_t controllerMotionData{};
 
 	controllerMotionData.posAccelX = 0.0F;
 	controllerMotionData.posAccelY = 0.0F;
