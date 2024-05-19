@@ -683,16 +683,16 @@ _COMMON_X_API_ _Success_(return == True) Bool __stdcall SaveScreenshot(
 							sCode = GetLastError();
 							if (hFile != INVALID_HANDLE_VALUE) {
 
-								Dword dwWritteAmount = 0U;
+								Dword dwWriteAmount = 0U;
 								Bool bWriteSuccess = WriteFile(
 									hFile, pImage, cbHeader + cbImageSize,
-									&dwWritteAmount, NULL
+									&dwWriteAmount, NULL
 								);
 
 								sCode = GetLastError();
 								sCode = (sCode == ERROR_SUCCESS) ? ERROR_HANDLE_EOF : sCode;
 
-								if (bWriteSuccess == True && dwWritteAmount == (cbHeader + cbImageSize)) {
+								if (bWriteSuccess == True && dwWriteAmount == (cbHeader + cbImageSize)) {
 									
 									sCode = ERROR_SUCCESS;
 									bSuccess = True;

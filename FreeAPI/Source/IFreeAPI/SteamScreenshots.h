@@ -11,6 +11,10 @@
 typedef class _SteamScreenshots_ : public _ISteamScreenshots_ {
 public:
 
+	_SteamScreenshots_() = default;
+	_SteamScreenshots_(const _SteamScreenshots_&) = delete;
+	_SteamScreenshots_& operator=(const _SteamScreenshots_&) = delete;
+
 	ScreenshotHandle WriteScreenshot(const pVoid pvRGB, Uint32 cbRGB, Int32 Cx, Int32 Cy) override;
 	ScreenshotHandle AddScreenshotToLibrary(pStrA pchFilename, pStrA pchThumbnailFilename, Int32 Cx, Int32 Cy) override;
 	void TriggerScreenshot() override;
@@ -20,6 +24,8 @@ public:
 	Bool TagPublishedFile(ScreenshotHandle hScreenshot, PublishedFileId_t unPublishedFileID) override;
 	Bool IsScreenshotsHooked() override;
 	ScreenshotHandle AddVRScreenshotToLibrary(EVRScreenshotType eVRScreenshotType, pStrA pchFilename, pStrA pchVRFilename) override;
+
+	~_SteamScreenshots_() = default;
 
 } SteamScreenshots, *pSteamScreenshots;
 

@@ -152,12 +152,14 @@ typedef enum _ESaveType_ {
 
 } ESaveType, *pSaveType;
 
+/// <returns>On Success Allocates Memory using 'LocalAlloc'</returns>
 _COMMON_X_API_ _Success_(return != NULL) pStrW __stdcall GetGameSaveFileNameW(
 	_In_ HMODULE hModule,
 	_In_opt_z_ const pStrW pchFileSpec,
 	_In_ ESaveType eSaveType
 );
 
+/// <returns>On Success Allocates Memory using 'LocalAlloc'</returns>
 _COMMON_X_API_ _Success_(return != NULL) pStrA __stdcall GetGameSaveFileNameA(
 	_In_ HMODULE hModule,
 	_In_opt_z_ const pStrA pchFileSpec,

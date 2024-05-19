@@ -13,7 +13,7 @@ typedef class _ISteamUnifiedMessages_ {
 public:
 
 	/* Sends a service method (in binary serialized form) using the Steam Client.
-	// Returns a unified message handle (k_InvalidUnifiedMessageHandle if could not send the message). */
+	   Returns a unified message handle (k_InvalidUnifiedMessageHandle if could not send the message). */
 	virtual ClientUnifiedMessageHandle SendMethod(const pStrA pchServiceMethod, const pVoid pvRequestData, Uint32 nRequestDataSize, Uint64 nContext) = 0;
 
 	/* Gets the size of the response and the EResult.
