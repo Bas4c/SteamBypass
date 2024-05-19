@@ -4,9 +4,11 @@
 #include "..\..\FreeAPI.Typedef.h"
 
 typedef enum _EOverlayGradientDirection_ {
+
 	k_EOverlayGradientHorizontal = 1,
-	k_EOverlayGradientVertical = 2,
-	k_EOverlayGradientNone = 3,
+	k_EOverlayGradientVertical,
+	k_EOverlayGradientNone,
+
 } EOverlayGradientDirection, *pEOverlayGradientDirection;
 
 // -----------------------------------------------------------------------------
@@ -25,7 +27,7 @@ public:
 // -----------------------------------------------------------------------------
 // Purpose: Interface Steam exposes for the game to tell it when to render
 // -----------------------------------------------------------------------------
-typedef class _ISteamPS3OverlayRender_ {
+typedef class _ISteamPS3OverlayRenderer_ {
 public:
 
 	virtual Bool BHostInitialize(Uint32 nScreenWidth, Uint32 nScreenHeight, Uint32 nRefreshRate, IpSteamPS3OverlayRenderHost pRenderHost, pVoid pCellFontLibrary) = 0;
@@ -33,6 +35,6 @@ public:
 	virtual Bool BHandleCellPadData(const pVoid pCellPadData) = 0;
 	virtual Bool BResetInputState() = 0;
 
-} ISteamPS3OverlayRender, *IpSteamPS3OverlayRender;
+} ISteamPS3OverlayRenderer, *IpSteamPS3OverlayRenderer;
 
 #endif // _ISTEAMPS3OVERLAYRENDERER_

@@ -585,7 +585,7 @@ _COMMON_X_API_ HANDLE _Success_(return != INVALID_HANDLE_VALUE) __stdcall FSCrea
 }
 
 _COMMON_X_API_ _Success_(return == True) Bool __stdcall SaveScreenshot(
-	_In_bytecount_(cbRgb) const pVoid pvRGB,
+	_In_bytecount_(cbRGB) const pVoid pvRGB,
 	_In_ Uint32 cbRGB,
 	_In_ Int32 Cx,
 	_In_ Int32 Cy
@@ -646,7 +646,7 @@ _COMMON_X_API_ _Success_(return == True) Bool __stdcall SaveScreenshot(
 						if (!isLittle) ByteSwap(&pBitmapInfoHeader->biYPelsPerMeter, sizeof(pBitmapInfoHeader->biYPelsPerMeter));
 						// -----------------------------------------------------------------------------
 
-						LPRGBQUAD pImageData = (LPRGBQUAD)(pImage + cbHeader);
+						RGBQUAD *pImageData = (RGBQUAD*)(pImage + cbHeader);
 
 						if (pvRGB != NULL && cbRGB != 0) {
 							Dword pixel = 0;
@@ -656,9 +656,12 @@ _COMMON_X_API_ _Success_(return == True) Bool __stdcall SaveScreenshot(
 									break;
 								}
 
+								#pragma warning(push)
+								#pragma warning(disable : 6385)
 								(pImageData[pixel]).rgbRed = (((pRGB)(pvRGB))[i]).rgbRed;
 								(pImageData[pixel]).rgbGreen = (((pRGB)(pvRGB))[i]).rgbGreen;
 								(pImageData[pixel]).rgbBlue = (((pRGB)(pvRGB))[i]).rgbBlue;
+								#pragma warning(pop)
 
 								pixel++;
 

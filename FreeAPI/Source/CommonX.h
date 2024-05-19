@@ -137,7 +137,7 @@ typedef struct _RGB_ {
 #pragma pack(pop)
 
 _COMMON_X_API_ _Success_(return == True) Bool __stdcall SaveScreenshot(
-	_In_bytecount_(cbRgb) const pVoid pvRGB,
+	_In_bytecount_(cbRGB) const pVoid pvRGB,
 	_In_ Uint32 cbRGB,
 	_In_ Int32 Cx,
 	_In_ Int32 Cy

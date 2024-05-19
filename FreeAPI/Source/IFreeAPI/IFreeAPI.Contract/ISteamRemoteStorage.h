@@ -164,7 +164,7 @@ public:
 	virtual Bool FileWriteStreamClose(UGCFileWriteStreamHandle_t hWriteStream) = 0;
 	virtual Bool FileWriteStreamCancel(UGCFileWriteStreamHandle_t hWriteStream) = 0;
 
-	virtual Bool FileExists(const pStrA pchFile) = 0;
+	virtual Bool FileExists_(const pStrA pchFile) = 0;
 	virtual Bool FilePersisted(const pStrA pchFile) = 0;
 	virtual Int32 GetFileSize(const pStrA pchFile) = 0;
 	virtual Int64 GetFileTimestamp(const pStrA pchFile) = 0;
