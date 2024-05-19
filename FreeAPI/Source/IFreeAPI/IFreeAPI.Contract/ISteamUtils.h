@@ -75,7 +75,7 @@ public:
 
 	virtual Bool IsAPICallCompleted(SteamAPICall_t hSteamAPICall, /* [out] */ pBool pbFailed) = 0;
 	virtual ESteamAPICallFailure GetAPICallFailureReason(SteamAPICall_t hSteamAPICall) = 0;
-	virtual Bool GetAPICallResult(SteamAPICall_t hSteamAPICall, /* [out] */ pVoid pCallback, Int32 cbCallback, Int32 iCallbackExpected, /* [out] */ pBool pbFailed) = 0;
+	virtual Bool GetAPICallResult(SteamAPICall_t hSteamAPICall, /* [out] */ pVoid pvCallback, Int32 cbCallback, Int32 iCallbackExpected, /* [out] */ pBool pbFailed) = 0;
 
 	/* Applications should use SteamAPI_RunCallbacks() instead */
 	virtual void RunFrame() = 0;

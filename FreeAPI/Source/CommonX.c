@@ -885,3 +885,231 @@ _COMMON_X_API_ _Success_(return != NULL) pStrA __stdcall GetGameSaveFileNameA(
 	return pchGameSaveFileName;
 
 }
+
+_COMMON_X_API_ pStrW __stdcall GetUserUILanguageW(
+	void
+) {
+
+	LANGID lcid = GetUserDefaultUILanguage();
+	CharW chLocale[LOCALE_NAME_MAX_LENGTH] = { 0 };
+	GetLocaleInfoW(lcid, LOCALE_SISO639LANGNAME, chLocale, LOCALE_NAME_MAX_LENGTH);
+
+	if (StrW_Cmp(chLocale, L"ar", True)) {
+		return L"arabic";
+	} else if (StrW_Cmp(chLocale, L"bg", True)) {
+		return L"bulgarian";
+	} else if (StrW_Cmp(chLocale, L"zh", True)) {
+		return L"tchinese";
+	} else if (StrW_Cmp(chLocale, L"cs", True)) {
+		return L"czech";
+	} else if (StrW_Cmp(chLocale, L"da", True)) {
+		return L"danish";
+	} else if (StrW_Cmp(chLocale, L"nl", True)) {
+		return L"dutch";
+	} else if (StrW_Cmp(chLocale, L"en", True)) {
+		return L"english";
+	} else if (StrW_Cmp(chLocale, L"fi", True)) {
+		return L"finnish";
+	} else if (StrW_Cmp(chLocale, L"fr", True)) {
+		return L"french";
+	} else if (StrW_Cmp(chLocale, L"de", True)) {
+		return L"german";
+	} else if (StrW_Cmp(chLocale, L"el", True)) {
+		return L"greek";
+	} else if (StrW_Cmp(chLocale, L"hu", True)) {
+		return L"hungarian";
+	} else if (StrW_Cmp(chLocale, L"id", True)) {
+		return L"indonesian";
+	} else if (StrW_Cmp(chLocale, L"it", True)) {
+		return L"italian";
+	} else if (StrW_Cmp(chLocale, L"ja", True)) {
+		return L"japanese";
+	} else if (StrW_Cmp(chLocale, L"ko", True)) {
+		return L"koreana";
+	} else if (StrW_Cmp(chLocale, L"no", True)) {
+		return L"norwegian";
+	} else if (StrW_Cmp(chLocale, L"pl", True)) {
+		return L"polish";
+	} else if (StrW_Cmp(chLocale, L"pt", True)) {
+		return L"portuguese";
+	} else if (StrW_Cmp(chLocale, L"ro", True)) {
+		return L"romanian";
+	} else if (StrW_Cmp(chLocale, L"ru", True)) {
+		return L"russian";
+	} else if (StrW_Cmp(chLocale, L"es", True)) {
+		return L"spanish";
+	} else if (StrW_Cmp(chLocale, L"sv", True)) {
+		return L"swedish";
+	} else if (StrW_Cmp(chLocale, L"th", True)) {
+		return L"thai";
+	} else if (StrW_Cmp(chLocale, L"tr", True)) {
+		return L"turkish";
+	} else if (StrW_Cmp(chLocale, L"uk", True)) {
+		return L"ukrainian";
+	} else if (StrW_Cmp(chLocale, L"vn", True)) {
+		return L"vietnamese";
+	}
+
+	return L"english";
+
+}
+
+_COMMON_X_API_ pStrA __stdcall GetUserUILanguageA(
+	void
+) {
+
+	LANGID lcid = GetUserDefaultUILanguage();
+	CharA chLocale[LOCALE_NAME_MAX_LENGTH] = { 0 };
+	GetLocaleInfoA(lcid, LOCALE_SISO639LANGNAME, chLocale, LOCALE_NAME_MAX_LENGTH);
+
+	if (StrA_Cmp(chLocale, "ar", True)) {
+		return "arabic";
+	} else if (StrA_Cmp(chLocale, "bg", True)) {
+		return "bulgarian";
+	} else if (StrA_Cmp(chLocale, "zh", True)) {
+		return "tchinese";
+	} else if (StrA_Cmp(chLocale, "cs", True)) {
+		return "czech";
+	} else if (StrA_Cmp(chLocale, "da", True)) {
+		return "danish";
+	} else if (StrA_Cmp(chLocale, "nl", True)) {
+		return "dutch";
+	} else if (StrA_Cmp(chLocale, "en", True)) {
+		return "english";
+	} else if (StrA_Cmp(chLocale, "fi", True)) {
+		return "finnish";
+	} else if (StrA_Cmp(chLocale, "fr", True)) {
+		return "french";
+	} else if (StrA_Cmp(chLocale, "de", True)) {
+		return "german";
+	} else if (StrA_Cmp(chLocale, "el", True)) {
+		return "greek";
+	} else if (StrA_Cmp(chLocale, "hu", True)) {
+		return "hungarian";
+	} else if (StrA_Cmp(chLocale, "id", True)) {
+		return "indonesian";
+	} else if (StrA_Cmp(chLocale, "it", True)) {
+		return "italian";
+	} else if (StrA_Cmp(chLocale, "ja", True)) {
+		return "japanese";
+	} else if (StrA_Cmp(chLocale, "ko", True)) {
+		return "koreana";
+	} else if (StrA_Cmp(chLocale, "no", True)) {
+		return "norwegian";
+	} else if (StrA_Cmp(chLocale, "pl", True)) {
+		return "polish";
+	} else if (StrA_Cmp(chLocale, "pt", True)) {
+		return "portuguese";
+	} else if (StrA_Cmp(chLocale, "ro", True)) {
+		return "romanian";
+	} else if (StrA_Cmp(chLocale, "ru", True)) {
+		return "russian";
+	} else if (StrA_Cmp(chLocale, "es", True)) {
+		return "spanish";
+	} else if (StrA_Cmp(chLocale, "sv", True)) {
+		return "swedish";
+	} else if (StrA_Cmp(chLocale, "th", True)) {
+		return "thai";
+	} else if (StrA_Cmp(chLocale, "tr", True)) {
+		return "turkish";
+	} else if (StrA_Cmp(chLocale, "uk", True)) {
+		return "ukrainian";
+	} else if (StrA_Cmp(chLocale, "vn", True)) {
+		return "vietnamese";
+	}
+
+	return "english";
+
+}
+
+_COMMON_X_API_ Uint32 __stdcall GetGameAppId(
+	void
+) {
+
+	const Dword cchMax = MAX_PATH - 1U;
+	pStrW pchModuleDirectory = LoadModuleNameW(GetModuleHandleW(NULL), True);
+
+	Dword sCode = GetLastError();
+	if (pchModuleDirectory != NULL) {
+
+		Dword cchModuleDirectory =
+			(Dword)(StrW_Count(pchModuleDirectory));
+
+		sCode = ERROR_MRM_FILEPATH_TOO_LONG;
+		if (cchModuleDirectory <= cchMax) {
+
+			const pStrW pchAppIdFileSpec = L"\\steam_appid.txt";
+			Dword cchAppIdFileSpec =
+				(Dword)(StrW_Count(pchAppIdFileSpec));
+
+			sCode = ERROR_MRM_FILEPATH_TOO_LONG;
+			if (cchModuleDirectory + cchAppIdFileSpec <= cchMax) {
+
+				CharW chAppIdFilePath[MAX_PATH] = { 0 };
+				StrW_Copy(chAppIdFilePath, MAX_PATH, pchModuleDirectory);
+				StrW_Cat(chAppIdFilePath, MAX_PATH, pchAppIdFileSpec);
+
+				HANDLE hFile = FSCreateFileW(
+					chAppIdFilePath, GENERIC_READ,
+					OPEN_EXISTING
+				);
+
+				sCode = GetLastError();
+				if (hFile != INVALID_HANDLE_VALUE) {
+
+					Uint32 GameAppId = 0U;
+					CharW cDigit = 0x00;
+
+					while(True) {
+
+						Dword dwReadAmount = 0U;
+						Bool bSuccess = ReadFile(
+							hFile, &cDigit, 1U,
+							&dwReadAmount, NULL
+						);
+
+						sCode = GetLastError();
+						sCode = (sCode == ERROR_SUCCESS) ? ERROR_HANDLE_EOF : sCode;
+
+						if (bSuccess == True) {
+
+							if (dwReadAmount == 0U) {
+								break;
+							}
+
+							sCode = ERROR_SUCCESS;
+
+							if (cDigit < '0' || cDigit > '9') {
+								break;
+							}
+
+							GameAppId = (GameAppId * 10) + (cDigit - '0');
+
+						}
+
+					}
+
+					CloseHandle(hFile);
+
+					if (sCode == ERROR_SUCCESS || sCode == ERROR_HANDLE_EOF) {
+
+						LocalFree(pchModuleDirectory);
+						SetLastError(ERROR_SUCCESS);
+						return GameAppId;
+
+					}
+
+				}
+
+			}
+
+		}
+
+		LocalFree(pchModuleDirectory);
+
+	}
+
+	SetLastError(sCode);
+	return 0U;
+
+}

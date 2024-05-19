@@ -172,4 +172,22 @@ _COMMON_X_API_ _Success_(return != NULL) pStrA __stdcall GetGameSaveFileNameA(
 	#define GetGameSaveFileName GetGameSaveFileNameA
 #endif
 
+_COMMON_X_API_ pStrW __stdcall GetUserUILanguageW(
+	void
+);
+
+_COMMON_X_API_ pStrA __stdcall GetUserUILanguageA(
+	void
+);
+
+#ifdef UNICODE
+	#define GetUserUILanguage GetUserUILanguageW
+#else // ANSI
+	#define GetUserUILanguage GetUserUILanguageA
+#endif
+
+_COMMON_X_API_ Uint32 __stdcall GetGameAppId(
+	void
+);
+
 #endif // !_COMMON_X_
