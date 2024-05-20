@@ -54,6 +54,6 @@ public:
 
 	~_SteamHTMLSurface_() override = default;
 
-} SteamHTMLSurfacem, *pSteamHTMLSurface;
+} SteamHTMLSurface, *pSteamHTMLSurface;
 
 #endif // !_STEAMHTMLSURFACE_

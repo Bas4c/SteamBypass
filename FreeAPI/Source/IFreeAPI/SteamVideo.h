@@ -8,6 +8,7 @@
 // -----------------------------------------------------------------------------
 
 typedef class _SteamVideo_ : public _ISteamVideo_ {
+public:
 
 	_SteamVideo_() = default;
 	_SteamVideo_(const _SteamVideo_&) = delete;

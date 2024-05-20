@@ -1,3 +1,7 @@
+#include <WinSock2.h>
+#include <WinDns.h>
+#include <Ws2TcpIp.h>
+#include <IpHLPApi.h>
 // -----------------------------------------------------------------------------
 #include "SteamNetworkingUtils.h"
 // -----------------------------------------------------------------------------

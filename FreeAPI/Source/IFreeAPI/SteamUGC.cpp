@@ -521,3 +521,15 @@ SteamAPICall_t _SteamUGC_::DeleteItem(PublishedFileId_t PublishedFileId) {
 	return k_SteamAPICall_Invalid;
 
 }
+
+Bool _SteamUGC_::ShowWorkshopEULA() {
+
+	return False;
+
+}
+
+SteamAPICall_t _SteamUGC_::GetWorkshopEULAStatus() {
+
+	return k_SteamAPICall_Invalid;
+
+}

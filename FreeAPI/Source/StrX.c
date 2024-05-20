@@ -251,3 +251,101 @@ _STR_X_API_ Bool __stdcall StrA_Cmp(
 	return False;
 
 }
+
+_STR_X_API_ SizeOF __stdcall StrW_StrW(
+	_In_z_ const pStrW pchStr,
+	_In_z_ const pStrW pchStrStr,
+	_In_ Bool iCase
+) {
+
+	if (pchStr == pchStrStr) {
+		return True;
+	}
+
+	if (pchStr == NULL || pchStrStr == NULL) {
+		return False;
+	}
+
+	SizeOF cchStr = StrW_Count(pchStr);
+	SizeOF cchStrStr = StrW_Count(pchStrStr);
+
+	for (SizeOF i = 0U; i < cchStr; i++) {
+		
+		SizeOF j = 0U;
+		for (j = 0U; j < cchStrStr && i + j < cchStr; j++) {
+			
+			if (iCase == True) {
+
+				if (CharUpperW(((LPWSTR)(pchStr[i + j]))) != CharUpperW(((LPWSTR)(pchStrStr[j])))) {
+					break;
+				}
+
+			} else {
+
+				if (pchStr[i + j] != pchStrStr[j]) {
+					break;
+				}
+
+			}
+		}
+
+		if (j == cchStrStr) {
+
+			return i;
+
+		}
+
+	}
+
+	return SizeOF_MAX;
+
+}
+
+_STR_X_API_ SizeOF __stdcall StrA_StrA(
+	_In_z_ const pStrA pchStr,
+	_In_z_ const pStrA pchStrStr,
+	_In_ Bool iCase
+) {
+
+	if (pchStr == pchStrStr) {
+		return True;
+	}
+
+	if (pchStr == NULL || pchStrStr == NULL) {
+		return False;
+	}
+
+	SizeOF cchStr = StrA_Count(pchStr);
+	SizeOF cchStrStr = StrA_Count(pchStrStr);
+
+	for (SizeOF i = 0U; i < cchStr; i++) {
+
+		SizeOF j = 0U;
+		for (j = 0U; j < cchStrStr && i + j < cchStr; j++) {
+
+			if (iCase == True) {
+
+				if (CharUpperA(((LPSTR)(pchStr[i + j]))) != CharUpperA(((LPSTR)(pchStrStr[j])))) {
+					break;
+				}
+
+			} else {
+
+				if (pchStr[i + j] != pchStrStr[j]) {
+					break;
+				}
+
+			}
+		}
+
+		if (j == cchStrStr) {
+
+			return i;
+
+		}
+
+	}
+
+	return SizeOF_MAX;
+
+}

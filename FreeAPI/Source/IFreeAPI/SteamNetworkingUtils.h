@@ -1,10 +1,6 @@
 #ifndef _STEAMNETWORKINGUTILS_
 #define _STEAMNETWORKINGUTILS_
 
-#include <WinSock2.h>
-#include <WinDns.h>
-#include <Ws2TcpIp.h>
-#include <IpHLPApi.h>
 #include <Windows.h>
 // -----------------------------------------------------------------------------
 #include "..\StrX.h"

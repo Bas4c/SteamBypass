@@ -889,67 +889,76 @@ _COMMON_X_API_ _Success_(return != NULL) pStrA __stdcall GetGameSaveFileNameA(
 
 }
 
-_COMMON_X_API_ pStrW __stdcall GetUserUILanguageW(
+_COMMON_X_API_ const pStrW __stdcall GetUserUILanguageW(
 	void
 ) {
 
 	LANGID lcid = GetUserDefaultUILanguage();
-	CharW chLocale[LOCALE_NAME_MAX_LENGTH] = { 0 };
-	GetLocaleInfoW(lcid, LOCALE_SISO639LANGNAME, chLocale, LOCALE_NAME_MAX_LENGTH);
 
-	if (StrW_Cmp(chLocale, L"ar", True)) {
+	CharW chLang[LOCALE_NAME_MAX_LENGTH] = { 0 };
+	GetLocaleInfoW(lcid, LOCALE_SISO639LANGNAME, chLang, LOCALE_NAME_MAX_LENGTH);
+	CharW chCountry[LOCALE_NAME_MAX_LENGTH] = { 0 };
+	GetLocaleInfoW(lcid, LOCALE_SISO3166CTRYNAME, chCountry, LOCALE_NAME_MAX_LENGTH);
+
+	if (StrW_Cmp(chLang, L"ar", True)) {
 		return L"arabic";
-	} else if (StrW_Cmp(chLocale, L"bg", True)) {
+	} else if (StrW_Cmp(chLang, L"bg", True)) {
 		return L"bulgarian";
-	} else if (StrW_Cmp(chLocale, L"zh", True)) {
+	} else if (StrW_Cmp(chLang, L"zh", True) && StrW_Cmp(chCountry, L"CN", True)) {
+		return L"schinese";
+	} else if (StrW_Cmp(chLang, L"zh", True) && StrW_Cmp(chCountry, L"TW", True)) {
 		return L"tchinese";
-	} else if (StrW_Cmp(chLocale, L"cs", True)) {
+	} else if (StrW_Cmp(chLang, L"cs", True)) {
 		return L"czech";
-	} else if (StrW_Cmp(chLocale, L"da", True)) {
+	} else if (StrW_Cmp(chLang, L"da", True)) {
 		return L"danish";
-	} else if (StrW_Cmp(chLocale, L"nl", True)) {
+	} else if (StrW_Cmp(chLang, L"nl", True)) {
 		return L"dutch";
-	} else if (StrW_Cmp(chLocale, L"en", True)) {
+	} else if (StrW_Cmp(chLang, L"en", True)) {
 		return L"english";
-	} else if (StrW_Cmp(chLocale, L"fi", True)) {
+	} else if (StrW_Cmp(chLang, L"fi", True)) {
 		return L"finnish";
-	} else if (StrW_Cmp(chLocale, L"fr", True)) {
+	} else if (StrW_Cmp(chLang, L"fr", True)) {
 		return L"french";
-	} else if (StrW_Cmp(chLocale, L"de", True)) {
+	} else if (StrW_Cmp(chLang, L"de", True)) {
 		return L"german";
-	} else if (StrW_Cmp(chLocale, L"el", True)) {
+	} else if (StrW_Cmp(chLang, L"el", True)) {
 		return L"greek";
-	} else if (StrW_Cmp(chLocale, L"hu", True)) {
+	} else if (StrW_Cmp(chLang, L"hu", True)) {
 		return L"hungarian";
-	} else if (StrW_Cmp(chLocale, L"id", True)) {
+	} else if (StrW_Cmp(chLang, L"id", True)) {
 		return L"indonesian";
-	} else if (StrW_Cmp(chLocale, L"it", True)) {
+	} else if (StrW_Cmp(chLang, L"it", True)) {
 		return L"italian";
-	} else if (StrW_Cmp(chLocale, L"ja", True)) {
+	} else if (StrW_Cmp(chLang, L"ja", True)) {
 		return L"japanese";
-	} else if (StrW_Cmp(chLocale, L"ko", True)) {
+	} else if (StrW_Cmp(chLang, L"ko", True)) {
 		return L"koreana";
-	} else if (StrW_Cmp(chLocale, L"no", True)) {
+	} else if (StrW_Cmp(chLang, L"no", True)) {
 		return L"norwegian";
-	} else if (StrW_Cmp(chLocale, L"pl", True)) {
+	} else if (StrW_Cmp(chLang, L"pl", True)) {
 		return L"polish";
-	} else if (StrW_Cmp(chLocale, L"pt", True)) {
+	} else if (StrW_Cmp(chLang, L"pt", True) && StrW_Cmp(chCountry, L"BR", True)) {
+		return L"brazilian";
+	} else if (StrW_Cmp(chLang, L"pt", True)) {
 		return L"portuguese";
-	} else if (StrW_Cmp(chLocale, L"ro", True)) {
+	} else if (StrW_Cmp(chLang, L"ro", True)) {
 		return L"romanian";
-	} else if (StrW_Cmp(chLocale, L"ru", True)) {
+	} else if (StrW_Cmp(chLang, L"ru", True)) {
 		return L"russian";
-	} else if (StrW_Cmp(chLocale, L"es", True)) {
+	} else if (StrW_Cmp(chLang, L"es", True) && StrW_Cmp(chCountry, L"419", True)) {
+		return L"latam";
+	} else if (StrW_Cmp(chLang, L"es", True)) {
 		return L"spanish";
-	} else if (StrW_Cmp(chLocale, L"sv", True)) {
+	} else if (StrW_Cmp(chLang, L"sv", True)) {
 		return L"swedish";
-	} else if (StrW_Cmp(chLocale, L"th", True)) {
+	} else if (StrW_Cmp(chLang, L"th", True)) {
 		return L"thai";
-	} else if (StrW_Cmp(chLocale, L"tr", True)) {
+	} else if (StrW_Cmp(chLang, L"tr", True)) {
 		return L"turkish";
-	} else if (StrW_Cmp(chLocale, L"uk", True)) {
+	} else if (StrW_Cmp(chLang, L"uk", True)) {
 		return L"ukrainian";
-	} else if (StrW_Cmp(chLocale, L"vn", True)) {
+	} else if (StrW_Cmp(chLang, L"vn", True)) {
 		return L"vietnamese";
 	}
 
@@ -957,67 +966,76 @@ _COMMON_X_API_ pStrW __stdcall GetUserUILanguageW(
 
 }
 
-_COMMON_X_API_ pStrA __stdcall GetUserUILanguageA(
+_COMMON_X_API_ const pStrA __stdcall GetUserUILanguageA(
 	void
 ) {
 
 	LANGID lcid = GetUserDefaultUILanguage();
-	CharA chLocale[LOCALE_NAME_MAX_LENGTH] = { 0 };
-	GetLocaleInfoA(lcid, LOCALE_SISO639LANGNAME, chLocale, LOCALE_NAME_MAX_LENGTH);
 
-	if (StrA_Cmp(chLocale, "ar", True)) {
+	CharA chLang[LOCALE_NAME_MAX_LENGTH] = { 0 };
+	GetLocaleInfoA(lcid, LOCALE_SISO639LANGNAME, chLang, LOCALE_NAME_MAX_LENGTH);
+	CharA chCountry[LOCALE_NAME_MAX_LENGTH] = { 0 };
+	GetLocaleInfoA(lcid, LOCALE_SISO3166CTRYNAME, chCountry, LOCALE_NAME_MAX_LENGTH);
+
+	if (StrA_Cmp(chLang, "ar", True)) {
 		return "arabic";
-	} else if (StrA_Cmp(chLocale, "bg", True)) {
+	} else if (StrA_Cmp(chLang, "bg", True)) {
 		return "bulgarian";
-	} else if (StrA_Cmp(chLocale, "zh", True)) {
+	} else if (StrA_Cmp(chLang, "zh", True) && StrA_Cmp(chCountry, "CN", True)) {
+		return "schinese";
+	} else if (StrA_Cmp(chLang, "zh", True) && StrA_Cmp(chCountry, "TW", True)) {
 		return "tchinese";
-	} else if (StrA_Cmp(chLocale, "cs", True)) {
+	} else if (StrA_Cmp(chLang, "cs", True)) {
 		return "czech";
-	} else if (StrA_Cmp(chLocale, "da", True)) {
+	} else if (StrA_Cmp(chLang, "da", True)) {
 		return "danish";
-	} else if (StrA_Cmp(chLocale, "nl", True)) {
+	} else if (StrA_Cmp(chLang, "nl", True)) {
 		return "dutch";
-	} else if (StrA_Cmp(chLocale, "en", True)) {
+	} else if (StrA_Cmp(chLang, "en", True)) {
 		return "english";
-	} else if (StrA_Cmp(chLocale, "fi", True)) {
+	} else if (StrA_Cmp(chLang, "fi", True)) {
 		return "finnish";
-	} else if (StrA_Cmp(chLocale, "fr", True)) {
+	} else if (StrA_Cmp(chLang, "fr", True)) {
 		return "french";
-	} else if (StrA_Cmp(chLocale, "de", True)) {
+	} else if (StrA_Cmp(chLang, "de", True)) {
 		return "german";
-	} else if (StrA_Cmp(chLocale, "el", True)) {
+	} else if (StrA_Cmp(chLang, "el", True)) {
 		return "greek";
-	} else if (StrA_Cmp(chLocale, "hu", True)) {
+	} else if (StrA_Cmp(chLang, "hu", True)) {
 		return "hungarian";
-	} else if (StrA_Cmp(chLocale, "id", True)) {
+	} else if (StrA_Cmp(chLang, "id", True)) {
 		return "indonesian";
-	} else if (StrA_Cmp(chLocale, "it", True)) {
+	} else if (StrA_Cmp(chLang, "it", True)) {
 		return "italian";
-	} else if (StrA_Cmp(chLocale, "ja", True)) {
+	} else if (StrA_Cmp(chLang, "ja", True)) {
 		return "japanese";
-	} else if (StrA_Cmp(chLocale, "ko", True)) {
+	} else if (StrA_Cmp(chLang, "ko", True)) {
 		return "koreana";
-	} else if (StrA_Cmp(chLocale, "no", True)) {
+	} else if (StrA_Cmp(chLang, "no", True)) {
 		return "norwegian";
-	} else if (StrA_Cmp(chLocale, "pl", True)) {
+	} else if (StrA_Cmp(chLang, "pl", True)) {
 		return "polish";
-	} else if (StrA_Cmp(chLocale, "pt", True)) {
+	} else if (StrA_Cmp(chLang, "pt", True) && StrA_Cmp(chCountry, "BR", True)) {
+		return "brazilian";
+	} else if (StrA_Cmp(chLang, "pt", True)) {
 		return "portuguese";
-	} else if (StrA_Cmp(chLocale, "ro", True)) {
+	} else if (StrA_Cmp(chLang, "ro", True)) {
 		return "romanian";
-	} else if (StrA_Cmp(chLocale, "ru", True)) {
+	} else if (StrA_Cmp(chLang, "ru", True)) {
 		return "russian";
-	} else if (StrA_Cmp(chLocale, "es", True)) {
+	} else if (StrA_Cmp(chLang, "es", True) && StrA_Cmp(chCountry, "419", True)) {
+		return "latam";
+	} else if (StrA_Cmp(chLang, "es", True)) {
 		return "spanish";
-	} else if (StrA_Cmp(chLocale, "sv", True)) {
+	} else if (StrA_Cmp(chLang, "sv", True)) {
 		return "swedish";
-	} else if (StrA_Cmp(chLocale, "th", True)) {
+	} else if (StrA_Cmp(chLang, "th", True)) {
 		return "thai";
-	} else if (StrA_Cmp(chLocale, "tr", True)) {
+	} else if (StrA_Cmp(chLang, "tr", True)) {
 		return "turkish";
-	} else if (StrA_Cmp(chLocale, "uk", True)) {
+	} else if (StrA_Cmp(chLang, "uk", True)) {
 		return "ukrainian";
-	} else if (StrA_Cmp(chLocale, "vn", True)) {
+	} else if (StrA_Cmp(chLang, "vn", True)) {
 		return "vietnamese";
 	}
 

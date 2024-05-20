@@ -89,4 +89,26 @@ _STR_X_API_ Bool __stdcall StrA_Cmp(
 	#define Str_Cmp StrA_Cmp
 #endif
 
+//*! @returns SubString are Found: (Index)
+//*! @returns SubString are Not Found: (SizeOF_MAX)
+_STR_X_API_ SizeOF __stdcall StrW_StrW(
+	_In_z_ const pStrW pchStr,
+	_In_z_ const pStrW pchStrStr,
+	_In_ Bool iCase
+);
+
+//*! @returns SubString are Found: (Index)
+//*! @returns SubString are Not Found: (SizeOF_MAX)
+_STR_X_API_ SizeOF __stdcall StrA_StrA(
+	_In_z_ const pStrA pchStr,
+	_In_z_ const pStrA pchStrStr,
+	_In_ Bool iCase
+);
+
+#ifdef UNICODE
+	#define Str_Str StrW_StrW
+#else // ANSI
+	#define Str_Str StrA_StrA
+#endif
+
 #endif // !_STR_X_

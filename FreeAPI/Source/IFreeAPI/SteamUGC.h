@@ -108,6 +108,9 @@ public:
 	SteamAPICall_t GetAppDependencies(PublishedFileId_t PublishedFileId) override;
 	SteamAPICall_t DeleteItem(PublishedFileId_t PublishedFileId) override;
 
+	Bool ShowWorkshopEULA() override;
+	SteamAPICall_t GetWorkshopEULAStatus() override;
+
 	~_SteamUGC_() = default;
 
 } SteamUGC, *pSteamUGC;
