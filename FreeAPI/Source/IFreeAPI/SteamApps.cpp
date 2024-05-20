@@ -213,7 +213,15 @@ SteamAPICall_t _SteamApps_::GetFileDetails(const pStrA pchFileName) {
 
 Int32 _SteamApps_::GetLaunchCommandLine(pStrA pchCommandLine, Int32 cchCommandLine) {
 
-	return Int32();
+	pStrA pchCmdLine = GetCommandLineA();
+	if (pchCommandLine != NULL && cchCommandLine > 0) {
+		if ((SizeOF)(cchCommandLine) >= StrA_Count(pchCmdLine) + 1U) {
+			StrA_Copy(pchCommandLine, cchCommandLine, pchCmdLine);
+			return StrA_Count(pchCmdLine) + 1U;
+		}
+	}
+
+	return 0U;
 
 }
 
