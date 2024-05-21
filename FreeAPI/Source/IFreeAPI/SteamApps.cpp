@@ -2,6 +2,12 @@
 #include "SteamApps.h"
 // -----------------------------------------------------------------------------
 
+Int32 _SteamApps_::GetAppData(AppId_t iAppId, const pStrA pchKey, pStrA pchValue, Int32 cchValueMax) {
+
+	return 0;
+
+}
+
 Bool _SteamApps_::BIsSubscribed() {
 
 	return True;

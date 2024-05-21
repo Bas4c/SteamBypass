@@ -42,7 +42,15 @@
 #include "SteamNetworkingMessages.h"
 #include "SteamNetworkingSocketsSerialized.h"
 
-typedef class _SteamClient_ : public _ISteamClient_ {
+typedef class _SteamClient_ : public _ISteamClient007_,
+ public _ISteamClient008_, public _ISteamClient009_,
+ public _ISteamClient010_, public _ISteamClient011_,
+ public _ISteamClient012_, public _ISteamClient013_,
+ public _ISteamClient014_, public _ISteamClient015_,
+ public _ISteamClient016_, public _ISteamClient017_,
+ public _ISteamClient018_, public _ISteamClient019_,
+ public _ISteamClient_
+{
 public:
 
 	_SteamClient_() = default;
@@ -52,12 +60,14 @@ public:
 	HSteamPipe CreateSteamPipe() override;
 	Bool BReleaseSteamPipe(HSteamPipe hSteamPipe) override;
 	HSteamUser ConnectToGlobalUser(HSteamPipe hSteamPipe) override;
+	HSteamUser CreateLocalUser(pHSteamPipe phSteamPipe) override;
 	HSteamUser CreateLocalUser(pHSteamPipe phSteamPipe, EAccountType eAccountType) override;
 	void ReleaseUser(HSteamPipe hSteamPipe, HSteamUser hSteamUser) override;
 
 	IpSteamUser GetISteamUser(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
 	IpSteamGameServer GetISteamGameServer(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
 
+	void SetLocalIPBinding(Uint32 nIP, Uint16 Port) override;
 	void SetLocalIPBinding(const pSteamIPAddress_t pSteamIPAdrr, Uint16 Port) override;
 
 	IpSteamFriends GetISteamFriends(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
@@ -105,6 +115,9 @@ public:
 	IpSteamInput GetISteamInput(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
 	IpSteamParties GetISteamParties(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
 	IpSteamRemotePlay GetISteamRemotePlay(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
+
+	IpSteamContentServer GetISteamContentServer(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
+	IpSteamMasterServerUpdater GetISteamMasterServerUpdater(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
 
 	void DestroyAllInterfaces() override;
 

@@ -8,12 +8,18 @@
 #include "IFreeAPI.Contract\ISteamApps.h"
 // -----------------------------------------------------------------------------
 
-typedef class _SteamApps_ : public _ISteamApps_ {
+typedef class _SteamApps_ : public _ISteamApps001_,
+ public _ISteamApps002_, public _ISteamApps003_,
+ public _ISteamApps004_, public _ISteamApps005_,
+ public _ISteamApps006_, public _ISteamApps007_,
+ public _ISteamApps_ {
 public:
 
 	_SteamApps_() = default;
 	_SteamApps_(const _SteamApps_&) = delete;
 	_SteamApps_& operator=(const _SteamApps_&) = delete;
+
+	Int32 GetAppData(AppId_t iAppId, const pStrA pchKey, pStrA pchValue, Int32 cchValueMax) override;
 
 	Bool BIsSubscribed() override;
 	Bool BIsLowViolence() override;
@@ -75,7 +81,7 @@ public:
 	Bool BIsSubscribedFromFamilySharing() override;
 	Bool BIsTimedTrial(pUint32 pnSecondsAllowed, pUint32 pnSecondsPlayed) override;
 	Bool SetDlcContext(AppId_t iAppId) override;
-
+	
 	~_SteamApps_() = default;
 
 } SteamApps, *pSteamApps;

@@ -20,7 +20,21 @@ HSteamUser _SteamClient_::ConnectToGlobalUser(HSteamPipe hSteamPipe) {
 
 }
 
+HSteamUser _SteamClient_::CreateLocalUser(pHSteamPipe phSteamPipe) {
+	
+	if (phSteamPipe != NULL) {
+		*phSteamPipe = k_HSteamPipe_Client;
+	}
+
+	return k_HSteamUser_LocalUser;
+
+}
+
 HSteamUser _SteamClient_::CreateLocalUser(pHSteamPipe phSteamPipe, EAccountType eAccountType) {
+
+	if (phSteamPipe != NULL) {
+		*phSteamPipe = k_HSteamPipe_Client;
+	}
 
 	return k_HSteamUser_LocalUser;
 
@@ -35,7 +49,31 @@ void _SteamClient_::ReleaseUser(HSteamPipe hSteamPipe, HSteamUser hSteamUser) {
 IpSteamUser _SteamClient_::GetISteamUser(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamUser"), True) != SizeOF_MAX) {
+		if (
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUser001"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUser002"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUser003"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUser004"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUser005"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUser006"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUser007"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUser008"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUser009"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUser010"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUser011"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUser012"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUser013"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUser014"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUser015"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUser016"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUser017"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUser018"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUser019"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUser020"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUser021"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUser022"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)(STEAMUSER_INTERFACE_VERSION), True)
+		) {
 			return (IpSteamUser)(&this->SteamUser);
 		}
 	}
@@ -47,12 +85,34 @@ IpSteamUser _SteamClient_::GetISteamUser(HSteamUser hSteamUser, HSteamPipe hStea
 IpSteamGameServer _SteamClient_::GetISteamGameServer(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamGameServer"), True) != SizeOF_MAX) {
+		if (
+			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer001"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer002"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer003"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer004"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer005"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer006"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer007"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer008"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer009"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer010"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer011"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer012"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer013"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer014"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)(STEAMGAMESERVER_INTERFACE_VERSION), True)
+		) {
 			return (IpSteamGameServer)(&this->SteamGameServer);
 		}
 	}
 
 	return NULL;
+
+}
+
+void _SteamClient_::SetLocalIPBinding(Uint32 nIP, Uint16 Port) {
+
+	/* Empty Method */
 
 }
 
@@ -65,7 +125,26 @@ void _SteamClient_::SetLocalIPBinding(const pSteamIPAddress_t pSteamIPAdrr, Uint
 IpSteamFriends _SteamClient_::GetISteamFriends(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamFriends"), True) != SizeOF_MAX) {
+		if (
+			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends001"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends002"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends003"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends004"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends005"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends006"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends007"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends008"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends009"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends010"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends011"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends012"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends013"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends014"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends015"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends016"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends017"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)(STEAMFRIENDS_INTERFACE_VERSION), True)
+		) {
 			return (IpSteamFriends)(&this->SteamFriends);
 		}
 	}
@@ -77,7 +156,18 @@ IpSteamFriends _SteamClient_::GetISteamFriends(HSteamUser hSteamUser, HSteamPipe
 IpSteamUtils _SteamClient_::GetISteamUtils(HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamUtils"), True) != SizeOF_MAX) {
+		if (
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUtils001"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUtils002"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUtils003"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUtils004"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUtils005"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUtils006"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUtils007"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUtils008"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamUtils009"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)(STEAMUTILS_INTERFACE_VERSION), True)
+		) {
 			return (IpSteamUtils)(&this->SteamUtils);
 		}
 	}
@@ -89,7 +179,17 @@ IpSteamUtils _SteamClient_::GetISteamUtils(HSteamPipe hSteamPipe, const pStrA pc
 IpSteamMatchmaking _SteamClient_::GetISteamMatchmaking(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamMatchmaking"), True) != SizeOF_MAX) {
+		if (
+			StrA_Cmp(pchVersion, (const pStrA)("SteamMatchMaking001"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamMatchMaking002"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamMatchMaking003"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamMatchMaking004"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamMatchMaking005"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamMatchMaking006"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamMatchMaking007"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamMatchMaking008"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)(STEAMMATCHMAKING_INTERFACE_VERSION), True)
+		) {
 			return (IpSteamMatchmaking)(&this->SteamMatchmaking);
 		}
 	}
@@ -101,7 +201,10 @@ IpSteamMatchmaking _SteamClient_::GetISteamMatchmaking(HSteamUser hSteamUser, HS
 IpSteamMatchmakingServers _SteamClient_::GetISteamMatchmakingServers(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamMatchmakingServers"), True) != SizeOF_MAX) {
+		if (
+			StrA_Cmp(pchVersion, (const pStrA)("SteamMatchMakingServers001"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)(STEAMMATCHMAKINGSERVERS_INTERFACE_VERSION), True)
+		) {
 			return (IpSteamMatchmakingServers)(&this->SteamMatchmakingServers);
 		}
 	}
@@ -145,7 +248,7 @@ pVoid _SteamClient_::GetISteamGenericInterface(HSteamUser hSteamUser, HSteamPipe
 		pGeneric = this->GetISteamGameServerStats(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamAppTicket"), True) != SizeOF_MAX)
+		if (StrA_Cmp(pchVersion, (const pStrA)(STEAMAPPTICKET_INTERFACE_VERSION), True))
 			return (IpSteamAppTicket)(&this->SteamAppTicket);
 		pGeneric = this->GetISteamApps(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
@@ -162,8 +265,9 @@ pVoid _SteamClient_::GetISteamGenericInterface(HSteamUser hSteamUser, HSteamPipe
 		pGeneric = this->GetISteamHTTP(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamUnifiedMessages"), True) != SizeOF_MAX)
-			return (IpSteamUnifiedMessages)(&this->SteamUnifiedMessages);
+		pGeneric = this->DEPRECATED_GetISteamUnifiedMessages(hSteamUser, hSteamPipe, pchVersion);
+		if (pGeneric != NULL)
+			return pGeneric;
 		pGeneric = this->GetISteamController(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
@@ -197,21 +301,46 @@ pVoid _SteamClient_::GetISteamGenericInterface(HSteamUser hSteamUser, HSteamPipe
 		pGeneric = this->GetISteamRemotePlay(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamGameCoordinator"), True) != SizeOF_MAX)
+		if (StrA_Cmp(pchVersion, (const pStrA)(STEAMGAMECOORDINATOR_INTERFACE_VERSION), True))
 			return (IpSteamGameCoordinator)(&this->SteamGameCoordinator);
 		if (StrA_StrA(pchVersion, (const pStrA)("SteamPS3OverlayRenderer"), True) != SizeOF_MAX)
 			return (IpSteamPS3OverlayRenderer)(&this->SteamPS3OverlayRenderer);
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamMasterServerUpdater"), True) != SizeOF_MAX)
-			return (IpSteamMasterServerUpdater)(&this->SteamMasterServerUpdater);
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamTV"), True) != SizeOF_MAX)
+		pGeneric = this->GetISteamMasterServerUpdater(hSteamUser, hSteamPipe, pchVersion);
+		if (pGeneric != NULL)
+			return pGeneric;
+		if (StrA_Cmp(pchVersion, (const pStrA)(STEAMTV_INTERFACE_VERSION), True))
 			return (IpSteamTV)(&this->SteamTV);
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamNetworkingUtils"), True) != SizeOF_MAX)
+		if (
+			StrA_Cmp(pchVersion, (const pStrA)("SteamNetworkingUtils001"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamNetworkingUtils002"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamNetworkingUtils003"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)(STEAMNETWORKINGUTILS_INTERFACE_VERSION), True)
+		)
 			return (IpSteamNetworkingUtils)(&this->SteamNetworkingUtils);
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamNetworkingSockets"), True) != SizeOF_MAX)
+		if (
+			StrA_Cmp(pchVersion, (const pStrA)("SteamNetworkingSockets001"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamNetworkingSockets002"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamNetworkingSockets003"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamNetworkingSockets004"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamNetworkingSockets005"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamNetworkingSockets006"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamNetworkingSockets007"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamNetworkingSockets008"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamNetworkingSockets009"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamNetworkingSockets010"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamNetworkingSockets011"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)(STEAMNETWORKINGSOCKETS_INTERFACE_VERSION), True)
+		)
 			return (IpSteamNetworkingSockets)(&this->SteamNetworkingSockets);
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamNetworkingMessages"), True) != SizeOF_MAX)
+		if (
+			StrA_Cmp(pchVersion, (const pStrA)("SteamNetworkingMessages001"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)(STEAMNETWORKINGMESSAGES_INTERFACE_VERSION), True)
+		)
 			return (IpSteamNetworkingMessages)(&this->SteamNetworkingMessages);
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamNetworkingSocketsSerialized"), True) != SizeOF_MAX)
+		if (
+			StrA_Cmp(pchVersion, (const pStrA)("SteamNetworkingSocketsSerialized001"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)(STEAMNETWORKINGSOCKETSSERIALIZED_INTERFACE_VERSION), True)
+		)
 			return (IpSteamNetworkingSocketsSerialized)(&this->SteamNetworkingSocketsSerialized);
 
 	}
@@ -223,7 +352,20 @@ pVoid _SteamClient_::GetISteamGenericInterface(HSteamUser hSteamUser, HSteamPipe
 IpSteamUserStats _SteamClient_::GetISteamUserStats(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamUserStats"), True) != SizeOF_MAX) {
+		if (
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUSERSTATS_INTERFACE_VERSION001"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUSERSTATS_INTERFACE_VERSION002"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUSERSTATS_INTERFACE_VERSION003"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUSERSTATS_INTERFACE_VERSION004"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUSERSTATS_INTERFACE_VERSION005"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUSERSTATS_INTERFACE_VERSION006"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUSERSTATS_INTERFACE_VERSION007"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUSERSTATS_INTERFACE_VERSION008"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUSERSTATS_INTERFACE_VERSION009"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUSERSTATS_INTERFACE_VERSION010"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUSERSTATS_INTERFACE_VERSION011"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)(STEAMUSERSTATS_INTERFACE_VERSION), True)
+		) {
 			return (IpSteamUserStats)(&this->SteamUserStats);
 		}
 	}
@@ -235,7 +377,7 @@ IpSteamUserStats _SteamClient_::GetISteamUserStats(HSteamUser hSteamUser, HSteam
 IpSteamGameServerStats _SteamClient_::GetISteamGameServerStats(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamGameServerStats"), True) != SizeOF_MAX) {
+		if (StrA_Cmp(pchVersion, (const pStrA)(STEAMGAMESERVERSTATS_INTERFACE_VERSION), True)) {
 			return (IpSteamGameServerStats)(&this->SteamGameServerStats);
 		}
 	}
@@ -247,9 +389,22 @@ IpSteamGameServerStats _SteamClient_::GetISteamGameServerStats(HSteamUser hSteam
 IpSteamApps _SteamClient_::GetISteamApps(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamApps"), True) != SizeOF_MAX) {
-			return (IpSteamApps)(&this->SteamApps);
-		}
+		if (StrA_Cmp(pchVersion, (const pStrA)("STEAMAPPS_INTERFACE_VERSION001"), True))
+			return (IpSteamApps)((pVoid)((IpSteamApps001)(&this->SteamApps)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("STEAMAPPS_INTERFACE_VERSION002"), True))
+			return (IpSteamApps)((pVoid)((IpSteamApps002)(&this->SteamApps)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("STEAMAPPS_INTERFACE_VERSION003"), True))
+			return (IpSteamApps)((pVoid)((IpSteamApps003)(&this->SteamApps)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("STEAMAPPS_INTERFACE_VERSION004"), True))
+			return (IpSteamApps)((pVoid)((IpSteamApps004)(&this->SteamApps)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("STEAMAPPS_INTERFACE_VERSION005"), True))
+			return (IpSteamApps)((pVoid)((IpSteamApps005)(&this->SteamApps)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("STEAMAPPS_INTERFACE_VERSION006"), True))
+			return (IpSteamApps)((pVoid)((IpSteamApps006)(&this->SteamApps)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("STEAMAPPS_INTERFACE_VERSION007"), True))
+			return (IpSteamApps)((pVoid)((IpSteamApps007)(&this->SteamApps)));
+		if (StrA_Cmp(pchVersion, (const pStrA)(STEAMAPPS_INTERFACE_VERSION), True))
+			return (IpSteamApps)((pVoid)((IpSteamApps)(&this->SteamApps)));
 	}
 
 	return NULL;
@@ -259,7 +414,14 @@ IpSteamApps _SteamClient_::GetISteamApps(HSteamUser hSteamUser, HSteamPipe hStea
 IpSteamNetworking _SteamClient_::GetISteamNetworking(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamNetworking"), True) != SizeOF_MAX) {
+		if (
+			StrA_Cmp(pchVersion, (const pStrA)("SteamNetworking001"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamNetworking002"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamNetworking003"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamNetworking004"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamNetworking005"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)(STEAMNETWORKING_INTERFACE_VERSION), True)
+		) {
 			return (IpSteamNetworking)(&this->SteamNetworking);
 		}
 	}
@@ -271,7 +433,24 @@ IpSteamNetworking _SteamClient_::GetISteamNetworking(HSteamUser hSteamUser, HSte
 IpSteamRemoteStorage _SteamClient_::GetISteamRemoteStorage(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamRemoteStorage"), True) != SizeOF_MAX) {
+		if (
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMREMOTESTORAGE_INTERFACE_VERSION001"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMREMOTESTORAGE_INTERFACE_VERSION002"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMREMOTESTORAGE_INTERFACE_VERSION003"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMREMOTESTORAGE_INTERFACE_VERSION004"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMREMOTESTORAGE_INTERFACE_VERSION005"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMREMOTESTORAGE_INTERFACE_VERSION006"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMREMOTESTORAGE_INTERFACE_VERSION007"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMREMOTESTORAGE_INTERFACE_VERSION008"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMREMOTESTORAGE_INTERFACE_VERSION009"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMREMOTESTORAGE_INTERFACE_VERSION010"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMREMOTESTORAGE_INTERFACE_VERSION011"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMREMOTESTORAGE_INTERFACE_VERSION012"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMREMOTESTORAGE_INTERFACE_VERSION013"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMREMOTESTORAGE_INTERFACE_VERSION014"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMREMOTESTORAGE_INTERFACE_VERSION015"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)(STEAMREMOTESTORAGE_INTERFACE_VERSION), True)
+		) {
 			return (IpSteamRemoteStorage)(&this->SteamRemoteStorage);
 		}
 	}
@@ -283,7 +462,11 @@ IpSteamRemoteStorage _SteamClient_::GetISteamRemoteStorage(HSteamUser hSteamUser
 IpSteamScreenshots _SteamClient_::GetISteamScreenshots(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamScreenshots"), True) != SizeOF_MAX) {
+		if (
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMSCREENSHOTS_INTERFACE_VERSION001"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMSCREENSHOTS_INTERFACE_VERSION002"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)(STEAMSCREENSHOTS_INTERFACE_VERSION), True)
+			) {
 			return (IpSteamScreenshots)(&this->SteamScreenshots);
 		}
 	}
@@ -295,7 +478,7 @@ IpSteamScreenshots _SteamClient_::GetISteamScreenshots(HSteamUser hSteamUser, HS
 IpSteamGameSearch _SteamClient_::GetISteamGameSearch(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamGameSearch"), True) != SizeOF_MAX) {
+		if (StrA_Cmp(pchVersion, (const pStrA)(STEAMGAMESEARCH_INTERFACE_VERSION), True)) {
 			return (IpSteamGameSearch)(&this->SteamGameSearch);
 		}
 	}
@@ -331,7 +514,11 @@ Bool _SteamClient_::BShutdownIfAllPipesClosed() {
 IpSteamHTTP _SteamClient_::GetISteamHTTP(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamHTTP"), True) != SizeOF_MAX) {
+		if (
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMHTTP_INTERFACE_VERSION001"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMHTTP_INTERFACE_VERSION002"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)(STEAMHTTP_INTERFACE_VERSION), True)
+		) {
 			return (IpSteamHTTP)(&this->SteamHTTP);
 		}
 	}
@@ -343,7 +530,7 @@ IpSteamHTTP _SteamClient_::GetISteamHTTP(HSteamUser hSteamUser, HSteamPipe hStea
 IpSteamUnifiedMessages _SteamClient_::DEPRECATED_GetISteamUnifiedMessages(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamUnifiedMessages"), True) != SizeOF_MAX) {
+		if (StrA_Cmp(pchVersion, (const pStrA)(STEAMUNIFIEDMESSAGES_INTERFACE_VERSION), True)) {
 			return (IpSteamUnifiedMessages)(&this->SteamUnifiedMessages);
 		}
 	}
@@ -355,7 +542,16 @@ IpSteamUnifiedMessages _SteamClient_::DEPRECATED_GetISteamUnifiedMessages(HSteam
 IpSteamController _SteamClient_::GetISteamController(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamController"), True) != SizeOF_MAX) {
+		if (
+			StrA_Cmp(pchVersion, (const pStrA)("SteamController001"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamController002"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamController003"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamController004"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamController005"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamController006"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamController007"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)(STEAMCONTROLLER_INTERFACE_VERSION), True)
+		) {
 			return (IpSteamController)(&this->SteamController);
 		}
 	}
@@ -367,7 +563,25 @@ IpSteamController _SteamClient_::GetISteamController(HSteamUser hSteamUser, HSte
 IpSteamUGC _SteamClient_::GetISteamUGC(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamUGC"), True) != SizeOF_MAX) {
+		if (
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUGC_INTERFACE_VERSION001"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUGC_INTERFACE_VERSION002"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUGC_INTERFACE_VERSION003"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUGC_INTERFACE_VERSION004"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUGC_INTERFACE_VERSION005"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUGC_INTERFACE_VERSION006"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUGC_INTERFACE_VERSION007"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUGC_INTERFACE_VERSION008"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUGC_INTERFACE_VERSION009"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUGC_INTERFACE_VERSION010"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUGC_INTERFACE_VERSION011"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUGC_INTERFACE_VERSION012"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUGC_INTERFACE_VERSION013"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUGC_INTERFACE_VERSION014"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUGC_INTERFACE_VERSION015"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMUGC_INTERFACE_VERSION016"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)(STEAMUGC_INTERFACE_VERSION), True)
+		) {
 			return (IpSteamUGC)(&this->SteamUGC);
 		}
 	}
@@ -379,7 +593,7 @@ IpSteamUGC _SteamClient_::GetISteamUGC(HSteamUser hSteamUser, HSteamPipe hSteamP
 IpSteamAppList _SteamClient_::GetISteamAppList(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamAppList"), True) != SizeOF_MAX) {
+		if (StrA_Cmp(pchVersion, (const pStrA)(STEAMAPPLIST_INTERFACE_VERSION), True)) {
 			return (IpSteamAppList)(&this->SteamAppList);
 		}
 	}
@@ -391,7 +605,7 @@ IpSteamAppList _SteamClient_::GetISteamAppList(HSteamUser hSteamUser, HSteamPipe
 IpSteamMusic _SteamClient_::GetISteamMusic(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamMusic"), True) != SizeOF_MAX) {
+		if (StrA_Cmp(pchVersion, (const pStrA)(STEAMMUSIC_INTERFACE_VERSION), True)) {
 			return (IpSteamMusic)(&this->SteamMusic);
 		}
 	}
@@ -403,7 +617,7 @@ IpSteamMusic _SteamClient_::GetISteamMusic(HSteamUser hSteamUser, HSteamPipe hSt
 IpSteamMusicRemote _SteamClient_::GetISteamMusicRemote(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamMusicRemote"), True) != SizeOF_MAX) {
+		if (StrA_Cmp(pchVersion, (const pStrA)(STEAMMUSICREMOTE_INTERFACE_VERSION), True)) {
 			return (IpSteamMusicRemote)(&this->SteamMusicRemote);
 		}
 	}
@@ -415,7 +629,13 @@ IpSteamMusicRemote _SteamClient_::GetISteamMusicRemote(HSteamUser hSteamUser, HS
 IpSteamHTMLSurface _SteamClient_::GetISteamHTMLSurface(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamHTMLSurface"), True) != SizeOF_MAX) {
+		if (
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMHTMLSURFACE_INTERFACE_VERSION_001"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMHTMLSURFACE_INTERFACE_VERSION_002"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMHTMLSURFACE_INTERFACE_VERSION_003"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMHTMLSURFACE_INTERFACE_VERSION_004"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)(STEAMHTMLSURFACE_INTERFACE_VERSION), True)
+		) {
 			return (IpSteamHTMLSurface)(&this->SteamHTMLSurface);
 		}
 	}
@@ -445,7 +665,11 @@ void _SteamClient_::Set_SteamAPI_CCheckCallbackRegisteredInProcess(SteamAPI_Chec
 IpSteamInventory _SteamClient_::GetISteamInventory(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamInventory"), True) != SizeOF_MAX) {
+		if (
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMINVENTORY_INTERFACE_V001"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMINVENTORY_INTERFACE_V002"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)(STEAMINVENTORY_INTERFACE_VERSION), True)
+		) {
 			return (IpSteamInventory)(&this->SteamInventory);
 		}
 	}
@@ -457,7 +681,10 @@ IpSteamInventory _SteamClient_::GetISteamInventory(HSteamUser hSteamUser, HSteam
 IpSteamVideo _SteamClient_::GetISteamVideo(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamVideo"), True) != SizeOF_MAX) {
+		if (
+			StrA_Cmp(pchVersion, (const pStrA)("STEAMVIDEO_INTERFACE_V001"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)(STEAMVIDEO_INTERFACE_VERSION), True)
+		) {
 			return (IpSteamVideo)(&this->SteamVideo);
 		}
 	}
@@ -469,7 +696,7 @@ IpSteamVideo _SteamClient_::GetISteamVideo(HSteamUser hSteamUser, HSteamPipe hSt
 IpSteamParentalSettings _SteamClient_::GetISteamParentalSettings(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamParentalSettings"), True) != SizeOF_MAX) {
+		if (StrA_Cmp(pchVersion, (const pStrA)(STEAMPARENTALSETTINGS_INTERFACE_VERSION), True)) {
 			return (IpSteamParentalSettings)(&this->SteamParentalSettings);
 		}
 	}
@@ -481,7 +708,14 @@ IpSteamParentalSettings _SteamClient_::GetISteamParentalSettings(HSteamUser hSte
 IpSteamInput _SteamClient_::GetISteamInput(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamInput"), True) != SizeOF_MAX) {
+		if (
+			StrA_Cmp(pchVersion, (const pStrA)("SteamInput001"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamInput002"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamInput003"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamInput004"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)("SteamInput005"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)(STEAMINPUT_INTERFACE_VERSION), True)
+		) {
 			return (IpSteamInput)(&this->SteamInput);
 		}
 	}
@@ -493,7 +727,10 @@ IpSteamInput _SteamClient_::GetISteamInput(HSteamUser hSteamUser, HSteamPipe hSt
 IpSteamParties _SteamClient_::GetISteamParties(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamParties"), True) != SizeOF_MAX) {
+		if (
+			StrA_Cmp(pchVersion, (const pStrA)("SteamParties001"), True) ||
+			StrA_Cmp(pchVersion, (const pStrA)(STEAMPARTIES_INTERFACE_VERSION), True)
+		) {
 			return (IpSteamParties)(&this->SteamParties);
 		}
 	}
@@ -505,8 +742,30 @@ IpSteamParties _SteamClient_::GetISteamParties(HSteamUser hSteamUser, HSteamPipe
 IpSteamRemotePlay _SteamClient_::GetISteamRemotePlay(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (StrA_StrA(pchVersion, (const pStrA)("SteamRemotePlay"), True) != SizeOF_MAX) {
+		if (StrA_Cmp(pchVersion, (const pStrA)(STEAMREMOTEPLAY_INTERFACE_VERSION), True)) {
 			return (IpSteamRemotePlay)(&this->SteamRemotePlay);
+		}
+	}
+
+	return NULL;
+
+}
+
+IpSteamContentServer _SteamClient_::GetISteamContentServer(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
+	
+	if (pchVersion != NULL) {
+		return NULL;
+	}
+
+	return NULL;
+
+}
+
+IpSteamMasterServerUpdater _SteamClient_::GetISteamMasterServerUpdater(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
+	
+	if (pchVersion != NULL) {
+		if (StrA_Cmp(pchVersion, (const pStrA)(STEAMMASTERSERVERUPDATER_INTERFACE_VERSION), True)) {
+			return (IpSteamMasterServerUpdater)(&this->SteamMasterServerUpdater);
 		}
 	}
 

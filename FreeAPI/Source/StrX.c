@@ -185,7 +185,7 @@ _STR_X_API_ Bool __stdcall StrW_Cmp(
 
 		if (iCase == True) {
 
-			if (CharUpperW(((LPWSTR)(pchSrc[i]))) != CharUpperW(((LPWSTR)(pchSrc[i])))) {
+			if (CharUpperW(((LPWSTR)(pchCmp[i]))) != CharUpperW(((LPWSTR)(pchSrc[i])))) {
 				return False;
 			}
 
@@ -228,7 +228,7 @@ _STR_X_API_ Bool __stdcall StrA_Cmp(
 
 		if (iCase == True) {
 
-			if (CharUpperA(((LPSTR)(pchSrc[i]))) != CharUpperA(((LPSTR)(pchSrc[i])))) {
+			if (CharUpperA(((LPSTR)(pchCmp[i]))) != CharUpperA(((LPSTR)(pchSrc[i])))) {
 				return False;
 			}
 

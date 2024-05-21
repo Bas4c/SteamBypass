@@ -1,10 +1,13 @@
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
+#include <new>
 // -----------------------------------------------------------------------------
 #include "FreeAPI.Typedef.h"
 #include "CommonX.h"
 #include "StrX.h"
 // -----------------------------------------------------------------------------
+
+#include "IFreeAPI\SteamClient.h"
 
 #ifndef _FREE_API_
 	#ifdef __cplusplus
@@ -15,6 +18,8 @@
 #endif
 
 #pragma region .data
+
+pSteamClient g_SteamClientGameServer = NULL;
 
 pStrW g_pchModuleDirectory = NULL;
 pStrA g_pchModuleDirectoryUTF8 = NULL;
@@ -46,7 +51,39 @@ _FREE_API_ Bool WINAPI DllMain(
 				WideCharToMultiByteAlloc(g_pchModuleDirectory);
 
 			if (g_pchModuleDirectoryUTF8 != NULL) {
-				return TRUE;
+
+				pVoid pMemory = (pVoid)(HeapAlloc(
+					GetProcessHeap(), HEAP_ZERO_MEMORY,
+					sizeof(SteamClient)
+				));
+
+				if (pMemory != NULL) {
+
+					try {
+
+						pSteamClient pObject = new (pMemory) SteamClient();
+
+						if (pObject == pMemory) {
+							g_SteamClientGameServer = pObject;
+							return TRUE;
+						} else {
+							pObject->~_SteamClient_();
+						}
+
+					} catch (...) {
+
+					}
+
+					HeapFree(
+						GetProcessHeap(), 0U,
+						pMemory
+					);
+
+				}
+
+				LocalFree(g_pchModuleDirectoryUTF8);
+				g_pchModuleDirectoryUTF8 = NULL;
+
 			}
 
 			LocalFree(g_pchModuleDirectory);
@@ -68,6 +105,19 @@ _FREE_API_ Bool WINAPI DllMain(
 		if (g_pchModuleDirectoryUTF8 != NULL) {
 			LocalFree(g_pchModuleDirectoryUTF8);
 			g_pchModuleDirectoryUTF8 = NULL;
+		}
+
+		if (g_SteamClientGameServer != NULL) {
+
+			g_SteamClientGameServer->~_SteamClient_();
+
+			HeapFree(
+				GetProcessHeap(), 0U,
+				(pVoid)(g_SteamClientGameServer)
+			);
+
+			g_SteamClientGameServer = NULL;
+
 		}
 
 		return TRUE;
@@ -319,7 +369,39 @@ _FREE_API_ pVoid __cdecl SteamInternal_CreateInterface(
 		return NULL;
 	}
 
-	return NULL;
+	if (StrA_Cmp(pchVersion, (const pStrA)("SteamClient007"), True))
+		return (pVoid)((IpSteamClient007)(g_SteamClientGameServer));
+	if (StrA_Cmp(pchVersion, (const pStrA)("SteamClient008"), True))
+		return (pVoid)((IpSteamClient008)(g_SteamClientGameServer));
+	if (StrA_Cmp(pchVersion, (const pStrA)("SteamClient009"), True))
+		return (pVoid)((IpSteamClient009)(g_SteamClientGameServer));
+	if (StrA_Cmp(pchVersion, (const pStrA)("SteamClient010"), True))
+		return (pVoid)((IpSteamClient010)(g_SteamClientGameServer));
+	if (StrA_Cmp(pchVersion, (const pStrA)("SteamClient011"), True))
+		return (pVoid)((IpSteamClient011)(g_SteamClientGameServer));
+	if (StrA_Cmp(pchVersion, (const pStrA)("SteamClient012"), True))
+		return (pVoid)((IpSteamClient012)(g_SteamClientGameServer));
+	if (StrA_Cmp(pchVersion, (const pStrA)("SteamClient013"), True))
+		return (pVoid)((IpSteamClient013)(g_SteamClientGameServer));
+	if (StrA_Cmp(pchVersion, (const pStrA)("SteamClient014"), True))
+		return (pVoid)((IpSteamClient014)(g_SteamClientGameServer));
+	if (StrA_Cmp(pchVersion, (const pStrA)("SteamClient015"), True))
+		return (pVoid)((IpSteamClient015)(g_SteamClientGameServer));
+	if (StrA_Cmp(pchVersion, (const pStrA)("SteamClient016"), True))
+		return (pVoid)((IpSteamClient016)(g_SteamClientGameServer));
+	if (StrA_Cmp(pchVersion, (const pStrA)("SteamClient017"), True))
+		return (pVoid)((IpSteamClient017)(g_SteamClientGameServer));
+	if (StrA_Cmp(pchVersion, (const pStrA)("SteamClient018"), True))
+		return (pVoid)((IpSteamClient018)(g_SteamClientGameServer));
+	if (StrA_Cmp(pchVersion, (const pStrA)("SteamClient019"), True))
+		return (pVoid)((IpSteamClient019)(g_SteamClientGameServer));
+	if (StrA_Cmp(pchVersion, (const pStrA)(STEAMCLIENT_INTERFACE_VERSION), True))
+		return (pVoid)((IpSteamClient)(g_SteamClientGameServer));
+
+	return g_SteamClientGameServer->GetISteamGenericInterface(
+		k_HSteamUser_LocalUser, k_HSteamPipe_Client,
+		pchVersion
+	);
 
 }
 

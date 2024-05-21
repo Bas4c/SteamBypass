@@ -5,6 +5,144 @@
 
 #define k_cchAppProofOfPurchaseKeyMax ((Int32)(240))
 
+typedef class _ISteamApps001_ {
+public:
+
+	virtual Int32 GetAppData(AppId_t iAppId, const pStrA pchKey, pStrA pchValue, Int32 cchValueMax) = 0;
+
+} ISteamApps001, *IpSteamApps001;
+
+typedef class _ISteamApps002_ {
+public:
+
+	virtual Bool BIsSubscribed() = 0;
+	virtual Bool BIsLowViolence() = 0;
+	virtual Bool BIsCybercafe() = 0;
+	virtual Bool BIsVACBanned() = 0;
+	virtual const pStrA GetCurrentGameLanguage() = 0;
+	virtual const pStrA GetAvailableGameLanguages() = 0;
+	virtual Bool BIsSubscribedApp(AppId_t iAppId) = 0;
+
+} ISteamApps002, *IpSteamApps002;
+
+typedef class _ISteamApps003_ {
+public:
+
+	virtual Bool BIsSubscribed() = 0;
+	virtual Bool BIsLowViolence() = 0;
+	virtual Bool BIsCybercafe() = 0;
+	virtual Bool BIsVACBanned() = 0;
+	virtual const pStrA GetCurrentGameLanguage() = 0;
+	virtual const pStrA GetAvailableGameLanguages() = 0;
+	virtual Bool BIsSubscribedApp(AppId_t iAppId) = 0;
+	virtual Bool BIsDlcInstalled(AppId_t iAppId) = 0;
+
+} ISteamApps003, *IpSteamApps003;
+
+typedef class _ISteamApps004_ {
+public:
+
+	virtual Bool BIsSubscribed() = 0;
+	virtual Bool BIsLowViolence() = 0;
+	virtual Bool BIsCybercafe() = 0;
+	virtual Bool BIsVACBanned() = 0;
+	virtual const pStrA GetCurrentGameLanguage() = 0;
+	virtual const pStrA GetAvailableGameLanguages() = 0;
+	virtual Bool BIsSubscribedApp(AppId_t iAppId) = 0;
+	virtual Bool BIsDlcInstalled(AppId_t iAppId) = 0;
+	virtual Uint32 GetEarliestPurchaseUnixTime(AppId_t iAppId) = 0;
+	virtual Bool BIsSubscribedFromFreeWeekend() = 0;
+	virtual Int32 GetDLCCount() = 0;
+	virtual Bool BGetDLCDataByIndex(Int32 iDLC, pAppId_t pAppId, pBool pbAvailable, pStrA pchName, Int32 cchNameBufferSize) = 0;
+	virtual void InstallDLC(AppId_t iAppId) = 0;
+	virtual void UninstallDLC(AppId_t iAppId) = 0;
+
+} ISteamApps004, *IpSteamApps004;
+
+typedef class _ISteamApps005_ {
+public:
+
+	virtual Bool BIsSubscribed() = 0;
+	virtual Bool BIsLowViolence() = 0;
+	virtual Bool BIsCybercafe() = 0;
+	virtual Bool BIsVACBanned() = 0;
+	virtual const pStrA GetCurrentGameLanguage() = 0;
+	virtual const pStrA GetAvailableGameLanguages() = 0;
+	virtual Bool BIsSubscribedApp(AppId_t iAppId) = 0;
+	virtual Bool BIsDlcInstalled(AppId_t iAppId) = 0;
+	virtual Uint32 GetEarliestPurchaseUnixTime(AppId_t iAppId) = 0;
+	virtual Bool BIsSubscribedFromFreeWeekend() = 0;
+	virtual Int32 GetDLCCount() = 0;
+	virtual Bool BGetDLCDataByIndex(Int32 iDLC, pAppId_t pAppId, pBool pbAvailable, pStrA pchName, Int32 cchNameBufferSize) = 0;
+	virtual void InstallDLC(AppId_t iAppId) = 0;
+	virtual void UninstallDLC(AppId_t iAppId) = 0;
+	virtual void RequestAppProofOfPurchaseKey(AppId_t iAppId) = 0;
+	virtual Bool GetCurrentBetaName(pStrA pchName, Int32 cchNameBufferSize) = 0;
+	virtual Bool MarkContentCorrupt(Bool bMissingFilesOnly) = 0;
+	virtual Uint32 GetInstalledDepots(AppId_t AppId, pDepotId_t pvecDepots, Uint32 cMaxDepots) = 0;
+	virtual Uint32 GetAppInstallDir(AppId_t AppId, pStrA pchFolder, Uint32 cchFolderBufferSize) = 0;
+	virtual Bool BIsAppInstalled(AppId_t AppId) = 0;
+
+} ISteamApps005, *IpSteamApps005;
+
+typedef class _ISteamApps006_ {
+public:
+
+	virtual Bool BIsSubscribed() = 0;
+	virtual Bool BIsLowViolence() = 0;
+	virtual Bool BIsCybercafe() = 0;
+	virtual Bool BIsVACBanned() = 0;
+	virtual const pStrA GetCurrentGameLanguage() = 0;
+	virtual const pStrA GetAvailableGameLanguages() = 0;
+	virtual Bool BIsSubscribedApp(AppId_t iAppId) = 0;
+	virtual Bool BIsDlcInstalled(AppId_t iAppId) = 0;
+	virtual Uint32 GetEarliestPurchaseUnixTime(AppId_t iAppId) = 0;
+	virtual Bool BIsSubscribedFromFreeWeekend() = 0;
+	virtual Int32 GetDLCCount() = 0;
+	virtual Bool BGetDLCDataByIndex(Int32 iDLC, pAppId_t pAppId, pBool pbAvailable, pStrA pchName, Int32 cchNameBufferSize) = 0;
+	virtual void InstallDLC(AppId_t iAppId) = 0;
+	virtual void UninstallDLC(AppId_t iAppId) = 0;
+	virtual void RequestAppProofOfPurchaseKey(AppId_t iAppId) = 0;
+	virtual Bool GetCurrentBetaName(pStrA pchName, Int32 cchNameBufferSize) = 0;
+	virtual Bool MarkContentCorrupt(Bool bMissingFilesOnly) = 0;
+	virtual Uint32 GetInstalledDepots(AppId_t AppId, pDepotId_t pvecDepots, Uint32 cMaxDepots) = 0;
+	virtual Uint32 GetAppInstallDir(AppId_t AppId, pStrA pchFolder, Uint32 cchFolderBufferSize) = 0;
+	virtual Bool BIsAppInstalled(AppId_t AppId) = 0;
+	virtual SteamId_t GetAppOwner() = 0;
+	virtual const pStrA GetLaunchQueryParam(const pStrA pchKey) = 0;
+
+} ISteamApps006, *IpSteamApps006;
+
+typedef class _ISteamApps007_ {
+public:
+
+	virtual Bool BIsSubscribed() = 0;
+	virtual Bool BIsLowViolence() = 0;
+	virtual Bool BIsCybercafe() = 0;
+	virtual Bool BIsVACBanned() = 0;
+	virtual const pStrA GetCurrentGameLanguage() = 0;
+	virtual const pStrA GetAvailableGameLanguages() = 0;
+	virtual Bool BIsSubscribedApp(AppId_t iAppId) = 0;
+	virtual Bool BIsDlcInstalled(AppId_t iAppId) = 0;
+	virtual Uint32 GetEarliestPurchaseUnixTime(AppId_t iAppId) = 0;
+	virtual Bool BIsSubscribedFromFreeWeekend() = 0;
+	virtual Int32 GetDLCCount() = 0;
+	virtual Bool BGetDLCDataByIndex(Int32 iDLC, pAppId_t pAppId, pBool pbAvailable, pStrA pchName, Int32 cchNameBufferSize) = 0;
+	virtual void InstallDLC(AppId_t iAppId) = 0;
+	virtual void UninstallDLC(AppId_t iAppId) = 0;
+	virtual void RequestAppProofOfPurchaseKey(AppId_t iAppId) = 0;
+	virtual Bool GetCurrentBetaName(pStrA pchName, Int32 cchNameBufferSize) = 0;
+	virtual Bool MarkContentCorrupt(Bool bMissingFilesOnly) = 0; 
+	virtual Uint32 GetInstalledDepots(AppId_t AppId, pDepotId_t pvecDepots, Uint32 cMaxDepots) = 0;
+	virtual Uint32 GetAppInstallDir(AppId_t AppId, pStrA pchFolder, Uint32 cchFolderBufferSize) = 0;
+	virtual Bool BIsAppInstalled(AppId_t AppId) = 0;
+	virtual SteamId_t GetAppOwner() = 0;
+	virtual const pStrA GetLaunchQueryParam(const pStrA pchKey) = 0;
+	virtual Bool GetDlcDownloadProgress(AppId_t iAppId, pUint64 pnBytesDownloaded, pUint64 pnBytesTotal) = 0;
+	virtual Int32 GetAppBuildId() = 0;
+
+} ISteamApps007, *IpSteamApps007;
+
 // -----------------------------------------------------------------------------
 // Purpose: Interface to app data
 // -----------------------------------------------------------------------------
