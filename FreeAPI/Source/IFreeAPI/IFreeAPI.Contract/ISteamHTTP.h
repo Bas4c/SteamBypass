@@ -9,6 +9,58 @@ typedef Uint32 HTTPRequestHandle, *pHTTPRequestHandle;
 typedef Uint32 HTTPCookieContainerHandle, *pHTTPCookieContainerHandle;
 #define k_HTTPCookieContainerHandle_Invalid ((HTTPRequestHandle)(0x00000000))
 
+typedef class _ISteamHTTP001_ {
+public:
+
+	virtual HTTPRequestHandle CreateHTTPRequest(EHTTPMethod eHTTPRequestMethod, const pStrA pchAbsoluteURL) = 0;
+	virtual Bool SetHTTPRequestContextValue(HTTPRequestHandle hRequest, Uint64 ContextValue) = 0;
+	virtual Bool SetHTTPRequestNetworkActivityTimeout(HTTPRequestHandle hRequest, Uint32 nTimeoutSeconds) = 0;
+	virtual Bool SetHTTPRequestHeaderValue(HTTPRequestHandle hRequest, const pStrA pchHeaderName, const pStrA pchHeaderValue) = 0;
+	virtual Bool SetHTTPRequestGetOrPostParameter(HTTPRequestHandle hRequest, const pStrA pchParamName, const pStrA pchParamValue) = 0;
+	virtual Bool SendHTTPRequest(HTTPRequestHandle hRequest, pSteamAPICall_t hCall) = 0;
+	virtual Bool DeferHTTPRequest(HTTPRequestHandle hRequest) = 0;
+	virtual Bool PrioritizeHTTPRequest(HTTPRequestHandle hRequest) = 0;
+	virtual Bool GetHTTPResponseHeaderSize(HTTPRequestHandle hRequest, const pStrA pchHeaderName, pUint32 pnResponseHeaderSize) = 0;
+	virtual Bool GetHTTPResponseHeaderValue(HTTPRequestHandle hRequest, const pStrA pchHeaderName, pUint8 pnHeaderValue, Uint32 nHeaderValue) = 0;
+	virtual Bool GetHTTPResponseBodySize(HTTPRequestHandle hRequest, pUint32 pnBodySize) = 0;
+	virtual Bool GetHTTPResponseBodyData(HTTPRequestHandle hRequest, pUint8 pnBodyData, Uint32 nBodyData) = 0;
+	virtual Bool ReleaseHTTPRequest(HTTPRequestHandle hRequest) = 0;
+	virtual Bool GetHTTPDownloadProgressPct(HTTPRequestHandle hRequest, pFloat pPercent) = 0;
+	virtual Bool SetHTTPRequestRawPostBody(HTTPRequestHandle hRequest, const pStrA pchContentType, pUint8 pbBody, Uint32 cbBody) = 0;
+
+} ISteamHTTP001, *IpSteamHTTP001;
+
+typedef class _ISteamHTTP002_ {
+public:
+
+	virtual HTTPRequestHandle CreateHTTPRequest(EHTTPMethod eHTTPRequestMethod, const pStrA pchAbsoluteURL) = 0;
+	virtual Bool SetHTTPRequestContextValue(HTTPRequestHandle hRequest, Uint64 ContextValue) = 0;
+	virtual Bool SetHTTPRequestNetworkActivityTimeout(HTTPRequestHandle hRequest, Uint32 nTimeoutSeconds) = 0;
+	virtual Bool SetHTTPRequestHeaderValue(HTTPRequestHandle hRequest, const pStrA pchHeaderName, const pStrA pchHeaderValue) = 0;
+	virtual Bool SetHTTPRequestGetOrPostParameter(HTTPRequestHandle hRequest, const pStrA pchParamName, const pStrA pchParamValue) = 0;
+	virtual Bool SendHTTPRequest(HTTPRequestHandle hRequest, pSteamAPICall_t hCall) = 0;
+	virtual Bool SendHTTPRequestAndStreamResponse(HTTPRequestHandle hRequest, pSteamAPICall_t hCall) = 0;
+	virtual Bool DeferHTTPRequest(HTTPRequestHandle hRequest) = 0;
+	virtual Bool PrioritizeHTTPRequest(HTTPRequestHandle hRequest) = 0;
+	virtual Bool GetHTTPResponseHeaderSize(HTTPRequestHandle hRequest, const pStrA pchHeaderName, pUint32 pnResponseHeaderSize) = 0;
+	virtual Bool GetHTTPResponseHeaderValue(HTTPRequestHandle hRequest, const pStrA pchHeaderName, pUint8 pnHeaderValue, Uint32 nHeaderValue) = 0;
+	virtual Bool GetHTTPResponseBodySize(HTTPRequestHandle hRequest, pUint32 pnBodySize) = 0;
+	virtual Bool GetHTTPResponseBodyData(HTTPRequestHandle hRequest, pUint8 pnBodyData, Uint32 nBodyData) = 0;
+	virtual Bool GetHTTPStreamingResponseBodyData(HTTPRequestHandle hRequest, Uint32 cOffset, pUint8 pnBodyData, Uint32 nBodyData) = 0;
+	virtual Bool ReleaseHTTPRequest(HTTPRequestHandle hRequest) = 0;
+	virtual Bool GetHTTPDownloadProgressPct(HTTPRequestHandle hRequest, pFloat pPercent) = 0;
+	virtual Bool SetHTTPRequestRawPostBody(HTTPRequestHandle hRequest, const pStrA pchContentType, pUint8 pbBody, Uint32 cbBody) = 0;
+	virtual HTTPCookieContainerHandle CreateCookieContainer(Bool bAllowResponsesToModify) = 0;
+	virtual Bool ReleaseCookieContainer(HTTPCookieContainerHandle hCookieContainer) = 0;
+	virtual Bool SetCookie(HTTPCookieContainerHandle hCookieContainer, const pStrA pchHost, const pStrA pchUrl, const pStrA pchCookie) = 0;
+	virtual Bool SetHTTPRequestCookieContainer(HTTPRequestHandle hRequest, HTTPCookieContainerHandle hCookieContainer) = 0;
+	virtual Bool SetHTTPRequestUserAgentInfo(HTTPRequestHandle hRequest, const pStrA pchUserAgentInfo) = 0;
+	virtual Bool SetHTTPRequestRequiresVerifiedCertificate(HTTPRequestHandle hRequest, Bool bRequireVerifiedCertificate) = 0;
+	virtual Bool SetHTTPRequestAbsoluteTimeoutMS(HTTPRequestHandle hRequest, Uint32 nMilliseconds) = 0;
+	virtual Bool GetHTTPRequestWasTimedOut(HTTPRequestHandle hRequest, pBool pbWasTimedOut) = 0;
+
+} ISteamHTTP002, *IpSteamHTTP002;
+
 // -----------------------------------------------------------------------------
 // Purpose: Interface to HTTP client
 // -----------------------------------------------------------------------------

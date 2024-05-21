@@ -32,6 +32,79 @@ typedef Int32 SteamInventoryResult_t, *pSteamInventoryResult_t;
 typedef Uint64 SteamInventoryUpdateHandle_t,*pSteamInventoryUpdateHandle_t;
 #define k_SteamInventoryUpdateHandle_Invalid ((SteamInventoryUpdateHandle_t)(0xFFFFFFFFFFFFFFFF))
 
+typedef class _ISteamInventory001_ {
+public:
+
+	virtual EResult GetResultStatus(SteamInventoryResult_t hSteamInventoryResult) = 0;
+	virtual Bool GetResultItems(SteamInventoryResult_t hSteamInventoryResult, pSteamItemDetails_t pSteamItemDetails, pUint32 pnItemsArraySize) = 0;
+	virtual Uint32 GetResultTimestamp(SteamInventoryResult_t hSteamInventoryResult) = 0;
+	virtual Bool CheckResultSteamId(SteamInventoryResult_t hSteamInventoryResult, SteamId_t SteamIdExpected) = 0;
+	virtual void DestroyResult(SteamInventoryResult_t hSteamInventoryResult) = 0;
+	virtual Bool GetAllItems(pSteamInventoryResult_t phSteamInventoryResult) = 0;
+	virtual Bool GetItemsById(pSteamInventoryResult_t phSteamInventoryResult, const pSteamItemInstanceId_t pSteamItemInstanceId, Uint32 nCountSteamItemInstanceId) = 0;
+	virtual Bool SerializeResult(SteamInventoryResult_t hSteamInventoryResult, pVoid pvData, pUint32 pnData) = 0;
+	virtual Bool DeserializeResult(pSteamInventoryResult_t pOuthSteamInventoryResult, const pVoid pvData, Uint32 nData, Bool bRESERVED_MUST_BE_FALSE) = 0;
+	virtual Bool GenerateItems(pSteamInventoryResult_t phSteamInventoryResult, const pSteamSteamItemDef_t pArraySteamItemDef, const pUint32 pnArrayQuantity, Uint32 nArrayLength) = 0;
+	virtual Bool GrantPromoItems(pSteamInventoryResult_t phSteamInventoryResult) = 0;
+	virtual Bool AddPromoItem(pSteamInventoryResult_t phSteamInventoryResult, SteamSteamItemDef_t SteamSteamItemDef) = 0;
+	virtual Bool AddPromoItems(pSteamInventoryResult_t phSteamInventoryResult, const pSteamSteamItemDef_t pArraySteamItemDef, Uint32 nArrayLength) = 0;
+	virtual Bool ConsumeItem(pSteamInventoryResult_t phSteamInventoryResult, SteamItemInstanceId_t ComsumeItemId, Uint32 nQuantity) = 0;
+	virtual Bool ExchangeItems(pSteamInventoryResult_t phSteamInventoryResult, const pSteamSteamItemDef_t pArrayGenerate, const pUint32 pnArrayGenerateQuantity, Uint32 nArrayGenerateLength, const pSteamItemInstanceId_t pArrayDestroy, const pUint32 pnArrayDestroyQuantity, Uint32 nArrayDestroyLength) = 0;
+	virtual Bool TransferItemQuantity(pSteamInventoryResult_t phSteamInventoryResult, SteamItemInstanceId_t SteamItemInstanceIdSource, Uint32 nQuantity, SteamItemInstanceId_t SteamItemInstanceIdDest) = 0;
+	virtual void SendItemDropHeartbeat() = 0;
+	virtual Bool TriggerItemDrop(pSteamInventoryResult_t phSteamInventoryResult, SteamSteamItemDef_t DropListDefinition) = 0;
+	virtual Bool TradeItems(pSteamInventoryResult_t phSteamInventoryResult, SteamId_t SteamIdTradePartner, const pSteamItemInstanceId_t pArrayGive, const pUint32 pArrayGiveQuantity, Uint32 nArrayGiveLength, pSteamItemInstanceId_t pArrayGet, const pUint32 pArrayGetQuantity, Uint32 nArrayGetLength) = 0;
+	virtual Bool LoadSteamItemDefinitions() = 0;
+	virtual Bool GetSteamItemDefinitionIds(pSteamSteamItemDef_t pSteamItemDefId, pUint32 pnSteamItemDefIdsArraySize) = 0;
+	virtual Bool GetSteamItemDefinitionProperty(SteamSteamItemDef_t SteamSteamItemDef, const pStrA pchPropertyName, pStrA pchValue, pUint32 pnValueSize) = 0;
+	virtual SteamAPICall_t RequestEligiblePromoSteamItemDefinitionsIds(SteamId_t SteamId) = 0;
+	virtual Bool GetEligiblePromoSteamItemDefinitionIds(SteamId_t SteamId, pSteamSteamItemDef_t pSteamItemDefId, pUint32 pnSteamItemDefIdArraySize) = 0;
+
+} ISteamInventory001, *IpSteamInventory001;
+
+typedef class _ISteamInventory002_ {
+public:
+
+	virtual EResult GetResultStatus(SteamInventoryResult_t hSteamInventoryResult) = 0;
+	virtual Bool GetResultItems(SteamInventoryResult_t hSteamInventoryResult, pSteamItemDetails_t pSteamItemDetails, pUint32 pnItemsArraySize) = 0;
+	virtual Bool GetResultItemProperty(SteamInventoryResult_t hSteamInventoryResult, Uint32 iItem, const pStrA pchPropertyName, pStrA pchValue, pUint32 pnValueSize) = 0;
+	virtual Uint32 GetResultTimestamp(SteamInventoryResult_t hSteamInventoryResult) = 0;
+	virtual Bool CheckResultSteamId(SteamInventoryResult_t hSteamInventoryResult, SteamId_t SteamIdExpected) = 0;
+	virtual void DestroyResult(SteamInventoryResult_t hSteamInventoryResult) = 0;
+	virtual Bool GetAllItems(pSteamInventoryResult_t phSteamInventoryResult) = 0;
+	virtual Bool GetItemsById(pSteamInventoryResult_t phSteamInventoryResult, const pSteamItemInstanceId_t pSteamItemInstanceId, Uint32 nCountSteamItemInstanceId) = 0;
+	virtual Bool SerializeResult(SteamInventoryResult_t hSteamInventoryResult, pVoid pvData, pUint32 pnData) = 0;
+	virtual Bool DeserializeResult(pSteamInventoryResult_t pOuthSteamInventoryResult, const pVoid pvData, Uint32 nData, Bool bRESERVED_MUST_BE_FALSE) = 0;
+	virtual Bool GenerateItems(pSteamInventoryResult_t phSteamInventoryResult, const pSteamSteamItemDef_t pArraySteamItemDef, const pUint32 pnArrayQuantity, Uint32 nArrayLength) = 0;
+	virtual Bool GrantPromoItems(pSteamInventoryResult_t phSteamInventoryResult) = 0;
+	virtual Bool AddPromoItem(pSteamInventoryResult_t phSteamInventoryResult, SteamSteamItemDef_t SteamSteamItemDef) = 0;
+	virtual Bool AddPromoItems(pSteamInventoryResult_t phSteamInventoryResult, const pSteamSteamItemDef_t pArraySteamItemDef, Uint32 nArrayLength) = 0;
+	virtual Bool ConsumeItem(pSteamInventoryResult_t phSteamInventoryResult, SteamItemInstanceId_t ComsumeItemId, Uint32 nQuantity) = 0;
+	virtual Bool ExchangeItems(pSteamInventoryResult_t phSteamInventoryResult, const pSteamSteamItemDef_t pArrayGenerate, const pUint32 pnArrayGenerateQuantity, Uint32 nArrayGenerateLength, const pSteamItemInstanceId_t pArrayDestroy, const pUint32 pnArrayDestroyQuantity, Uint32 nArrayDestroyLength) = 0;
+	virtual Bool TransferItemQuantity(pSteamInventoryResult_t phSteamInventoryResult, SteamItemInstanceId_t SteamItemInstanceIdSource, Uint32 nQuantity, SteamItemInstanceId_t SteamItemInstanceIdDest) = 0;
+	virtual void SendItemDropHeartbeat() = 0;
+	virtual Bool TriggerItemDrop(pSteamInventoryResult_t phSteamInventoryResult, SteamSteamItemDef_t DropListDefinition) = 0;
+	virtual Bool TradeItems(pSteamInventoryResult_t phSteamInventoryResult, SteamId_t SteamIdTradePartner, const pSteamItemInstanceId_t pArrayGive, const pUint32 pArrayGiveQuantity, Uint32 nArrayGiveLength, pSteamItemInstanceId_t pArrayGet, const pUint32 pArrayGetQuantity, Uint32 nArrayGetLength) = 0;
+	virtual Bool LoadSteamItemDefinitions() = 0;
+	virtual Bool GetSteamItemDefinitionIds(pSteamSteamItemDef_t pSteamItemDefId, pUint32 pnSteamItemDefIdsArraySize) = 0;
+	virtual Bool GetSteamItemDefinitionProperty(SteamSteamItemDef_t SteamSteamItemDef, const pStrA pchPropertyName, pStrA pchValue, pUint32 pnValueSize) = 0;
+	virtual SteamAPICall_t RequestEligiblePromoSteamItemDefinitionsIds(SteamId_t SteamId) = 0;
+	virtual Bool GetEligiblePromoSteamItemDefinitionIds(SteamId_t SteamId, pSteamSteamItemDef_t pSteamItemDefId, pUint32 pnSteamItemDefIdArraySize) = 0;
+	virtual SteamAPICall_t StartPurchase(const pSteamSteamItemDef_t pArraySteamItemDefs, const pUint32 punArrayQuantity, Uint32 nArrayLength) = 0;
+	virtual SteamAPICall_t RequestPrices() = 0;
+	virtual Uint32 GetNumItemsWithPrices() = 0;
+	virtual Bool GetItemsWithPrices(pSteamSteamItemDef_t pArraySteamItemDefs, pUint64 pCurrentPrices, pUint64 pBasePrices, Uint32 nArrayLength) = 0;
+	virtual Bool GetItemPrice(SteamSteamItemDef_t SteamSteamItemDef, pUint64 pCurrentPrice, pUint64 pBasePrice) = 0;
+	virtual SteamInventoryUpdateHandle_t StartUpdateProperties() = 0;
+	virtual Bool RemoveProperty(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, SteamItemInstanceId_t nItemId, const pStrA pchPropertyName) = 0;
+	virtual Bool SetProperty(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, SteamItemInstanceId_t nItemId, const pStrA pchPropertyName, const pStrA pchPropertyValue) = 0;
+	virtual Bool SetProperty(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, SteamItemInstanceId_t nItemId, const pStrA pchPropertyName, Bool bValue) = 0;
+	virtual Bool SetProperty(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, SteamItemInstanceId_t nItemId, const pStrA pchPropertyName, Int64 Value) = 0;
+	virtual Bool SetProperty(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, SteamItemInstanceId_t nItemId, const pStrA pchPropertyName, Float Value) = 0;
+	virtual Bool SubmitUpdateProperties(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, pSteamInventoryResult_t phSteamInventoryResult) = 0;
+
+} ISteamInventory002, *IpSteamInventory002;
+
 // -----------------------------------------------------------------------------
 // Purpose: Steam Inventory query and manipulation API
 // -----------------------------------------------------------------------------
@@ -71,7 +144,7 @@ public:
 	virtual Bool LoadSteamItemDefinitions() = 0;
 	virtual Bool GetSteamItemDefinitionIds(/* [out] */ pSteamSteamItemDef_t pSteamItemDefId, pUint32 pnSteamItemDefIdsArraySize) = 0;
 
-	virtual Bool GetSteamItemDefinitionProperty(SteamSteamItemDef_t SteamSteamItemDef, const pStrA pchPropertyName, /* [out] */ pStrA pchValue, /* [in\out] */ pUint32 pnValueSize) = 0;
+	virtual Bool GetSteamItemDefinitionProperty(SteamSteamItemDef_t SteamSteamItemDef, const pStrA pchPropertyName, /* [out] */ pStrA pchValue, /* [in/out] */ pUint32 pnValueSize) = 0;
 	virtual SteamAPICall_t RequestEligiblePromoSteamItemDefinitionsIds(SteamId_t SteamId) = 0;
 	virtual Bool GetEligiblePromoSteamItemDefinitionIds(SteamId_t SteamId, /* [out] */ pSteamSteamItemDef_t pSteamItemDefId, /* [in/out] */ pUint32 pnSteamItemDefIdArraySize) = 0;
 	virtual SteamAPICall_t StartPurchase(const pSteamSteamItemDef_t pArraySteamItemDefs, const pUint32 punArrayQuantity, Uint32 nArrayLength) = 0;

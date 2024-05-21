@@ -521,13 +521,12 @@ Bool _SteamClient_::BShutdownIfAllPipesClosed() {
 IpSteamHTTP _SteamClient_::GetISteamHTTP(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (
-			StrA_Cmp(pchVersion, (const pStrA)("STEAMHTTP_INTERFACE_VERSION001"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("STEAMHTTP_INTERFACE_VERSION002"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)(STEAMHTTP_INTERFACE_VERSION), True)
-		) {
+		if (StrA_Cmp(pchVersion, (const pStrA)("STEAMHTTP_INTERFACE_VERSION001"), True))
+			return (IpSteamHTTP)((pVoid)((IpSteamHTTP001)(&this->SteamHTTP)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("STEAMHTTP_INTERFACE_VERSION002"), True))
+			return (IpSteamHTTP)((pVoid)((IpSteamHTTP002)(&this->SteamHTTP)));
+		if (StrA_Cmp(pchVersion, (const pStrA)(STEAMHTTP_INTERFACE_VERSION), True))
 			return (IpSteamHTTP)(&this->SteamHTTP);
-		}
 	}
 
 	return NULL;
@@ -677,13 +676,12 @@ void _SteamClient_::Set_SteamAPI_CCheckCallbackRegisteredInProcess(SteamAPI_Chec
 IpSteamInventory _SteamClient_::GetISteamInventory(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (
-			StrA_Cmp(pchVersion, (const pStrA)("STEAMINVENTORY_INTERFACE_V001"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("STEAMINVENTORY_INTERFACE_V002"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)(STEAMINVENTORY_INTERFACE_VERSION), True)
-		) {
+		if (StrA_Cmp(pchVersion, (const pStrA)("STEAMINVENTORY_INTERFACE_V001"), True))
+			return (IpSteamInventory)((pVoid)((IpSteamInventory001)(&this->SteamInventory)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("STEAMINVENTORY_INTERFACE_V002"), True))
+			return (IpSteamInventory)((pVoid)((IpSteamInventory002)(&this->SteamInventory)));
+		if (StrA_Cmp(pchVersion, (const pStrA)(STEAMINVENTORY_INTERFACE_VERSION), True))
 			return (IpSteamInventory)(&this->SteamInventory);
-		}
 	}
 
 	return NULL;
@@ -720,16 +718,14 @@ IpSteamParentalSettings _SteamClient_::GetISteamParentalSettings(HSteamUser hSte
 IpSteamInput _SteamClient_::GetISteamInput(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (
-			StrA_Cmp(pchVersion, (const pStrA)("SteamInput001"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamInput002"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamInput003"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamInput004"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamInput005"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)(STEAMINPUT_INTERFACE_VERSION), True)
-		) {
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamInput001"), True))
+			return (IpSteamInput)((pVoid)((IpSteamInput001)(&this->SteamInput)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamInput002"), True))
+			return (IpSteamInput)((pVoid)((IpSteamInput002)(&this->SteamInput)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamInput005"), True))
+			return (IpSteamInput)((pVoid)((IpSteamInput005)(&this->SteamInput)));
+		if (StrA_Cmp(pchVersion, (const pStrA)(STEAMINPUT_INTERFACE_VERSION), True))
 			return (IpSteamInput)(&this->SteamInput);
-		}
 	}
 
 	return NULL;

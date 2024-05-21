@@ -762,6 +762,141 @@ typedef struct _ScePadTriggerEffect_ {
 
 typedef void (*SteamInputActionEventCallback) (pSteamInputActionEvent_t pSteamInputActionEvent);
 
+typedef class _ISteamInput001_ {
+public:
+
+	virtual Bool Init(Bool bExplicitlyCallRunFrame) = 0;
+	virtual Bool Shutdown() = 0;
+	virtual void RunFrame(Bool bReservedValue) = 0;
+	virtual Int32 GetConnectedControllers(pInputHandle_t hController) = 0;
+	virtual InputActionSetHandle_t GetActionSetHandle(const pStrA pszActionSetName) = 0;
+	virtual void ActivateActionSet(InputHandle_t hController, InputActionSetHandle_t hActionSet) = 0;
+	virtual InputActionSetHandle_t GetCurrentActionSet(InputHandle_t hController) = 0;
+	virtual void ActivateActionSetLayer(InputHandle_t hController, InputActionSetHandle_t hActionSetLayer) = 0;
+	virtual void DeactivateActionSetLayer(InputHandle_t hController, InputActionSetHandle_t hActionSetLayer) = 0;
+	virtual void DeactivateAllActionSetLayers(InputHandle_t hController) = 0;
+	virtual Int32 GetActiveActionSetLayers(InputHandle_t hController, pInputActionSetHandle_t phController) = 0;
+	virtual InputDigitalActionHandle_t GetDigitalActionHandle(const pStrA pszActionName) = 0;
+	virtual InputDigitalActionData_t GetDigitalActionData(InputHandle_t hController, InputDigitalActionHandle_t hDigitalAction) = 0;
+	virtual Int32 GetDigitalActionOrigins(InputHandle_t hController, InputActionSetHandle_t hActionSet, InputDigitalActionHandle_t hDigitalAction, pEInputActionOrigin peInputActionOrigin) = 0;
+	virtual InputAnalogActionHandle_t GetAnalogActionHandle(const pStrA pszActionName) = 0;
+	virtual InputAnalogActionData_t GetAnalogActionData(InputHandle_t hController, InputAnalogActionHandle_t hAnalogAction) = 0;
+	virtual Int32 GetAnalogActionOrigins(InputHandle_t hController, InputActionSetHandle_t hActionSet, InputAnalogActionHandle_t hAnalogAction, pEInputActionOrigin peInputActionOrigin) = 0;
+	virtual const pStrA GetGlyphForActionOrigin_Legacy(EInputActionOrigin eInputActionOrigin) = 0;
+	virtual const pStrA GetStringForActionOrigin(EInputActionOrigin eInputActionOrigin) = 0;
+	virtual void StopAnalogActionMomentum(InputHandle_t hController, InputAnalogActionHandle_t hAnalogAction) = 0;
+	virtual InputMotionData_t GetMotionData(InputHandle_t hController) = 0;
+	virtual void TriggerVibration(InputHandle_t hController, Uint16 LeftSpeed, Uint16 RightSpeed) = 0;
+	virtual void SetLEDColor(InputHandle_t hController, Uint8 nColorR, Uint8 nColorG, Uint8 nColorB, Uint32 nFlags) = 0;
+	virtual void Legacy_TriggerHapticPulse(InputHandle_t hController, ESteamControllerPad eTargetPad, Uint16 DurationMicroSeconds) = 0;
+	virtual void Legacy_TriggerRepeatedHapticPulse(InputHandle_t hController, ESteamControllerPad eTargetPad, Uint16 DurationMicroSeconds, Uint16 OffMicroSeconds, Uint16 nRepeat, Uint32 nFlags) = 0;
+	virtual Bool ShowBindingPanel(InputHandle_t hController) = 0;
+	virtual ESteamInputType GetInputTypeForHandle(InputHandle_t hController) = 0;
+	virtual InputHandle_t GetControllerForGamepadIndex(Int32 nIndex) = 0;
+	virtual Int32 GetGamepadIndexForController(InputHandle_t hController) = 0;
+	virtual const pStrA GetStringForXboxOrigin(EXboxOrigin eXboxOrigin) = 0;
+	virtual const pStrA GetGlyphForXboxOrigin(EXboxOrigin eXboxOrigin) = 0;
+	virtual EInputActionOrigin GetActionOriginFromXboxOrigin(InputHandle_t hController, EXboxOrigin eXboxOrigin) = 0;
+	virtual EInputActionOrigin TranslateActionOrigin(ESteamInputType eDestinationInputType, EInputActionOrigin eSourceXboxOrigin) = 0;
+	virtual Bool GetDeviceBindingRevision(InputHandle_t hController, pInt32 pMajor, pInt32 pMinor) = 0;
+	virtual Uint32 GetRemotePlaySessionID(InputHandle_t hController) = 0;
+
+} ISteamInput001, *IpSteamInput001;
+
+typedef class _ISteamInput002_ {
+public:
+
+	virtual Bool Init(Bool bExplicitlyCallRunFrame) = 0;
+	virtual Bool Shutdown() = 0;
+	virtual void RunFrame(Bool bReservedValue) = 0;
+	virtual Int32 GetConnectedControllers(pInputHandle_t hController) = 0;
+	virtual InputActionSetHandle_t GetActionSetHandle(const pStrA pszActionSetName) = 0;
+	virtual void ActivateActionSet(InputHandle_t hController, InputActionSetHandle_t hActionSet) = 0;
+	virtual InputActionSetHandle_t GetCurrentActionSet(InputHandle_t hController) = 0;
+	virtual void ActivateActionSetLayer(InputHandle_t hController, InputActionSetHandle_t hActionSetLayer) = 0;
+	virtual void DeactivateActionSetLayer(InputHandle_t hController, InputActionSetHandle_t hActionSetLayer) = 0;
+	virtual void DeactivateAllActionSetLayers(InputHandle_t hController) = 0;
+	virtual Int32 GetActiveActionSetLayers(InputHandle_t hController, pInputActionSetHandle_t phController) = 0;
+	virtual InputDigitalActionHandle_t GetDigitalActionHandle(const pStrA pszActionName) = 0;
+	virtual InputDigitalActionData_t GetDigitalActionData(InputHandle_t hController, InputDigitalActionHandle_t hDigitalAction) = 0;
+	virtual Int32 GetDigitalActionOrigins(InputHandle_t hController, InputActionSetHandle_t hActionSet, InputDigitalActionHandle_t hDigitalAction, pEInputActionOrigin peInputActionOrigin) = 0;
+	virtual InputAnalogActionHandle_t GetAnalogActionHandle(const pStrA pszActionName) = 0;
+	virtual InputAnalogActionData_t GetAnalogActionData(InputHandle_t hController, InputAnalogActionHandle_t hAnalogAction) = 0;
+	virtual Int32 GetAnalogActionOrigins(InputHandle_t hController, InputActionSetHandle_t hActionSet, InputAnalogActionHandle_t hAnalogAction, pEInputActionOrigin peInputActionOrigin) = 0;
+	virtual const pStrA GetGlyphForActionOrigin_Legacy(EInputActionOrigin eInputActionOrigin) = 0;
+	virtual const pStrA GetStringForActionOrigin(EInputActionOrigin eInputActionOrigin) = 0;
+	virtual void StopAnalogActionMomentum(InputHandle_t hController, InputAnalogActionHandle_t hAnalogAction) = 0;
+	virtual InputMotionData_t GetMotionData(InputHandle_t hController) = 0;
+	virtual void TriggerVibration(InputHandle_t hController, Uint16 LeftSpeed, Uint16 RightSpeed) = 0;
+	virtual void SetLEDColor(InputHandle_t hController, Uint8 nColorR, Uint8 nColorG, Uint8 nColorB, Uint32 nFlags) = 0;
+	virtual void Legacy_TriggerHapticPulse(InputHandle_t hController, ESteamControllerPad eTargetPad, Uint16 DurationMicroSeconds) = 0;
+	virtual void Legacy_TriggerRepeatedHapticPulse(InputHandle_t hController, ESteamControllerPad eTargetPad, Uint16 DurationMicroSeconds, Uint16 OffMicroSeconds, Uint16 nRepeat, Uint32 nFlags) = 0;
+	virtual Bool ShowBindingPanel(InputHandle_t hController) = 0;
+	virtual ESteamInputType GetInputTypeForHandle(InputHandle_t hController) = 0;
+	virtual InputHandle_t GetControllerForGamepadIndex(Int32 nIndex) = 0;
+	virtual Int32 GetGamepadIndexForController(InputHandle_t hController) = 0;
+	virtual const pStrA GetStringForXboxOrigin(EXboxOrigin eXboxOrigin) = 0;
+	virtual const pStrA GetGlyphForXboxOrigin(EXboxOrigin eXboxOrigin) = 0;
+	virtual EInputActionOrigin GetActionOriginFromXboxOrigin(InputHandle_t hController, EXboxOrigin eXboxOrigin) = 0;
+	virtual EInputActionOrigin TranslateActionOrigin(ESteamInputType eDestinationInputType, EInputActionOrigin eSourceXboxOrigin) = 0;
+	virtual Bool GetDeviceBindingRevision(InputHandle_t hController, pInt32 pMajor, pInt32 pMinor) = 0;
+	virtual Uint32 GetRemotePlaySessionID(InputHandle_t hController) = 0;
+
+} ISteamInput002, *IpSteamInput002;
+
+typedef class _ISteamInput005_ {
+public:
+
+	virtual Bool Init(Bool bExplicitlyCallRunFrame) = 0;
+	virtual Bool Shutdown() = 0;
+	virtual Bool SetInputActionManifestFilePath(const pStrA pchInputActionManifestAbsolutePath) = 0;
+	virtual void RunFrame(Bool bReservedValue) = 0;
+	virtual Bool BWaitForData(Bool bWaitForever, Uint32 Timeout) = 0;
+	virtual Bool BNewDataAvailable() = 0;
+	virtual Int32 GetConnectedControllers(pInputHandle_t hController) = 0;
+	virtual void EnableDeviceCallbacks() = 0;
+	virtual void EnableActionEventCallbacks(SteamInputActionEventCallback pFunction) = 0;
+	virtual InputActionSetHandle_t GetActionSetHandle(const pStrA pszActionSetName) = 0;
+	virtual void ActivateActionSet(InputHandle_t hController, InputActionSetHandle_t hActionSet) = 0;
+	virtual InputActionSetHandle_t GetCurrentActionSet(InputHandle_t hController) = 0;
+	virtual void ActivateActionSetLayer(InputHandle_t hController, InputActionSetHandle_t hActionSetLayer) = 0;
+	virtual void DeactivateActionSetLayer(InputHandle_t hController, InputActionSetHandle_t hActionSetLayer) = 0;
+	virtual void DeactivateAllActionSetLayers(InputHandle_t hController) = 0;
+	virtual Int32 GetActiveActionSetLayers(InputHandle_t hController, pInputActionSetHandle_t phController) = 0;
+	virtual InputDigitalActionHandle_t GetDigitalActionHandle(const pStrA pszActionName) = 0;
+	virtual InputDigitalActionData_t GetDigitalActionData(InputHandle_t hController, InputDigitalActionHandle_t hDigitalAction) = 0;
+	virtual Int32 GetDigitalActionOrigins(InputHandle_t hController, InputActionSetHandle_t hActionSet, InputDigitalActionHandle_t hDigitalAction, pEInputActionOrigin peInputActionOrigin) = 0;
+	virtual const pStrA GetStringForDigitalActionName(InputDigitalActionHandle_t hDigitalAction) = 0;
+	virtual InputAnalogActionHandle_t GetAnalogActionHandle(const pStrA pszActionName) = 0;
+	virtual InputAnalogActionData_t GetAnalogActionData(InputHandle_t hController, InputAnalogActionHandle_t hAnalogAction) = 0;
+	virtual Int32 GetAnalogActionOrigins(InputHandle_t hController, InputActionSetHandle_t hActionSet, InputAnalogActionHandle_t hAnalogAction, pEInputActionOrigin peInputActionOrigin) = 0;
+	virtual const pStrA GetGlyphPNGForActionOrigin(EInputActionOrigin eInputActionOrigin, ESteamInputGlyphSize eSteamInputGlyphSize, Uint32 nFlags) = 0;
+	virtual const pStrA GetGlyphSVGForActionOrigin(EInputActionOrigin eInputActionOrigin, Uint32 nFlags) = 0;
+	virtual const pStrA GetGlyphForActionOrigin_Legacy(EInputActionOrigin eInputActionOrigin) = 0;
+	virtual const pStrA GetStringForActionOrigin(EInputActionOrigin eInputActionOrigin) = 0;
+	virtual const pStrA GetStringForAnalogActionName(InputAnalogActionHandle_t hDigitalAction) = 0;
+	virtual void StopAnalogActionMomentum(InputHandle_t hController, InputAnalogActionHandle_t hAnalogAction) = 0;
+	virtual InputMotionData_t GetMotionData(InputHandle_t hController) = 0;
+	virtual void TriggerVibration(InputHandle_t hController, Uint16 LeftSpeed, Uint16 RightSpeed) = 0;
+	virtual void TriggerVibrationExtended(InputHandle_t hController, Uint16 LeftSpeed, Uint16 RightSpeed, Uint16 LeftTriggerSpeed, Uint16 RightTriggerSpeed) = 0;
+	virtual void TriggerSimpleHapticEvent(InputHandle_t hController, EControllerHapticLocation eControllerHapticLocation, Uint8 nIntensity, Uint8 nGainDB, Uint8 nOtherIntensity, Uint8 nOtherGainDB) = 0;
+	virtual void SetLEDColor(InputHandle_t hController, Uint8 nColorR, Uint8 nColorG, Uint8 nColorB, Uint32 nFlags) = 0;
+	virtual void Legacy_TriggerHapticPulse(InputHandle_t hController, ESteamControllerPad eTargetPad, Uint16 DurationMicroSeconds) = 0;
+	virtual void Legacy_TriggerRepeatedHapticPulse(InputHandle_t hController, ESteamControllerPad eTargetPad, Uint16 DurationMicroSeconds, Uint16 OffMicroSeconds, Uint16 nRepeat, Uint32 nFlags) = 0;
+	virtual Bool ShowBindingPanel(InputHandle_t hController) = 0;
+	virtual ESteamInputType GetInputTypeForHandle(InputHandle_t hController) = 0;
+	virtual InputHandle_t GetControllerForGamepadIndex(Int32 nIndex) = 0;
+	virtual Int32 GetGamepadIndexForController(InputHandle_t hController) = 0;
+	virtual const pStrA GetStringForXboxOrigin(EXboxOrigin eXboxOrigin) = 0;
+	virtual const pStrA GetGlyphForXboxOrigin(EXboxOrigin eXboxOrigin) = 0;
+	virtual EInputActionOrigin GetActionOriginFromXboxOrigin(InputHandle_t hController, EXboxOrigin eXboxOrigin) = 0;
+	virtual EInputActionOrigin TranslateActionOrigin(ESteamInputType eDestinationInputType, EInputActionOrigin eSourceXboxOrigin) = 0;
+	virtual Bool GetDeviceBindingRevision(InputHandle_t hController, pInt32 pMajor, pInt32 pMinor) = 0;
+	virtual Uint32 GetRemotePlaySessionID(InputHandle_t hController) = 0;
+	virtual Uint16 GetSessionInputConfigurationSettings() = 0;
+
+} ISteamInput005, *IpSteamInput005;
+
 // -----------------------------------------------------------------------------
 // Purpose: Steam Input API
 // -----------------------------------------------------------------------------
@@ -791,7 +926,7 @@ public:
 	virtual void ActivateActionSetLayer(InputHandle_t hController, InputActionSetHandle_t hActionSetLayer) = 0;
 	virtual void DeactivateActionSetLayer(InputHandle_t hController, InputActionSetHandle_t hActionSetLayer) = 0;
 	virtual void DeactivateAllActionSetLayers(InputHandle_t hController) = 0;
-	virtual Int32 GetActiveActionSetLayers(InputHandle_t hController, /* [out(k_SteamInputMaxActiveLayers) */ pInputActionSetHandle_t phController) = 0;
+	virtual Int32 GetActiveActionSetLayers(InputHandle_t hController, /* [out(k_SteamInputMaxActiveLayers)] */ pInputActionSetHandle_t phController) = 0;
 
 	virtual InputDigitalActionHandle_t GetDigitalActionHandle(const pStrA pszActionName) = 0;
 	virtual InputDigitalActionData_t GetDigitalActionData(InputHandle_t hController, InputDigitalActionHandle_t hDigitalAction) = 0;
@@ -822,7 +957,7 @@ public:
 	virtual Bool ShowBindingPanel(InputHandle_t hController) = 0;
 	virtual ESteamInputType GetInputTypeForHandle(InputHandle_t hController) = 0;
 	virtual InputHandle_t GetControllerForGamepadIndex(Int32 nIndex) = 0;
-	virtual Int32 GetGamepadIndexForController(InputHandle_t ulhController) = 0;
+	virtual Int32 GetGamepadIndexForController(InputHandle_t hController) = 0;
 
 	virtual const pStrA GetStringForXboxOrigin(EXboxOrigin eXboxOrigin) = 0;
 	virtual const pStrA GetGlyphForXboxOrigin(EXboxOrigin eXboxOrigin) = 0;

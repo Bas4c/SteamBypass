@@ -311,6 +311,13 @@ SteamAPICall_t _SteamGameServer_::ComputeNewPlayerCompatibility(SteamId_t SteamI
 
 Bool _SteamGameServer_::SendUserConnectAndAuthenticate(Uint32 nIPClient, const pVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) {
 
+	if (pSteamIdUser != NULL) {
+		*pSteamIdUser = k_SteamId_t_Create(
+			k_EUniversePublic, k_EAccountTypeIndividual,
+			0xFFFFF, 0xFFFFFFFF
+		);
+	}
+
 	return True;
 
 }

@@ -7,7 +7,8 @@
 #include "IFreeAPI.Contract\ISteamInventory.h"
 // -----------------------------------------------------------------------------
 
-typedef class _SteamInventory_ : public _ISteamInventory_ {
+typedef class _SteamInventory_ : public _ISteamInventory001_,
+ public _ISteamInventory002_, public _ISteamInventory_ {
 public:
 
 	_SteamInventory_() = default;

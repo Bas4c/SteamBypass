@@ -7,7 +7,9 @@
 #include "IFreeAPI.Contract\ISteamInput.h"
 // -----------------------------------------------------------------------------
 
-typedef class _SteamInput_ : public _ISteamInput_ {
+typedef class _SteamInput_ : public _ISteamInput001_,
+ public _ISteamInput002_, public _ISteamInput005_,
+ public _ISteamInput_ {
 public:
 
 	_SteamInput_() = default;

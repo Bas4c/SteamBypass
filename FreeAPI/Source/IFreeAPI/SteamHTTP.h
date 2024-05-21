@@ -7,7 +7,8 @@
 #include "IFreeAPI.Contract\ISteamHTTP.h"
 // -----------------------------------------------------------------------------
 
-typedef class _SteamHTTP_ : public _ISteamHTTP_ {
+typedef class _SteamHTTP_ : public _ISteamHTTP001_,
+ public _ISteamHTTP002_, public _ISteamHTTP_ {
 public:
 
 	_SteamHTTP_() = default;
