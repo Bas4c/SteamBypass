@@ -89,6 +89,252 @@ typedef enum _ELobbyDistanceFilter_ {
 
 #define k_MaxLobbyKeyLength ((Int32)(255))
 
+typedef class _ISteamMatchmaking002_ {
+public:
+
+	virtual Int32 GetFavoriteGameCount() = 0;
+	virtual Bool GetFavoriteGame(Int32 iGame, pAppId_t piAppId, pUint32 pnIP, pUint16 pnConnectionPort, pUint16 pQueryPort, pUint32 pnFlags, pRTime32 pLastPlayedOnServer) = 0;
+	virtual Int32 AddFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags, Uint32 rTime32LastPlayedOnServer) = 0;
+	virtual Bool RemoveFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags) = 0;
+	virtual void RequestLobbyList_Old() = 0;
+	virtual SteamId_t GetLobbyByIndex(Int32 iLobby) = 0;
+	virtual void CreateLobby_Old(Bool bPrivate) = 0;
+	virtual void JoinLobby_Old(SteamId_t SteamIdLobby) = 0;
+	virtual void LeaveLobby(SteamId_t SteamIdLobby) = 0;
+	virtual Bool InviteUserToLobby(SteamId_t SteamIdLobby, SteamId_t SteamIdInvite) = 0;
+	virtual Int32 GetNumLobbyMembers(SteamId_t SteamIdLobby) = 0;
+	virtual SteamId_t GetLobbyMemberByIndex(SteamId_t SteamIdLobby, Int32 iMember) = 0;
+	virtual const pStrA GetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey) = 0;
+	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual const pStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, const pStrA pchKey) = 0;
+	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, const pVoid pvMsgBody, Int32 cbMsgBody) = 0;
+	virtual Int32 GetLobbyChatEntry(SteamId_t SteamIdLobby, Int32 iChatId, pSteamId_t pSteamIdUser, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
+	virtual Bool RequestLobbyData(SteamId_t SteamIdLobby) = 0;
+	virtual void SetLobbyGameServer(SteamId_t SteamIdLobby, Uint32 nGameServerIP, Uint16 nGameServerPort, SteamId_t SteamIdGameServer) = 0;
+
+} ISteamMatchmaking002, *IpSteamMatchmaking002;
+
+typedef class _ISteamMatchmaking003_ {
+public:
+
+	virtual Int32 GetFavoriteGameCount() = 0;
+	virtual Bool GetFavoriteGame(Int32 iGame, pAppId_t piAppId, pUint32 pnIP, pUint16 pnConnectionPort, pUint16 pQueryPort, pUint32 pnFlags, pRTime32 pLastPlayedOnServer) = 0;
+	virtual Int32 AddFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags, Uint32 rTime32LastPlayedOnServer) = 0;
+	virtual Bool RemoveFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags) = 0;
+	virtual void RequestLobbyList_Old() = 0;
+	virtual void AddRequestLobbyListFilter(const pStrA pchKeyToMatch, const pStrA pchValueToMatch) = 0;
+	virtual void AddRequestLobbyListNumericalFilter(const pStrA pchKeyToMatch, Int32 nValueToMatch, ELobbyComparison eComparisonType) = 0;
+	virtual void AddRequestLobbyListSlotsAvailableFilter() = 0;
+	virtual SteamId_t GetLobbyByIndex(Int32 iLobby) = 0;
+	virtual void CreateLobby_Old(Bool bPrivate) = 0;
+	virtual void JoinLobby_Old(SteamId_t SteamIdLobby) = 0;
+	virtual void LeaveLobby(SteamId_t SteamIdLobby) = 0;
+	virtual Bool InviteUserToLobby(SteamId_t SteamIdLobby, SteamId_t SteamIdInvite) = 0;
+	virtual Int32 GetNumLobbyMembers(SteamId_t SteamIdLobby) = 0;
+	virtual SteamId_t GetLobbyMemberByIndex(SteamId_t SteamIdLobby, Int32 iMember) = 0;
+	virtual const pStrA GetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey) = 0;
+	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual const pStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, const pStrA pchKey) = 0;
+	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, const pVoid pvMsgBody, Int32 cbMsgBody) = 0;
+	virtual Int32 GetLobbyChatEntry(SteamId_t SteamIdLobby, Int32 iChatId, pSteamId_t pSteamIdUser, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
+	virtual Bool RequestLobbyData(SteamId_t SteamIdLobby) = 0;
+	virtual void SetLobbyGameServer(SteamId_t SteamIdLobby, Uint32 nGameServerIP, Uint16 nGameServerPort, SteamId_t SteamIdGameServer) = 0;
+	virtual Bool GetLobbyGameServer(SteamId_t SteamIdLobby, pUint32 pnGameServerIP, pUint16 pnGameServerPort, pSteamId_t pSteamIdGameServer) = 0;
+	virtual Bool SetLobbyMemberLimit(SteamId_t SteamIdLobby, Int32 cMaxMembers) = 0;
+	virtual Int32 GetLobbyMemberLimit(SteamId_t SteamIdLobby) = 0;
+	virtual void SetLobbyVoiceEnabled(SteamId_t SteamIdLobby, Bool bVoiceEnabled) = 0;
+	virtual Bool RequestFriendsLobbies() = 0;
+
+} ISteamMatchmaking003, *IpSteamMatchmaking003;
+
+typedef class _ISteamMatchmaking004_ {
+public:
+
+	virtual Int32 GetFavoriteGameCount() = 0;
+	virtual Bool GetFavoriteGame(Int32 iGame, pAppId_t piAppId, pUint32 pnIP, pUint16 pnConnectionPort, pUint16 pQueryPort, pUint32 pnFlags, pRTime32 pLastPlayedOnServer) = 0;
+	virtual Int32 AddFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags, Uint32 rTime32LastPlayedOnServer) = 0;
+	virtual Bool RemoveFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags) = 0;
+	virtual void RequestLobbyList_Old() = 0;
+	virtual void AddRequestLobbyListFilter(const pStrA pchKeyToMatch, const pStrA pchValueToMatch) = 0;
+	virtual void AddRequestLobbyListNumericalFilter(const pStrA pchKeyToMatch, Int32 nValueToMatch, ELobbyComparison eComparisonType) = 0;
+	virtual void AddRequestLobbyListSlotsAvailableFilter() = 0;
+	virtual SteamId_t GetLobbyByIndex(Int32 iLobby) = 0;
+	virtual void CreateLobby_Old(Bool bPrivate) = 0;
+	virtual void JoinLobby_Old(SteamId_t SteamIdLobby) = 0;
+	virtual void LeaveLobby(SteamId_t SteamIdLobby) = 0;
+	virtual Bool InviteUserToLobby(SteamId_t SteamIdLobby, SteamId_t SteamIdInvite) = 0;
+	virtual Int32 GetNumLobbyMembers(SteamId_t SteamIdLobby) = 0;
+	virtual SteamId_t GetLobbyMemberByIndex(SteamId_t SteamIdLobby, Int32 iMember) = 0;
+	virtual const pStrA GetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey) = 0;
+	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual const pStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, const pStrA pchKey) = 0;
+	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, const pVoid pvMsgBody, Int32 cbMsgBody) = 0;
+	virtual Int32 GetLobbyChatEntry(SteamId_t SteamIdLobby, Int32 iChatId, pSteamId_t pSteamIdUser, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
+	virtual Bool RequestLobbyData(SteamId_t SteamIdLobby) = 0;
+	virtual void SetLobbyGameServer(SteamId_t SteamIdLobby, Uint32 nGameServerIP, Uint16 nGameServerPort, SteamId_t SteamIdGameServer) = 0;
+	virtual Bool GetLobbyGameServer(SteamId_t SteamIdLobby, pUint32 pnGameServerIP, pUint16 pnGameServerPort, pSteamId_t pSteamIdGameServer) = 0;
+	virtual Bool SetLobbyMemberLimit(SteamId_t SteamIdLobby, Int32 cMaxMembers) = 0;
+	virtual Int32 GetLobbyMemberLimit(SteamId_t SteamIdLobby) = 0;
+	virtual Bool RequestFriendsLobbies() = 0;
+
+} ISteamMatchmaking004, *IpSteamMatchmaking004;
+
+typedef class _ISteamMatchmaking005_ {
+public:
+
+	virtual Int32 GetFavoriteGameCount() = 0;
+	virtual Bool GetFavoriteGame(Int32 iGame, pAppId_t piAppId, pUint32 pnIP, pUint16 pnConnectionPort, pUint16 pQueryPort, pUint32 pnFlags, pRTime32 pLastPlayedOnServer) = 0;
+	virtual Int32 AddFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags, Uint32 rTime32LastPlayedOnServer) = 0;
+	virtual Bool RemoveFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags) = 0;
+	virtual void RequestLobbyList_Old() = 0;
+	virtual void AddRequestLobbyListFilter(const pStrA pchKeyToMatch, const pStrA pchValueToMatch) = 0;
+	virtual void AddRequestLobbyListNumericalFilter(const pStrA pchKeyToMatch, Int32 nValueToMatch, ELobbyComparison eComparisonType) = 0;
+	virtual void AddRequestLobbyListSlotsAvailableFilter() = 0;
+	virtual void AddRequestLobbyListNearValueFilter(const pStrA pchKeyToMatch, Int32 nValueToBeCloseTo) = 0;
+	virtual SteamId_t GetLobbyByIndex(Int32 iLobby) = 0;
+	virtual void CreateLobby_Old(ELobbyType eLobbyType) = 0;
+	virtual void JoinLobby_Old(SteamId_t SteamIdLobby) = 0;
+	virtual void LeaveLobby(SteamId_t SteamIdLobby) = 0;
+	virtual Bool InviteUserToLobby(SteamId_t SteamIdLobby, SteamId_t SteamIdInvite) = 0;
+	virtual Int32 GetNumLobbyMembers(SteamId_t SteamIdLobby) = 0;
+	virtual SteamId_t GetLobbyMemberByIndex(SteamId_t SteamIdLobby, Int32 iMember) = 0;
+	virtual const pStrA GetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey) = 0;
+	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual const pStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, const pStrA pchKey) = 0;
+	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, const pVoid pvMsgBody, Int32 cbMsgBody) = 0;
+	virtual Int32 GetLobbyChatEntry(SteamId_t SteamIdLobby, Int32 iChatId, pSteamId_t pSteamIdUser, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
+	virtual Bool RequestLobbyData(SteamId_t SteamIdLobby) = 0;
+	virtual void SetLobbyGameServer(SteamId_t SteamIdLobby, Uint32 nGameServerIP, Uint16 nGameServerPort, SteamId_t SteamIdGameServer) = 0;
+	virtual Bool GetLobbyGameServer(SteamId_t SteamIdLobby, pUint32 pnGameServerIP, pUint16 pnGameServerPort, pSteamId_t pSteamIdGameServer) = 0;
+	virtual Bool SetLobbyMemberLimit(SteamId_t SteamIdLobby, Int32 cMaxMembers) = 0;
+	virtual Int32 GetLobbyMemberLimit(SteamId_t SteamIdLobby) = 0;
+	virtual Bool RequestFriendsLobbies() = 0;
+	virtual Bool SetLobbyType(SteamId_t SteamIdLobby, ELobbyType eLobbyType) = 0;
+	virtual SteamId_t GetLobbyOwner(SteamId_t SteamIdLobby) = 0;
+	virtual Float GetLobbyDistance(SteamId_t SteamIdLobby) = 0;
+
+} ISteamMatchmaking005, *IpSteamMatchmaking005;
+
+typedef class _ISteamMatchmaking006_ {
+public:
+
+	virtual Int32 GetFavoriteGameCount() = 0;
+	virtual Bool GetFavoriteGame(Int32 iGame, pAppId_t piAppId, pUint32 pnIP, pUint16 pnConnectionPort, pUint16 pQueryPort, pUint32 pnFlags, pRTime32 pLastPlayedOnServer) = 0;
+	virtual Int32 AddFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags, Uint32 rTime32LastPlayedOnServer) = 0;
+	virtual Bool RemoveFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags) = 0;
+	virtual SteamAPICall_t RequestLobbyList() = 0;
+	virtual void AddRequestLobbyListFilter(const pStrA pchKeyToMatch, const pStrA pchValueToMatch) = 0;
+	virtual void AddRequestLobbyListNumericalFilter(const pStrA pchKeyToMatch, Int32 nValueToMatch, ELobbyComparison eComparisonType) = 0;
+	virtual void AddRequestLobbyListNearValueFilter(const pStrA pchKeyToMatch, Int32 nValueToBeCloseTo) = 0;
+	virtual SteamId_t GetLobbyByIndex(Int32 iLobby) = 0;
+	virtual SteamAPICall_t CreateLobby(ELobbyType eLobbyType, Int32 cMaxMembers) = 0;
+	virtual SteamAPICall_t JoinLobby(SteamId_t SteamIdLobby) = 0;
+	virtual void LeaveLobby(SteamId_t SteamIdLobby) = 0;
+	virtual Bool InviteUserToLobby(SteamId_t SteamIdLobby, SteamId_t SteamIdInvite) = 0;
+	virtual Int32 GetNumLobbyMembers(SteamId_t SteamIdLobby) = 0;
+	virtual SteamId_t GetLobbyMemberByIndex(SteamId_t SteamIdLobby, Int32 iMember) = 0;
+	virtual const pStrA GetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey) = 0;
+	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual const pStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, const pStrA pchKey) = 0;
+	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, const pVoid pvMsgBody, Int32 cbMsgBody) = 0;
+	virtual Int32 GetLobbyChatEntry(SteamId_t SteamIdLobby, Int32 iChatId, pSteamId_t pSteamIdUser, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
+	virtual Bool RequestLobbyData(SteamId_t SteamIdLobby) = 0;
+	virtual void SetLobbyGameServer(SteamId_t SteamIdLobby, Uint32 nGameServerIP, Uint16 nGameServerPort, SteamId_t SteamIdGameServer) = 0;
+	virtual Bool GetLobbyGameServer(SteamId_t SteamIdLobby, pUint32 pnGameServerIP, pUint16 pnGameServerPort, pSteamId_t pSteamIdGameServer) = 0;
+	virtual Bool SetLobbyMemberLimit(SteamId_t SteamIdLobby, Int32 cMaxMembers) = 0;
+	virtual Int32 GetLobbyMemberLimit(SteamId_t SteamIdLobby) = 0;
+	virtual Bool SetLobbyType(SteamId_t SteamIdLobby, ELobbyType eLobbyType) = 0;
+	virtual SteamId_t GetLobbyOwner(SteamId_t SteamIdLobby) = 0;
+
+} ISteamMatchmaking006, *IpSteamMatchmaking006;
+
+typedef class _ISteamMatchmaking007_ {
+public:
+
+	virtual Int32 GetFavoriteGameCount() = 0;
+	virtual Bool GetFavoriteGame(Int32 iGame, pAppId_t piAppId, pUint32 pnIP, pUint16 pnConnectionPort, pUint16 pQueryPort, pUint32 pnFlags, pRTime32 pLastPlayedOnServer) = 0;
+	virtual Int32 AddFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags, Uint32 rTime32LastPlayedOnServer) = 0;
+	virtual Bool RemoveFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags) = 0;
+	virtual SteamAPICall_t RequestLobbyList() = 0;
+	virtual void AddRequestLobbyListStringFilter(const pStrA pchKeyToMatch, const pStrA pchValueToMatch, ELobbyComparison eComparisonType) = 0;
+	virtual void AddRequestLobbyListNumericalFilter(const pStrA pchKeyToMatch, Int32 nValueToMatch, ELobbyComparison eComparisonType) = 0;
+	virtual void AddRequestLobbyListNearValueFilter(const pStrA pchKeyToMatch, Int32 nValueToBeCloseTo) = 0;
+	virtual void AddRequestLobbyListFilterSlotsAvailable(Int32 nSlotsAvailable) = 0;
+	virtual SteamId_t GetLobbyByIndex(Int32 iLobby) = 0;
+	virtual SteamAPICall_t CreateLobby(ELobbyType eLobbyType, Int32 cMaxMembers) = 0;
+	virtual SteamAPICall_t JoinLobby(SteamId_t SteamIdLobby) = 0;
+	virtual void LeaveLobby(SteamId_t SteamIdLobby) = 0;
+	virtual Bool InviteUserToLobby(SteamId_t SteamIdLobby, SteamId_t SteamIdInvite) = 0;
+	virtual Int32 GetNumLobbyMembers(SteamId_t SteamIdLobby) = 0;
+	virtual SteamId_t GetLobbyMemberByIndex(SteamId_t SteamIdLobby, Int32 iMember) = 0;
+	virtual const pStrA GetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey) = 0;
+	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual Int32 GetLobbyDataCount(SteamId_t SteamIdLobby) = 0;
+	virtual Bool GetLobbyDataByIndex(SteamId_t SteamIdLobby, Int32 iLobbyData, pStrA pchKey, Int32 cchKey, pStrA pchValue, Int32 cchValue) = 0;
+	virtual Bool DeleteLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey) = 0;
+	virtual const pStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, const pStrA pchKey) = 0;
+	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, const pVoid pvMsgBody, Int32 cbMsgBody) = 0;
+	virtual Int32 GetLobbyChatEntry(SteamId_t SteamIdLobby, Int32 iChatId, pSteamId_t pSteamIdUser, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
+	virtual Bool RequestLobbyData(SteamId_t SteamIdLobby) = 0;
+	virtual void SetLobbyGameServer(SteamId_t SteamIdLobby, Uint32 nGameServerIP, Uint16 nGameServerPort, SteamId_t SteamIdGameServer) = 0;
+	virtual Bool GetLobbyGameServer(SteamId_t SteamIdLobby, pUint32 pnGameServerIP, pUint16 pnGameServerPort, pSteamId_t pSteamIdGameServer) = 0;
+	virtual Bool SetLobbyMemberLimit(SteamId_t SteamIdLobby, Int32 cMaxMembers) = 0;
+	virtual Int32 GetLobbyMemberLimit(SteamId_t SteamIdLobby) = 0;
+	virtual Bool SetLobbyType(SteamId_t SteamIdLobby, ELobbyType eLobbyType) = 0;
+	virtual Bool SetLobbyJoinable(SteamId_t SteamIdLobby, Bool bLobbyJoinable) = 0;
+	virtual SteamId_t GetLobbyOwner(SteamId_t SteamIdLobby) = 0;
+	virtual Bool SetLobbyOwner(SteamId_t SteamIdLobby, SteamId_t SteamIdNewOwner) = 0;
+
+} ISteamMatchmaking007, *IpSteamMatchmaking007;
+
+typedef class _ISteamMatchmaking008_ {
+public:
+
+	virtual Int32 GetFavoriteGameCount() = 0;
+	virtual Bool GetFavoriteGame(Int32 iGame, pAppId_t piAppId, pUint32 pnIP, pUint16 pnConnectionPort, pUint16 pQueryPort, pUint32 pnFlags, pRTime32 pLastPlayedOnServer) = 0;
+	virtual Int32 AddFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags, Uint32 rTime32LastPlayedOnServer) = 0;
+	virtual Bool RemoveFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags) = 0;
+	virtual SteamAPICall_t RequestLobbyList() = 0;
+	virtual void AddRequestLobbyListStringFilter(const pStrA pchKeyToMatch, const pStrA pchValueToMatch, ELobbyComparison eComparisonType) = 0;
+	virtual void AddRequestLobbyListNumericalFilter(const pStrA pchKeyToMatch, Int32 nValueToMatch, ELobbyComparison eComparisonType) = 0;
+	virtual void AddRequestLobbyListNearValueFilter(const pStrA pchKeyToMatch, Int32 nValueToBeCloseTo) = 0;
+	virtual void AddRequestLobbyListFilterSlotsAvailable(Int32 nSlotsAvailable) = 0;
+	virtual void AddRequestLobbyListDistanceFilter(ELobbyDistanceFilter eLobbyDistanceFilter) = 0;
+	virtual void AddRequestLobbyListResultCountFilter(Int32 cMaxResults) = 0;
+	virtual SteamId_t GetLobbyByIndex(Int32 iLobby) = 0;
+	virtual SteamAPICall_t CreateLobby(ELobbyType eLobbyType, Int32 cMaxMembers) = 0;
+	virtual SteamAPICall_t JoinLobby(SteamId_t SteamIdLobby) = 0;
+	virtual void LeaveLobby(SteamId_t SteamIdLobby) = 0;
+	virtual Bool InviteUserToLobby(SteamId_t SteamIdLobby, SteamId_t SteamIdInvite) = 0;
+	virtual Int32 GetNumLobbyMembers(SteamId_t SteamIdLobby) = 0;
+	virtual SteamId_t GetLobbyMemberByIndex(SteamId_t SteamIdLobby, Int32 iMember) = 0;
+	virtual const pStrA GetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey) = 0;
+	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual Int32 GetLobbyDataCount(SteamId_t SteamIdLobby) = 0;
+	virtual Bool GetLobbyDataByIndex(SteamId_t SteamIdLobby, Int32 iLobbyData, pStrA pchKey, Int32 cchKey, pStrA pchValue, Int32 cchValue) = 0;
+	virtual Bool DeleteLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey) = 0;
+	virtual const pStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, const pStrA pchKey) = 0;
+	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, const pVoid pvMsgBody, Int32 cbMsgBody) = 0;
+	virtual Int32 GetLobbyChatEntry(SteamId_t SteamIdLobby, Int32 iChatId, pSteamId_t pSteamIdUser, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
+	virtual Bool RequestLobbyData(SteamId_t SteamIdLobby) = 0;
+	virtual void SetLobbyGameServer(SteamId_t SteamIdLobby, Uint32 nGameServerIP, Uint16 nGameServerPort, SteamId_t SteamIdGameServer) = 0;
+	virtual Bool GetLobbyGameServer(SteamId_t SteamIdLobby, pUint32 pnGameServerIP, pUint16 pnGameServerPort, pSteamId_t pSteamIdGameServer) = 0;
+	virtual Bool SetLobbyMemberLimit(SteamId_t SteamIdLobby, Int32 cMaxMembers) = 0;
+	virtual Int32 GetLobbyMemberLimit(SteamId_t SteamIdLobby) = 0;
+	virtual Bool SetLobbyType(SteamId_t SteamIdLobby, ELobbyType eLobbyType) = 0;
+	virtual Bool SetLobbyJoinable(SteamId_t SteamIdLobby, Bool bLobbyJoinable) = 0;
+	virtual SteamId_t GetLobbyOwner(SteamId_t SteamIdLobby) = 0;
+	virtual Bool SetLobbyOwner(SteamId_t SteamIdLobby, SteamId_t SteamIdNewOwner) = 0;
+
+} ISteamMatchmaking008, *IpSteamMatchmaking008;
+
 // -----------------------------------------------------------------------------
 // Purpose: Functions for match making services for clients to get to favorites
 //  and to operate on game lobbies.
@@ -100,7 +346,7 @@ public:
 	/* iGame is in range [0, GetFavoriteGameCount()) */
 	virtual Bool GetFavoriteGame(Int32 iGame, /* [out] */ pAppId_t piAppId, /* [out] */ pUint32 pnIP, /* [out] */ pUint16 pnConnectionPort, /* [out] */ pUint16 pQueryPort, /* [out] */ pUint32 pnFlags, /* [out] */ pRTime32 pLastPlayedOnServer) = 0;
 	
-	virtual Int32 AddFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 unFlags, Uint32 rTime32LastPlayedOnServer) = 0;
+	virtual Int32 AddFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags, Uint32 rTime32LastPlayedOnServer) = 0;
 	virtual Bool RemoveFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags) = 0;
 
 	virtual SteamAPICall_t RequestLobbyList() = 0;
@@ -147,13 +393,21 @@ public:
 	virtual SteamId_t GetLobbyOwner(SteamId_t SteamIdLobby) = 0;
 	virtual Bool SetLobbyOwner(SteamId_t SteamIdLobby, SteamId_t SteamIdNewOwner) = 0;
 	virtual Bool SetLinkedLobby(SteamId_t SteamIdLobby, SteamId_t SteamIdLobbyDependent) = 0;
-	virtual void CheckForPSNGameBootInvite(Uint32 iGameBootAttributes) = 0;
 
 } ISteamMatchmaking, *IpSteamMatchmaking;
 
 #define STEAMMATCHMAKING_INTERFACE_VERSION "SteamMatchMaking009"
 
 typedef pVoid HServerListRequest, *pHServerListRequest;
+
+typedef class _ISteamMatchmakingServerListResponse001_ {
+public:
+
+	virtual void ServerResponded(Int32 iServer) = 0;
+	virtual void ServerFailedToRespond( Int32 iServer) = 0;
+	virtual void RefreshComplete(EMatchMakingServerResponse eMatchMakingServerResponse) = 0;
+
+} ISteamMatchmakingServerListResponse001, *IpSteamMatchmakingServerListResponse001;
 
 // -----------------------------------------------------------------------------
 // Purpose: Callback interface for receiving responses after a server list refresh
@@ -207,6 +461,40 @@ public:
 
 typedef Int32 HServerQuery, *pHServerQuery;
 #define k_HServerQuery_Invalid ((HServerQuery)(0xFFFFFFFF))
+
+typedef enum _EMatchMakingType_ {
+
+	k_EMatchMakingType_InternetServer,
+	k_EMatchMakingType_LANServer,
+	k_EMatchMakingType_FriendsServer,
+	k_EMatchMakingType_FavoritesServer,
+	k_EMatchMakingType_HistoryServer,
+	k_EMatchMakingType_SpectatorServer,
+	k_EMatchMakingType_InvalidServer
+
+} EMatchMakingType, *pEMatchMakingType;
+
+typedef class _ISteamMatchmakingServers001_ {
+public:
+
+	virtual void RequestInternetServerList(AppId_t iAppId, pMatchMakingKeyValuePair_t *ppchFilters, Uint32 nFilters, IpSteamMatchmakingServerListResponse001 pRequestServersResponse) = 0;
+	virtual void RequestLANServerList(AppId_t iAppId, IpSteamMatchmakingServerListResponse001 pRequestServersResponse) = 0;
+	virtual void RequestFriendsServerList(AppId_t iAppId, pMatchMakingKeyValuePair_t *ppchFilters, Uint32 nFilters, IpSteamMatchmakingServerListResponse001 pRequestServersResponse) = 0;
+	virtual void RequestFavoritesServerList(AppId_t iAppId, pMatchMakingKeyValuePair_t *ppchFilters, Uint32 nFilters, IpSteamMatchmakingServerListResponse001 pRequestServersResponse) = 0;
+	virtual void RequestHistoryServerList(AppId_t iAppId, pMatchMakingKeyValuePair_t *ppchFilters, Uint32 nFilters, IpSteamMatchmakingServerListResponse001 pRequestServersResponse) = 0;
+	virtual void RequestSpectatorServerList(AppId_t iAppId, pMatchMakingKeyValuePair_t *ppchFilters, Uint32 nFilters, IpSteamMatchmakingServerListResponse001 pRequestServersResponse) = 0;
+	virtual pGameServerItem_t GetServerDetails(EMatchMakingType eMatchMakingType, Int32 iServer) = 0;
+	virtual void CancelQuery(EMatchMakingType eMatchMakingType) = 0;
+	virtual void RefreshQuery(EMatchMakingType eMatchMakingType) = 0;
+	virtual Bool IsRefreshing(EMatchMakingType eMatchMakingType) = 0;
+	virtual Int32 GetServerCount(EMatchMakingType eMatchMakingType) = 0;
+	virtual void RefreshServer(EMatchMakingType eMatchMakingType, Int32 iServer) = 0;
+	virtual HServerQuery PingServer(Uint32 nIP, Uint16 Port, IpSteamMatchmakingPingResponse pRequestServersResponse) = 0;
+	virtual HServerQuery PlayerDetails(Uint32 nIP, Uint16 Port, IpSteamMatchmakingPlayersResponse pRequestServersResponse) = 0;
+	virtual HServerQuery ServerRules(Uint32 nIP, Uint16 Port, IpSteamMatchmakingRulesResponse pRequestServersResponse) = 0;
+	virtual void CancelServerQuery(HServerQuery hServerQuery) = 0;
+
+} ISteamMatchmakingServers001, *IpSteamMatchmakingServers001;
 
 // -----------------------------------------------------------------------------
 // Purpose: Functions for match making services for clients to get to game lists and details

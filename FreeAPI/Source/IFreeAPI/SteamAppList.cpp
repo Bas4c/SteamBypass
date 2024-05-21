@@ -50,7 +50,7 @@ Int32 _SteamAppList_::GetAppName(AppId_t iAppId, pStrA pchName, Int32 cchNameMax
 
 				if ((SizeOF)(cchNameMax) >= StrA_Count(pchModuleDirectory + cchModuleDirectory + 1U) + 1U) {
 					StrA_Copy(pchName, cchNameMax, pchModuleDirectory + cchModuleDirectory + 1U);
-					cchCopied = StrA_Count(pchModuleDirectory + cchModuleDirectory + 1U) + 1U;
+					cchCopied = (Int32)(StrA_Count(pchModuleDirectory + cchModuleDirectory + 1U) + 1U);
 				}
 
 				LocalFree(pchModuleDirectory);
@@ -78,7 +78,7 @@ Int32 _SteamAppList_::GetAppInstallDir(AppId_t iAppId, pStrA pchDirectory, Int32
 
 				if ((SizeOF)(cchNameMax) >= StrA_Count(pchModuleDirectory) + 1U) {
 					StrA_Copy(pchDirectory, cchNameMax, pchModuleDirectory);
-					cchCopied = StrA_Count(pchModuleDirectory) + 1U;
+					cchCopied = (Int32)(StrA_Count(pchModuleDirectory) + 1U);
 				}
 
 				LocalFree(pchModuleDirectory);

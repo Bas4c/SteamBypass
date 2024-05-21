@@ -144,7 +144,7 @@ Uint32 _SteamApps_::GetAppInstallDir(AppId_t iAppId, pStrA pchFolder, Uint32 cch
 
 				if ((SizeOF)(cchFolderMax) >= StrA_Count(pchModuleDirectory) + 1U) {
 					StrA_Copy(pchFolder, cchFolderMax, pchModuleDirectory);
-					cchCopied = StrA_Count(pchModuleDirectory) + 1U;
+					cchCopied = (Uint32)(StrA_Count(pchModuleDirectory) + 1U);
 				}
 
 				LocalFree(pchModuleDirectory);
@@ -223,7 +223,7 @@ Int32 _SteamApps_::GetLaunchCommandLine(pStrA pchCommandLine, Int32 cchCommandLi
 	if (pchCommandLine != NULL && cchCommandLine > 0) {
 		if ((SizeOF)(cchCommandLine) >= StrA_Count(pchCmdLine) + 1U) {
 			StrA_Copy(pchCommandLine, cchCommandLine, pchCmdLine);
-			return StrA_Count(pchCmdLine) + 1U;
+			return (Int32)(StrA_Count(pchCmdLine) + 1U);
 		}
 	}
 

@@ -7,7 +7,11 @@
 #include "IFreeAPI.Contract\ISteamMatchmaking.h"
 // -----------------------------------------------------------------------------
 
-typedef class _SteamMatchmaking_ : public _ISteamMatchmaking_ {
+typedef class _SteamMatchmaking_ : public _ISteamMatchmaking002_,
+ public _ISteamMatchmaking003_, public _ISteamMatchmaking004_,
+ public _ISteamMatchmaking005_, public _ISteamMatchmaking006_,
+ public _ISteamMatchmaking007_, public _ISteamMatchmaking008_,
+ public _ISteamMatchmaking_{
 public:
 
 	_SteamMatchmaking_() = default;
@@ -21,17 +25,23 @@ public:
 	Int32 AddFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 unFlags, Uint32 rTime32LastPlayedOnServer) override;
 	Bool RemoveFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags) override;
 
+	void RequestLobbyList_Old() override;
 	SteamAPICall_t RequestLobbyList() override;
+	void AddRequestLobbyListFilter(pStrA pchKeyToMatch, pStrA pchValueToMatch) override;
 	void AddRequestLobbyListStringFilter(const pStrA pchKeyToMatch, const pStrA pchValueToMatch, ELobbyComparison eComparisonType) override;
 	void AddRequestLobbyListNumericalFilter(const pStrA pchKeyToMatch, Int32 nValueToMatch, ELobbyComparison eComparisonType) override;
 	void AddRequestLobbyListNearValueFilter(const pStrA pchKeyToMatch, Int32 nValueToBeCloseTo) override;
+	void AddRequestLobbyListSlotsAvailableFilter() override;
 	void AddRequestLobbyListFilterSlotsAvailable(Int32 nSlotsAvailable) override;
 	void AddRequestLobbyListDistanceFilter(ELobbyDistanceFilter eLobbyDistanceFilter) override;
 	void AddRequestLobbyListResultCountFilter(Int32 cMaxResults) override;
 	void AddRequestLobbyListCompatibleMembersFilter(SteamId_t SteamIdLobby) override;
 
 	SteamId_t GetLobbyByIndex(Int32 iLobby) override;
+	void CreateLobby_Old(Bool bPrivate) override;
+	void CreateLobby_Old(ELobbyType eLobbyType) override;
 	SteamAPICall_t CreateLobby(ELobbyType eLobbyType, Int32 cMaxMembers) override;
+	void JoinLobby_Old(SteamId_t SteamIdLobby) override;
 	SteamAPICall_t JoinLobby(SteamId_t SteamIdLobby) override;
 	void LeaveLobby(SteamId_t SteamIdLobby) override;
 	Bool InviteUserToLobby(SteamId_t SteamIdLobby, SteamId_t SteamIdInvite) override;
@@ -65,15 +75,19 @@ public:
 	SteamId_t GetLobbyOwner(SteamId_t SteamIdLobby) override;
 	Bool SetLobbyOwner(SteamId_t SteamIdLobby, SteamId_t SteamIdNewOwner) override;
 	Bool SetLinkedLobby(SteamId_t SteamIdLobby, SteamId_t SteamIdLobbyDependent) override;
-	void CheckForPSNGameBootInvite(Uint32 iGameBootAttributes) override;
 
+	Bool RequestFriendsLobbies() override;
+	Float GetLobbyDistance(SteamId_t SteamIdLobby) override;
+	void SetLobbyVoiceEnabled(SteamId_t SteamIdLobby, Bool bVoiceEnabled) override;
+	
 	~_SteamMatchmaking_() = default;
 
 } SteamMatchmaking, *pSteamMatchmaking;
 
 // -----------------------------------------------------------------------------
 
-typedef class _SteamMatchmakingServers_ : public _ISteamMatchmakingServers_ {
+typedef class _SteamMatchmakingServers_ : public _ISteamMatchmakingServers001_,
+ public _ISteamMatchmakingServers_ {
 public:
 
 	_SteamMatchmakingServers_() = default;
@@ -88,6 +102,13 @@ public:
 	HServerListRequest RequestSpectatorServerList(AppId_t iApp, pMatchMakingKeyValuePair_t *ppchFilters, Uint32 nFilters, IpSteamMatchmakingServerListResponse pRequestServersResponse) override;
 
 	void ReleaseRequest(HServerListRequest hServerListRequest) override;
+
+	void RequestInternetServerList(AppId_t iAppId, pMatchMakingKeyValuePair_t *ppchFilters, Uint32 nFilters, IpSteamMatchmakingServerListResponse001 pRequestServersResponse) override;
+	void RequestLANServerList(AppId_t iAppId, IpSteamMatchmakingServerListResponse001 pRequestServersResponse) override;
+	void RequestFriendsServerList(AppId_t iAppId, pMatchMakingKeyValuePair_t *ppchFilters, Uint32 nFilters, IpSteamMatchmakingServerListResponse001 pRequestServersResponse) override;
+	void RequestFavoritesServerList(AppId_t iAppId, pMatchMakingKeyValuePair_t *ppchFilters, Uint32 nFilters, IpSteamMatchmakingServerListResponse001 pRequestServersResponse) override;
+	void RequestHistoryServerList(AppId_t iAppId, pMatchMakingKeyValuePair_t *ppchFilters, Uint32 nFilters, IpSteamMatchmakingServerListResponse001 pRequestServersResponse) override;
+	void RequestSpectatorServerList(AppId_t iAppId, pMatchMakingKeyValuePair_t *ppchFilters, Uint32 nFilters, IpSteamMatchmakingServerListResponse001 pRequestServersResponse) override;
 
 	/* MatchMakingKeyValuePair_t should be one of these:
 
@@ -143,6 +164,14 @@ public:
 	HServerQuery ServerRules(Uint32 nIP, Uint16 Port, IpSteamMatchmakingRulesResponse pRequestServersResponse) override;
 
 	void CancelServerQuery(HServerQuery hServerQuery) override;
+
+	pGameServerItem_t GetServerDetails(EMatchMakingType eMatchMakingType, Int32 iServer) override;
+
+	void CancelQuery(EMatchMakingType eMatchMakingType) override;
+	void RefreshQuery(EMatchMakingType eMatchMakingType) override;
+	Bool IsRefreshing(EMatchMakingType eMatchMakingType) override;
+	Int32 GetServerCount(EMatchMakingType eMatchMakingType) override;
+	void RefreshServer(EMatchMakingType eMatchMakingType, Int32 iServer) override;
 
 	~_SteamMatchmakingServers_() = default;
 

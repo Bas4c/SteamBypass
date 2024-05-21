@@ -770,7 +770,7 @@ _COMMON_X_API_ _Success_(return != NULL) pStrW __stdcall GetGameSaveFileNameW(
 
 			if (sCode == ERROR_SUCCESS) {
 
-				Dword cchDirectory = StrW_Count(pchDirectory);
+				Dword cchDirectory = (Dword)(StrW_Count(pchDirectory));
 
 				pStrW pchGameFile = (pchFileSpec != NULL) ? pchFileSpec :
 					(eSaveType == k_ESaveType_Sreenshots) ? L"Sreenshot.bmp" : L"Save.dat";

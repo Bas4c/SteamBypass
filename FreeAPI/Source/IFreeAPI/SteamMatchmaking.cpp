@@ -26,9 +26,21 @@ Bool _SteamMatchmaking_::RemoveFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 n
 
 }
 
+void _SteamMatchmaking_::RequestLobbyList_Old() {
+
+	/* Empty Method */
+
+}
+
 SteamAPICall_t _SteamMatchmaking_::RequestLobbyList() {
 
 	return k_SteamAPICall_Invalid;
+
+}
+
+void _SteamMatchmaking_::AddRequestLobbyListFilter(pStrA pchKeyToMatch, pStrA pchValueToMatch) {
+
+	/* Empty Method */
 
 }
 
@@ -45,6 +57,12 @@ void _SteamMatchmaking_::AddRequestLobbyListNumericalFilter(const pStrA pchKeyTo
 }
 
 void _SteamMatchmaking_::AddRequestLobbyListNearValueFilter(const pStrA pchKeyToMatch, Int32 nValueToBeCloseTo) {
+
+	/* Empty Method */
+
+}
+
+void _SteamMatchmaking_::AddRequestLobbyListSlotsAvailableFilter() {
 
 	/* Empty Method */
 
@@ -83,9 +101,27 @@ SteamId_t _SteamMatchmaking_::GetLobbyByIndex(Int32 iLobby) {
 
 }
 
+void _SteamMatchmaking_::CreateLobby_Old(Bool bPrivate) {
+
+	/* Empty Method */
+
+}
+
+void _SteamMatchmaking_::CreateLobby_Old(ELobbyType eLobbyType) {
+
+	/* Empty Method */
+
+}
+
 SteamAPICall_t _SteamMatchmaking_::CreateLobby(ELobbyType eLobbyType, Int32 cMaxMembers) {
 
 	return k_SteamAPICall_Invalid;
+
+}
+
+void _SteamMatchmaking_::JoinLobby_Old(SteamId_t SteamIdLobby) {
+
+	/* Empty Method */
 
 }
 
@@ -243,7 +279,19 @@ Bool _SteamMatchmaking_::SetLinkedLobby(SteamId_t SteamIdLobby, SteamId_t SteamI
 
 }
 
-void _SteamMatchmaking_::CheckForPSNGameBootInvite(Uint32 iGameBootAttributes) {
+Bool _SteamMatchmaking_::RequestFriendsLobbies() {
+
+	return False;
+
+}
+
+Float _SteamMatchmaking_::GetLobbyDistance(SteamId_t SteamIdLobby) {
+	
+	return 0.0F;
+
+}
+
+void _SteamMatchmaking_::SetLobbyVoiceEnabled(SteamId_t SteamIdLobby, Bool bVoiceEnabled) {
 
 	/* Empty Method */
 
@@ -292,6 +340,36 @@ void _SteamMatchmakingServers_::ReleaseRequest(HServerListRequest hServerListReq
 	/* Empty Method */
 
 }
+
+void _SteamMatchmakingServers_::RequestInternetServerList(AppId_t iAppId, pMatchMakingKeyValuePair_t *ppchFilters, Uint32 nFilters, IpSteamMatchmakingServerListResponse001 pRequestServersResponse) {
+
+	/* Empty Method */
+}
+
+void _SteamMatchmakingServers_::RequestLANServerList(AppId_t iAppId, IpSteamMatchmakingServerListResponse001 pRequestServersResponse) {
+
+	/* Empty Method */
+}
+
+void _SteamMatchmakingServers_::RequestFriendsServerList(AppId_t iAppId, pMatchMakingKeyValuePair_t *ppchFilters, Uint32 nFilters, IpSteamMatchmakingServerListResponse001 pRequestServersResponse) {
+
+	/* Empty Method */
+};
+
+void _SteamMatchmakingServers_::RequestFavoritesServerList(AppId_t iAppId, pMatchMakingKeyValuePair_t *ppchFilters, Uint32 nFilters, IpSteamMatchmakingServerListResponse001 pRequestServersResponse) {
+
+	/* Empty Method */
+};
+
+void _SteamMatchmakingServers_::RequestHistoryServerList(AppId_t iAppId, pMatchMakingKeyValuePair_t *ppchFilters, Uint32 nFilters, IpSteamMatchmakingServerListResponse001 pRequestServersResponse) {
+
+	/* Empty Method */
+};
+
+void _SteamMatchmakingServers_::RequestSpectatorServerList(AppId_t iAppId, pMatchMakingKeyValuePair_t *ppchFilters, Uint32 nFilters, IpSteamMatchmakingServerListResponse001 pRequestServersResponse) {
+
+	/* Empty Method */
+};
 
 pGameServerItem_t _SteamMatchmakingServers_::GetServerDetails(HServerListRequest hRequest, Int32 iServer) {
 	
@@ -348,6 +426,42 @@ HServerQuery _SteamMatchmakingServers_::ServerRules(Uint32 nIP, Uint16 Port, IpS
 }
 
 void _SteamMatchmakingServers_::CancelServerQuery(HServerQuery hServerQuery) {
+
+	/* Empty Method */
+
+}
+
+pGameServerItem_t _SteamMatchmakingServers_::GetServerDetails(EMatchMakingType eMatchMakingType, Int32 iServer) {
+
+	return NULL;
+
+}
+
+void _SteamMatchmakingServers_::CancelQuery(EMatchMakingType eMatchMakingType) {
+
+	/* Empty Method */
+
+}
+
+void _SteamMatchmakingServers_::RefreshQuery(EMatchMakingType eMatchMakingType) {
+
+	/* Empty Method */
+
+}
+
+Bool _SteamMatchmakingServers_::IsRefreshing(EMatchMakingType eMatchMakingType) {
+
+	return False;
+
+}
+
+Int32 _SteamMatchmakingServers_::GetServerCount(EMatchMakingType eMatchMakingType) {
+
+	return 0;
+
+}
+
+void _SteamMatchmakingServers_::RefreshServer(EMatchMakingType eMatchMakingType, Int32 iServer) {
 
 	/* Empty Method */
 

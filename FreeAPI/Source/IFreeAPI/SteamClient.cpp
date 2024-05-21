@@ -186,19 +186,22 @@ IpSteamUtils _SteamClient_::GetISteamUtils(HSteamPipe hSteamPipe, const pStrA pc
 IpSteamMatchmaking _SteamClient_::GetISteamMatchmaking(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (
-			StrA_Cmp(pchVersion, (const pStrA)("SteamMatchMaking001"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamMatchMaking002"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamMatchMaking003"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamMatchMaking004"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamMatchMaking005"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamMatchMaking006"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamMatchMaking007"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamMatchMaking008"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)(STEAMMATCHMAKING_INTERFACE_VERSION), True)
-		) {
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamMatchMaking002"), True))
+			return (IpSteamMatchmaking)((pVoid)((IpSteamMatchmaking002)(&this->SteamMatchmaking)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamMatchMaking003"), True))
+			return (IpSteamMatchmaking)((pVoid)((IpSteamMatchmaking003)(&this->SteamMatchmaking)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamMatchMaking004"), True))
+			return (IpSteamMatchmaking)((pVoid)((IpSteamMatchmaking004)(&this->SteamMatchmaking)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamMatchMaking005"), True))
+			return (IpSteamMatchmaking)((pVoid)((IpSteamMatchmaking005)(&this->SteamMatchmaking)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamMatchMaking006"), True))
+			return (IpSteamMatchmaking)((pVoid)((IpSteamMatchmaking006)(&this->SteamMatchmaking)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamMatchMaking007"), True))
+			return (IpSteamMatchmaking)((pVoid)((IpSteamMatchmaking007)(&this->SteamMatchmaking)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamMatchMaking008"), True))
+			return (IpSteamMatchmaking)((pVoid)((IpSteamMatchmaking008)(&this->SteamMatchmaking)));
+		if (StrA_Cmp(pchVersion, (const pStrA)(STEAMMATCHMAKING_INTERFACE_VERSION), True))
 			return (IpSteamMatchmaking)(&this->SteamMatchmaking);
-		}
 	}
 
 	return NULL;
@@ -208,12 +211,10 @@ IpSteamMatchmaking _SteamClient_::GetISteamMatchmaking(HSteamUser hSteamUser, HS
 IpSteamMatchmakingServers _SteamClient_::GetISteamMatchmakingServers(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (
-			StrA_Cmp(pchVersion, (const pStrA)("SteamMatchMakingServers001"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)(STEAMMATCHMAKINGSERVERS_INTERFACE_VERSION), True)
-		) {
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamMatchMakingServers001"), True))
+			return (IpSteamMatchmakingServers)((pVoid)((IpSteamMatchmakingServers001)(&this->SteamMatchmakingServers)));
+		if (StrA_Cmp(pchVersion, (const pStrA)(STEAMMATCHMAKINGSERVERS_INTERFACE_VERSION), True))
 			return (IpSteamMatchmakingServers)(&this->SteamMatchmakingServers);
-		}
 	}
 
 	return NULL;
@@ -735,12 +736,8 @@ IpSteamInput _SteamClient_::GetISteamInput(HSteamUser hSteamUser, HSteamPipe hSt
 IpSteamParties _SteamClient_::GetISteamParties(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (
-			StrA_Cmp(pchVersion, (const pStrA)("SteamParties001"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)(STEAMPARTIES_INTERFACE_VERSION), True)
-		) {
+		if (StrA_Cmp(pchVersion, (const pStrA)(STEAMPARTIES_INTERFACE_VERSION), True))
 			return (IpSteamParties)(&this->SteamParties);
-		}
 	}
 
 	return NULL;
