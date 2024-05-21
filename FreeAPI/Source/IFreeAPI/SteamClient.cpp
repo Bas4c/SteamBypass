@@ -85,25 +85,26 @@ IpSteamUser _SteamClient_::GetISteamUser(HSteamUser hSteamUser, HSteamPipe hStea
 IpSteamGameServer _SteamClient_::GetISteamGameServer(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (
-			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer001"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer002"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer003"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer004"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer005"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer006"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer007"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer008"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer009"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer010"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer011"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer012"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer013"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer014"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)(STEAMGAMESERVER_INTERFACE_VERSION), True)
-		) {
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer004"), True))
+			return (IpSteamGameServer)((pVoid)((IpSteamGameServer004)(&this->SteamGameServer)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer005"), True))
+			return (IpSteamGameServer)((pVoid)((IpSteamGameServer005)(&this->SteamGameServer)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer008"), True))
+			return (IpSteamGameServer)((pVoid)((IpSteamGameServer008)(&this->SteamGameServer)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer009"), True))
+			return (IpSteamGameServer)((pVoid)((IpSteamGameServer009)(&this->SteamGameServer)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer010"), True))
+			return (IpSteamGameServer)((pVoid)((IpSteamGameServer010)(&this->SteamGameServer)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer011"), True))
+			return (IpSteamGameServer)((pVoid)((IpSteamGameServer011)(&this->SteamGameServer)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer012"), True))
+			return (IpSteamGameServer)((pVoid)((IpSteamGameServer012)(&this->SteamGameServer)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer013"), True))
+			return (IpSteamGameServer)((pVoid)((IpSteamGameServer013)(&this->SteamGameServer)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamGameServer014"), True))
+			return (IpSteamGameServer)((pVoid)((IpSteamGameServer014)(&this->SteamGameServer)));
+		if (StrA_Cmp(pchVersion, (const pStrA)(STEAMGAMESERVER_INTERFACE_VERSION), True))
 			return (IpSteamGameServer)(&this->SteamGameServer);
-		}
 	}
 
 	return NULL;
@@ -639,15 +640,16 @@ IpSteamMusicRemote _SteamClient_::GetISteamMusicRemote(HSteamUser hSteamUser, HS
 IpSteamHTMLSurface _SteamClient_::GetISteamHTMLSurface(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (
-			StrA_Cmp(pchVersion, (const pStrA)("STEAMHTMLSURFACE_INTERFACE_VERSION_001"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("STEAMHTMLSURFACE_INTERFACE_VERSION_002"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("STEAMHTMLSURFACE_INTERFACE_VERSION_003"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("STEAMHTMLSURFACE_INTERFACE_VERSION_004"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)(STEAMHTMLSURFACE_INTERFACE_VERSION), True)
-		) {
+		if (StrA_Cmp(pchVersion, (const pStrA)("STEAMHTMLSURFACE_INTERFACE_VERSION_001"), True))
+			return (IpSteamHTMLSurface)((pVoid)((IpSteamHTMLSurface001)(&this->SteamHTMLSurface)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("STEAMHTMLSURFACE_INTERFACE_VERSION_002"), True))
+			return (IpSteamHTMLSurface)((pVoid)((IpSteamHTMLSurface002)(&this->SteamHTMLSurface)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("STEAMHTMLSURFACE_INTERFACE_VERSION_003"), True))
+			return (IpSteamHTMLSurface)((pVoid)((IpSteamHTMLSurface003)(&this->SteamHTMLSurface)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("STEAMHTMLSURFACE_INTERFACE_VERSION_004"), True))
+			return (IpSteamHTMLSurface)((pVoid)((IpSteamHTMLSurface004)(&this->SteamHTMLSurface)));
+		if (StrA_Cmp(pchVersion, (const pStrA)(STEAMHTMLSURFACE_INTERFACE_VERSION), True))
 			return (IpSteamHTMLSurface)(&this->SteamHTMLSurface);
-		}
 	}
 
 	return NULL;

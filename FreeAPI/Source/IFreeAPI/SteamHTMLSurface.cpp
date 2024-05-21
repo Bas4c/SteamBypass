@@ -104,6 +104,13 @@ void _SteamHTMLSurface_::MouseWheel(HTMLBrowser hHTMLBrowser, Int32 delta) {
 
 }
 
+
+void _SteamHTMLSurface_::KeyDown(HTMLBrowser hHTMLBrowser, Uint32 KeyCode, EHTMLKeyModifiers eHTMLKeyModifiers) {
+
+	/* Empty Method */
+
+}
+
 void _SteamHTMLSurface_::KeyDown(HTMLBrowser hHTMLBrowser, Uint32 KeyCode, EHTMLKeyModifiers eHTMLKeyModifiers, Bool bIsSystemKey) {
 
 	/* Empty Method */

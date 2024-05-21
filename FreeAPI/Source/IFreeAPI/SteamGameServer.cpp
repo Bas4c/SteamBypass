@@ -32,6 +32,18 @@ void _SteamGameServer_::SetDedicatedServer(Bool bDedicated) {
 
 }
 
+void _SteamGameServer_::LogOn() {
+
+	/* Empty Method */
+
+}
+
+void _SteamGameServer_::LogOn(const pStrA pchAccountName, const pStrA pchPassword) {
+
+	/* Empty Method */
+
+}
+
 void _SteamGameServer_::LogOn(const pStrA pchToken) {
 
 	/* Empty Method */
@@ -155,6 +167,25 @@ void _SteamGameServer_::SetAdvertiseServerActive(Bool bActive) {
 
 }
 
+HAuthTicket _SteamGameServer_::GetAuthSessionTicket_Old(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket) {
+	
+	if (pvTicket != NULL && cbMaxTicket > 0) {
+		if (pcbTicket != NULL) {
+
+			for (Int32 i = 0; i < cbMaxTicket; i++) {
+				((pByte)(pvTicket))[i] = (Byte)(i % 256);
+			}
+
+			*pcbTicket = cbMaxTicket;
+			return k_HAuthTicket_Fake_Ticket;
+
+		}
+	}
+
+	return k_HAuthTicket_Invalid;
+
+}
+
 HAuthTicket _SteamGameServer_::GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSnId) {
 
 	if (pvTicket != NULL && cbMaxTicket > 0) {
@@ -216,11 +247,18 @@ SteamAPICall_t _SteamGameServer_::GetServerReputation() {
 
 }
 
+Uint32 _SteamGameServer_::GetPublicIP_Old() {
+
+	return ((((Uint32)((Byte)(127))) << 24) | (((Uint32)((Byte)(0))) << 16) |
+		(((Uint32)((Byte)(0))) << 8) | (((Uint32)((Byte)(1)))));
+
+}
+
 SteamIPAddress_t _SteamGameServer_::GetPublicIP() {
 
 	/* localhost */
 
-	SteamIPAddress_t steamIPAdrress;
+	SteamIPAddress_t steamIPAdrress = { 0 };
 	steamIPAdrress.eSteamIPType = k_ESteamIPTypeIPv4;
 	steamIPAdrress.IPv4 = ((((Uint32)((Byte)(127))) << 24) | (((Uint32)((Byte)(0))) << 16) |
 		(((Uint32)((Byte)(0))) << 8) | (((Uint32)((Byte)(1)))));
@@ -238,6 +276,24 @@ Bool _SteamGameServer_::HandleIncomingPacket(const pVoid pvData, Int32 cbData, U
 Int32 _SteamGameServer_::GetNextOutgoingPacket(pVoid pvOut, Int32 cbMaxOut, pUint32 pNetAdrr, pUint16 pPort) {
 
 	return 0;
+
+}
+
+void _SteamGameServer_::EnableHeartbeats(Bool bActive) {
+
+	/* Empty Method */
+
+}
+
+void _SteamGameServer_::SetHeartbeatInterval(Int32 iHeartbeatInterval) {
+
+	/* Empty Method */
+
+}
+
+void _SteamGameServer_::ForceHeartbeat() {
+
+	/* Empty Method */
 
 }
 
@@ -277,6 +333,36 @@ void _SteamGameServer_::SendUserDisconnect(SteamId_t SteamIdUser) {
 Bool _SteamGameServer_::BUpdateUserData(SteamId_t SteamIdUser, const pStrA pchPlayerName, Uint32 Score) {
 
 	return True;
+
+}
+
+Bool _SteamGameServer_::BSetServerType(Uint32 nServerFlags, Uint32 nGameIP, Uint16 nGamePort, Uint16 SpectatorPort, Uint16 QueryPort, const pStrA pchGameDir, const pStrA pchVersion, Bool bLANMode) {
+	
+	return True;
+
+}
+
+void _SteamGameServer_::UpdateServerStatus(Int32 cPlayers, Int32 cPlayersMax, Int32 cBotPlayers, const pStrA pchServerName, const pStrA pSpectatorServerName, const pStrA pchMapName) {
+
+	/* Empty Method */
+
+}
+
+void _SteamGameServer_::UpdateSpectatorPort(Uint16 SpectatorPort) {
+
+	/* Empty Method */
+
+}
+
+void _SteamGameServer_::SetGameType(const pStrA pchGameType) {
+
+	/* Empty Method */
+
+}
+
+Bool _SteamGameServer_::BGetUserAchievementStatus(SteamId_t SteamId, const pStrA pchAchievementName) {
+	
+	return False;
 
 }
 

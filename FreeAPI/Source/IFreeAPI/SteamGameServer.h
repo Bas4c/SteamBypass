@@ -7,7 +7,12 @@
 #include "IFreeAPI.Contract\ISteamGameServer.h"
 // -----------------------------------------------------------------------------
 
-typedef class _SteamGameServer_ : public _ISteamGameServer_ {
+typedef class _SteamGameServer_ : public _ISteamGameServer004_,
+ public _ISteamGameServer005_, public _ISteamGameServer008_,
+ public _ISteamGameServer009_, public _ISteamGameServer010_,
+ public _ISteamGameServer011_, public _ISteamGameServer012_,
+ public _ISteamGameServer013_, public _ISteamGameServer014_,
+ public _ISteamGameServer_ {
 public:
 
 	_SteamGameServer_() = default;
@@ -24,6 +29,8 @@ public:
 	/* You need to register for callbacks to determine the result of this operation.
 			SteamServersConnected_t, SteamServerConnectFailure_t,
 			SteamServersDisconnected_t */
+	void LogOn() override;
+	void LogOn(const pStrA pchAccountName, const pStrA pchPassword) override;
 	void LogOn(const pStrA pchToken) override;
 	void LogOnAnonymous() override;
 	void LogOff() override;
@@ -61,6 +68,7 @@ public:
 		pcbTicket retrieves the length of the actual ticket.
 		SteamNetworkingIdentity is an optional parameter to hold the public IP address of the entity you are connecting to
 		 if an IP address is passed Steam will only allow the ticket to be used by an entity with that IP address */
+	HAuthTicket GetAuthSessionTicket_Old(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket) override;
 	HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSnId) override;
 	EBeginAuthSessionResult BeginAuthSession(const pVoid pbAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) override;
 	void EndAuthSession(SteamId_t SteamId) override;
@@ -73,9 +81,14 @@ public:
 
 	void GetGameplayStats() override;
 	SteamAPICall_t GetServerReputation() override;
+	Uint32 GetPublicIP_Old() override;
 	SteamIPAddress_t GetPublicIP() override;
 	Bool HandleIncomingPacket(const pVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) override;
 	Int32 GetNextOutgoingPacket(pVoid pvOut, Int32 cbMaxOut, pUint32 pNetAdrr, pUint16 pPort) override;
+
+	void EnableHeartbeats(Bool bActive) override;
+	void SetHeartbeatInterval(Int32 iHeartbeatInterval) override;
+	void ForceHeartbeat() override;
 
 	SteamAPICall_t AssociateWithClan(SteamId_t SteamIdClan) override;
 	SteamAPICall_t ComputeNewPlayerCompatibility(SteamId_t SteamIdNewPlayer) override;
@@ -89,6 +102,11 @@ public:
 
 	/* Return Value: True if successful, False if failure(ie, SteamIdUser wasn't for an active player) */
 	Bool BUpdateUserData(SteamId_t SteamIdUser, const pStrA pchPlayerName, Uint32 Score) override;
+	Bool BSetServerType(Uint32 nServerFlags, Uint32 nGameIP, Uint16 nGamePort, Uint16 SpectatorPort, Uint16 QueryPort, const pStrA pchGameDir, const pStrA pchVersion, Bool bLANMode) override;
+	void UpdateServerStatus(Int32 cPlayers, Int32 cPlayersMax, Int32 cBotPlayers, const pStrA pchServerName, const pStrA pSpectatorServerName, const pStrA pchMapName) override;
+	void UpdateSpectatorPort(Uint16 SpectatorPort) override;
+	void SetGameType(const pStrA pchGameType) override;
+	Bool BGetUserAchievementStatus(SteamId_t SteamId, const pStrA pchAchievementName) override;
 
 	void SetMasterServerHeartbeatInterval_DEPRECATED(Int32 iHeartbeatInterval) override;
 	void ForceMasterServerHeartbeat_DEPRECATED() override;

@@ -70,6 +70,167 @@ typedef enum _EHTMLKeyModifiers_ {
 
 } EHTMLKeyModifiers, *pEHTMLKeyModifiers;
 
+typedef class _ISteamHTMLSurface001_ {
+public:
+
+	virtual Bool Init() = 0;
+	virtual Bool Shutdown() = 0;
+	virtual SteamAPICall_t CreateBrowser(const pStrA pchUserAgent, const pStrA pchUserCSS) = 0;
+	virtual void RemoveBrowser(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void LoadURL(HTMLBrowser hHTMLBrowser, const pStrA pchURL, const pStrA pchPostData) = 0;
+	virtual void SetSize(HTMLBrowser hHTMLBrowser, Uint32 Cx, Uint32 Cy) = 0;
+	virtual void StopLoad(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void Reload(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void GoBack(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void GoForward(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void AddHeader(HTMLBrowser hHTMLBrowser, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual void ExecuteJavascript(HTMLBrowser hHTMLBrowser, const pStrA pchScript) = 0;
+	virtual void MouseUp(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
+	virtual void MouseDown(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
+	virtual void MouseDoubleClick(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
+	virtual void MouseMove(HTMLBrowser hHTMLBrowser, Int32 x, Int32 y) = 0;
+	virtual void MouseWheel(HTMLBrowser hHTMLBrowser, Int32 delta) = 0;
+	virtual void KeyDown(HTMLBrowser hHTMLBrowser, Uint32 KeyCode, EHTMLKeyModifiers eHTMLKeyModifiers) = 0;
+	virtual void KeyUp(HTMLBrowser hHTMLBrowser, Uint32 KeyCode, EHTMLKeyModifiers eHTMLKeyModifiers) = 0;
+	virtual void KeyChar(HTMLBrowser hHTMLBrowser, Uint32 cUnicodeChar, EHTMLKeyModifiers eHTMLKeyModifiers) = 0;
+	virtual void SetHorizontalScroll(HTMLBrowser hHTMLBrowser, Uint32 nAbsolutePixelScroll) = 0;
+	virtual void SetVerticalScroll(HTMLBrowser hHTMLBrowser, Uint32 nAbsolutePixelScroll) = 0;
+	virtual void SetKeyFocus(HTMLBrowser hHTMLBrowser, Bool bHasKeyFocus) = 0;
+	virtual void ViewSource(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void CopyToClipboard(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void PasteFromClipboard(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void Find(HTMLBrowser hHTMLBrowser, const pStrA pchSearchStr, Bool bCurrentlyInFind, Bool bReverse) = 0;
+	virtual void StopFind(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void GetLinkAtPosition(HTMLBrowser hHTMLBrowser, Int32 x, Int32 y) = 0;
+	virtual void AllowStartRequest(HTMLBrowser hHTMLBrowser, Bool bAllowed) = 0;
+	virtual void JSDialogResponse(HTMLBrowser hHTMLBrowser, Bool bResult) = 0;
+	virtual void FileLoadDialogResponse(HTMLBrowser hHTMLBrowser, const pStrA *pchSelectedFiles) = 0;
+
+} ISteamHTMLSurface001, *IpSteamHTMLSurface001;
+
+typedef class _ISteamHTMLSurface002_ {
+public:
+
+	virtual Bool Init() = 0;
+	virtual Bool Shutdown() = 0;
+	virtual SteamAPICall_t CreateBrowser(const pStrA pchUserAgent, const pStrA pchUserCSS) = 0;
+	virtual void RemoveBrowser(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void LoadURL(HTMLBrowser hHTMLBrowser, const pStrA pchURL, const pStrA pchPostData) = 0;
+	virtual void SetSize(HTMLBrowser hHTMLBrowser, Uint32 Cx, Uint32 Cy) = 0;
+	virtual void StopLoad(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void Reload(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void GoBack(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void GoForward(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void AddHeader(HTMLBrowser hHTMLBrowser, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual void ExecuteJavascript(HTMLBrowser hHTMLBrowser, const pStrA pchScript) = 0;
+	virtual void MouseUp(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
+	virtual void MouseDown(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
+	virtual void MouseDoubleClick(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
+	virtual void MouseMove(HTMLBrowser hHTMLBrowser, Int32 x, Int32 y) = 0;
+	virtual void MouseWheel(HTMLBrowser hHTMLBrowser, Int32 delta) = 0;
+	virtual void KeyDown(HTMLBrowser hHTMLBrowser, Uint32 KeyCode, EHTMLKeyModifiers eHTMLKeyModifiers) = 0;
+	virtual void KeyUp(HTMLBrowser hHTMLBrowser, Uint32 KeyCode, EHTMLKeyModifiers eHTMLKeyModifiers) = 0;
+	virtual void KeyChar(HTMLBrowser hHTMLBrowser, Uint32 cUnicodeChar, EHTMLKeyModifiers eHTMLKeyModifiers) = 0;
+	virtual void SetHorizontalScroll(HTMLBrowser hHTMLBrowser, Uint32 nAbsolutePixelScroll) = 0;
+	virtual void SetVerticalScroll(HTMLBrowser hHTMLBrowser, Uint32 nAbsolutePixelScroll) = 0;
+	virtual void SetKeyFocus(HTMLBrowser hHTMLBrowser, Bool bHasKeyFocus) = 0;
+	virtual void ViewSource(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void CopyToClipboard(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void PasteFromClipboard(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void Find(HTMLBrowser hHTMLBrowser, const pStrA pchSearchStr, Bool bCurrentlyInFind, Bool bReverse) = 0;
+	virtual void StopFind(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void GetLinkAtPosition(HTMLBrowser hHTMLBrowser, Int32 x, Int32 y) = 0;
+	virtual void SetCookie(const pStrA pchHostname, const pStrA pchKey, const pStrA pchValue, const pStrA pchPath, RTime32 nExpires, Bool bSecure, Bool bHTTPOnly) = 0;
+	virtual void SetPageScaleFactor(HTMLBrowser hHTMLBrowser, Float Zoom, Int32 nPointX, Int32 nPointY) = 0;
+	virtual void AllowStartRequest(HTMLBrowser hHTMLBrowser, Bool bAllowed) = 0;
+	virtual void JSDialogResponse(HTMLBrowser hHTMLBrowser, Bool bResult) = 0;
+	virtual void FileLoadDialogResponse(HTMLBrowser hHTMLBrowser, const pStrA *pchSelectedFiles) = 0;
+
+} ISteamHTMLSurface002, *IpSteamHTMLSurface002;
+
+typedef class _ISteamHTMLSurface003_ {
+public:
+
+	virtual Bool Init() = 0;
+	virtual Bool Shutdown() = 0;
+	virtual SteamAPICall_t CreateBrowser(const pStrA pchUserAgent, const pStrA pchUserCSS) = 0;
+	virtual void RemoveBrowser(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void LoadURL(HTMLBrowser hHTMLBrowser, const pStrA pchURL, const pStrA pchPostData) = 0;
+	virtual void SetSize(HTMLBrowser hHTMLBrowser, Uint32 Cx, Uint32 Cy) = 0;
+	virtual void StopLoad(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void Reload(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void GoBack(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void GoForward(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void AddHeader(HTMLBrowser hHTMLBrowser, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual void ExecuteJavascript(HTMLBrowser hHTMLBrowser, const pStrA pchScript) = 0;
+	virtual void MouseUp(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
+	virtual void MouseDown(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
+	virtual void MouseDoubleClick(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
+	virtual void MouseMove(HTMLBrowser hHTMLBrowser, Int32 x, Int32 y) = 0;
+	virtual void MouseWheel(HTMLBrowser hHTMLBrowser, Int32 delta) = 0;
+	virtual void KeyDown(HTMLBrowser hHTMLBrowser, Uint32 KeyCode, EHTMLKeyModifiers eHTMLKeyModifiers) = 0;
+	virtual void KeyUp(HTMLBrowser hHTMLBrowser, Uint32 KeyCode, EHTMLKeyModifiers eHTMLKeyModifiers) = 0;
+	virtual void KeyChar(HTMLBrowser hHTMLBrowser, Uint32 cUnicodeChar, EHTMLKeyModifiers eHTMLKeyModifiers) = 0;
+	virtual void SetHorizontalScroll(HTMLBrowser hHTMLBrowser, Uint32 nAbsolutePixelScroll) = 0;
+	virtual void SetVerticalScroll(HTMLBrowser hHTMLBrowser, Uint32 nAbsolutePixelScroll) = 0;
+	virtual void SetKeyFocus(HTMLBrowser hHTMLBrowser, Bool bHasKeyFocus) = 0;
+	virtual void ViewSource(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void CopyToClipboard(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void PasteFromClipboard(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void Find(HTMLBrowser hHTMLBrowser, const pStrA pchSearchStr, Bool bCurrentlyInFind, Bool bReverse) = 0;
+	virtual void StopFind(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void GetLinkAtPosition(HTMLBrowser hHTMLBrowser, Int32 x, Int32 y) = 0;
+	virtual void SetCookie(const pStrA pchHostname, const pStrA pchKey, const pStrA pchValue, const pStrA pchPath, RTime32 nExpires, Bool bSecure, Bool bHTTPOnly) = 0;
+	virtual void SetPageScaleFactor(HTMLBrowser hHTMLBrowser, Float Zoom, Int32 nPointX, Int32 nPointY) = 0;
+	virtual void SetBackgroundMode(HTMLBrowser hHTMLBrowser, Bool bBackgroundMode) = 0;
+	virtual void AllowStartRequest(HTMLBrowser hHTMLBrowser, Bool bAllowed) = 0;
+	virtual void JSDialogResponse(HTMLBrowser hHTMLBrowser, Bool bResult) = 0;
+	virtual void FileLoadDialogResponse(HTMLBrowser hHTMLBrowser, const pStrA *pchSelectedFiles) = 0;
+
+} ISteamHTMLSurface003, *IpSteamHTMLSurface003;
+
+typedef class _ISteamHTMLSurface004_ {
+public:
+
+	virtual Bool Init() = 0;
+	virtual Bool Shutdown() = 0;
+	virtual SteamAPICall_t CreateBrowser(const pStrA pchUserAgent, const pStrA pchUserCSS) = 0;
+	virtual void RemoveBrowser(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void LoadURL(HTMLBrowser hHTMLBrowser, const pStrA pchURL, const pStrA pchPostData) = 0;
+	virtual void SetSize(HTMLBrowser hHTMLBrowser, Uint32 Cx, Uint32 Cy) = 0;
+	virtual void StopLoad(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void Reload(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void GoBack(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void GoForward(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void AddHeader(HTMLBrowser hHTMLBrowser, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual void ExecuteJavascript(HTMLBrowser hHTMLBrowser, const pStrA pchScript) = 0;
+	virtual void MouseUp(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
+	virtual void MouseDown(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
+	virtual void MouseDoubleClick(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
+	virtual void MouseMove(HTMLBrowser hHTMLBrowser, Int32 x, Int32 y) = 0;
+	virtual void MouseWheel(HTMLBrowser hHTMLBrowser, Int32 delta) = 0;
+	virtual void KeyDown(HTMLBrowser hHTMLBrowser, Uint32 KeyCode, EHTMLKeyModifiers eHTMLKeyModifiers) = 0;
+	virtual void KeyUp(HTMLBrowser hHTMLBrowser, Uint32 KeyCode, EHTMLKeyModifiers eHTMLKeyModifiers) = 0;
+	virtual void KeyChar(HTMLBrowser hHTMLBrowser, Uint32 cUnicodeChar, EHTMLKeyModifiers eHTMLKeyModifiers) = 0;
+	virtual void SetHorizontalScroll(HTMLBrowser hHTMLBrowser, Uint32 nAbsolutePixelScroll) = 0;
+	virtual void SetVerticalScroll(HTMLBrowser hHTMLBrowser, Uint32 nAbsolutePixelScroll) = 0;
+	virtual void SetKeyFocus(HTMLBrowser hHTMLBrowser, Bool bHasKeyFocus) = 0;
+	virtual void ViewSource(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void CopyToClipboard(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void PasteFromClipboard(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void Find(HTMLBrowser hHTMLBrowser, const pStrA pchSearchStr, Bool bCurrentlyInFind, Bool bReverse) = 0;
+	virtual void StopFind(HTMLBrowser hHTMLBrowser) = 0;
+	virtual void GetLinkAtPosition(HTMLBrowser hHTMLBrowser, Int32 x, Int32 y) = 0;
+	virtual void SetCookie(const pStrA pchHostname, const pStrA pchKey, const pStrA pchValue, const pStrA pchPath, RTime32 nExpires, Bool bSecure, Bool bHTTPOnly) = 0;
+	virtual void SetPageScaleFactor(HTMLBrowser hHTMLBrowser, Float Zoom, Int32 nPointX, Int32 nPointY) = 0;
+	virtual void SetBackgroundMode(HTMLBrowser hHTMLBrowser, Bool bBackgroundMode) = 0;
+	virtual void SetDPIScalingFactor(HTMLBrowser hHTMLBrowser, Float DPIScaling) = 0;
+	virtual void AllowStartRequest(HTMLBrowser hHTMLBrowser, Bool bAllowed) = 0;
+	virtual void JSDialogResponse(HTMLBrowser hHTMLBrowser, Bool bResult) = 0;
+	virtual void FileLoadDialogResponse(HTMLBrowser hHTMLBrowser, const pStrA *pchSelectedFiles) = 0;
+
+} ISteamHTMLSurface004, *IpSteamHTMLSurface004;
+
 // -----------------------------------------------------------------------------
 // Purpose: Functions to interact with HTML pages
 // -----------------------------------------------------------------------------

@@ -7,7 +7,9 @@
 #include "IFreeAPI.Contract\ISteamHTMLSurface.h"
 // -----------------------------------------------------------------------------
 
-typedef class _SteamHTMLSurface_ : public _ISteamHTMLSurface_ {
+typedef class _SteamHTMLSurface_ : public _ISteamHTMLSurface001_,
+ public _ISteamHTMLSurface002_, public _ISteamHTMLSurface003_,
+ public _ISteamHTMLSurface004_, public _ISteamHTMLSurface_ {
 public:
 
 	_SteamHTMLSurface_() = default;
@@ -31,6 +33,7 @@ public:
 	void MouseDoubleClick(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) override;
 	void MouseMove(HTMLBrowser hHTMLBrowser, Int32 x, Int32 y) override;
 	void MouseWheel(HTMLBrowser hHTMLBrowser, Int32 delta) override;
+	void KeyDown(HTMLBrowser hHTMLBrowser, Uint32 KeyCode, EHTMLKeyModifiers eHTMLKeyModifiers) override;
 	void KeyDown(HTMLBrowser hHTMLBrowser, Uint32 KeyCode, EHTMLKeyModifiers eHTMLKeyModifiers, Bool bIsSystemKey) override;
 	void KeyUp(HTMLBrowser hHTMLBrowser, Uint32 KeyCode, EHTMLKeyModifiers eHTMLKeyModifiers) override;
 	void KeyChar(HTMLBrowser hHTMLBrowser, Uint32 cUnicodeChar, EHTMLKeyModifiers eHTMLKeyModifiers) override;

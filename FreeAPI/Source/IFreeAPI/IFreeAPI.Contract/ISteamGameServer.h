@@ -3,6 +3,322 @@
 
 #include "..\..\FreeAPI.Typedef.h"
 
+typedef class _ISteamGameServer004_ {
+public:
+
+	virtual void LogOn() = 0;
+	virtual void LogOff() = 0;
+	virtual Bool BLoggedOn() = 0;
+	virtual Bool BSecure() = 0;
+	virtual SteamId_t GetSteamID() = 0;
+	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, const pVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
+	virtual SteamId_t CreateUnauthenticatedUserConnection() = 0;
+	virtual void SendUserDisconnect(SteamId_t SteamIdUser) = 0;
+	virtual Bool BUpdateUserData(SteamId_t SteamIdUser, const pStrA pchPlayerName, Uint32 Score) = 0;
+	virtual Bool BSetServerType(Uint32 nServerFlags, Uint32 nGameIP, Uint16 nGamePort, Uint16 SpectatorPort, Uint16 QueryPort, const pStrA pchGameDir, const pStrA pchVersion, Bool bLANMode) = 0;
+	virtual void UpdateServerStatus(Int32 cPlayers, Int32 cPlayersMax, Int32 cBotPlayers, const pStrA pchServerName, const pStrA pSpectatorServerName, const pStrA pchMapName) = 0;
+	virtual void UpdateSpectatorPort(Uint16 SpectatorPort) = 0;
+	virtual void SetGameType(const pStrA pchGameType) = 0;
+	virtual Bool BGetUserAchievementStatus(SteamId_t SteamId, const pStrA pchAchievementName) = 0;
+
+} ISteamGameServer004, *IpSteamGameServer004;
+
+typedef class _ISteamGameServer005_ {
+public:
+
+	virtual void LogOn() = 0;
+	virtual void LogOff() = 0;
+	virtual Bool BLoggedOn() = 0;
+	virtual Bool BSecure() = 0;
+	virtual SteamId_t GetSteamID() = 0;
+	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, const pVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
+	virtual SteamId_t CreateUnauthenticatedUserConnection() = 0;
+	virtual void SendUserDisconnect(SteamId_t SteamIdUser) = 0;
+	virtual Bool BUpdateUserData(SteamId_t SteamIdUser, const pStrA pchPlayerName, Uint32 Score) = 0;
+	virtual Bool BSetServerType(Uint32 nServerFlags, Uint32 nGameIP, Uint16 nGamePort, Uint16 SpectatorPort, Uint16 QueryPort, const pStrA pchGameDir, const pStrA pchVersion, Bool bLANMode) = 0;
+	virtual void UpdateServerStatus(Int32 cPlayers, Int32 cPlayersMax, Int32 cBotPlayers, const pStrA pchServerName, const pStrA pSpectatorServerName, const pStrA pchMapName) = 0;
+	virtual void UpdateSpectatorPort(Uint16 SpectatorPort) = 0;
+	virtual void SetGameType(const pStrA pchGameType) = 0;
+	virtual Bool BGetUserAchievementStatus(SteamId_t SteamId, const pStrA pchAchievementName) = 0;
+
+} ISteamGameServer005, *IpSteamGameServer005;
+
+typedef class _ISteamGameServer008_ {
+public:
+
+	virtual void LogOn() = 0;
+	virtual void LogOff() = 0;
+	virtual Bool BLoggedOn() = 0;
+	virtual Bool BSecure() = 0;
+	virtual SteamId_t GetSteamID() = 0;
+	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, const pVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
+	virtual SteamId_t CreateUnauthenticatedUserConnection() = 0;
+	virtual void SendUserDisconnect(SteamId_t SteamIdUser) = 0;
+	virtual Bool BUpdateUserData(SteamId_t SteamIdUser, const pStrA pchPlayerName, Uint32 Score) = 0;
+	virtual Bool BSetServerType(Uint32 nServerFlags, Uint32 nGameIP, Uint16 nGamePort, Uint16 SpectatorPort, Uint16 QueryPort, const pStrA pchGameDir, const pStrA pchVersion, Bool bLANMode) = 0;
+	virtual void UpdateServerStatus(Int32 cPlayers, Int32 cPlayersMax, Int32 cBotPlayers, const pStrA pchServerName, const pStrA pSpectatorServerName, const pStrA pchMapName) = 0;
+	virtual void UpdateSpectatorPort(Uint16 SpectatorPort) = 0;
+	virtual void SetGameType(const pStrA pchGameType) = 0;
+	virtual Bool BGetUserAchievementStatus(SteamId_t SteamId, const pStrA pchAchievementName) = 0;
+	virtual void GetGameplayStats() = 0;
+	virtual Bool RequestUserGroupStatus(SteamId_t SteamIdUser, SteamId_t SteamIdGroup) = 0;
+	virtual Uint32 GetPublicIP_Old() = 0;
+
+} ISteamGameServer008, *IpSteamGameServer008;
+
+typedef class _ISteamGameServer009_ {
+public:
+
+	virtual void LogOn() = 0;
+	virtual void LogOff() = 0;
+	virtual Bool BLoggedOn() = 0;
+	virtual Bool BSecure() = 0;
+	virtual SteamId_t GetSteamID() = 0;
+	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, const pVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
+	virtual SteamId_t CreateUnauthenticatedUserConnection() = 0;
+	virtual void SendUserDisconnect(SteamId_t SteamIdUser) = 0;
+	virtual Bool BUpdateUserData(SteamId_t SteamIdUser, const pStrA pchPlayerName, Uint32 Score) = 0;
+	virtual Bool BSetServerType(Uint32 nServerFlags, Uint32 nGameIP, Uint16 nGamePort, Uint16 SpectatorPort, Uint16 QueryPort, const pStrA pchGameDir, const pStrA pchVersion, Bool bLANMode) = 0;
+	virtual void UpdateServerStatus(Int32 cPlayers, Int32 cPlayersMax, Int32 cBotPlayers, const pStrA pchServerName, const pStrA pSpectatorServerName, const pStrA pchMapName) = 0;
+	virtual void UpdateSpectatorPort(Uint16 SpectatorPort) = 0;
+	virtual void SetGameType(const pStrA pchGameType) = 0;
+	virtual Bool BGetUserAchievementStatus(SteamId_t SteamId, const pStrA pchAchievementName) = 0;
+	virtual void GetGameplayStats() = 0;
+	virtual Bool RequestUserGroupStatus(SteamId_t SteamIdUser, SteamId_t SteamIdGroup) = 0;
+	virtual Uint32 GetPublicIP_Old() = 0;
+	virtual void SetGameData(const pStrA pchGameData) = 0;
+	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t AppId) = 0;
+
+} ISteamGameServer009, *IpSteamGameServer009;
+
+typedef class _ISteamGameServer010_ {
+public:
+
+	virtual void LogOn() = 0;
+	virtual void LogOff() = 0;
+	virtual Bool BLoggedOn() = 0;
+	virtual Bool BSecure() = 0;
+	virtual SteamId_t GetSteamID() = 0;
+	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, const pVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
+	virtual SteamId_t CreateUnauthenticatedUserConnection() = 0;
+	virtual void SendUserDisconnect(SteamId_t SteamIdUser) = 0;
+	virtual Bool BUpdateUserData(SteamId_t SteamIdUser, const pStrA pchPlayerName, Uint32 Score) = 0;
+	virtual Bool BSetServerType(Uint32 nServerFlags, Uint32 nGameIP, Uint16 nGamePort, Uint16 SpectatorPort, Uint16 QueryPort, const pStrA pchGameDir, const pStrA pchVersion, Bool bLANMode) = 0;
+	virtual void UpdateServerStatus(Int32 cPlayers, Int32 cPlayersMax, Int32 cBotPlayers, const pStrA pchServerName, const pStrA pSpectatorServerName, const pStrA pchMapName) = 0;
+	virtual void SetGameTags(const pStrA pchGameTags) = 0;
+	virtual void GetGameplayStats() = 0;
+	virtual SteamAPICall_t GetServerReputation() = 0;
+	virtual Bool RequestUserGroupStatus(SteamId_t SteamIdUser, SteamId_t SteamIdGroup) = 0;
+	virtual Uint32 GetPublicIP_Old() = 0;
+	virtual void SetGameData(const pStrA pchGameData) = 0;
+	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t AppId) = 0;
+	virtual HAuthTicket GetAuthSessionTicket_Old(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pbAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual void EndAuthSession(SteamId_t SteamId) = 0;
+	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
+
+} ISteamGameServer010, *IpSteamGameServer010;
+
+typedef class _ISteamGameServer011_ {
+public:
+
+	virtual Bool InitGameServer(Uint32 nIP, Uint16 GamePort, Uint16 QueryPort, Uint32 nFlags, AppId_t iGameAppId, const pStrA pchVersionString) = 0;
+	virtual void SetProduct(const pStrA pchProduct) = 0;
+	virtual void SetGameDescription(const pStrA pchGameDescription) = 0;
+	virtual void SetModDir(const pStrA pchModDir) = 0;
+	virtual void SetDedicatedServer(Bool bDedicated) = 0;
+	virtual void LogOn(const pStrA pchAccountName, const pStrA pchPassword) = 0;
+	virtual void LogOnAnonymous() = 0;
+	virtual void LogOff() = 0;
+	virtual Bool BLoggedOn() = 0;
+	virtual Bool BSecure() = 0;
+	virtual SteamId_t GetSteamID() = 0;
+	virtual Bool WasRestartRequested() = 0;
+	virtual void SetMaxPlayerCount(Int32 cPlayersMax) = 0;
+	virtual void SetBotPlayerCount(Int32 cBotplayers) = 0;
+	virtual void SetServerName(const pStrA pchServerName) = 0;
+	virtual void SetMapName(const pStrA pchMapName) = 0;
+	virtual void SetPasswordProtected(Bool bPasswordProtected) = 0;
+	virtual void SetSpectatorPort(Uint16 SpectatorPort) = 0;
+	virtual void SetSpectatorServerName(const pStrA pchSpectatorServerName) = 0;
+	virtual void ClearAllKeyValues() = 0;
+	virtual void SetKeyValue(const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual void SetGameTags(const pStrA pchGameTags) = 0;
+	virtual void SetGameData(const pStrA pchGameData) = 0;
+	virtual void SetRegion(const pStrA pchRegion) = 0;
+	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, const pVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
+	virtual SteamId_t CreateUnauthenticatedUserConnection() = 0;
+	virtual void SendUserDisconnect(SteamId_t SteamIdUser) = 0;
+	virtual Bool BUpdateUserData(SteamId_t SteamIdUser, const pStrA pchPlayerName, Uint32 Score) = 0;
+	virtual HAuthTicket GetAuthSessionTicket_Old(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pbAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual void EndAuthSession(SteamId_t SteamId) = 0;
+	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
+	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t AppId) = 0;
+	virtual Bool RequestUserGroupStatus(SteamId_t SteamIdUser, SteamId_t SteamIdGroup) = 0;
+	virtual void GetGameplayStats() = 0;
+	virtual SteamAPICall_t GetServerReputation() = 0;
+	virtual Uint32 GetPublicIP_Old() = 0;
+	virtual Bool HandleIncomingPacket(const pVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) = 0;
+	virtual Int32 GetNextOutgoingPacket(pVoid pvOut, Int32 cbMaxOut, pUint32 pNetAdrr, pUint16 pPort) = 0;
+	virtual void EnableHeartbeats(Bool bActive) = 0;
+	virtual void SetHeartbeatInterval(Int32 iHeartbeatInterval) = 0;
+	virtual void ForceHeartbeat() = 0;
+	virtual SteamAPICall_t AssociateWithClan(SteamId_t SteamIdClan) = 0;
+	virtual SteamAPICall_t ComputeNewPlayerCompatibility(SteamId_t SteamIdNewPlayer) = 0;
+
+} ISteamGameServer011, *IpSteamGameServer011;
+
+typedef class _ISteamGameServer012_ {
+public:
+
+	virtual Bool InitGameServer(Uint32 nIP, Uint16 GamePort, Uint16 QueryPort, Uint32 nFlags, AppId_t iGameAppId, const pStrA pchVersionString) = 0;
+	virtual void SetProduct(const pStrA pchProduct) = 0;
+	virtual void SetGameDescription(const pStrA pchGameDescription) = 0;
+	virtual void SetModDir(const pStrA pchModDir) = 0;
+	virtual void SetDedicatedServer(Bool bDedicated) = 0;
+	virtual void LogOn(const pStrA pchToken) = 0;
+	virtual void LogOnAnonymous() = 0;
+	virtual void LogOff() = 0;
+	virtual Bool BLoggedOn() = 0;
+	virtual Bool BSecure() = 0;
+	virtual SteamId_t GetSteamID() = 0;
+	virtual Bool WasRestartRequested() = 0;
+	virtual void SetMaxPlayerCount(Int32 cPlayersMax) = 0;
+	virtual void SetBotPlayerCount(Int32 cBotplayers) = 0;
+	virtual void SetServerName(const pStrA pchServerName) = 0;
+	virtual void SetMapName(const pStrA pchMapName) = 0;
+	virtual void SetPasswordProtected(Bool bPasswordProtected) = 0;
+	virtual void SetSpectatorPort(Uint16 SpectatorPort) = 0;
+	virtual void SetSpectatorServerName(const pStrA pchSpectatorServerName) = 0;
+	virtual void ClearAllKeyValues() = 0;
+	virtual void SetKeyValue(const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual void SetGameTags(const pStrA pchGameTags) = 0;
+	virtual void SetGameData(const pStrA pchGameData) = 0;
+	virtual void SetRegion(const pStrA pchRegion) = 0;
+	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, const pVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
+	virtual SteamId_t CreateUnauthenticatedUserConnection() = 0;
+	virtual void SendUserDisconnect(SteamId_t SteamIdUser) = 0;
+	virtual Bool BUpdateUserData(SteamId_t SteamIdUser, const pStrA pchPlayerName, Uint32 Score) = 0;
+	virtual HAuthTicket GetAuthSessionTicket_Old(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pbAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual void EndAuthSession(SteamId_t SteamId) = 0;
+	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
+	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t AppId) = 0;
+	virtual Bool RequestUserGroupStatus(SteamId_t SteamIdUser, SteamId_t SteamIdGroup) = 0;
+	virtual void GetGameplayStats() = 0;
+	virtual SteamAPICall_t GetServerReputation() = 0;
+	virtual Uint32 GetPublicIP_Old() = 0;
+	virtual Bool HandleIncomingPacket(const pVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) = 0;
+	virtual Int32 GetNextOutgoingPacket(pVoid pvOut, Int32 cbMaxOut, pUint32 pNetAdrr, pUint16 pPort) = 0;
+	virtual void EnableHeartbeats(Bool bActive) = 0;
+	virtual void SetHeartbeatInterval(Int32 iHeartbeatInterval) = 0;
+	virtual void ForceHeartbeat() = 0;
+	virtual SteamAPICall_t AssociateWithClan(SteamId_t SteamIdClan) = 0;
+	virtual SteamAPICall_t ComputeNewPlayerCompatibility(SteamId_t SteamIdNewPlayer) = 0;
+
+} ISteamGameServer012, *IpSteamGameServer012;
+
+typedef class _ISteamGameServer013_ {
+public:
+
+	virtual Bool InitGameServer(Uint32 nIP, Uint16 GamePort, Uint16 QueryPort, Uint32 nFlags, AppId_t iGameAppId, const pStrA pchVersionString) = 0;
+	virtual void SetProduct(const pStrA pchProduct) = 0;
+	virtual void SetGameDescription(const pStrA pchGameDescription) = 0;
+	virtual void SetModDir(const pStrA pchModDir) = 0;
+	virtual void SetDedicatedServer(Bool bDedicated) = 0;
+	virtual void LogOn(const pStrA pchToken) = 0;
+	virtual void LogOnAnonymous() = 0;
+	virtual void LogOff() = 0;
+	virtual Bool BLoggedOn() = 0;
+	virtual Bool BSecure() = 0;
+	virtual SteamId_t GetSteamID() = 0;
+	virtual Bool WasRestartRequested() = 0;
+	virtual void SetMaxPlayerCount(Int32 cPlayersMax) = 0;
+	virtual void SetBotPlayerCount(Int32 cBotplayers) = 0;
+	virtual void SetServerName(const pStrA pchServerName) = 0;
+	virtual void SetMapName(const pStrA pchMapName) = 0;
+	virtual void SetPasswordProtected(Bool bPasswordProtected) = 0;
+	virtual void SetSpectatorPort(Uint16 SpectatorPort) = 0;
+	virtual void SetSpectatorServerName(const pStrA pchSpectatorServerName) = 0;
+	virtual void ClearAllKeyValues() = 0;
+	virtual void SetKeyValue(const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual void SetGameTags(const pStrA pchGameTags) = 0;
+	virtual void SetGameData(const pStrA pchGameData) = 0;
+	virtual void SetRegion(const pStrA pchRegion) = 0;
+	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, const pVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
+	virtual SteamId_t CreateUnauthenticatedUserConnection() = 0;
+	virtual void SendUserDisconnect(SteamId_t SteamIdUser) = 0;
+	virtual Bool BUpdateUserData(SteamId_t SteamIdUser, const pStrA pchPlayerName, Uint32 Score) = 0;
+	virtual HAuthTicket GetAuthSessionTicket_Old(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pbAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual void EndAuthSession(SteamId_t SteamId) = 0;
+	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
+	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t AppId) = 0;
+	virtual Bool RequestUserGroupStatus(SteamId_t SteamIdUser, SteamId_t SteamIdGroup) = 0;
+	virtual void GetGameplayStats() = 0;
+	virtual SteamAPICall_t GetServerReputation() = 0;
+	virtual SteamIPAddress_t GetPublicIP() = 0;
+	virtual Bool HandleIncomingPacket(const pVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) = 0;
+	virtual Int32 GetNextOutgoingPacket(pVoid pvOut, Int32 cbMaxOut, pUint32 pNetAdrr, pUint16 pPort) = 0;
+	virtual void EnableHeartbeats(Bool bActive) = 0;
+	virtual void SetHeartbeatInterval(Int32 iHeartbeatInterval) = 0;
+	virtual void ForceHeartbeat() = 0;
+	virtual SteamAPICall_t AssociateWithClan(SteamId_t SteamIdClan) = 0;
+	virtual SteamAPICall_t ComputeNewPlayerCompatibility(SteamId_t SteamIdNewPlayer) = 0;
+
+} ISteamGameServer013, *IpSteamGameServer013;
+
+typedef class _ISteamGameServer014_ {
+public:
+
+	virtual Bool InitGameServer(Uint32 nIP, Uint16 GamePort, Uint16 QueryPort, Uint32 nFlags, AppId_t iGameAppId, const pStrA pchVersionString) = 0;
+	virtual void SetProduct(const pStrA pchProduct) = 0;
+	virtual void SetGameDescription(const pStrA pchGameDescription) = 0;
+	virtual void SetModDir(const pStrA pchModDir) = 0;
+	virtual void SetDedicatedServer(Bool bDedicated) = 0;
+	virtual void LogOn(const pStrA pchToken) = 0;
+	virtual void LogOnAnonymous() = 0;
+	virtual void LogOff() = 0;
+	virtual Bool BLoggedOn() = 0;
+	virtual Bool BSecure() = 0;
+	virtual SteamId_t GetSteamID() = 0;
+	virtual Bool WasRestartRequested() = 0;
+	virtual void SetMaxPlayerCount(Int32 cPlayersMax) = 0;
+	virtual void SetBotPlayerCount(Int32 cBotplayers) = 0;
+	virtual void SetServerName(const pStrA pchServerName) = 0;
+	virtual void SetMapName(const pStrA pchMapName) = 0;
+	virtual void SetPasswordProtected(Bool bPasswordProtected) = 0;
+	virtual void SetSpectatorPort(Uint16 SpectatorPort) = 0;
+	virtual void SetSpectatorServerName(const pStrA pchSpectatorServerName) = 0;
+	virtual void ClearAllKeyValues() = 0;
+	virtual void SetKeyValue(const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual void SetGameTags(const pStrA pchGameTags) = 0;
+	virtual void SetGameData(const pStrA pchGameData) = 0;
+	virtual void SetRegion(const pStrA pchRegion) = 0;
+	virtual void SetAdvertiseServerActive(Bool bActive) = 0;
+	virtual HAuthTicket GetAuthSessionTicket_Old(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pbAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual void EndAuthSession(SteamId_t SteamId) = 0;
+	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
+	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t AppId) = 0;
+	virtual Bool RequestUserGroupStatus(SteamId_t SteamIdUser, SteamId_t SteamIdGroup) = 0;
+	virtual void GetGameplayStats() = 0;
+	virtual SteamAPICall_t GetServerReputation() = 0;
+	virtual SteamIPAddress_t GetPublicIP() = 0;
+	virtual Bool HandleIncomingPacket(const pVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) = 0;
+	virtual Int32 GetNextOutgoingPacket(pVoid pvOut, Int32 cbMaxOut, pUint32 pNetAdrr, pUint16 pPort) = 0;
+	virtual SteamAPICall_t AssociateWithClan(SteamId_t SteamIdClan) = 0;
+	virtual SteamAPICall_t ComputeNewPlayerCompatibility(SteamId_t SteamIdNewPlayer) = 0;
+	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, const pVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
+	virtual SteamId_t CreateUnauthenticatedUserConnection() = 0;
+	virtual void SendUserDisconnect(SteamId_t SteamIdUser) = 0;
+	virtual Bool BUpdateUserData(SteamId_t SteamIdUser, const pStrA pchPlayerName, Uint32 Score) = 0;
+	virtual void SetMasterServerHeartbeatInterval_DEPRECATED(Int32 iHeartbeatInterval) = 0;
+	virtual void ForceMasterServerHeartbeat_DEPRECATED() = 0;
+
+} ISteamGameServer014, *IpSteamGameServer014;
+
 // -----------------------------------------------------------------------------
 // Purpose: Functions for authenticating users via SteamAPI
 // -----------------------------------------------------------------------------
