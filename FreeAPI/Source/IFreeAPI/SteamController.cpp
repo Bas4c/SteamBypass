@@ -2,6 +2,12 @@
 #include "SteamController.h"
 // -----------------------------------------------------------------------------
 
+Bool _SteamController_::Init(const pStrA pchAbsolutePathToControllerConfigVDF) {
+
+	return True;
+
+}
+
 Bool _SteamController_::Init() {
 
 	return True;
@@ -2310,6 +2316,68 @@ Bool _SteamController_::GetControllerBindingRevision(ControllerHandle_t hControl
 		*pMinor = 0;
 	}
 
+	return False;
+
+}
+
+Bool _SteamController_::GetControllerState(Uint32 iController, pSteamControllerState_t pSteamControllerState) {
+	
+	if (pSteamControllerState != NULL) {
+		
+		pSteamControllerState->nPacket = 0U;
+		pSteamControllerState->nFlagsButtons = (Uint64)(0x0000000000000000);
+
+		pSteamControllerState->LeftPadX = 0;
+		pSteamControllerState->LeftPadY = 0;
+
+		pSteamControllerState->RightPadX = 0;
+		pSteamControllerState->RightPadY = 0;
+		
+		return True;
+
+	}
+	
+	return False;
+}
+
+void _SteamController_::SetOverrideMode(const pStrA pchMode) {
+
+	/* Empty Method */
+
+}
+
+Bool _SteamController_::ActivateMode(ControllerHandle_t hController, Int32 eMode) {
+
+	return True;
+
+}
+
+Int32 _SteamController_::GetJoystickForHandle(ControllerHandle_t hController) {
+	
+	return 0;
+
+}
+
+ControllerHandle_t _SteamController_::GetHandleForJoystick(Int32 hJoystick) {
+
+	return (ControllerHandle_t)(0x0000000000000000);
+
+}
+
+Int32 _SteamController_::GetModeAnalogOutputData(ControllerHandle_t hController, Int32 hAnalogData) {
+	
+	return 0;
+
+}
+
+Bool _SteamController_::ShowDigitalActionOrigins(ControllerHandle_t hController, ControllerDigitalActionHandle_t hDigitalAction, Float Scale, Float XPosition, Float YPosition) {
+	
+	return False;
+
+}
+
+Bool _SteamController_::ShowAnalogActionOrigins(ControllerHandle_t hController, ControllerAnalogActionHandle_t hDigitalAction, Float Scale, Float XPosition, Float YPosition) {
+	
 	return False;
 
 }

@@ -49,8 +49,7 @@ typedef class _SteamClient_ : public _ISteamClient007_,
  public _ISteamClient014_, public _ISteamClient015_,
  public _ISteamClient016_, public _ISteamClient017_,
  public _ISteamClient018_, public _ISteamClient019_,
- public _ISteamClient_
-{
+ public _ISteamClient_ {
 public:
 
 	_SteamClient_() = default;

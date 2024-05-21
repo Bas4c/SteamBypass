@@ -7,13 +7,18 @@
 #include "IFreeAPI.Contract\ISteamController.h"
 // -----------------------------------------------------------------------------
 
-typedef class _SteamController_ : public _ISteamController_ {
+typedef class _SteamController_ : public _ISteamController001_,
+ public _ISteamController002_, public _ISteamController003_,
+ public _ISteamController004_, public _ISteamController005_,
+ public _ISteamController006_, public _ISteamController007_,
+ public _ISteamController_ {
 public:
 
 	_SteamController_() = default;
 	_SteamController_(const _SteamController_&) = delete;
 	_SteamController_& operator=(const _SteamController_&) = delete;
 
+	Bool Init(const pStrA pchAbsolutePathToControllerConfigVDF) override;
 	Bool Init() override;
 	Bool Shutdown() override;
 
@@ -72,6 +77,18 @@ public:
 	EControllerActionOrigin TranslateActionOrigin(ESteamInputType eDestinationInputType, EControllerActionOrigin eSourceOrigin) override;
 
 	Bool GetControllerBindingRevision(ControllerHandle_t hController, pInt32 pMajor, pInt32 pMinor) override;
+
+	Bool GetControllerState(Uint32 iController, pSteamControllerState_t pSteamControllerState) override;
+	void SetOverrideMode(const pStrA pchMode) override;
+	Bool ActivateMode(ControllerHandle_t hController, Int32 eMode) override;
+	
+	Int32 GetJoystickForHandle(ControllerHandle_t hController) override;
+	ControllerHandle_t GetHandleForJoystick(Int32 hJoystick) override;
+	
+	Int32 GetModeAnalogOutputData(ControllerHandle_t hController, Int32 hAnalogData) override;
+	
+	Bool ShowDigitalActionOrigins(ControllerHandle_t hController, ControllerDigitalActionHandle_t hDigitalAction, Float Scale, Float XPosition, Float YPosition) override;
+	Bool ShowAnalogActionOrigins(ControllerHandle_t hController, ControllerAnalogActionHandle_t hDigitalAction, Float Scale, Float XPosition, Float YPosition) override;
 
 	~_SteamController_() = default;
 

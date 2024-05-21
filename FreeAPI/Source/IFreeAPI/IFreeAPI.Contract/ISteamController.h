@@ -470,6 +470,205 @@ typedef Uint64 ControllerAnalogActionHandle_t, *pControllerAnalogActionHandle_t;
 #define ControllerMotionData_t InputMotionData_t
 #define ControllerMotionDataV2_t InputMotionDataV2_t
 
+typedef struct _SteamControllerState_t_ {
+	
+	/* If packet id matches that on your prior call, then the controller state hasn't been changed since 
+	    your last call and there is no need to process it */
+	Uint32 nPacket;
+	Uint64 nFlagsButtons;
+
+	Uint16 LeftPadX;
+	Uint16 LeftPadY;
+
+	Uint16 RightPadX;
+	Uint16 RightPadY;
+
+} SteamControllerState_t, *pSteamControllerState_t;
+
+typedef class _ISteamController001_ {
+public:
+
+	virtual Bool Init(const pStrA pchAbsolutePathToControllerConfigVDF) = 0;
+	virtual Bool Shutdown() = 0;
+	virtual void RunFrame() = 0;
+	virtual Bool GetControllerState(Uint32 iController, pSteamControllerState_t pSteamControllerState) = 0;
+	virtual void TriggerHapticPulse(ControllerHandle_t hController, ESteamControllerPad eTargetPad, Uint16 DurationMicroSeconds) = 0;
+	virtual void SetOverrideMode(const pStrA pchMode) = 0;
+
+} ISteamController001, *IpSteamController001;
+
+typedef class _ISteamController002_ {
+public:
+
+	virtual Bool Init() = 0;
+	virtual Bool Shutdown() = 0;
+	virtual void RunFrame() = 0;
+	virtual Int32 GetConnectedControllers(pControllerHandle_t phController) = 0;
+	virtual void TriggerHapticPulse(ControllerHandle_t hController, ESteamControllerPad eTargetPad, Uint16 DurationMicroSeconds) = 0;
+	virtual Bool ActivateMode(ControllerHandle_t hController, Int32 eMode) = 0;
+	virtual Int32 GetJoystickForHandle(ControllerHandle_t hController) = 0;
+	virtual ControllerHandle_t GetHandleForJoystick(Int32 hJoystick) = 0;
+	virtual Int32 GetModeAnalogOutputData(ControllerHandle_t hController, Int32 hAnalogData) = 0;
+
+} ISteamController002, *IpSteamController002;
+
+typedef class _ISteamController003_ {
+public:
+
+	virtual Bool Init() = 0;
+	virtual Bool Shutdown() = 0;
+	virtual void RunFrame() = 0;
+	virtual Int32 GetConnectedControllers(pControllerHandle_t phController) = 0;
+	virtual Bool ShowBindingPanel(ControllerHandle_t hController) = 0;
+	virtual ControllerActionSetHandle_t GetActionSetHandle(const pStrA pchActionSetName) = 0;
+	virtual ControllerActionSetHandle_t GetCurrentActionSet(ControllerHandle_t hController) = 0;
+	virtual ControllerDigitalActionHandle_t GetDigitalActionHandle(const pStrA pchActionName) = 0;
+	virtual ControllerDigitalActionData_t GetDigitalActionData(ControllerHandle_t hController, ControllerDigitalActionHandle_t hDigitalAction) = 0;
+	virtual Int32 GetDigitalActionOrigins(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet, ControllerDigitalActionHandle_t hDigitalAction, pEControllerActionOrigin peControllerActionOrigin) = 0;
+	virtual ControllerAnalogActionHandle_t GetAnalogActionHandle(const pStrA pchActionName) = 0;
+	virtual ControllerAnalogActionData_t GetAnalogActionData(ControllerHandle_t hController, ControllerAnalogActionHandle_t hAnalogAction) = 0;
+	virtual Int32 GetAnalogActionOrigins(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet, ControllerAnalogActionHandle_t hAnalogAction, pEControllerActionOrigin peControllerActionOrigin) = 0;
+	virtual void StopAnalogActionMomentum(ControllerHandle_t hController, ControllerAnalogActionHandle_t hAnalogAction) = 0;
+	virtual void TriggerHapticPulse(ControllerHandle_t hController, ESteamControllerPad eTargetPad, Uint16 DurationMicroSeconds) = 0;
+	virtual void TriggerRepeatedHapticPulse(ControllerHandle_t hController, ESteamControllerPad eTargetPad, Uint16 DurationMicroSeconds, Uint16 OffMicroSeconds, Uint16 nRepeat, Uint32 nFlags) = 0;
+
+} ISteamController003, *IpSteamController003;
+
+typedef class _ISteamController004_ {
+public:
+
+	virtual Bool Init() = 0;
+	virtual Bool Shutdown() = 0;
+	virtual void RunFrame() = 0;
+	virtual Int32 GetConnectedControllers(pControllerHandle_t phController) = 0;
+	virtual Bool ShowBindingPanel(ControllerHandle_t hController) = 0;
+	virtual ControllerActionSetHandle_t GetActionSetHandle(const pStrA pchActionSetName) = 0;
+	virtual ControllerActionSetHandle_t GetCurrentActionSet(ControllerHandle_t hController) = 0;
+	virtual ControllerDigitalActionHandle_t GetDigitalActionHandle(const pStrA pchActionName) = 0;
+	virtual ControllerDigitalActionData_t GetDigitalActionData(ControllerHandle_t hController, ControllerDigitalActionHandle_t hDigitalAction) = 0;
+	virtual Int32 GetDigitalActionOrigins(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet, ControllerDigitalActionHandle_t hDigitalAction, pEControllerActionOrigin peControllerActionOrigin) = 0;
+	virtual ControllerAnalogActionHandle_t GetAnalogActionHandle(const pStrA pchActionName) = 0;
+	virtual ControllerAnalogActionData_t GetAnalogActionData(ControllerHandle_t hController, ControllerAnalogActionHandle_t hAnalogAction) = 0;
+	virtual Int32 GetAnalogActionOrigins(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet, ControllerAnalogActionHandle_t hAnalogAction, pEControllerActionOrigin peControllerActionOrigin) = 0;
+	virtual void StopAnalogActionMomentum(ControllerHandle_t hController, ControllerAnalogActionHandle_t hAnalogAction) = 0;
+	virtual void TriggerHapticPulse(ControllerHandle_t hController, ESteamControllerPad eTargetPad, Uint16 DurationMicroSeconds) = 0;
+	virtual void TriggerRepeatedHapticPulse(ControllerHandle_t hController, ESteamControllerPad eTargetPad, Uint16 DurationMicroSeconds, Uint16 OffMicroSeconds, Uint16 nRepeat, Uint32 nFlags) = 0;
+	virtual Int32 GetGamepadIndexForController(ControllerHandle_t hController) = 0;
+	virtual ControllerHandle_t GetControllerForGamepadIndex(Int32 nIndex) = 0;
+	virtual ControllerMotionData_t GetMotionData(ControllerHandle_t hController) = 0;
+	virtual Bool ShowDigitalActionOrigins(ControllerHandle_t hController, ControllerDigitalActionHandle_t hDigitalAction, Float Scale, Float XPosition, Float YPosition) = 0;
+	virtual Bool ShowAnalogActionOrigins(ControllerHandle_t hController, ControllerAnalogActionHandle_t hDigitalAction, Float Scale, Float XPosition, Float YPosition) = 0;
+
+} ISteamController004, *IpSteamController004;
+
+typedef class _ISteamController005_ {
+public:
+
+	virtual Bool Init() = 0;
+	virtual Bool Shutdown() = 0;
+	virtual void RunFrame() = 0;
+	virtual Int32 GetConnectedControllers(pControllerHandle_t phController) = 0;
+	virtual Bool ShowBindingPanel(ControllerHandle_t hController) = 0;
+	virtual ControllerActionSetHandle_t GetActionSetHandle(const pStrA pchActionSetName) = 0;
+	virtual ControllerActionSetHandle_t GetCurrentActionSet(ControllerHandle_t hController) = 0;
+	virtual ControllerDigitalActionHandle_t GetDigitalActionHandle(const pStrA pchActionName) = 0;
+	virtual ControllerDigitalActionData_t GetDigitalActionData(ControllerHandle_t hController, ControllerDigitalActionHandle_t hDigitalAction) = 0;
+	virtual Int32 GetDigitalActionOrigins(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet, ControllerDigitalActionHandle_t hDigitalAction, pEControllerActionOrigin peControllerActionOrigin) = 0;
+	virtual ControllerAnalogActionHandle_t GetAnalogActionHandle(const pStrA pchActionName) = 0;
+	virtual ControllerAnalogActionData_t GetAnalogActionData(ControllerHandle_t hController, ControllerAnalogActionHandle_t hAnalogAction) = 0;
+	virtual Int32 GetAnalogActionOrigins(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet, ControllerAnalogActionHandle_t hAnalogAction, pEControllerActionOrigin peControllerActionOrigin) = 0;
+	virtual void StopAnalogActionMomentum(ControllerHandle_t hController, ControllerAnalogActionHandle_t hAnalogAction) = 0;
+	virtual void TriggerHapticPulse(ControllerHandle_t hController, ESteamControllerPad eTargetPad, Uint16 DurationMicroSeconds) = 0;
+	virtual void TriggerRepeatedHapticPulse(ControllerHandle_t hController, ESteamControllerPad eTargetPad, Uint16 DurationMicroSeconds, Uint16 OffMicroSeconds, Uint16 nRepeat, Uint32 nFlags) = 0;
+	virtual void TriggerVibration(ControllerHandle_t hController, Uint16 LeftSpeed, Uint16 RightSpeed) = 0;
+	virtual void SetLEDColor(ControllerHandle_t hController, Uint8 nColorR, Uint8 nColorG, Uint8 nColorB, Uint32 nFlags) = 0;
+	virtual Int32 GetGamepadIndexForController(ControllerHandle_t hController) = 0;
+	virtual ControllerHandle_t GetControllerForGamepadIndex(Int32 nIndex) = 0;
+	virtual ControllerMotionData_t GetMotionData(ControllerHandle_t hController) = 0;
+	virtual Bool ShowDigitalActionOrigins(ControllerHandle_t hController, ControllerDigitalActionHandle_t hDigitalAction, Float Scale, Float XPosition, Float YPosition) = 0;
+	virtual Bool ShowAnalogActionOrigins(ControllerHandle_t hController, ControllerAnalogActionHandle_t hDigitalAction, Float Scale, Float XPosition, Float YPosition) = 0;
+	virtual const pStrA GetStringForActionOrigin(EControllerActionOrigin eControllerActionOrigin) = 0;
+	virtual const pStrA GetGlyphForActionOrigin(EControllerActionOrigin eControllerActionOrigin) = 0;
+
+} ISteamController005, *IpSteamController005;
+
+typedef class _ISteamController006_ {
+public:
+
+	virtual Bool Init() = 0;
+	virtual Bool Shutdown() = 0;
+	virtual void RunFrame() = 0;
+	virtual Int32 GetConnectedControllers(pControllerHandle_t phController) = 0;
+	virtual Bool ShowBindingPanel(ControllerHandle_t hController) = 0;
+	virtual ControllerActionSetHandle_t GetActionSetHandle(const pStrA pchActionSetName) = 0;
+	virtual void ActivateActionSet(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet) = 0;
+	virtual ControllerActionSetHandle_t GetCurrentActionSet(ControllerHandle_t hController) = 0;
+	virtual void ActivateActionSetLayer(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSetLayer) = 0;
+	virtual void DeactivateActionSetLayer(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSetLayer) = 0;
+	virtual void DeactivateAllActionSetLayers(ControllerHandle_t hController) = 0;
+	virtual Int32 GetActiveActionSetLayers(ControllerHandle_t hController, pControllerActionSetHandle_t phController) = 0;
+	virtual ControllerDigitalActionHandle_t GetDigitalActionHandle(const pStrA pchActionName) = 0;
+	virtual ControllerDigitalActionData_t GetDigitalActionData(ControllerHandle_t hController, ControllerDigitalActionHandle_t hDigitalAction) = 0;
+	virtual Int32 GetDigitalActionOrigins(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet, ControllerDigitalActionHandle_t hDigitalAction, pEControllerActionOrigin peControllerActionOrigin) = 0;
+	virtual ControllerAnalogActionHandle_t GetAnalogActionHandle(const pStrA pchActionName) = 0;
+	virtual ControllerAnalogActionData_t GetAnalogActionData(ControllerHandle_t hController, ControllerAnalogActionHandle_t hAnalogAction) = 0;
+	virtual Int32 GetAnalogActionOrigins(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet, ControllerAnalogActionHandle_t hAnalogAction, pEControllerActionOrigin peControllerActionOrigin) = 0;
+	virtual void StopAnalogActionMomentum(ControllerHandle_t hController, ControllerAnalogActionHandle_t hAnalogAction) = 0;
+	virtual void TriggerHapticPulse(ControllerHandle_t hController, ESteamControllerPad eTargetPad, Uint16 DurationMicroSeconds) = 0;
+	virtual void TriggerRepeatedHapticPulse(ControllerHandle_t hController, ESteamControllerPad eTargetPad, Uint16 DurationMicroSeconds, Uint16 OffMicroSeconds, Uint16 nRepeat, Uint32 nFlags) = 0;
+	virtual void TriggerVibration(ControllerHandle_t hController, Uint16 LeftSpeed, Uint16 RightSpeed) = 0;
+	virtual void SetLEDColor(ControllerHandle_t hController, Uint8 nColorR, Uint8 nColorG, Uint8 nColorB, Uint32 nFlags) = 0;
+	virtual Int32 GetGamepadIndexForController(ControllerHandle_t hController) = 0;
+	virtual ControllerHandle_t GetControllerForGamepadIndex(Int32 nIndex) = 0;
+	virtual ControllerMotionData_t GetMotionData(ControllerHandle_t hController) = 0;
+	virtual Bool ShowDigitalActionOrigins(ControllerHandle_t hController, ControllerDigitalActionHandle_t hDigitalAction, Float Scale, Float XPosition, Float YPosition) = 0;
+	virtual Bool ShowAnalogActionOrigins(ControllerHandle_t hController, ControllerAnalogActionHandle_t hDigitalAction, Float Scale, Float XPosition, Float YPosition) = 0;
+	virtual const pStrA GetStringForActionOrigin(EControllerActionOrigin eControllerActionOrigin) = 0;
+	virtual const pStrA GetGlyphForActionOrigin(EControllerActionOrigin eControllerActionOrigin) = 0;
+	virtual ESteamInputType GetInputTypeForHandle(ControllerHandle_t hController) = 0;
+
+} ISteamController006, *IpSteamController006;
+
+typedef class _ISteamController007_ {
+public:
+
+	virtual Bool Init() = 0;
+	virtual Bool Shutdown() = 0;
+	virtual void RunFrame() = 0;
+	virtual Int32 GetConnectedControllers(pControllerHandle_t phController) = 0;
+	virtual ControllerActionSetHandle_t GetActionSetHandle(const pStrA pchActionSetName) = 0;
+	virtual void ActivateActionSet(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet) = 0;
+	virtual ControllerActionSetHandle_t GetCurrentActionSet(ControllerHandle_t hController) = 0;
+	virtual void ActivateActionSetLayer(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSetLayer) = 0;
+	virtual void DeactivateActionSetLayer(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSetLayer) = 0;
+	virtual void DeactivateAllActionSetLayers(ControllerHandle_t hController) = 0;
+	virtual Int32 GetActiveActionSetLayers(ControllerHandle_t hController, pControllerActionSetHandle_t phController) = 0;
+	virtual ControllerDigitalActionHandle_t GetDigitalActionHandle(const pStrA pchActionName) = 0;
+	virtual ControllerDigitalActionData_t GetDigitalActionData(ControllerHandle_t hController, ControllerDigitalActionHandle_t hDigitalAction) = 0;
+	virtual Int32 GetDigitalActionOrigins(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet, ControllerDigitalActionHandle_t hDigitalAction, pEControllerActionOrigin peControllerActionOrigin) = 0;
+	virtual ControllerAnalogActionHandle_t GetAnalogActionHandle(const pStrA pchActionName) = 0;
+	virtual ControllerAnalogActionData_t GetAnalogActionData(ControllerHandle_t hController, ControllerAnalogActionHandle_t hAnalogAction) = 0;
+	virtual Int32 GetAnalogActionOrigins(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet, ControllerAnalogActionHandle_t hAnalogAction, pEControllerActionOrigin peControllerActionOrigin) = 0;
+	virtual const pStrA GetGlyphForActionOrigin(EControllerActionOrigin eControllerActionOrigin) = 0;
+	virtual const pStrA GetStringForActionOrigin(EControllerActionOrigin eControllerActionOrigin) = 0;
+	virtual void StopAnalogActionMomentum(ControllerHandle_t hController, ControllerAnalogActionHandle_t hAnalogAction) = 0;
+	virtual ControllerMotionData_t GetMotionData(ControllerHandle_t hController) = 0;
+	virtual void TriggerHapticPulse(ControllerHandle_t hController, ESteamControllerPad eTargetPad, Uint16 DurationMicroSeconds) = 0;
+	virtual void TriggerRepeatedHapticPulse(ControllerHandle_t hController, ESteamControllerPad eTargetPad, Uint16 DurationMicroSeconds, Uint16 OffMicroSeconds, Uint16 nRepeat, Uint32 nFlags) = 0;
+	virtual void TriggerVibration(ControllerHandle_t hController, Uint16 LeftSpeed, Uint16 RightSpeed) = 0;
+	virtual void SetLEDColor(ControllerHandle_t hController, Uint8 nColorR, Uint8 nColorG, Uint8 nColorB, Uint32 nFlags) = 0;
+	virtual Bool ShowBindingPanel(ControllerHandle_t hController) = 0;
+	virtual ESteamInputType GetInputTypeForHandle(ControllerHandle_t hController) = 0;
+	virtual ControllerHandle_t GetControllerForGamepadIndex(Int32 nIndex) = 0;
+	virtual Int32 GetGamepadIndexForController(ControllerHandle_t hController) = 0;
+	virtual const pStrA GetStringForXboxOrigin(EXboxOrigin eXboxOrigin) = 0;
+	virtual const pStrA GetGlyphForXboxOrigin(EXboxOrigin eXboxOrigin) = 0;
+	virtual EControllerActionOrigin GetActionOriginFromXboxOrigin_(ControllerHandle_t hController, EXboxOrigin eXboxOrigin) = 0;
+	virtual EControllerActionOrigin TranslateActionOrigin(ESteamInputType eDestinationInputType, EControllerActionOrigin eSourceOrigin) = 0;
+	virtual Bool GetControllerBindingRevision(ControllerHandle_t hController, pInt32 pMajor, pInt32 pMinor) = 0;
+
+} ISteamController007, *IpSteamController007;
+
 // -----------------------------------------------------------------------------
 // Purpose: Steam Input API
 // -----------------------------------------------------------------------------
@@ -513,8 +712,8 @@ public:
 	virtual void StopAnalogActionMomentum(ControllerHandle_t hController, ControllerAnalogActionHandle_t hAnalogAction) = 0;
 	virtual ControllerMotionData_t GetMotionData(ControllerHandle_t hController) = 0;
 
-	virtual void TriggerHapticPulse(ControllerHandle_t hController, ESteamControllerPad eTargetPad, Uint16 DurationMicroSeconds) = 0;
-	virtual void TriggerRepeatedHapticPulse(ControllerHandle_t hController, ESteamControllerPad eTargetPad, Uint16 DurationMicroSeconds, Uint16 OffMicroSeconds, Uint16 nRepeat, Uint32 nFlags) = 0;
+	virtual void TriggerHapticPulse(ControllerHandle_t hController, ESteamControllerPad eTargetPad, Uint16 DurationMicroSecondsonds) = 0;
+	virtual void TriggerRepeatedHapticPulse(ControllerHandle_t hController, ESteamControllerPad eTargetPad, Uint16 DurationMicroSecondsonds, Uint16 OffMicroSecondsonds, Uint16 nRepeat, Uint32 nFlags) = 0;
 	virtual void TriggerVibration(ControllerHandle_t hController, Uint16 LeftSpeed, Uint16 RightSpeed) = 0;
 	virtual void SetLEDColor(ControllerHandle_t hController, Uint8 nColorR, Uint8 nColorG, Uint8 nColorB, Uint32 nFlags) = 0;
 

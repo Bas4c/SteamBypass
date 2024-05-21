@@ -60,6 +60,12 @@ const pStrA _SteamFriends_::GetFriendPersonaName(SteamId_t SteamIdFriend) {
 
 }
 
+Int32 _SteamFriends_::GetFriendAvatar(SteamId_t SteamIdFriend, EAvatarSize eAvatarSize) {
+	
+	return 0;
+
+}
+
 Bool _SteamFriends_::GetFriendGamePlayed(SteamId_t SteamIdFriend, pFriendGameInfo_t pFriendGameInfo) {
 
 	return False;

@@ -7,7 +7,14 @@
 #include "IFreeAPI.Contract\ISteamFriends.h"
 // -----------------------------------------------------------------------------
 
-typedef class _SteamFriends_ : public _ISteamFriends_ {
+typedef class _SteamFriends_ : public _ISteamFriends003_,
+ public _ISteamFriends004_, public _ISteamFriends005_,
+ public _ISteamFriends006_, public _ISteamFriends007_,
+ public _ISteamFriends008_, public _ISteamFriends009_,
+ public _ISteamFriends010_, public _ISteamFriends011_,
+ public _ISteamFriends012_, public _ISteamFriends013_,
+ public _ISteamFriends014_, public _ISteamFriends015_,
+ public _ISteamFriends016_, public _ISteamFriends_ {
 public:
 
 	_SteamFriends_();
@@ -33,6 +40,7 @@ public:
 	EFriendRelationship GetFriendRelationship(SteamId_t SteamIdFriend) override;
 	EPersonaState GetFriendPersonaState(SteamId_t SteamIdFriend) override;
 	const pStrA GetFriendPersonaName(SteamId_t SteamIdFriend) override;
+	Int32 GetFriendAvatar(SteamId_t SteamIdFriend, EAvatarSize eAvatarSize) override;
 
 	Bool GetFriendGamePlayed(SteamId_t SteamIdFriend, pFriendGameInfo_t pFriendGameInfo) override;
 	/* Returns (empty string) when their are no more items in the history */

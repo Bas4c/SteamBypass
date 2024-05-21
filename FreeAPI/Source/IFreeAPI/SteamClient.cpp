@@ -125,28 +125,34 @@ void _SteamClient_::SetLocalIPBinding(const pSteamIPAddress_t pSteamIPAdrr, Uint
 IpSteamFriends _SteamClient_::GetISteamFriends(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (
-			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends001"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends002"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends003"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends004"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends005"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends006"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends007"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends008"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends009"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends010"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends011"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends012"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends013"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends014"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends015"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends016"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamFriends017"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)(STEAMFRIENDS_INTERFACE_VERSION), True)
-		) {
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamFriends003"), True))
+			return (IpSteamFriends)((pVoid)((IpSteamFriends003)(&this->SteamFriends)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamFriends004"), True))
+			return (IpSteamFriends)((pVoid)((IpSteamFriends004)(&this->SteamFriends)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamFriends005"), True))
+			return (IpSteamFriends)((pVoid)((IpSteamFriends005)(&this->SteamFriends)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamFriends006"), True))
+			return (IpSteamFriends)((pVoid)((IpSteamFriends006)(&this->SteamFriends)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamFriends007"), True))
+			return (IpSteamFriends)((pVoid)((IpSteamFriends007)(&this->SteamFriends)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamFriends008"), True))
+			return (IpSteamFriends)((pVoid)((IpSteamFriends008)(&this->SteamFriends)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamFriends009"), True))
+			return (IpSteamFriends)((pVoid)((IpSteamFriends009)(&this->SteamFriends)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamFriends010"), True))
+			return (IpSteamFriends)((pVoid)((IpSteamFriends010)(&this->SteamFriends)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamFriends011"), True))
+			return (IpSteamFriends)((pVoid)((IpSteamFriends011)(&this->SteamFriends)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamFriends012"), True))
+			return (IpSteamFriends)((pVoid)((IpSteamFriends013)(&this->SteamFriends)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamFriends014"), True))
+			return (IpSteamFriends)((pVoid)((IpSteamFriends014)(&this->SteamFriends)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamFriends015"), True))
+			return (IpSteamFriends)((pVoid)((IpSteamFriends015)(&this->SteamFriends)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamFriends016"), True))
+			return (IpSteamFriends)((pVoid)((IpSteamFriends016)(&this->SteamFriends)));
+		if (StrA_Cmp(pchVersion, (const pStrA)(STEAMFRIENDS_INTERFACE_VERSION), True))
 			return (IpSteamFriends)(&this->SteamFriends);
-		}
 	}
 
 	return NULL;
@@ -542,18 +548,22 @@ IpSteamUnifiedMessages _SteamClient_::DEPRECATED_GetISteamUnifiedMessages(HSteam
 IpSteamController _SteamClient_::GetISteamController(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (
-			StrA_Cmp(pchVersion, (const pStrA)("SteamController001"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamController002"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamController003"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamController004"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamController005"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamController006"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)("SteamController007"), True) ||
-			StrA_Cmp(pchVersion, (const pStrA)(STEAMCONTROLLER_INTERFACE_VERSION), True)
-		) {
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamController001"), True))
+			return (IpSteamController)((pVoid)((IpSteamController001)(&this->SteamController)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamController002"), True))
+			return (IpSteamController)((pVoid)((IpSteamController002)(&this->SteamController)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamController003"), True))
+			return (IpSteamController)((pVoid)((IpSteamController003)(&this->SteamController)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamController004"), True))
+			return (IpSteamController)((pVoid)((IpSteamController004)(&this->SteamController)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamController005"), True))
+			return (IpSteamController)((pVoid)((IpSteamController005)(&this->SteamController)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamController006"), True))
+			return (IpSteamController)((pVoid)((IpSteamController006)(&this->SteamController)));
+		if (StrA_Cmp(pchVersion, (const pStrA)("SteamController007"), True))
+			return (IpSteamController)((pVoid)((IpSteamController007)(&this->SteamController)));
+		if (StrA_Cmp(pchVersion, (const pStrA)(STEAMCONTROLLER_INTERFACE_VERSION), True))
 			return (IpSteamController)(&this->SteamController);
-		}
 	}
 
 	return NULL;
