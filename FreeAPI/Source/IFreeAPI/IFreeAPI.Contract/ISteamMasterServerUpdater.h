@@ -14,14 +14,14 @@ public:
 	virtual void SetHeartbeatInterval(Int32 iHeartbeatInterval) = 0;
 	virtual Bool HandleIncomingPacket(const pVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) = 0;
 	virtual Int32 GetNextOutgoingPacket(/* [out] */ pVoid pvOut, Int32 cbMaxOut, pUint32 pNetAdr, pUint16 pPort) = 0;
-	virtual void SetBasicServerData(Uint16 nProtocolVersion, Bool bDedicatedServer, const pStrA pchRegionName, const pStrA pchProductName, Uint16 nMaxReportedClients, Bool bPasswordProtected, const pStrA pchGameDescription) = 0;
+	virtual void SetBasicServerData(Uint16 nProtocolVersion, Bool bDedicatedServer, pCStrA pchRegionName, pCStrA pchProductName, Uint16 nMaxReportedClients, Bool bPasswordProtected, pCStrA pchGameDescription) = 0;
 	virtual void ClearAllKeyValues() = 0;
-	virtual void SetKeyValue(const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual void SetKeyValue(pCStrA pchKey, pCStrA pchValue) = 0;
 	virtual void NotifyShutdown() = 0;
 	virtual Bool WasRestartRequested() = 0;
 	virtual void ForceHeartbeat() = 0;
-	virtual Bool AddMasterServer(const pStrA pchServerAddress) = 0;
-	virtual Bool RemoveMasterServer(const pStrA pchServerAddress) = 0;
+	virtual Bool AddMasterServer(pCStrA pchServerAddress) = 0;
+	virtual Bool RemoveMasterServer(pCStrA pchServerAddress) = 0;
 	virtual Int32 GetNumMasterServers() = 0;
 	virtual Int32 GetMasterServerAddress(Int32 iServer, /* [out] */ pStrA pchOut, Int32 cchOut) = 0;
 

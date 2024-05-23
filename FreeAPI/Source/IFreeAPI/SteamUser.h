@@ -31,7 +31,7 @@ public:
 	Int32 InitiateGameConnection(pVoid pvAuthBlob, Int32 cbMaxAuthBlob, SteamId_t SteamIdGameServer, Uint32 nIPServer, Uint16 PortServer, Bool bSecure) override;
 	void TerminateGameConnection(Uint32 nIPServer, Uint16 PortServer) override;
 
-	void TrackAppUsageEvent(SteamId_t GameId, Int32 eAppUsageEvent, const pStrA pchExtraInfo) override;
+	void TrackAppUsageEvent(SteamId_t GameId, Int32 eAppUsageEvent, pCStrA pchExtraInfo) override;
 	
 	/* Get User CSIDL_LOCAL_APPDATA Directotory */
 	Bool GetUserDataFolder(pStrA pchFolder, Int32 cchFolder) override;
@@ -48,7 +48,7 @@ public:
 	Uint32 GetVoiceOptimalSampleRate() override;
 
 	HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSteamNetworkingIdentity) override;
-	HAuthTicket GetAuthTicketForWebApi(const pStrA pchIdentity) override;
+	HAuthTicket GetAuthTicketForWebApi(pCStrA pchIdentity) override;
 
 	EBeginAuthSessionResult BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) override;
 	void EndAuthSession(SteamId_t SteamId) override;
@@ -64,7 +64,7 @@ public:
 	/* Regular (max level 5) and Foil (max level 1) */
 	Int32 GetGameBadgeLevel(Int32 nSeries, Bool bFoil) override;
 	Int32 GetPlayerSteamLevel() override;
-	SteamAPICall_t RequestStoreAuthURL(const pStrA pchRedirectURL) override;
+	SteamAPICall_t RequestStoreAuthURL(pCStrA pchRedirectURL) override;
 
 	Bool BIsPhoneVerified() override;
 	Bool BIsTwoFactorEnabled() override;

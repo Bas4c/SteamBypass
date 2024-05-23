@@ -40,7 +40,7 @@ Uint32 _SteamUtils_::GetServerRealTime() {
 
 }
 
-const pStrA _SteamUtils_::GetIPCountry() {
+pCStrA _SteamUtils_::GetIPCountry() {
 
 	return this->chCountry;
 
@@ -130,13 +130,13 @@ Bool _SteamUtils_::BOverlayNeedsPresent() {
 
 }
 
-SteamAPICall_t _SteamUtils_::CheckFileSignature(const pStrA pchFileName) {
+SteamAPICall_t _SteamUtils_::CheckFileSignature(pCStrA pchFileName) {
 
 	return k_SteamAPICall_Invalid;
 
 }
 
-Bool _SteamUtils_::ShowGamepadTextInput(EGamepadTextInputMode eGamepadTextInputMode, EGamepadTextInputLineMode eGamepadTextInputLineMode, const pStrA pchDescription, Uint32 cchDescription, const pStrA pchExistingText) {
+Bool _SteamUtils_::ShowGamepadTextInput(EGamepadTextInputMode eGamepadTextInputMode, EGamepadTextInputLineMode eGamepadTextInputLineMode, pCStrA pchDescription, Uint32 cchDescription, pCStrA pchExistingText) {
 
 	return False;
 
@@ -154,7 +154,7 @@ Bool _SteamUtils_::GetEnteredGamepadTextInput(pStrA pchText, Uint32 cchText) {
 
 }
 
-const pStrA _SteamUtils_::GetSteamUILanguage() {
+pCStrA _SteamUtils_::GetSteamUILanguage() {
 
 	return GetUserUILanguageA();
 
@@ -208,7 +208,7 @@ Bool _SteamUtils_::InitFilterText(Uint32 nFilterOptions) {
 
 }
 
-Int32 _SteamUtils_::FilterText(ETextFilteringContext eContext, SteamId_t SourceSteamId, const pStrA pchInputMessage, pStrA pchFilteredText, Uint32 cchFilteredText) {
+Int32 _SteamUtils_::FilterText(ETextFilteringContext eContext, SteamId_t SourceSteamId, pCStrA pchInputMessage, pStrA pchFilteredText, Uint32 cchFilteredText) {
 
 	return 0;
 

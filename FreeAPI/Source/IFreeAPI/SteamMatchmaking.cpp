@@ -38,25 +38,25 @@ SteamAPICall_t _SteamMatchmaking_::RequestLobbyList() {
 
 }
 
-void _SteamMatchmaking_::AddRequestLobbyListFilter(pStrA pchKeyToMatch, pStrA pchValueToMatch) {
+void _SteamMatchmaking_::AddRequestLobbyListFilter(pCStrA pchKeyToMatch, pCStrA pchValueToMatch) {
 
 	/* Empty Method */
 
 }
 
-void _SteamMatchmaking_::AddRequestLobbyListStringFilter(const pStrA pchKeyToMatch, const pStrA pchValueToMatch, ELobbyComparison eComparisonType) {
+void _SteamMatchmaking_::AddRequestLobbyListStringFilter(pCStrA pchKeyToMatch, pCStrA pchValueToMatch, ELobbyComparison eComparisonType) {
 
 	/* Empty Method */
 
 }
 
-void _SteamMatchmaking_::AddRequestLobbyListNumericalFilter(const pStrA pchKeyToMatch, Int32 nValueToMatch, ELobbyComparison eComparisonType) {
+void _SteamMatchmaking_::AddRequestLobbyListNumericalFilter(pCStrA pchKeyToMatch, Int32 nValueToMatch, ELobbyComparison eComparisonType) {
 
 	/* Empty Method */
 
 }
 
-void _SteamMatchmaking_::AddRequestLobbyListNearValueFilter(const pStrA pchKeyToMatch, Int32 nValueToBeCloseTo) {
+void _SteamMatchmaking_::AddRequestLobbyListNearValueFilter(pCStrA pchKeyToMatch, Int32 nValueToBeCloseTo) {
 
 	/* Empty Method */
 
@@ -158,15 +158,15 @@ SteamId_t _SteamMatchmaking_::GetLobbyMemberByIndex(SteamId_t SteamIdLobby, Int3
 
 }
 
-const pStrA _SteamMatchmaking_::GetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey) {
+pCStrA _SteamMatchmaking_::GetLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey) {
 
-	return (const pStrA)(
+	return (pCStrA)(
 		""
 	);
 
 }
 
-Bool _SteamMatchmaking_::SetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) {
+Bool _SteamMatchmaking_::SetLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) {
 
 	return False;
 
@@ -184,21 +184,21 @@ Bool _SteamMatchmaking_::GetLobbyDataByIndex(SteamId_t SteamIdLobby, Int32 iLobb
 
 }
 
-Bool _SteamMatchmaking_::DeleteLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey) {
+Bool _SteamMatchmaking_::DeleteLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey) {
 
 	return False;
 
 }
 
-const pStrA _SteamMatchmaking_::GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, const pStrA pchKey) {
+pCStrA _SteamMatchmaking_::GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, pCStrA pchKey) {
 
-	return (const pStrA)(
+	return (pCStrA)(
 		""
 	);
 
 }
 
-void _SteamMatchmaking_::SetLobbyMemberData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) {
+void _SteamMatchmaking_::SetLobbyMemberData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) {
 
 	/* Empty Method */
 
@@ -469,7 +469,7 @@ void _SteamMatchmakingServers_::RefreshServer(EMatchMakingType eMatchMakingType,
 
 // -----------------------------------------------------------------------------
 
-EGameSearchErrorCode_t _SteamGameSearch_::AddGameSearchParams(pStrA pchKeyToFind, pStrA pchValuesToFind) {
+EGameSearchErrorCode_t _SteamGameSearch_::AddGameSearchParams(pCStrA pchKeyToFind, pCStrA pchValuesToFind) {
 	
 	return k_EGameSearchErrorCode_Failed_Offline;
 
@@ -511,13 +511,13 @@ EGameSearchErrorCode_t _SteamGameSearch_::EndGameSearch() {
 
 }
 
-EGameSearchErrorCode_t _SteamGameSearch_::SetGameHostParams(pStrA pchKey, pStrA pchValue) {
+EGameSearchErrorCode_t _SteamGameSearch_::SetGameHostParams(pCStrA pchKey, pCStrA pchValue) {
 
 	return k_EGameSearchErrorCode_Failed_Offline;
 
 }
 
-EGameSearchErrorCode_t _SteamGameSearch_::SetConnectionDetails(pStrA pchConnectionDetails, Int32 cbConnectionDetails) {
+EGameSearchErrorCode_t _SteamGameSearch_::SetConnectionDetails(pCStrA pchConnectionDetails, Int32 cbConnectionDetails) {
 
 	return k_EGameSearchErrorCode_Failed_Offline;
 
@@ -591,7 +591,7 @@ Bool _SteamParties_::GetAvailableBeaconLocations(pSteamPartyBeaconLocation_t pLo
 
 }
 
-SteamAPICall_t _SteamParties_::CreateBeacon(Uint32 nOpenSlots, pSteamPartyBeaconLocation_t pBeaconLocation, pStrA pchConnectString, pStrA pchMetadata) {
+SteamAPICall_t _SteamParties_::CreateBeacon(Uint32 nOpenSlots, pSteamPartyBeaconLocation_t pBeaconLocation, pCStrA pchConnectString, pCStrA pchMetadata) {
 	
 	return k_SteamAPICall_Invalid;
 

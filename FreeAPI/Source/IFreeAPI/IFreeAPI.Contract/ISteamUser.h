@@ -25,7 +25,7 @@ public:
 	virtual Int32 InitiateGameConnection(/* [out] */ pVoid pvAuthBlob, Int32 cbMaxAuthBlob, SteamId_t SteamIdGameServer, Uint32 nIPServer, Uint16 PortServer, Bool bSecure) = 0;
 	virtual void TerminateGameConnection(Uint32 nIPServer, Uint16 PortServer) = 0;
 	
-	virtual void TrackAppUsageEvent(SteamId_t GameId, Int32 eAppUsageEvent, const pStrA pchExtraInfo) = 0;
+	virtual void TrackAppUsageEvent(SteamId_t GameId, Int32 eAppUsageEvent, pCStrA pchExtraInfo) = 0;
 
 	/* Get User CSIDL_LOCAL_APPDATA Directotory */
 	virtual Bool GetUserDataFolder(/* [out] */ pStrA pchFolder, Int32 cchFolder) = 0;
@@ -42,7 +42,7 @@ public:
 	virtual Uint32 GetVoiceOptimalSampleRate() = 0;
 
 	virtual HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, /* [out] */ pUint32 pcbTicket, /* [opt] */ const pSteamNetworkingIdentity pSteamNetworkingIdentity) = 0;
-	virtual HAuthTicket GetAuthTicketForWebApi(const pStrA pchIdentity) = 0;
+	virtual HAuthTicket GetAuthTicketForWebApi(pCStrA pchIdentity) = 0;
 
 	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
 	virtual void EndAuthSession(SteamId_t SteamId) = 0;
@@ -59,7 +59,7 @@ public:
 	virtual Int32 GetGameBadgeLevel(Int32 nSeries, Bool bFoil) = 0;
 	virtual Int32 GetPlayerSteamLevel() = 0;
 
-	virtual SteamAPICall_t RequestStoreAuthURL(const pStrA pchRedirectURL) = 0;
+	virtual SteamAPICall_t RequestStoreAuthURL(pCStrA pchRedirectURL) = 0;
 	virtual Bool BIsPhoneVerified() = 0;
 	virtual Bool BIsTwoFactorEnabled() = 0;
 	virtual Bool BIsPhoneIdentifying() = 0;

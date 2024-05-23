@@ -60,7 +60,7 @@ public:
 	virtual Uint32 GetServerRealTime() = 0;
 
 	/* Returns User Country Code: "UK", "US", ... */
-	virtual const pStrA GetIPCountry() = 0;
+	virtual pCStrA GetIPCountry() = 0;
 
 	virtual Bool GetImageSize(Int32 iImage, /* [out] */ pUint32 pCx, /* [out] */ pUint32 pCy) = 0;
 
@@ -83,7 +83,7 @@ public:
 
 	/* API warning handling
 	    Int32 is severity; 0: msg, 1: warning
-	    const pStrA is text of the message
+	    pCStrA is text of the message
 	    callbacks will occur directly after the API function is called that generated the warning or message. */
 	virtual void SetWarningMessageHook(SteamAPIWarningMessageHook_t pFunction) = 0;
 	virtual Bool IsOverlayEnabled() = 0;
@@ -100,12 +100,12 @@ public:
 	    k_ECheckFileSignatureFileNotFound - The file does not exist on disk.
 	    k_ECheckFileSignatureInvalidSignature - The file exists, and the signing tab has been set for this file, but the file is either not signed or the signature does not match.
 	    k_ECheckFileSignatureValidSignature - The file is signed and the signature is valid. */
-	virtual SteamAPICall_t CheckFileSignature(const pStrA pchFileName) = 0;
-	virtual Bool ShowGamepadTextInput(EGamepadTextInputMode eGamepadTextInputMode, EGamepadTextInputLineMode eGamepadTextInputLineMode, const pStrA pchDescription, Uint32 cchDescription, const pStrA pchExistingText) = 0;
+	virtual SteamAPICall_t CheckFileSignature(pCStrA pchFileName) = 0;
+	virtual Bool ShowGamepadTextInput(EGamepadTextInputMode eGamepadTextInputMode, EGamepadTextInputLineMode eGamepadTextInputLineMode, pCStrA pchDescription, Uint32 cchDescription, pCStrA pchExistingText) = 0;
 	virtual Uint32 GetEnteredGamepadTextLength() = 0;
 	virtual Bool GetEnteredGamepadTextInput(/* [out] */ pStrA pchText, Uint32 cchText) = 0;
 	
-	virtual const pStrA GetSteamUILanguage() = 0;
+	virtual pCStrA GetSteamUILanguage() = 0;
 	virtual Bool IsSteamRunningInVR() = 0;
 	virtual void SetOverlayNotificationInset(Int32 nHorizontalInset, Int32 nVerticalInset) = 0;
 	virtual Bool IsSteamInBigPictureMode() = 0;
@@ -122,7 +122,7 @@ public:
 	//   pchOutFilteredText is where the output will be placed, even if no filtering is performed
 	//   nByteSizeOutFilteredText is the size (in bytes) of pchOutFilteredText, should be at least strlen(pchInputText)+1
 	// Returns the number of CharAacters (not bytes) filtered
-	virtual Int32 FilterText(ETextFilteringContext eContext, SteamId_t SourceSteamId, const pStrA pchInputMessage, /* [out] */ pStrA pchFilteredText, Uint32 cchFilteredText) = 0;
+	virtual Int32 FilterText(ETextFilteringContext eContext, SteamId_t SourceSteamId, pCStrA pchInputMessage, /* [out] */ pStrA pchFilteredText, Uint32 cchFilteredText) = 0;
 	virtual ESteamIPv6ConnectivityState GetIPv6ConnectivityState(ESteamIPv6ConnectivityProtocol eSteamIPv6ConnectivityProtocol) = 0;
 	virtual Bool IsSteamRunningOnSteamDeck() = 0;
 	virtual Bool ShowFloatingGamepadTextInput(EFloatingGamepadTextInputMode eKeyboardMode, Int32 nTextFieldXPosition, Int32 nTextFieldYPosition, Int32 nTextFieldWidth, Int32 nTextFieldHeight) = 0;

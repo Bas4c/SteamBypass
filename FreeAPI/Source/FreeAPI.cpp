@@ -174,7 +174,7 @@ _FREE_API_ Bool __cdecl SteamAPI_IsSteamRunning(
 
 }
 
-_FREE_API_ const pStrA __cdecl SteamAPI_GetSteamInstallPath(
+_FREE_API_ pCStrA __cdecl SteamAPI_GetSteamInstallPath(
 	void
 ) {
 
@@ -277,8 +277,8 @@ _FREE_API_ void __cdecl  SteamAPI_SetBreakpadAppID(
 // pDate: "Mmm dd yyyy"
 // -----------------------------------------------------------------------------
 _FREE_API_ void __cdecl SteamAPI_UseBreakpadCrashHandler(
-	const pStrA pchVersion, const pStrA pchDate,
-	const pStrA pchTime, Bool bFullMemoryDumps,
+	pCStrA pchVersion, pCStrA pchDate,
+	pCStrA pchTime, Bool bFullMemoryDumps,
 	pVoid pvUserContext, void (__cdecl *PreMinidumpCallback) (pVoid pvUserContext)
 ) {
 
@@ -308,7 +308,7 @@ _FREE_API_ void __cdecl SteamAPI_WriteMiniDump(
 }
 
 _FREE_API_ void __cdecl SteamAPI_SetMiniDumpComment(
-	const pStrA pchText
+	pCStrA pchText
 ) {
 
 	/* Empty Function */
@@ -362,40 +362,40 @@ _FREE_API_ Bool __cdecl SteamInternal_GameServer_Init(
 }
 
 _FREE_API_ pVoid __cdecl SteamInternal_CreateInterface(
-	const pStrA pchVersion
+	pCStrA pchVersion
 ) {
 
 	if (pchVersion == NULL) {
 		return NULL;
 	}
 
-	if (StrA_Cmp(pchVersion, (const pStrA)("SteamClient007"), True))
+	if (StrA_Cmp(pchVersion, (pCStrA)("SteamClient007"), True))
 		return (pVoid)((IpSteamClient007)(g_SteamClientGameServer));
-	if (StrA_Cmp(pchVersion, (const pStrA)("SteamClient008"), True))
+	if (StrA_Cmp(pchVersion, (pCStrA)("SteamClient008"), True))
 		return (pVoid)((IpSteamClient008)(g_SteamClientGameServer));
-	if (StrA_Cmp(pchVersion, (const pStrA)("SteamClient009"), True))
+	if (StrA_Cmp(pchVersion, (pCStrA)("SteamClient009"), True))
 		return (pVoid)((IpSteamClient009)(g_SteamClientGameServer));
-	if (StrA_Cmp(pchVersion, (const pStrA)("SteamClient010"), True))
+	if (StrA_Cmp(pchVersion, (pCStrA)("SteamClient010"), True))
 		return (pVoid)((IpSteamClient010)(g_SteamClientGameServer));
-	if (StrA_Cmp(pchVersion, (const pStrA)("SteamClient011"), True))
+	if (StrA_Cmp(pchVersion, (pCStrA)("SteamClient011"), True))
 		return (pVoid)((IpSteamClient011)(g_SteamClientGameServer));
-	if (StrA_Cmp(pchVersion, (const pStrA)("SteamClient012"), True))
+	if (StrA_Cmp(pchVersion, (pCStrA)("SteamClient012"), True))
 		return (pVoid)((IpSteamClient012)(g_SteamClientGameServer));
-	if (StrA_Cmp(pchVersion, (const pStrA)("SteamClient013"), True))
+	if (StrA_Cmp(pchVersion, (pCStrA)("SteamClient013"), True))
 		return (pVoid)((IpSteamClient013)(g_SteamClientGameServer));
-	if (StrA_Cmp(pchVersion, (const pStrA)("SteamClient014"), True))
+	if (StrA_Cmp(pchVersion, (pCStrA)("SteamClient014"), True))
 		return (pVoid)((IpSteamClient014)(g_SteamClientGameServer));
-	if (StrA_Cmp(pchVersion, (const pStrA)("SteamClient015"), True))
+	if (StrA_Cmp(pchVersion, (pCStrA)("SteamClient015"), True))
 		return (pVoid)((IpSteamClient015)(g_SteamClientGameServer));
-	if (StrA_Cmp(pchVersion, (const pStrA)("SteamClient016"), True))
+	if (StrA_Cmp(pchVersion, (pCStrA)("SteamClient016"), True))
 		return (pVoid)((IpSteamClient016)(g_SteamClientGameServer));
-	if (StrA_Cmp(pchVersion, (const pStrA)("SteamClient017"), True))
+	if (StrA_Cmp(pchVersion, (pCStrA)("SteamClient017"), True))
 		return (pVoid)((IpSteamClient017)(g_SteamClientGameServer));
-	if (StrA_Cmp(pchVersion, (const pStrA)("SteamClient018"), True))
+	if (StrA_Cmp(pchVersion, (pCStrA)("SteamClient018"), True))
 		return (pVoid)((IpSteamClient018)(g_SteamClientGameServer));
-	if (StrA_Cmp(pchVersion, (const pStrA)("SteamClient019"), True))
+	if (StrA_Cmp(pchVersion, (pCStrA)("SteamClient019"), True))
 		return (pVoid)((IpSteamClient019)(g_SteamClientGameServer));
-	if (StrA_Cmp(pchVersion, (const pStrA)(STEAMCLIENT_INTERFACE_VERSION), True))
+	if (StrA_Cmp(pchVersion, (pCStrA)(STEAMCLIENT_INTERFACE_VERSION), True))
 		return (pVoid)((IpSteamClient)(g_SteamClientGameServer));
 
 	return g_SteamClientGameServer->GetISteamGenericInterface(
@@ -406,7 +406,7 @@ _FREE_API_ pVoid __cdecl SteamInternal_CreateInterface(
 }
 
 _FREE_API_ pVoid __cdecl SteamInternal_FindOrCreateUserInterface(
-	HSteamUser hSteamUser, const pStrA pchVersion
+	HSteamUser hSteamUser, pCStrA pchVersion
 ) {
 
 	return SteamInternal_CreateInterface(
@@ -415,7 +415,7 @@ _FREE_API_ pVoid __cdecl SteamInternal_FindOrCreateUserInterface(
 
 }
 _FREE_API_ pVoid __cdecl SteamInternal_FindOrCreateGameServerInterface(
-	HSteamUser hSteamUser, const pStrA pchVersion
+	HSteamUser hSteamUser, pCStrA pchVersion
 ) {
 
 	return SteamInternal_CreateInterface(

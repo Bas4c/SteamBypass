@@ -14,12 +14,12 @@ public:
 	_SteamMusicRemote_(const _SteamMusicRemote_&) = delete;
 	_SteamMusicRemote_& operator=(const _SteamMusicRemote_&) = delete;
 
-	Bool RegisterSteamMusicRemote(const pStrA pchName) override;
+	Bool RegisterSteamMusicRemote(pCStrA pchName) override;
 	Bool DeregisterSteamMusicRemote() override;
 	Bool BIsCurrentMusicRemote() override;
 	Bool BActivationSuccess(Bool bValue) override;
 
-	Bool SetDisplayName(const pStrA pchDisplayName) override;
+	Bool SetDisplayName(pCStrA pchDisplayName) override;
 	Bool SetPNGIcon_64x64(pVoid pvData, Uint32 cbDataSize) override;
 
 	Bool EnablePlayPrevious(Bool bValue) override;
@@ -37,20 +37,20 @@ public:
 
 	Bool CurrentEntryWillChange() override;
 	Bool CurrentEntryIsAvailable(Bool bAvailable) override;
-	Bool UpdateCurrentEntryText(const pStrA pchText) override;
+	Bool UpdateCurrentEntryText(pCStrA pchText) override;
 	Bool UpdateCurrentEntryElapsedSeconds(Int32 nValue) override;
 	Bool UpdateCurrentEntryCoverArt(pVoid pvData, Uint32 cbDataSize) override;
 	Bool CurrentEntryDidChange() override;
 
 	Bool QueueWillChange() override;
 	Bool ResetQueueEntries() override;
-	Bool SetQueueEntry(Int32 nId, Int32 nPosition, const pStrA pchEntryText) override;
+	Bool SetQueueEntry(Int32 nId, Int32 nPosition, pCStrA pchEntryText) override;
 	Bool SetCurrentQueueEntry(Int32 nId) override;
 	Bool QueueDidChange() override;
 
 	Bool PlaylistWillChange() override;
 	Bool ResetPlaylistEntries() override;
-	Bool SetPlaylistEntry(Int32 nId, Int32 nPosition, const pStrA pchEntryText) override;
+	Bool SetPlaylistEntry(Int32 nId, Int32 nPosition, pCStrA pchEntryText) override;
 	Bool SetCurrentPlaylistEntry(Int32 nId) override;
 	Bool PlaylistDidChange() override;
 

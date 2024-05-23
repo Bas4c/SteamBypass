@@ -191,7 +191,7 @@ public:
 	virtual UGCQueryHandle_t CreateQueryUserUGCRequest(AccountId_t AccountId, EUserUGCList eUserUGCList, EUGCMatchingUGCType eMatchingUGCType, EUserUGCListSortOrder eUserUGCListSortOrder, AppId_t iCreatorAppId, AppId_t iConsumerAppId, Uint32 nPage) = 0;
 	
 	virtual UGCQueryHandle_t CreateQueryAllUGCRequest(EUGCQuery eUGCQuery, EUGCMatchingUGCType eMatchingeMatchingUGCTypeFileType, AppId_t iCreatorAppId, AppId_t iConsumerAppId, Uint32 nPage) = 0;
-	virtual UGCQueryHandle_t CreateQueryAllUGCRequest(EUGCQuery eUGCQuery, EUGCMatchingUGCType eMatchingeMatchingUGCTypeFileType, AppId_t iCreatorAppId, AppId_t iConsumerAppId, const pStrA pchCursor) = 0;
+	virtual UGCQueryHandle_t CreateQueryAllUGCRequest(EUGCQuery eUGCQuery, EUGCMatchingUGCType eMatchingeMatchingUGCTypeFileType, AppId_t iCreatorAppId, AppId_t iConsumerAppId, pCStrA pchCursor) = 0;
 
 	virtual UGCQueryHandle_t CreateQueryUGCDetailsRequest(pPublishedFileId_t pPublishedFileId, Uint32 nNumPublishedFileId) = 0;
 	virtual SteamAPICall_t SendQueryUGCRequest(UGCQueryHandle_t hUGCQuery) = 0;
@@ -208,13 +208,13 @@ public:
 	virtual Bool GetQueryUGCAdditionalPreview(UGCQueryHandle_t hUGCQuery, Uint32 i, Uint32 iPreview, /* [out] */ pStrA pchURLOrVideoId, Uint32 cchURL, /* [out] */ pStrA pchOriginalFileName, Uint32 cchOriginalFileName, pEItemPreviewType pItemPreviewType) = 0;
 	virtual Uint32 GetQueryUGCNumKeyValueTags(UGCQueryHandle_t hUGCQuery, Uint32 i) = 0;
 	virtual Bool GetQueryUGCKeyValueTag(UGCQueryHandle_t hUGCQuery, Uint32 i, Uint32 keyValueTagIndex, /* [out] */ pStrA pchKey, Uint32 cchKey, /* [out] */ pStrA pchValue, Uint32 cchValue) = 0;
-	virtual Bool GetQueryUGCKeyValueTag(UGCQueryHandle_t hUGCQuery, Uint32 i, const pStrA pchKey, pStrA pchValue, Uint32 cchValueSize) = 0;
+	virtual Bool GetQueryUGCKeyValueTag(UGCQueryHandle_t hUGCQuery, Uint32 i, pCStrA pchKey, pStrA pchValue, Uint32 cchValueSize) = 0;
 	virtual Uint32 GetQueryUGCContentDescriptors(UGCQueryHandle_t hUGCQuery, Uint32 i, /* [out] */ pEUGCContentDescriptorId peEUGCContentDescriptorId, Uint32 cEntries) = 0;
 	virtual Bool ReleaseQueryUGCRequest(UGCQueryHandle_t hUGCQuery) = 0;
 
-	virtual Bool AddRequiredTag(UGCQueryHandle_t hUGCQuery, const pStrA pTagName) = 0;
+	virtual Bool AddRequiredTag(UGCQueryHandle_t hUGCQuery, pCStrA pTagName) = 0;
 	virtual Bool AddRequiredTagGroup(UGCQueryHandle_t hUGCQuery, const pSteamParamStringArray_t pTagGroups) = 0;
-	virtual Bool AddExcludedTag(UGCQueryHandle_t hUGCQuery, const pStrA pTagName) = 0;
+	virtual Bool AddExcludedTag(UGCQueryHandle_t hUGCQuery, pCStrA pTagName) = 0;
 	virtual Bool SetReturnOnlyIds(UGCQueryHandle_t hUGCQuery, Bool bReturnOnlyId) = 0;
 	virtual Bool SetReturnKeyValueTags(UGCQueryHandle_t hUGCQuery, Bool bReturnKeyValueTags) = 0;
 	virtual Bool SetReturnLongDescription(UGCQueryHandle_t hUGCQuery, Bool bReturnLongDescription) = 0;
@@ -223,39 +223,39 @@ public:
 	virtual Bool SetReturnAdditionalPreviews(UGCQueryHandle_t hUGCQuery, Bool bReturnAdditionalPreviews) = 0;
 	virtual Bool SetReturnTotalOnly(UGCQueryHandle_t hUGCQuery, Bool bReturnTotalOnly) = 0;
 	virtual Bool SetReturnPlaytimeStats(UGCQueryHandle_t hUGCQuery, Uint32 nDays) = 0;
-	virtual Bool SetLanguage(UGCQueryHandle_t hUGCQuery, const pStrA pchLanguage) = 0;
+	virtual Bool SetLanguage(UGCQueryHandle_t hUGCQuery, pCStrA pchLanguage) = 0;
 	virtual Bool SetAllowCachedResponse(UGCQueryHandle_t hUGCQuery, Uint32 nAgeSeconds) = 0;
-	virtual Bool SetCloudFileNameFilter(UGCQueryHandle_t hUGCQuery, const pStrA pMatchCloudFileName) = 0;
+	virtual Bool SetCloudFileNameFilter(UGCQueryHandle_t hUGCQuery, pCStrA pMatchCloudFileName) = 0;
 	virtual Bool SetMatchAnyTag(UGCQueryHandle_t hUGCQuery, Bool bMatchAnyTag) = 0;
-	virtual Bool SetSearchText(UGCQueryHandle_t hUGCQuery, const pStrA pSearchText) = 0;
+	virtual Bool SetSearchText(UGCQueryHandle_t hUGCQuery, pCStrA pSearchText) = 0;
 	virtual Bool SetRankedByTrendDays(UGCQueryHandle_t hUGCQuery, Uint32 nDays) = 0;
 	virtual Bool SetTimeCreatedDateRange(UGCQueryHandle_t hUGCQuery, RTime32 Start, RTime32 End) = 0;
 	virtual Bool SetTimeUpdatedDateRange(UGCQueryHandle_t hUGCQuery, RTime32 Start, RTime32 End) = 0;
-	virtual Bool AddRequiredKeyValueTag(UGCQueryHandle_t hUGCQuery, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual Bool AddRequiredKeyValueTag(UGCQueryHandle_t hUGCQuery, pCStrA pchKey, pCStrA pchValue) = 0;
 	virtual SteamAPICall_t RequestUGCDetails(PublishedFileId_t nPublishedFileId, Uint32 uAgeSeconds) = 0;
 	virtual SteamAPICall_t CreateItem(AppId_t iConsumerAppId, EWorkshopFileType eWorkshopFileType) = 0;
 	virtual UGCUpdateHandle_t StartItemUpdate(AppId_t iConsumerAppId, PublishedFileId_t PublishedFileId) = 0;
-	virtual Bool SetItemTitle(UGCUpdateHandle_t hUGCQuery, const pStrA pchTitle) = 0;
-	virtual Bool SetItemDescription(UGCUpdateHandle_t hUGCQuery, const pStrA pchDescription) = 0;
-	virtual Bool SetItemUpdateLanguage(UGCUpdateHandle_t hUGCQuery, const pStrA pchLanguage) = 0;
-	virtual Bool SetItemMetadata(UGCUpdateHandle_t hUGCQuery, const pStrA pchMetaData) = 0;
+	virtual Bool SetItemTitle(UGCUpdateHandle_t hUGCQuery, pCStrA pchTitle) = 0;
+	virtual Bool SetItemDescription(UGCUpdateHandle_t hUGCQuery, pCStrA pchDescription) = 0;
+	virtual Bool SetItemUpdateLanguage(UGCUpdateHandle_t hUGCQuery, pCStrA pchLanguage) = 0;
+	virtual Bool SetItemMetadata(UGCUpdateHandle_t hUGCQuery, pCStrA pchMetaData) = 0;
 	virtual Bool SetItemVisibility(UGCUpdateHandle_t hUGCQuery, ERemoteStoragePublishedFileVisibility eRemoteStoragePublishedFileVisibility) = 0;
 	virtual Bool SetItemTags(UGCUpdateHandle_t hUGCUpdate, const pSteamParamStringArray_t pTags) = 0;
-	virtual Bool SetItemContent(UGCUpdateHandle_t hUGCQuery, const pStrA pszContentFolder) = 0;
-	virtual Bool SetItemPreview(UGCUpdateHandle_t hUGCQuery, const pStrA pszPreviewFile) = 0;
+	virtual Bool SetItemContent(UGCUpdateHandle_t hUGCQuery, pCStrA pszContentFolder) = 0;
+	virtual Bool SetItemPreview(UGCUpdateHandle_t hUGCQuery, pCStrA pszPreviewFile) = 0;
 	virtual Bool SetAllowLegacyUpload(UGCUpdateHandle_t hUGCQuery, Bool bAllowLegacyUpload) = 0;
 	virtual Bool RemoveAllItemKeyValueTags(UGCUpdateHandle_t hUGCQuery) = 0;
-	virtual Bool RemoveItemKeyValueTags(UGCUpdateHandle_t hUGCQuery, const pStrA pchKey) = 0;
-	virtual Bool AddItemKeyValueTag(UGCUpdateHandle_t hUGCQuery, const pStrA pchKey, const pStrA pchValue) = 0;
-	virtual Bool AddItemPreviewFile(UGCUpdateHandle_t hUGCQuery, const pStrA pszPreviewFile, EItemPreviewType type) = 0;
-	virtual Bool AddItemPreviewVideo(UGCUpdateHandle_t hUGCQuery, const pStrA pszVideoId) = 0;
-	virtual Bool UpdateItemPreviewFile(UGCUpdateHandle_t hUGCQuery, Uint32 i, const pStrA pszPreviewFile) = 0;
-	virtual Bool UpdateItemPreviewVideo(UGCUpdateHandle_t hUGCQuery, Uint32 i, const pStrA pszVideoId) = 0;
+	virtual Bool RemoveItemKeyValueTags(UGCUpdateHandle_t hUGCQuery, pCStrA pchKey) = 0;
+	virtual Bool AddItemKeyValueTag(UGCUpdateHandle_t hUGCQuery, pCStrA pchKey, pCStrA pchValue) = 0;
+	virtual Bool AddItemPreviewFile(UGCUpdateHandle_t hUGCQuery, pCStrA pszPreviewFile, EItemPreviewType type) = 0;
+	virtual Bool AddItemPreviewVideo(UGCUpdateHandle_t hUGCQuery, pCStrA pszVideoId) = 0;
+	virtual Bool UpdateItemPreviewFile(UGCUpdateHandle_t hUGCQuery, Uint32 i, pCStrA pszPreviewFile) = 0;
+	virtual Bool UpdateItemPreviewVideo(UGCUpdateHandle_t hUGCQuery, Uint32 i, pCStrA pszVideoId) = 0;
 	virtual Bool RemoveItemPreview(UGCUpdateHandle_t hUGCQuery, Uint32 i) = 0;
 	virtual Bool AddContentDescriptor(UGCUpdateHandle_t hUGCQuery, EUGCContentDescriptorId eUGCContentDescriptorId) = 0;
 	virtual Bool RemoveContentDescriptor(UGCUpdateHandle_t hUGCQuery, EUGCContentDescriptorId eUGCContentDescriptorId) = 0;
 	
-	virtual SteamAPICall_t SubmitItemUpdate(UGCUpdateHandle_t hUGCQuery, const pStrA pchChangeNote) = 0;
+	virtual SteamAPICall_t SubmitItemUpdate(UGCUpdateHandle_t hUGCQuery, pCStrA pchChangeNote) = 0;
 	virtual EItemUpdateStatus GetItemUpdateProgress(UGCUpdateHandle_t hUGCQuery, /* [out] */ pUint64 pnBytesProcessed, pUint64 pnBytesTotal) = 0;
 	virtual SteamAPICall_t SetUserItemVote(PublishedFileId_t PublishedFileId, Bool bVoteUp) = 0;
 	virtual SteamAPICall_t GetUserItemVote(PublishedFileId_t PublishedFileId) = 0;
@@ -269,7 +269,7 @@ public:
 	virtual Bool GetItemInstallInfo(PublishedFileId_t PublishedFileId, /* [out] */ pUint64 pnSizeOnDisk, /* [out] */ pStrA pchFolder, Uint32 cchFolderSize, /* [out] */ pUint32 pnTimeStamp) = 0;
 	virtual Bool GetItemDownloadInfo(PublishedFileId_t PublishedFileId, /* [out] */ pUint64 pnBytesDownloaded, /* [out] */ pUint64 pnBytesTotal) = 0;
 	virtual Bool DownloadItem(PublishedFileId_t PublishedFileId, Bool bHighPriority) = 0;
-	virtual Bool BInitWorkshopForGameServer(DepotId_t WorkshopDepotId, const pStrA pszFolder) = 0;
+	virtual Bool BInitWorkshopForGameServer(DepotId_t WorkshopDepotId, pCStrA pszFolder) = 0;
 	virtual void SuspendDownloads(Bool bSuspend) = 0;
 
 	virtual SteamAPICall_t StartPlaytimeTracking(pPublishedFileId_t pPublishedFileId, Uint32 nNumPublishedFileIds) = 0;

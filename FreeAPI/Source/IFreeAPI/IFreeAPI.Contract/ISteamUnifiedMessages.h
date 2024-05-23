@@ -14,7 +14,7 @@ public:
 
 	/* Sends a service method (in binary serialized form) using the Steam Client.
 	   Returns a unified message handle (k_InvalidUnifiedMessageHandle if could not send the message). */
-	virtual ClientUnifiedMessageHandle SendMethod(const pStrA pchServiceMethod, const pVoid pvRequestData, Uint32 nRequestDataSize, Uint64 nContext) = 0;
+	virtual ClientUnifiedMessageHandle SendMethod(pCStrA pchServiceMethod, const pVoid pvRequestData, Uint32 nRequestDataSize, Uint64 nContext) = 0;
 
 	/* Gets the size of the response and the EResult.
 	   Returns False if the response is not ready yet. */
@@ -26,7 +26,7 @@ public:
 
 	/* Sends a service notification (in binary serialized form) using the Steam Client.
 	   Returns true if the notification was sent successfully. */
-	virtual Bool SendNotification(const pStrA pchServiceNotification, const pVoid pvDataNotificationData, Uint32 nNotificationDataSize) = 0;
+	virtual Bool SendNotification(pCStrA pchServiceNotification, const pVoid pvDataNotificationData, Uint32 nNotificationDataSize) = 0;
 	
 } ISteamUnifiedMessages, *IpSteamUnifiedMessages;
 

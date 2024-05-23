@@ -8,7 +8,7 @@ void _SteamNetworkingSocketsSerialized_::SendP2PRendezvous(SteamId_t SteamIdRemo
 
 }
 
-void _SteamNetworkingSocketsSerialized_::SendP2PConnectionFailure(SteamId_t SteamIdRemote, Uint32 nConnectionIdDest, Uint32 nReason, const pStrA pchReason) {
+void _SteamNetworkingSocketsSerialized_::SendP2PConnectionFailure(SteamId_t SteamIdRemote, Uint32 nConnectionIdDest, Uint32 nReason, pCStrA pchReason) {
 
 	/* Empty Method */
 
@@ -20,7 +20,7 @@ SteamAPICall_t _SteamNetworkingSocketsSerialized_::GetCertAsync() {
 
 }
 
-Int32 _SteamNetworkingSocketsSerialized_::GetNetworkConfigJSON(pVoid pvJSON, Uint32 cbSize, const pStrA pchLauncherPartner) {
+Int32 _SteamNetworkingSocketsSerialized_::GetNetworkConfigJSON(pVoid pvJSON, Uint32 cbSize, pCStrA pchLauncherPartner) {
 
 	return 0;
 

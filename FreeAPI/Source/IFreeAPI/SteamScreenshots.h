@@ -16,14 +16,14 @@ public:
 	_SteamScreenshots_& operator=(const _SteamScreenshots_&) = delete;
 
 	ScreenshotHandle WriteScreenshot(const pVoid pvRGB, Uint32 cbRGB, Int32 Cx, Int32 Cy) override;
-	ScreenshotHandle AddScreenshotToLibrary(pStrA pchFilename, pStrA pchThumbnailFilename, Int32 Cx, Int32 Cy) override;
+	ScreenshotHandle AddScreenshotToLibrary(pCStrA pchFilename, pCStrA pchThumbnailFilename, Int32 Cx, Int32 Cy) override;
 	void TriggerScreenshot() override;
 	void HookScreenshots(Bool bHook) override;
-	Bool SetLocation(ScreenshotHandle hScreenshot, pStrA pchLocation) override;
+	Bool SetLocation(ScreenshotHandle hScreenshot, pCStrA pchLocation) override;
 	Bool TagUser(ScreenshotHandle hScreenshot, SteamId_t SteamId) override;
 	Bool TagPublishedFile(ScreenshotHandle hScreenshot, PublishedFileId_t unPublishedFileID) override;
 	Bool IsScreenshotsHooked() override;
-	ScreenshotHandle AddVRScreenshotToLibrary(EVRScreenshotType eVRScreenshotType, pStrA pchFilename, pStrA pchVRFilename) override;
+	ScreenshotHandle AddVRScreenshotToLibrary(EVRScreenshotType eVRScreenshotType, pCStrA pchFilename, pCStrA pchVRFilename) override;
 
 	~_SteamScreenshots_() = default;
 

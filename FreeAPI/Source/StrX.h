@@ -18,11 +18,11 @@
 #endif
 
 _STR_X_API_ SizeOF __stdcall StrW_Count(
-	_In_z_ const pStrW pchStr
+	_In_z_ pCStrW pchStr
 );
 
 _STR_X_API_ SizeOF __stdcall StrA_Count(
-	_In_z_ const pStrA pchStr
+	_In_z_ pCStrA pchStr
 );
 
 #ifdef UNICODE
@@ -34,13 +34,13 @@ _STR_X_API_ SizeOF __stdcall StrA_Count(
 _STR_X_API_ pStrW __stdcall StrW_Copy(
 	_Out_z_cap_(cchMax) pStrW pchDest,
 	_In_ SizeOF cchMax,
-	_In_z_ const pStrW pchSrc
+	_In_z_ pCStrW pchSrc
 );
 
 _STR_X_API_ pStrA __stdcall StrA_Copy(
 	_Out_z_cap_(cchMax) pStrA pchDest,
 	_In_ SizeOF cchMax,
-	_In_z_ const pStrA pchSrc
+	_In_z_ pCStrA pchSrc
 );
 
 #ifdef UNICODE
@@ -52,13 +52,13 @@ _STR_X_API_ pStrA __stdcall StrA_Copy(
 _STR_X_API_ pStrW __stdcall StrW_Cat(
 	_Inout_z_cap_(cchMax) pStrW pchDest,
 	_In_ SizeOF cchMax,
-	_In_z_ const pStrW pchSrc
+	_In_z_ pCStrW pchSrc
 );
 
 _STR_X_API_ pStrA __stdcall StrA_Cat(
 	_Inout_z_cap_(cchMax) pStrA pchDest,
 	_In_ SizeOF cchMax,
-	_In_z_ const pStrA pchSrc
+	_In_z_ pCStrA pchSrc
 );
 
 #ifdef UNICODE
@@ -70,16 +70,16 @@ _STR_X_API_ pStrA __stdcall StrA_Cat(
 //*! @returns Strings are Equal: (True)
 //*! @returns Strings are Not Equal: (False)
 _STR_X_API_ Bool __stdcall StrW_Cmp(
-	_In_z_ const pStrW pchCmp,
-	_In_z_ const pStrW pchStr,
+	_In_z_ pCStrW pchCmp,
+	_In_z_ pCStrW pchStr,
 	_In_ Bool iCase
 );
 
 //*! @returns Strings are Equal: (True)
 //*! @returns Strings are Not Equal: (False)
 _STR_X_API_ Bool __stdcall StrA_Cmp(
-	_In_z_ const pStrA pchCmp,
-	_In_z_ const pStrA pchStr,
+	_In_z_ pCStrA pchCmp,
+	_In_z_ pCStrA pchStr,
 	_In_ Bool iCase
 );
 
@@ -92,16 +92,16 @@ _STR_X_API_ Bool __stdcall StrA_Cmp(
 //*! @returns SubString are Found: (Index)
 //*! @returns SubString are Not Found: (SizeOF_MAX)
 _STR_X_API_ SizeOF __stdcall StrW_StrW(
-	_In_z_ const pStrW pchStr,
-	_In_z_ const pStrW pchStrStr,
+	_In_z_ pCStrW pchStr,
+	_In_z_ pCStrW pchStrStr,
 	_In_ Bool iCase
 );
 
 //*! @returns SubString are Found: (Index)
 //*! @returns SubString are Not Found: (SizeOF_MAX)
 _STR_X_API_ SizeOF __stdcall StrA_StrA(
-	_In_z_ const pStrA pchStr,
-	_In_z_ const pStrA pchStrStr,
+	_In_z_ pCStrA pchStr,
+	_In_z_ pCStrA pchStrStr,
 	_In_ Bool iCase
 );
 

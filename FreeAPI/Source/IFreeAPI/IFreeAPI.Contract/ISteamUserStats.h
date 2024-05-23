@@ -70,37 +70,37 @@ public:
 
 	/* Result in UserStatsReceived_t */
 	virtual Bool RequestCurrentStats() = 0;
-	virtual Bool GetStat(const pStrA pchName, /* [out] */ pInt32 pData) = 0;
-	virtual Bool GetStat(const pStrA pchName, /* [out] */ pFloat pData) = 0;
-	virtual Bool SetStat(const pStrA pchName, Int32 Data) = 0;
-	virtual Bool SetStat(const pStrA pchName, Float Data) = 0;
-	virtual Bool UpdateAvgRateStat(const pStrA pchName, Float CountThisSession, Double SessionLength) = 0;
-	virtual Bool GetAchievement(const pStrA pchName, /* [out] */ pBool pbAchieved) = 0;
-	virtual Bool SetAchievement(const pStrA pchName) = 0;
-	virtual Bool ClearAchievement(const pStrA pchName) = 0;
-	virtual Bool GetAchievementAndUnlockTime(const pStrA pchName, /* [out] */ pBool pbAchieved, /* [out] */ pUint32 pnUnlockTime) = 0;
+	virtual Bool GetStat(pCStrA pchName, /* [out] */ pInt32 pData) = 0;
+	virtual Bool GetStat(pCStrA pchName, /* [out] */ pFloat pData) = 0;
+	virtual Bool SetStat(pCStrA pchName, Int32 Data) = 0;
+	virtual Bool SetStat(pCStrA pchName, Float Data) = 0;
+	virtual Bool UpdateAvgRateStat(pCStrA pchName, Float CountThisSession, Double SessionLength) = 0;
+	virtual Bool GetAchievement(pCStrA pchName, /* [out] */ pBool pbAchieved) = 0;
+	virtual Bool SetAchievement(pCStrA pchName) = 0;
+	virtual Bool ClearAchievement(pCStrA pchName) = 0;
+	virtual Bool GetAchievementAndUnlockTime(pCStrA pchName, /* [out] */ pBool pbAchieved, /* [out] */ pUint32 pnUnlockTime) = 0;
 	virtual Bool StoreStats() = 0;
-	virtual Int32 GetAchievementIcon(const pStrA pchName) = 0;
+	virtual Int32 GetAchievementIcon(pCStrA pchName) = 0;
 
 	/* (returns "0" when not hidden, "1" when hidden) */
-	virtual const pStrA GetAchievementDisplayAttribute(const pStrA pchName, const pStrA pchKey) = 0;
-	virtual Bool IndicateAchievementProgress(const pStrA pchName, Uint32 nCurProgress, Uint32 nMaxProgress) = 0;
+	virtual pCStrA GetAchievementDisplayAttribute(pCStrA pchName, pCStrA pchKey) = 0;
+	virtual Bool IndicateAchievementProgress(pCStrA pchName, Uint32 nCurProgress, Uint32 nMaxProgress) = 0;
 
 	virtual Uint32 GetNumAchievements() = 0;
-	virtual const pStrA GetAchievementName(Uint32 iAchievement) = 0;
+	virtual pCStrA GetAchievementName(Uint32 iAchievement) = 0;
 
 	virtual SteamAPICall_t RequestUserStats(SteamId_t SteamIdUser) = 0;
-	virtual Bool GetUserStat(SteamId_t SteamIdUser, const pStrA pchName, /* [out] */ pInt32 pData) = 0;
-	virtual Bool GetUserStat(SteamId_t SteamIdUser, const pStrA pchName, /* [out] */ pFloat pData) = 0;
+	virtual Bool GetUserStat(SteamId_t SteamIdUser, pCStrA pchName, /* [out] */ pInt32 pData) = 0;
+	virtual Bool GetUserStat(SteamId_t SteamIdUser, pCStrA pchName, /* [out] */ pFloat pData) = 0;
 
-	virtual Bool GetUserAchievement(SteamId_t SteamIdUser, const pStrA pchName, /* [out] */ pBool pbAchieved) = 0;
-	virtual Bool GetUserAchievementAndUnlockTime(SteamId_t SteamIdUser, const pStrA pchName, /* [out] */ pBool pbAchieved, /* [out] */ pUint32 punUnlockTime) = 0;
+	virtual Bool GetUserAchievement(SteamId_t SteamIdUser, pCStrA pchName, /* [out] */ pBool pbAchieved) = 0;
+	virtual Bool GetUserAchievementAndUnlockTime(SteamId_t SteamIdUser, pCStrA pchName, /* [out] */ pBool pbAchieved, /* [out] */ pUint32 punUnlockTime) = 0;
 
 	virtual Bool ResetAllStats(Bool bAchievementsToo) = 0;
 	
-	virtual SteamAPICall_t FindOrCreateLeaderboard(const pStrA pchLeaderboardName, ELeaderboardSortMethod eLeaderboardSortMethod, ELeaderboardDisplayType eLeaderboardDisplayType) = 0;
-	virtual SteamAPICall_t FindLeaderboard(const pStrA pchLeaderboardName) = 0;
-	virtual const pStrA GetLeaderboardName(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual SteamAPICall_t FindOrCreateLeaderboard(pCStrA pchLeaderboardName, ELeaderboardSortMethod eLeaderboardSortMethod, ELeaderboardDisplayType eLeaderboardDisplayType) = 0;
+	virtual SteamAPICall_t FindLeaderboard(pCStrA pchLeaderboardName) = 0;
+	virtual pCStrA GetLeaderboardName(SteamLeaderboard_t hSteamLeaderboard) = 0;
 	virtual Int32 GetLeaderboardEntryCount(SteamLeaderboard_t hSteamLeaderboard) = 0;
 	virtual ELeaderboardSortMethod GetLeaderboardSortMethod(SteamLeaderboard_t hSteamLeaderboard) = 0;
 	virtual ELeaderboardDisplayType GetLeaderboardDisplayType(SteamLeaderboard_t hSteamLeaderboard) = 0;
@@ -116,16 +116,16 @@ public:
 	/* Returns (-1) if there is no data on achievement */
 	virtual Int32 GetMostAchievedAchievementInfo(pStrA pchName, Uint32 cchNameLen, /* [out] */ pFloat pPercent, /* [out] */ pBool pbAchieved) = 0;
 	virtual Int32 GetNextMostAchievedAchievementInfo(Int32 iIteratorPrevious, pStrA pchName, Uint32 cchName, /* [out] */ pFloat pPercent, /* [out] */ pBool pbAchieved) = 0;
-	virtual Bool GetAchievementAchievedPercent(const pStrA pchName, /* [out] */ pFloat pPercent) = 0;
+	virtual Bool GetAchievementAchievedPercent(pCStrA pchName, /* [out] */ pFloat pPercent) = 0;
 
 	virtual SteamAPICall_t RequestGlobalStats(Int32 nHistoryDays) = 0;
-	virtual Bool GetGlobalStat(const pStrA pchStatName, /* [out] */ pInt64 pData) = 0;
-	virtual Bool GetGlobalStat(const pStrA pchStatName, /* [out] */ pDouble pData) = 0;
-	virtual Int32 GetGlobalStatHistory(const pStrA pchStatName, /* [out] */ pInt64 pData, Uint32 cbData) = 0;
-	virtual Int32 GetGlobalStatHistory(const pStrA pchStatName, /* [out] */ pDouble pData, Uint32 cbData) = 0;
+	virtual Bool GetGlobalStat(pCStrA pchStatName, /* [out] */ pInt64 pData) = 0;
+	virtual Bool GetGlobalStat(pCStrA pchStatName, /* [out] */ pDouble pData) = 0;
+	virtual Int32 GetGlobalStatHistory(pCStrA pchStatName, /* [out] */ pInt64 pData, Uint32 cbData) = 0;
+	virtual Int32 GetGlobalStatHistory(pCStrA pchStatName, /* [out] */ pDouble pData, Uint32 cbData) = 0;
 
-	virtual Bool GetAchievementProgressLimits(const pStrA pchName, /* [out] */ pInt32 pProgressMin, /* [out] */ pInt32 pProgressMax) = 0;
-	virtual Bool GetAchievementProgressLimits(const pStrA pchName, /* [out] */ pFloat pProgressMin, /* [out] */ pFloat pProgressMax) = 0;
+	virtual Bool GetAchievementProgressLimits(pCStrA pchName, /* [out] */ pInt32 pProgressMin, /* [out] */ pInt32 pProgressMax) = 0;
+	virtual Bool GetAchievementProgressLimits(pCStrA pchName, /* [out] */ pFloat pProgressMin, /* [out] */ pFloat pProgressMax) = 0;
 
 } ISteamUserStats, *IpSteamUserStats;
 

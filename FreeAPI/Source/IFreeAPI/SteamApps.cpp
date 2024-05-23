@@ -2,7 +2,7 @@
 #include "SteamApps.h"
 // -----------------------------------------------------------------------------
 
-Int32 _SteamApps_::GetAppData(AppId_t iAppId, const pStrA pchKey, pStrA pchValue, Int32 cchValueMax) {
+Int32 _SteamApps_::GetAppData(AppId_t iAppId, pCStrA pchKey, pStrA pchValue, Int32 cchValueMax) {
 
 	return 0;
 
@@ -32,13 +32,13 @@ Bool _SteamApps_::BIsVACBanned() {
 
 }
 
-const pStrA _SteamApps_::GetCurrentGameLanguage() {
+pCStrA _SteamApps_::GetCurrentGameLanguage() {
 
 	return GetUserUILanguageA();
 
 }
 
-const pStrA _SteamApps_::GetAvailableGameLanguages() {
+pCStrA _SteamApps_::GetAvailableGameLanguages() {
 
 	return GetUserUILanguageA();
 
@@ -106,7 +106,7 @@ void _SteamApps_::RequestAppProofOfPurchaseKey(AppId_t iAppId) {
 
 Bool _SteamApps_::GetCurrentBetaName(pStrA pchName, Int32 cchNameMax) {
 
-	const pStrA pchBetaName = (const pStrA)("public");
+	pCStrA pchBetaName = (pCStrA)("public");
 	if (pchName != NULL && cchNameMax > 0) {
 		if ((SizeOF)(cchNameMax) >= StrA_Count(pchBetaName) + 1U) {
 			StrA_Copy(pchName, cchNameMax, pchBetaName);
@@ -177,9 +177,9 @@ SteamId_t _SteamApps_::GetAppOwner() {
 
 }
 
-const pStrA _SteamApps_::GetLaunchQueryParam(const pStrA pchKey) {
+pCStrA _SteamApps_::GetLaunchQueryParam(pCStrA pchKey) {
 
-	return (const pStrA)(
+	return (pCStrA)(
 		""
 	);
 
@@ -211,7 +211,7 @@ void _SteamApps_::RequestAllProofOfPurchaseKeys() {
 
 }
 
-SteamAPICall_t _SteamApps_::GetFileDetails(const pStrA pchFileName) {
+SteamAPICall_t _SteamApps_::GetFileDetails(pCStrA pchFileName) {
 
 	return k_SteamAPICall_Invalid;
 

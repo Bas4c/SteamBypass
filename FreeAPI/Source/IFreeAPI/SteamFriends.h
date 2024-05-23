@@ -22,11 +22,11 @@ public:
 	_SteamFriends_& operator=(const _SteamFriends_&) = delete;
 
 	/* Returns Local Player Name - guaranteed to not be NULL */
-	const pStrA GetPersonaName() override;
+	pCStrA GetPersonaName() override;
 
 	/* Sets the player name, stores it on the server and publishes the changes to all friends who are online.
 	   Changes take place locally immediately, and a PersonaStateChange_t is posted, presuming success. */
-	SteamAPICall_t SetPersonaName(const pStrA pchPersonaName) override;
+	SteamAPICall_t SetPersonaName(pCStrA pchPersonaName) override;
 	EPersonaState GetPersonaState() override;
 
 	/* Takes a set of k_EFriendFlags, and returns the number of users the client knows about who meet that criteria
@@ -39,28 +39,28 @@ public:
 	SteamId_t GetFriendByIndex(Int32 iFriend, Int32 iFriendFlags) override;
 	EFriendRelationship GetFriendRelationship(SteamId_t SteamIdFriend) override;
 	EPersonaState GetFriendPersonaState(SteamId_t SteamIdFriend) override;
-	const pStrA GetFriendPersonaName(SteamId_t SteamIdFriend) override;
+	pCStrA GetFriendPersonaName(SteamId_t SteamIdFriend) override;
 	Int32 GetFriendAvatar(SteamId_t SteamIdFriend, EAvatarSize eAvatarSize) override;
 
 	Bool GetFriendGamePlayed(SteamId_t SteamIdFriend, pFriendGameInfo_t pFriendGameInfo) override;
 	/* Returns (empty string) when their are no more items in the history */
-	const pStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) override;
+	pCStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) override;
 	Int32 GetFriendSteamLevel(SteamId_t SteamIdFriend) override;
-	const pStrA GetPlayerNickname(SteamId_t SteamIdPlayer) override;
+	pCStrA GetPlayerNickname(SteamId_t SteamIdPlayer) override;
 
 	Int32 GetFriendsGroupCount() override;
 	/* (invalid indices return k_FriendsGroupId_Invalid) */
 	FriendsGroupId_t GetFriendsGroupIDByIndex(Int32 iFG) override;
 	/* (NULL in the case of invalid group Id's) */
-	const pStrA GetFriendsGroupName(FriendsGroupId_t FriendsGroupId) override;
+	pCStrA GetFriendsGroupName(FriendsGroupId_t FriendsGroupId) override;
 	Int32 GetFriendsGroupMembersCount(FriendsGroupId_t FriendsGroupId) override;
 	void GetFriendsGroupMembersList(FriendsGroupId_t FriendsGroupId, pSteamId_t pnSteamIdMembers, Int32 nMembers) override;
 	Bool HasFriend(SteamId_t SteamIdFriend, Int32 iFriendFlags) override;
 
 	Int32 GetClanCount() override;
 	SteamId_t GetClanByIndex(Int32 iClan) override;
-	const pStrA GetClanName(SteamId_t SteamIdClan) override;
-	const pStrA GetClanTag(SteamId_t SteamIdClan) override;
+	pCStrA GetClanName(SteamId_t SteamIdClan) override;
+	pCStrA GetClanTag(SteamId_t SteamIdClan) override;
 	Bool GetClanActivityCounts(SteamId_t SteamIdClan, pInt32 pnOnline, pInt32 pnInGame, pInt32 pnChatting) override;
 	SteamAPICall_t DownloadClanActivityCounts(pSteamId_t pnSteamIdClans, Int32 nClansToRequest) override;
 
@@ -71,9 +71,9 @@ public:
 
 	/* Options: "Friends", "Community", "Players", "Settings",
 		"OfficialGameGroup", "Stats", "Achievements", "chatroomgroup/nnnn" */
-	void ActivateGameOverlay(const pStrA pchDialogName) override;
-	void ActivateGameOverlayToUser(const pStrA pchDialog, SteamId_t SteamId) override;
-	void ActivateGameOverlayToWebPage(const pStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) override;
+	void ActivateGameOverlay(pCStrA pchDialogName) override;
+	void ActivateGameOverlayToUser(pCStrA pchDialog, SteamId_t SteamId) override;
+	void ActivateGameOverlayToWebPage(pCStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) override;
 	void ActivateGameOverlayToStore(AppId_t iAppId, EOverlayToStoreFlag eOverlayToStoreFlag) override;
 	void SetPlayedWith(SteamId_t SteamIdUserPlayedWith) override;
 	void ActivateGameOverlayInviteDialog(SteamId_t SteamIdLobby) override;
@@ -97,13 +97,13 @@ public:
 	Int32 GetClanOfficerCount(SteamId_t SteamIdClan) override;
 	SteamId_t GetClanOfficerByIndex(SteamId_t SteamIdClan, Int32 iOfficer) override;
 	Uint32 GetUserRestrictions() override;
-	Bool SetRichPresence(const pStrA pchKey, const pStrA pchValue) override;
+	Bool SetRichPresence(pCStrA pchKey, pCStrA pchValue) override;
 	void ClearRichPresence() override;
-	const pStrA GetFriendRichPresence(SteamId_t SteamIdFriend, const pStrA pchKey) override;
+	pCStrA GetFriendRichPresence(SteamId_t SteamIdFriend, pCStrA pchKey) override;
 	Int32 GetFriendRichPresenceKeyCount(SteamId_t SteamIdFriend) override;
-	const pStrA GetFriendRichPresenceKeyByIndex(SteamId_t SteamIdFriend, Int32 iKey) override;
+	pCStrA GetFriendRichPresenceKeyByIndex(SteamId_t SteamIdFriend, Int32 iKey) override;
 	void RequestFriendRichPresence(SteamId_t SteamIdFriend) override;
-	Bool InviteUserToGame(SteamId_t SteamIdFriend, const pStrA pchConnectString) override;
+	Bool InviteUserToGame(SteamId_t SteamIdFriend, pCStrA pchConnectString) override;
 
 	Int32 GetCoplayFriendCount() override;
 	SteamId_t GetCoplayFriend(Int32 iCoplayFriend) override;
@@ -115,7 +115,7 @@ public:
 	Bool LeaveClanChatRoom(SteamId_t SteamIdClan) override;
 	Int32 GetClanChatMemberCount(SteamId_t SteamIdClan) override;
 	SteamId_t GetChatMemberByIndex(SteamId_t SteamIdClan, Int32 iUser) override;
-	Bool SendClanChatMessage(SteamId_t SteamIdClanChat, const pStrA pchText) override;
+	Bool SendClanChatMessage(SteamId_t SteamIdClanChat, pCStrA pchText) override;
 	Int32 GetClanChatMessage(SteamId_t SteamIdClanChat, Int32 iMessage, pStrA pchText, Int32 cchTextMax, pEChatEntryType peChatEntryType, pSteamId_t pSteamIdChatter) override;
 	Bool IsClanChatAdmin(SteamId_t SteamIdClanChat, SteamId_t SteamIdUser) override;
 
@@ -124,7 +124,7 @@ public:
 	Bool CloseClanChatWindowInSteam(SteamId_t SteamIdClanChat) override;
 
 	Bool SetListenForFriendsMessages(Bool bInterceptEnabled) override;
-	Bool ReplyToFriendMessage(SteamId_t SteamIdFriend, const pStrA pchMsgToSend) override;
+	Bool ReplyToFriendMessage(SteamId_t SteamIdFriend, pCStrA pchMsgToSend) override;
 	Int32 GetFriendMessage(SteamId_t SteamIdFriend, Int32 iMessageId, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) override;
 
 	SteamAPICall_t GetFollowerCount(SteamId_t SteamId) override;
@@ -136,12 +136,12 @@ public:
 	Int32 GetNumChatsWithUnreadPriorityMessages() override;
 
 	void ActivateGameOverlayRemotePlayTogetherInviteDialog(SteamId_t SteamIdLobby) override;
-	Bool RegisterProtocolInOverlayBrowser(const pStrA pchProtocol) override;
-	void ActivateGameOverlayInviteDialogConnectString(const pStrA pchConnectString) override;
+	Bool RegisterProtocolInOverlayBrowser(pCStrA pchProtocol) override;
+	void ActivateGameOverlayInviteDialogConnectString(pCStrA pchConnectString) override;
 
 	SteamAPICall_t RequestEquippedProfileItems(SteamId_t SteamId) override;
 	Bool BHasEquippedProfileItem(SteamId_t SteamId, ECommunityProfileItemType eCommunityProfileItemType) override;
-	const pStrA GetProfileItemPropertyString(SteamId_t SteamId, ECommunityProfileItemType eCommunityProfileItemType, ECommunityProfileItemProperty eCommunityProfileItemProperty) override;
+	pCStrA GetProfileItemPropertyString(SteamId_t SteamId, ECommunityProfileItemType eCommunityProfileItemType, ECommunityProfileItemProperty eCommunityProfileItemProperty) override;
 	Uint32 GetProfileItemPropertyUint(SteamId_t SteamId, ECommunityProfileItemType eCommunityProfileItemType, ECommunityProfileItemProperty eCommunityProfileItemProperty) override;
 
 	~_SteamFriends_() = default;

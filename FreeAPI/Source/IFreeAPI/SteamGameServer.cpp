@@ -2,25 +2,25 @@
 #include "SteamGameServer.h"
 // -----------------------------------------------------------------------------
 
-Bool _SteamGameServer_::InitGameServer(Uint32 nIP, Uint16 GamePort, Uint16 QueryPort, Uint32 nFlags, AppId_t iGameAppId, const pStrA pchVersionString) {
+Bool _SteamGameServer_::InitGameServer(Uint32 nIP, Uint16 GamePort, Uint16 QueryPort, Uint32 nFlags, AppId_t iGameAppId, pCStrA pchVersionString) {
 
 	return True;
 
 }
 
-void _SteamGameServer_::SetProduct(const pStrA pchProduct) {
+void _SteamGameServer_::SetProduct(pCStrA pchProduct) {
 
 	/* Empty Method */
 
 }
 
-void _SteamGameServer_::SetGameDescription(const pStrA pchGameDescription) {
+void _SteamGameServer_::SetGameDescription(pCStrA pchGameDescription) {
 
 	/* Empty Method */
 
 }
 
-void _SteamGameServer_::SetModDir(const pStrA pchModDir) {
+void _SteamGameServer_::SetModDir(pCStrA pchModDir) {
 
 	/* Empty Method */
 
@@ -38,13 +38,13 @@ void _SteamGameServer_::LogOn() {
 
 }
 
-void _SteamGameServer_::LogOn(const pStrA pchAccountName, const pStrA pchPassword) {
+void _SteamGameServer_::LogOn(pCStrA pchAccountName, pCStrA pchPassword) {
 
 	/* Empty Method */
 
 }
 
-void _SteamGameServer_::LogOn(const pStrA pchToken) {
+void _SteamGameServer_::LogOn(pCStrA pchToken) {
 
 	/* Empty Method */
 
@@ -101,13 +101,13 @@ void _SteamGameServer_::SetBotPlayerCount(Int32 cBotplayers) {
 
 }
 
-void _SteamGameServer_::SetServerName(const pStrA pchServerName) {
+void _SteamGameServer_::SetServerName(pCStrA pchServerName) {
 
 	/* Empty Method */
 
 }
 
-void _SteamGameServer_::SetMapName(const pStrA pchMapName) {
+void _SteamGameServer_::SetMapName(pCStrA pchMapName) {
 
 	/* Empty Method */
 
@@ -125,7 +125,7 @@ void _SteamGameServer_::SetSpectatorPort(Uint16 SpectatorPort) {
 
 }
 
-void _SteamGameServer_::SetSpectatorServerName(const pStrA pchSpectatorServerName) {
+void _SteamGameServer_::SetSpectatorServerName(pCStrA pchSpectatorServerName) {
 
 	/* Empty Method */
 
@@ -137,25 +137,25 @@ void _SteamGameServer_::ClearAllKeyValues() {
 
 }
 
-void _SteamGameServer_::SetKeyValue(const pStrA pchKey, const pStrA pchValue) {
+void _SteamGameServer_::SetKeyValue(pCStrA pchKey, pCStrA pchValue) {
 
 	/* Empty Method */
 
 }
 
-void _SteamGameServer_::SetGameTags(const pStrA pchGameTags) {
+void _SteamGameServer_::SetGameTags(pCStrA pchGameTags) {
 
 	/* Empty Method */
 
 }
 
-void _SteamGameServer_::SetGameData(const pStrA pchGameData) {
+void _SteamGameServer_::SetGameData(pCStrA pchGameData) {
 
 	/* Empty Method */
 
 }
 
-void _SteamGameServer_::SetRegion(const pStrA pchRegion) {
+void _SteamGameServer_::SetRegion(pCStrA pchRegion) {
 
 	/* Empty Method */
 
@@ -337,19 +337,19 @@ void _SteamGameServer_::SendUserDisconnect(SteamId_t SteamIdUser) {
 
 }
 
-Bool _SteamGameServer_::BUpdateUserData(SteamId_t SteamIdUser, const pStrA pchPlayerName, Uint32 Score) {
+Bool _SteamGameServer_::BUpdateUserData(SteamId_t SteamIdUser, pCStrA pchPlayerName, Uint32 Score) {
 
 	return True;
 
 }
 
-Bool _SteamGameServer_::BSetServerType(Uint32 nServerFlags, Uint32 nGameIP, Uint16 nGamePort, Uint16 SpectatorPort, Uint16 QueryPort, const pStrA pchGameDir, const pStrA pchVersion, Bool bLANMode) {
+Bool _SteamGameServer_::BSetServerType(Uint32 nServerFlags, Uint32 nGameIP, Uint16 nGamePort, Uint16 SpectatorPort, Uint16 QueryPort, pCStrA pchGameDir, pCStrA pchVersion, Bool bLANMode) {
 	
 	return True;
 
 }
 
-void _SteamGameServer_::UpdateServerStatus(Int32 cPlayers, Int32 cPlayersMax, Int32 cBotPlayers, const pStrA pchServerName, const pStrA pSpectatorServerName, const pStrA pchMapName) {
+void _SteamGameServer_::UpdateServerStatus(Int32 cPlayers, Int32 cPlayersMax, Int32 cBotPlayers, pCStrA pchServerName, pCStrA pSpectatorServerName, pCStrA pchMapName) {
 
 	/* Empty Method */
 
@@ -361,13 +361,13 @@ void _SteamGameServer_::UpdateSpectatorPort(Uint16 SpectatorPort) {
 
 }
 
-void _SteamGameServer_::SetGameType(const pStrA pchGameType) {
+void _SteamGameServer_::SetGameType(pCStrA pchGameType) {
 
 	/* Empty Method */
 
 }
 
-Bool _SteamGameServer_::BGetUserAchievementStatus(SteamId_t SteamId, const pStrA pchAchievementName) {
+Bool _SteamGameServer_::BGetUserAchievementStatus(SteamId_t SteamId, pCStrA pchAchievementName) {
 	
 	return False;
 

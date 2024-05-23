@@ -26,7 +26,7 @@ Int32 _SteamMasterServerUpdater_::GetNextOutgoingPacket(pVoid pvOut, Int32 cbMax
 
 }
 
-void _SteamMasterServerUpdater_::SetBasicServerData(Uint16 nProtocolVersion, Bool bDedicatedServer, const pStrA pchRegionName, const pStrA pchProductName, Uint16 nMaxReportedClients, Bool bPasswordProtected, const pStrA pchGameDescription) {
+void _SteamMasterServerUpdater_::SetBasicServerData(Uint16 nProtocolVersion, Bool bDedicatedServer, pCStrA pchRegionName, pCStrA pchProductName, Uint16 nMaxReportedClients, Bool bPasswordProtected, pCStrA pchGameDescription) {
 
 	/* Empty Method */
 
@@ -38,7 +38,7 @@ void _SteamMasterServerUpdater_::ClearAllKeyValues() {
 
 }
 
-void _SteamMasterServerUpdater_::SetKeyValue(const pStrA pchKey, const pStrA pchValue) {
+void _SteamMasterServerUpdater_::SetKeyValue(pCStrA pchKey, pCStrA pchValue) {
 
 	/* Empty Method */
 
@@ -62,13 +62,13 @@ void _SteamMasterServerUpdater_::ForceHeartbeat() {
 
 }
 
-Bool _SteamMasterServerUpdater_::AddMasterServer(const pStrA pchServerAddress) {
+Bool _SteamMasterServerUpdater_::AddMasterServer(pCStrA pchServerAddress) {
 
 	return False;
 
 }
 
-Bool _SteamMasterServerUpdater_::RemoveMasterServer(const pStrA pchServerAddress) {
+Bool _SteamMasterServerUpdater_::RemoveMasterServer(pCStrA pchServerAddress) {
 
 	return False;
 

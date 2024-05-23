@@ -20,18 +20,18 @@ public:
 	_SteamGameServer_& operator=(const _SteamGameServer_&) = delete;
 
 	/* This is called by SteamGameServer_Init */
-	Bool InitGameServer(Uint32 nIP, Uint16 GamePort, Uint16 QueryPort, Uint32 nFlags, AppId_t iGameAppId, const pStrA pchVersionString) override;
-	void SetProduct(const pStrA pchProduct) override;
-	void SetGameDescription(const pStrA pchGameDescription) override;
-	void SetModDir(const pStrA pchModDir) override;
+	Bool InitGameServer(Uint32 nIP, Uint16 GamePort, Uint16 QueryPort, Uint32 nFlags, AppId_t iGameAppId, pCStrA pchVersionString) override;
+	void SetProduct(pCStrA pchProduct) override;
+	void SetGameDescription(pCStrA pchGameDescription) override;
+	void SetModDir(pCStrA pchModDir) override;
 	void SetDedicatedServer(Bool bDedicated) override;
 	
 	/* You need to register for callbacks to determine the result of this operation.
 			SteamServersConnected_t, SteamServerConnectFailure_t,
 			SteamServersDisconnected_t */
 	void LogOn() override;
-	void LogOn(const pStrA pchAccountName, const pStrA pchPassword) override;
-	void LogOn(const pStrA pchToken) override;
+	void LogOn(pCStrA pchAccountName, pCStrA pchPassword) override;
+	void LogOn(pCStrA pchToken) override;
 	void LogOnAnonymous() override;
 	void LogOff() override;
 	Bool BLoggedOn() override;
@@ -43,20 +43,20 @@ public:
 	Bool WasRestartRequested() override;
 	void SetMaxPlayerCount(Int32 cPlayersMax) override;
 	void SetBotPlayerCount(Int32 cBotplayers) override;
-	void SetServerName(const pStrA pchServerName) override;
-	void SetMapName(const pStrA pchMapName) override;
+	void SetServerName(pCStrA pchServerName) override;
+	void SetMapName(pCStrA pchMapName) override;
 	void SetPasswordProtected(Bool bPasswordProtected) override;
 
 	/* Spectator server port to advertise. The default value is zero, meaning the
 	   service is not used. If your server receives any info requests on the LAN,
 	   this is the value that will be placed into the reply */
 	void SetSpectatorPort(Uint16 SpectatorPort) override;
-	void SetSpectatorServerName(const pStrA pchSpectatorServerName) override;
+	void SetSpectatorServerName(pCStrA pchSpectatorServerName) override;
 	void ClearAllKeyValues() override;
-	void SetKeyValue(const pStrA pchKey, const pStrA pchValue) override;
-	void SetGameTags(const pStrA pchGameTags) override;
-	void SetGameData(const pStrA pchGameData) override;
-	void SetRegion(const pStrA pchRegion) override;
+	void SetKeyValue(pCStrA pchKey, pCStrA pchValue) override;
+	void SetGameTags(pCStrA pchGameTags) override;
+	void SetGameData(pCStrA pchGameData) override;
+	void SetRegion(pCStrA pchRegion) override;
 
 	/* Indicate whether you wish to be listed on the master server list
 		and/or respond to server browser / LAN discovery packets.
@@ -101,12 +101,12 @@ public:
 	void SendUserDisconnect(SteamId_t SteamIdUser) override;
 
 	/* Return Value: True if successful, False if failure(ie, SteamIdUser wasn't for an active player) */
-	Bool BUpdateUserData(SteamId_t SteamIdUser, const pStrA pchPlayerName, Uint32 Score) override;
-	Bool BSetServerType(Uint32 nServerFlags, Uint32 nGameIP, Uint16 nGamePort, Uint16 SpectatorPort, Uint16 QueryPort, const pStrA pchGameDir, const pStrA pchVersion, Bool bLANMode) override;
-	void UpdateServerStatus(Int32 cPlayers, Int32 cPlayersMax, Int32 cBotPlayers, const pStrA pchServerName, const pStrA pSpectatorServerName, const pStrA pchMapName) override;
+	Bool BUpdateUserData(SteamId_t SteamIdUser, pCStrA pchPlayerName, Uint32 Score) override;
+	Bool BSetServerType(Uint32 nServerFlags, Uint32 nGameIP, Uint16 nGamePort, Uint16 SpectatorPort, Uint16 QueryPort, pCStrA pchGameDir, pCStrA pchVersion, Bool bLANMode) override;
+	void UpdateServerStatus(Int32 cPlayers, Int32 cPlayersMax, Int32 cBotPlayers, pCStrA pchServerName, pCStrA pSpectatorServerName, pCStrA pchMapName) override;
 	void UpdateSpectatorPort(Uint16 SpectatorPort) override;
-	void SetGameType(const pStrA pchGameType) override;
-	Bool BGetUserAchievementStatus(SteamId_t SteamId, const pStrA pchAchievementName) override;
+	void SetGameType(pCStrA pchGameType) override;
+	Bool BGetUserAchievementStatus(SteamId_t SteamId, pCStrA pchAchievementName) override;
 
 	void SetMasterServerHeartbeatInterval_DEPRECATED(Int32 iHeartbeatInterval) override;
 	void ForceMasterServerHeartbeat_DEPRECATED() override;

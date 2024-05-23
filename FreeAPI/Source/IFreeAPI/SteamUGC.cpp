@@ -14,7 +14,7 @@ UGCQueryHandle_t _SteamUGC_::CreateQueryAllUGCRequest(EUGCQuery eUGCQuery, EUGCM
 
 }
 
-UGCQueryHandle_t _SteamUGC_::CreateQueryAllUGCRequest(EUGCQuery eUGCQuery, EUGCMatchingUGCType eMatchingeMatchingUGCTypeFileType, AppId_t iCreatorAppId, AppId_t iConsumerAppId, const pStrA pchCursor) {
+UGCQueryHandle_t _SteamUGC_::CreateQueryAllUGCRequest(EUGCQuery eUGCQuery, EUGCMatchingUGCType eMatchingeMatchingUGCTypeFileType, AppId_t iCreatorAppId, AppId_t iConsumerAppId, pCStrA pchCursor) {
 
 	return k_UGCQueryHandle_Invalid;
 
@@ -104,7 +104,7 @@ Bool _SteamUGC_::GetQueryUGCKeyValueTag(UGCQueryHandle_t hUGCQuery, Uint32 i, Ui
 
 }
 
-Bool _SteamUGC_::GetQueryUGCKeyValueTag(UGCQueryHandle_t hUGCQuery, Uint32 i, const pStrA pchKey, pStrA pchValue, Uint32 cchValueSize) {
+Bool _SteamUGC_::GetQueryUGCKeyValueTag(UGCQueryHandle_t hUGCQuery, Uint32 i, pCStrA pchKey, pStrA pchValue, Uint32 cchValueSize) {
 
 	return False;
 
@@ -122,7 +122,7 @@ Bool _SteamUGC_::ReleaseQueryUGCRequest(UGCQueryHandle_t hUGCQuery) {
 
 }
 
-Bool _SteamUGC_::AddRequiredTag(UGCQueryHandle_t hUGCQuery, const pStrA pTagName) {
+Bool _SteamUGC_::AddRequiredTag(UGCQueryHandle_t hUGCQuery, pCStrA pTagName) {
 	
 	return False;
 
@@ -134,7 +134,7 @@ Bool _SteamUGC_::AddRequiredTagGroup(UGCQueryHandle_t hUGCQuery, const pSteamPar
 
 }
 
-Bool _SteamUGC_::AddExcludedTag(UGCQueryHandle_t hUGCQuery, const pStrA pTagName) {
+Bool _SteamUGC_::AddExcludedTag(UGCQueryHandle_t hUGCQuery, pCStrA pTagName) {
 	
 	return False;
 
@@ -188,7 +188,7 @@ Bool _SteamUGC_::SetReturnPlaytimeStats(UGCQueryHandle_t hUGCQuery, Uint32 nDays
 
 }
 
-Bool _SteamUGC_::SetLanguage(UGCQueryHandle_t hUGCQuery, const pStrA pchLanguage) {
+Bool _SteamUGC_::SetLanguage(UGCQueryHandle_t hUGCQuery, pCStrA pchLanguage) {
 	
 	return False;
 
@@ -200,7 +200,7 @@ Bool _SteamUGC_::SetAllowCachedResponse(UGCQueryHandle_t hUGCQuery, Uint32 nAgeS
 
 }
 
-Bool _SteamUGC_::SetCloudFileNameFilter(UGCQueryHandle_t hUGCQuery, const pStrA pMatchCloudFileName) {
+Bool _SteamUGC_::SetCloudFileNameFilter(UGCQueryHandle_t hUGCQuery, pCStrA pMatchCloudFileName) {
 	
 	return False;
 
@@ -212,7 +212,7 @@ Bool _SteamUGC_::SetMatchAnyTag(UGCQueryHandle_t hUGCQuery, Bool bMatchAnyTag) {
 
 }
 
-Bool _SteamUGC_::SetSearchText(UGCQueryHandle_t hUGCQuery, const pStrA pSearchText) {
+Bool _SteamUGC_::SetSearchText(UGCQueryHandle_t hUGCQuery, pCStrA pSearchText) {
 	
 	return False;
 
@@ -236,7 +236,7 @@ Bool _SteamUGC_::SetTimeUpdatedDateRange(UGCQueryHandle_t hUGCQuery, RTime32 Sta
 
 }
 
-Bool _SteamUGC_::AddRequiredKeyValueTag(UGCQueryHandle_t hUGCQuery, const pStrA pchKey, const pStrA pchValue) {
+Bool _SteamUGC_::AddRequiredKeyValueTag(UGCQueryHandle_t hUGCQuery, pCStrA pchKey, pCStrA pchValue) {
 	
 	return False;
 
@@ -259,25 +259,25 @@ UGCUpdateHandle_t _SteamUGC_::StartItemUpdate(AppId_t iConsumerAppId, PublishedF
 	return k_UGCUpdateHandle_Invalid;
 }
 
-Bool _SteamUGC_::SetItemTitle(UGCUpdateHandle_t hUGCQuery, const pStrA pchTitle) {
+Bool _SteamUGC_::SetItemTitle(UGCUpdateHandle_t hUGCQuery, pCStrA pchTitle) {
 
 	return False;
 
 }
 
-Bool _SteamUGC_::SetItemDescription(UGCUpdateHandle_t hUGCQuery, const pStrA pchDescription) {
+Bool _SteamUGC_::SetItemDescription(UGCUpdateHandle_t hUGCQuery, pCStrA pchDescription) {
 	
 	return False;
 
 }
 
-Bool _SteamUGC_::SetItemUpdateLanguage(UGCUpdateHandle_t hUGCQuery, const pStrA pchLanguage) {
+Bool _SteamUGC_::SetItemUpdateLanguage(UGCUpdateHandle_t hUGCQuery, pCStrA pchLanguage) {
 	
 	return False;
 
 }
 
-Bool _SteamUGC_::SetItemMetadata(UGCUpdateHandle_t hUGCQuery, const pStrA pchMetaData) {
+Bool _SteamUGC_::SetItemMetadata(UGCUpdateHandle_t hUGCQuery, pCStrA pchMetaData) {
 	
 	return False;
 
@@ -295,13 +295,13 @@ Bool _SteamUGC_::SetItemTags(UGCUpdateHandle_t hUGCUpdate, const pSteamParamStri
 
 }
 
-Bool _SteamUGC_::SetItemContent(UGCUpdateHandle_t hUGCQuery, const pStrA pszContentFolder) {
+Bool _SteamUGC_::SetItemContent(UGCUpdateHandle_t hUGCQuery, pCStrA pszContentFolder) {
 	
 	return False;
 
 }
 
-Bool _SteamUGC_::SetItemPreview(UGCUpdateHandle_t hUGCQuery, const pStrA pszPreviewFile) {
+Bool _SteamUGC_::SetItemPreview(UGCUpdateHandle_t hUGCQuery, pCStrA pszPreviewFile) {
 	
 	return False;
 
@@ -319,37 +319,37 @@ Bool _SteamUGC_::RemoveAllItemKeyValueTags(UGCUpdateHandle_t hUGCQuery) {
 
 }
 
-Bool _SteamUGC_::RemoveItemKeyValueTags(UGCUpdateHandle_t hUGCQuery, const pStrA pchKey) {
+Bool _SteamUGC_::RemoveItemKeyValueTags(UGCUpdateHandle_t hUGCQuery, pCStrA pchKey) {
 	
 	return False;
 
 }
 
-Bool _SteamUGC_::AddItemKeyValueTag(UGCUpdateHandle_t hUGCQuery, const pStrA pchKey, const pStrA pchValue) {
+Bool _SteamUGC_::AddItemKeyValueTag(UGCUpdateHandle_t hUGCQuery, pCStrA pchKey, pCStrA pchValue) {
 	
 	return False;
 
 }
 
-Bool _SteamUGC_::AddItemPreviewFile(UGCUpdateHandle_t hUGCQuery, const pStrA pszPreviewFile, EItemPreviewType type) {
+Bool _SteamUGC_::AddItemPreviewFile(UGCUpdateHandle_t hUGCQuery, pCStrA pszPreviewFile, EItemPreviewType type) {
 	
 	return False;
 
 }
 
-Bool _SteamUGC_::AddItemPreviewVideo(UGCUpdateHandle_t hUGCQuery, const pStrA pszVideoId) {
+Bool _SteamUGC_::AddItemPreviewVideo(UGCUpdateHandle_t hUGCQuery, pCStrA pszVideoId) {
 	
 	return False;
 
 }
 
-Bool _SteamUGC_::UpdateItemPreviewFile(UGCUpdateHandle_t hUGCQuery, Uint32 i, const pStrA pszPreviewFile) {
+Bool _SteamUGC_::UpdateItemPreviewFile(UGCUpdateHandle_t hUGCQuery, Uint32 i, pCStrA pszPreviewFile) {
 	
 	return False;
 
 }
 
-Bool _SteamUGC_::UpdateItemPreviewVideo(UGCUpdateHandle_t hUGCQuery, Uint32 i, const pStrA pszVideoId) {
+Bool _SteamUGC_::UpdateItemPreviewVideo(UGCUpdateHandle_t hUGCQuery, Uint32 i, pCStrA pszVideoId) {
 	
 	return False;
 
@@ -373,7 +373,7 @@ Bool _SteamUGC_::RemoveContentDescriptor(UGCUpdateHandle_t hUGCQuery, EUGCConten
 
 }
 
-SteamAPICall_t _SteamUGC_::SubmitItemUpdate(UGCUpdateHandle_t hUGCQuery, const pStrA pchChangeNote) {
+SteamAPICall_t _SteamUGC_::SubmitItemUpdate(UGCUpdateHandle_t hUGCQuery, pCStrA pchChangeNote) {
 
 	return k_SteamAPICall_Invalid;
 }
@@ -456,7 +456,7 @@ Bool _SteamUGC_::DownloadItem(PublishedFileId_t PublishedFileId, Bool bHighPrior
 
 }
 
-Bool _SteamUGC_::BInitWorkshopForGameServer(DepotId_t WorkshopDepotId, const pStrA pszFolder) {
+Bool _SteamUGC_::BInitWorkshopForGameServer(DepotId_t WorkshopDepotId, pCStrA pszFolder) {
 	
 	return False;
 

@@ -8,7 +8,7 @@
 typedef class _ISteamApps001_ {
 public:
 
-	virtual Int32 GetAppData(AppId_t iAppId, const pStrA pchKey, pStrA pchValue, Int32 cchValueMax) = 0;
+	virtual Int32 GetAppData(AppId_t iAppId, pCStrA pchKey, pStrA pchValue, Int32 cchValueMax) = 0;
 
 } ISteamApps001, *IpSteamApps001;
 
@@ -19,8 +19,8 @@ public:
 	virtual Bool BIsLowViolence() = 0;
 	virtual Bool BIsCybercafe() = 0;
 	virtual Bool BIsVACBanned() = 0;
-	virtual const pStrA GetCurrentGameLanguage() = 0;
-	virtual const pStrA GetAvailableGameLanguages() = 0;
+	virtual pCStrA GetCurrentGameLanguage() = 0;
+	virtual pCStrA GetAvailableGameLanguages() = 0;
 	virtual Bool BIsSubscribedApp(AppId_t iAppId) = 0;
 
 } ISteamApps002, *IpSteamApps002;
@@ -32,8 +32,8 @@ public:
 	virtual Bool BIsLowViolence() = 0;
 	virtual Bool BIsCybercafe() = 0;
 	virtual Bool BIsVACBanned() = 0;
-	virtual const pStrA GetCurrentGameLanguage() = 0;
-	virtual const pStrA GetAvailableGameLanguages() = 0;
+	virtual pCStrA GetCurrentGameLanguage() = 0;
+	virtual pCStrA GetAvailableGameLanguages() = 0;
 	virtual Bool BIsSubscribedApp(AppId_t iAppId) = 0;
 	virtual Bool BIsDlcInstalled(AppId_t iAppId) = 0;
 
@@ -46,8 +46,8 @@ public:
 	virtual Bool BIsLowViolence() = 0;
 	virtual Bool BIsCybercafe() = 0;
 	virtual Bool BIsVACBanned() = 0;
-	virtual const pStrA GetCurrentGameLanguage() = 0;
-	virtual const pStrA GetAvailableGameLanguages() = 0;
+	virtual pCStrA GetCurrentGameLanguage() = 0;
+	virtual pCStrA GetAvailableGameLanguages() = 0;
 	virtual Bool BIsSubscribedApp(AppId_t iAppId) = 0;
 	virtual Bool BIsDlcInstalled(AppId_t iAppId) = 0;
 	virtual Uint32 GetEarliestPurchaseUnixTime(AppId_t iAppId) = 0;
@@ -66,8 +66,8 @@ public:
 	virtual Bool BIsLowViolence() = 0;
 	virtual Bool BIsCybercafe() = 0;
 	virtual Bool BIsVACBanned() = 0;
-	virtual const pStrA GetCurrentGameLanguage() = 0;
-	virtual const pStrA GetAvailableGameLanguages() = 0;
+	virtual pCStrA GetCurrentGameLanguage() = 0;
+	virtual pCStrA GetAvailableGameLanguages() = 0;
 	virtual Bool BIsSubscribedApp(AppId_t iAppId) = 0;
 	virtual Bool BIsDlcInstalled(AppId_t iAppId) = 0;
 	virtual Uint32 GetEarliestPurchaseUnixTime(AppId_t iAppId) = 0;
@@ -92,8 +92,8 @@ public:
 	virtual Bool BIsLowViolence() = 0;
 	virtual Bool BIsCybercafe() = 0;
 	virtual Bool BIsVACBanned() = 0;
-	virtual const pStrA GetCurrentGameLanguage() = 0;
-	virtual const pStrA GetAvailableGameLanguages() = 0;
+	virtual pCStrA GetCurrentGameLanguage() = 0;
+	virtual pCStrA GetAvailableGameLanguages() = 0;
 	virtual Bool BIsSubscribedApp(AppId_t iAppId) = 0;
 	virtual Bool BIsDlcInstalled(AppId_t iAppId) = 0;
 	virtual Uint32 GetEarliestPurchaseUnixTime(AppId_t iAppId) = 0;
@@ -109,7 +109,7 @@ public:
 	virtual Uint32 GetAppInstallDir(AppId_t AppId, pStrA pchFolder, Uint32 cchFolderBufferSize) = 0;
 	virtual Bool BIsAppInstalled(AppId_t AppId) = 0;
 	virtual SteamId_t GetAppOwner() = 0;
-	virtual const pStrA GetLaunchQueryParam(const pStrA pchKey) = 0;
+	virtual pCStrA GetLaunchQueryParam(pCStrA pchKey) = 0;
 
 } ISteamApps006, *IpSteamApps006;
 
@@ -120,8 +120,8 @@ public:
 	virtual Bool BIsLowViolence() = 0;
 	virtual Bool BIsCybercafe() = 0;
 	virtual Bool BIsVACBanned() = 0;
-	virtual const pStrA GetCurrentGameLanguage() = 0;
-	virtual const pStrA GetAvailableGameLanguages() = 0;
+	virtual pCStrA GetCurrentGameLanguage() = 0;
+	virtual pCStrA GetAvailableGameLanguages() = 0;
 	virtual Bool BIsSubscribedApp(AppId_t iAppId) = 0;
 	virtual Bool BIsDlcInstalled(AppId_t iAppId) = 0;
 	virtual Uint32 GetEarliestPurchaseUnixTime(AppId_t iAppId) = 0;
@@ -137,7 +137,7 @@ public:
 	virtual Uint32 GetAppInstallDir(AppId_t AppId, pStrA pchFolder, Uint32 cchFolderBufferSize) = 0;
 	virtual Bool BIsAppInstalled(AppId_t AppId) = 0;
 	virtual SteamId_t GetAppOwner() = 0;
-	virtual const pStrA GetLaunchQueryParam(const pStrA pchKey) = 0;
+	virtual pCStrA GetLaunchQueryParam(pCStrA pchKey) = 0;
 	virtual Bool GetDlcDownloadProgress(AppId_t iAppId, pUint64 pnBytesDownloaded, pUint64 pnBytesTotal) = 0;
 	virtual Int32 GetAppBuildId() = 0;
 
@@ -154,8 +154,8 @@ public:
 	virtual Bool BIsCybercafe() = 0;
 	virtual Bool BIsVACBanned() = 0;
 
-	virtual const pStrA GetCurrentGameLanguage() = 0;
-	virtual const pStrA GetAvailableGameLanguages() = 0;
+	virtual pCStrA GetCurrentGameLanguage() = 0;
+	virtual pCStrA GetAvailableGameLanguages() = 0;
 
 	/* Only use this member if you need to check ownership of another game related to yours */
 	virtual Bool BIsSubscribedApp(AppId_t iAppId) = 0;
@@ -199,12 +199,12 @@ public:
 	   Parameter names starting with an underscore '_' are reserved for steam features -- they can be queried by the game,
 	    but it is advised that you not param names beginning with an underscore for your own features.
 	   Check for new launch parameters on callback NewUrlLaunchParameters_t */
-	virtual const pStrA GetLaunchQueryParam(const pStrA pchKey) = 0;
+	virtual pCStrA GetLaunchQueryParam(pCStrA pchKey) = 0;
 
 	virtual Bool GetDlcDownloadProgress(AppId_t iAppId, /* [out] */ pUint64 pnBytesDownloaded, /* [out] */ pUint64 pnBytesTotal) = 0;
 	virtual Int32 GetAppBuildId() = 0;
 	virtual void RequestAllProofOfPurchaseKeys() = 0;
-	virtual SteamAPICall_t GetFileDetails(const pStrA pchFileName) = 0;
+	virtual SteamAPICall_t GetFileDetails(pCStrA pchFileName) = 0;
 	virtual Int32 GetLaunchCommandLine(pStrA pchCommandLine, Int32 cchCommandLine) = 0;
 	virtual Bool BIsSubscribedFromFamilySharing() = 0;
 	virtual Bool BIsTimedTrial(/* [out] */ pUint32 pnSecondsAllowed, /* [out] */ pUint32 pnSecondsPlayed) = 0;

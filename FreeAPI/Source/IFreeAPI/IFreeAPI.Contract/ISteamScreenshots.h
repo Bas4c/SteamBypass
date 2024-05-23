@@ -30,14 +30,14 @@ typedef class _ISteamScreenshots_ {
 public:
 
 	virtual ScreenshotHandle WriteScreenshot(const pVoid pvRGB, Uint32 cbRGB, Int32 Cx, Int32 Cy) = 0;
-	virtual ScreenshotHandle AddScreenshotToLibrary(const pStrA pchFilename, const pStrA pchThumbnailFilename, Int32 Cx, Int32 Cy) = 0;
+	virtual ScreenshotHandle AddScreenshotToLibrary(pCStrA pchFilename, pCStrA pchThumbnailFilename, Int32 Cx, Int32 Cy) = 0;
 	virtual void TriggerScreenshot() = 0;
 	virtual void HookScreenshots(Bool bHook) = 0;
-	virtual Bool SetLocation(ScreenshotHandle hScreenshot, const pStrA pchLocation) = 0;
+	virtual Bool SetLocation(ScreenshotHandle hScreenshot, pCStrA pchLocation) = 0;
 	virtual Bool TagUser(ScreenshotHandle hScreenshot, SteamId_t SteamId) = 0;
 	virtual Bool TagPublishedFile(ScreenshotHandle hScreenshot, PublishedFileId_t unPublishedFileID) = 0;
 	virtual Bool IsScreenshotsHooked() = 0;
-	virtual ScreenshotHandle AddVRScreenshotToLibrary(EVRScreenshotType eVRScreenshotType, const pStrA pchFilename, const pStrA pchVRFilename) = 0;
+	virtual ScreenshotHandle AddVRScreenshotToLibrary(EVRScreenshotType eVRScreenshotType, pCStrA pchFilename, pCStrA pchVRFilename) = 0;
 
 } ISteamScreenshots, *IpSteamScreenshots;
 

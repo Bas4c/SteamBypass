@@ -46,12 +46,12 @@ public:
 	virtual HSteamListenSocket CreateListenSocketP2P(Int32 nLocalVirtualPort, Int32 nOptions, const pSteamNetworkingConfigValue_t pOptions) = 0;
 	virtual HSteamNetConnection ConnectP2P(const pSteamNetworkingIdentity pIdentityRemote, Int32 nRemoteVirtualPort, Int32 nOptions, const pSteamNetworkingConfigValue_t pOptions) = 0;
 	virtual EResult AcceptConnection(HSteamNetConnection hConnection) = 0;
-	virtual Bool CloseConnection(HSteamNetConnection hPeer, Int32 nReason, const pStrA pchDebug, Bool bEnableLinger) = 0;
+	virtual Bool CloseConnection(HSteamNetConnection hPeer, Int32 nReason, pCStrA pchDebug, Bool bEnableLinger) = 0;
 	virtual Bool CloseListenSocket(HSteamListenSocket hSocket) = 0;
 
 	virtual Bool SetConnectionUserData(HSteamNetConnection hPeer, Int64 nUserData) = 0;
 	virtual Int64 GetConnectionUserData(HSteamNetConnection hPeer) = 0;
-	virtual void SetConnectionName(HSteamNetConnection hPeer, const pStrA pchName) = 0;
+	virtual void SetConnectionName(HSteamNetConnection hPeer, pCStrA pchName) = 0;
 	virtual Bool GetConnectionName(HSteamNetConnection hPeer, /* [out] */ pStrA pchName, Int32 cchName) = 0;
 	virtual EResult SendMessageToConnection(HSteamNetConnection hConnection, const pVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) = 0;
 	virtual void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t pMessages, pInt64 pMessageNumberOrResult) = 0;

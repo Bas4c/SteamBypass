@@ -14,7 +14,7 @@ Bool _SteamHTMLSurface_::Shutdown() {
 
 }
 
-SteamAPICall_t _SteamHTMLSurface_::CreateBrowser(const pStrA pchUserAgent, const pStrA pchUserCSS) {
+SteamAPICall_t _SteamHTMLSurface_::CreateBrowser(pCStrA pchUserAgent, pCStrA pchUserCSS) {
 
 	return k_SteamAPICall_Invalid;
 
@@ -26,7 +26,7 @@ void _SteamHTMLSurface_::RemoveBrowser(HTMLBrowser hHTMLBrowser) {
 
 }
 
-void _SteamHTMLSurface_::LoadURL(HTMLBrowser hHTMLBrowser, const pStrA pchURL, const pStrA pchPostData) {
+void _SteamHTMLSurface_::LoadURL(HTMLBrowser hHTMLBrowser, pCStrA pchURL, pCStrA pchPostData) {
 
 	/* Empty Method */
 
@@ -62,13 +62,13 @@ void _SteamHTMLSurface_::GoForward(HTMLBrowser hHTMLBrowser) {
 
 }
 
-void _SteamHTMLSurface_::AddHeader(HTMLBrowser hHTMLBrowser, const pStrA pchKey, const pStrA pchValue) {
+void _SteamHTMLSurface_::AddHeader(HTMLBrowser hHTMLBrowser, pCStrA pchKey, pCStrA pchValue) {
 
 	/* Empty Method */
 
 }
 
-void _SteamHTMLSurface_::ExecuteJavascript(HTMLBrowser hHTMLBrowser, const pStrA pchScript) {
+void _SteamHTMLSurface_::ExecuteJavascript(HTMLBrowser hHTMLBrowser, pCStrA pchScript) {
 
 	/* Empty Method */
 
@@ -165,7 +165,7 @@ void _SteamHTMLSurface_::PasteFromClipboard(HTMLBrowser hHTMLBrowser) {
 
 }
 
-void _SteamHTMLSurface_::Find(HTMLBrowser hHTMLBrowser, const pStrA pchSearchStr, Bool bCurrentlyInFind, Bool bReverse) {
+void _SteamHTMLSurface_::Find(HTMLBrowser hHTMLBrowser, pCStrA pchSearchStr, Bool bCurrentlyInFind, Bool bReverse) {
 
 	/* Empty Method */
 
@@ -183,7 +183,7 @@ void _SteamHTMLSurface_::GetLinkAtPosition(HTMLBrowser hHTMLBrowser, Int32 x, In
 
 }
 
-void _SteamHTMLSurface_::SetCookie(const pStrA pchHostname, const pStrA pchKey, const pStrA pchValue, const pStrA pchPath, RTime32 nExpires, Bool bSecure, Bool bHTTPOnly) {
+void _SteamHTMLSurface_::SetCookie(pCStrA pchHostname, pCStrA pchKey, pCStrA pchValue, pCStrA pchPath, RTime32 nExpires, Bool bSecure, Bool bHTTPOnly) {
 
 	/* Empty Method */
 
@@ -225,7 +225,7 @@ void _SteamHTMLSurface_::JSDialogResponse(HTMLBrowser hHTMLBrowser, Bool bResult
 
 }
 
-void _SteamHTMLSurface_::FileLoadDialogResponse(HTMLBrowser hHTMLBrowser, const pStrA *pchSelectedFiles) {
+void _SteamHTMLSurface_::FileLoadDialogResponse(HTMLBrowser hHTMLBrowser, pCStrA *pchSelectedFiles) {
 
 	/* Empty Method */
 

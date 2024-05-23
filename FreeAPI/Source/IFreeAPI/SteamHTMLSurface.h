@@ -18,16 +18,16 @@ public:
 
 	Bool Init() override;
 	Bool Shutdown() override;
-	SteamAPICall_t CreateBrowser(const pStrA pchUserAgent, const pStrA pchUserCSS) override;
+	SteamAPICall_t CreateBrowser(pCStrA pchUserAgent, pCStrA pchUserCSS) override;
 	void RemoveBrowser(HTMLBrowser hHTMLBrowser) override;
-	void LoadURL(HTMLBrowser hHTMLBrowser, const pStrA pchURL, const pStrA pchPostData) override;
+	void LoadURL(HTMLBrowser hHTMLBrowser, pCStrA pchURL, pCStrA pchPostData) override;
 	void SetSize(HTMLBrowser hHTMLBrowser, Uint32 Cx, Uint32 Cy) override;
 	void StopLoad(HTMLBrowser hHTMLBrowser) override;
 	void Reload(HTMLBrowser hHTMLBrowser) override;
 	void GoBack(HTMLBrowser hHTMLBrowser) override;
 	void GoForward(HTMLBrowser hHTMLBrowser) override;
-	void AddHeader(HTMLBrowser hHTMLBrowser, const pStrA pchKey, const pStrA pchValue) override;
-	void ExecuteJavascript(HTMLBrowser hHTMLBrowser, const pStrA pchScript) override;
+	void AddHeader(HTMLBrowser hHTMLBrowser, pCStrA pchKey, pCStrA pchValue) override;
+	void ExecuteJavascript(HTMLBrowser hHTMLBrowser, pCStrA pchScript) override;
 	void MouseUp(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) override;
 	void MouseDown(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) override;
 	void MouseDoubleClick(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) override;
@@ -43,17 +43,17 @@ public:
 	void ViewSource(HTMLBrowser hHTMLBrowser) override;
 	void CopyToClipboard(HTMLBrowser hHTMLBrowser) override;
 	void PasteFromClipboard(HTMLBrowser hHTMLBrowser) override;
-	void Find(HTMLBrowser hHTMLBrowser, const pStrA pchSearchStr, Bool bCurrentlyInFind, Bool bReverse) override;
+	void Find(HTMLBrowser hHTMLBrowser, pCStrA pchSearchStr, Bool bCurrentlyInFind, Bool bReverse) override;
 	void StopFind(HTMLBrowser hHTMLBrowser) override;
 	void GetLinkAtPosition(HTMLBrowser hHTMLBrowser, Int32 x, Int32 y) override;
-	void SetCookie(const pStrA pchHostname, const pStrA pchKey, const pStrA pchValue, const pStrA pchPath, RTime32 nExpires, Bool bSecure, Bool bHTTPOnly) override;
+	void SetCookie(pCStrA pchHostname, pCStrA pchKey, pCStrA pchValue, pCStrA pchPath, RTime32 nExpires, Bool bSecure, Bool bHTTPOnly) override;
 	void SetPageScaleFactor(HTMLBrowser hHTMLBrowser, Float Zoom, Int32 nPointX, Int32 nPointY) override;
 	void SetBackgroundMode(HTMLBrowser hHTMLBrowser, Bool bBackgroundMode) override;
 	void SetDPIScalingFactor(HTMLBrowser hHTMLBrowser, Float DPIScaling) override;
 	void OpenDeveloperTools(HTMLBrowser hHTMLBrowser) override;
 	void AllowStartRequest(HTMLBrowser hHTMLBrowser, Bool bAllowed) override;
 	void JSDialogResponse(HTMLBrowser hHTMLBrowser, Bool bResult) override;
-	void FileLoadDialogResponse(HTMLBrowser hHTMLBrowser, const pStrA *pchSelectedFiles) override;
+	void FileLoadDialogResponse(HTMLBrowser hHTMLBrowser, pCStrA *pchSelectedFiles) override;
 
 	~_SteamHTMLSurface_() override = default;
 

@@ -26,12 +26,12 @@
 
 /// <returns>On Success Allocates Memory using 'LocalAlloc'</returns>
 _COMMON_X_API_ _Success_(return != NULL) pStrA __stdcall WideCharToMultiByteAlloc(
-	_In_z_ const pStrW pchWideStr
+	_In_z_ pCStrW pchWideStr
 );
 
 /// <returns>On Success Allocates Memory using 'LocalAlloc'</returns>
 _COMMON_X_API_ _Success_(return != NULL) pStrW __stdcall MultiByteToWideCharAlloc(
-	_In_z_ const pStrA pchStr
+	_In_z_ pCStrA pchStr
 );
 
 _COMMON_X_API_ void __stdcall ByteSwap(
@@ -90,11 +90,11 @@ _COMMON_X_API_ _Success_(return != NULL) pStrA __stdcall SystemTimeStringAllocA(
 #endif
 
 _COMMON_X_API_ Bool __stdcall FileExistsW(
-	_In_z_ const pStrW pchFileSpec
+	_In_z_ pCStrW pchFileSpec
 );
 
 _COMMON_X_API_ Bool __stdcall FileExistsA(
-	_In_z_ const pStrA pchFileSpec
+	_In_z_ pCStrA pchFileSpec
 );
 
 #ifdef UNICODE
@@ -106,14 +106,14 @@ _COMMON_X_API_ Bool __stdcall FileExistsA(
 
 /// <returns>On Success Opens File using 'CreateFileW'</returns>
 _COMMON_X_API_ HANDLE _Success_(return != INVALID_HANDLE_VALUE) __stdcall FSCreateFileW(
-	_In_z_ const pStrW pchFileSpec,
+	_In_z_ pCStrW pchFileSpec,
 	_In_ Dword dwDesiredAccess,
 	_In_ Dword dwCreationDisposition
 );
 
 /// <returns>On Success Opens File using 'CreateFileA'</returns>
 _COMMON_X_API_ HANDLE _Success_(return != INVALID_HANDLE_VALUE) __stdcall FSCreateFileA(
-	_In_z_ const pStrA pchFileSpec,
+	_In_z_ pCStrA pchFileSpec,
 	_In_ Dword dwDesiredAccess,
 	_In_ Dword dwCreationDisposition
 );
@@ -155,14 +155,14 @@ typedef enum _ESaveType_ {
 /// <returns>On Success Allocates Memory using 'LocalAlloc'</returns>
 _COMMON_X_API_ _Success_(return != NULL) pStrW __stdcall GetGameSaveFileNameW(
 	_In_ HMODULE hModule,
-	_In_opt_z_ const pStrW pchFileSpec,
+	_In_opt_z_ pCStrW pchFileSpec,
 	_In_ ESaveType eSaveType
 );
 
 /// <returns>On Success Allocates Memory using 'LocalAlloc'</returns>
 _COMMON_X_API_ _Success_(return != NULL) pStrA __stdcall GetGameSaveFileNameA(
 	_In_ HMODULE hModule,
-	_In_opt_z_ const pStrA pchFileSpec,
+	_In_opt_z_ pCStrA pchFileSpec,
 	_In_ ESaveType eSaveType
 );
 
@@ -172,11 +172,11 @@ _COMMON_X_API_ _Success_(return != NULL) pStrA __stdcall GetGameSaveFileNameA(
 	#define GetGameSaveFileName GetGameSaveFileNameA
 #endif
 
-_COMMON_X_API_ const pStrW __stdcall GetUserUILanguageW(
+_COMMON_X_API_ pCStrW __stdcall GetUserUILanguageW(
 	void
 );
 
-_COMMON_X_API_ const pStrA __stdcall GetUserUILanguageA(
+_COMMON_X_API_ pCStrA __stdcall GetUserUILanguageA(
 	void
 );
 

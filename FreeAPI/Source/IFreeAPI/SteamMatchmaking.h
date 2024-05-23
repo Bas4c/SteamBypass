@@ -11,7 +11,7 @@ typedef class _SteamMatchmaking_ : public _ISteamMatchmaking002_,
  public _ISteamMatchmaking003_, public _ISteamMatchmaking004_,
  public _ISteamMatchmaking005_, public _ISteamMatchmaking006_,
  public _ISteamMatchmaking007_, public _ISteamMatchmaking008_,
- public _ISteamMatchmaking_{
+ public _ISteamMatchmaking_ {
 public:
 
 	_SteamMatchmaking_() = default;
@@ -27,10 +27,10 @@ public:
 
 	void RequestLobbyList_Old() override;
 	SteamAPICall_t RequestLobbyList() override;
-	void AddRequestLobbyListFilter(pStrA pchKeyToMatch, pStrA pchValueToMatch) override;
-	void AddRequestLobbyListStringFilter(const pStrA pchKeyToMatch, const pStrA pchValueToMatch, ELobbyComparison eComparisonType) override;
-	void AddRequestLobbyListNumericalFilter(const pStrA pchKeyToMatch, Int32 nValueToMatch, ELobbyComparison eComparisonType) override;
-	void AddRequestLobbyListNearValueFilter(const pStrA pchKeyToMatch, Int32 nValueToBeCloseTo) override;
+	void AddRequestLobbyListFilter(pCStrA pchKeyToMatch, pCStrA pchValueToMatch) override;
+	void AddRequestLobbyListStringFilter(pCStrA pchKeyToMatch, pCStrA pchValueToMatch, ELobbyComparison eComparisonType) override;
+	void AddRequestLobbyListNumericalFilter(pCStrA pchKeyToMatch, Int32 nValueToMatch, ELobbyComparison eComparisonType) override;
+	void AddRequestLobbyListNearValueFilter(pCStrA pchKeyToMatch, Int32 nValueToBeCloseTo) override;
 	void AddRequestLobbyListSlotsAvailableFilter() override;
 	void AddRequestLobbyListFilterSlotsAvailable(Int32 nSlotsAvailable) override;
 	void AddRequestLobbyListDistanceFilter(ELobbyDistanceFilter eLobbyDistanceFilter) override;
@@ -50,15 +50,15 @@ public:
 	SteamId_t GetLobbyMemberByIndex(SteamId_t SteamIdLobby, Int32 iMember) override;
 
 	/* "" when not set */
-	const pStrA GetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey) override;
-	Bool SetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) override;
+	pCStrA GetLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey) override;
+	Bool SetLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) override;
 	Int32 GetLobbyDataCount(SteamId_t SteamIdLobby) override;
 	Bool GetLobbyDataByIndex(SteamId_t SteamIdLobby, Int32 iLobbyData, pStrA pchKey, Int32 cchKey, pStrA pchValue, Int32 cchValue) override;
-	Bool DeleteLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey) override;
+	Bool DeleteLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey) override;
 
 	/* "" when not set */
-	const pStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, const pStrA pchKey) override;
-	void SetLobbyMemberData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) override;
+	pCStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, pCStrA pchKey) override;
+	void SetLobbyMemberData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) override;
 
 	Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, const pVoid pvMsgBody, Int32 cbMsgBody) override;
 	Int32 GetLobbyChatEntry(SteamId_t SteamIdLobby, Int32 iChatId, pSteamId_t pSteamIdUser, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) override;
@@ -186,15 +186,15 @@ public:
 	_SteamGameSearch_(const _SteamGameSearch_&) = delete;
 	_SteamGameSearch_& operator=(const _SteamGameSearch_&) = delete;
 
-	EGameSearchErrorCode_t AddGameSearchParams(pStrA pchKeyToFind, pStrA pchValuesToFind) override;
+	EGameSearchErrorCode_t AddGameSearchParams(pCStrA pchKeyToFind, pCStrA pchValuesToFind) override;
 	EGameSearchErrorCode_t SearchForGameWithLobby(SteamId_t SteamIdLobby, Int32 nPlayerMin, Int32 nPlayerMax) override;
 	EGameSearchErrorCode_t SearchForGameSolo(Int32 nPlayerMin, Int32 nPlayerMax) override;
 	EGameSearchErrorCode_t AcceptGame() override;
 	EGameSearchErrorCode_t DeclineGame() override;
 	EGameSearchErrorCode_t RetrieveConnectionDetails(SteamId_t SteamIdHost, pStrA pchConnectionDetails, Int32 cbConnectionDetails) override;
 	EGameSearchErrorCode_t EndGameSearch() override;
-	EGameSearchErrorCode_t SetGameHostParams(pStrA pchKey, pStrA pchValue) override;
-	EGameSearchErrorCode_t SetConnectionDetails(pStrA pchConnectionDetails, Int32 cbConnectionDetails) override;
+	EGameSearchErrorCode_t SetGameHostParams(pCStrA pchKey, pCStrA pchValue) override;
+	EGameSearchErrorCode_t SetConnectionDetails(pCStrA pchConnectionDetails, Int32 cbConnectionDetails) override;
 	EGameSearchErrorCode_t RequestPlayersForGame(Int32 nPlayerMin, Int32 nPlayerMax, Int32 nMaxTeamSize) override;
 	EGameSearchErrorCode_t HostConfirmGameStart(Uint64 UniqueGameId) override;
 	EGameSearchErrorCode_t CancelRequestPlayersForGame() override;
@@ -222,7 +222,7 @@ public:
 	Bool GetNumAvailableBeaconLocations(pUint32 pNumLocations) override;
 	Bool GetAvailableBeaconLocations(pSteamPartyBeaconLocation_t pLocationList, Uint32 uMaxNumLocations) override;
 
-	SteamAPICall_t CreateBeacon(Uint32 nOpenSlots, pSteamPartyBeaconLocation_t pBeaconLocation, pStrA pchConnectString, pStrA pchMetadata) override;
+	SteamAPICall_t CreateBeacon(Uint32 nOpenSlots, pSteamPartyBeaconLocation_t pBeaconLocation, pCStrA pchConnectString, pCStrA pchMetadata) override;
 	void OnReservationCompleted(PartyBeaconId_t PartyBeaconId, SteamId_t SteamIdUser) override;
 	void CancelReservation(PartyBeaconId_t PartyBeaconId, SteamId_t SteamIdUser) override;
 	SteamAPICall_t ChangeNumOpenSlots(PartyBeaconId_t PartyBeaconId, Uint32 nOpenSlots) override;

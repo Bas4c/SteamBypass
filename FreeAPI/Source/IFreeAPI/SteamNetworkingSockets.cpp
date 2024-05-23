@@ -32,7 +32,7 @@ EResult _SteamNetworkingSockets_::AcceptConnection(HSteamNetConnection hConnecti
 
 }
 
-Bool _SteamNetworkingSockets_::CloseConnection(HSteamNetConnection hPeer, Int32 nReason, const pStrA pchDebug, Bool bEnableLinger) {
+Bool _SteamNetworkingSockets_::CloseConnection(HSteamNetConnection hPeer, Int32 nReason, pCStrA pchDebug, Bool bEnableLinger) {
 
 	return False;
 
@@ -56,7 +56,7 @@ Int64 _SteamNetworkingSockets_::GetConnectionUserData(HSteamNetConnection hPeer)
 
 }
 
-void _SteamNetworkingSockets_::SetConnectionName(HSteamNetConnection hPeer, const pStrA pchName) {
+void _SteamNetworkingSockets_::SetConnectionName(HSteamNetConnection hPeer, pCStrA pchName) {
 
 	/* Empty Method */
 

@@ -488,12 +488,12 @@ typedef struct _SteamControllerState_t_ {
 typedef class _ISteamController001_ {
 public:
 
-	virtual Bool Init(const pStrA pchAbsolutePathToControllerConfigVDF) = 0;
+	virtual Bool Init(pCStrA pchAbsolutePathToControllerConfigVDF) = 0;
 	virtual Bool Shutdown() = 0;
 	virtual void RunFrame() = 0;
 	virtual Bool GetControllerState(Uint32 iController, pSteamControllerState_t pSteamControllerState) = 0;
 	virtual void TriggerHapticPulse(ControllerHandle_t hController, ESteamControllerPad eTargetPad, Uint16 DurationMicroSeconds) = 0;
-	virtual void SetOverrideMode(const pStrA pchMode) = 0;
+	virtual void SetOverrideMode(pCStrA pchMode) = 0;
 
 } ISteamController001, *IpSteamController001;
 
@@ -520,12 +520,12 @@ public:
 	virtual void RunFrame() = 0;
 	virtual Int32 GetConnectedControllers(pControllerHandle_t phController) = 0;
 	virtual Bool ShowBindingPanel(ControllerHandle_t hController) = 0;
-	virtual ControllerActionSetHandle_t GetActionSetHandle(const pStrA pchActionSetName) = 0;
+	virtual ControllerActionSetHandle_t GetActionSetHandle(pCStrA pchActionSetName) = 0;
 	virtual ControllerActionSetHandle_t GetCurrentActionSet(ControllerHandle_t hController) = 0;
-	virtual ControllerDigitalActionHandle_t GetDigitalActionHandle(const pStrA pchActionName) = 0;
+	virtual ControllerDigitalActionHandle_t GetDigitalActionHandle(pCStrA pchActionName) = 0;
 	virtual ControllerDigitalActionData_t GetDigitalActionData(ControllerHandle_t hController, ControllerDigitalActionHandle_t hDigitalAction) = 0;
 	virtual Int32 GetDigitalActionOrigins(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet, ControllerDigitalActionHandle_t hDigitalAction, pEControllerActionOrigin peControllerActionOrigin) = 0;
-	virtual ControllerAnalogActionHandle_t GetAnalogActionHandle(const pStrA pchActionName) = 0;
+	virtual ControllerAnalogActionHandle_t GetAnalogActionHandle(pCStrA pchActionName) = 0;
 	virtual ControllerAnalogActionData_t GetAnalogActionData(ControllerHandle_t hController, ControllerAnalogActionHandle_t hAnalogAction) = 0;
 	virtual Int32 GetAnalogActionOrigins(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet, ControllerAnalogActionHandle_t hAnalogAction, pEControllerActionOrigin peControllerActionOrigin) = 0;
 	virtual void StopAnalogActionMomentum(ControllerHandle_t hController, ControllerAnalogActionHandle_t hAnalogAction) = 0;
@@ -542,12 +542,12 @@ public:
 	virtual void RunFrame() = 0;
 	virtual Int32 GetConnectedControllers(pControllerHandle_t phController) = 0;
 	virtual Bool ShowBindingPanel(ControllerHandle_t hController) = 0;
-	virtual ControllerActionSetHandle_t GetActionSetHandle(const pStrA pchActionSetName) = 0;
+	virtual ControllerActionSetHandle_t GetActionSetHandle(pCStrA pchActionSetName) = 0;
 	virtual ControllerActionSetHandle_t GetCurrentActionSet(ControllerHandle_t hController) = 0;
-	virtual ControllerDigitalActionHandle_t GetDigitalActionHandle(const pStrA pchActionName) = 0;
+	virtual ControllerDigitalActionHandle_t GetDigitalActionHandle(pCStrA pchActionName) = 0;
 	virtual ControllerDigitalActionData_t GetDigitalActionData(ControllerHandle_t hController, ControllerDigitalActionHandle_t hDigitalAction) = 0;
 	virtual Int32 GetDigitalActionOrigins(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet, ControllerDigitalActionHandle_t hDigitalAction, pEControllerActionOrigin peControllerActionOrigin) = 0;
-	virtual ControllerAnalogActionHandle_t GetAnalogActionHandle(const pStrA pchActionName) = 0;
+	virtual ControllerAnalogActionHandle_t GetAnalogActionHandle(pCStrA pchActionName) = 0;
 	virtual ControllerAnalogActionData_t GetAnalogActionData(ControllerHandle_t hController, ControllerAnalogActionHandle_t hAnalogAction) = 0;
 	virtual Int32 GetAnalogActionOrigins(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet, ControllerAnalogActionHandle_t hAnalogAction, pEControllerActionOrigin peControllerActionOrigin) = 0;
 	virtual void StopAnalogActionMomentum(ControllerHandle_t hController, ControllerAnalogActionHandle_t hAnalogAction) = 0;
@@ -569,12 +569,12 @@ public:
 	virtual void RunFrame() = 0;
 	virtual Int32 GetConnectedControllers(pControllerHandle_t phController) = 0;
 	virtual Bool ShowBindingPanel(ControllerHandle_t hController) = 0;
-	virtual ControllerActionSetHandle_t GetActionSetHandle(const pStrA pchActionSetName) = 0;
+	virtual ControllerActionSetHandle_t GetActionSetHandle(pCStrA pchActionSetName) = 0;
 	virtual ControllerActionSetHandle_t GetCurrentActionSet(ControllerHandle_t hController) = 0;
-	virtual ControllerDigitalActionHandle_t GetDigitalActionHandle(const pStrA pchActionName) = 0;
+	virtual ControllerDigitalActionHandle_t GetDigitalActionHandle(pCStrA pchActionName) = 0;
 	virtual ControllerDigitalActionData_t GetDigitalActionData(ControllerHandle_t hController, ControllerDigitalActionHandle_t hDigitalAction) = 0;
 	virtual Int32 GetDigitalActionOrigins(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet, ControllerDigitalActionHandle_t hDigitalAction, pEControllerActionOrigin peControllerActionOrigin) = 0;
-	virtual ControllerAnalogActionHandle_t GetAnalogActionHandle(const pStrA pchActionName) = 0;
+	virtual ControllerAnalogActionHandle_t GetAnalogActionHandle(pCStrA pchActionName) = 0;
 	virtual ControllerAnalogActionData_t GetAnalogActionData(ControllerHandle_t hController, ControllerAnalogActionHandle_t hAnalogAction) = 0;
 	virtual Int32 GetAnalogActionOrigins(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet, ControllerAnalogActionHandle_t hAnalogAction, pEControllerActionOrigin peControllerActionOrigin) = 0;
 	virtual void StopAnalogActionMomentum(ControllerHandle_t hController, ControllerAnalogActionHandle_t hAnalogAction) = 0;
@@ -587,8 +587,8 @@ public:
 	virtual ControllerMotionData_t GetMotionData(ControllerHandle_t hController) = 0;
 	virtual Bool ShowDigitalActionOrigins(ControllerHandle_t hController, ControllerDigitalActionHandle_t hDigitalAction, Float Scale, Float XPosition, Float YPosition) = 0;
 	virtual Bool ShowAnalogActionOrigins(ControllerHandle_t hController, ControllerAnalogActionHandle_t hDigitalAction, Float Scale, Float XPosition, Float YPosition) = 0;
-	virtual const pStrA GetStringForActionOrigin(EControllerActionOrigin eControllerActionOrigin) = 0;
-	virtual const pStrA GetGlyphForActionOrigin(EControllerActionOrigin eControllerActionOrigin) = 0;
+	virtual pCStrA GetStringForActionOrigin(EControllerActionOrigin eControllerActionOrigin) = 0;
+	virtual pCStrA GetGlyphForActionOrigin(EControllerActionOrigin eControllerActionOrigin) = 0;
 
 } ISteamController005, *IpSteamController005;
 
@@ -600,17 +600,17 @@ public:
 	virtual void RunFrame() = 0;
 	virtual Int32 GetConnectedControllers(pControllerHandle_t phController) = 0;
 	virtual Bool ShowBindingPanel(ControllerHandle_t hController) = 0;
-	virtual ControllerActionSetHandle_t GetActionSetHandle(const pStrA pchActionSetName) = 0;
+	virtual ControllerActionSetHandle_t GetActionSetHandle(pCStrA pchActionSetName) = 0;
 	virtual void ActivateActionSet(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet) = 0;
 	virtual ControllerActionSetHandle_t GetCurrentActionSet(ControllerHandle_t hController) = 0;
 	virtual void ActivateActionSetLayer(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSetLayer) = 0;
 	virtual void DeactivateActionSetLayer(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSetLayer) = 0;
 	virtual void DeactivateAllActionSetLayers(ControllerHandle_t hController) = 0;
 	virtual Int32 GetActiveActionSetLayers(ControllerHandle_t hController, pControllerActionSetHandle_t phController) = 0;
-	virtual ControllerDigitalActionHandle_t GetDigitalActionHandle(const pStrA pchActionName) = 0;
+	virtual ControllerDigitalActionHandle_t GetDigitalActionHandle(pCStrA pchActionName) = 0;
 	virtual ControllerDigitalActionData_t GetDigitalActionData(ControllerHandle_t hController, ControllerDigitalActionHandle_t hDigitalAction) = 0;
 	virtual Int32 GetDigitalActionOrigins(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet, ControllerDigitalActionHandle_t hDigitalAction, pEControllerActionOrigin peControllerActionOrigin) = 0;
-	virtual ControllerAnalogActionHandle_t GetAnalogActionHandle(const pStrA pchActionName) = 0;
+	virtual ControllerAnalogActionHandle_t GetAnalogActionHandle(pCStrA pchActionName) = 0;
 	virtual ControllerAnalogActionData_t GetAnalogActionData(ControllerHandle_t hController, ControllerAnalogActionHandle_t hAnalogAction) = 0;
 	virtual Int32 GetAnalogActionOrigins(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet, ControllerAnalogActionHandle_t hAnalogAction, pEControllerActionOrigin peControllerActionOrigin) = 0;
 	virtual void StopAnalogActionMomentum(ControllerHandle_t hController, ControllerAnalogActionHandle_t hAnalogAction) = 0;
@@ -623,8 +623,8 @@ public:
 	virtual ControllerMotionData_t GetMotionData(ControllerHandle_t hController) = 0;
 	virtual Bool ShowDigitalActionOrigins(ControllerHandle_t hController, ControllerDigitalActionHandle_t hDigitalAction, Float Scale, Float XPosition, Float YPosition) = 0;
 	virtual Bool ShowAnalogActionOrigins(ControllerHandle_t hController, ControllerAnalogActionHandle_t hDigitalAction, Float Scale, Float XPosition, Float YPosition) = 0;
-	virtual const pStrA GetStringForActionOrigin(EControllerActionOrigin eControllerActionOrigin) = 0;
-	virtual const pStrA GetGlyphForActionOrigin(EControllerActionOrigin eControllerActionOrigin) = 0;
+	virtual pCStrA GetStringForActionOrigin(EControllerActionOrigin eControllerActionOrigin) = 0;
+	virtual pCStrA GetGlyphForActionOrigin(EControllerActionOrigin eControllerActionOrigin) = 0;
 	virtual ESteamInputType GetInputTypeForHandle(ControllerHandle_t hController) = 0;
 
 } ISteamController006, *IpSteamController006;
@@ -636,21 +636,21 @@ public:
 	virtual Bool Shutdown() = 0;
 	virtual void RunFrame() = 0;
 	virtual Int32 GetConnectedControllers(pControllerHandle_t phController) = 0;
-	virtual ControllerActionSetHandle_t GetActionSetHandle(const pStrA pchActionSetName) = 0;
+	virtual ControllerActionSetHandle_t GetActionSetHandle(pCStrA pchActionSetName) = 0;
 	virtual void ActivateActionSet(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet) = 0;
 	virtual ControllerActionSetHandle_t GetCurrentActionSet(ControllerHandle_t hController) = 0;
 	virtual void ActivateActionSetLayer(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSetLayer) = 0;
 	virtual void DeactivateActionSetLayer(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSetLayer) = 0;
 	virtual void DeactivateAllActionSetLayers(ControllerHandle_t hController) = 0;
 	virtual Int32 GetActiveActionSetLayers(ControllerHandle_t hController, pControllerActionSetHandle_t phController) = 0;
-	virtual ControllerDigitalActionHandle_t GetDigitalActionHandle(const pStrA pchActionName) = 0;
+	virtual ControllerDigitalActionHandle_t GetDigitalActionHandle(pCStrA pchActionName) = 0;
 	virtual ControllerDigitalActionData_t GetDigitalActionData(ControllerHandle_t hController, ControllerDigitalActionHandle_t hDigitalAction) = 0;
 	virtual Int32 GetDigitalActionOrigins(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet, ControllerDigitalActionHandle_t hDigitalAction, pEControllerActionOrigin peControllerActionOrigin) = 0;
-	virtual ControllerAnalogActionHandle_t GetAnalogActionHandle(const pStrA pchActionName) = 0;
+	virtual ControllerAnalogActionHandle_t GetAnalogActionHandle(pCStrA pchActionName) = 0;
 	virtual ControllerAnalogActionData_t GetAnalogActionData(ControllerHandle_t hController, ControllerAnalogActionHandle_t hAnalogAction) = 0;
 	virtual Int32 GetAnalogActionOrigins(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet, ControllerAnalogActionHandle_t hAnalogAction, pEControllerActionOrigin peControllerActionOrigin) = 0;
-	virtual const pStrA GetGlyphForActionOrigin(EControllerActionOrigin eControllerActionOrigin) = 0;
-	virtual const pStrA GetStringForActionOrigin(EControllerActionOrigin eControllerActionOrigin) = 0;
+	virtual pCStrA GetGlyphForActionOrigin(EControllerActionOrigin eControllerActionOrigin) = 0;
+	virtual pCStrA GetStringForActionOrigin(EControllerActionOrigin eControllerActionOrigin) = 0;
 	virtual void StopAnalogActionMomentum(ControllerHandle_t hController, ControllerAnalogActionHandle_t hAnalogAction) = 0;
 	virtual ControllerMotionData_t GetMotionData(ControllerHandle_t hController) = 0;
 	virtual void TriggerHapticPulse(ControllerHandle_t hController, ESteamControllerPad eTargetPad, Uint16 DurationMicroSeconds) = 0;
@@ -661,8 +661,8 @@ public:
 	virtual ESteamInputType GetInputTypeForHandle(ControllerHandle_t hController) = 0;
 	virtual ControllerHandle_t GetControllerForGamepadIndex(Int32 nIndex) = 0;
 	virtual Int32 GetGamepadIndexForController(ControllerHandle_t hController) = 0;
-	virtual const pStrA GetStringForXboxOrigin(EXboxOrigin eXboxOrigin) = 0;
-	virtual const pStrA GetGlyphForXboxOrigin(EXboxOrigin eXboxOrigin) = 0;
+	virtual pCStrA GetStringForXboxOrigin(EXboxOrigin eXboxOrigin) = 0;
+	virtual pCStrA GetGlyphForXboxOrigin(EXboxOrigin eXboxOrigin) = 0;
 	virtual EControllerActionOrigin GetActionOriginFromXboxOrigin_(ControllerHandle_t hController, EXboxOrigin eXboxOrigin) = 0;
 	virtual EControllerActionOrigin TranslateActionOrigin(ESteamInputType eDestinationInputType, EControllerActionOrigin eSourceOrigin) = 0;
 	virtual Bool GetControllerBindingRevision(ControllerHandle_t hController, pInt32 pMajor, pInt32 pMinor) = 0;
@@ -686,7 +686,7 @@ public:
 	/* Returns the number of handles written to phController */
 	virtual Int32 GetConnectedControllers(/* [out(k_SteamControllerMaxCount)] */ pControllerHandle_t phController) = 0;
 
-	virtual ControllerActionSetHandle_t GetActionSetHandle(const pStrA pchActionSetName) = 0;
+	virtual ControllerActionSetHandle_t GetActionSetHandle(pCStrA pchActionSetName) = 0;
 	virtual void ActivateActionSet(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet) = 0;
 	virtual ControllerActionSetHandle_t GetCurrentActionSet(ControllerHandle_t hController) = 0;
 	virtual void ActivateActionSetLayer(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSetLayer) = 0;
@@ -696,18 +696,18 @@ public:
 	/* Returns the number of handles written to phActionSetLayer */
 	virtual Int32 GetActiveActionSetLayers(ControllerHandle_t hController, /* [out(k_SteamControllerMaxActiveLayers)] */ pControllerActionSetHandle_t phActionSetLayer) = 0;
 
-	virtual ControllerDigitalActionHandle_t GetDigitalActionHandle(const pStrA pchActionName) = 0;
+	virtual ControllerDigitalActionHandle_t GetDigitalActionHandle(pCStrA pchActionName) = 0;
 	virtual ControllerDigitalActionData_t GetDigitalActionData(ControllerHandle_t hController, ControllerDigitalActionHandle_t hDigitalAction) = 0;
 	/* Returns the number of handles written to peControllerActionOrigin */
 	virtual Int32 GetDigitalActionOrigins(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet, ControllerDigitalActionHandle_t hDigitalAction, /* [out(k_SteamControllerMaxOrigins)] */ pEControllerActionOrigin peControllerActionOrigin) = 0;
 
-	virtual ControllerAnalogActionHandle_t GetAnalogActionHandle(const pStrA pchActionName) = 0;
+	virtual ControllerAnalogActionHandle_t GetAnalogActionHandle(pCStrA pchActionName) = 0;
 	virtual ControllerAnalogActionData_t GetAnalogActionData(ControllerHandle_t hController, ControllerAnalogActionHandle_t hAnalogAction) = 0;
 	/* Returns the number of handles written to peControllerActionOrigin */
 	virtual Int32 GetAnalogActionOrigins(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet, ControllerAnalogActionHandle_t hAnalogAction, /* [out(k_SteamControllerMaxOrigins)] */ pEControllerActionOrigin peControllerActionOrigin) = 0;
 
-	virtual const pStrA GetGlyphForActionOrigin(EControllerActionOrigin eControllerActionOrigin) = 0;
-	virtual const pStrA GetStringForActionOrigin(EControllerActionOrigin eControllerActionOrigin) = 0;
+	virtual pCStrA GetGlyphForActionOrigin(EControllerActionOrigin eControllerActionOrigin) = 0;
+	virtual pCStrA GetStringForActionOrigin(EControllerActionOrigin eControllerActionOrigin) = 0;
 
 	virtual void StopAnalogActionMomentum(ControllerHandle_t hController, ControllerAnalogActionHandle_t hAnalogAction) = 0;
 	virtual ControllerMotionData_t GetMotionData(ControllerHandle_t hController) = 0;
@@ -726,8 +726,8 @@ public:
 	/* Returns the associated gamepad index for the specified controller, if emulating a gamepad or -1 if not associated with an Xinput index */
 	virtual Int32 GetGamepadIndexForController(ControllerHandle_t hController) = 0;
 
-	virtual const pStrA GetStringForXboxOrigin(EXboxOrigin eXboxOrigin) = 0;
-	virtual const pStrA GetGlyphForXboxOrigin(EXboxOrigin eXboxOrigin) = 0;
+	virtual pCStrA GetStringForXboxOrigin(EXboxOrigin eXboxOrigin) = 0;
+	virtual pCStrA GetGlyphForXboxOrigin(EXboxOrigin eXboxOrigin) = 0;
 
 	virtual EControllerActionOrigin GetActionOriginFromXboxOrigin_(ControllerHandle_t hController, EXboxOrigin eXboxOrigin) = 0;
 	virtual EControllerActionOrigin TranslateActionOrigin(ESteamInputType eDestinationInputType, EControllerActionOrigin eSourceOrigin) = 0;

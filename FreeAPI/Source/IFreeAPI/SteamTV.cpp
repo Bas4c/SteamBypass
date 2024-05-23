@@ -12,19 +12,19 @@ Bool _SteamTV_::IsBroadcasting(pInt32 pnNumViewers) {
 
 }
 
-void _SteamTV_::AddBroadcastGameData(const pStrA pchKey, const pStrA pchValue) {
+void _SteamTV_::AddBroadcastGameData(pCStrA pchKey, pCStrA pchValue) {
 
 	/* Empty Method */
 
 }
 
-void _SteamTV_::RemoveBroadcastGameData(const pStrA pchKey) {
+void _SteamTV_::RemoveBroadcastGameData(pCStrA pchKey) {
 
 	/* Empty Method */
 
 }
 
-void _SteamTV_::AddTimelineMarker(const pStrA pchTemplateName, Bool bPersistent, Uint8 nColorR, Uint8 nColorG, Uint8 nColorB) {
+void _SteamTV_::AddTimelineMarker(pCStrA pchTemplateName, Bool bPersistent, Uint8 nColorR, Uint8 nColorG, Uint8 nColorB) {
 
 	/* Empty Method */
 
@@ -36,7 +36,7 @@ void _SteamTV_::RemoveTimelineMarker() {
 
 }
 
-Uint32 _SteamTV_::AddRegion(const pStrA pchElementName, const pStrA pchTimelineDataSection, const pVoid pSteamTVRegion, Int32 eSteamTVRegionBehavior) {
+Uint32 _SteamTV_::AddRegion(pCStrA pchElementName, pCStrA pchTimelineDataSection, const pVoid pSteamTVRegion, Int32 eSteamTVRegionBehavior) {
 
 	return 0U;
 

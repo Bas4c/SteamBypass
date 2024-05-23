@@ -104,10 +104,10 @@ public:
 	virtual Bool InviteUserToLobby(SteamId_t SteamIdLobby, SteamId_t SteamIdInvite) = 0;
 	virtual Int32 GetNumLobbyMembers(SteamId_t SteamIdLobby) = 0;
 	virtual SteamId_t GetLobbyMemberByIndex(SteamId_t SteamIdLobby, Int32 iMember) = 0;
-	virtual const pStrA GetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey) = 0;
-	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
-	virtual const pStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, const pStrA pchKey) = 0;
-	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual pCStrA GetLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey) = 0;
+	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
+	virtual pCStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, pCStrA pchKey) = 0;
+	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
 	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, const pVoid pvMsgBody, Int32 cbMsgBody) = 0;
 	virtual Int32 GetLobbyChatEntry(SteamId_t SteamIdLobby, Int32 iChatId, pSteamId_t pSteamIdUser, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
 	virtual Bool RequestLobbyData(SteamId_t SteamIdLobby) = 0;
@@ -123,8 +123,8 @@ public:
 	virtual Int32 AddFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags, Uint32 rTime32LastPlayedOnServer) = 0;
 	virtual Bool RemoveFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags) = 0;
 	virtual void RequestLobbyList_Old() = 0;
-	virtual void AddRequestLobbyListFilter(const pStrA pchKeyToMatch, const pStrA pchValueToMatch) = 0;
-	virtual void AddRequestLobbyListNumericalFilter(const pStrA pchKeyToMatch, Int32 nValueToMatch, ELobbyComparison eComparisonType) = 0;
+	virtual void AddRequestLobbyListFilter(pCStrA pchKeyToMatch, pCStrA pchValueToMatch) = 0;
+	virtual void AddRequestLobbyListNumericalFilter(pCStrA pchKeyToMatch, Int32 nValueToMatch, ELobbyComparison eComparisonType) = 0;
 	virtual void AddRequestLobbyListSlotsAvailableFilter() = 0;
 	virtual SteamId_t GetLobbyByIndex(Int32 iLobby) = 0;
 	virtual void CreateLobby_Old(Bool bPrivate) = 0;
@@ -133,10 +133,10 @@ public:
 	virtual Bool InviteUserToLobby(SteamId_t SteamIdLobby, SteamId_t SteamIdInvite) = 0;
 	virtual Int32 GetNumLobbyMembers(SteamId_t SteamIdLobby) = 0;
 	virtual SteamId_t GetLobbyMemberByIndex(SteamId_t SteamIdLobby, Int32 iMember) = 0;
-	virtual const pStrA GetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey) = 0;
-	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
-	virtual const pStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, const pStrA pchKey) = 0;
-	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual pCStrA GetLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey) = 0;
+	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
+	virtual pCStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, pCStrA pchKey) = 0;
+	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
 	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, const pVoid pvMsgBody, Int32 cbMsgBody) = 0;
 	virtual Int32 GetLobbyChatEntry(SteamId_t SteamIdLobby, Int32 iChatId, pSteamId_t pSteamIdUser, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
 	virtual Bool RequestLobbyData(SteamId_t SteamIdLobby) = 0;
@@ -157,8 +157,8 @@ public:
 	virtual Int32 AddFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags, Uint32 rTime32LastPlayedOnServer) = 0;
 	virtual Bool RemoveFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags) = 0;
 	virtual void RequestLobbyList_Old() = 0;
-	virtual void AddRequestLobbyListFilter(const pStrA pchKeyToMatch, const pStrA pchValueToMatch) = 0;
-	virtual void AddRequestLobbyListNumericalFilter(const pStrA pchKeyToMatch, Int32 nValueToMatch, ELobbyComparison eComparisonType) = 0;
+	virtual void AddRequestLobbyListFilter(pCStrA pchKeyToMatch, pCStrA pchValueToMatch) = 0;
+	virtual void AddRequestLobbyListNumericalFilter(pCStrA pchKeyToMatch, Int32 nValueToMatch, ELobbyComparison eComparisonType) = 0;
 	virtual void AddRequestLobbyListSlotsAvailableFilter() = 0;
 	virtual SteamId_t GetLobbyByIndex(Int32 iLobby) = 0;
 	virtual void CreateLobby_Old(Bool bPrivate) = 0;
@@ -167,10 +167,10 @@ public:
 	virtual Bool InviteUserToLobby(SteamId_t SteamIdLobby, SteamId_t SteamIdInvite) = 0;
 	virtual Int32 GetNumLobbyMembers(SteamId_t SteamIdLobby) = 0;
 	virtual SteamId_t GetLobbyMemberByIndex(SteamId_t SteamIdLobby, Int32 iMember) = 0;
-	virtual const pStrA GetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey) = 0;
-	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
-	virtual const pStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, const pStrA pchKey) = 0;
-	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual pCStrA GetLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey) = 0;
+	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
+	virtual pCStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, pCStrA pchKey) = 0;
+	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
 	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, const pVoid pvMsgBody, Int32 cbMsgBody) = 0;
 	virtual Int32 GetLobbyChatEntry(SteamId_t SteamIdLobby, Int32 iChatId, pSteamId_t pSteamIdUser, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
 	virtual Bool RequestLobbyData(SteamId_t SteamIdLobby) = 0;
@@ -190,10 +190,10 @@ public:
 	virtual Int32 AddFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags, Uint32 rTime32LastPlayedOnServer) = 0;
 	virtual Bool RemoveFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags) = 0;
 	virtual void RequestLobbyList_Old() = 0;
-	virtual void AddRequestLobbyListFilter(const pStrA pchKeyToMatch, const pStrA pchValueToMatch) = 0;
-	virtual void AddRequestLobbyListNumericalFilter(const pStrA pchKeyToMatch, Int32 nValueToMatch, ELobbyComparison eComparisonType) = 0;
+	virtual void AddRequestLobbyListFilter(pCStrA pchKeyToMatch, pCStrA pchValueToMatch) = 0;
+	virtual void AddRequestLobbyListNumericalFilter(pCStrA pchKeyToMatch, Int32 nValueToMatch, ELobbyComparison eComparisonType) = 0;
 	virtual void AddRequestLobbyListSlotsAvailableFilter() = 0;
-	virtual void AddRequestLobbyListNearValueFilter(const pStrA pchKeyToMatch, Int32 nValueToBeCloseTo) = 0;
+	virtual void AddRequestLobbyListNearValueFilter(pCStrA pchKeyToMatch, Int32 nValueToBeCloseTo) = 0;
 	virtual SteamId_t GetLobbyByIndex(Int32 iLobby) = 0;
 	virtual void CreateLobby_Old(ELobbyType eLobbyType) = 0;
 	virtual void JoinLobby_Old(SteamId_t SteamIdLobby) = 0;
@@ -201,10 +201,10 @@ public:
 	virtual Bool InviteUserToLobby(SteamId_t SteamIdLobby, SteamId_t SteamIdInvite) = 0;
 	virtual Int32 GetNumLobbyMembers(SteamId_t SteamIdLobby) = 0;
 	virtual SteamId_t GetLobbyMemberByIndex(SteamId_t SteamIdLobby, Int32 iMember) = 0;
-	virtual const pStrA GetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey) = 0;
-	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
-	virtual const pStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, const pStrA pchKey) = 0;
-	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual pCStrA GetLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey) = 0;
+	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
+	virtual pCStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, pCStrA pchKey) = 0;
+	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
 	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, const pVoid pvMsgBody, Int32 cbMsgBody) = 0;
 	virtual Int32 GetLobbyChatEntry(SteamId_t SteamIdLobby, Int32 iChatId, pSteamId_t pSteamIdUser, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
 	virtual Bool RequestLobbyData(SteamId_t SteamIdLobby) = 0;
@@ -227,9 +227,9 @@ public:
 	virtual Int32 AddFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags, Uint32 rTime32LastPlayedOnServer) = 0;
 	virtual Bool RemoveFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags) = 0;
 	virtual SteamAPICall_t RequestLobbyList() = 0;
-	virtual void AddRequestLobbyListFilter(const pStrA pchKeyToMatch, const pStrA pchValueToMatch) = 0;
-	virtual void AddRequestLobbyListNumericalFilter(const pStrA pchKeyToMatch, Int32 nValueToMatch, ELobbyComparison eComparisonType) = 0;
-	virtual void AddRequestLobbyListNearValueFilter(const pStrA pchKeyToMatch, Int32 nValueToBeCloseTo) = 0;
+	virtual void AddRequestLobbyListFilter(pCStrA pchKeyToMatch, pCStrA pchValueToMatch) = 0;
+	virtual void AddRequestLobbyListNumericalFilter(pCStrA pchKeyToMatch, Int32 nValueToMatch, ELobbyComparison eComparisonType) = 0;
+	virtual void AddRequestLobbyListNearValueFilter(pCStrA pchKeyToMatch, Int32 nValueToBeCloseTo) = 0;
 	virtual SteamId_t GetLobbyByIndex(Int32 iLobby) = 0;
 	virtual SteamAPICall_t CreateLobby(ELobbyType eLobbyType, Int32 cMaxMembers) = 0;
 	virtual SteamAPICall_t JoinLobby(SteamId_t SteamIdLobby) = 0;
@@ -237,10 +237,10 @@ public:
 	virtual Bool InviteUserToLobby(SteamId_t SteamIdLobby, SteamId_t SteamIdInvite) = 0;
 	virtual Int32 GetNumLobbyMembers(SteamId_t SteamIdLobby) = 0;
 	virtual SteamId_t GetLobbyMemberByIndex(SteamId_t SteamIdLobby, Int32 iMember) = 0;
-	virtual const pStrA GetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey) = 0;
-	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
-	virtual const pStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, const pStrA pchKey) = 0;
-	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual pCStrA GetLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey) = 0;
+	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
+	virtual pCStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, pCStrA pchKey) = 0;
+	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
 	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, const pVoid pvMsgBody, Int32 cbMsgBody) = 0;
 	virtual Int32 GetLobbyChatEntry(SteamId_t SteamIdLobby, Int32 iChatId, pSteamId_t pSteamIdUser, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
 	virtual Bool RequestLobbyData(SteamId_t SteamIdLobby) = 0;
@@ -261,9 +261,9 @@ public:
 	virtual Int32 AddFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags, Uint32 rTime32LastPlayedOnServer) = 0;
 	virtual Bool RemoveFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags) = 0;
 	virtual SteamAPICall_t RequestLobbyList() = 0;
-	virtual void AddRequestLobbyListStringFilter(const pStrA pchKeyToMatch, const pStrA pchValueToMatch, ELobbyComparison eComparisonType) = 0;
-	virtual void AddRequestLobbyListNumericalFilter(const pStrA pchKeyToMatch, Int32 nValueToMatch, ELobbyComparison eComparisonType) = 0;
-	virtual void AddRequestLobbyListNearValueFilter(const pStrA pchKeyToMatch, Int32 nValueToBeCloseTo) = 0;
+	virtual void AddRequestLobbyListStringFilter(pCStrA pchKeyToMatch, pCStrA pchValueToMatch, ELobbyComparison eComparisonType) = 0;
+	virtual void AddRequestLobbyListNumericalFilter(pCStrA pchKeyToMatch, Int32 nValueToMatch, ELobbyComparison eComparisonType) = 0;
+	virtual void AddRequestLobbyListNearValueFilter(pCStrA pchKeyToMatch, Int32 nValueToBeCloseTo) = 0;
 	virtual void AddRequestLobbyListFilterSlotsAvailable(Int32 nSlotsAvailable) = 0;
 	virtual SteamId_t GetLobbyByIndex(Int32 iLobby) = 0;
 	virtual SteamAPICall_t CreateLobby(ELobbyType eLobbyType, Int32 cMaxMembers) = 0;
@@ -272,13 +272,13 @@ public:
 	virtual Bool InviteUserToLobby(SteamId_t SteamIdLobby, SteamId_t SteamIdInvite) = 0;
 	virtual Int32 GetNumLobbyMembers(SteamId_t SteamIdLobby) = 0;
 	virtual SteamId_t GetLobbyMemberByIndex(SteamId_t SteamIdLobby, Int32 iMember) = 0;
-	virtual const pStrA GetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey) = 0;
-	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual pCStrA GetLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey) = 0;
+	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
 	virtual Int32 GetLobbyDataCount(SteamId_t SteamIdLobby) = 0;
 	virtual Bool GetLobbyDataByIndex(SteamId_t SteamIdLobby, Int32 iLobbyData, pStrA pchKey, Int32 cchKey, pStrA pchValue, Int32 cchValue) = 0;
-	virtual Bool DeleteLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey) = 0;
-	virtual const pStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, const pStrA pchKey) = 0;
-	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual Bool DeleteLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey) = 0;
+	virtual pCStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, pCStrA pchKey) = 0;
+	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
 	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, const pVoid pvMsgBody, Int32 cbMsgBody) = 0;
 	virtual Int32 GetLobbyChatEntry(SteamId_t SteamIdLobby, Int32 iChatId, pSteamId_t pSteamIdUser, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
 	virtual Bool RequestLobbyData(SteamId_t SteamIdLobby) = 0;
@@ -301,9 +301,9 @@ public:
 	virtual Int32 AddFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags, Uint32 rTime32LastPlayedOnServer) = 0;
 	virtual Bool RemoveFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags) = 0;
 	virtual SteamAPICall_t RequestLobbyList() = 0;
-	virtual void AddRequestLobbyListStringFilter(const pStrA pchKeyToMatch, const pStrA pchValueToMatch, ELobbyComparison eComparisonType) = 0;
-	virtual void AddRequestLobbyListNumericalFilter(const pStrA pchKeyToMatch, Int32 nValueToMatch, ELobbyComparison eComparisonType) = 0;
-	virtual void AddRequestLobbyListNearValueFilter(const pStrA pchKeyToMatch, Int32 nValueToBeCloseTo) = 0;
+	virtual void AddRequestLobbyListStringFilter(pCStrA pchKeyToMatch, pCStrA pchValueToMatch, ELobbyComparison eComparisonType) = 0;
+	virtual void AddRequestLobbyListNumericalFilter(pCStrA pchKeyToMatch, Int32 nValueToMatch, ELobbyComparison eComparisonType) = 0;
+	virtual void AddRequestLobbyListNearValueFilter(pCStrA pchKeyToMatch, Int32 nValueToBeCloseTo) = 0;
 	virtual void AddRequestLobbyListFilterSlotsAvailable(Int32 nSlotsAvailable) = 0;
 	virtual void AddRequestLobbyListDistanceFilter(ELobbyDistanceFilter eLobbyDistanceFilter) = 0;
 	virtual void AddRequestLobbyListResultCountFilter(Int32 cMaxResults) = 0;
@@ -314,13 +314,13 @@ public:
 	virtual Bool InviteUserToLobby(SteamId_t SteamIdLobby, SteamId_t SteamIdInvite) = 0;
 	virtual Int32 GetNumLobbyMembers(SteamId_t SteamIdLobby) = 0;
 	virtual SteamId_t GetLobbyMemberByIndex(SteamId_t SteamIdLobby, Int32 iMember) = 0;
-	virtual const pStrA GetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey) = 0;
-	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual pCStrA GetLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey) = 0;
+	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
 	virtual Int32 GetLobbyDataCount(SteamId_t SteamIdLobby) = 0;
 	virtual Bool GetLobbyDataByIndex(SteamId_t SteamIdLobby, Int32 iLobbyData, pStrA pchKey, Int32 cchKey, pStrA pchValue, Int32 cchValue) = 0;
-	virtual Bool DeleteLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey) = 0;
-	virtual const pStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, const pStrA pchKey) = 0;
-	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual Bool DeleteLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey) = 0;
+	virtual pCStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, pCStrA pchKey) = 0;
+	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
 	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, const pVoid pvMsgBody, Int32 cbMsgBody) = 0;
 	virtual Int32 GetLobbyChatEntry(SteamId_t SteamIdLobby, Int32 iChatId, pSteamId_t pSteamIdUser, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
 	virtual Bool RequestLobbyData(SteamId_t SteamIdLobby) = 0;
@@ -350,9 +350,9 @@ public:
 	virtual Bool RemoveFavoriteGame(AppId_t iAppId, Uint32 nIP, Uint16 nConnectionPort, Uint16 QueryPort, Uint32 nFlags) = 0;
 
 	virtual SteamAPICall_t RequestLobbyList() = 0;
-	virtual void AddRequestLobbyListStringFilter(const pStrA pchKeyToMatch, const pStrA pchValueToMatch, ELobbyComparison eComparisonType) = 0;
-	virtual void AddRequestLobbyListNumericalFilter(const pStrA pchKeyToMatch, Int32 nValueToMatch, ELobbyComparison eComparisonType) = 0;
-	virtual void AddRequestLobbyListNearValueFilter(const pStrA pchKeyToMatch, Int32 nValueToBeCloseTo) = 0;
+	virtual void AddRequestLobbyListStringFilter(pCStrA pchKeyToMatch, pCStrA pchValueToMatch, ELobbyComparison eComparisonType) = 0;
+	virtual void AddRequestLobbyListNumericalFilter(pCStrA pchKeyToMatch, Int32 nValueToMatch, ELobbyComparison eComparisonType) = 0;
+	virtual void AddRequestLobbyListNearValueFilter(pCStrA pchKeyToMatch, Int32 nValueToBeCloseTo) = 0;
 	virtual void AddRequestLobbyListFilterSlotsAvailable(Int32 nSlotsAvailable) = 0;
 	virtual void AddRequestLobbyListDistanceFilter(ELobbyDistanceFilter eLobbyDistanceFilter) = 0;
 	virtual void AddRequestLobbyListResultCountFilter(Int32 cMaxResults) = 0;
@@ -368,15 +368,15 @@ public:
 	virtual SteamId_t GetLobbyMemberByIndex(SteamId_t SteamIdLobby, Int32 iMember) = 0;
 
 	/* "" when not set */
-	virtual const pStrA GetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey) = 0;
-	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual pCStrA GetLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey) = 0;
+	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
 	virtual Int32 GetLobbyDataCount(SteamId_t SteamIdLobby) = 0;
 	virtual Bool GetLobbyDataByIndex(SteamId_t SteamIdLobby, Int32 iLobbyData, /* [out] */ pStrA pchKey, Int32 cchKey, /* [out] */ pStrA pchValue, Int32 cchValue) = 0;
-	virtual Bool DeleteLobbyData(SteamId_t SteamIdLobby, const pStrA pchKey) = 0;
+	virtual Bool DeleteLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey) = 0;
 
 	/* "" when not set */
-	virtual const pStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, const pStrA pchKey) = 0;
-	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual pCStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, pCStrA pchKey) = 0;
+	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
 
 	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, const pVoid pvMsgBody, Int32 cbMsgBody) = 0;
 	virtual Int32 GetLobbyChatEntry(SteamId_t SteamIdLobby, Int32 iChatId, /* [out] */ pSteamId_t pSteamIdUser, /* [out] */ pVoid pvData, Int32 cbData, /* [out] */ pEChatEntryType peChatEntryType) = 0;
@@ -440,7 +440,7 @@ public:
 typedef class _ISteamMatchmakingPlayersResponse_ {
 public:
 
-	virtual void AddPlayerToList(const pStrA pchName, Int32 nScore, Float TimePlayed) = 0;
+	virtual void AddPlayerToList(pCStrA pchName, Int32 nScore, Float TimePlayed) = 0;
 	virtual void PlayersFailedToRespond() = 0;
 	virtual void PlayersRefreshComplete() = 0;
 
@@ -453,7 +453,7 @@ public:
 typedef class _ISteamMatchmakingRulesResponse_ {
 public:
 
-	virtual void RulesResponded(const pStrA pchRule, const pStrA pchValue) = 0;
+	virtual void RulesResponded(pCStrA pchRule, pCStrA pchValue) = 0;
 	virtual void RulesFailedToRespond() = 0;
 	virtual void RulesRefreshComplete() = 0;
 
@@ -597,15 +597,15 @@ typedef enum _EChatMemberStateChange_ {
 typedef class _ISteamGameSearch_ {
 public:
 	
-	virtual EGameSearchErrorCode_t AddGameSearchParams(const pStrA pchKeyToFind, const pStrA pchValuesToFind) = 0;
+	virtual EGameSearchErrorCode_t AddGameSearchParams(pCStrA pchKeyToFind, pCStrA pchValuesToFind) = 0;
 	virtual EGameSearchErrorCode_t SearchForGameWithLobby(SteamId_t SteamIdLobby, Int32 nPlayerMin, Int32 nPlayerMax) = 0;
 	virtual EGameSearchErrorCode_t SearchForGameSolo(Int32 nPlayerMin, Int32 nPlayerMax) = 0;
 	virtual EGameSearchErrorCode_t AcceptGame() = 0;
 	virtual EGameSearchErrorCode_t DeclineGame() = 0;
 	virtual EGameSearchErrorCode_t RetrieveConnectionDetails(SteamId_t SteamIdHost, pStrA pchConnectionDetails, Int32 cbConnectionDetails) = 0;
 	virtual EGameSearchErrorCode_t EndGameSearch() = 0;
-	virtual EGameSearchErrorCode_t SetGameHostParams(const pStrA pchKey, const pStrA pchValue) = 0;
-	virtual EGameSearchErrorCode_t SetConnectionDetails(const pStrA pchConnectionDetails, Int32 cbConnectionDetails) = 0;
+	virtual EGameSearchErrorCode_t SetGameHostParams(pCStrA pchKey, pCStrA pchValue) = 0;
+	virtual EGameSearchErrorCode_t SetConnectionDetails(pCStrA pchConnectionDetails, Int32 cbConnectionDetails) = 0;
 	virtual EGameSearchErrorCode_t RequestPlayersForGame(Int32 nPlayerMin, Int32 nPlayerMax, Int32 nMaxTeamSize) = 0;
 	virtual EGameSearchErrorCode_t HostConfirmGameStart(Uint64 UniqueGameId) = 0;
 	virtual EGameSearchErrorCode_t CancelRequestPlayersForGame() = 0;
@@ -660,7 +660,7 @@ public:
 	virtual Bool GetNumAvailableBeaconLocations(pUint32 pNumLocations) = 0;
 	virtual Bool GetAvailableBeaconLocations(/* [out] */ pSteamPartyBeaconLocation_t pLocationList, Uint32 uMaxNumLocations) = 0;
 
-	virtual SteamAPICall_t CreateBeacon(Uint32 nOpenSlots, pSteamPartyBeaconLocation_t pBeaconLocation, const pStrA pchConnectString, const pStrA pchMetadata) = 0;
+	virtual SteamAPICall_t CreateBeacon(Uint32 nOpenSlots, pSteamPartyBeaconLocation_t pBeaconLocation, pCStrA pchConnectString, pCStrA pchMetadata) = 0;
 	virtual void OnReservationCompleted(PartyBeaconId_t PartyBeaconId, SteamId_t SteamIdUser) = 0;
 	virtual void CancelReservation(PartyBeaconId_t PartyBeaconId, SteamId_t SteamIdUser) = 0;
 	virtual SteamAPICall_t ChangeNumOpenSlots(PartyBeaconId_t PartyBeaconId, Uint32 nOpenSlots) = 0;

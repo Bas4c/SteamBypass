@@ -2,7 +2,7 @@
 #include "SteamMusicRemote.h"
 // -----------------------------------------------------------------------------
 
-Bool _SteamMusicRemote_::RegisterSteamMusicRemote(const pStrA pchName) {
+Bool _SteamMusicRemote_::RegisterSteamMusicRemote(pCStrA pchName) {
 
 	return False;
 
@@ -26,7 +26,7 @@ Bool _SteamMusicRemote_::BActivationSuccess(Bool bValue) {
 
 }
 
-Bool _SteamMusicRemote_::SetDisplayName(const pStrA pchDisplayName) {
+Bool _SteamMusicRemote_::SetDisplayName(pCStrA pchDisplayName) {
 
 	return False;
 
@@ -110,7 +110,7 @@ Bool _SteamMusicRemote_::CurrentEntryIsAvailable(Bool bAvailable) {
 
 }
 
-Bool _SteamMusicRemote_::UpdateCurrentEntryText(const pStrA pchText) {
+Bool _SteamMusicRemote_::UpdateCurrentEntryText(pCStrA pchText) {
 
 	return False;
 
@@ -146,7 +146,7 @@ Bool _SteamMusicRemote_::ResetQueueEntries() {
 
 }
 
-Bool _SteamMusicRemote_::SetQueueEntry(Int32 nId, Int32 nPosition, const pStrA pchEntryText) {
+Bool _SteamMusicRemote_::SetQueueEntry(Int32 nId, Int32 nPosition, pCStrA pchEntryText) {
 
 	return False;
 
@@ -176,7 +176,7 @@ Bool _SteamMusicRemote_::ResetPlaylistEntries() {
 
 }
 
-Bool _SteamMusicRemote_::SetPlaylistEntry(Int32 nId, Int32 nPosition, const pStrA pchEntryText) {
+Bool _SteamMusicRemote_::SetPlaylistEntry(Int32 nId, Int32 nPosition, pCStrA pchEntryText) {
 
 	return False;
 

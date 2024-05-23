@@ -170,80 +170,80 @@ typedef enum _EAvatarSize_ {
 typedef class _ISteamFriends003_ {
 public:
 
-	virtual const pStrA GetPersonaName() = 0;
-	virtual SteamAPICall_t SetPersonaName(const pStrA pchPersonaName) = 0;
+	virtual pCStrA GetPersonaName() = 0;
+	virtual SteamAPICall_t SetPersonaName(pCStrA pchPersonaName) = 0;
 	virtual EPersonaState GetPersonaState() = 0;
 	virtual Int32 GetFriendCount(Int32 iFriendFlags) = 0;
 	virtual SteamId_t GetFriendByIndex(Int32 iFriend, Int32 iFriendFlags) = 0;
 	virtual EFriendRelationship GetFriendRelationship(SteamId_t SteamIdFriend) = 0;
 	virtual EPersonaState GetFriendPersonaState(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
+	virtual pCStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
 	virtual Int32 GetFriendAvatar(SteamId_t SteamIdFriend, EAvatarSize eAvatarSize) = 0;
 	virtual Bool GetFriendGamePlayed(SteamId_t SteamIdFriend, pFriendGameInfo_t pFriendGameInfo) = 0;
-	virtual const pStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
+	virtual pCStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
 	virtual Bool HasFriend(SteamId_t SteamIdFriend, Int32 iFriendFlags) = 0;
 	virtual Int32 GetClanCount() = 0;
 	virtual SteamId_t GetClanByIndex(Int32 iClan) = 0;
-	virtual const pStrA GetClanName(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanName(SteamId_t SteamIdClan) = 0;
 	virtual Int32 GetFriendCountFromSource(SteamId_t SteamIdSource) = 0;
 	virtual SteamId_t GetFriendFromSourceByIndex(SteamId_t SteamIdSource, Int32 iFriend) = 0;
 	virtual Bool IsUserInSource(SteamId_t SteamIdUser, SteamId_t SteamIdSource) = 0;
 	virtual void SetInGameVoiceSpeaking(SteamId_t SteamIdUser, Bool bSpeaking) = 0;
-	virtual void ActivateGameOverlay(const pStrA pchDialogName) = 0;
+	virtual void ActivateGameOverlay(pCStrA pchDialogName) = 0;
 
 } ISteamFriends003, *IpSteamFriends003;
 
 typedef class _ISteamFriends004_ {
 public:
 
-	virtual const pStrA GetPersonaName() = 0;
-	virtual SteamAPICall_t SetPersonaName(const pStrA pchPersonaName) = 0;
+	virtual pCStrA GetPersonaName() = 0;
+	virtual SteamAPICall_t SetPersonaName(pCStrA pchPersonaName) = 0;
 	virtual EPersonaState GetPersonaState() = 0;
 	virtual Int32 GetFriendCount(Int32 iFriendFlags) = 0;
 	virtual SteamId_t GetFriendByIndex(Int32 iFriend, Int32 iFriendFlags) = 0;
 	virtual EFriendRelationship GetFriendRelationship(SteamId_t SteamIdFriend) = 0;
 	virtual EPersonaState GetFriendPersonaState(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
+	virtual pCStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
 	virtual Int32 GetFriendAvatar(SteamId_t SteamIdFriend, EAvatarSize eAvatarSize) = 0;
 	virtual Bool GetFriendGamePlayed(SteamId_t SteamIdFriend, pFriendGameInfo_t pFriendGameInfo) = 0;
-	virtual const pStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
+	virtual pCStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
 	virtual Bool HasFriend(SteamId_t SteamIdFriend, Int32 iFriendFlags) = 0;
 	virtual Int32 GetClanCount() = 0;
 	virtual SteamId_t GetClanByIndex(Int32 iClan) = 0;
-	virtual const pStrA GetClanName(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanName(SteamId_t SteamIdClan) = 0;
 	virtual Int32 GetFriendCountFromSource(SteamId_t SteamIdSource) = 0;
 	virtual SteamId_t GetFriendFromSourceByIndex(SteamId_t SteamIdSource, Int32 iFriend) = 0;
 	virtual Bool IsUserInSource(SteamId_t SteamIdUser, SteamId_t SteamIdSource) = 0;
 	virtual void SetInGameVoiceSpeaking(SteamId_t SteamIdUser, Bool bSpeaking) = 0;
-	virtual void ActivateGameOverlay(const pStrA pchDialogName) = 0;
+	virtual void ActivateGameOverlay(pCStrA pchDialogName) = 0;
 
 } ISteamFriends004, *IpSteamFriends004;
 
 typedef class _ISteamFriends005_ {
 public:
 
-	virtual const pStrA GetPersonaName() = 0;
-	virtual SteamAPICall_t SetPersonaName(const pStrA pchPersonaName) = 0;
+	virtual pCStrA GetPersonaName() = 0;
+	virtual SteamAPICall_t SetPersonaName(pCStrA pchPersonaName) = 0;
 	virtual EPersonaState GetPersonaState() = 0;
 	virtual Int32 GetFriendCount(Int32 iFriendFlags) = 0;
 	virtual SteamId_t GetFriendByIndex(Int32 iFriend, Int32 iFriendFlags) = 0;
 	virtual EFriendRelationship GetFriendRelationship(SteamId_t SteamIdFriend) = 0;
 	virtual EPersonaState GetFriendPersonaState(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
+	virtual pCStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
 	virtual Int32 GetFriendAvatar(SteamId_t SteamIdFriend, EAvatarSize eAvatarSize) = 0;
 	virtual Bool GetFriendGamePlayed(SteamId_t SteamIdFriend, pFriendGameInfo_t pFriendGameInfo) = 0;
-	virtual const pStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
+	virtual pCStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
 	virtual Bool HasFriend(SteamId_t SteamIdFriend, Int32 iFriendFlags) = 0;
 	virtual Int32 GetClanCount() = 0;
 	virtual SteamId_t GetClanByIndex(Int32 iClan) = 0;
-	virtual const pStrA GetClanName(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanName(SteamId_t SteamIdClan) = 0;
 	virtual Int32 GetFriendCountFromSource(SteamId_t SteamIdSource) = 0;
 	virtual SteamId_t GetFriendFromSourceByIndex(SteamId_t SteamIdSource, Int32 iFriend) = 0;
 	virtual Bool IsUserInSource(SteamId_t SteamIdUser, SteamId_t SteamIdSource) = 0;
 	virtual void SetInGameVoiceSpeaking(SteamId_t SteamIdUser, Bool bSpeaking) = 0;
-	virtual void ActivateGameOverlay(const pStrA pchDialogName) = 0;
-	virtual void ActivateGameOverlayToUser(const pStrA pchDialog, SteamId_t SteamId) = 0;
-	virtual void ActivateGameOverlayToWebPage(const pStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) = 0;
+	virtual void ActivateGameOverlay(pCStrA pchDialogName) = 0;
+	virtual void ActivateGameOverlayToUser(pCStrA pchDialog, SteamId_t SteamId) = 0;
+	virtual void ActivateGameOverlayToWebPage(pCStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) = 0;
 	virtual void ActivateGameOverlayToStore(AppId_t iAppId, EOverlayToStoreFlag eOverlayToStoreFlag) = 0;
 	virtual void SetPlayedWith(SteamId_t SteamIdUserPlayedWith) = 0;
 
@@ -252,29 +252,29 @@ public:
 typedef class _ISteamFriends006_ {
 public:
 
-	virtual const pStrA GetPersonaName() = 0;
-	virtual SteamAPICall_t SetPersonaName(const pStrA pchPersonaName) = 0;
+	virtual pCStrA GetPersonaName() = 0;
+	virtual SteamAPICall_t SetPersonaName(pCStrA pchPersonaName) = 0;
 	virtual EPersonaState GetPersonaState() = 0;
 	virtual Int32 GetFriendCount(Int32 iFriendFlags) = 0;
 	virtual SteamId_t GetFriendByIndex(Int32 iFriend, Int32 iFriendFlags) = 0;
 	virtual EFriendRelationship GetFriendRelationship(SteamId_t SteamIdFriend) = 0;
 	virtual EPersonaState GetFriendPersonaState(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
+	virtual pCStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
 	virtual Int32 GetFriendAvatar(SteamId_t SteamIdFriend, EAvatarSize eAvatarSize) = 0;
 	virtual Bool GetFriendGamePlayed(SteamId_t SteamIdFriend, pFriendGameInfo_t pFriendGameInfo) = 0;
-	virtual const pStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
+	virtual pCStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
 	virtual Bool HasFriend(SteamId_t SteamIdFriend, Int32 iFriendFlags) = 0;
 	virtual Int32 GetClanCount() = 0;
 	virtual SteamId_t GetClanByIndex(Int32 iClan) = 0;
-	virtual const pStrA GetClanName(SteamId_t SteamIdClan) = 0;
-	virtual const pStrA GetClanTag(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanName(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanTag(SteamId_t SteamIdClan) = 0;
 	virtual Int32 GetFriendCountFromSource(SteamId_t SteamIdSource) = 0;
 	virtual SteamId_t GetFriendFromSourceByIndex(SteamId_t SteamIdSource, Int32 iFriend) = 0;
 	virtual Bool IsUserInSource(SteamId_t SteamIdUser, SteamId_t SteamIdSource) = 0;
 	virtual void SetInGameVoiceSpeaking(SteamId_t SteamIdUser, Bool bSpeaking) = 0;
-	virtual void ActivateGameOverlay(const pStrA pchDialogName) = 0;
-	virtual void ActivateGameOverlayToUser(const pStrA pchDialog, SteamId_t SteamId) = 0;
-	virtual void ActivateGameOverlayToWebPage(const pStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) = 0;
+	virtual void ActivateGameOverlay(pCStrA pchDialogName) = 0;
+	virtual void ActivateGameOverlayToUser(pCStrA pchDialog, SteamId_t SteamId) = 0;
+	virtual void ActivateGameOverlayToWebPage(pCStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) = 0;
 	virtual void ActivateGameOverlayToStore(AppId_t iAppId, EOverlayToStoreFlag eOverlayToStoreFlag) = 0;
 	virtual void SetPlayedWith(SteamId_t SteamIdUserPlayedWith) = 0;
 	virtual void ActivateGameOverlayInviteDialog(SteamId_t SteamIdLobby) = 0;
@@ -284,28 +284,28 @@ public:
 typedef class _ISteamFriends007_ {
 public:
 
-	virtual const pStrA GetPersonaName() = 0;
-	virtual SteamAPICall_t SetPersonaName(const pStrA pchPersonaName) = 0;
+	virtual pCStrA GetPersonaName() = 0;
+	virtual SteamAPICall_t SetPersonaName(pCStrA pchPersonaName) = 0;
 	virtual EPersonaState GetPersonaState() = 0;
 	virtual Int32 GetFriendCount(Int32 iFriendFlags) = 0;
 	virtual SteamId_t GetFriendByIndex(Int32 iFriend, Int32 iFriendFlags) = 0;
 	virtual EFriendRelationship GetFriendRelationship(SteamId_t SteamIdFriend) = 0;
 	virtual EPersonaState GetFriendPersonaState(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
+	virtual pCStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
 	virtual Bool GetFriendGamePlayed(SteamId_t SteamIdFriend, pFriendGameInfo_t pFriendGameInfo) = 0;
-	virtual const pStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
+	virtual pCStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
 	virtual Bool HasFriend(SteamId_t SteamIdFriend, Int32 iFriendFlags) = 0;
 	virtual Int32 GetClanCount() = 0;
 	virtual SteamId_t GetClanByIndex(Int32 iClan) = 0;
-	virtual const pStrA GetClanName(SteamId_t SteamIdClan) = 0;
-	virtual const pStrA GetClanTag(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanName(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanTag(SteamId_t SteamIdClan) = 0;
 	virtual Int32 GetFriendCountFromSource(SteamId_t SteamIdSource) = 0;
 	virtual SteamId_t GetFriendFromSourceByIndex(SteamId_t SteamIdSource, Int32 iFriend) = 0;
 	virtual Bool IsUserInSource(SteamId_t SteamIdUser, SteamId_t SteamIdSource) = 0;
 	virtual void SetInGameVoiceSpeaking(SteamId_t SteamIdUser, Bool bSpeaking) = 0;
-	virtual void ActivateGameOverlay(const pStrA pchDialogName) = 0;
-	virtual void ActivateGameOverlayToUser(const pStrA pchDialog, SteamId_t SteamId) = 0;
-	virtual void ActivateGameOverlayToWebPage(const pStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) = 0;
+	virtual void ActivateGameOverlay(pCStrA pchDialogName) = 0;
+	virtual void ActivateGameOverlayToUser(pCStrA pchDialog, SteamId_t SteamId) = 0;
+	virtual void ActivateGameOverlayToWebPage(pCStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) = 0;
 	virtual void ActivateGameOverlayToStore(AppId_t iAppId, EOverlayToStoreFlag eOverlayToStoreFlag) = 0;
 	virtual void SetPlayedWith(SteamId_t SteamIdUserPlayedWith) = 0;
 	virtual void ActivateGameOverlayInviteDialog(SteamId_t SteamIdLobby) = 0;
@@ -319,28 +319,28 @@ public:
 typedef class _ISteamFriends008_ {
 public:
 
-	virtual const pStrA GetPersonaName() = 0;
-	virtual SteamAPICall_t SetPersonaName(const pStrA pchPersonaName) = 0;
+	virtual pCStrA GetPersonaName() = 0;
+	virtual SteamAPICall_t SetPersonaName(pCStrA pchPersonaName) = 0;
 	virtual EPersonaState GetPersonaState() = 0;
 	virtual Int32 GetFriendCount(Int32 iFriendFlags) = 0;
 	virtual SteamId_t GetFriendByIndex(Int32 iFriend, Int32 iFriendFlags) = 0;
 	virtual EFriendRelationship GetFriendRelationship(SteamId_t SteamIdFriend) = 0;
 	virtual EPersonaState GetFriendPersonaState(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
+	virtual pCStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
 	virtual Bool GetFriendGamePlayed(SteamId_t SteamIdFriend, pFriendGameInfo_t pFriendGameInfo) = 0;
-	virtual const pStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
+	virtual pCStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
 	virtual Bool HasFriend(SteamId_t SteamIdFriend, Int32 iFriendFlags) = 0;
 	virtual Int32 GetClanCount() = 0;
 	virtual SteamId_t GetClanByIndex(Int32 iClan) = 0;
-	virtual const pStrA GetClanName(SteamId_t SteamIdClan) = 0;
-	virtual const pStrA GetClanTag(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanName(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanTag(SteamId_t SteamIdClan) = 0;
 	virtual Int32 GetFriendCountFromSource(SteamId_t SteamIdSource) = 0;
 	virtual SteamId_t GetFriendFromSourceByIndex(SteamId_t SteamIdSource, Int32 iFriend) = 0;
 	virtual Bool IsUserInSource(SteamId_t SteamIdUser, SteamId_t SteamIdSource) = 0;
 	virtual void SetInGameVoiceSpeaking(SteamId_t SteamIdUser, Bool bSpeaking) = 0;
-	virtual void ActivateGameOverlay(const pStrA pchDialogName) = 0;
-	virtual void ActivateGameOverlayToUser(const pStrA pchDialog, SteamId_t SteamId) = 0;
-	virtual void ActivateGameOverlayToWebPage(const pStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) = 0;
+	virtual void ActivateGameOverlay(pCStrA pchDialogName) = 0;
+	virtual void ActivateGameOverlayToUser(pCStrA pchDialog, SteamId_t SteamId) = 0;
+	virtual void ActivateGameOverlayToWebPage(pCStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) = 0;
 	virtual void ActivateGameOverlayToStore(AppId_t iAppId, EOverlayToStoreFlag eOverlayToStoreFlag) = 0;
 	virtual void SetPlayedWith(SteamId_t SteamIdUserPlayedWith) = 0;
 	virtual void ActivateGameOverlayInviteDialog(SteamId_t SteamIdLobby) = 0;
@@ -359,28 +359,28 @@ public:
 typedef class _ISteamFriends009_ {
 public:
 
-	virtual const pStrA GetPersonaName() = 0;
-	virtual SteamAPICall_t SetPersonaName(const pStrA pchPersonaName) = 0;
+	virtual pCStrA GetPersonaName() = 0;
+	virtual SteamAPICall_t SetPersonaName(pCStrA pchPersonaName) = 0;
 	virtual EPersonaState GetPersonaState() = 0;
 	virtual Int32 GetFriendCount(Int32 iFriendFlags) = 0;
 	virtual SteamId_t GetFriendByIndex(Int32 iFriend, Int32 iFriendFlags) = 0;
 	virtual EFriendRelationship GetFriendRelationship(SteamId_t SteamIdFriend) = 0;
 	virtual EPersonaState GetFriendPersonaState(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
+	virtual pCStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
 	virtual Bool GetFriendGamePlayed(SteamId_t SteamIdFriend, pFriendGameInfo_t pFriendGameInfo) = 0;
-	virtual const pStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
+	virtual pCStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
 	virtual Bool HasFriend(SteamId_t SteamIdFriend, Int32 iFriendFlags) = 0;
 	virtual Int32 GetClanCount() = 0;
 	virtual SteamId_t GetClanByIndex(Int32 iClan) = 0;
-	virtual const pStrA GetClanName(SteamId_t SteamIdClan) = 0;
-	virtual const pStrA GetClanTag(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanName(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanTag(SteamId_t SteamIdClan) = 0;
 	virtual Int32 GetFriendCountFromSource(SteamId_t SteamIdSource) = 0;
 	virtual SteamId_t GetFriendFromSourceByIndex(SteamId_t SteamIdSource, Int32 iFriend) = 0;
 	virtual Bool IsUserInSource(SteamId_t SteamIdUser, SteamId_t SteamIdSource) = 0;
 	virtual void SetInGameVoiceSpeaking(SteamId_t SteamIdUser, Bool bSpeaking) = 0;
-	virtual void ActivateGameOverlay(const pStrA pchDialogName) = 0;
-	virtual void ActivateGameOverlayToUser(const pStrA pchDialog, SteamId_t SteamId) = 0;
-	virtual void ActivateGameOverlayToWebPage(const pStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) = 0;
+	virtual void ActivateGameOverlay(pCStrA pchDialogName) = 0;
+	virtual void ActivateGameOverlayToUser(pCStrA pchDialog, SteamId_t SteamId) = 0;
+	virtual void ActivateGameOverlayToWebPage(pCStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) = 0;
 	virtual void ActivateGameOverlayToStore(AppId_t iAppId, EOverlayToStoreFlag eOverlayToStoreFlag) = 0;
 	virtual void SetPlayedWith(SteamId_t SteamIdUserPlayedWith) = 0;
 	virtual void ActivateGameOverlayInviteDialog(SteamId_t SteamIdLobby) = 0;
@@ -393,12 +393,12 @@ public:
 	virtual Int32 GetClanOfficerCount(SteamId_t SteamIdClan) = 0;
 	virtual SteamId_t GetClanOfficerByIndex(SteamId_t SteamIdClan, Int32 iOfficer) = 0;
 	virtual Uint32 GetUserRestrictions() = 0;
-	virtual Bool SetRichPresence(const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual Bool SetRichPresence(pCStrA pchKey, pCStrA pchValue) = 0;
 	virtual void ClearRichPresence() = 0;
-	virtual const pStrA GetFriendRichPresence(SteamId_t SteamIdFriend, const pStrA pchKey) = 0;
+	virtual pCStrA GetFriendRichPresence(SteamId_t SteamIdFriend, pCStrA pchKey) = 0;
 	virtual Int32 GetFriendRichPresenceKeyCount(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetFriendRichPresenceKeyByIndex(SteamId_t SteamIdFriend, Int32 iKey) = 0;
-	virtual Bool InviteUserToGame(SteamId_t SteamIdFriend, const pStrA pchConnectString) = 0;
+	virtual pCStrA GetFriendRichPresenceKeyByIndex(SteamId_t SteamIdFriend, Int32 iKey) = 0;
+	virtual Bool InviteUserToGame(SteamId_t SteamIdFriend, pCStrA pchConnectString) = 0;
 	virtual Int32 GetCoplayFriendCount() = 0;
 	virtual SteamId_t GetCoplayFriend(Int32 iCoplayFriend) = 0;
 	virtual Int32 GetFriendCoplayTime(SteamId_t SteamIdFriend) = 0;
@@ -409,30 +409,30 @@ public:
 typedef class _ISteamFriends010_ {
 public:
 
-	virtual const pStrA GetPersonaName() = 0;
-	virtual SteamAPICall_t SetPersonaName(const pStrA pchPersonaName) = 0;
+	virtual pCStrA GetPersonaName() = 0;
+	virtual SteamAPICall_t SetPersonaName(pCStrA pchPersonaName) = 0;
 	virtual EPersonaState GetPersonaState() = 0;
 	virtual Int32 GetFriendCount(Int32 iFriendFlags) = 0;
 	virtual SteamId_t GetFriendByIndex(Int32 iFriend, Int32 iFriendFlags) = 0;
 	virtual EFriendRelationship GetFriendRelationship(SteamId_t SteamIdFriend) = 0;
 	virtual EPersonaState GetFriendPersonaState(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
+	virtual pCStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
 	virtual Bool GetFriendGamePlayed(SteamId_t SteamIdFriend, pFriendGameInfo_t pFriendGameInfo) = 0;
-	virtual const pStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
+	virtual pCStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
 	virtual Bool HasFriend(SteamId_t SteamIdFriend, Int32 iFriendFlags) = 0;
 	virtual Int32 GetClanCount() = 0;
 	virtual SteamId_t GetClanByIndex(Int32 iClan) = 0;
-	virtual const pStrA GetClanName(SteamId_t SteamIdClan) = 0;
-	virtual const pStrA GetClanTag(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanName(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanTag(SteamId_t SteamIdClan) = 0;
 	virtual Bool GetClanActivityCounts(SteamId_t SteamIdClan, pInt32 pnOnline, pInt32 pnInGame, pInt32 pnChatting) = 0;
 	virtual SteamAPICall_t DownloadClanActivityCounts(pSteamId_t pnSteamIdClans, Int32 nClansToRequest) = 0;
 	virtual Int32 GetFriendCountFromSource(SteamId_t SteamIdSource) = 0;
 	virtual SteamId_t GetFriendFromSourceByIndex(SteamId_t SteamIdSource, Int32 iFriend) = 0;
 	virtual Bool IsUserInSource(SteamId_t SteamIdUser, SteamId_t SteamIdSource) = 0;
 	virtual void SetInGameVoiceSpeaking(SteamId_t SteamIdUser, Bool bSpeaking) = 0;
-	virtual void ActivateGameOverlay(const pStrA pchDialogName) = 0;
-	virtual void ActivateGameOverlayToUser(const pStrA pchDialog, SteamId_t SteamId) = 0;
-	virtual void ActivateGameOverlayToWebPage(const pStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) = 0;
+	virtual void ActivateGameOverlay(pCStrA pchDialogName) = 0;
+	virtual void ActivateGameOverlayToUser(pCStrA pchDialog, SteamId_t SteamId) = 0;
+	virtual void ActivateGameOverlayToWebPage(pCStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) = 0;
 	virtual void ActivateGameOverlayToStore(AppId_t iAppId, EOverlayToStoreFlag eOverlayToStoreFlag) = 0;
 	virtual void SetPlayedWith(SteamId_t SteamIdUserPlayedWith) = 0;
 	virtual void ActivateGameOverlayInviteDialog(SteamId_t SteamIdLobby) = 0;
@@ -445,12 +445,12 @@ public:
 	virtual Int32 GetClanOfficerCount(SteamId_t SteamIdClan) = 0;
 	virtual SteamId_t GetClanOfficerByIndex(SteamId_t SteamIdClan, Int32 iOfficer) = 0;
 	virtual Uint32 GetUserRestrictions() = 0;
-	virtual Bool SetRichPresence(const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual Bool SetRichPresence(pCStrA pchKey, pCStrA pchValue) = 0;
 	virtual void ClearRichPresence() = 0;
-	virtual const pStrA GetFriendRichPresence(SteamId_t SteamIdFriend, const pStrA pchKey) = 0;
+	virtual pCStrA GetFriendRichPresence(SteamId_t SteamIdFriend, pCStrA pchKey) = 0;
 	virtual Int32 GetFriendRichPresenceKeyCount(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetFriendRichPresenceKeyByIndex(SteamId_t SteamIdFriend, Int32 iKey) = 0;
-	virtual Bool InviteUserToGame(SteamId_t SteamIdFriend, const pStrA pchConnectString) = 0;
+	virtual pCStrA GetFriendRichPresenceKeyByIndex(SteamId_t SteamIdFriend, Int32 iKey) = 0;
+	virtual Bool InviteUserToGame(SteamId_t SteamIdFriend, pCStrA pchConnectString) = 0;
 	virtual Int32 GetCoplayFriendCount() = 0;
 	virtual SteamId_t GetCoplayFriend(Int32 iCoplayFriend) = 0;
 	virtual Int32 GetFriendCoplayTime(SteamId_t SteamIdFriend) = 0;
@@ -459,14 +459,14 @@ public:
 	virtual Bool LeaveClanChatRoom(SteamId_t SteamIdClan) = 0;
 	virtual Int32 GetClanChatMemberCount(SteamId_t SteamIdClan) = 0;
 	virtual SteamId_t GetChatMemberByIndex(SteamId_t SteamIdClan, Int32 iUser) = 0;
-	virtual Bool SendClanChatMessage(SteamId_t SteamIdClanChat, const pStrA pchText) = 0;
+	virtual Bool SendClanChatMessage(SteamId_t SteamIdClanChat, pCStrA pchText) = 0;
 	virtual Int32 GetClanChatMessage(SteamId_t SteamIdClanChat, Int32 iMessage, pStrA pchText, Int32 cchTextMax, pEChatEntryType peChatEntryType, pSteamId_t pSteamIdChatter) = 0;
 	virtual Bool IsClanChatAdmin(SteamId_t SteamIdClanChat, SteamId_t SteamIdUser) = 0;
 	virtual Bool IsClanChatWindowOpenInSteam(SteamId_t SteamIdClanChat) = 0;
 	virtual Bool OpenClanChatWindowInSteam(SteamId_t SteamIdClanChat) = 0;
 	virtual Bool CloseClanChatWindowInSteam(SteamId_t SteamIdClanChat) = 0;
 	virtual Bool SetListenForFriendsMessages(Bool bInterceptEnabled) = 0;
-	virtual Bool ReplyToFriendMessage(SteamId_t SteamIdFriend, const pStrA pchMsgToSend) = 0;
+	virtual Bool ReplyToFriendMessage(SteamId_t SteamIdFriend, pCStrA pchMsgToSend) = 0;
 	virtual Int32 GetFriendMessage(SteamId_t SteamIdFriend, Int32 iMessageId, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
 
 } ISteamFriends010, *IpSteamFriends010;
@@ -474,30 +474,30 @@ public:
 typedef class _ISteamFriends011_ {
 public:
 
-	virtual const pStrA GetPersonaName() = 0;
-	virtual SteamAPICall_t SetPersonaName(const pStrA pchPersonaName) = 0;
+	virtual pCStrA GetPersonaName() = 0;
+	virtual SteamAPICall_t SetPersonaName(pCStrA pchPersonaName) = 0;
 	virtual EPersonaState GetPersonaState() = 0;
 	virtual Int32 GetFriendCount(Int32 iFriendFlags) = 0;
 	virtual SteamId_t GetFriendByIndex(Int32 iFriend, Int32 iFriendFlags) = 0;
 	virtual EFriendRelationship GetFriendRelationship(SteamId_t SteamIdFriend) = 0;
 	virtual EPersonaState GetFriendPersonaState(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
+	virtual pCStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
 	virtual Bool GetFriendGamePlayed(SteamId_t SteamIdFriend, pFriendGameInfo_t pFriendGameInfo) = 0;
-	virtual const pStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
+	virtual pCStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
 	virtual Bool HasFriend(SteamId_t SteamIdFriend, Int32 iFriendFlags) = 0;
 	virtual Int32 GetClanCount() = 0;
 	virtual SteamId_t GetClanByIndex(Int32 iClan) = 0;
-	virtual const pStrA GetClanName(SteamId_t SteamIdClan) = 0;
-	virtual const pStrA GetClanTag(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanName(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanTag(SteamId_t SteamIdClan) = 0;
 	virtual Bool GetClanActivityCounts(SteamId_t SteamIdClan, pInt32 pnOnline, pInt32 pnInGame, pInt32 pnChatting) = 0;
 	virtual SteamAPICall_t DownloadClanActivityCounts(pSteamId_t pnSteamIdClans, Int32 nClansToRequest) = 0;
 	virtual Int32 GetFriendCountFromSource(SteamId_t SteamIdSource) = 0;
 	virtual SteamId_t GetFriendFromSourceByIndex(SteamId_t SteamIdSource, Int32 iFriend) = 0;
 	virtual Bool IsUserInSource(SteamId_t SteamIdUser, SteamId_t SteamIdSource) = 0;
 	virtual void SetInGameVoiceSpeaking(SteamId_t SteamIdUser, Bool bSpeaking) = 0;
-	virtual void ActivateGameOverlay(const pStrA pchDialogName) = 0;
-	virtual void ActivateGameOverlayToUser(const pStrA pchDialog, SteamId_t SteamId) = 0;
-	virtual void ActivateGameOverlayToWebPage(const pStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) = 0;
+	virtual void ActivateGameOverlay(pCStrA pchDialogName) = 0;
+	virtual void ActivateGameOverlayToUser(pCStrA pchDialog, SteamId_t SteamId) = 0;
+	virtual void ActivateGameOverlayToWebPage(pCStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) = 0;
 	virtual void ActivateGameOverlayToStore(AppId_t iAppId, EOverlayToStoreFlag eOverlayToStoreFlag) = 0;
 	virtual void SetPlayedWith(SteamId_t SteamIdUserPlayedWith) = 0;
 	virtual void ActivateGameOverlayInviteDialog(SteamId_t SteamIdLobby) = 0;
@@ -510,13 +510,13 @@ public:
 	virtual Int32 GetClanOfficerCount(SteamId_t SteamIdClan) = 0;
 	virtual SteamId_t GetClanOfficerByIndex(SteamId_t SteamIdClan, Int32 iOfficer) = 0;
 	virtual Uint32 GetUserRestrictions() = 0;
-	virtual Bool SetRichPresence(const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual Bool SetRichPresence(pCStrA pchKey, pCStrA pchValue) = 0;
 	virtual void ClearRichPresence() = 0;
-	virtual const pStrA GetFriendRichPresence(SteamId_t SteamIdFriend, const pStrA pchKey) = 0;
+	virtual pCStrA GetFriendRichPresence(SteamId_t SteamIdFriend, pCStrA pchKey) = 0;
 	virtual Int32 GetFriendRichPresenceKeyCount(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetFriendRichPresenceKeyByIndex(SteamId_t SteamIdFriend, Int32 iKey) = 0;
+	virtual pCStrA GetFriendRichPresenceKeyByIndex(SteamId_t SteamIdFriend, Int32 iKey) = 0;
 	virtual void RequestFriendRichPresence(SteamId_t SteamIdFriend) = 0;
-	virtual Bool InviteUserToGame(SteamId_t SteamIdFriend, const pStrA pchConnectString) = 0;
+	virtual Bool InviteUserToGame(SteamId_t SteamIdFriend, pCStrA pchConnectString) = 0;
 	virtual Int32 GetCoplayFriendCount() = 0;
 	virtual SteamId_t GetCoplayFriend(Int32 iCoplayFriend) = 0;
 	virtual Int32 GetFriendCoplayTime(SteamId_t SteamIdFriend) = 0;
@@ -525,14 +525,14 @@ public:
 	virtual Bool LeaveClanChatRoom(SteamId_t SteamIdClan) = 0;
 	virtual Int32 GetClanChatMemberCount(SteamId_t SteamIdClan) = 0;
 	virtual SteamId_t GetChatMemberByIndex(SteamId_t SteamIdClan, Int32 iUser) = 0;
-	virtual Bool SendClanChatMessage(SteamId_t SteamIdClanChat, const pStrA pchText) = 0;
+	virtual Bool SendClanChatMessage(SteamId_t SteamIdClanChat, pCStrA pchText) = 0;
 	virtual Int32 GetClanChatMessage(SteamId_t SteamIdClanChat, Int32 iMessage, pStrA pchText, Int32 cchTextMax, pEChatEntryType peChatEntryType, pSteamId_t pSteamIdChatter) = 0;
 	virtual Bool IsClanChatAdmin(SteamId_t SteamIdClanChat, SteamId_t SteamIdUser) = 0;
 	virtual Bool IsClanChatWindowOpenInSteam(SteamId_t SteamIdClanChat) = 0;
 	virtual Bool OpenClanChatWindowInSteam(SteamId_t SteamIdClanChat) = 0;
 	virtual Bool CloseClanChatWindowInSteam(SteamId_t SteamIdClanChat) = 0;
 	virtual Bool SetListenForFriendsMessages(Bool bInterceptEnabled) = 0;
-	virtual Bool ReplyToFriendMessage(SteamId_t SteamIdFriend, const pStrA pchMsgToSend) = 0;
+	virtual Bool ReplyToFriendMessage(SteamId_t SteamIdFriend, pCStrA pchMsgToSend) = 0;
 	virtual Int32 GetFriendMessage(SteamId_t SteamIdFriend, Int32 iMessageId, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
 	virtual SteamAPICall_t GetFollowerCount(SteamId_t SteamId) = 0;
 	virtual SteamAPICall_t IsFollowing(SteamId_t SteamId) = 0;
@@ -543,30 +543,30 @@ public:
 typedef class _ISteamFriends012_ {
 public:
 
-	virtual const pStrA GetPersonaName() = 0;
-	virtual SteamAPICall_t SetPersonaName(const pStrA pchPersonaName) = 0;
+	virtual pCStrA GetPersonaName() = 0;
+	virtual SteamAPICall_t SetPersonaName(pCStrA pchPersonaName) = 0;
 	virtual EPersonaState GetPersonaState() = 0;
 	virtual Int32 GetFriendCount(Int32 iFriendFlags) = 0;
 	virtual SteamId_t GetFriendByIndex(Int32 iFriend, Int32 iFriendFlags) = 0;
 	virtual EFriendRelationship GetFriendRelationship(SteamId_t SteamIdFriend) = 0;
 	virtual EPersonaState GetFriendPersonaState(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
+	virtual pCStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
 	virtual Bool GetFriendGamePlayed(SteamId_t SteamIdFriend, pFriendGameInfo_t pFriendGameInfo) = 0;
-	virtual const pStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
+	virtual pCStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
 	virtual Bool HasFriend(SteamId_t SteamIdFriend, Int32 iFriendFlags) = 0;
 	virtual Int32 GetClanCount() = 0;
 	virtual SteamId_t GetClanByIndex(Int32 iClan) = 0;
-	virtual const pStrA GetClanName(SteamId_t SteamIdClan) = 0;
-	virtual const pStrA GetClanTag(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanName(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanTag(SteamId_t SteamIdClan) = 0;
 	virtual Bool GetClanActivityCounts(SteamId_t SteamIdClan, pInt32 pnOnline, pInt32 pnInGame, pInt32 pnChatting) = 0;
 	virtual SteamAPICall_t DownloadClanActivityCounts(pSteamId_t pnSteamIdClans, Int32 nClansToRequest) = 0;
 	virtual Int32 GetFriendCountFromSource(SteamId_t SteamIdSource) = 0;
 	virtual SteamId_t GetFriendFromSourceByIndex(SteamId_t SteamIdSource, Int32 iFriend) = 0;
 	virtual Bool IsUserInSource(SteamId_t SteamIdUser, SteamId_t SteamIdSource) = 0;
 	virtual void SetInGameVoiceSpeaking(SteamId_t SteamIdUser, Bool bSpeaking) = 0;
-	virtual void ActivateGameOverlay(const pStrA pchDialogName) = 0;
-	virtual void ActivateGameOverlayToUser(const pStrA pchDialog, SteamId_t SteamId) = 0;
-	virtual void ActivateGameOverlayToWebPage(const pStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) = 0;
+	virtual void ActivateGameOverlay(pCStrA pchDialogName) = 0;
+	virtual void ActivateGameOverlayToUser(pCStrA pchDialog, SteamId_t SteamId) = 0;
+	virtual void ActivateGameOverlayToWebPage(pCStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) = 0;
 	virtual void ActivateGameOverlayToStore(AppId_t iAppId, EOverlayToStoreFlag eOverlayToStoreFlag) = 0;
 	virtual void SetPlayedWith(SteamId_t SteamIdUserPlayedWith) = 0;
 	virtual void ActivateGameOverlayInviteDialog(SteamId_t SteamIdLobby) = 0;
@@ -579,13 +579,13 @@ public:
 	virtual Int32 GetClanOfficerCount(SteamId_t SteamIdClan) = 0;
 	virtual SteamId_t GetClanOfficerByIndex(SteamId_t SteamIdClan, Int32 iOfficer) = 0;
 	virtual Uint32 GetUserRestrictions() = 0;
-	virtual Bool SetRichPresence(const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual Bool SetRichPresence(pCStrA pchKey, pCStrA pchValue) = 0;
 	virtual void ClearRichPresence() = 0;
-	virtual const pStrA GetFriendRichPresence(SteamId_t SteamIdFriend, const pStrA pchKey) = 0;
+	virtual pCStrA GetFriendRichPresence(SteamId_t SteamIdFriend, pCStrA pchKey) = 0;
 	virtual Int32 GetFriendRichPresenceKeyCount(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetFriendRichPresenceKeyByIndex(SteamId_t SteamIdFriend, Int32 iKey) = 0;
+	virtual pCStrA GetFriendRichPresenceKeyByIndex(SteamId_t SteamIdFriend, Int32 iKey) = 0;
 	virtual void RequestFriendRichPresence(SteamId_t SteamIdFriend) = 0;
-	virtual Bool InviteUserToGame(SteamId_t SteamIdFriend, const pStrA pchConnectString) = 0;
+	virtual Bool InviteUserToGame(SteamId_t SteamIdFriend, pCStrA pchConnectString) = 0;
 	virtual Int32 GetCoplayFriendCount() = 0;
 	virtual SteamId_t GetCoplayFriend(Int32 iCoplayFriend) = 0;
 	virtual Int32 GetFriendCoplayTime(SteamId_t SteamIdFriend) = 0;
@@ -594,14 +594,14 @@ public:
 	virtual Bool LeaveClanChatRoom(SteamId_t SteamIdClan) = 0;
 	virtual Int32 GetClanChatMemberCount(SteamId_t SteamIdClan) = 0;
 	virtual SteamId_t GetChatMemberByIndex(SteamId_t SteamIdClan, Int32 iUser) = 0;
-	virtual Bool SendClanChatMessage(SteamId_t SteamIdClanChat, const pStrA pchText) = 0;
+	virtual Bool SendClanChatMessage(SteamId_t SteamIdClanChat, pCStrA pchText) = 0;
 	virtual Int32 GetClanChatMessage(SteamId_t SteamIdClanChat, Int32 iMessage, pStrA pchText, Int32 cchTextMax, pEChatEntryType peChatEntryType, pSteamId_t pSteamIdChatter) = 0;
 	virtual Bool IsClanChatAdmin(SteamId_t SteamIdClanChat, SteamId_t SteamIdUser) = 0;
 	virtual Bool IsClanChatWindowOpenInSteam(SteamId_t SteamIdClanChat) = 0;
 	virtual Bool OpenClanChatWindowInSteam(SteamId_t SteamIdClanChat) = 0;
 	virtual Bool CloseClanChatWindowInSteam(SteamId_t SteamIdClanChat) = 0;
 	virtual Bool SetListenForFriendsMessages(Bool bInterceptEnabled) = 0;
-	virtual Bool ReplyToFriendMessage(SteamId_t SteamIdFriend, const pStrA pchMsgToSend) = 0;
+	virtual Bool ReplyToFriendMessage(SteamId_t SteamIdFriend, pCStrA pchMsgToSend) = 0;
 	virtual Int32 GetFriendMessage(SteamId_t SteamIdFriend, Int32 iMessageId, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
 	virtual SteamAPICall_t GetFollowerCount(SteamId_t SteamId) = 0;
 	virtual SteamAPICall_t IsFollowing(SteamId_t SteamId) = 0;
@@ -612,30 +612,30 @@ public:
 typedef class _ISteamFriends013_ {
 public:
 
-	virtual const pStrA GetPersonaName() = 0;
-	virtual SteamAPICall_t SetPersonaName(const pStrA pchPersonaName) = 0;
+	virtual pCStrA GetPersonaName() = 0;
+	virtual SteamAPICall_t SetPersonaName(pCStrA pchPersonaName) = 0;
 	virtual EPersonaState GetPersonaState() = 0;
 	virtual Int32 GetFriendCount(Int32 iFriendFlags) = 0;
 	virtual SteamId_t GetFriendByIndex(Int32 iFriend, Int32 iFriendFlags) = 0;
 	virtual EFriendRelationship GetFriendRelationship(SteamId_t SteamIdFriend) = 0;
 	virtual EPersonaState GetFriendPersonaState(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
+	virtual pCStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
 	virtual Bool GetFriendGamePlayed(SteamId_t SteamIdFriend, pFriendGameInfo_t pFriendGameInfo) = 0;
-	virtual const pStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
+	virtual pCStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
 	virtual Bool HasFriend(SteamId_t SteamIdFriend, Int32 iFriendFlags) = 0;
 	virtual Int32 GetClanCount() = 0;
 	virtual SteamId_t GetClanByIndex(Int32 iClan) = 0;
-	virtual const pStrA GetClanName(SteamId_t SteamIdClan) = 0;
-	virtual const pStrA GetClanTag(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanName(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanTag(SteamId_t SteamIdClan) = 0;
 	virtual Bool GetClanActivityCounts(SteamId_t SteamIdClan, pInt32 pnOnline, pInt32 pnInGame, pInt32 pnChatting) = 0;
 	virtual SteamAPICall_t DownloadClanActivityCounts(pSteamId_t pnSteamIdClans, Int32 nClansToRequest) = 0;
 	virtual Int32 GetFriendCountFromSource(SteamId_t SteamIdSource) = 0;
 	virtual SteamId_t GetFriendFromSourceByIndex(SteamId_t SteamIdSource, Int32 iFriend) = 0;
 	virtual Bool IsUserInSource(SteamId_t SteamIdUser, SteamId_t SteamIdSource) = 0;
 	virtual void SetInGameVoiceSpeaking(SteamId_t SteamIdUser, Bool bSpeaking) = 0;
-	virtual void ActivateGameOverlay(const pStrA pchDialogName) = 0;
-	virtual void ActivateGameOverlayToUser(const pStrA pchDialog, SteamId_t SteamId) = 0;
-	virtual void ActivateGameOverlayToWebPage(const pStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) = 0;
+	virtual void ActivateGameOverlay(pCStrA pchDialogName) = 0;
+	virtual void ActivateGameOverlayToUser(pCStrA pchDialog, SteamId_t SteamId) = 0;
+	virtual void ActivateGameOverlayToWebPage(pCStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) = 0;
 	virtual void ActivateGameOverlayToStore(AppId_t iAppId, EOverlayToStoreFlag eOverlayToStoreFlag) = 0;
 	virtual void SetPlayedWith(SteamId_t SteamIdUserPlayedWith) = 0;
 	virtual void ActivateGameOverlayInviteDialog(SteamId_t SteamIdLobby) = 0;
@@ -648,13 +648,13 @@ public:
 	virtual Int32 GetClanOfficerCount(SteamId_t SteamIdClan) = 0;
 	virtual SteamId_t GetClanOfficerByIndex(SteamId_t SteamIdClan, Int32 iOfficer) = 0;
 	virtual Uint32 GetUserRestrictions() = 0;
-	virtual Bool SetRichPresence(const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual Bool SetRichPresence(pCStrA pchKey, pCStrA pchValue) = 0;
 	virtual void ClearRichPresence() = 0;
-	virtual const pStrA GetFriendRichPresence(SteamId_t SteamIdFriend, const pStrA pchKey) = 0;
+	virtual pCStrA GetFriendRichPresence(SteamId_t SteamIdFriend, pCStrA pchKey) = 0;
 	virtual Int32 GetFriendRichPresenceKeyCount(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetFriendRichPresenceKeyByIndex(SteamId_t SteamIdFriend, Int32 iKey) = 0;
+	virtual pCStrA GetFriendRichPresenceKeyByIndex(SteamId_t SteamIdFriend, Int32 iKey) = 0;
 	virtual void RequestFriendRichPresence(SteamId_t SteamIdFriend) = 0;
-	virtual Bool InviteUserToGame(SteamId_t SteamIdFriend, const pStrA pchConnectString) = 0;
+	virtual Bool InviteUserToGame(SteamId_t SteamIdFriend, pCStrA pchConnectString) = 0;
 	virtual Int32 GetCoplayFriendCount() = 0;
 	virtual SteamId_t GetCoplayFriend(Int32 iCoplayFriend) = 0;
 	virtual Int32 GetFriendCoplayTime(SteamId_t SteamIdFriend) = 0;
@@ -663,14 +663,14 @@ public:
 	virtual Bool LeaveClanChatRoom(SteamId_t SteamIdClan) = 0;
 	virtual Int32 GetClanChatMemberCount(SteamId_t SteamIdClan) = 0;
 	virtual SteamId_t GetChatMemberByIndex(SteamId_t SteamIdClan, Int32 iUser) = 0;
-	virtual Bool SendClanChatMessage(SteamId_t SteamIdClanChat, const pStrA pchText) = 0;
+	virtual Bool SendClanChatMessage(SteamId_t SteamIdClanChat, pCStrA pchText) = 0;
 	virtual Int32 GetClanChatMessage(SteamId_t SteamIdClanChat, Int32 iMessage, pStrA pchText, Int32 cchTextMax, pEChatEntryType peChatEntryType, pSteamId_t pSteamIdChatter) = 0;
 	virtual Bool IsClanChatAdmin(SteamId_t SteamIdClanChat, SteamId_t SteamIdUser) = 0;
 	virtual Bool IsClanChatWindowOpenInSteam(SteamId_t SteamIdClanChat) = 0;
 	virtual Bool OpenClanChatWindowInSteam(SteamId_t SteamIdClanChat) = 0;
 	virtual Bool CloseClanChatWindowInSteam(SteamId_t SteamIdClanChat) = 0;
 	virtual Bool SetListenForFriendsMessages(Bool bInterceptEnabled) = 0;
-	virtual Bool ReplyToFriendMessage(SteamId_t SteamIdFriend, const pStrA pchMsgToSend) = 0;
+	virtual Bool ReplyToFriendMessage(SteamId_t SteamIdFriend, pCStrA pchMsgToSend) = 0;
 	virtual Int32 GetFriendMessage(SteamId_t SteamIdFriend, Int32 iMessageId, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
 	virtual SteamAPICall_t GetFollowerCount(SteamId_t SteamId) = 0;
 	virtual SteamAPICall_t IsFollowing(SteamId_t SteamId) = 0;
@@ -681,31 +681,31 @@ public:
 typedef class _ISteamFriends014_ {
 public:
 
-	virtual const pStrA GetPersonaName() = 0;
-	virtual SteamAPICall_t SetPersonaName(const pStrA pchPersonaName) = 0;
+	virtual pCStrA GetPersonaName() = 0;
+	virtual SteamAPICall_t SetPersonaName(pCStrA pchPersonaName) = 0;
 	virtual EPersonaState GetPersonaState() = 0;
 	virtual Int32 GetFriendCount(Int32 iFriendFlags) = 0;
 	virtual SteamId_t GetFriendByIndex(Int32 iFriend, Int32 iFriendFlags) = 0;
 	virtual EFriendRelationship GetFriendRelationship(SteamId_t SteamIdFriend) = 0;
 	virtual EPersonaState GetFriendPersonaState(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
+	virtual pCStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
 	virtual Bool GetFriendGamePlayed(SteamId_t SteamIdFriend, pFriendGameInfo_t pFriendGameInfo) = 0;
-	virtual const pStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
-	virtual const pStrA GetPlayerNickname(SteamId_t SteamIdPlayer) = 0;
+	virtual pCStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
+	virtual pCStrA GetPlayerNickname(SteamId_t SteamIdPlayer) = 0;
 	virtual Bool HasFriend(SteamId_t SteamIdFriend, Int32 iFriendFlags) = 0;
 	virtual Int32 GetClanCount() = 0;
 	virtual SteamId_t GetClanByIndex(Int32 iClan) = 0;
-	virtual const pStrA GetClanName(SteamId_t SteamIdClan) = 0;
-	virtual const pStrA GetClanTag(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanName(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanTag(SteamId_t SteamIdClan) = 0;
 	virtual Bool GetClanActivityCounts(SteamId_t SteamIdClan, pInt32 pnOnline, pInt32 pnInGame, pInt32 pnChatting) = 0;
 	virtual SteamAPICall_t DownloadClanActivityCounts(pSteamId_t pnSteamIdClans, Int32 nClansToRequest) = 0;
 	virtual Int32 GetFriendCountFromSource(SteamId_t SteamIdSource) = 0;
 	virtual SteamId_t GetFriendFromSourceByIndex(SteamId_t SteamIdSource, Int32 iFriend) = 0;
 	virtual Bool IsUserInSource(SteamId_t SteamIdUser, SteamId_t SteamIdSource) = 0;
 	virtual void SetInGameVoiceSpeaking(SteamId_t SteamIdUser, Bool bSpeaking) = 0;
-	virtual void ActivateGameOverlay(const pStrA pchDialogName) = 0;
-	virtual void ActivateGameOverlayToUser(const pStrA pchDialog, SteamId_t SteamId) = 0;
-	virtual void ActivateGameOverlayToWebPage(const pStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) = 0;
+	virtual void ActivateGameOverlay(pCStrA pchDialogName) = 0;
+	virtual void ActivateGameOverlayToUser(pCStrA pchDialog, SteamId_t SteamId) = 0;
+	virtual void ActivateGameOverlayToWebPage(pCStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) = 0;
 	virtual void ActivateGameOverlayToStore(AppId_t iAppId, EOverlayToStoreFlag eOverlayToStoreFlag) = 0;
 	virtual void SetPlayedWith(SteamId_t SteamIdUserPlayedWith) = 0;
 	virtual void ActivateGameOverlayInviteDialog(SteamId_t SteamIdLobby) = 0;
@@ -718,13 +718,13 @@ public:
 	virtual Int32 GetClanOfficerCount(SteamId_t SteamIdClan) = 0;
 	virtual SteamId_t GetClanOfficerByIndex(SteamId_t SteamIdClan, Int32 iOfficer) = 0;
 	virtual Uint32 GetUserRestrictions() = 0;
-	virtual Bool SetRichPresence(const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual Bool SetRichPresence(pCStrA pchKey, pCStrA pchValue) = 0;
 	virtual void ClearRichPresence() = 0;
-	virtual const pStrA GetFriendRichPresence(SteamId_t SteamIdFriend, const pStrA pchKey) = 0;
+	virtual pCStrA GetFriendRichPresence(SteamId_t SteamIdFriend, pCStrA pchKey) = 0;
 	virtual Int32 GetFriendRichPresenceKeyCount(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetFriendRichPresenceKeyByIndex(SteamId_t SteamIdFriend, Int32 iKey) = 0;
+	virtual pCStrA GetFriendRichPresenceKeyByIndex(SteamId_t SteamIdFriend, Int32 iKey) = 0;
 	virtual void RequestFriendRichPresence(SteamId_t SteamIdFriend) = 0;
-	virtual Bool InviteUserToGame(SteamId_t SteamIdFriend, const pStrA pchConnectString) = 0;
+	virtual Bool InviteUserToGame(SteamId_t SteamIdFriend, pCStrA pchConnectString) = 0;
 	virtual Int32 GetCoplayFriendCount() = 0;
 	virtual SteamId_t GetCoplayFriend(Int32 iCoplayFriend) = 0;
 	virtual Int32 GetFriendCoplayTime(SteamId_t SteamIdFriend) = 0;
@@ -733,14 +733,14 @@ public:
 	virtual Bool LeaveClanChatRoom(SteamId_t SteamIdClan) = 0;
 	virtual Int32 GetClanChatMemberCount(SteamId_t SteamIdClan) = 0;
 	virtual SteamId_t GetChatMemberByIndex(SteamId_t SteamIdClan, Int32 iUser) = 0;
-	virtual Bool SendClanChatMessage(SteamId_t SteamIdClanChat, const pStrA pchText) = 0;
+	virtual Bool SendClanChatMessage(SteamId_t SteamIdClanChat, pCStrA pchText) = 0;
 	virtual Int32 GetClanChatMessage(SteamId_t SteamIdClanChat, Int32 iMessage, pStrA pchText, Int32 cchTextMax, pEChatEntryType peChatEntryType, pSteamId_t pSteamIdChatter) = 0;
 	virtual Bool IsClanChatAdmin(SteamId_t SteamIdClanChat, SteamId_t SteamIdUser) = 0;
 	virtual Bool IsClanChatWindowOpenInSteam(SteamId_t SteamIdClanChat) = 0;
 	virtual Bool OpenClanChatWindowInSteam(SteamId_t SteamIdClanChat) = 0;
 	virtual Bool CloseClanChatWindowInSteam(SteamId_t SteamIdClanChat) = 0;
 	virtual Bool SetListenForFriendsMessages(Bool bInterceptEnabled) = 0;
-	virtual Bool ReplyToFriendMessage(SteamId_t SteamIdFriend, const pStrA pchMsgToSend) = 0;
+	virtual Bool ReplyToFriendMessage(SteamId_t SteamIdFriend, pCStrA pchMsgToSend) = 0;
 	virtual Int32 GetFriendMessage(SteamId_t SteamIdFriend, Int32 iMessageId, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
 	virtual SteamAPICall_t GetFollowerCount(SteamId_t SteamId) = 0;
 	virtual SteamAPICall_t IsFollowing(SteamId_t SteamId) = 0;
@@ -751,37 +751,37 @@ public:
 typedef class _ISteamFriends015_ {
 public:
 
-	virtual const pStrA GetPersonaName() = 0;
-	virtual SteamAPICall_t SetPersonaName(const pStrA pchPersonaName) = 0;
+	virtual pCStrA GetPersonaName() = 0;
+	virtual SteamAPICall_t SetPersonaName(pCStrA pchPersonaName) = 0;
 	virtual EPersonaState GetPersonaState() = 0;
 	virtual Int32 GetFriendCount(Int32 iFriendFlags) = 0;
 	virtual SteamId_t GetFriendByIndex(Int32 iFriend, Int32 iFriendFlags) = 0;
 	virtual EFriendRelationship GetFriendRelationship(SteamId_t SteamIdFriend) = 0;
 	virtual EPersonaState GetFriendPersonaState(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
+	virtual pCStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
 	virtual Bool GetFriendGamePlayed(SteamId_t SteamIdFriend, pFriendGameInfo_t pFriendGameInfo) = 0;
-	virtual const pStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
+	virtual pCStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
 	virtual Int32 GetFriendSteamLevel(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetPlayerNickname(SteamId_t SteamIdPlayer) = 0;
+	virtual pCStrA GetPlayerNickname(SteamId_t SteamIdPlayer) = 0;
 	virtual Int32 GetFriendsGroupCount() = 0;
 	virtual FriendsGroupId_t GetFriendsGroupIDByIndex(Int32 iFG) = 0;
-	virtual const pStrA GetFriendsGroupName(FriendsGroupId_t FriendsGroupId) = 0;
+	virtual pCStrA GetFriendsGroupName(FriendsGroupId_t FriendsGroupId) = 0;
 	virtual Int32 GetFriendsGroupMembersCount(FriendsGroupId_t FriendsGroupId) = 0;
 	virtual void GetFriendsGroupMembersList(FriendsGroupId_t FriendsGroupId, pSteamId_t pnSteamIdMembers, Int32 nMembers) = 0;
 	virtual Bool HasFriend(SteamId_t SteamIdFriend, Int32 iFriendFlags) = 0;
 	virtual Int32 GetClanCount() = 0;
 	virtual SteamId_t GetClanByIndex(Int32 iClan) = 0;
-	virtual const pStrA GetClanName(SteamId_t SteamIdClan) = 0;
-	virtual const pStrA GetClanTag(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanName(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanTag(SteamId_t SteamIdClan) = 0;
 	virtual Bool GetClanActivityCounts(SteamId_t SteamIdClan, pInt32 pnOnline, pInt32 pnInGame, pInt32 pnChatting) = 0;
 	virtual SteamAPICall_t DownloadClanActivityCounts(pSteamId_t pnSteamIdClans, Int32 nClansToRequest) = 0;
 	virtual Int32 GetFriendCountFromSource(SteamId_t SteamIdSource) = 0;
 	virtual SteamId_t GetFriendFromSourceByIndex(SteamId_t SteamIdSource, Int32 iFriend) = 0;
 	virtual Bool IsUserInSource(SteamId_t SteamIdUser, SteamId_t SteamIdSource) = 0;
 	virtual void SetInGameVoiceSpeaking(SteamId_t SteamIdUser, Bool bSpeaking) = 0;
-	virtual void ActivateGameOverlay(const pStrA pchDialogName) = 0;
-	virtual void ActivateGameOverlayToUser(const pStrA pchDialog, SteamId_t SteamId) = 0;
-	virtual void ActivateGameOverlayToWebPage(const pStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) = 0;
+	virtual void ActivateGameOverlay(pCStrA pchDialogName) = 0;
+	virtual void ActivateGameOverlayToUser(pCStrA pchDialog, SteamId_t SteamId) = 0;
+	virtual void ActivateGameOverlayToWebPage(pCStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) = 0;
 	virtual void ActivateGameOverlayToStore(AppId_t iAppId, EOverlayToStoreFlag eOverlayToStoreFlag) = 0;
 	virtual void SetPlayedWith(SteamId_t SteamIdUserPlayedWith) = 0;
 	virtual void ActivateGameOverlayInviteDialog(SteamId_t SteamIdLobby) = 0;
@@ -794,13 +794,13 @@ public:
 	virtual Int32 GetClanOfficerCount(SteamId_t SteamIdClan) = 0;
 	virtual SteamId_t GetClanOfficerByIndex(SteamId_t SteamIdClan, Int32 iOfficer) = 0;
 	virtual Uint32 GetUserRestrictions() = 0;
-	virtual Bool SetRichPresence(const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual Bool SetRichPresence(pCStrA pchKey, pCStrA pchValue) = 0;
 	virtual void ClearRichPresence() = 0;
-	virtual const pStrA GetFriendRichPresence(SteamId_t SteamIdFriend, const pStrA pchKey) = 0;
+	virtual pCStrA GetFriendRichPresence(SteamId_t SteamIdFriend, pCStrA pchKey) = 0;
 	virtual Int32 GetFriendRichPresenceKeyCount(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetFriendRichPresenceKeyByIndex(SteamId_t SteamIdFriend, Int32 iKey) = 0;
+	virtual pCStrA GetFriendRichPresenceKeyByIndex(SteamId_t SteamIdFriend, Int32 iKey) = 0;
 	virtual void RequestFriendRichPresence(SteamId_t SteamIdFriend) = 0;
-	virtual Bool InviteUserToGame(SteamId_t SteamIdFriend, const pStrA pchConnectString) = 0;
+	virtual Bool InviteUserToGame(SteamId_t SteamIdFriend, pCStrA pchConnectString) = 0;
 	virtual Int32 GetCoplayFriendCount() = 0;
 	virtual SteamId_t GetCoplayFriend(Int32 iCoplayFriend) = 0;
 	virtual Int32 GetFriendCoplayTime(SteamId_t SteamIdFriend) = 0;
@@ -809,14 +809,14 @@ public:
 	virtual Bool LeaveClanChatRoom(SteamId_t SteamIdClan) = 0;
 	virtual Int32 GetClanChatMemberCount(SteamId_t SteamIdClan) = 0;
 	virtual SteamId_t GetChatMemberByIndex(SteamId_t SteamIdClan, Int32 iUser) = 0;
-	virtual Bool SendClanChatMessage(SteamId_t SteamIdClanChat, const pStrA pchText) = 0;
+	virtual Bool SendClanChatMessage(SteamId_t SteamIdClanChat, pCStrA pchText) = 0;
 	virtual Int32 GetClanChatMessage(SteamId_t SteamIdClanChat, Int32 iMessage, pStrA pchText, Int32 cchTextMax, pEChatEntryType peChatEntryType, pSteamId_t pSteamIdChatter) = 0;
 	virtual Bool IsClanChatAdmin(SteamId_t SteamIdClanChat, SteamId_t SteamIdUser) = 0;
 	virtual Bool IsClanChatWindowOpenInSteam(SteamId_t SteamIdClanChat) = 0;
 	virtual Bool OpenClanChatWindowInSteam(SteamId_t SteamIdClanChat) = 0;
 	virtual Bool CloseClanChatWindowInSteam(SteamId_t SteamIdClanChat) = 0;
 	virtual Bool SetListenForFriendsMessages(Bool bInterceptEnabled) = 0;
-	virtual Bool ReplyToFriendMessage(SteamId_t SteamIdFriend, const pStrA pchMsgToSend) = 0;
+	virtual Bool ReplyToFriendMessage(SteamId_t SteamIdFriend, pCStrA pchMsgToSend) = 0;
 	virtual Int32 GetFriendMessage(SteamId_t SteamIdFriend, Int32 iMessageId, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
 	virtual SteamAPICall_t GetFollowerCount(SteamId_t SteamId) = 0;
 	virtual SteamAPICall_t IsFollowing(SteamId_t SteamId) = 0;
@@ -829,37 +829,37 @@ public:
 typedef class _ISteamFriends016_ {
 public:
 
-	virtual const pStrA GetPersonaName() = 0;
-	virtual SteamAPICall_t SetPersonaName(const pStrA pchPersonaName) = 0;
+	virtual pCStrA GetPersonaName() = 0;
+	virtual SteamAPICall_t SetPersonaName(pCStrA pchPersonaName) = 0;
 	virtual EPersonaState GetPersonaState() = 0;
 	virtual Int32 GetFriendCount(Int32 iFriendFlags) = 0;
 	virtual SteamId_t GetFriendByIndex(Int32 iFriend, Int32 iFriendFlags) = 0;
 	virtual EFriendRelationship GetFriendRelationship(SteamId_t SteamIdFriend) = 0;
 	virtual EPersonaState GetFriendPersonaState(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
+	virtual pCStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
 	virtual Bool GetFriendGamePlayed(SteamId_t SteamIdFriend, pFriendGameInfo_t pFriendGameInfo) = 0;
-	virtual const pStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
+	virtual pCStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
 	virtual Int32 GetFriendSteamLevel(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetPlayerNickname(SteamId_t SteamIdPlayer) = 0;
+	virtual pCStrA GetPlayerNickname(SteamId_t SteamIdPlayer) = 0;
 	virtual Int32 GetFriendsGroupCount() = 0;
 	virtual FriendsGroupId_t GetFriendsGroupIDByIndex(Int32 iFG) = 0;
-	virtual const pStrA GetFriendsGroupName(FriendsGroupId_t FriendsGroupId) = 0;
+	virtual pCStrA GetFriendsGroupName(FriendsGroupId_t FriendsGroupId) = 0;
 	virtual Int32 GetFriendsGroupMembersCount(FriendsGroupId_t FriendsGroupId) = 0;
 	virtual void GetFriendsGroupMembersList(FriendsGroupId_t FriendsGroupId, pSteamId_t pnSteamIdMembers, Int32 nMembers) = 0;
 	virtual Bool HasFriend(SteamId_t SteamIdFriend, Int32 iFriendFlags) = 0;
 	virtual Int32 GetClanCount() = 0;
 	virtual SteamId_t GetClanByIndex(Int32 iClan) = 0;
-	virtual const pStrA GetClanName(SteamId_t SteamIdClan) = 0;
-	virtual const pStrA GetClanTag(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanName(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanTag(SteamId_t SteamIdClan) = 0;
 	virtual Bool GetClanActivityCounts(SteamId_t SteamIdClan, pInt32 pnOnline, pInt32 pnInGame, pInt32 pnChatting) = 0;
 	virtual SteamAPICall_t DownloadClanActivityCounts(pSteamId_t pnSteamIdClans, Int32 nClansToRequest) = 0;
 	virtual Int32 GetFriendCountFromSource(SteamId_t SteamIdSource) = 0;
 	virtual SteamId_t GetFriendFromSourceByIndex(SteamId_t SteamIdSource, Int32 iFriend) = 0;
 	virtual Bool IsUserInSource(SteamId_t SteamIdUser, SteamId_t SteamIdSource) = 0;
 	virtual void SetInGameVoiceSpeaking(SteamId_t SteamIdUser, Bool bSpeaking) = 0;
-	virtual void ActivateGameOverlay(const pStrA pchDialogName) = 0;
-	virtual void ActivateGameOverlayToUser(const pStrA pchDialog, SteamId_t SteamId) = 0;
-	virtual void ActivateGameOverlayToWebPage(const pStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) = 0;
+	virtual void ActivateGameOverlay(pCStrA pchDialogName) = 0;
+	virtual void ActivateGameOverlayToUser(pCStrA pchDialog, SteamId_t SteamId) = 0;
+	virtual void ActivateGameOverlayToWebPage(pCStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) = 0;
 	virtual void ActivateGameOverlayToStore(AppId_t iAppId, EOverlayToStoreFlag eOverlayToStoreFlag) = 0;
 	virtual void SetPlayedWith(SteamId_t SteamIdUserPlayedWith) = 0;
 	virtual void ActivateGameOverlayInviteDialog(SteamId_t SteamIdLobby) = 0;
@@ -872,13 +872,13 @@ public:
 	virtual Int32 GetClanOfficerCount(SteamId_t SteamIdClan) = 0;
 	virtual SteamId_t GetClanOfficerByIndex(SteamId_t SteamIdClan, Int32 iOfficer) = 0;
 	virtual Uint32 GetUserRestrictions() = 0;
-	virtual Bool SetRichPresence(const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual Bool SetRichPresence(pCStrA pchKey, pCStrA pchValue) = 0;
 	virtual void ClearRichPresence() = 0;
-	virtual const pStrA GetFriendRichPresence(SteamId_t SteamIdFriend, const pStrA pchKey) = 0;
+	virtual pCStrA GetFriendRichPresence(SteamId_t SteamIdFriend, pCStrA pchKey) = 0;
 	virtual Int32 GetFriendRichPresenceKeyCount(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetFriendRichPresenceKeyByIndex(SteamId_t SteamIdFriend, Int32 iKey) = 0;
+	virtual pCStrA GetFriendRichPresenceKeyByIndex(SteamId_t SteamIdFriend, Int32 iKey) = 0;
 	virtual void RequestFriendRichPresence(SteamId_t SteamIdFriend) = 0;
-	virtual Bool InviteUserToGame(SteamId_t SteamIdFriend, const pStrA pchConnectString) = 0;
+	virtual Bool InviteUserToGame(SteamId_t SteamIdFriend, pCStrA pchConnectString) = 0;
 	virtual Int32 GetCoplayFriendCount() = 0;
 	virtual SteamId_t GetCoplayFriend(Int32 iCoplayFriend) = 0;
 	virtual Int32 GetFriendCoplayTime(SteamId_t SteamIdFriend) = 0;
@@ -887,14 +887,14 @@ public:
 	virtual Bool LeaveClanChatRoom(SteamId_t SteamIdClan) = 0;
 	virtual Int32 GetClanChatMemberCount(SteamId_t SteamIdClan) = 0;
 	virtual SteamId_t GetChatMemberByIndex(SteamId_t SteamIdClan, Int32 iUser) = 0;
-	virtual Bool SendClanChatMessage(SteamId_t SteamIdClanChat, const pStrA pchText) = 0;
+	virtual Bool SendClanChatMessage(SteamId_t SteamIdClanChat, pCStrA pchText) = 0;
 	virtual Int32 GetClanChatMessage(SteamId_t SteamIdClanChat, Int32 iMessage, pStrA pchText, Int32 cchTextMax, pEChatEntryType peChatEntryType, pSteamId_t pSteamIdChatter) = 0;
 	virtual Bool IsClanChatAdmin(SteamId_t SteamIdClanChat, SteamId_t SteamIdUser) = 0;
 	virtual Bool IsClanChatWindowOpenInSteam(SteamId_t SteamIdClanChat) = 0;
 	virtual Bool OpenClanChatWindowInSteam(SteamId_t SteamIdClanChat) = 0;
 	virtual Bool CloseClanChatWindowInSteam(SteamId_t SteamIdClanChat) = 0;
 	virtual Bool SetListenForFriendsMessages(Bool bInterceptEnabled) = 0;
-	virtual Bool ReplyToFriendMessage(SteamId_t SteamIdFriend, const pStrA pchMsgToSend) = 0;
+	virtual Bool ReplyToFriendMessage(SteamId_t SteamIdFriend, pCStrA pchMsgToSend) = 0;
 	virtual Int32 GetFriendMessage(SteamId_t SteamIdFriend, Int32 iMessageId, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
 	virtual SteamAPICall_t GetFollowerCount(SteamId_t SteamId) = 0;
 	virtual SteamAPICall_t IsFollowing(SteamId_t SteamId) = 0;
@@ -913,11 +913,11 @@ typedef class _ISteamFriends_ {
 public:
 
 	/* Returns Local Player Name - guaranteed to not be NULL */
-	virtual const pStrA GetPersonaName() = 0;
+	virtual pCStrA GetPersonaName() = 0;
 
 	/* Sets the player name, stores it on the server and publishes the changes to all friends who are online.
 	   Changes take place locally immediately, and a PersonaStateChange_t is posted, presuming success. */
-	virtual SteamAPICall_t SetPersonaName(const pStrA pchPersonaName) = 0;
+	virtual SteamAPICall_t SetPersonaName(pCStrA pchPersonaName) = 0;
 	virtual EPersonaState GetPersonaState() = 0;
 
 	/* Takes a set of k_EFriendFlags, and returns the number of users the client knows about who meet that criteria
@@ -930,27 +930,27 @@ public:
 	virtual SteamId_t GetFriendByIndex(Int32 iFriend, Int32 iFriendFlags) = 0;
 	virtual EFriendRelationship GetFriendRelationship(SteamId_t SteamIdFriend) = 0;
 	virtual EPersonaState GetFriendPersonaState(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
+	virtual pCStrA GetFriendPersonaName(SteamId_t SteamIdFriend) = 0;
 
 	virtual Bool GetFriendGamePlayed(SteamId_t SteamIdFriend, /* [out] */ pFriendGameInfo_t pFriendGameInfo) = 0;
 	/* Returns (empty string) when their are no more items in the history */
-	virtual const pStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
+	virtual pCStrA GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) = 0;
 	virtual Int32 GetFriendSteamLevel(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetPlayerNickname(SteamId_t SteamIdPlayer) = 0;
+	virtual pCStrA GetPlayerNickname(SteamId_t SteamIdPlayer) = 0;
 
 	virtual Int32 GetFriendsGroupCount() = 0;
 	/* (invalid indices return k_FriendsGroupId_Invalid) */
 	virtual FriendsGroupId_t GetFriendsGroupIDByIndex(Int32 iFG) = 0;
 	/* (NULL in the case of invalid group Id's) */
-	virtual const pStrA GetFriendsGroupName(FriendsGroupId_t FriendsGroupId) = 0;
+	virtual pCStrA GetFriendsGroupName(FriendsGroupId_t FriendsGroupId) = 0;
 	virtual Int32 GetFriendsGroupMembersCount(FriendsGroupId_t FriendsGroupId) = 0;
 	virtual void GetFriendsGroupMembersList(FriendsGroupId_t FriendsGroupId, /* [out] */ pSteamId_t pnSteamIdMembers, Int32 nMembers) = 0;
 	virtual Bool HasFriend(SteamId_t SteamIdFriend, Int32 iFriendFlags) = 0;
 
 	virtual Int32 GetClanCount() = 0;
 	virtual SteamId_t GetClanByIndex(Int32 iClan) = 0;
-	virtual const pStrA GetClanName(SteamId_t SteamIdClan) = 0;
-	virtual const pStrA GetClanTag(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanName(SteamId_t SteamIdClan) = 0;
+	virtual pCStrA GetClanTag(SteamId_t SteamIdClan) = 0;
 	virtual Bool GetClanActivityCounts(SteamId_t SteamIdClan, /* [out] */ pInt32 pnOnline, /* [out] */ pInt32 pnInGame, /* [out] */ pInt32 pnChatting) = 0;
 	virtual SteamAPICall_t DownloadClanActivityCounts(pSteamId_t pnSteamIdClans, Int32 nClansToRequest) = 0;
 
@@ -961,9 +961,9 @@ public:
 
 	/* Options: "Friends", "Community", "Players", "Settings",
 	    "OfficialGameGroup", "Stats", "Achievements", "chatroomgroup/nnnn" */
-	virtual void ActivateGameOverlay(const pStrA pchDialogName) = 0;
-	virtual void ActivateGameOverlayToUser(const pStrA pchDialog, SteamId_t SteamId) = 0;
-	virtual void ActivateGameOverlayToWebPage(const pStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) = 0;
+	virtual void ActivateGameOverlay(pCStrA pchDialogName) = 0;
+	virtual void ActivateGameOverlayToUser(pCStrA pchDialog, SteamId_t SteamId) = 0;
+	virtual void ActivateGameOverlayToWebPage(pCStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) = 0;
 	virtual void ActivateGameOverlayToStore(AppId_t iAppId, EOverlayToStoreFlag eOverlayToStoreFlag) = 0;
 	virtual void SetPlayedWith(SteamId_t SteamIdUserPlayedWith) = 0;
 	virtual void ActivateGameOverlayInviteDialog(SteamId_t SteamIdLobby) = 0;
@@ -987,13 +987,13 @@ public:
 	virtual Int32 GetClanOfficerCount(SteamId_t SteamIdClan) = 0;
 	virtual SteamId_t GetClanOfficerByIndex(SteamId_t SteamIdClan, Int32 iOfficer) = 0;
 	virtual Uint32 GetUserRestrictions() = 0;
-	virtual Bool SetRichPresence(const pStrA pchKey, const pStrA pchValue) = 0;
+	virtual Bool SetRichPresence(pCStrA pchKey, pCStrA pchValue) = 0;
 	virtual void ClearRichPresence() = 0;
-	virtual const pStrA GetFriendRichPresence(SteamId_t SteamIdFriend, const pStrA pchKey) = 0;
+	virtual pCStrA GetFriendRichPresence(SteamId_t SteamIdFriend, pCStrA pchKey) = 0;
 	virtual Int32 GetFriendRichPresenceKeyCount(SteamId_t SteamIdFriend) = 0;
-	virtual const pStrA GetFriendRichPresenceKeyByIndex(SteamId_t SteamIdFriend, Int32 iKey) = 0;
+	virtual pCStrA GetFriendRichPresenceKeyByIndex(SteamId_t SteamIdFriend, Int32 iKey) = 0;
 	virtual void RequestFriendRichPresence(SteamId_t SteamIdFriend) = 0;
-	virtual Bool InviteUserToGame(SteamId_t SteamIdFriend, const pStrA pchConnectString) = 0;
+	virtual Bool InviteUserToGame(SteamId_t SteamIdFriend, pCStrA pchConnectString) = 0;
 
 	virtual Int32 GetCoplayFriendCount() = 0;
 	virtual SteamId_t GetCoplayFriend(Int32 iCoplayFriend) = 0;
@@ -1005,7 +1005,7 @@ public:
 	virtual Bool LeaveClanChatRoom(SteamId_t SteamIdClan) = 0;
 	virtual Int32 GetClanChatMemberCount(SteamId_t SteamIdClan) = 0;
 	virtual SteamId_t GetChatMemberByIndex(SteamId_t SteamIdClan, Int32 iUser) = 0;
-	virtual Bool SendClanChatMessage(SteamId_t SteamIdClanChat, const pStrA pchText) = 0;
+	virtual Bool SendClanChatMessage(SteamId_t SteamIdClanChat, pCStrA pchText) = 0;
 	virtual Int32 GetClanChatMessage(SteamId_t SteamIdClanChat, Int32 iMessage, /* [out] */ pStrA pchText, Int32 cchTextMax, /* [out] */ pEChatEntryType peChatEntryType, /* [out] */ pSteamId_t pSteamIdChatter) = 0;
 	virtual Bool IsClanChatAdmin(SteamId_t SteamIdClanChat, SteamId_t SteamIdUser) = 0;
 
@@ -1014,7 +1014,7 @@ public:
 	virtual Bool CloseClanChatWindowInSteam(SteamId_t SteamIdClanChat) = 0;
 
 	virtual Bool SetListenForFriendsMessages(Bool bInterceptEnabled) = 0;
-	virtual Bool ReplyToFriendMessage(SteamId_t SteamIdFriend, const pStrA pchMsgToSend) = 0;
+	virtual Bool ReplyToFriendMessage(SteamId_t SteamIdFriend, pCStrA pchMsgToSend) = 0;
 	virtual Int32 GetFriendMessage(SteamId_t SteamIdFriend, Int32 iMessageId, /* [out] */ pVoid pvData, Int32 cbData, /* [out] */ pEChatEntryType peChatEntryType) = 0;
 
 	virtual SteamAPICall_t GetFollowerCount(SteamId_t SteamId) = 0;
@@ -1026,12 +1026,12 @@ public:
 	virtual Int32 GetNumChatsWithUnreadPriorityMessages() = 0;
 
 	virtual void ActivateGameOverlayRemotePlayTogetherInviteDialog(SteamId_t SteamIdLobby) = 0;
-	virtual Bool RegisterProtocolInOverlayBrowser(const pStrA pchProtocol) = 0;
-	virtual void ActivateGameOverlayInviteDialogConnectString(const pStrA pchConnectString) = 0;
+	virtual Bool RegisterProtocolInOverlayBrowser(pCStrA pchProtocol) = 0;
+	virtual void ActivateGameOverlayInviteDialogConnectString(pCStrA pchConnectString) = 0;
 	
 	virtual SteamAPICall_t RequestEquippedProfileItems(SteamId_t SteamId) = 0;
 	virtual Bool BHasEquippedProfileItem(SteamId_t SteamId, ECommunityProfileItemType eCommunityProfileItemType) = 0;
-	virtual const pStrA GetProfileItemPropertyString(SteamId_t SteamId, ECommunityProfileItemType eCommunityProfileItemType, ECommunityProfileItemProperty eCommunityProfileItemProperty) = 0;
+	virtual pCStrA GetProfileItemPropertyString(SteamId_t SteamId, ECommunityProfileItemType eCommunityProfileItemType, ECommunityProfileItemProperty eCommunityProfileItemProperty) = 0;
 	virtual Uint32 GetProfileItemPropertyUint(SteamId_t SteamId, ECommunityProfileItemType eCommunityProfileItemType, ECommunityProfileItemProperty eCommunityProfileItemProperty) = 0;
 
 } ISteamFriends, *IpSteamFriends;

@@ -19,12 +19,12 @@ public:
 	HSteamListenSocket CreateListenSocketP2P(Int32 nLocalVirtualPort, Int32 nOptions, const pSteamNetworkingConfigValue_t pOptions) override;
 	HSteamNetConnection ConnectP2P(const pSteamNetworkingIdentity pIdentityRemote, Int32 nRemoteVirtualPort, Int32 nOptions, const pSteamNetworkingConfigValue_t pOptions) override;
 	EResult AcceptConnection(HSteamNetConnection hConnection) override;
-	Bool CloseConnection(HSteamNetConnection hPeer, Int32 nReason, const pStrA pchDebug, Bool bEnableLinger) override;
+	Bool CloseConnection(HSteamNetConnection hPeer, Int32 nReason, pCStrA pchDebug, Bool bEnableLinger) override;
 	Bool CloseListenSocket(HSteamListenSocket hSocket) override;
 
 	Bool SetConnectionUserData(HSteamNetConnection hPeer, Int64 nUserData) override;
 	Int64 GetConnectionUserData(HSteamNetConnection hPeer) override;
-	void SetConnectionName(HSteamNetConnection hPeer, const pStrA pchName) override;
+	void SetConnectionName(HSteamNetConnection hPeer, pCStrA pchName) override;
 	Bool GetConnectionName(HSteamNetConnection hPeer, pStrA pchName, Int32 cchName) override;
 	EResult SendMessageToConnection(HSteamNetConnection hConnection, const pVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) override;
 	void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t pMessages, pInt64 pMessageNumberOrResult) override;

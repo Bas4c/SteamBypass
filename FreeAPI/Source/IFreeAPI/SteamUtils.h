@@ -23,7 +23,7 @@ public:
 	Uint32 GetServerRealTime() override;
 
 	/* Returns User Country Code: "UK", "US", ... */
-	const pStrA GetIPCountry() override;
+	pCStrA GetIPCountry() override;
 
 	Bool GetImageSize(Int32 iImage, pUint32 pCx, pUint32 pCy) override;
 
@@ -46,7 +46,7 @@ public:
 
 	/* API warning handling
 		Int32 is severity; 0: msg, 1: warning
-		const pStrA is text of the message
+		pCStrA is text of the message
 		callbacks will occur directly after the API function is called that generated the warning or message. */
 	void SetWarningMessageHook(SteamAPIWarningMessageHook_t pFunction) override;
 	Bool IsOverlayEnabled() override;
@@ -63,12 +63,12 @@ public:
 		k_ECheckFileSignatureFileNotFound - The file does not exist on disk.
 		k_ECheckFileSignatureInvalidSignature - The file exists, and the signing tab has been set for this file, but the file is either not signed or the signature does not match.
 		k_ECheckFileSignatureValidSignature - The file is signed and the signature is valid. */
-	SteamAPICall_t CheckFileSignature(const pStrA pchFileName) override;
-	Bool ShowGamepadTextInput(EGamepadTextInputMode eGamepadTextInputMode, EGamepadTextInputLineMode eGamepadTextInputLineMode, const pStrA pchDescription, Uint32 cchDescription, const pStrA pchExistingText) override;
+	SteamAPICall_t CheckFileSignature(pCStrA pchFileName) override;
+	Bool ShowGamepadTextInput(EGamepadTextInputMode eGamepadTextInputMode, EGamepadTextInputLineMode eGamepadTextInputLineMode, pCStrA pchDescription, Uint32 cchDescription, pCStrA pchExistingText) override;
 	Uint32 GetEnteredGamepadTextLength() override;
 	Bool GetEnteredGamepadTextInput(pStrA pchText, Uint32 cchText) override;
 
-	const pStrA GetSteamUILanguage() override;
+	pCStrA GetSteamUILanguage() override;
 	Bool IsSteamRunningInVR() override;
 	void SetOverlayNotificationInset(Int32 nHorizontalInset, Int32 nVerticalInset) override;
 	Bool IsSteamInBigPictureMode() override;
@@ -85,7 +85,7 @@ public:
 	//   pchOutFilteredText is where the output will be placed, even if no filtering is performed
 	//   nByteSizeOutFilteredText is the size (in bytes) of pchOutFilteredText, should be at least strlen(pchInputText)+1
 	// Returns the number of CharAacters (not bytes) filtered
-	Int32 FilterText(ETextFilteringContext eContext, SteamId_t SourceSteamId, const pStrA pchInputMessage, pStrA pchFilteredText, Uint32 cchFilteredText) override;
+	Int32 FilterText(ETextFilteringContext eContext, SteamId_t SourceSteamId, pCStrA pchInputMessage, pStrA pchFilteredText, Uint32 cchFilteredText) override;
 	ESteamIPv6ConnectivityState GetIPv6ConnectivityState(ESteamIPv6ConnectivityProtocol eSteamIPv6ConnectivityProtocol) override;
 	Bool IsSteamRunningOnSteamDeck() override;
 	Bool ShowFloatingGamepadTextInput(EFloatingGamepadTextInputMode eKeyboardMode, Int32 nTextFieldXPosition, Int32 nTextFieldYPosition, Int32 nTextFieldWidth, Int32 nTextFieldHeight) override;

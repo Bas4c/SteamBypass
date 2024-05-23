@@ -577,10 +577,10 @@ typedef struct _SteamNetworkingIdentity_ {
 
 #ifdef __cplusplus
 	extern "C" typedef void (__cdecl *SteamAPIWarningMessageHook_t)
-		(Int32 sCode, const pStrA pText);
+		(Int32 sCode, pCStrA pText);
 #else // !C++
 	typedef void (__cdecl *SteamAPIWarningMessageHook_t)
-		(Int32 sCode, const pStrA pText);
+		(Int32 sCode, pCStrA pText);
 #endif
 
 #ifdef __cplusplus
@@ -1031,7 +1031,7 @@ typedef struct _SteamNetworkingConfigValue_t_ {
 		Int32 Int32;
 		Int64 Int64;
 		Float Float;
-		const pStrA pchStr;
+		pCStrA pchStr;
 		pVoid pvData;
 
 	};

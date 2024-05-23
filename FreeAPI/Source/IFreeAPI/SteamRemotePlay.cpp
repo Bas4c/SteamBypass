@@ -20,9 +20,9 @@ SteamId_t _SteamRemotePlay_::GetSessionSteamID(RemotePlaySessionId_t SessionId) 
 
 }
 
-const pStrA _SteamRemotePlay_::GetSessionClientName(RemotePlaySessionId_t SessionId) {
+pCStrA _SteamRemotePlay_::GetSessionClientName(RemotePlaySessionId_t SessionId) {
 
-	return (const pStrA)(
+	return (pCStrA)(
 		""
 	);
 

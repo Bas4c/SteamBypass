@@ -8,15 +8,15 @@ _SteamFriends_::_SteamFriends_() {
 
 }
 
-const pStrA _SteamFriends_::GetPersonaName() {
+pCStrA _SteamFriends_::GetPersonaName() {
 
-	return (const pStrA)(
+	return (pCStrA)(
 		"LocalPlayer"
 	);
 
 }
 
-SteamAPICall_t _SteamFriends_::SetPersonaName(const pStrA pchPersonaName) {
+SteamAPICall_t _SteamFriends_::SetPersonaName(pCStrA pchPersonaName) {
 
 	return k_SteamAPICall_Invalid;
 
@@ -52,9 +52,9 @@ EPersonaState _SteamFriends_::GetFriendPersonaState(SteamId_t SteamIdFriend) {
 
 }
 
-const pStrA _SteamFriends_::GetFriendPersonaName(SteamId_t SteamIdFriend) {
+pCStrA _SteamFriends_::GetFriendPersonaName(SteamId_t SteamIdFriend) {
 
-	return (const pStrA)(
+	return (pCStrA)(
 		"SteamFriend"
 	);
 
@@ -72,9 +72,9 @@ Bool _SteamFriends_::GetFriendGamePlayed(SteamId_t SteamIdFriend, pFriendGameInf
 
 }
 
-const pStrA _SteamFriends_::GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) {
+pCStrA _SteamFriends_::GetFriendPersonaNameHistory(SteamId_t SteamIdFriend, Int32 iPersonaName) {
 
-	return (const pStrA)(
+	return (pCStrA)(
 		""
 	);
 
@@ -86,9 +86,9 @@ Int32 _SteamFriends_::GetFriendSteamLevel(SteamId_t SteamIdFriend) {
 
 }
 
-const pStrA _SteamFriends_::GetPlayerNickname(SteamId_t SteamIdPlayer) {
+pCStrA _SteamFriends_::GetPlayerNickname(SteamId_t SteamIdPlayer) {
 
-	return (const pStrA)(
+	return (pCStrA)(
 		"SteamPlayer"
 	);
 
@@ -106,9 +106,9 @@ FriendsGroupId_t _SteamFriends_::GetFriendsGroupIDByIndex(Int32 iFG) {
 
 }
 
-const pStrA _SteamFriends_::GetFriendsGroupName(FriendsGroupId_t FriendsGroupId) {
+pCStrA _SteamFriends_::GetFriendsGroupName(FriendsGroupId_t FriendsGroupId) {
 
-	return (const pStrA)(
+	return (pCStrA)(
 		"FriendGroup"
 	);
 
@@ -148,15 +148,15 @@ SteamId_t _SteamFriends_::GetClanByIndex(Int32 iClan) {
 
 }
 
-const pStrA _SteamFriends_::GetClanName(SteamId_t SteamIdClan) {
+pCStrA _SteamFriends_::GetClanName(SteamId_t SteamIdClan) {
 
-	return (const pStrA)(
+	return (pCStrA)(
 		"Generic"
 	);
 
 }
 
-const pStrA _SteamFriends_::GetClanTag(SteamId_t SteamIdClan) {
+pCStrA _SteamFriends_::GetClanTag(SteamId_t SteamIdClan) {
 
 	return this->GetClanName(SteamIdClan);
 }
@@ -197,19 +197,19 @@ void _SteamFriends_::SetInGameVoiceSpeaking(SteamId_t SteamIdUser, Bool bSpeakin
 
 }
 
-void _SteamFriends_::ActivateGameOverlay(const pStrA pchDialogName) {
+void _SteamFriends_::ActivateGameOverlay(pCStrA pchDialogName) {
 
 	/* Empty Method */
 
 }
 
-void _SteamFriends_::ActivateGameOverlayToUser(const pStrA pchDialog, SteamId_t SteamId) {
+void _SteamFriends_::ActivateGameOverlayToUser(pCStrA pchDialog, SteamId_t SteamId) {
 
 	/* Empty Method */
 
 }
 
-void _SteamFriends_::ActivateGameOverlayToWebPage(const pStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) {
+void _SteamFriends_::ActivateGameOverlayToWebPage(pCStrA pchURL, EActivateGameOverlayToWebPageMode eActivateGameOverlayToWebPageMode) {
 
 	/* Empty Method */
 
@@ -287,7 +287,7 @@ Uint32 _SteamFriends_::GetUserRestrictions() {
 
 }
 
-Bool _SteamFriends_::SetRichPresence(const pStrA pchKey, const pStrA pchValue) {
+Bool _SteamFriends_::SetRichPresence(pCStrA pchKey, pCStrA pchValue) {
 
 	return False;
 
@@ -299,9 +299,9 @@ void _SteamFriends_::ClearRichPresence() {
 
 }
 
-const pStrA _SteamFriends_::GetFriendRichPresence(SteamId_t SteamIdFriend, const pStrA pchKey) {
+pCStrA _SteamFriends_::GetFriendRichPresence(SteamId_t SteamIdFriend, pCStrA pchKey) {
 
-	return (const pStrA)(
+	return (pCStrA)(
 		""
 	);
 
@@ -313,9 +313,9 @@ Int32 _SteamFriends_::GetFriendRichPresenceKeyCount(SteamId_t SteamIdFriend) {
 
 }
 
-const pStrA _SteamFriends_::GetFriendRichPresenceKeyByIndex(SteamId_t SteamIdFriend, Int32 iKey) {
+pCStrA _SteamFriends_::GetFriendRichPresenceKeyByIndex(SteamId_t SteamIdFriend, Int32 iKey) {
 
-	return (const pStrA)(
+	return (pCStrA)(
 		""
 	);
 
@@ -327,7 +327,7 @@ void _SteamFriends_::RequestFriendRichPresence(SteamId_t SteamIdFriend) {
 
 }
 
-Bool _SteamFriends_::InviteUserToGame(SteamId_t SteamIdFriend, const pStrA pchConnectString) {
+Bool _SteamFriends_::InviteUserToGame(SteamId_t SteamIdFriend, pCStrA pchConnectString) {
 
 	return False;
 
@@ -381,7 +381,7 @@ SteamId_t _SteamFriends_::GetChatMemberByIndex(SteamId_t SteamIdClan, Int32 iUse
 
 }
 
-Bool _SteamFriends_::SendClanChatMessage(SteamId_t SteamIdClanChat, const pStrA pchText) {
+Bool _SteamFriends_::SendClanChatMessage(SteamId_t SteamIdClanChat, pCStrA pchText) {
 
 	return False;
 
@@ -435,7 +435,7 @@ Bool _SteamFriends_::SetListenForFriendsMessages(Bool bInterceptEnabled) {
 
 }
 
-Bool _SteamFriends_::ReplyToFriendMessage(SteamId_t SteamIdFriend, const pStrA pchMsgToSend) {
+Bool _SteamFriends_::ReplyToFriendMessage(SteamId_t SteamIdFriend, pCStrA pchMsgToSend) {
 
 	return False;
 
@@ -497,13 +497,13 @@ void _SteamFriends_::ActivateGameOverlayRemotePlayTogetherInviteDialog(SteamId_t
 
 }
 
-Bool _SteamFriends_::RegisterProtocolInOverlayBrowser(const pStrA pchProtocol) {
+Bool _SteamFriends_::RegisterProtocolInOverlayBrowser(pCStrA pchProtocol) {
 
 	return False;
 
 }
 
-void _SteamFriends_::ActivateGameOverlayInviteDialogConnectString(const pStrA pchConnectString) {
+void _SteamFriends_::ActivateGameOverlayInviteDialogConnectString(pCStrA pchConnectString) {
 
 	/* Empty Method */
 
@@ -521,83 +521,83 @@ Bool _SteamFriends_::BHasEquippedProfileItem(SteamId_t SteamId, ECommunityProfil
 
 }
 
-const pStrA _SteamFriends_::GetProfileItemPropertyString(SteamId_t SteamId, ECommunityProfileItemType eCommunityProfileItemType, ECommunityProfileItemProperty eCommunityProfileItemProperty) {
+pCStrA _SteamFriends_::GetProfileItemPropertyString(SteamId_t SteamId, ECommunityProfileItemType eCommunityProfileItemType, ECommunityProfileItemProperty eCommunityProfileItemProperty) {
 
 	switch (eCommunityProfileItemType) {
 		case k_ECommunityProfileItemType_AnimatedAvatar:
 			StrA_Copy(this->chString, sizeof(this->chString) / sizeof(CharA),
-				(const pStrA)("AnimatedAvatar"));
+				(pCStrA)("AnimatedAvatar"));
 			break;
 		case k_ECommunityProfileItemType_AvatarFrame:
 			StrA_Copy(this->chString, sizeof(this->chString) / sizeof(CharA),
-				(const pStrA)("AvatarFrame"));
+				(pCStrA)("AvatarFrame"));
 			break;
 		case k_ECommunityProfileItemType_ProfileModifier:
 			StrA_Copy(this->chString, sizeof(this->chString) / sizeof(CharA),
-				(const pStrA)("ProfileModifier"));
+				(pCStrA)("ProfileModifier"));
 			break;
 		case k_ECommunityProfileItemType_ProfileBackground:
 			StrA_Copy(this->chString, sizeof(this->chString) / sizeof(CharA),
-				(const pStrA)("ProfileBackground"));
+				(pCStrA)("ProfileBackground"));
 			break;
 		case k_ECommunityProfileItemType_MiniProfileBackground:
 			StrA_Copy(this->chString, sizeof(this->chString) / sizeof(CharA),
-				(const pStrA)("MiniProfileBackground"));
+				(pCStrA)("MiniProfileBackground"));
 			break;
 	}
 
 	switch (eCommunityProfileItemProperty) {
 		case k_ECommunityProfileItemProperty_ImageSmall:
 			StrA_Cat(this->chString, sizeof(this->chString) / sizeof(CharA),
-				(const pStrA)("ImageSmall"));
+				(pCStrA)("ImageSmall"));
 			break;
 		case k_ECommunityProfileItemProperty_ImageLarge:
 			StrA_Cat(this->chString, sizeof(this->chString) / sizeof(CharA),
-				(const pStrA)("ImageLarge"));
+				(pCStrA)("ImageLarge"));
 			break;
 		case k_ECommunityProfileItemProperty_InternalName:
 			StrA_Cat(this->chString, sizeof(this->chString) / sizeof(CharA),
-				(const pStrA)("InternalName"));
+				(pCStrA)("InternalName"));
 			break;
 		case k_ECommunityProfileItemProperty_Title:
 			StrA_Cat(this->chString, sizeof(this->chString) / sizeof(CharA),
-				(const pStrA)("Title"));
+				(pCStrA)("Title"));
 			break;
 		case k_ECommunityProfileItemProperty_Description:
 			StrA_Cat(this->chString, sizeof(this->chString) / sizeof(CharA),
-				(const pStrA)("Description"));
+				(pCStrA)("Description"));
 			break;
 		case k_ECommunityProfileItemProperty_AppId:
 			StrA_Cat(this->chString, sizeof(this->chString) / sizeof(CharA),
-				(const pStrA)("AppId"));
+				(pCStrA)("AppId"));
 			break;
 		case k_ECommunityProfileItemProperty_TypeId:
 			StrA_Cat(this->chString, sizeof(this->chString) / sizeof(CharA),
-				(const pStrA)("TypeId"));
+				(pCStrA)("TypeId"));
 			break;
 		case k_ECommunityProfileItemProperty_Class:
 			StrA_Cat(this->chString, sizeof(this->chString) / sizeof(CharA),
-				(const pStrA)("Class"));
+				(pCStrA)("Class"));
 			break;
 		case k_ECommunityProfileItemProperty_MovieWebM:
 			StrA_Cat(this->chString, sizeof(this->chString) / sizeof(CharA),
-				(const pStrA)("MovieWebM"));
+				(pCStrA)("MovieWebM"));
 			break;
 		case k_ECommunityProfileItemProperty_MovieMP4:
 			StrA_Cat(this->chString, sizeof(this->chString) / sizeof(CharA),
-				(const pStrA)("MovieMP4"));
+				(pCStrA)("MovieMP4"));
 			break;
 		case k_ECommunityProfileItemProperty_MovieWebMSmall:
 			StrA_Cat(this->chString, sizeof(this->chString) / sizeof(CharA),
-				(const pStrA)("MovieWebMSmall"));
+				(pCStrA)("MovieWebMSmall"));
 			break;
 		case k_ECommunityProfileItemProperty_MovieMP4Small:
 			StrA_Cat(this->chString, sizeof(this->chString) / sizeof(CharA),
-				(const pStrA)("MovieMP4Small"));
+				(pCStrA)("MovieMP4Small"));
 			break;
 	}
 
-	return (const pStrA)(
+	return (pCStrA)(
 		this->chString
 	);
 

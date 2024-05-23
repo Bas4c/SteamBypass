@@ -8,49 +8,49 @@ SteamAPICall_t _SteamGameServerStats_::RequestUserStats(SteamId_t SteamIdUser) {
 
 }
 
-Bool _SteamGameServerStats_::GetUserStat(SteamId_t SteamIdUser, const pStrA pchName, pInt32 pData) {
+Bool _SteamGameServerStats_::GetUserStat(SteamId_t SteamIdUser, pCStrA pchName, pInt32 pData) {
 
 	return True;
 
 }
 
-Bool _SteamGameServerStats_::GetUserStat(SteamId_t SteamIdUser, const pStrA pchName, pFloat pData) {
+Bool _SteamGameServerStats_::GetUserStat(SteamId_t SteamIdUser, pCStrA pchName, pFloat pData) {
 
 	return True;
 
 }
 
-Bool _SteamGameServerStats_::GetUserAchievement(SteamId_t SteamIdUser, const pStrA pchName, pBool pbAchieved) {
+Bool _SteamGameServerStats_::GetUserAchievement(SteamId_t SteamIdUser, pCStrA pchName, pBool pbAchieved) {
 
 	return True;
 
 }
 
-Bool _SteamGameServerStats_::SetUserStat(SteamId_t SteamIdUser, const pStrA pchName, Int32 Data) {
+Bool _SteamGameServerStats_::SetUserStat(SteamId_t SteamIdUser, pCStrA pchName, Int32 Data) {
 
 	return True;
 
 }
 
-Bool _SteamGameServerStats_::SetUserStat(SteamId_t SteamIdUser, const pStrA pchName, Float Data) {
+Bool _SteamGameServerStats_::SetUserStat(SteamId_t SteamIdUser, pCStrA pchName, Float Data) {
 
 	return True;
 
 }
 
-Bool _SteamGameServerStats_::UpdateUserAvgRateStat(SteamId_t SteamIdUser, const pStrA pchName, Float CountThisSession, Double SessionLength) {
+Bool _SteamGameServerStats_::UpdateUserAvgRateStat(SteamId_t SteamIdUser, pCStrA pchName, Float CountThisSession, Double SessionLength) {
 
 	return True;
 
 }
 
-Bool _SteamGameServerStats_::SetUserAchievement(SteamId_t SteamIdUser, const pStrA pchName) {
+Bool _SteamGameServerStats_::SetUserAchievement(SteamId_t SteamIdUser, pCStrA pchName) {
 
 	return True;
 
 }
 
-Bool _SteamGameServerStats_::ClearUserAchievement(SteamId_t SteamIdUser, const pStrA pchName) {
+Bool _SteamGameServerStats_::ClearUserAchievement(SteamId_t SteamIdUser, pCStrA pchName) {
 
 	return True;
 

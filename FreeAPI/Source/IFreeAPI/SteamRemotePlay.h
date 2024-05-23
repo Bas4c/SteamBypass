@@ -17,7 +17,7 @@ public:
 	Uint32 GetSessionCount() override;
 	RemotePlaySessionId_t GetSessionID(Int32 iSessionIndex) override;
 	SteamId_t GetSessionSteamID(RemotePlaySessionId_t SessionId) override;
-	const pStrA GetSessionClientName(RemotePlaySessionId_t SessionId) override;
+	pCStrA GetSessionClientName(RemotePlaySessionId_t SessionId) override;
 	ESteamDeviceFormFactor GetSessionClientFormFactor(RemotePlaySessionId_t SessionId) override;
 	Bool BGetSessionClientResolution(RemotePlaySessionId_t SessionId, pInt32 pCx, pInt32 pCy) override;
 	Bool BSendRemotePlayTogetherInvite(SteamId_t SteamIdFriend) override;

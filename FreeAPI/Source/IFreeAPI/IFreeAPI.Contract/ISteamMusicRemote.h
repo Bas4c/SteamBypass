@@ -10,12 +10,12 @@
 typedef class _ISteamMusicRemote_ {
 public: 
 
-	virtual Bool RegisterSteamMusicRemote(const pStrA pchName) = 0;
+	virtual Bool RegisterSteamMusicRemote(pCStrA pchName) = 0;
 	virtual Bool DeregisterSteamMusicRemote() = 0;
 	virtual Bool BIsCurrentMusicRemote() = 0;
 	virtual Bool BActivationSuccess(Bool bValue) = 0;
 
-	virtual Bool SetDisplayName(const pStrA pchDisplayName) = 0;
+	virtual Bool SetDisplayName(pCStrA pchDisplayName) = 0;
 	virtual Bool SetPNGIcon_64x64(pVoid pvData, Uint32 cbDataSize) = 0;
 
 	virtual Bool EnablePlayPrevious(Bool bValue) = 0;
@@ -33,20 +33,20 @@ public:
 
 	virtual Bool CurrentEntryWillChange() = 0;
 	virtual Bool CurrentEntryIsAvailable(Bool bAvailable) = 0;
-	virtual Bool UpdateCurrentEntryText(const pStrA pchText) = 0;
+	virtual Bool UpdateCurrentEntryText(pCStrA pchText) = 0;
 	virtual Bool UpdateCurrentEntryElapsedSeconds(Int32 nValue) = 0;
 	virtual Bool UpdateCurrentEntryCoverArt(pVoid pvData, Uint32 cbDataSize) = 0;
 	virtual Bool CurrentEntryDidChange() = 0;
 
 	virtual Bool QueueWillChange() = 0;
 	virtual Bool ResetQueueEntries() = 0;
-	virtual Bool SetQueueEntry(Int32 nId, Int32 nPosition, const pStrA pchEntryText) = 0;
+	virtual Bool SetQueueEntry(Int32 nId, Int32 nPosition, pCStrA pchEntryText) = 0;
 	virtual Bool SetCurrentQueueEntry(Int32 nId) = 0;
 	virtual Bool QueueDidChange() = 0;
 
 	virtual Bool PlaylistWillChange() = 0;
 	virtual Bool ResetPlaylistEntries() = 0;
-	virtual Bool SetPlaylistEntry(Int32 nId, Int32 nPosition, const pStrA pchEntryText) = 0;
+	virtual Bool SetPlaylistEntry(Int32 nId, Int32 nPosition, pCStrA pchEntryText) = 0;
 	virtual Bool SetCurrentPlaylistEntry(Int32 nId) = 0;
 	virtual Bool PlaylistDidChange() = 0;
 

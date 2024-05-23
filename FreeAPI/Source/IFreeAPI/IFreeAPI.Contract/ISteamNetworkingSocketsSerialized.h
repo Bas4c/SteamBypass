@@ -7,9 +7,9 @@ typedef class _ISteamNetworkingSocketsSerialized_ {
 public:
 
 	virtual void SendP2PRendezvous(SteamId_t SteamIdRemote, Uint32 ConnectionIdSrc, const pVoid pMsgRendezvous, Uint32 cbRendezvous) = 0;
-	virtual void SendP2PConnectionFailure(SteamId_t SteamIdRemote, Uint32 nConnectionIdDest, Uint32 nReason, const pStrA pchReason) = 0;
+	virtual void SendP2PConnectionFailure(SteamId_t SteamIdRemote, Uint32 nConnectionIdDest, Uint32 nReason, pCStrA pchReason) = 0;
 	virtual SteamAPICall_t GetCertAsync() = 0;
-	virtual Int32 GetNetworkConfigJSON(/* [out] */ pVoid pvJSON, Uint32 cbSize, const pStrA pchLauncherPartner) = 0;
+	virtual Int32 GetNetworkConfigJSON(/* [out] */ pVoid pvJSON, Uint32 cbSize, pCStrA pchLauncherPartner) = 0;
 	virtual void CacheRelayTicket(const pVoid pvTicket, Uint32 cbTicket) = 0;
 	virtual Uint32 GetCachedRelayTicketCount() = 0;
 	virtual Uint32 GetCachedRelayTicket(Uint32 iTicket, /* [out] */ pVoid pvTicket, Uint32 cbTicket) = 0;
@@ -20,7 +20,7 @@ public:
 
 } ISteamNetworkingSocketsSerialized, *IpSteamNetworkingSocketsSerialized;
 
-#define STEAMNETWORKINGSOCKETSSERIALIZED_INTERFACE_VERSION "SteamNetworkingSocketsSerialized002"
+#define STEAMNETWORKINGSOCKETSSERIALIZED_INTERFACE_VERSION "SteamNetworkingSocketsSerialized005"
 
 #pragma pack(push, 1)
 

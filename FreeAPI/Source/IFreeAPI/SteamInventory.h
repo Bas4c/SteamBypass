@@ -25,7 +25,7 @@ public:
 	   k_EResultFail - ERROR: unknown / generic error */
 	EResult GetResultStatus(SteamInventoryResult_t hSteamInventoryResult) override;
 	Bool GetResultItems(SteamInventoryResult_t hSteamInventoryResult, pSteamItemDetails_t pSteamItemDetails, pUint32 pnItemsArraySize) override;
-	Bool GetResultItemProperty(SteamInventoryResult_t hSteamInventoryResult, Uint32 iItem, const pStrA pchPropertyName, pStrA pchValue, pUint32 pnValueSize) override;
+	Bool GetResultItemProperty(SteamInventoryResult_t hSteamInventoryResult, Uint32 iItem, pCStrA pchPropertyName, pStrA pchValue, pUint32 pnValueSize) override;
 	Uint32 GetResultTimestamp(SteamInventoryResult_t hSteamInventoryResult) override;
 	Bool CheckResultSteamId(SteamInventoryResult_t hSteamInventoryResult, SteamId_t SteamIdExpected) override;
 	void DestroyResult(SteamInventoryResult_t hSteamInventoryResult) override;
@@ -48,7 +48,7 @@ public:
 	Bool LoadSteamItemDefinitions() override;
 	Bool GetSteamItemDefinitionIds(pSteamSteamItemDef_t pSteamItemDefId, pUint32 pnSteamItemDefIdsArraySize) override;
 	
-	Bool GetSteamItemDefinitionProperty(SteamSteamItemDef_t SteamSteamItemDef, const pStrA pchPropertyName, pStrA pchValue, pUint32 pnValueSize) override;
+	Bool GetSteamItemDefinitionProperty(SteamSteamItemDef_t SteamSteamItemDef, pCStrA pchPropertyName, pStrA pchValue, pUint32 pnValueSize) override;
 	SteamAPICall_t RequestEligiblePromoSteamItemDefinitionsIds(SteamId_t SteamId) override;
 	Bool GetEligiblePromoSteamItemDefinitionIds(SteamId_t SteamId, pSteamSteamItemDef_t pSteamItemDefId, pUint32 pnSteamItemDefIdArraySize) override;
 	SteamAPICall_t StartPurchase(const pSteamSteamItemDef_t pArraySteamItemDefs, const pUint32 punArrayQuantity, Uint32 nArrayLength) override;
@@ -57,14 +57,14 @@ public:
 	Bool GetItemsWithPrices(pSteamSteamItemDef_t pArraySteamItemDefs, pUint64 pCurrentPrices, pUint64 pBasePrices, Uint32 nArrayLength) override;
 	Bool GetItemPrice(SteamSteamItemDef_t SteamSteamItemDef, pUint64 pCurrentPrice, pUint64 pBasePrice) override;
 	SteamInventoryUpdateHandle_t StartUpdateProperties() override;
-	Bool RemoveProperty(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, SteamItemInstanceId_t nItemId, const pStrA pchPropertyName) override;
-	Bool SetProperty(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, SteamItemInstanceId_t nItemId, const pStrA pchPropertyName, const pStrA pchPropertyValue) override;
-	Bool SetProperty(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, SteamItemInstanceId_t nItemId, const pStrA pchPropertyName, Bool bValue) override;
-	Bool SetProperty(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, SteamItemInstanceId_t nItemId, const pStrA pchPropertyName, Int64 Value) override;
-	Bool SetProperty(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, SteamItemInstanceId_t nItemId, const pStrA pchPropertyName, Float Value) override;
+	Bool RemoveProperty(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, SteamItemInstanceId_t nItemId, pCStrA pchPropertyName) override;
+	Bool SetProperty(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, SteamItemInstanceId_t nItemId, pCStrA pchPropertyName, pCStrA pchPropertyValue) override;
+	Bool SetProperty(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, SteamItemInstanceId_t nItemId, pCStrA pchPropertyName, Bool bValue) override;
+	Bool SetProperty(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, SteamItemInstanceId_t nItemId, pCStrA pchPropertyName, Int64 Value) override;
+	Bool SetProperty(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, SteamItemInstanceId_t nItemId, pCStrA pchPropertyName, Float Value) override;
 	
 	Bool SubmitUpdateProperties(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, pSteamInventoryResult_t phSteamInventoryResult) override;
-	Bool InspectItem(pSteamInventoryResult_t phSteamInventoryResult, const pStrA pchItemToken) override;
+	Bool InspectItem(pSteamInventoryResult_t phSteamInventoryResult, pCStrA pchItemToken) override;
 
 	~_SteamInventory_() = default;
 

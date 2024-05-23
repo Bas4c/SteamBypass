@@ -18,7 +18,7 @@ public:
 
 	Bool Init(Bool bExplicitlyCallRunFrame) override;
 	Bool Shutdown() override;
-	Bool SetInputActionManifestFilePath(const pStrA pchInputActionManifestAbsolutePath) override;
+	Bool SetInputActionManifestFilePath(pCStrA pchInputActionManifestAbsolutePath) override;
 
 	/* Synchronize API state with the latest Steam Input action data available. This
 		is performed automatically by SteamAPI_RunCallbacks, but for the absolute lowest
@@ -32,7 +32,7 @@ public:
 	void EnableDeviceCallbacks() override;
 	void EnableActionEventCallbacks(SteamInputActionEventCallback pFunction) override;
 
-	InputActionSetHandle_t GetActionSetHandle(const pStrA pszActionSetName) override;
+	InputActionSetHandle_t GetActionSetHandle(pCStrA pszActionSetName) override;
 	void ActivateActionSet(InputHandle_t hController, InputActionSetHandle_t hActionSet) override;
 	InputActionSetHandle_t GetCurrentActionSet(InputHandle_t hController) override;
 
@@ -41,22 +41,22 @@ public:
 	void DeactivateAllActionSetLayers(InputHandle_t hController) override;
 	Int32 GetActiveActionSetLayers(InputHandle_t hController, pInputActionSetHandle_t phController) override;
 
-	InputDigitalActionHandle_t GetDigitalActionHandle(const pStrA pszActionName) override;
+	InputDigitalActionHandle_t GetDigitalActionHandle(pCStrA pszActionName) override;
 	InputDigitalActionData_t GetDigitalActionData(InputHandle_t hController, InputDigitalActionHandle_t hDigitalAction) override;
 	Int32 GetDigitalActionOrigins(InputHandle_t hController, InputActionSetHandle_t hActionSet, InputDigitalActionHandle_t hDigitalAction, pEInputActionOrigin peInputActionOrigin) override;
-	const pStrA GetStringForDigitalActionName(InputDigitalActionHandle_t hDigitalAction) override;
+	pCStrA GetStringForDigitalActionName(InputDigitalActionHandle_t hDigitalAction) override;
 
-	InputAnalogActionHandle_t GetAnalogActionHandle(const pStrA pszActionName) override;
+	InputAnalogActionHandle_t GetAnalogActionHandle(pCStrA pszActionName) override;
 	InputAnalogActionData_t GetAnalogActionData(InputHandle_t hController, InputAnalogActionHandle_t hAnalogAction) override;
 	Int32 GetAnalogActionOrigins(InputHandle_t hController, InputActionSetHandle_t hActionSet, InputAnalogActionHandle_t hAnalogAction, pEInputActionOrigin peInputActionOrigin) override;
 
-	const pStrA GetGlyphPNGForActionOrigin(EInputActionOrigin eInputActionOrigin, ESteamInputGlyphSize eSteamInputGlyphSize, Uint32 nFlags) override;
-	const pStrA GetGlyphSVGForActionOrigin(EInputActionOrigin eInputActionOrigin, Uint32 nFlags) override;
+	pCStrA GetGlyphPNGForActionOrigin(EInputActionOrigin eInputActionOrigin, ESteamInputGlyphSize eSteamInputGlyphSize, Uint32 nFlags) override;
+	pCStrA GetGlyphSVGForActionOrigin(EInputActionOrigin eInputActionOrigin, Uint32 nFlags) override;
 
-	const pStrA GetGlyphForActionOrigin_Legacy(EInputActionOrigin eInputActionOrigin) override;
-	const pStrA GetStringForActionOrigin(EInputActionOrigin eInputActionOrigin) override;
+	pCStrA GetGlyphForActionOrigin_Legacy(EInputActionOrigin eInputActionOrigin) override;
+	pCStrA GetStringForActionOrigin(EInputActionOrigin eInputActionOrigin) override;
 
-	const pStrA GetStringForAnalogActionName(InputAnalogActionHandle_t hDigitalAction) override;
+	pCStrA GetStringForAnalogActionName(InputAnalogActionHandle_t hDigitalAction) override;
 	void StopAnalogActionMomentum(InputHandle_t hController, InputAnalogActionHandle_t hAnalogAction) override;
 	InputMotionData_t GetMotionData(InputHandle_t hController) override;
 
@@ -72,8 +72,8 @@ public:
 	InputHandle_t GetControllerForGamepadIndex(Int32 nIndex) override;
 	Int32 GetGamepadIndexForController(InputHandle_t ulhController) override;
 
-	const pStrA GetStringForXboxOrigin(EXboxOrigin eXboxOrigin) override;
-	const pStrA GetGlyphForXboxOrigin(EXboxOrigin eXboxOrigin) override;
+	pCStrA GetStringForXboxOrigin(EXboxOrigin eXboxOrigin) override;
+	pCStrA GetGlyphForXboxOrigin(EXboxOrigin eXboxOrigin) override;
 
 	EInputActionOrigin GetActionOriginFromXboxOrigin(InputHandle_t hController, EXboxOrigin eXboxOrigin) override;
 	/* k_EInputActionOrigin_None */

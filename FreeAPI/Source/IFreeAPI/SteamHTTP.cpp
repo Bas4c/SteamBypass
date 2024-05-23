@@ -2,7 +2,7 @@
 #include "SteamHTTP.h"
 // -----------------------------------------------------------------------------
 
-HTTPRequestHandle _SteamHTTP_::CreateHTTPRequest(EHTTPMethod eHTTPRequestMethod, const pStrA pchAbsoluteURL) {
+HTTPRequestHandle _SteamHTTP_::CreateHTTPRequest(EHTTPMethod eHTTPRequestMethod, pCStrA pchAbsoluteURL) {
 
 	return k_HTTPRequestHandle_Invalid;
 
@@ -20,13 +20,13 @@ Bool _SteamHTTP_::SetHTTPRequestNetworkActivityTimeout(HTTPRequestHandle hReques
 
 }
 
-Bool _SteamHTTP_::SetHTTPRequestHeaderValue(HTTPRequestHandle hRequest, const pStrA pchHeaderName, const pStrA pchHeaderValue) {
+Bool _SteamHTTP_::SetHTTPRequestHeaderValue(HTTPRequestHandle hRequest, pCStrA pchHeaderName, pCStrA pchHeaderValue) {
 
 	return False;
 
 }
 
-Bool _SteamHTTP_::SetHTTPRequestGetOrPostParameter(HTTPRequestHandle hRequest, const pStrA pchParamName, const pStrA pchParamValue) {
+Bool _SteamHTTP_::SetHTTPRequestGetOrPostParameter(HTTPRequestHandle hRequest, pCStrA pchParamName, pCStrA pchParamValue) {
 
 	return False;
 
@@ -56,13 +56,13 @@ Bool _SteamHTTP_::PrioritizeHTTPRequest(HTTPRequestHandle hRequest) {
 
 }
 
-Bool _SteamHTTP_::GetHTTPResponseHeaderSize(HTTPRequestHandle hRequest, const pStrA pchHeaderName, pUint32 pnResponseHeaderSize) {
+Bool _SteamHTTP_::GetHTTPResponseHeaderSize(HTTPRequestHandle hRequest, pCStrA pchHeaderName, pUint32 pnResponseHeaderSize) {
 
 	return False;
 
 }
 
-Bool _SteamHTTP_::GetHTTPResponseHeaderValue(HTTPRequestHandle hRequest, const pStrA pchHeaderName, pUint8 pnHeaderValue, Uint32 nHeaderValue) {
+Bool _SteamHTTP_::GetHTTPResponseHeaderValue(HTTPRequestHandle hRequest, pCStrA pchHeaderName, pUint8 pnHeaderValue, Uint32 nHeaderValue) {
 
 	return False;
 
@@ -98,7 +98,7 @@ Bool _SteamHTTP_::GetHTTPDownloadProgressPct(HTTPRequestHandle hRequest, pFloat 
 
 }
 
-Bool _SteamHTTP_::SetHTTPRequestRawPostBody(HTTPRequestHandle hRequest, const pStrA pchContentType, pUint8 pbBody, Uint32 cbBody) {
+Bool _SteamHTTP_::SetHTTPRequestRawPostBody(HTTPRequestHandle hRequest, pCStrA pchContentType, pUint8 pbBody, Uint32 cbBody) {
 
 	return False;
 
@@ -116,7 +116,7 @@ Bool _SteamHTTP_::ReleaseCookieContainer(HTTPCookieContainerHandle hCookieContai
 
 }
 
-Bool _SteamHTTP_::SetCookie(HTTPCookieContainerHandle hCookieContainer, const pStrA pchHost, const pStrA pchUrl, const pStrA pchCookie) {
+Bool _SteamHTTP_::SetCookie(HTTPCookieContainerHandle hCookieContainer, pCStrA pchHost, pCStrA pchUrl, pCStrA pchCookie) {
 
 	return False;
 
@@ -128,7 +128,7 @@ Bool _SteamHTTP_::SetHTTPRequestCookieContainer(HTTPRequestHandle hRequest, HTTP
 
 }
 
-Bool _SteamHTTP_::SetHTTPRequestUserAgentInfo(HTTPRequestHandle hRequest, const pStrA pchUserAgentInfo) {
+Bool _SteamHTTP_::SetHTTPRequestUserAgentInfo(HTTPRequestHandle hRequest, pCStrA pchUserAgentInfo) {
 
 	return False;
 

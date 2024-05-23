@@ -12,7 +12,7 @@ _SteamRemoteStorage_::_SteamRemoteStorage_() {
 
 }
 
-Bool _SteamRemoteStorage_::FileWrite(const pStrA pchFile, const pVoid pvData, Int32 cbData) {
+Bool _SteamRemoteStorage_::FileWrite(pCStrA pchFile, const pVoid pvData, Int32 cbData) {
 
 	Bool bSuccess = False;
 
@@ -60,7 +60,7 @@ Bool _SteamRemoteStorage_::FileWrite(const pStrA pchFile, const pVoid pvData, In
 
 }
 
-Int32 _SteamRemoteStorage_::FileRead(const pStrA pchFile, pVoid pvData, Int32 cbDataToRead) {
+Int32 _SteamRemoteStorage_::FileRead(pCStrA pchFile, pVoid pvData, Int32 cbDataToRead) {
 
 	Bool bSuccess = False;
 
@@ -104,13 +104,13 @@ Int32 _SteamRemoteStorage_::FileRead(const pStrA pchFile, pVoid pvData, Int32 cb
 
 }
 
-SteamAPICall_t _SteamRemoteStorage_::FileWriteAsync(const pStrA pchFile, const pVoid pvData, Uint32 cbData) {
+SteamAPICall_t _SteamRemoteStorage_::FileWriteAsync(pCStrA pchFile, const pVoid pvData, Uint32 cbData) {
 
 	return k_SteamAPICall_Invalid;
 
 }
 
-SteamAPICall_t _SteamRemoteStorage_::FileReadAsync(const pStrA pchFile, Uint32 nOffset, Uint32 cbToRead) {
+SteamAPICall_t _SteamRemoteStorage_::FileReadAsync(pCStrA pchFile, Uint32 nOffset, Uint32 cbToRead) {
 
 	return k_SteamAPICall_Invalid;
 
@@ -122,13 +122,13 @@ Bool _SteamRemoteStorage_::FileReadAsyncComplete(SteamAPICall_t hReadCall, pVoid
 
 }
 
-Bool _SteamRemoteStorage_::FileForget(const pStrA pchFile) {
+Bool _SteamRemoteStorage_::FileForget(pCStrA pchFile) {
 
 	return True;
 
 }
 
-Bool _SteamRemoteStorage_::FileDelete(const pStrA pchFile) {
+Bool _SteamRemoteStorage_::FileDelete(pCStrA pchFile) {
 
 	Bool bSuccess = False;
 
@@ -156,19 +156,19 @@ Bool _SteamRemoteStorage_::FileDelete(const pStrA pchFile) {
 
 }
 
-SteamAPICall_t _SteamRemoteStorage_::FileShare(const pStrA pchFile) {
+SteamAPICall_t _SteamRemoteStorage_::FileShare(pCStrA pchFile) {
 
 	return k_SteamAPICall_Invalid;
 
 }
 
-Bool _SteamRemoteStorage_::SetSyncPlatforms(const pStrA pchFile, ERemoteStoragePlatform eRemoteStoragePlatform) {
+Bool _SteamRemoteStorage_::SetSyncPlatforms(pCStrA pchFile, ERemoteStoragePlatform eRemoteStoragePlatform) {
 
 	return True;
 
 }
 
-UGCFileWriteStreamHandle_t _SteamRemoteStorage_::FileWriteStreamOpen(const pStrA pchFile) {
+UGCFileWriteStreamHandle_t _SteamRemoteStorage_::FileWriteStreamOpen(pCStrA pchFile) {
 
 	UGCFileWriteStreamHandle_t UGCFileWriteStreamHandle = k_UGCFileStreamHandle_Invalid;
 
@@ -284,7 +284,7 @@ Bool _SteamRemoteStorage_::FileWriteStreamCancel(UGCFileWriteStreamHandle_t hWri
 
 }
 
-Bool _SteamRemoteStorage_::FileExists_(const pStrA pchFile) {
+Bool _SteamRemoteStorage_::FileExists_(pCStrA pchFile) {
 
 	Bool bSuccess = False;
 
@@ -308,13 +308,13 @@ Bool _SteamRemoteStorage_::FileExists_(const pStrA pchFile) {
 
 }
 
-Bool _SteamRemoteStorage_::FilePersisted(const pStrA pchFile) {
+Bool _SteamRemoteStorage_::FilePersisted(pCStrA pchFile) {
 
 	return True;
 
 }
 
-Int32 _SteamRemoteStorage_::GetFileSize(const pStrA pchFile) {
+Int32 _SteamRemoteStorage_::GetFileSize(pCStrA pchFile) {
 
 	Int32 cbFileSize = 0;
 
@@ -360,7 +360,7 @@ Int32 _SteamRemoteStorage_::GetFileSize(const pStrA pchFile) {
 
 }
 
-Int64 _SteamRemoteStorage_::GetFileTimestamp(const pStrA pchFile) {
+Int64 _SteamRemoteStorage_::GetFileTimestamp(pCStrA pchFile) {
 
 	Int64 cbFileTimeStamp = 0LL;
 
@@ -403,7 +403,7 @@ Int64 _SteamRemoteStorage_::GetFileTimestamp(const pStrA pchFile) {
 
 }
 
-ERemoteStoragePlatform _SteamRemoteStorage_::GetSyncPlatforms(const pStrA pchFile) {
+ERemoteStoragePlatform _SteamRemoteStorage_::GetSyncPlatforms(pCStrA pchFile) {
 
 	return k_ERemoteStoragePlatformWindows;
 
@@ -415,9 +415,9 @@ Int32 _SteamRemoteStorage_::GetFileCount() {
 
 }
 
-const pStrA _SteamRemoteStorage_::GetFileNameAndSize(Int32 iFile, pInt32 pnFileSizeInBytes) {
+pCStrA _SteamRemoteStorage_::GetFileNameAndSize(Int32 iFile, pInt32 pnFileSizeInBytes) {
 
-	return (const pStrA)(
+	return (pCStrA)(
 		""
 	);
 
@@ -491,7 +491,7 @@ UGCHandle_t _SteamRemoteStorage_::GetCachedUGCHandle(Int32 iCachedContent) {
 
 }
 
-SteamAPICall_t _SteamRemoteStorage_::PublishWorkshopFile(const pStrA pchFile, const pStrA pchPreviewFile, AppId_t nConsumerAppId, const pStrA pchTitle, const pStrA pchDescription, ERemoteStoragePublishedFileVisibility eRemoteStoragePublishedFileVisibility, pSteamParamStringArray_t pTags, EWorkshopFileType eWorkshopFileType) {
+SteamAPICall_t _SteamRemoteStorage_::PublishWorkshopFile(pCStrA pchFile, pCStrA pchPreviewFile, AppId_t nConsumerAppId, pCStrA pchTitle, pCStrA pchDescription, ERemoteStoragePublishedFileVisibility eRemoteStoragePublishedFileVisibility, pSteamParamStringArray_t pTags, EWorkshopFileType eWorkshopFileType) {
 
 	return k_SteamAPICall_Invalid;
 
@@ -503,25 +503,25 @@ PublishedFileUpdateHandle_t _SteamRemoteStorage_::CreatePublishedFileUpdateReque
 
 }
 
-Bool _SteamRemoteStorage_::UpdatePublishedFileFile(PublishedFileUpdateHandle_t hPublishedFileUpdate, const pStrA pchFile) {
+Bool _SteamRemoteStorage_::UpdatePublishedFileFile(PublishedFileUpdateHandle_t hPublishedFileUpdate, pCStrA pchFile) {
 
 	return False;
 
 }
 
-Bool _SteamRemoteStorage_::UpdatePublishedFilePreviewFile(PublishedFileUpdateHandle_t hPublishedFileUpdate, const pStrA pchPreviewFile) {
+Bool _SteamRemoteStorage_::UpdatePublishedFilePreviewFile(PublishedFileUpdateHandle_t hPublishedFileUpdate, pCStrA pchPreviewFile) {
 
 	return False;
 
 }
 
-Bool _SteamRemoteStorage_::UpdatePublishedFileTitle(PublishedFileUpdateHandle_t hPublishedFileUpdate, const pStrA pchTitle) {
+Bool _SteamRemoteStorage_::UpdatePublishedFileTitle(PublishedFileUpdateHandle_t hPublishedFileUpdate, pCStrA pchTitle) {
 
 	return False;
 
 }
 
-Bool _SteamRemoteStorage_::UpdatePublishedFileDescription(PublishedFileUpdateHandle_t hPublishedFileUpdate, const pStrA pchDescription) {
+Bool _SteamRemoteStorage_::UpdatePublishedFileDescription(PublishedFileUpdateHandle_t hPublishedFileUpdate, pCStrA pchDescription) {
 
 	return False;
 
@@ -581,7 +581,7 @@ SteamAPICall_t _SteamRemoteStorage_::UnsubscribePublishedFile(PublishedFileId_t 
 
 }
 
-Bool _SteamRemoteStorage_::UpdatePublishedFileSetChangeDescription(PublishedFileUpdateHandle_t hPublishedFileUpdate, const pStrA pchChangeDescription) {
+Bool _SteamRemoteStorage_::UpdatePublishedFileSetChangeDescription(PublishedFileUpdateHandle_t hPublishedFileUpdate, pCStrA pchChangeDescription) {
 
 	return False;
 
@@ -611,7 +611,7 @@ SteamAPICall_t _SteamRemoteStorage_::EnumerateUserSharedWorkshopFiles(SteamId_t 
 
 }
 
-SteamAPICall_t _SteamRemoteStorage_::PublishVideo(EWorkshopVideoProvider eVideoProvider, const pStrA pchVideoAccount, const pStrA pchVideoIdentifier, const pStrA pchPreviewFile, AppId_t iConsumerAppId, const pStrA pchTitle, const pStrA pchDescription, ERemoteStoragePublishedFileVisibility eRemoteStoragePublishedFileVisibility, pSteamParamStringArray_t pTags) {
+SteamAPICall_t _SteamRemoteStorage_::PublishVideo(EWorkshopVideoProvider eVideoProvider, pCStrA pchVideoAccount, pCStrA pchVideoIdentifier, pCStrA pchPreviewFile, AppId_t iConsumerAppId, pCStrA pchTitle, pCStrA pchDescription, ERemoteStoragePublishedFileVisibility eRemoteStoragePublishedFileVisibility, pSteamParamStringArray_t pTags) {
 
 	return k_SteamAPICall_Invalid;
 
@@ -635,7 +635,7 @@ SteamAPICall_t _SteamRemoteStorage_::EnumeratePublishedWorkshopFiles(EWorkshopEn
 
 }
 
-SteamAPICall_t _SteamRemoteStorage_::UGCDownloadToLocation(UGCHandle_t hUGC, const pStrA pchLocation, Uint32 nPriority) {
+SteamAPICall_t _SteamRemoteStorage_::UGCDownloadToLocation(UGCHandle_t hUGC, pCStrA pchLocation, Uint32 nPriority) {
 
 	return k_SteamAPICall_Invalid;
 
@@ -647,9 +647,9 @@ Int32 _SteamRemoteStorage_::GetLocalFileChangeCount() {
 
 }
 
-const pStrA _SteamRemoteStorage_::GetLocalFileChange(Int32 iFile, pERemoteStorageLocalFileChange peRemoteStorageLocalFileChange, pERemoteStorageFilePathType peRemoteStorageFilePathType) {
+pCStrA _SteamRemoteStorage_::GetLocalFileChange(Int32 iFile, pERemoteStorageLocalFileChange peRemoteStorageLocalFileChange, pERemoteStorageFilePathType peRemoteStorageFilePathType) {
 
-	return (const pStrA)(
+	return (pCStrA)(
 		""
 	);
 

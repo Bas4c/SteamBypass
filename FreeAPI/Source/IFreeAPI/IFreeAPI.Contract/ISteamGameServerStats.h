@@ -10,16 +10,16 @@ typedef class _ISteamGameServerStats_ {
 public:
 
 	virtual SteamAPICall_t RequestUserStats(SteamId_t SteamIdUser) = 0;
-	virtual Bool GetUserStat(SteamId_t SteamIdUser, const pStrA pchName, /* [out] */ pInt32 pData) = 0;
-	virtual Bool GetUserStat(SteamId_t SteamIdUser, const pStrA pchName, /* [out] */ pFloat pData) = 0;
-	virtual Bool GetUserAchievement(SteamId_t SteamIdUser, const pStrA pchName, /* [out] */ pBool pbAchieved) = 0;
+	virtual Bool GetUserStat(SteamId_t SteamIdUser, pCStrA pchName, /* [out] */ pInt32 pData) = 0;
+	virtual Bool GetUserStat(SteamId_t SteamIdUser, pCStrA pchName, /* [out] */ pFloat pData) = 0;
+	virtual Bool GetUserAchievement(SteamId_t SteamIdUser, pCStrA pchName, /* [out] */ pBool pbAchieved) = 0;
 
-	virtual Bool SetUserStat(SteamId_t SteamIdUser, const pStrA pchName, Int32 Data) = 0;
-	virtual Bool SetUserStat(SteamId_t SteamIdUser, const pStrA pchName, Float Data) = 0;
-	virtual Bool UpdateUserAvgRateStat(SteamId_t SteamIdUser, const pStrA pchName, Float CountThisSession, Double SessionLength) = 0;
+	virtual Bool SetUserStat(SteamId_t SteamIdUser, pCStrA pchName, Int32 Data) = 0;
+	virtual Bool SetUserStat(SteamId_t SteamIdUser, pCStrA pchName, Float Data) = 0;
+	virtual Bool UpdateUserAvgRateStat(SteamId_t SteamIdUser, pCStrA pchName, Float CountThisSession, Double SessionLength) = 0;
 	
-	virtual Bool SetUserAchievement(SteamId_t SteamIdUser, const pStrA pchName) = 0;
-	virtual Bool ClearUserAchievement(SteamId_t SteamIdUser, const pStrA pchName) = 0;
+	virtual Bool SetUserAchievement(SteamId_t SteamIdUser, pCStrA pchName) = 0;
+	virtual Bool ClearUserAchievement(SteamId_t SteamIdUser, pCStrA pchName) = 0;
 
 	virtual SteamAPICall_t StoreUserStats(SteamId_t SteamIdUser) = 0;
 

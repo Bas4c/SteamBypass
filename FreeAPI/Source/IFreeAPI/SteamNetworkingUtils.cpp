@@ -104,7 +104,7 @@ Int32 _SteamNetworkingUtils_::EstimatePingTimeFromLocalHost(const pSteamNetworkP
 
 void _SteamNetworkingUtils_::ConvertPingLocationToString(const pSteamNetworkPingLocation_t pLocation, pStrA pchBuf, Int32 cchBuf) {
 
-	const pStrA pchLocation = (const pStrA)("Local");
+	pCStrA pchLocation = (pCStrA)("Local");
 
 	if (pLocation != NULL && pchBuf != NULL && (SizeOF)(cchBuf) > StrA_Count(pchLocation) + 1U) {
 		StrA_Copy(pchBuf, cchBuf, pchLocation);
@@ -112,7 +112,7 @@ void _SteamNetworkingUtils_::ConvertPingLocationToString(const pSteamNetworkPing
 
 }
 
-Bool _SteamNetworkingUtils_::ParsePingLocationString(const pStrA pchString, pSteamNetworkPingLocation_t pResult) {
+Bool _SteamNetworkingUtils_::ParsePingLocationString(pCStrA pchString, pSteamNetworkPingLocation_t pResult) {
 
 	if (pchString != NULL && pResult != NULL) {
 		
@@ -210,7 +210,7 @@ ESteamNetworkingGetConfigValueResult _SteamNetworkingUtils_::GetConfigValue(ESte
 
 }
 
-const pStrA _SteamNetworkingUtils_::GetConfigValueInfo(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, pESteamNetworkingConfigDataType pDataType, pESteamNetworkingConfigScope pScope) {
+pCStrA _SteamNetworkingUtils_::GetConfigValueInfo(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, pESteamNetworkingConfigDataType pDataType, pESteamNetworkingConfigScope pScope) {
 
 	return NULL;
 
@@ -233,7 +233,7 @@ void _SteamNetworkingUtils_::SteamNetworkingIPAddr_ToString(const pSteamNetworki
 
 		for (SizeOF i = 0; i < sizeof(pAddr->IPv6); i++) {
 
-			const pStrA pchHex = (const pStrA)("0123456789ABCDEF");
+			pCStrA pchHex = (pCStrA)("0123456789ABCDEF");
 
 			CharA chByte[3] = { 0 };
 			chByte[0] = pchHex[((pAddr->IPv6[i] & 0xF0) >> 4)];
@@ -242,13 +242,13 @@ void _SteamNetworkingUtils_::SteamNetworkingIPAddr_ToString(const pSteamNetworki
 
 			StrA_Cat(pchStr, cchStr, chByte);
 			if (i % 2 != 0 && i < 15)
-				StrA_Cat(pchStr, cchStr, (const pStrA)(":"));
+				StrA_Cat(pchStr, cchStr, (pCStrA)(":"));
 
 		}
 
 		if (bWithPort == True) {
 
-			StrA_Cat(pchStr, cchStr, (const pStrA)("%"));
+			StrA_Cat(pchStr, cchStr, (pCStrA)("%"));
 
 			CharA chPort[6] = { 0 };
 
@@ -288,7 +288,7 @@ void _SteamNetworkingUtils_::SteamNetworkingIPAddr_ToString(const pSteamNetworki
 
 }
 
-Bool _SteamNetworkingUtils_::SteamNetworkingIPAddr_ParseString(pSteamNetworkingIPAddr pAddr, const pStrA pchStr) {
+Bool _SteamNetworkingUtils_::SteamNetworkingIPAddr_ParseString(pSteamNetworkingIPAddr pAddr, pCStrA pchStr) {
 
 	if (pAddr != NULL && pchStr != NULL) {
 
@@ -370,7 +370,7 @@ void _SteamNetworkingUtils_::SteamNetworkingIdentity_ToString(const pSteamNetwor
 	}
 }
 
-Bool _SteamNetworkingUtils_::SteamNetworkingIdentity_ParseString(pSteamNetworkingIdentity pIdentity, const pStrA pchStr) {
+Bool _SteamNetworkingUtils_::SteamNetworkingIdentity_ParseString(pSteamNetworkingIdentity pIdentity, pCStrA pchStr) {
 
 	if (pIdentity != NULL && pchStr != NULL) {
 

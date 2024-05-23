@@ -21,7 +21,7 @@ public:
 	Int32 EstimatePingTimeBetweenTwoLocations(const pSteamNetworkPingLocation_t pLocation1, const pSteamNetworkPingLocation_t pLocation2) override;
 	Int32 EstimatePingTimeFromLocalHost(const pSteamNetworkPingLocation_t pRemoteLocation) override;
 	void ConvertPingLocationToString(const pSteamNetworkPingLocation_t pLocation, pStrA pchBuf, Int32 cchBuf) override;
-	Bool ParsePingLocationString(const pStrA pchString, pSteamNetworkPingLocation_t pResult) override;
+	Bool ParsePingLocationString(pCStrA pchString, pSteamNetworkPingLocation_t pResult) override;
 	Bool CheckPingDataUpToDate(Float MaxAgeSeconds) override;
 	Int32 GetPingToDataCenter(SteamNetworkingPOPID PopId, pSteamNetworkingPOPID pViaRelayPoP) override;
 	Int32 GetDirectPingToPOP(SteamNetworkingPOPID PopId) override;
@@ -35,13 +35,13 @@ public:
 
 	Bool SetConfigValue(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, ESteamNetworkingConfigScope eScopeType, pVoid scopeObj, ESteamNetworkingConfigDataType eDataType, const pVoid pArg) override;
 	ESteamNetworkingGetConfigValueResult GetConfigValue(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, ESteamNetworkingConfigScope eScopeType, pVoid scopeObj, pESteamNetworkingConfigDataType pDataType, pVoid pResult, pSizeOF cbResult) override;
-	const pStrA GetConfigValueInfo(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, pESteamNetworkingConfigDataType pDataType, pESteamNetworkingConfigScope pScope) override;
+	pCStrA GetConfigValueInfo(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, pESteamNetworkingConfigDataType pDataType, pESteamNetworkingConfigScope pScope) override;
 	ESteamNetworkingConfigValue IterateGenericEditableConfigValues(ESteamNetworkingConfigValue eCurrent, Bool bEnumerateDevVars) override;
 	void SteamNetworkingIPAddr_ToString(const pSteamNetworkingIPAddr pAddr, pStrA pchStr, SizeOF cchStr, Bool bWithPort) override;
-	Bool SteamNetworkingIPAddr_ParseString(pSteamNetworkingIPAddr pAddr, const pStrA pchStr) override;
+	Bool SteamNetworkingIPAddr_ParseString(pSteamNetworkingIPAddr pAddr, pCStrA pchStr) override;
 	ESteamNetworkingFakeIPType SteamNetworkingIPAddr_GetFakeIPType(const pSteamNetworkingIPAddr pAddr) override;
 	void SteamNetworkingIdentity_ToString(const pSteamNetworkingIdentity pIdentity, pStrA pchStr, SizeOF cchStr) override;
-	Bool SteamNetworkingIdentity_ParseString(pSteamNetworkingIdentity pIdentity, const pStrA pchStr) override;
+	Bool SteamNetworkingIdentity_ParseString(pSteamNetworkingIdentity pIdentity, pCStrA pchStr) override;
 
 	~_SteamNetworkingUtils_() = default;
 

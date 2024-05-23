@@ -9,7 +9,7 @@ Uint32 _SteamAppTicket_::GetAppOwnershipTicketData(
 ) {
 	
 	/* (Fake-Ticket) Signature */
-	const pStrA pchSignature = (const pStrA)("++++");
+	pCStrA pchSignature = (pCStrA)("++++");
 	SizeOF cchSignature = StrA_Count(pchSignature);
 
 	Uint32 cbTicketSize = (Uint32)(sizeof(AppId_t) + sizeof(SteamId_t) +

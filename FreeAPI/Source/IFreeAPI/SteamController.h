@@ -18,7 +18,7 @@ public:
 	_SteamController_(const _SteamController_&) = delete;
 	_SteamController_& operator=(const _SteamController_&) = delete;
 
-	Bool Init(const pStrA pchAbsolutePathToControllerConfigVDF) override;
+	Bool Init(pCStrA pchAbsolutePathToControllerConfigVDF) override;
 	Bool Init() override;
 	Bool Shutdown() override;
 
@@ -30,7 +30,7 @@ public:
 	/* Returns the number of handles written to phController */
 	Int32 GetConnectedControllers(pControllerHandle_t phController) override;
 	
-	ControllerActionSetHandle_t GetActionSetHandle(const pStrA pchActionSetName) override;
+	ControllerActionSetHandle_t GetActionSetHandle(pCStrA pchActionSetName) override;
 	void ActivateActionSet(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet) override;
 	ControllerActionSetHandle_t GetCurrentActionSet(ControllerHandle_t hController) override;
 	void ActivateActionSetLayer(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSetLayer) override;
@@ -40,18 +40,18 @@ public:
 	/* Returns the number of handles written to phActionSetLayer */
 	Int32 GetActiveActionSetLayers(ControllerHandle_t hController, pControllerActionSetHandle_t phActionSetLayer) override;
 	
-	ControllerDigitalActionHandle_t GetDigitalActionHandle(const pStrA pchActionName) override;
+	ControllerDigitalActionHandle_t GetDigitalActionHandle(pCStrA pchActionName) override;
 	ControllerDigitalActionData_t GetDigitalActionData(ControllerHandle_t hController, ControllerDigitalActionHandle_t hDigitalAction) override;
 	/* Returns the number of handles written to peControllerActionOrigin */
 	Int32 GetDigitalActionOrigins(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet, ControllerDigitalActionHandle_t hDigitalAction, pEControllerActionOrigin peControllerActionOrigin) override;
 
-	ControllerAnalogActionHandle_t GetAnalogActionHandle(const pStrA pchActionName) override;
+	ControllerAnalogActionHandle_t GetAnalogActionHandle(pCStrA pchActionName) override;
 	ControllerAnalogActionData_t GetAnalogActionData(ControllerHandle_t hController, ControllerAnalogActionHandle_t hAnalogAction) override;
 	/* Returns the number of handles written to peControllerActionOrigin */
 	Int32 GetAnalogActionOrigins(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet, ControllerAnalogActionHandle_t hAnalogAction, pEControllerActionOrigin peControllerActionOrigin) override;
 
-	const pStrA GetGlyphForActionOrigin(EControllerActionOrigin eControllerActionOrigin) override;
-	const pStrA GetStringForActionOrigin(EControllerActionOrigin eControllerActionOrigin) override;
+	pCStrA GetGlyphForActionOrigin(EControllerActionOrigin eControllerActionOrigin) override;
+	pCStrA GetStringForActionOrigin(EControllerActionOrigin eControllerActionOrigin) override;
 
 	void StopAnalogActionMomentum(ControllerHandle_t hController, ControllerAnalogActionHandle_t hAnalogAction) override;
 	ControllerMotionData_t GetMotionData(ControllerHandle_t hController) override;
@@ -70,8 +70,8 @@ public:
 	/* Returns the associated gamepad index for the specified controller, if emulating a gamepad or -1 if not associated with an Xinput index */
 	Int32 GetGamepadIndexForController(ControllerHandle_t hController) override;
 
-	const pStrA GetStringForXboxOrigin(EXboxOrigin eXboxOrigin) override;
-	const pStrA GetGlyphForXboxOrigin(EXboxOrigin eXboxOrigin) override;
+	pCStrA GetStringForXboxOrigin(EXboxOrigin eXboxOrigin) override;
+	pCStrA GetGlyphForXboxOrigin(EXboxOrigin eXboxOrigin) override;
 
 	EControllerActionOrigin GetActionOriginFromXboxOrigin_(ControllerHandle_t hController, EXboxOrigin eXboxOrigin) override;
 	EControllerActionOrigin TranslateActionOrigin(ESteamInputType eDestinationInputType, EControllerActionOrigin eSourceOrigin) override;
@@ -79,7 +79,7 @@ public:
 	Bool GetControllerBindingRevision(ControllerHandle_t hController, pInt32 pMajor, pInt32 pMinor) override;
 
 	Bool GetControllerState(Uint32 iController, pSteamControllerState_t pSteamControllerState) override;
-	void SetOverrideMode(const pStrA pchMode) override;
+	void SetOverrideMode(pCStrA pchMode) override;
 	Bool ActivateMode(ControllerHandle_t hController, Int32 eMode) override;
 	
 	Int32 GetJoystickForHandle(ControllerHandle_t hController) override;

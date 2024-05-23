@@ -14,7 +14,7 @@ Bool _SteamInput_::Shutdown() {
 
 }
 
-Bool _SteamInput_::SetInputActionManifestFilePath(const pStrA pchInputActionManifestAbsolutePath) {
+Bool _SteamInput_::SetInputActionManifestFilePath(pCStrA pchInputActionManifestAbsolutePath) {
 
 	return True;
 
@@ -56,7 +56,7 @@ void _SteamInput_::EnableActionEventCallbacks(SteamInputActionEventCallback pFun
 
 }
 
-InputActionSetHandle_t _SteamInput_::GetActionSetHandle(const pStrA pszActionSetName) {
+InputActionSetHandle_t _SteamInput_::GetActionSetHandle(pCStrA pszActionSetName) {
 
 	return (InputActionSetHandle_t)(0x0000000000000000);
 
@@ -98,7 +98,7 @@ Int32 _SteamInput_::GetActiveActionSetLayers(InputHandle_t hController, pInputAc
 
 }
 
-InputDigitalActionHandle_t _SteamInput_::GetDigitalActionHandle(const pStrA pszActionName) {
+InputDigitalActionHandle_t _SteamInput_::GetDigitalActionHandle(pCStrA pszActionName) {
 
 	return (InputDigitalActionHandle_t)(0x0000000000000000);
 
@@ -120,15 +120,15 @@ Int32 _SteamInput_::GetDigitalActionOrigins(InputHandle_t hController, InputActi
 
 }
 
-const pStrA _SteamInput_::GetStringForDigitalActionName(InputDigitalActionHandle_t hDigitalAction) {
+pCStrA _SteamInput_::GetStringForDigitalActionName(InputDigitalActionHandle_t hDigitalAction) {
 
-	return (const pStrA)(
+	return (pCStrA)(
 		""
 	);
 
 }
 
-InputAnalogActionHandle_t _SteamInput_::GetAnalogActionHandle(const pStrA pszActionName) {
+InputAnalogActionHandle_t _SteamInput_::GetAnalogActionHandle(pCStrA pszActionName) {
 
 	return (InputAnalogActionHandle_t)(0x0000000000000000);
 
@@ -152,2067 +152,2067 @@ Int32 _SteamInput_::GetAnalogActionOrigins(InputHandle_t hController, InputActio
 
 }
 
-const pStrA _SteamInput_::GetGlyphPNGForActionOrigin(EInputActionOrigin eInputActionOrigin, ESteamInputGlyphSize eSteamInputGlyphSize, Uint32 nFlags) {
+pCStrA _SteamInput_::GetGlyphPNGForActionOrigin(EInputActionOrigin eInputActionOrigin, ESteamInputGlyphSize eSteamInputGlyphSize, Uint32 nFlags) {
 
-	return (const pStrA)(
+	return (pCStrA)(
 		""
 	);
 
 }
 
-const pStrA _SteamInput_::GetGlyphSVGForActionOrigin(EInputActionOrigin eInputActionOrigin, Uint32 nFlags) {
+pCStrA _SteamInput_::GetGlyphSVGForActionOrigin(EInputActionOrigin eInputActionOrigin, Uint32 nFlags) {
 
-	return (const pStrA)(
+	return (pCStrA)(
 		""
 	);
 
 }
 
-const pStrA _SteamInput_::GetGlyphForActionOrigin_Legacy(EInputActionOrigin eInputActionOrigin) {
+pCStrA _SteamInput_::GetGlyphForActionOrigin_Legacy(EInputActionOrigin eInputActionOrigin) {
 
 	switch (eInputActionOrigin) {
 		case k_EInputActionOrigin_SteamController_A:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_A"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_B:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_B"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_X:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_X"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_Y:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_Y"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_LeftBumper:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_LeftBumper"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_RightBumper:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_RightBumper"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_LeftGrip:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_LeftGrip"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_RightGrip:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_RightGrip"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_Start:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_Start"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_Back:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_Back"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_LeftPad_Touch:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_LeftPad_Touch"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_LeftPad_Swipe:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_LeftPad_Swipe"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_LeftPad_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_LeftPad_Click"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_LeftPad_DPadNorth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_LeftPad_DPadNorth"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_LeftPad_DPadSouth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_LeftPad_DPadSouth"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_LeftPad_DPadWest:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_LeftPad_DPadWest"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_LeftPad_DPadEast:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_LeftPad_DPadEast"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_RightPad_Touch:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_RightPad_Touch"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_RightPad_Swipe:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_RightPad_Swipe"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_RightPad_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_RightPad_Click"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_RightPad_DPadNorth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_RightPad_DPadNorth"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_RightPad_DPadSouth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_RightPad_DPadSouth"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_RightPad_DPadWest:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_RightPad_DPadWest"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_RightPad_DPadEast:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_RightPad_DPadEast"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_LeftTrigger_Pull:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_LeftTrigger_Pull"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_LeftTrigger_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_LeftTrigger_Click"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_RightTrigger_Pull:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_RightTrigger_Pull"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_RightTrigger_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_RightTrigger_Click"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_LeftStick_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_LeftStick_Move"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_LeftStick_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_LeftStick_Click"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_LeftStick_DPadNorth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_LeftStick_DPadNorth"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_LeftStick_DPadSouth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_LeftStick_DPadSouth"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_LeftStick_DPadWest:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_LeftStick_DPadWest"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_LeftStick_DPadEast:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_LeftStick_DPadEast"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_Gyro_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_Gyro_Move"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_Gyro_Pitch:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_Gyro_Pitch"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_Gyro_Yaw:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_Gyro_Yaw"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_Gyro_Roll:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_Gyro_Roll"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_Reserved0:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_Reserved0"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_Reserved1:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_Reserved1"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_Reserved2:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_Reserved2"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_Reserved3:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_Reserved3"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_Reserved4:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_Reserved4"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_Reserved5:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_Reserved5"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_Reserved6:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_Reserved6"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_Reserved7:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_Reserved7"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_Reserved8:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_Reserved8"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_Reserved9:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_Reserved9"
 			);
 			break;
 		case k_EInputActionOrigin_SteamController_Reserved10:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamController_Reserved10"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_X:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_X"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_Circle:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_Circle"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_Triangle:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_Triangle"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_Square:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_Square"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_LeftBumper:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_LeftBumper"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_RightBumper:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_RightBumper"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_Options:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_Options"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_Share:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_Share"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_LeftPad_Touch:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_LeftPad_Touch"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_LeftPad_Swipe:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_LeftPad_Swipe"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_LeftPad_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_LeftPad_Click"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_LeftPad_DPadNorth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_LeftPad_DPadNorth"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_LeftPad_DPadSouth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_LeftPad_DPadSouth"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_LeftPad_DPadWest:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_LeftPad_DPadWest"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_LeftPad_DPadEast:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_LeftPad_DPadEast"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_RightPad_Touch:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_RightPad_Touch"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_RightPad_Swipe:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_RightPad_Swipe"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_RightPad_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_RightPad_Click"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_RightPad_DPadNorth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_RightPad_DPadNorth"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_RightPad_DPadSouth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_RightPad_DPadSouth"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_RightPad_DPadWest:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_RightPad_DPadWest"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_RightPad_DPadEast:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_RightPad_DPadEast"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_CenterPad_Touch:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_CenterPad_Touch"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_CenterPad_Swipe:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_CenterPad_Swipe"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_CenterPad_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_CenterPad_Click"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_CenterPad_DPadNorth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_CenterPad_DPadNorth"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_CenterPad_DPadSouth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_CenterPad_DPadSouth"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_CenterPad_DPadWest:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_CenterPad_DPadWest"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_CenterPad_DPadEast:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_CenterPad_DPadEast"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_LeftTrigger_Pull:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_LeftTrigger_Pull"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_LeftTrigger_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_LeftTrigger_Click"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_RightTrigger_Pull:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_RightTrigger_Pull"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_RightTrigger_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_RightTrigger_Click"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_LeftStick_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_LeftStick_Move"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_LeftStick_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_LeftStick_Click"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_LeftStick_DPadNorth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_LeftStick_DPadNorth"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_LeftStick_DPadSouth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_LeftStick_DPadSouth"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_LeftStick_DPadWest:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_LeftStick_DPadWest"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_LeftStick_DPadEast:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_LeftStick_DPadEast"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_RightStick_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_RightStick_Move"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_RightStick_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_RightStick_Click"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_RightStick_DPadNorth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_RightStick_DPadNorth"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_RightStick_DPadSouth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_RightStick_DPadSouth"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_RightStick_DPadWest:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_RightStick_DPadWest"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_RightStick_DPadEast:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_RightStick_DPadEast"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_DPad_North:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_DPad_North"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_DPad_South:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_DPad_South"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_DPad_West:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_DPad_West"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_DPad_East:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_DPad_East"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_Gyro_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_Gyro_Move"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_Gyro_Pitch:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_Gyro_Pitch"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_Gyro_Yaw:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_Gyro_Yaw"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_Gyro_Roll:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_Gyro_Roll"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_DPad_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_DPad_Move"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_Reserved1:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_Reserved1"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_Reserved2:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_Reserved2"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_Reserved3:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_Reserved3"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_Reserved4:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_Reserved4"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_Reserved5:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_Reserved5"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_Reserved6:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_Reserved6"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_Reserved7:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_Reserved7"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_Reserved8:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_Reserved8"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_Reserved9:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_Reserved9"
 			);
 			break;
 		case k_EInputActionOrigin_PS4_Reserved10:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS4_Reserved10"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_A:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_A"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_B:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_B"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_X:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_X"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_Y:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_Y"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_LeftBumper:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_LeftBumper"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_RightBumper:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_RightBumper"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_Menu:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_Menu"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_View:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_View"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_LeftTrigger_Pull:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_LeftTrigger_Pull"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_LeftTrigger_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_LeftTrigger_Click"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_RightTrigger_Pull:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_RightTrigger_Pull"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_RightTrigger_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_RightTrigger_Click"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_LeftStick_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_LeftStick_Move"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_LeftStick_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_LeftStick_Click"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_LeftStick_DPadNorth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_LeftStick_DPadNorth"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_LeftStick_DPadSouth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_LeftStick_DPadSouth"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_LeftStick_DPadWest:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_LeftStick_DPadWest"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_LeftStick_DPadEast:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_LeftStick_DPadEast"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_RightStick_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_RightStick_Move"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_RightStick_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_RightStick_Click"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_RightStick_DPadNorth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_RightStick_DPadNorth"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_RightStick_DPadSouth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_RightStick_DPadSouth"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_RightStick_DPadWest:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_RightStick_DPadWest"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_RightStick_DPadEast:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_RightStick_DPadEast"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_DPad_North:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_DPad_North"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_DPad_South:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_DPad_South"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_DPad_West:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_DPad_West"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_DPad_East:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_DPad_East"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_DPad_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_DPad_Move"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_LeftGrip_Lower:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_LeftGrip_Lower"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_LeftGrip_Upper:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_LeftGrip_Upper"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_RightGrip_Lower:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_RightGrip_Lower"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_RightGrip_Upper:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_RightGrip_Upper"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_Share:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_Share"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_Reserved6:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_Reserved6"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_Reserved7:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_Reserved7"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_Reserved8:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_Reserved8"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_Reserved9:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_Reserved9"
 			);
 			break;
 		case k_EInputActionOrigin_XBoxOne_Reserved10:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBoxOne_Reserved10"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_A:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_A"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_B:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_B"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_X:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_X"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_Y:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_Y"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_LeftBumper:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_LeftBumper"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_RightBumper:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_RightBumper"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_Start:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_Start"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_Back:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_Back"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_LeftTrigger_Pull:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_LeftTrigger_Pull"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_LeftTrigger_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_LeftTrigger_Click"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_RightTrigger_Pull:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_RightTrigger_Pull"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_RightTrigger_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_RightTrigger_Click"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_LeftStick_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_LeftStick_Move"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_LeftStick_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_LeftStick_Click"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_LeftStick_DPadNorth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_LeftStick_DPadNorth"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_LeftStick_DPadSouth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_LeftStick_DPadSouth"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_LeftStick_DPadWest:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_LeftStick_DPadWest"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_LeftStick_DPadEast:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_LeftStick_DPadEast"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_RightStick_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_RightStick_Move"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_RightStick_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_RightStick_Click"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_RightStick_DPadNorth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_RightStick_DPadNorth"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_RightStick_DPadSouth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_RightStick_DPadSouth"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_RightStick_DPadWest:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_RightStick_DPadWest"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_RightStick_DPadEast:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_RightStick_DPadEast"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_DPad_North:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_DPad_North"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_DPad_South:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_DPad_South"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_DPad_West:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_DPad_West"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_DPad_East:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_DPad_East"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_DPad_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_DPad_Move"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_Reserved1:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_Reserved1"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_Reserved2:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_Reserved2"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_Reserved3:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_Reserved3"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_Reserved4:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_Reserved4"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_Reserved5:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_Reserved5"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_Reserved6:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_Reserved6"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_Reserved7:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_Reserved7"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_Reserved8:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_Reserved8"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_Reserved9:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_Reserved9"
 			);
 			break;
 		case k_EInputActionOrigin_XBox360_Reserved10:
-			return (const pStrA)(
+			return (pCStrA)(
 				"XBox360_Reserved10"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_A:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_A"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_B:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_B"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_X:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_X"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_Y:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_Y"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_LeftBumper:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_LeftBumper"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_RightBumper:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_RightBumper"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_Plus:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_Plus"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_Minus:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_Minus"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_Capture:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_Capture"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_LeftTrigger_Pull:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_LeftTrigger_Pull"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_LeftTrigger_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_LeftTrigger_Click"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_RightTrigger_Pull:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_RightTrigger_Pull"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_RightTrigger_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_RightTrigger_Click"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_LeftStick_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_LeftStick_Move"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_LeftStick_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_LeftStick_Click"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_LeftStick_DPadNorth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_LeftStick_DPadNorth"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_LeftStick_DPadSouth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_LeftStick_DPadSouth"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_LeftStick_DPadWest:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_LeftStick_DPadWest"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_LeftStick_DPadEast:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_LeftStick_DPadEast"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_RightStick_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_RightStick_Move"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_RightStick_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_RightStick_Click"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_RightStick_DPadNorth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_RightStick_DPadNorth"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_RightStick_DPadSouth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_RightStick_DPadSouth"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_RightStick_DPadWest:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_RightStick_DPadWest"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_RightStick_DPadEast:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_RightStick_DPadEast"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_DPad_North:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_DPad_North"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_DPad_South:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_DPad_South"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_DPad_West:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_DPad_West"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_DPad_East:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_DPad_East"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_ProGyro_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_ProGyro_Move"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_ProGyro_Pitch:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_ProGyro_Pitch"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_ProGyro_Yaw:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_ProGyro_Yaw"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_ProGyro_Roll:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_ProGyro_Roll"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_DPad_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_DPad_Move"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_Reserved1:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_Reserved1"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_Reserved2:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_Reserved2"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_Reserved3:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_Reserved3"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_Reserved4:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_Reserved4"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_Reserved5:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_Reserved5"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_Reserved6:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_Reserved6"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_Reserved7:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_Reserved7"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_Reserved8:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_Reserved8"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_Reserved9:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_Reserved9"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_Reserved10:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_Reserved10"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_RightGyro_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_RightGyro_Move"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_RightGyro_Pitch:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_RightGyro_Pitch"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_RightGyro_Yaw:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_RightGyro_Yaw"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_RightGyro_Roll:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_RightGyro_Roll"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_LeftGyro_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_LeftGyro_Move"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_LeftGyro_Pitch:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_LeftGyro_Pitch"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_LeftGyro_Yaw:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_LeftGyro_Yaw"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_LeftGyro_Roll:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_LeftGyro_Roll"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_LeftGrip_Lower:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_LeftGrip_Lower"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_LeftGrip_Upper:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_LeftGrip_Upper"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_RightGrip_Lower:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_RightGrip_Lower"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_RightGrip_Upper:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_RightGrip_Upper"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_JoyConButton_N:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_JoyConButton_N"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_JoyConButton_E:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_JoyConButton_E"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_JoyConButton_S:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_JoyConButton_S"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_JoyConButton_W:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_JoyConButton_W"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_Reserved15:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_Reserved15"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_Reserved16:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_Reserved16"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_Reserved17:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_Reserved17"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_Reserved18:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_Reserved18"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_Reserved19:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_Reserved19"
 			);
 			break;
 		case k_EInputActionOrigin_Switch_Reserved20:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Switch_Reserved20"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_X:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_X"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_Circle:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_Circle"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_Triangle:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_Triangle"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_Square:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_Square"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_LeftBumper:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_LeftBumper"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_RightBumper:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_RightBumper"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_Option:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_Option"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_Create:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_Create"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_Mute:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_Mute"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_LeftPad_Touch:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_LeftPad_Touch"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_LeftPad_Swipe:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_LeftPad_Swipe"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_LeftPad_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_LeftPad_Click"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_LeftPad_DPadNorth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_LeftPad_DPadNorth"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_LeftPad_DPadSouth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_LeftPad_DPadSouth"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_LeftPad_DPadWest:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_LeftPad_DPadWest"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_LeftPad_DPadEast:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_LeftPad_DPadEast"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_RightPad_Touch:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_RightPad_Touch"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_RightPad_Swipe:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_RightPad_Swipe"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_RightPad_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_RightPad_Click"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_RightPad_DPadNorth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_RightPad_DPadNorth"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_RightPad_DPadSouth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_RightPad_DPadSouth"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_RightPad_DPadWest:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_RightPad_DPadWest"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_RightPad_DPadEast:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_RightPad_DPadEast"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_CenterPad_Touch:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_CenterPad_Touch"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_CenterPad_Swipe:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_CenterPad_Swipe"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_CenterPad_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_CenterPad_Click"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_CenterPad_DPadNorth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_CenterPad_DPadNorth"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_CenterPad_DPadSouth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_CenterPad_DPadSouth"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_CenterPad_DPadWest:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_CenterPad_DPadWest"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_CenterPad_DPadEast:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_CenterPad_DPadEast"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_LeftTrigger_Pull:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_LeftTrigger_Pull"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_LeftTrigger_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_LeftTrigger_Click"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_RightTrigger_Pull:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_RightTrigger_Pull"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_RightTrigger_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_RightTrigger_Click"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_LeftStick_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_LeftStick_Move"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_LeftStick_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_LeftStick_Click"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_LeftStick_DPadNorth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_LeftStick_DPadNorth"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_LeftStick_DPadSouth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_LeftStick_DPadSouth"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_LeftStick_DPadWest:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_LeftStick_DPadWest"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_LeftStick_DPadEast:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_LeftStick_DPadEast"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_RightStick_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_RightStick_Move"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_RightStick_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_RightStick_Click"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_RightStick_DPadNorth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_RightStick_DPadNorth"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_RightStick_DPadSouth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_RightStick_DPadSouth"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_RightStick_DPadWest:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_RightStick_DPadWest"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_RightStick_DPadEast:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_RightStick_DPadEast"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_DPad_North:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_DPad_North"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_DPad_South:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_DPad_South"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_DPad_West:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_DPad_West"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_DPad_East:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_DPad_East"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_Gyro_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_Gyro_Move"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_Gyro_Pitch:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_Gyro_Pitch"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_Gyro_Yaw:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_Gyro_Yaw"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_Gyro_Roll:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_Gyro_Roll"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_DPad_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_DPad_Move"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_LeftGrip:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_LeftGrip"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_RightGrip:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_RightGrip"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_LeftFn:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_LeftFn"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_RightFn:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_RightFn"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_Reserved5:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_Reserved5"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_Reserved6:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_Reserved6"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_Reserved7:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_Reserved7"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_Reserved8:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_Reserved8"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_Reserved9:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_Reserved9"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_Reserved10:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_Reserved10"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_Reserved11:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_Reserved11"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_Reserved12:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_Reserved12"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_Reserved13:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_Reserved13"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_Reserved14:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_Reserved14"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_Reserved15:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_Reserved15"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_Reserved16:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_Reserved16"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_Reserved17:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_Reserved17"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_Reserved18:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_Reserved18"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_Reserved19:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_Reserved19"
 			);
 			break;
 		case k_EInputActionOrigin_PS5_Reserved20:
-			return (const pStrA)(
+			return (pCStrA)(
 				"PS5_Reserved20"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_A:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_A"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_B:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_B"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_X:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_X"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_Y:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_Y"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_L1:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_L1"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_R1:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_R1"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_Menu:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_Menu"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_View:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_View"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_LeftPad_Touch:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_LeftPad_Touch"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_LeftPad_Swipe:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_LeftPad_Swipe"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_LeftPad_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_LeftPad_Click"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_LeftPad_DPadNorth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_LeftPad_DPadNorth"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_LeftPad_DPadSouth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_LeftPad_DPadSouth"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_LeftPad_DPadWest:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_LeftPad_DPadWest"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_LeftPad_DPadEast:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_LeftPad_DPadEast"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_RightPad_Touch:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_RightPad_Touch"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_RightPad_Swipe:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_RightPad_Swipe"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_RightPad_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_RightPad_Click"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_RightPad_DPadNorth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_RightPad_DPadNorth"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_RightPad_DPadSouth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_RightPad_DPadSouth"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_RightPad_DPadWest:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_RightPad_DPadWest"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_RightPad_DPadEast:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_RightPad_DPadEast"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_L2_SoftPull:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_L2_SoftPull"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_L2:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_L2"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_R2_SoftPull:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_R2_SoftPull"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_R2:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_R2"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_LeftStick_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_LeftStick_Move"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_L3:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_L3"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_LeftStick_DPadNorth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_LeftStick_DPadNorth"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_LeftStick_DPadSouth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_LeftStick_DPadSouth"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_LeftStick_DPadWest:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_LeftStick_DPadWest"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_LeftStick_DPadEast:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_LeftStick_DPadEast"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_LeftStick_Touch:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_LeftStick_Touch"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_RightStick_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_RightStick_Move"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_R3:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_R3"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_RightStick_DPadNorth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_RightStick_DPadNorth"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_RightStick_DPadSouth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_RightStick_DPadSouth"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_RightStick_DPadWest:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_RightStick_DPadWest"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_RightStick_DPadEast:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_RightStick_DPadEast"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_RightStick_Touch:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_RightStick_Touch"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_L4:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_L4"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_R4:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_R4"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_L5:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_L5"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_R5:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_R5"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_DPad_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_DPad_Move"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_DPad_North:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_DPad_North"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_DPad_South:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_DPad_South"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_DPad_West:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_DPad_West"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_DPad_East:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_DPad_East"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_Gyro_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_Gyro_Move"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_Gyro_Pitch:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_Gyro_Pitch"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_Gyro_Yaw:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_Gyro_Yaw"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_Gyro_Roll:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_Gyro_Roll"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_Reserved1:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_Reserved1"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_Reserved2:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_Reserved2"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_Reserved3:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_Reserved3"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_Reserved4:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_Reserved4"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_Reserved5:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_Reserved5"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_Reserved6:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_Reserved6"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_Reserved7:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_Reserved7"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_Reserved8:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_Reserved8"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_Reserved9:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_Reserved9"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_Reserved10:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_Reserved10"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_Reserved11:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_Reserved11"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_Reserved12:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_Reserved12"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_Reserved13:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_Reserved13"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_Reserved14:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_Reserved14"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_Reserved15:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_Reserved15"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_Reserved16:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_Reserved16"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_Reserved17:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_Reserved17"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_Reserved18:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_Reserved18"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_Reserved19:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_Reserved19"
 			);
 			break;
 		case k_EInputActionOrigin_SteamDeck_Reserved20:
-			return (const pStrA)(
+			return (pCStrA)(
 				"SteamDeck_Reserved20"
 			);
 			break;
 	}
 
-	return (const pStrA)(
+	return (pCStrA)(
 		""
 	);
 
 }
 
-const pStrA _SteamInput_::GetStringForActionOrigin(EInputActionOrigin eInputActionOrigin) {
+pCStrA _SteamInput_::GetStringForActionOrigin(EInputActionOrigin eInputActionOrigin) {
 
 	return this->GetGlyphForActionOrigin_Legacy(eInputActionOrigin);
 
 }
 
-const pStrA _SteamInput_::GetStringForAnalogActionName(InputAnalogActionHandle_t hDigitalAction) {
+pCStrA _SteamInput_::GetStringForAnalogActionName(InputAnalogActionHandle_t hDigitalAction) {
 
-	return (const pStrA)(
+	return (pCStrA)(
 		""
 	);
 
@@ -2305,158 +2305,158 @@ Int32 _SteamInput_::GetGamepadIndexForController(InputHandle_t ulhController) {
 
 }
 
-const pStrA _SteamInput_::GetStringForXboxOrigin(EXboxOrigin eXboxOrigin) {
+pCStrA _SteamInput_::GetStringForXboxOrigin(EXboxOrigin eXboxOrigin) {
 
 	return this->GetGlyphForXboxOrigin(eXboxOrigin);
 
 }
 
-const pStrA _SteamInput_::GetGlyphForXboxOrigin(EXboxOrigin eXboxOrigin) {
+pCStrA _SteamInput_::GetGlyphForXboxOrigin(EXboxOrigin eXboxOrigin) {
 
 	switch (eXboxOrigin) {
 		case k_EXboxOrigin_A:
-			return (const pStrA)(
+			return (pCStrA)(
 				"A"
 			);
 			break;
 		case k_EXboxOrigin_B:
-			return (const pStrA)(
+			return (pCStrA)(
 				"B"
 			);
 			break;
 		case k_EXboxOrigin_X:
-			return (const pStrA)(
+			return (pCStrA)(
 				"X"
 			);
 			break;
 		case k_EXboxOrigin_Y:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Y"
 			);
 			break;
 		case k_EXboxOrigin_LeftBumper:
-			return (const pStrA)(
+			return (pCStrA)(
 				"LeftBumper"
 			);
 			break;
 		case k_EXboxOrigin_RightBumper:
-			return (const pStrA)(
+			return (pCStrA)(
 				"RightBumper"
 			);
 			break;
 		case k_EXboxOrigin_Menu:
-			return (const pStrA)(
+			return (pCStrA)(
 				"Menu"
 			);
 			break;
 		case k_EXboxOrigin_View:
-			return (const pStrA)(
+			return (pCStrA)(
 				"View"
 			);
 			break;
 		case k_EXboxOrigin_LeftTrigger_Pull:
-			return (const pStrA)(
+			return (pCStrA)(
 				"LeftTrigger_Pull"
 			);
 			break;
 		case k_EXboxOrigin_LeftTrigger_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"LeftTrigger_Click"
 			);
 			break;
 		case k_EXboxOrigin_RightTrigger_Pull:
-			return (const pStrA)(
+			return (pCStrA)(
 				"RightTrigger_Pull"
 			);
 			break;
 		case k_EXboxOrigin_RightTrigger_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"RightTrigger_Click"
 			);
 			break;
 		case k_EXboxOrigin_LeftStick_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"LeftStick_Move"
 			);
 			break;
 		case k_EXboxOrigin_LeftStick_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"LeftStick_Click"
 			);
 			break;
 		case k_EXboxOrigin_LeftStick_DPadNorth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"LeftStick_DPadNorth"
 			);
 			break;
 		case k_EXboxOrigin_LeftStick_DPadSouth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"LeftStick_DPadSouth"
 			);
 			break;
 		case k_EXboxOrigin_LeftStick_DPadWest:
-			return (const pStrA)(
+			return (pCStrA)(
 				"LeftStick_DPadWest"
 			);
 			break;
 		case k_EXboxOrigin_LeftStick_DPadEast:
-			return (const pStrA)(
+			return (pCStrA)(
 				"LeftStick_DPadEast"
 			);
 			break;
 		case k_EXboxOrigin_RightStick_Move:
-			return (const pStrA)(
+			return (pCStrA)(
 				"RightStick_Move"
 			);
 			break;
 		case k_EXboxOrigin_RightStick_Click:
-			return (const pStrA)(
+			return (pCStrA)(
 				"RightStick_Click"
 			);
 			break;
 		case k_EXboxOrigin_RightStick_DPadNorth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"RightStick_DPadNorth"
 			);
 			break;
 		case k_EXboxOrigin_RightStick_DPadSouth:
-			return (const pStrA)(
+			return (pCStrA)(
 				"RightStick_DPadSouth"
 			);
 			break;
 		case k_EXboxOrigin_RightStick_DPadWest:
-			return (const pStrA)(
+			return (pCStrA)(
 				"RightStick_DPadWest"
 			);
 			break;
 		case k_EXboxOrigin_RightStick_DPadEast:
-			return (const pStrA)(
+			return (pCStrA)(
 				"RightStick_DPadEast"
 			);
 			break;
 		case k_EXboxOrigin_DPad_North:
-			return (const pStrA)(
+			return (pCStrA)(
 				"DPad_North"
 			);
 			break;
 		case k_EXboxOrigin_DPad_South:
-			return (const pStrA)(
+			return (pCStrA)(
 				"DPad_South"
 			);
 			break;
 		case k_EXboxOrigin_DPad_West:
-			return (const pStrA)(
+			return (pCStrA)(
 				"DPad_West"
 			);
 			break;
 		case k_EXboxOrigin_DPad_East:
-			return (const pStrA)(
+			return (pCStrA)(
 				"DPad_East"
 			);
 			break;
 	}
 
-	return (const pStrA)(
+	return (pCStrA)(
 		""
 	);
 

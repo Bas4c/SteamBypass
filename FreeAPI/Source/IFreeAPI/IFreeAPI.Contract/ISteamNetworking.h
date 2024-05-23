@@ -71,6 +71,124 @@ typedef enum _ESNetSocketConnectionType_ {
 
 } ESNetSocketConnectionType, *pESNetSocketConnectionType;
 
+typedef class _ISteamNetworking001_ {
+public:
+
+	virtual SNetListenSocket_t CreateListenSocket(Int32 nVirtualP2PPort, SteamIPAddress_t nIP, Uint16 Port, Bool bAllowUseOfPacketRelay) = 0;
+	virtual SNetSocket_t CreateP2PConnectionSocket(SteamId_t SteamIdTarget, Int32 nVirtualPort, Int32 nTimeoutSeconds, Bool bAllowUseOfPacketRelay) = 0;
+	virtual SNetSocket_t CreateConnectionSocket(SteamIPAddress_t nIP, Uint16 Port, Int32 nTimeoutSeconds) = 0;
+	virtual Bool DestroySocket(SNetSocket_t hSocket, Bool bNotifyRemoteEnd) = 0;
+	virtual Bool DestroyListenSocket(SNetListenSocket_t hSocket, Bool bNotifyRemoteEnd) = 0;
+	virtual Bool SendDataOnSocket(SNetSocket_t hSocket, pVoid pbData, Uint32 cbData, Bool bReliable) = 0;
+	virtual Bool IsDataAvailableOnSocket(SNetSocket_t hSocket, pUint32 pcbMsgSize) = 0;
+	virtual Bool RetrieveDataFromSocket(SNetSocket_t hSocket, pVoid pbDest, Uint32 cbDest, pUint32 pcbMsgSize) = 0;
+	virtual Bool IsDataAvailable(SNetListenSocket_t hListenSocket, pUint32 pcbMsgSize, pSNetSocket_t phSocket) = 0;
+	virtual Bool RetrieveData(SNetListenSocket_t hListenSocket, pVoid pbDest, Uint32 cbDest, pUint32 pcbMsgSize, pSNetSocket_t phSocket) = 0;
+	virtual Bool GetSocketInfo(SNetSocket_t hSocket, pSteamId_t pSteamIdRemote, pInt32 peSocketStatus, pSteamIPAddress_t pnIPAddrRemote, pUint16 pPortRemote) = 0;
+	virtual Bool GetListenSocketInfo(SNetListenSocket_t hListenSocket, pSteamIPAddress_t pnIP, pUint16 pPort) = 0;
+
+} ISteamNetworking001, *IpSteamNetworking001;
+
+typedef class _ISteamNetworking002_ {
+public:
+
+	virtual SNetListenSocket_t CreateListenSocket(Int32 nVirtualP2PPort, SteamIPAddress_t nIP, Uint16 Port, Bool bAllowUseOfPacketRelay) = 0;
+	virtual SNetSocket_t CreateP2PConnectionSocket(SteamId_t SteamIdTarget, Int32 nVirtualPort, Int32 nTimeoutSeconds, Bool bAllowUseOfPacketRelay) = 0;
+	virtual SNetSocket_t CreateConnectionSocket(SteamIPAddress_t nIP, Uint16 Port, Int32 nTimeoutSeconds) = 0;
+	virtual Bool DestroySocket(SNetSocket_t hSocket, Bool bNotifyRemoteEnd) = 0;
+	virtual Bool DestroyListenSocket(SNetListenSocket_t hSocket, Bool bNotifyRemoteEnd) = 0;
+	virtual Bool SendDataOnSocket(SNetSocket_t hSocket, pVoid pbData, Uint32 cbData, Bool bReliable) = 0;
+	virtual Bool IsDataAvailableOnSocket(SNetSocket_t hSocket, pUint32 pcbMsgSize) = 0;
+	virtual Bool RetrieveDataFromSocket(SNetSocket_t hSocket, pVoid pbDest, Uint32 cbDest, pUint32 pcbMsgSize) = 0;
+	virtual Bool IsDataAvailable(SNetListenSocket_t hListenSocket, pUint32 pcbMsgSize, pSNetSocket_t phSocket) = 0;
+	virtual Bool RetrieveData(SNetListenSocket_t hListenSocket, pVoid pbDest, Uint32 cbDest, pUint32 pcbMsgSize, pSNetSocket_t phSocket) = 0;
+	virtual Bool GetSocketInfo(SNetSocket_t hSocket, pSteamId_t pSteamIdRemote, pInt32 peSocketStatus, pSteamIPAddress_t pnIPAddrRemote, pUint16 pPortRemote) = 0;
+	virtual Bool GetListenSocketInfo(SNetListenSocket_t hListenSocket, pSteamIPAddress_t pnIP, pUint16 pPort) = 0;
+	virtual ESNetSocketConnectionType GetSocketConnectionType(SNetSocket_t hSocket) = 0;
+	virtual Int32 GetMaxPacketSize(SNetSocket_t hSocket) = 0;
+
+} ISteamNetworking002, *IpSteamNetworking002;
+
+typedef class _ISteamNetworking003_ {
+public:
+
+	virtual Bool SendP2PPacket(SteamId_t SteamIdRemote, const pVoid pbData, Uint32 cbData, EP2PSend eP2PSendType) = 0;
+	virtual Bool IsP2PPacketAvailable(pUint32 pcbMsgSize) = 0;
+	virtual Bool ReadP2PPacket(pVoid pbDest, Uint32 cbDest, pUint32 pcbMsgSize, pSteamId_t pSteamIdRemote) = 0;
+	virtual Bool AcceptP2PSessionWithUser(SteamId_t SteamIdRemote) = 0;
+	virtual Bool CloseP2PSessionWithUser(SteamId_t SteamIdRemote) = 0;
+	virtual Bool GetP2PSessionState(SteamId_t SteamIdRemote, pP2PSessionState_t pConnectionState) = 0;
+	virtual SNetListenSocket_t CreateListenSocket(Int32 nVirtualP2PPort, SteamIPAddress_t nIP, Uint16 Port, Bool bAllowUseOfPacketRelay) = 0;
+	virtual SNetSocket_t CreateP2PConnectionSocket(SteamId_t SteamIdTarget, Int32 nVirtualPort, Int32 nTimeoutSeconds, Bool bAllowUseOfPacketRelay) = 0;
+	virtual SNetSocket_t CreateConnectionSocket(SteamIPAddress_t nIP, Uint16 Port, Int32 nTimeoutSeconds) = 0;
+	virtual Bool DestroySocket(SNetSocket_t hSocket, Bool bNotifyRemoteEnd) = 0;
+	virtual Bool DestroyListenSocket(SNetListenSocket_t hSocket, Bool bNotifyRemoteEnd) = 0;
+	virtual Bool SendDataOnSocket(SNetSocket_t hSocket, pVoid pbData, Uint32 cbData, Bool bReliable) = 0;
+	virtual Bool IsDataAvailableOnSocket(SNetSocket_t hSocket, pUint32 pcbMsgSize) = 0;
+	virtual Bool RetrieveDataFromSocket(SNetSocket_t hSocket, pVoid pbDest, Uint32 cbDest, pUint32 pcbMsgSize) = 0;
+	virtual Bool IsDataAvailable(SNetListenSocket_t hListenSocket, pUint32 pcbMsgSize, pSNetSocket_t phSocket) = 0;
+	virtual Bool RetrieveData(SNetListenSocket_t hListenSocket, pVoid pbDest, Uint32 cbDest, pUint32 pcbMsgSize, pSNetSocket_t phSocket) = 0;
+	virtual Bool GetSocketInfo(SNetSocket_t hSocket, pSteamId_t pSteamIdRemote, pInt32 peSocketStatus, pSteamIPAddress_t pnIPAddrRemote, pUint16 pPortRemote) = 0;
+	virtual Bool GetListenSocketInfo(SNetListenSocket_t hListenSocket, pSteamIPAddress_t pnIP, pUint16 pPort) = 0;
+	virtual ESNetSocketConnectionType GetSocketConnectionType(SNetSocket_t hSocket) = 0;
+	virtual Int32 GetMaxPacketSize(SNetSocket_t hSocket) = 0;
+
+} ISteamNetworking003, *IpSteamNetworking003;
+
+typedef class _ISteamNetworking004_ {
+public:
+
+	virtual Bool SendP2PPacket(SteamId_t SteamIdRemote, const pVoid pbData, Uint32 cbData, EP2PSend eP2PSendType, Int32 nChannel) = 0;
+	virtual Bool IsP2PPacketAvailable(pUint32 pcbMsgSize, Int32 nChannel) = 0;
+	virtual Bool ReadP2PPacket(pVoid pbDest, Uint32 cbDest, pUint32 pcbMsgSize, pSteamId_t pSteamIdRemote, Int32 nChannel) = 0;
+	virtual Bool AcceptP2PSessionWithUser(SteamId_t SteamIdRemote) = 0;
+	virtual Bool CloseP2PSessionWithUser(SteamId_t SteamIdRemote) = 0;
+	virtual Bool GetP2PSessionState(SteamId_t SteamIdRemote, pP2PSessionState_t pConnectionState) = 0;
+	virtual SNetListenSocket_t CreateListenSocket(Int32 nVirtualP2PPort, SteamIPAddress_t nIP, Uint16 Port, Bool bAllowUseOfPacketRelay) = 0;
+	virtual SNetSocket_t CreateP2PConnectionSocket(SteamId_t SteamIdTarget, Int32 nVirtualPort, Int32 nTimeoutSeconds, Bool bAllowUseOfPacketRelay) = 0;
+	virtual SNetSocket_t CreateConnectionSocket(SteamIPAddress_t nIP, Uint16 Port, Int32 nTimeoutSeconds) = 0;
+	virtual Bool DestroySocket(SNetSocket_t hSocket, Bool bNotifyRemoteEnd) = 0;
+	virtual Bool DestroyListenSocket(SNetListenSocket_t hSocket, Bool bNotifyRemoteEnd) = 0;
+	virtual Bool SendDataOnSocket(SNetSocket_t hSocket, pVoid pbData, Uint32 cbData, Bool bReliable) = 0;
+	virtual Bool IsDataAvailableOnSocket(SNetSocket_t hSocket, pUint32 pcbMsgSize) = 0;
+	virtual Bool RetrieveDataFromSocket(SNetSocket_t hSocket, pVoid pbDest, Uint32 cbDest, pUint32 pcbMsgSize) = 0;
+	virtual Bool IsDataAvailable(SNetListenSocket_t hListenSocket, pUint32 pcbMsgSize, pSNetSocket_t phSocket) = 0;
+	virtual Bool RetrieveData(SNetListenSocket_t hListenSocket, pVoid pbDest, Uint32 cbDest, pUint32 pcbMsgSize, pSNetSocket_t phSocket) = 0;
+	virtual Bool GetSocketInfo(SNetSocket_t hSocket, pSteamId_t pSteamIdRemote, pInt32 peSocketStatus, pSteamIPAddress_t pnIPAddrRemote, pUint16 pPortRemote) = 0;
+	virtual Bool GetListenSocketInfo(SNetListenSocket_t hListenSocket, pSteamIPAddress_t pnIP, pUint16 pPort) = 0;
+	virtual ESNetSocketConnectionType GetSocketConnectionType(SNetSocket_t hSocket) = 0;
+	virtual Int32 GetMaxPacketSize(SNetSocket_t hSocket) = 0;
+
+} ISteamNetworking004, *IpSteamNetworking004;
+
+typedef class _ISteamNetworking005_ {
+public:
+
+	virtual Bool SendP2PPacket(SteamId_t SteamIdRemote, const pVoid pbData, Uint32 cbData, EP2PSend eP2PSendType, Int32 nChannel) = 0;
+	virtual Bool IsP2PPacketAvailable(pUint32 pcbMsgSize, Int32 nChannel) = 0;
+	virtual Bool ReadP2PPacket(pVoid pbDest, Uint32 cbDest, pUint32 pcbMsgSize, pSteamId_t pSteamIdRemote, Int32 nChannel) = 0;
+	virtual Bool AcceptP2PSessionWithUser(SteamId_t SteamIdRemote) = 0;
+	virtual Bool CloseP2PSessionWithUser(SteamId_t SteamIdRemote) = 0;
+	virtual Bool CloseP2PChannelWithUser(SteamId_t SteamIdRemote, Int32 nChannel) = 0;
+	virtual Bool GetP2PSessionState(SteamId_t SteamIdRemote, pP2PSessionState_t pConnectionState) = 0;
+	virtual Bool AllowP2PPacketRelay(Bool bAllow) = 0;
+	virtual SNetListenSocket_t CreateListenSocket(Int32 nVirtualP2PPort, SteamIPAddress_t nIP, Uint16 Port, Bool bAllowUseOfPacketRelay) = 0;
+	virtual SNetSocket_t CreateP2PConnectionSocket(SteamId_t SteamIdTarget, Int32 nVirtualPort, Int32 nTimeoutSeconds, Bool bAllowUseOfPacketRelay) = 0;
+	virtual SNetSocket_t CreateConnectionSocket(SteamIPAddress_t nIP, Uint16 Port, Int32 nTimeoutSeconds) = 0;
+	virtual Bool DestroySocket(SNetSocket_t hSocket, Bool bNotifyRemoteEnd) = 0;
+	virtual Bool DestroyListenSocket(SNetListenSocket_t hSocket, Bool bNotifyRemoteEnd) = 0;
+	virtual Bool SendDataOnSocket(SNetSocket_t hSocket, pVoid pbData, Uint32 cbData, Bool bReliable) = 0;
+	virtual Bool IsDataAvailableOnSocket(SNetSocket_t hSocket, pUint32 pcbMsgSize) = 0;
+	virtual Bool RetrieveDataFromSocket(SNetSocket_t hSocket, pVoid pbDest, Uint32 cbDest, pUint32 pcbMsgSize) = 0;
+	virtual Bool IsDataAvailable(SNetListenSocket_t hListenSocket, pUint32 pcbMsgSize, pSNetSocket_t phSocket) = 0;
+	virtual Bool RetrieveData(SNetListenSocket_t hListenSocket, pVoid pbDest, Uint32 cbDest, pUint32 pcbMsgSize, pSNetSocket_t phSocket) = 0;
+	virtual Bool GetSocketInfo(SNetSocket_t hSocket, pSteamId_t pSteamIdRemote, pInt32 peSocketStatus, pSteamIPAddress_t pnIPAddrRemote, pUint16 pPortRemote) = 0;
+	virtual Bool GetListenSocketInfo(SNetListenSocket_t hListenSocket, pSteamIPAddress_t pnIP, pUint16 pPort) = 0;
+	virtual ESNetSocketConnectionType GetSocketConnectionType(SNetSocket_t hSocket) = 0;
+	virtual Int32 GetMaxPacketSize(SNetSocket_t hSocket) = 0;
+
+} ISteamNetworking005, *IpSteamNetworking005;
+
 // -----------------------------------------------------------------------------
 // Purpose: Functions for making connections and sending data between clients,
 //  traversing NAT's where possible

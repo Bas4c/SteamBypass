@@ -24,7 +24,7 @@ public:
 	virtual Uint32 GetSessionCount() = 0;
 	virtual RemotePlaySessionId_t GetSessionID(Int32 iSessionIndex) = 0;
 	virtual SteamId_t GetSessionSteamID(RemotePlaySessionId_t SessionId) = 0;
-	virtual const pStrA GetSessionClientName(RemotePlaySessionId_t SessionId) = 0;
+	virtual pCStrA GetSessionClientName(RemotePlaySessionId_t SessionId) = 0;
 	virtual ESteamDeviceFormFactor GetSessionClientFormFactor(RemotePlaySessionId_t SessionId) = 0;
 	virtual Bool BGetSessionClientResolution(RemotePlaySessionId_t SessionId, /* [out] */ pInt32 pCx, /* [out] */ pInt32 pCy) = 0;
 	virtual Bool BSendRemotePlayTogetherInvite(SteamId_t SteamIdFriend) = 0;

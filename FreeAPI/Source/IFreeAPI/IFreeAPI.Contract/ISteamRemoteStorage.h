@@ -17,7 +17,7 @@
 
 typedef struct _SteamParamStringArray_t_ {
 
-	const pStrA *ppStrings;
+	pCStrA *ppStrings;
 	Int32 nNumStrings;
 
 } SteamParamStringArray_t, *pSteamParamStringArray_t;
@@ -148,30 +148,30 @@ typedef class _ISteamRemoteStorage_ {
 public:
 
 	/* Local IO */
-	virtual Bool FileWrite(const pStrA pchFile, const pVoid pvData, Int32 cbData) = 0;
-	virtual Int32 FileRead(const pStrA pchFile, /* [out] */ pVoid pvData, Int32 cbDataToRead) = 0;
-	virtual SteamAPICall_t FileWriteAsync(const pStrA pchFile, const pVoid pvData, Uint32 cbData) = 0;
-	virtual SteamAPICall_t FileReadAsync(const pStrA pchFile, Uint32 nOffset, Uint32 cbToRead) = 0;
+	virtual Bool FileWrite(pCStrA pchFile, const pVoid pvData, Int32 cbData) = 0;
+	virtual Int32 FileRead(pCStrA pchFile, /* [out] */ pVoid pvData, Int32 cbDataToRead) = 0;
+	virtual SteamAPICall_t FileWriteAsync(pCStrA pchFile, const pVoid pvData, Uint32 cbData) = 0;
+	virtual SteamAPICall_t FileReadAsync(pCStrA pchFile, Uint32 nOffset, Uint32 cbToRead) = 0;
 	virtual Bool FileReadAsyncComplete(SteamAPICall_t hReadCall, /* [out] */ pVoid pvData, Uint32 cbToRead) = 0;
-	virtual Bool FileForget(const pStrA pchFile) = 0;
-	virtual Bool FileDelete(const pStrA pchFile) = 0;
-	virtual SteamAPICall_t FileShare(const pStrA pchFile) = 0;
-	virtual Bool SetSyncPlatforms(const pStrA pchFile, ERemoteStoragePlatform eRemoteStoragePlatform) = 0;
+	virtual Bool FileForget(pCStrA pchFile) = 0;
+	virtual Bool FileDelete(pCStrA pchFile) = 0;
+	virtual SteamAPICall_t FileShare(pCStrA pchFile) = 0;
+	virtual Bool SetSyncPlatforms(pCStrA pchFile, ERemoteStoragePlatform eRemoteStoragePlatform) = 0;
 	
 	/* Network IO */
-	virtual UGCFileWriteStreamHandle_t FileWriteStreamOpen(const pStrA pchFile) = 0;
+	virtual UGCFileWriteStreamHandle_t FileWriteStreamOpen(pCStrA pchFile) = 0;
 	virtual Bool FileWriteStreamWriteChunk(UGCFileWriteStreamHandle_t hWriteStream, const pVoid pvData, Int32 cbData) = 0;
 	virtual Bool FileWriteStreamClose(UGCFileWriteStreamHandle_t hWriteStream) = 0;
 	virtual Bool FileWriteStreamCancel(UGCFileWriteStreamHandle_t hWriteStream) = 0;
 
-	virtual Bool FileExists_(const pStrA pchFile) = 0;
-	virtual Bool FilePersisted(const pStrA pchFile) = 0;
-	virtual Int32 GetFileSize(const pStrA pchFile) = 0;
-	virtual Int64 GetFileTimestamp(const pStrA pchFile) = 0;
-	virtual ERemoteStoragePlatform GetSyncPlatforms(const pStrA pchFile) = 0;
+	virtual Bool FileExists_(pCStrA pchFile) = 0;
+	virtual Bool FilePersisted(pCStrA pchFile) = 0;
+	virtual Int32 GetFileSize(pCStrA pchFile) = 0;
+	virtual Int64 GetFileTimestamp(pCStrA pchFile) = 0;
+	virtual ERemoteStoragePlatform GetSyncPlatforms(pCStrA pchFile) = 0;
 
 	virtual Int32 GetFileCount() = 0;
-	virtual const pStrA GetFileNameAndSize(Int32 iFile, /* [out] */ pInt32 pnFileSizeInBytes) = 0;
+	virtual pCStrA GetFileNameAndSize(Int32 iFile, /* [out] */ pInt32 pnFileSizeInBytes) = 0;
 	virtual Bool GetQuota(/* [out] */ pUint64 pnTotalBytes, /* [out] */ pUint64 pnAvailableBytes) = 0;
 	virtual Bool IsCloudEnabledForAccount() = 0;
 	virtual Bool IsCloudEnabledForApp() = 0;
@@ -184,12 +184,12 @@ public:
 	virtual Int32 GetCachedUGCCount() = 0;
 	virtual	UGCHandle_t GetCachedUGCHandle(Int32 iCachedContent) = 0;
 
-	virtual SteamAPICall_t PublishWorkshopFile(const pStrA pchFile, const pStrA pchPreviewFile, AppId_t nConsumerAppId, const pStrA pchTitle, const pStrA pchDescription, ERemoteStoragePublishedFileVisibility eRemoteStoragePublishedFileVisibility, pSteamParamStringArray_t pTags, EWorkshopFileType eWorkshopFileType) = 0;
+	virtual SteamAPICall_t PublishWorkshopFile(pCStrA pchFile, pCStrA pchPreviewFile, AppId_t nConsumerAppId, pCStrA pchTitle, pCStrA pchDescription, ERemoteStoragePublishedFileVisibility eRemoteStoragePublishedFileVisibility, pSteamParamStringArray_t pTags, EWorkshopFileType eWorkshopFileType) = 0;
 	virtual PublishedFileUpdateHandle_t CreatePublishedFileUpdateRequest(PublishedFileId_t PublishedFileId) = 0;
-	virtual Bool UpdatePublishedFileFile(PublishedFileUpdateHandle_t hPublishedFileUpdate, const pStrA pchFile) = 0;
-	virtual Bool UpdatePublishedFilePreviewFile(PublishedFileUpdateHandle_t hPublishedFileUpdate, const pStrA pchPreviewFile) = 0;
-	virtual Bool UpdatePublishedFileTitle(PublishedFileUpdateHandle_t hPublishedFileUpdate, const pStrA pchTitle) = 0;
-	virtual Bool UpdatePublishedFileDescription(PublishedFileUpdateHandle_t hPublishedFileUpdate, const pStrA pchDescription) = 0;
+	virtual Bool UpdatePublishedFileFile(PublishedFileUpdateHandle_t hPublishedFileUpdate, pCStrA pchFile) = 0;
+	virtual Bool UpdatePublishedFilePreviewFile(PublishedFileUpdateHandle_t hPublishedFileUpdate, pCStrA pchPreviewFile) = 0;
+	virtual Bool UpdatePublishedFileTitle(PublishedFileUpdateHandle_t hPublishedFileUpdate, pCStrA pchTitle) = 0;
+	virtual Bool UpdatePublishedFileDescription(PublishedFileUpdateHandle_t hPublishedFileUpdate, pCStrA pchDescription) = 0;
 	virtual Bool UpdatePublishedFileVisibility(PublishedFileUpdateHandle_t hPublishedFileUpdate, ERemoteStoragePublishedFileVisibility eVisibility) = 0;
 	virtual Bool UpdatePublishedFileTags(PublishedFileUpdateHandle_t hPublishedFileUpdate, pSteamParamStringArray_t pTags) = 0;
 	
@@ -200,19 +200,19 @@ public:
 	virtual SteamAPICall_t SubscribePublishedFile(PublishedFileId_t PublishedFileId) = 0;
 	virtual SteamAPICall_t EnumerateUserSubscribedFiles(Uint32 iStart) = 0;
 	virtual SteamAPICall_t UnsubscribePublishedFile(PublishedFileId_t PublishedFileId) = 0;
-	virtual Bool UpdatePublishedFileSetChangeDescription(PublishedFileUpdateHandle_t hPublishedFileUpdate, const pStrA pchChangeDescription) = 0;
+	virtual Bool UpdatePublishedFileSetChangeDescription(PublishedFileUpdateHandle_t hPublishedFileUpdate, pCStrA pchChangeDescription) = 0;
 	virtual SteamAPICall_t GetPublishedItemVoteDetails(PublishedFileId_t PublishedFileId) = 0;
 	virtual SteamAPICall_t UpdateUserPublishedItemVote(PublishedFileId_t PublishedFileId, Bool bVoteUp) = 0;
 	virtual SteamAPICall_t GetUserPublishedItemVoteDetails(PublishedFileId_t PublishedFileId) = 0;
 	virtual SteamAPICall_t EnumerateUserSharedWorkshopFiles(SteamId_t SteamId, Uint32 iStart, pSteamParamStringArray_t pRequiredTags, pSteamParamStringArray_t pExcludedTags) = 0;
-	virtual SteamAPICall_t PublishVideo(EWorkshopVideoProvider eVideoProvider, const pStrA pchVideoAccount, const pStrA pchVideoIdentifier, const pStrA pchPreviewFile, AppId_t iConsumerAppId, const pStrA pchTitle, const pStrA pchDescription, ERemoteStoragePublishedFileVisibility eRemoteStoragePublishedFileVisibility, pSteamParamStringArray_t pTags) = 0;
+	virtual SteamAPICall_t PublishVideo(EWorkshopVideoProvider eVideoProvider, pCStrA pchVideoAccount, pCStrA pchVideoIdentifier, pCStrA pchPreviewFile, AppId_t iConsumerAppId, pCStrA pchTitle, pCStrA pchDescription, ERemoteStoragePublishedFileVisibility eRemoteStoragePublishedFileVisibility, pSteamParamStringArray_t pTags) = 0;
 	virtual SteamAPICall_t SetUserPublishedFileAction(PublishedFileId_t PublishedFileId, EWorkshopFileAction eAction) = 0;
 	virtual SteamAPICall_t EnumeratePublishedFilesByUserAction(EWorkshopFileAction eWorkshopFileAction, Uint32 iStart) = 0;
 	virtual SteamAPICall_t EnumeratePublishedWorkshopFiles(EWorkshopEnumerationType eEnumerationType, Uint32 iStart, Uint32 unCount, Uint32 unDays, pSteamParamStringArray_t pTags, pSteamParamStringArray_t pUserTags) = 0;
-	virtual SteamAPICall_t UGCDownloadToLocation(UGCHandle_t hUGC, const pStrA pchLocation, Uint32 nPriority) = 0;
+	virtual SteamAPICall_t UGCDownloadToLocation(UGCHandle_t hUGC, pCStrA pchLocation, Uint32 nPriority) = 0;
 	
 	virtual Int32 GetLocalFileChangeCount() = 0;
-	virtual const pStrA GetLocalFileChange(Int32 iFile, pERemoteStorageLocalFileChange peRemoteStorageLocalFileChange, pERemoteStorageFilePathType peRemoteStorageFilePathType) = 0;
+	virtual pCStrA GetLocalFileChange(Int32 iFile, pERemoteStorageLocalFileChange peRemoteStorageLocalFileChange, pERemoteStorageFilePathType peRemoteStorageFilePathType) = 0;
 	
 	virtual Bool BeginFileWriteBatch() = 0;
 	virtual Bool EndFileWriteBatch() = 0;

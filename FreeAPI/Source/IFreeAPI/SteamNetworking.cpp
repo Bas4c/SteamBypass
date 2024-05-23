@@ -2,13 +2,31 @@
 #include "SteamNetworking.h"
 // -----------------------------------------------------------------------------
 
+Bool _SteamNetworking_::SendP2PPacket(SteamId_t SteamIdRemote, pVoid pbData, Uint32 cbData, EP2PSend eP2PSendType) {
+
+	return False;
+
+}
+
 Bool _SteamNetworking_::SendP2PPacket(SteamId_t SteamIdRemote, pVoid pbData, Uint32 cbData, EP2PSend eP2PSendType, Int32 nChannel) {
 
 	return False;
 
 }
 
+Bool _SteamNetworking_::IsP2PPacketAvailable(pUint32 pcbMsgSize) {
+
+	return False;
+
+}
+
 Bool _SteamNetworking_::IsP2PPacketAvailable(pUint32 pcbMsgSize, Int32 nChannel) {
+
+	return False;
+
+}
+
+Bool _SteamNetworking_::ReadP2PPacket(pVoid pbDest, Uint32 cbDest, pUint32 pcbMsgSize, pSteamId_t pSteamIdRemote) {
 
 	return False;
 

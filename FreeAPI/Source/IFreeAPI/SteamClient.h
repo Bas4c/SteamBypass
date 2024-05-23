@@ -63,26 +63,26 @@ public:
 	HSteamUser CreateLocalUser(pHSteamPipe phSteamPipe, EAccountType eAccountType) override;
 	void ReleaseUser(HSteamPipe hSteamPipe, HSteamUser hSteamUser) override;
 
-	IpSteamUser GetISteamUser(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
-	IpSteamGameServer GetISteamGameServer(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
+	IpSteamUser GetISteamUser(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
+	IpSteamGameServer GetISteamGameServer(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
 
 	void SetLocalIPBinding(Uint32 nIP, Uint16 Port) override;
 	void SetLocalIPBinding(const pSteamIPAddress_t pSteamIPAdrr, Uint16 Port) override;
 
-	IpSteamFriends GetISteamFriends(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
-	IpSteamUtils GetISteamUtils(HSteamPipe hSteamPipe, const pStrA pchVersion) override;
-	IpSteamMatchmaking GetISteamMatchmaking(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
-	IpSteamMatchmakingServers GetISteamMatchmakingServers(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
+	IpSteamFriends GetISteamFriends(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
+	IpSteamUtils GetISteamUtils(HSteamPipe hSteamPipe, pCStrA pchVersion) override;
+	IpSteamMatchmaking GetISteamMatchmaking(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
+	IpSteamMatchmakingServers GetISteamMatchmakingServers(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
 
-	pVoid GetISteamGenericInterface(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
+	pVoid GetISteamGenericInterface(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
 
-	IpSteamUserStats GetISteamUserStats(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
-	IpSteamGameServerStats GetISteamGameServerStats(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
-	IpSteamApps GetISteamApps(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
-	IpSteamNetworking GetISteamNetworking(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
-	IpSteamRemoteStorage GetISteamRemoteStorage(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
-	IpSteamScreenshots GetISteamScreenshots(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
-	IpSteamGameSearch GetISteamGameSearch(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
+	IpSteamUserStats GetISteamUserStats(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
+	IpSteamGameServerStats GetISteamGameServerStats(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
+	IpSteamApps GetISteamApps(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
+	IpSteamNetworking GetISteamNetworking(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
+	IpSteamRemoteStorage GetISteamRemoteStorage(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
+	IpSteamScreenshots GetISteamScreenshots(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
+	IpSteamGameSearch GetISteamGameSearch(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
 
 	/* Applications should use SteamAPI_RunCallbacks() or SteamGameServer_RunCallbacks() instead */
 	void RunFrame() override;
@@ -90,33 +90,33 @@ public:
 
 	/* API warning handling
 		Int32 is severity; 0: msg, 1: warning
-		const pStrA is text of the message
+		pCStrA is text of the message
 		callbacks will occur directly after the API function is called that generated the warning or message. */
 	void SetWarningMessageHook(SteamAPIWarningMessageHook_t pFunction) override;
 	Bool BShutdownIfAllPipesClosed() override;
 
-	IpSteamHTTP GetISteamHTTP(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
-	IpSteamUnifiedMessages DEPRECATED_GetISteamUnifiedMessages(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
-	IpSteamController GetISteamController(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
-	IpSteamUGC GetISteamUGC(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
-	IpSteamAppList GetISteamAppList(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
-	IpSteamMusic GetISteamMusic(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
-	IpSteamMusicRemote GetISteamMusicRemote(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
-	IpSteamHTMLSurface GetISteamHTMLSurface(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
+	IpSteamHTTP GetISteamHTTP(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
+	IpSteamUnifiedMessages DEPRECATED_GetISteamUnifiedMessages(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
+	IpSteamController GetISteamController(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
+	IpSteamUGC GetISteamUGC(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
+	IpSteamAppList GetISteamAppList(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
+	IpSteamMusic GetISteamMusic(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
+	IpSteamMusicRemote GetISteamMusicRemote(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
+	IpSteamHTMLSurface GetISteamHTMLSurface(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
 
 	void DEPRECATED_Set_SteamAPI_CPostAPIResultInProcess(void(*pFunction)()) override;
 	void DEPRECATED_Remove_SteamAPI_CPostAPIResultInProcess(void(*pFunction)()) override;
 	void Set_SteamAPI_CCheckCallbackRegisteredInProcess(SteamAPI_CheckCallbackRegistered_t pFunction) override;
 
-	IpSteamInventory GetISteamInventory(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
-	IpSteamVideo GetISteamVideo(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
-	IpSteamParentalSettings GetISteamParentalSettings(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
-	IpSteamInput GetISteamInput(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
-	IpSteamParties GetISteamParties(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
-	IpSteamRemotePlay GetISteamRemotePlay(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
+	IpSteamInventory GetISteamInventory(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
+	IpSteamVideo GetISteamVideo(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
+	IpSteamParentalSettings GetISteamParentalSettings(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
+	IpSteamInput GetISteamInput(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
+	IpSteamParties GetISteamParties(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
+	IpSteamRemotePlay GetISteamRemotePlay(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
 
-	IpSteamContentServer GetISteamContentServer(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
-	IpSteamMasterServerUpdater GetISteamMasterServerUpdater(HSteamUser hSteamUser, HSteamPipe hSteamPipe, const pStrA pchVersion) override;
+	IpSteamContentServer GetISteamContentServer(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
+	IpSteamMasterServerUpdater GetISteamMasterServerUpdater(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
 
 	void DestroyAllInterfaces() override;
 

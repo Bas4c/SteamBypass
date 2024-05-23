@@ -14,7 +14,7 @@ Bool _SteamInventory_::GetResultItems(SteamInventoryResult_t hSteamInventoryResu
 
 }
 
-Bool _SteamInventory_::GetResultItemProperty(SteamInventoryResult_t hSteamInventoryResult, Uint32 iItem, const pStrA pchPropertyName, pStrA pchValue, pUint32 pnValueSize) {
+Bool _SteamInventory_::GetResultItemProperty(SteamInventoryResult_t hSteamInventoryResult, Uint32 iItem, pCStrA pchPropertyName, pStrA pchValue, pUint32 pnValueSize) {
 
 	return False;
 
@@ -140,7 +140,7 @@ Bool _SteamInventory_::GetSteamItemDefinitionIds(pSteamSteamItemDef_t pSteamItem
 
 }
 
-Bool _SteamInventory_::GetSteamItemDefinitionProperty(SteamSteamItemDef_t SteamSteamItemDef, const pStrA pchPropertyName, pStrA pchValue, pUint32 pnValueSize) {
+Bool _SteamInventory_::GetSteamItemDefinitionProperty(SteamSteamItemDef_t SteamSteamItemDef, pCStrA pchPropertyName, pStrA pchValue, pUint32 pnValueSize) {
 
 	return False;
 
@@ -194,31 +194,31 @@ SteamInventoryUpdateHandle_t _SteamInventory_::StartUpdateProperties() {
 
 }
 
-Bool _SteamInventory_::RemoveProperty(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, SteamItemInstanceId_t nItemId, const pStrA pchPropertyName) {
+Bool _SteamInventory_::RemoveProperty(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, SteamItemInstanceId_t nItemId, pCStrA pchPropertyName) {
 
 	return False;
 
 }
 
-Bool _SteamInventory_::SetProperty(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, SteamItemInstanceId_t nItemId, const pStrA pchPropertyName, const pStrA pchPropertyValue) {
+Bool _SteamInventory_::SetProperty(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, SteamItemInstanceId_t nItemId, pCStrA pchPropertyName, pCStrA pchPropertyValue) {
 
 	return False;
 
 }
 
-Bool _SteamInventory_::SetProperty(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, SteamItemInstanceId_t nItemId, const pStrA pchPropertyName, Bool bValue) {
+Bool _SteamInventory_::SetProperty(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, SteamItemInstanceId_t nItemId, pCStrA pchPropertyName, Bool bValue) {
 
 	return False;
 
 }
 
-Bool _SteamInventory_::SetProperty(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, SteamItemInstanceId_t nItemId, const pStrA pchPropertyName, Int64 Value) {
+Bool _SteamInventory_::SetProperty(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, SteamItemInstanceId_t nItemId, pCStrA pchPropertyName, Int64 Value) {
 
 	return False;
 
 }
 
-Bool _SteamInventory_::SetProperty(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, SteamItemInstanceId_t nItemId, const pStrA pchPropertyName, Float Value) {
+Bool _SteamInventory_::SetProperty(SteamInventoryUpdateHandle_t hSteamInventoryUpdate, SteamItemInstanceId_t nItemId, pCStrA pchPropertyName, Float Value) {
 
 	return False;
 
@@ -230,7 +230,7 @@ Bool _SteamInventory_::SubmitUpdateProperties(SteamInventoryUpdateHandle_t hStea
 
 }
 
-Bool _SteamInventory_::InspectItem(pSteamInventoryResult_t phSteamInventoryResult, const pStrA pchItemToken) {
+Bool _SteamInventory_::InspectItem(pSteamInventoryResult_t phSteamInventoryResult, pCStrA pchItemToken) {
 
 	return False;
 

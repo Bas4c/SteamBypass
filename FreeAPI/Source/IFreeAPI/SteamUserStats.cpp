@@ -8,55 +8,55 @@ Bool _SteamUserStats_::RequestCurrentStats() {
 
 }
 
-Bool _SteamUserStats_::GetStat(const pStrA pchName, pInt32 pData) {
+Bool _SteamUserStats_::GetStat(pCStrA pchName, pInt32 pData) {
 
 	return False;
 
 }
 
-Bool _SteamUserStats_::GetStat(const pStrA pchName, pFloat pData) {
+Bool _SteamUserStats_::GetStat(pCStrA pchName, pFloat pData) {
 
 	return False;
 
 }
 
-Bool _SteamUserStats_::SetStat(const pStrA pchName, Int32 Data) {
+Bool _SteamUserStats_::SetStat(pCStrA pchName, Int32 Data) {
 
 	return False;
 
 }
 
-Bool _SteamUserStats_::SetStat(const pStrA pchName, Float Data) {
+Bool _SteamUserStats_::SetStat(pCStrA pchName, Float Data) {
 
 	return False;
 
 }
 
-Bool _SteamUserStats_::UpdateAvgRateStat(const pStrA pchName, Float CountThisSession, Double SessionLength) {
+Bool _SteamUserStats_::UpdateAvgRateStat(pCStrA pchName, Float CountThisSession, Double SessionLength) {
 
 	return False;
 
 }
 
-Bool _SteamUserStats_::GetAchievement(const pStrA pchName, pBool pbAchieved) {
+Bool _SteamUserStats_::GetAchievement(pCStrA pchName, pBool pbAchieved) {
 
 	return False;
 
 }
 
-Bool _SteamUserStats_::SetAchievement(const pStrA pchName) {
+Bool _SteamUserStats_::SetAchievement(pCStrA pchName) {
 
 	return False;
 
 }
 
-Bool _SteamUserStats_::ClearAchievement(const pStrA pchName) {
+Bool _SteamUserStats_::ClearAchievement(pCStrA pchName) {
 
 	return True;
 
 }
 
-Bool _SteamUserStats_::GetAchievementAndUnlockTime(const pStrA pchName, pBool pbAchieved, pUint32 pnUnlockTime) {
+Bool _SteamUserStats_::GetAchievementAndUnlockTime(pCStrA pchName, pBool pbAchieved, pUint32 pnUnlockTime) {
 
 	return False;
 
@@ -68,21 +68,21 @@ Bool _SteamUserStats_::StoreStats() {
 
 }
 
-Int32 _SteamUserStats_::GetAchievementIcon(const pStrA pchName) {
+Int32 _SteamUserStats_::GetAchievementIcon(pCStrA pchName) {
 
 	return 0;
 
 }
 
-const pStrA _SteamUserStats_::GetAchievementDisplayAttribute(const pStrA pchName, const pStrA pchKey) {
+pCStrA _SteamUserStats_::GetAchievementDisplayAttribute(pCStrA pchName, pCStrA pchKey) {
 
-	return (const pStrA)(
+	return (pCStrA)(
 		"0"
 	);
 
 }
 
-Bool _SteamUserStats_::IndicateAchievementProgress(const pStrA pchName, Uint32 nCurProgress, Uint32 nMaxProgress) {
+Bool _SteamUserStats_::IndicateAchievementProgress(pCStrA pchName, Uint32 nCurProgress, Uint32 nMaxProgress) {
 
 	return False;
 
@@ -94,9 +94,9 @@ Uint32 _SteamUserStats_::GetNumAchievements() {
 
 }
 
-const pStrA _SteamUserStats_::GetAchievementName(Uint32 iAchievement) {
+pCStrA _SteamUserStats_::GetAchievementName(Uint32 iAchievement) {
 
-	return (const pStrA)(
+	return (pCStrA)(
 		""
 	);
 
@@ -108,25 +108,25 @@ SteamAPICall_t _SteamUserStats_::RequestUserStats(SteamId_t SteamIdUser) {
 
 }
 
-Bool _SteamUserStats_::GetUserStat(SteamId_t SteamIdUser, const pStrA pchName, pInt32 pData) {
+Bool _SteamUserStats_::GetUserStat(SteamId_t SteamIdUser, pCStrA pchName, pInt32 pData) {
 
 	return False;
 
 }
 
-Bool _SteamUserStats_::GetUserStat(SteamId_t SteamIdUser, const pStrA pchName, pFloat pData) {
+Bool _SteamUserStats_::GetUserStat(SteamId_t SteamIdUser, pCStrA pchName, pFloat pData) {
 
 	return False;
 
 }
 
-Bool _SteamUserStats_::GetUserAchievement(SteamId_t SteamIdUser, const pStrA pchName, pBool pbAchieved) {
+Bool _SteamUserStats_::GetUserAchievement(SteamId_t SteamIdUser, pCStrA pchName, pBool pbAchieved) {
 
 	return False;
 
 }
 
-Bool _SteamUserStats_::GetUserAchievementAndUnlockTime(SteamId_t SteamIdUser, const pStrA pchName, pBool pbAchieved, pUint32 punUnlockTime) {
+Bool _SteamUserStats_::GetUserAchievementAndUnlockTime(SteamId_t SteamIdUser, pCStrA pchName, pBool pbAchieved, pUint32 punUnlockTime) {
 
 	return False;
 
@@ -138,21 +138,21 @@ Bool _SteamUserStats_::ResetAllStats(Bool bAchievementsToo) {
 
 }
 
-SteamAPICall_t _SteamUserStats_::FindOrCreateLeaderboard(const pStrA pchLeaderboardName, ELeaderboardSortMethod eLeaderboardSortMethod, ELeaderboardDisplayType eLeaderboardDisplayType) {
+SteamAPICall_t _SteamUserStats_::FindOrCreateLeaderboard(pCStrA pchLeaderboardName, ELeaderboardSortMethod eLeaderboardSortMethod, ELeaderboardDisplayType eLeaderboardDisplayType) {
 
 	return k_SteamAPICall_Invalid;
 
 }
 
-SteamAPICall_t _SteamUserStats_::FindLeaderboard(const pStrA pchLeaderboardName) {
+SteamAPICall_t _SteamUserStats_::FindLeaderboard(pCStrA pchLeaderboardName) {
 
 	return k_SteamAPICall_Invalid;
 
 }
 
-const pStrA _SteamUserStats_::GetLeaderboardName(SteamLeaderboard_t hSteamLeaderboard) {
+pCStrA _SteamUserStats_::GetLeaderboardName(SteamLeaderboard_t hSteamLeaderboard) {
 
-	return (const pStrA)(
+	return (pCStrA)(
 		""
 	);
 
@@ -229,7 +229,7 @@ Int32 _SteamUserStats_::GetNextMostAchievedAchievementInfo(Int32 iIteratorPrevio
 
 }
 
-Bool _SteamUserStats_::GetAchievementAchievedPercent(const pStrA pchName, pFloat pPercent) {
+Bool _SteamUserStats_::GetAchievementAchievedPercent(pCStrA pchName, pFloat pPercent) {
 
 	return False;
 
@@ -241,37 +241,37 @@ SteamAPICall_t _SteamUserStats_::RequestGlobalStats(Int32 nHistoryDays) {
 
 }
 
-Bool _SteamUserStats_::GetGlobalStat(const pStrA pchStatName, pInt64 pData) {
+Bool _SteamUserStats_::GetGlobalStat(pCStrA pchStatName, pInt64 pData) {
 
 	return False;
 
 }
 
-Bool _SteamUserStats_::GetGlobalStat(const pStrA pchStatName, pDouble pData) {
+Bool _SteamUserStats_::GetGlobalStat(pCStrA pchStatName, pDouble pData) {
 
 	return False;
 
 }
 
-Int32 _SteamUserStats_::GetGlobalStatHistory(const pStrA pchStatName, pInt64 pData, Uint32 cbData) {
+Int32 _SteamUserStats_::GetGlobalStatHistory(pCStrA pchStatName, pInt64 pData, Uint32 cbData) {
 
 	return 0;
 
 }
 
-Int32 _SteamUserStats_::GetGlobalStatHistory(const pStrA pchStatName, pDouble pData, Uint32 cbData) {
+Int32 _SteamUserStats_::GetGlobalStatHistory(pCStrA pchStatName, pDouble pData, Uint32 cbData) {
 
 	return 0;
 
 }
 
-Bool _SteamUserStats_::GetAchievementProgressLimits(const pStrA pchName, pInt32 pProgressMin, pInt32 pProgressMax) {
+Bool _SteamUserStats_::GetAchievementProgressLimits(pCStrA pchName, pInt32 pProgressMin, pInt32 pProgressMax) {
 
 	return False;
 
 }
 
-Bool _SteamUserStats_::GetAchievementProgressLimits(const pStrA pchName, pFloat pProgressMin, pFloat pProgressMax) {
+Bool _SteamUserStats_::GetAchievementProgressLimits(pCStrA pchName, pFloat pProgressMin, pFloat pProgressMax) {
 
 	return False;
 

@@ -16,7 +16,7 @@ public:
 
 	/* Sends a service method (in binary serialized form) using the Steam Client.
 	   Returns a unified message handle (k_InvalidUnifiedMessageHandle if could not send the message). */
-	ClientUnifiedMessageHandle SendMethod(const pStrA pchServiceMethod, const pVoid pvRequestData, Uint32 nRequestDataSize, Uint64 nContext) override;
+	ClientUnifiedMessageHandle SendMethod(pCStrA pchServiceMethod, const pVoid pvRequestData, Uint32 nRequestDataSize, Uint64 nContext) override;
 
 	/* Gets the size of the response and the EResult.
 	   Returns False if the response is not ready yet. */
@@ -28,7 +28,7 @@ public:
 
 	/* Sends a service notification (in binary serialized form) using the Steam Client.
 	   Returns true if the notification was sent successfully. */
-	Bool SendNotification(const pStrA pchServiceNotification, const pVoid pvDataNotificationData, Uint32 nNotificationDataSize) override;
+	Bool SendNotification(pCStrA pchServiceNotification, const pVoid pvDataNotificationData, Uint32 nNotificationDataSize) override;
 
 	~_SteamUnifiedMessages_() = default;
 

@@ -19,15 +19,15 @@ public:
 	_SteamApps_(const _SteamApps_&) = delete;
 	_SteamApps_& operator=(const _SteamApps_&) = delete;
 
-	Int32 GetAppData(AppId_t iAppId, const pStrA pchKey, pStrA pchValue, Int32 cchValueMax) override;
+	Int32 GetAppData(AppId_t iAppId, pCStrA pchKey, pStrA pchValue, Int32 cchValueMax) override;
 
 	Bool BIsSubscribed() override;
 	Bool BIsLowViolence() override;
 	Bool BIsCybercafe() override;
 	Bool BIsVACBanned() override;
 
-	const pStrA GetCurrentGameLanguage() override;
-	const pStrA GetAvailableGameLanguages() override;
+	pCStrA GetCurrentGameLanguage() override;
+	pCStrA GetAvailableGameLanguages() override;
 
 	/* Only use this member if you need to check ownership of another game related to yours */
 	Bool BIsSubscribedApp(AppId_t iAppId) override;
@@ -71,12 +71,12 @@ public:
 	   Parameter names starting with an underscore '_' are reserved for steam features -- they can be queried by the game,
 		but it is advised that you not param names beginning with an underscore for your own features.
 	   Check for new launch parameters on callback NewUrlLaunchParameters_t */
-	const pStrA GetLaunchQueryParam(const pStrA pchKey) override;
+	pCStrA GetLaunchQueryParam(pCStrA pchKey) override;
 
 	Bool GetDlcDownloadProgress(AppId_t iAppId, pUint64 pnBytesDownloaded, pUint64 pnBytesTotal) override;
 	Int32 GetAppBuildId() override;
 	void RequestAllProofOfPurchaseKeys() override;
-	SteamAPICall_t GetFileDetails(const pStrA pchFileName) override;
+	SteamAPICall_t GetFileDetails(pCStrA pchFileName) override;
 	Int32 GetLaunchCommandLine(pStrA pchCommandLine, Int32 cchCommandLine) override;
 	Bool BIsSubscribedFromFamilySharing() override;
 	Bool BIsTimedTrial(pUint32 pnSecondsAllowed, pUint32 pnSecondsPlayed) override;

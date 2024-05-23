@@ -82,14 +82,29 @@ typedef double Double, *pDouble;
 // Chars And Strings
 // ----
 
-typedef unsigned __int16 CharW, *pStrW;
-typedef char             CharA, *pStrA;
+#ifdef _MSC_VER
+	#ifdef __cplusplus
+		typedef const wchar_t          CCharW, *pCStrW;
+		typedef wchar_t                CharW,  *pStrW;
+	#else // !C++
+		typedef const unsigned __int16 CCharW, *pCStrW;
+		typedef unsigned __int16       CharW,  *pStrW;
+	#endif
+#else
+	typedef const unsigned __int16 CCharW, *pCStrW;
+	typedef unsigned __int16       CharW,  *pStrW;
+#endif
+
+typedef const char             CCharA, *pCStrA;
+typedef char                   CharA,  *pStrA;
 
 #ifdef UNICODE
-	typedef CharW CharT, *pStrT;
+	typedef CCharW CCharT, *pCStrT;
+	typedef CharW  CharT,  *pStrT;
 	#define T(quote) L ##quote
 #else // ANSI
-	typedef CharA CharT, *pStrT;
+	typedef CCharA CCharT, *pCStrT;
+	typedef CharA  CharT,   *pStrT;
 	#define T(quote) quote
 #endif
 

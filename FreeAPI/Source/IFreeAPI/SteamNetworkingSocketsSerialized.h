@@ -15,9 +15,9 @@ public:
 	_SteamNetworkingSocketsSerialized_& operator=(const _SteamNetworkingSocketsSerialized_&) = delete;
 
 	void SendP2PRendezvous(SteamId_t SteamIdRemote, Uint32 ConnectionIdSrc, const pVoid pMsgRendezvous, Uint32 cbRendezvous) override;
-	void SendP2PConnectionFailure(SteamId_t SteamIdRemote, Uint32 nConnectionIdDest, Uint32 nReason, const pStrA pchReason) override;
+	void SendP2PConnectionFailure(SteamId_t SteamIdRemote, Uint32 nConnectionIdDest, Uint32 nReason, pCStrA pchReason) override;
 	SteamAPICall_t GetCertAsync() override;
-	Int32 GetNetworkConfigJSON(pVoid pvJSON, Uint32 cbSize, const pStrA pchLauncherPartner) override;
+	Int32 GetNetworkConfigJSON(pVoid pvJSON, Uint32 cbSize, pCStrA pchLauncherPartner) override;
 	void CacheRelayTicket(const pVoid pvTicket, Uint32 cbTicket) override;
 	Uint32 GetCachedRelayTicketCount() override;
 	Uint32 GetCachedRelayTicket(Uint32 iTicket, pVoid pvTicket, Uint32 cbTicket) override;

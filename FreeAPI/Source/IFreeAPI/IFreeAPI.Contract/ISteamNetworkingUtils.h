@@ -34,7 +34,7 @@ typedef enum _ESteamNetworkingSocketsDebugOutputType_ {
 	k_ESteamNetworkingSocketsDebugOutputType_Force32Bit = 0x7FFFFFFF
 
 } ESteamNetworkingSocketsDebugOutputType, *pESteamNetworkingSocketsDebugOutputType;
-typedef void (*FSteamNetworkingSocketsDebugOutput) (ESteamNetworkingSocketsDebugOutputType nType, const pStrA pchMsg);
+typedef void (*FSteamNetworkingSocketsDebugOutput) (ESteamNetworkingSocketsDebugOutputType nType, pCStrA pchMsg);
 
 typedef enum _ESteamNetworkingConfigScope_ {
 
@@ -57,7 +57,7 @@ public:
 	virtual Int32 EstimatePingTimeBetweenTwoLocations(const pSteamNetworkPingLocation_t pLocation1, const pSteamNetworkPingLocation_t pLocation2) = 0;
 	virtual Int32 EstimatePingTimeFromLocalHost(const pSteamNetworkPingLocation_t pRemoteLocation) = 0;
 	virtual void ConvertPingLocationToString(const pSteamNetworkPingLocation_t pLocation, /* [out] */ pStrA pchBuf, Int32 cchBuf) = 0;
-	virtual Bool ParsePingLocationString(const pStrA pchString, pSteamNetworkPingLocation_t pResult) = 0;
+	virtual Bool ParsePingLocationString(pCStrA pchString, pSteamNetworkPingLocation_t pResult) = 0;
 	virtual Bool CheckPingDataUpToDate(Float MaxAgeSeconds) = 0;
 	virtual Int32 GetPingToDataCenter(SteamNetworkingPOPID PopId, /* [out] */ pSteamNetworkingPOPID pViaRelayPoP) = 0;
 	virtual Int32 GetDirectPingToPOP(SteamNetworkingPOPID PopId) = 0;
@@ -71,13 +71,13 @@ public:
 
 	virtual Bool SetConfigValue(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, ESteamNetworkingConfigScope eScopeType, pVoid scopeObj, ESteamNetworkingConfigDataType eDataType, const pVoid pArg) = 0;
 	virtual ESteamNetworkingGetConfigValueResult GetConfigValue(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, ESteamNetworkingConfigScope eScopeType, /* [out] */ pVoid scopeObj, /* [out] */ pESteamNetworkingConfigDataType pDataType, /* [out] */ pVoid pResult, pSizeOF cbResult) = 0;
-	virtual const pStrA GetConfigValueInfo(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, /* [out] */ pESteamNetworkingConfigDataType pDataType, /* [out] */ pESteamNetworkingConfigScope pScope) = 0;
+	virtual pCStrA GetConfigValueInfo(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, /* [out] */ pESteamNetworkingConfigDataType pDataType, /* [out] */ pESteamNetworkingConfigScope pScope) = 0;
 	virtual ESteamNetworkingConfigValue IterateGenericEditableConfigValues(ESteamNetworkingConfigValue eCurrent, Bool bEnumerateDevVars) = 0;
 	virtual void SteamNetworkingIPAddr_ToString(const pSteamNetworkingIPAddr pAddr, pStrA pchStr, SizeOF cchStr, Bool bWithPort) = 0;
-	virtual Bool SteamNetworkingIPAddr_ParseString(/* [out] */ pSteamNetworkingIPAddr pAddr, const pStrA pchStr) = 0;
+	virtual Bool SteamNetworkingIPAddr_ParseString(/* [out] */ pSteamNetworkingIPAddr pAddr, pCStrA pchStr) = 0;
 	virtual ESteamNetworkingFakeIPType SteamNetworkingIPAddr_GetFakeIPType(const pSteamNetworkingIPAddr pAddr) = 0;
 	virtual void SteamNetworkingIdentity_ToString(const pSteamNetworkingIdentity pIdentity, pStrA pchStr, SizeOF cchStr) = 0;
-	virtual Bool SteamNetworkingIdentity_ParseString(/* [out] */ pSteamNetworkingIdentity pIdentity, const pStrA pchStr) = 0;
+	virtual Bool SteamNetworkingIdentity_ParseString(/* [out] */ pSteamNetworkingIdentity pIdentity, pCStrA pchStr) = 0;
 
 } ISteamNetworkingUtils, *IpSteamNetworkingUtils;
 

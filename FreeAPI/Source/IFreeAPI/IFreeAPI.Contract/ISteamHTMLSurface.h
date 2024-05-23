@@ -75,16 +75,16 @@ public:
 
 	virtual Bool Init() = 0;
 	virtual Bool Shutdown() = 0;
-	virtual SteamAPICall_t CreateBrowser(const pStrA pchUserAgent, const pStrA pchUserCSS) = 0;
+	virtual SteamAPICall_t CreateBrowser(pCStrA pchUserAgent, pCStrA pchUserCSS) = 0;
 	virtual void RemoveBrowser(HTMLBrowser hHTMLBrowser) = 0;
-	virtual void LoadURL(HTMLBrowser hHTMLBrowser, const pStrA pchURL, const pStrA pchPostData) = 0;
+	virtual void LoadURL(HTMLBrowser hHTMLBrowser, pCStrA pchURL, pCStrA pchPostData) = 0;
 	virtual void SetSize(HTMLBrowser hHTMLBrowser, Uint32 Cx, Uint32 Cy) = 0;
 	virtual void StopLoad(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void Reload(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void GoBack(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void GoForward(HTMLBrowser hHTMLBrowser) = 0;
-	virtual void AddHeader(HTMLBrowser hHTMLBrowser, const pStrA pchKey, const pStrA pchValue) = 0;
-	virtual void ExecuteJavascript(HTMLBrowser hHTMLBrowser, const pStrA pchScript) = 0;
+	virtual void AddHeader(HTMLBrowser hHTMLBrowser, pCStrA pchKey, pCStrA pchValue) = 0;
+	virtual void ExecuteJavascript(HTMLBrowser hHTMLBrowser, pCStrA pchScript) = 0;
 	virtual void MouseUp(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
 	virtual void MouseDown(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
 	virtual void MouseDoubleClick(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
@@ -99,12 +99,12 @@ public:
 	virtual void ViewSource(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void CopyToClipboard(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void PasteFromClipboard(HTMLBrowser hHTMLBrowser) = 0;
-	virtual void Find(HTMLBrowser hHTMLBrowser, const pStrA pchSearchStr, Bool bCurrentlyInFind, Bool bReverse) = 0;
+	virtual void Find(HTMLBrowser hHTMLBrowser, pCStrA pchSearchStr, Bool bCurrentlyInFind, Bool bReverse) = 0;
 	virtual void StopFind(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void GetLinkAtPosition(HTMLBrowser hHTMLBrowser, Int32 x, Int32 y) = 0;
 	virtual void AllowStartRequest(HTMLBrowser hHTMLBrowser, Bool bAllowed) = 0;
 	virtual void JSDialogResponse(HTMLBrowser hHTMLBrowser, Bool bResult) = 0;
-	virtual void FileLoadDialogResponse(HTMLBrowser hHTMLBrowser, const pStrA *pchSelectedFiles) = 0;
+	virtual void FileLoadDialogResponse(HTMLBrowser hHTMLBrowser, pCStrA *pchSelectedFiles) = 0;
 
 } ISteamHTMLSurface001, *IpSteamHTMLSurface001;
 
@@ -113,16 +113,16 @@ public:
 
 	virtual Bool Init() = 0;
 	virtual Bool Shutdown() = 0;
-	virtual SteamAPICall_t CreateBrowser(const pStrA pchUserAgent, const pStrA pchUserCSS) = 0;
+	virtual SteamAPICall_t CreateBrowser(pCStrA pchUserAgent, pCStrA pchUserCSS) = 0;
 	virtual void RemoveBrowser(HTMLBrowser hHTMLBrowser) = 0;
-	virtual void LoadURL(HTMLBrowser hHTMLBrowser, const pStrA pchURL, const pStrA pchPostData) = 0;
+	virtual void LoadURL(HTMLBrowser hHTMLBrowser, pCStrA pchURL, pCStrA pchPostData) = 0;
 	virtual void SetSize(HTMLBrowser hHTMLBrowser, Uint32 Cx, Uint32 Cy) = 0;
 	virtual void StopLoad(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void Reload(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void GoBack(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void GoForward(HTMLBrowser hHTMLBrowser) = 0;
-	virtual void AddHeader(HTMLBrowser hHTMLBrowser, const pStrA pchKey, const pStrA pchValue) = 0;
-	virtual void ExecuteJavascript(HTMLBrowser hHTMLBrowser, const pStrA pchScript) = 0;
+	virtual void AddHeader(HTMLBrowser hHTMLBrowser, pCStrA pchKey, pCStrA pchValue) = 0;
+	virtual void ExecuteJavascript(HTMLBrowser hHTMLBrowser, pCStrA pchScript) = 0;
 	virtual void MouseUp(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
 	virtual void MouseDown(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
 	virtual void MouseDoubleClick(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
@@ -137,14 +137,14 @@ public:
 	virtual void ViewSource(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void CopyToClipboard(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void PasteFromClipboard(HTMLBrowser hHTMLBrowser) = 0;
-	virtual void Find(HTMLBrowser hHTMLBrowser, const pStrA pchSearchStr, Bool bCurrentlyInFind, Bool bReverse) = 0;
+	virtual void Find(HTMLBrowser hHTMLBrowser, pCStrA pchSearchStr, Bool bCurrentlyInFind, Bool bReverse) = 0;
 	virtual void StopFind(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void GetLinkAtPosition(HTMLBrowser hHTMLBrowser, Int32 x, Int32 y) = 0;
-	virtual void SetCookie(const pStrA pchHostname, const pStrA pchKey, const pStrA pchValue, const pStrA pchPath, RTime32 nExpires, Bool bSecure, Bool bHTTPOnly) = 0;
+	virtual void SetCookie(pCStrA pchHostname, pCStrA pchKey, pCStrA pchValue, pCStrA pchPath, RTime32 nExpires, Bool bSecure, Bool bHTTPOnly) = 0;
 	virtual void SetPageScaleFactor(HTMLBrowser hHTMLBrowser, Float Zoom, Int32 nPointX, Int32 nPointY) = 0;
 	virtual void AllowStartRequest(HTMLBrowser hHTMLBrowser, Bool bAllowed) = 0;
 	virtual void JSDialogResponse(HTMLBrowser hHTMLBrowser, Bool bResult) = 0;
-	virtual void FileLoadDialogResponse(HTMLBrowser hHTMLBrowser, const pStrA *pchSelectedFiles) = 0;
+	virtual void FileLoadDialogResponse(HTMLBrowser hHTMLBrowser, pCStrA *pchSelectedFiles) = 0;
 
 } ISteamHTMLSurface002, *IpSteamHTMLSurface002;
 
@@ -153,16 +153,16 @@ public:
 
 	virtual Bool Init() = 0;
 	virtual Bool Shutdown() = 0;
-	virtual SteamAPICall_t CreateBrowser(const pStrA pchUserAgent, const pStrA pchUserCSS) = 0;
+	virtual SteamAPICall_t CreateBrowser(pCStrA pchUserAgent, pCStrA pchUserCSS) = 0;
 	virtual void RemoveBrowser(HTMLBrowser hHTMLBrowser) = 0;
-	virtual void LoadURL(HTMLBrowser hHTMLBrowser, const pStrA pchURL, const pStrA pchPostData) = 0;
+	virtual void LoadURL(HTMLBrowser hHTMLBrowser, pCStrA pchURL, pCStrA pchPostData) = 0;
 	virtual void SetSize(HTMLBrowser hHTMLBrowser, Uint32 Cx, Uint32 Cy) = 0;
 	virtual void StopLoad(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void Reload(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void GoBack(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void GoForward(HTMLBrowser hHTMLBrowser) = 0;
-	virtual void AddHeader(HTMLBrowser hHTMLBrowser, const pStrA pchKey, const pStrA pchValue) = 0;
-	virtual void ExecuteJavascript(HTMLBrowser hHTMLBrowser, const pStrA pchScript) = 0;
+	virtual void AddHeader(HTMLBrowser hHTMLBrowser, pCStrA pchKey, pCStrA pchValue) = 0;
+	virtual void ExecuteJavascript(HTMLBrowser hHTMLBrowser, pCStrA pchScript) = 0;
 	virtual void MouseUp(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
 	virtual void MouseDown(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
 	virtual void MouseDoubleClick(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
@@ -177,15 +177,15 @@ public:
 	virtual void ViewSource(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void CopyToClipboard(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void PasteFromClipboard(HTMLBrowser hHTMLBrowser) = 0;
-	virtual void Find(HTMLBrowser hHTMLBrowser, const pStrA pchSearchStr, Bool bCurrentlyInFind, Bool bReverse) = 0;
+	virtual void Find(HTMLBrowser hHTMLBrowser, pCStrA pchSearchStr, Bool bCurrentlyInFind, Bool bReverse) = 0;
 	virtual void StopFind(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void GetLinkAtPosition(HTMLBrowser hHTMLBrowser, Int32 x, Int32 y) = 0;
-	virtual void SetCookie(const pStrA pchHostname, const pStrA pchKey, const pStrA pchValue, const pStrA pchPath, RTime32 nExpires, Bool bSecure, Bool bHTTPOnly) = 0;
+	virtual void SetCookie(pCStrA pchHostname, pCStrA pchKey, pCStrA pchValue, pCStrA pchPath, RTime32 nExpires, Bool bSecure, Bool bHTTPOnly) = 0;
 	virtual void SetPageScaleFactor(HTMLBrowser hHTMLBrowser, Float Zoom, Int32 nPointX, Int32 nPointY) = 0;
 	virtual void SetBackgroundMode(HTMLBrowser hHTMLBrowser, Bool bBackgroundMode) = 0;
 	virtual void AllowStartRequest(HTMLBrowser hHTMLBrowser, Bool bAllowed) = 0;
 	virtual void JSDialogResponse(HTMLBrowser hHTMLBrowser, Bool bResult) = 0;
-	virtual void FileLoadDialogResponse(HTMLBrowser hHTMLBrowser, const pStrA *pchSelectedFiles) = 0;
+	virtual void FileLoadDialogResponse(HTMLBrowser hHTMLBrowser, pCStrA *pchSelectedFiles) = 0;
 
 } ISteamHTMLSurface003, *IpSteamHTMLSurface003;
 
@@ -194,16 +194,16 @@ public:
 
 	virtual Bool Init() = 0;
 	virtual Bool Shutdown() = 0;
-	virtual SteamAPICall_t CreateBrowser(const pStrA pchUserAgent, const pStrA pchUserCSS) = 0;
+	virtual SteamAPICall_t CreateBrowser(pCStrA pchUserAgent, pCStrA pchUserCSS) = 0;
 	virtual void RemoveBrowser(HTMLBrowser hHTMLBrowser) = 0;
-	virtual void LoadURL(HTMLBrowser hHTMLBrowser, const pStrA pchURL, const pStrA pchPostData) = 0;
+	virtual void LoadURL(HTMLBrowser hHTMLBrowser, pCStrA pchURL, pCStrA pchPostData) = 0;
 	virtual void SetSize(HTMLBrowser hHTMLBrowser, Uint32 Cx, Uint32 Cy) = 0;
 	virtual void StopLoad(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void Reload(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void GoBack(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void GoForward(HTMLBrowser hHTMLBrowser) = 0;
-	virtual void AddHeader(HTMLBrowser hHTMLBrowser, const pStrA pchKey, const pStrA pchValue) = 0;
-	virtual void ExecuteJavascript(HTMLBrowser hHTMLBrowser, const pStrA pchScript) = 0;
+	virtual void AddHeader(HTMLBrowser hHTMLBrowser, pCStrA pchKey, pCStrA pchValue) = 0;
+	virtual void ExecuteJavascript(HTMLBrowser hHTMLBrowser, pCStrA pchScript) = 0;
 	virtual void MouseUp(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
 	virtual void MouseDown(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
 	virtual void MouseDoubleClick(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
@@ -218,16 +218,16 @@ public:
 	virtual void ViewSource(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void CopyToClipboard(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void PasteFromClipboard(HTMLBrowser hHTMLBrowser) = 0;
-	virtual void Find(HTMLBrowser hHTMLBrowser, const pStrA pchSearchStr, Bool bCurrentlyInFind, Bool bReverse) = 0;
+	virtual void Find(HTMLBrowser hHTMLBrowser, pCStrA pchSearchStr, Bool bCurrentlyInFind, Bool bReverse) = 0;
 	virtual void StopFind(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void GetLinkAtPosition(HTMLBrowser hHTMLBrowser, Int32 x, Int32 y) = 0;
-	virtual void SetCookie(const pStrA pchHostname, const pStrA pchKey, const pStrA pchValue, const pStrA pchPath, RTime32 nExpires, Bool bSecure, Bool bHTTPOnly) = 0;
+	virtual void SetCookie(pCStrA pchHostname, pCStrA pchKey, pCStrA pchValue, pCStrA pchPath, RTime32 nExpires, Bool bSecure, Bool bHTTPOnly) = 0;
 	virtual void SetPageScaleFactor(HTMLBrowser hHTMLBrowser, Float Zoom, Int32 nPointX, Int32 nPointY) = 0;
 	virtual void SetBackgroundMode(HTMLBrowser hHTMLBrowser, Bool bBackgroundMode) = 0;
 	virtual void SetDPIScalingFactor(HTMLBrowser hHTMLBrowser, Float DPIScaling) = 0;
 	virtual void AllowStartRequest(HTMLBrowser hHTMLBrowser, Bool bAllowed) = 0;
 	virtual void JSDialogResponse(HTMLBrowser hHTMLBrowser, Bool bResult) = 0;
-	virtual void FileLoadDialogResponse(HTMLBrowser hHTMLBrowser, const pStrA *pchSelectedFiles) = 0;
+	virtual void FileLoadDialogResponse(HTMLBrowser hHTMLBrowser, pCStrA *pchSelectedFiles) = 0;
 
 } ISteamHTMLSurface004, *IpSteamHTMLSurface004;
 
@@ -239,16 +239,16 @@ public:
 
 	virtual Bool Init() = 0;
 	virtual Bool Shutdown() = 0;
-	virtual SteamAPICall_t CreateBrowser(const pStrA pchUserAgent, const pStrA pchUserCSS) = 0;
+	virtual SteamAPICall_t CreateBrowser(pCStrA pchUserAgent, pCStrA pchUserCSS) = 0;
 	virtual void RemoveBrowser(HTMLBrowser hHTMLBrowser) = 0;
-	virtual void LoadURL(HTMLBrowser hHTMLBrowser, const pStrA pchURL, const pStrA pchPostData) = 0;
+	virtual void LoadURL(HTMLBrowser hHTMLBrowser, pCStrA pchURL, pCStrA pchPostData) = 0;
 	virtual void SetSize(HTMLBrowser hHTMLBrowser, Uint32 Cx, Uint32 Cy) = 0;
 	virtual void StopLoad(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void Reload(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void GoBack(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void GoForward(HTMLBrowser hHTMLBrowser) = 0;
-	virtual void AddHeader(HTMLBrowser hHTMLBrowser, const pStrA pchKey, const pStrA pchValue) = 0;
-	virtual void ExecuteJavascript(HTMLBrowser hHTMLBrowser, const pStrA pchScript) = 0;
+	virtual void AddHeader(HTMLBrowser hHTMLBrowser, pCStrA pchKey, pCStrA pchValue) = 0;
+	virtual void ExecuteJavascript(HTMLBrowser hHTMLBrowser, pCStrA pchScript) = 0;
 	virtual void MouseUp(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
 	virtual void MouseDown(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
 	virtual void MouseDoubleClick(HTMLBrowser hHTMLBrowser, EHTMLMouseButton eMouseButton) = 0;
@@ -263,17 +263,17 @@ public:
 	virtual void ViewSource(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void CopyToClipboard(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void PasteFromClipboard(HTMLBrowser hHTMLBrowser) = 0;
-	virtual void Find(HTMLBrowser hHTMLBrowser, const pStrA pchSearchStr, Bool bCurrentlyInFind, Bool bReverse) = 0;
+	virtual void Find(HTMLBrowser hHTMLBrowser, pCStrA pchSearchStr, Bool bCurrentlyInFind, Bool bReverse) = 0;
 	virtual void StopFind(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void GetLinkAtPosition(HTMLBrowser hHTMLBrowser, Int32 x, Int32 y) = 0;
-	virtual void SetCookie(const pStrA pchHostname, const pStrA pchKey, const pStrA pchValue, const pStrA pchPath, RTime32 nExpires, Bool bSecure, Bool bHTTPOnly) = 0;
+	virtual void SetCookie(pCStrA pchHostname, pCStrA pchKey, pCStrA pchValue, pCStrA pchPath, RTime32 nExpires, Bool bSecure, Bool bHTTPOnly) = 0;
 	virtual void SetPageScaleFactor(HTMLBrowser hHTMLBrowser, Float Zoom, Int32 nPointX, Int32 nPointY) = 0;
 	virtual void SetBackgroundMode(HTMLBrowser hHTMLBrowser, Bool bBackgroundMode) = 0;
 	virtual void SetDPIScalingFactor(HTMLBrowser hHTMLBrowser, Float DPIScaling) = 0;
 	virtual void OpenDeveloperTools(HTMLBrowser hHTMLBrowser) = 0;
 	virtual void AllowStartRequest(HTMLBrowser hHTMLBrowser, Bool bAllowed) = 0;
 	virtual void JSDialogResponse(HTMLBrowser hHTMLBrowser, Bool bResult) = 0;
-	virtual void FileLoadDialogResponse(HTMLBrowser hHTMLBrowser, const pStrA *pchSelectedFiles) = 0;
+	virtual void FileLoadDialogResponse(HTMLBrowser hHTMLBrowser, pCStrA *pchSelectedFiles) = 0;
 	
 	virtual ~_ISteamHTMLSurface_() = default;
 
@@ -298,7 +298,7 @@ typedef struct _HTML_BrowserReady_t_ {
 typedef struct _HTML_NeedsPaint_t_ {
 	
 	HTMLBrowser hHTMLBrowser;
-	const pStrA pBGRA;
+	pCStrA pBGRA;
 	Uint32 nWide;
 	Uint32 nTall;
 	Uint32 nUpdateX;
@@ -316,9 +316,9 @@ typedef struct _HTML_NeedsPaint_t_ {
 typedef struct _HTML_StartRequest_t_ {
 
 	HTMLBrowser hHTMLBrowser;
-	const pStrA pchURL;
-	const pStrA pchTarget;
-	const pStrA pchPostData;
+	pCStrA pchURL;
+	pCStrA pchTarget;
+	pCStrA pchPostData;
 	Bool bIsRedirect;
 
 } HTML_StartRequest_t, *pHTML_StartRequest_t;
@@ -334,10 +334,10 @@ typedef struct _HTML_CloseBrowser_t_ {
 typedef struct _HTML_URLChanged_t_ {
 	
 	HTMLBrowser hHTMLBrowser;
-	const pStrA pchURL;
-	const pStrA pchPostData;
+	pCStrA pchURL;
+	pCStrA pchPostData;
 	Bool bIsRedirect;
-	const pStrA pchPageTitle;
+	pCStrA pchPageTitle;
 	Bool bNewNavigation;
 
 } HTML_URLChanged_t, *pHTML_URLChanged_t;
@@ -346,8 +346,8 @@ typedef struct _HTML_URLChanged_t_ {
 typedef struct _HTML_FinishedRequest_t_ {
 	
 	HTMLBrowser hHTMLBrowser;
-	const pStrA pchURL;
-	const pStrA pchPageTitle;
+	pCStrA pchURL;
+	pCStrA pchPageTitle;
 
 } HTML_FinishedRequest_t, *pHTML_FinishedRequest_t;
 
@@ -355,7 +355,7 @@ typedef struct _HTML_FinishedRequest_t_ {
 typedef struct _HTML_OpenLinkInNewTab_t_ {
 	
 	HTMLBrowser hHTMLBrowser;
-	const pStrA pchURL;
+	pCStrA pchURL;
 
 } HTML_OpenLinkInNewTab_t, *pHTML_OpenLinkInNewTab_t;
 
@@ -363,7 +363,7 @@ typedef struct _HTML_OpenLinkInNewTab_t_ {
 typedef struct _HTML_ChangedTitle_t_ {
 	
 	HTMLBrowser hHTMLBrowser;
-	const pStrA pchTitle;
+	pCStrA pchTitle;
 
 } HTML_ChangedTitle_t, *pHTML_ChangedTitle_t;
 
@@ -415,7 +415,7 @@ typedef struct _HTML_LinkAtPosition_t_ {
 	HTMLBrowser hHTMLBrowser;
 	Uint32 x;
 	Uint32 y;
-	const pStrA pchURL;
+	pCStrA pchURL;
 	Bool bInput;
 	Bool bLiveLink;
 
@@ -425,7 +425,7 @@ typedef struct _HTML_LinkAtPosition_t_ {
 typedef struct _HTML_JSAlert_t_ {
 
 	HTMLBrowser hHTMLBrowser;
-	const pStrA pchMessage;
+	pCStrA pchMessage;
 
 } HTML_JSAlert_t, *pHTML_JSAlert_t;
 
@@ -433,7 +433,7 @@ typedef struct _HTML_JSAlert_t_ {
 typedef struct _HTML_JSConfirm_t_ {
 
 	HTMLBrowser hHTMLBrowser;
-	const pStrA pchMessage;
+	pCStrA pchMessage;
 
 } HTML_JSConfirt, *pHTML_JSConfirm_t;
 
@@ -441,8 +441,8 @@ typedef struct _HTML_JSConfirm_t_ {
 typedef struct _HTML_FileOpenDialog_t_ {
 
 	HTMLBrowser hHTMLBrowser;
-	const pStrA pchTitle;
-	const pStrA pchInitialFile;
+	pCStrA pchTitle;
+	pCStrA pchInitialFile;
 
 } HTML_FileOpenDialog_t, *pHTML_FileOpenDialog_t;
 
@@ -450,7 +450,7 @@ typedef struct _HTML_FileOpenDialog_t_ {
 typedef struct _HTML_NewWindow_t_ {
 
 	HTMLBrowser hHTMLBrowser;
-	const pStrA pchURL;
+	pCStrA pchURL;
 	Uint32 nX;
 	Uint32 nY;
 	Uint32 nWide;
@@ -471,7 +471,7 @@ typedef struct _HTML_SetCursor_t_ {
 typedef struct _HTML_StatusText_t_ {
 
 	HTMLBrowser hHTMLBrowser;
-	const pStrA pchMsg;
+	pCStrA pchMsg;
 
 } HTML_StatusText_t, *pHTML_StatusText_t;
 
@@ -479,7 +479,7 @@ typedef struct _HTML_StatusText_t_ {
 typedef struct _HTML_ShowToolTip_t_ {
 
 	HTMLBrowser hHTMLBrowser;
-	const pStrA pchMsg;
+	pCStrA pchMsg;
 
 } HTML_ShowToolTip_t, *pHTML_ShowToolTip_t;
 
@@ -487,7 +487,7 @@ typedef struct _HTML_ShowToolTip_t_ {
 typedef struct _HTML_UpdateToolTip_t_ {
 
 	HTMLBrowser hHTMLBrowser;
-	const pStrA pchMsg;
+	pCStrA pchMsg;
 
 } HTML_UpdateToolTip_t, *pHTML_UpdateToolTip_t;
 

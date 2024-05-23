@@ -46,7 +46,7 @@ void _SteamUser_::TerminateGameConnection(Uint32 nIPServer, Uint16 PortServer) {
 
 }
 
-void _SteamUser_::TrackAppUsageEvent(SteamId_t GameId, Int32 eAppUsageEvent, const pStrA pchExtraInfo) {
+void _SteamUser_::TrackAppUsageEvent(SteamId_t GameId, Int32 eAppUsageEvent, pCStrA pchExtraInfo) {
 
 	/* Empty Method */
 
@@ -116,7 +116,7 @@ HAuthTicket _SteamUser_::GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket,
 
 }
 
-HAuthTicket _SteamUser_::GetAuthTicketForWebApi(const pStrA pchIdentity) {
+HAuthTicket _SteamUser_::GetAuthTicketForWebApi(pCStrA pchIdentity) {
 
 	return k_HAuthTicket_Invalid;
 
@@ -195,7 +195,7 @@ Int32 _SteamUser_::GetPlayerSteamLevel() {
 
 }
 
-SteamAPICall_t _SteamUser_::RequestStoreAuthURL(const pStrA pchRedirectURL) {
+SteamAPICall_t _SteamUser_::RequestStoreAuthURL(pCStrA pchRedirectURL) {
 
 	return k_SteamAPICall_Invalid;
 

@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 
 _COMMON_X_API_ _Success_(return != NULL) pStrA __stdcall WideCharToMultiByteAlloc(
-	_In_z_ const pStrW pchWideStr
+	_In_z_ pCStrW pchWideStr
 ) {
 
 	Dword sCode = ERROR_INVALID_PARAMETER;
@@ -44,7 +44,7 @@ _COMMON_X_API_ _Success_(return != NULL) pStrA __stdcall WideCharToMultiByteAllo
 }
 
 _COMMON_X_API_ _Success_(return != NULL) pStrW __stdcall MultiByteToWideCharAlloc(
-	_In_z_ const pStrA pchStr
+	_In_z_ pCStrA pchStr
 ) {
 
 	Dword sCode = ERROR_INVALID_PARAMETER;
@@ -409,7 +409,7 @@ _COMMON_X_API_ _Success_(return != NULL) pStrA __stdcall SystemTimeStringAllocA(
 }
 
 _COMMON_X_API_ Bool __stdcall FileExistsW(
-	_In_z_ const pStrW pchFileSpec
+	_In_z_ pCStrW pchFileSpec
 ) {
 
 	Dword sCode = ERROR_INVALID_PARAMETER;
@@ -440,7 +440,7 @@ _COMMON_X_API_ Bool __stdcall FileExistsW(
 }
 
 _COMMON_X_API_ Bool __stdcall FileExistsA(
-	_In_z_ const pStrA pchFileSpec
+	_In_z_ pCStrA pchFileSpec
 ) {
 
 	Dword sCode = ERROR_INVALID_PARAMETER;
@@ -471,7 +471,7 @@ _COMMON_X_API_ Bool __stdcall FileExistsA(
 }
 
 _COMMON_X_API_ HANDLE _Success_(return != INVALID_HANDLE_VALUE) __stdcall FSCreateFileW(
-	_In_z_ const pStrW pchFileSpec,
+	_In_z_ pCStrW pchFileSpec,
 	_In_ Dword dwDesiredAccess,
 	_In_ Dword dwCreationDisposition
 ) {
@@ -528,7 +528,7 @@ _COMMON_X_API_ HANDLE _Success_(return != INVALID_HANDLE_VALUE) __stdcall FSCrea
 }
 
 _COMMON_X_API_ HANDLE _Success_(return != INVALID_HANDLE_VALUE) __stdcall FSCreateFileA(
-	_In_z_ const pStrA pchFileSpec,
+	_In_z_ pCStrA pchFileSpec,
 	_In_ Dword dwDesiredAccess,
 	_In_ Dword dwCreationDisposition
 ) {
@@ -736,7 +736,7 @@ _COMMON_X_API_ _Success_(return == True) Bool __stdcall SaveScreenshot(
 
 _COMMON_X_API_ _Success_(return != NULL) pStrW __stdcall GetGameSaveFileNameW(
 	_In_ HMODULE hModule,
-	_In_opt_z_ const pStrW pchFileSpec,
+	_In_opt_z_ pCStrW pchFileSpec,
 	_In_ ESaveType eSaveType
 ) {
 
@@ -772,7 +772,7 @@ _COMMON_X_API_ _Success_(return != NULL) pStrW __stdcall GetGameSaveFileNameW(
 
 				Dword cchDirectory = (Dword)(StrW_Count(pchDirectory));
 
-				pStrW pchGameFile = (pchFileSpec != NULL) ? pchFileSpec :
+				pCStrW pchGameFile = (pchFileSpec != NULL) ? pchFileSpec :
 					(eSaveType == k_ESaveType_Sreenshots) ? L"Sreenshot.bmp" : L"Save.dat";
 				SizeOF cchGameFile = StrW_Count(pchGameFile);
 
@@ -847,7 +847,7 @@ _COMMON_X_API_ _Success_(return != NULL) pStrW __stdcall GetGameSaveFileNameW(
 
 _COMMON_X_API_ _Success_(return != NULL) pStrA __stdcall GetGameSaveFileNameA(
 	_In_ HMODULE hModule,
-	_In_opt_z_ const pStrA pchFileSpec,
+	_In_opt_z_ pCStrA pchFileSpec,
 	_In_ ESaveType eSaveType
 ) {
 
@@ -889,7 +889,7 @@ _COMMON_X_API_ _Success_(return != NULL) pStrA __stdcall GetGameSaveFileNameA(
 
 }
 
-_COMMON_X_API_ const pStrW __stdcall GetUserUILanguageW(
+_COMMON_X_API_ pCStrW __stdcall GetUserUILanguageW(
 	void
 ) {
 
@@ -966,7 +966,7 @@ _COMMON_X_API_ const pStrW __stdcall GetUserUILanguageW(
 
 }
 
-_COMMON_X_API_ const pStrA __stdcall GetUserUILanguageA(
+_COMMON_X_API_ pCStrA __stdcall GetUserUILanguageA(
 	void
 ) {
 
@@ -1059,7 +1059,7 @@ _COMMON_X_API_ Uint32 __stdcall GetGameAppId(
 		sCode = ERROR_MRM_FILEPATH_TOO_LONG;
 		if (cchModuleDirectory <= cchMax) {
 
-			const pStrW pchAppIdFileSpec = L"\\steam_appid.txt";
+			pCStrW pchAppIdFileSpec = L"\\steam_appid.txt";
 			Dword cchAppIdFileSpec =
 				(Dword)(StrW_Count(pchAppIdFileSpec));
 

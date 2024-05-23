@@ -9,7 +9,7 @@ ScreenshotHandle _SteamScreenshots_::WriteScreenshot(const pVoid pvRGB, Uint32 c
 
 }
 
-ScreenshotHandle _SteamScreenshots_::AddScreenshotToLibrary(pStrA pchFilename, pStrA pchThumbnailFilename, Int32 Cx, Int32 Cy) {
+ScreenshotHandle _SteamScreenshots_::AddScreenshotToLibrary(pCStrA pchFilename, pCStrA pchThumbnailFilename, Int32 Cx, Int32 Cy) {
 
 	return k_ScreenshotHandle_Invalid;
 
@@ -27,7 +27,7 @@ void _SteamScreenshots_::HookScreenshots(Bool bHook) {
 
 }
 
-Bool _SteamScreenshots_::SetLocation(ScreenshotHandle hScreenshot, pStrA pchLocation) {
+Bool _SteamScreenshots_::SetLocation(ScreenshotHandle hScreenshot, pCStrA pchLocation) {
 
 	return False;
 
@@ -51,7 +51,7 @@ Bool _SteamScreenshots_::IsScreenshotsHooked() {
 
 }
 
-ScreenshotHandle _SteamScreenshots_::AddVRScreenshotToLibrary(EVRScreenshotType eVRScreenshotType, pStrA pchFilename, pStrA pchVRFilename) {
+ScreenshotHandle _SteamScreenshots_::AddVRScreenshotToLibrary(EVRScreenshotType eVRScreenshotType, pCStrA pchFilename, pCStrA pchVRFilename) {
 
 	return k_ScreenshotHandle_Invalid;
 
