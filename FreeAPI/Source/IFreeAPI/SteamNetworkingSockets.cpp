@@ -2,6 +2,24 @@
 #include "SteamNetworkingSockets.h"
 // -----------------------------------------------------------------------------
 
+HSteamListenSocket _SteamNetworkingSockets_::CreateListenSocket(Int32 nSteamConnectVirtualPort, Uint32 IP, Uint16 Port) {
+	
+	return k_HSteamListenSocket_Invalid;
+
+}
+
+HSteamNetConnection _SteamNetworkingSockets_::ConnectBySteamID(SteamId_t steamIdTarget, Int32 nVirtualPort) {
+
+	return k_HSteamNetConnection_Invalid;
+
+}
+
+HSteamNetConnection _SteamNetworkingSockets_::ConnectByIPv4Address(Uint32 nIP, Uint16 Port) {
+
+	return k_HSteamNetConnection_Invalid;
+
+}
+
 HSteamListenSocket _SteamNetworkingSockets_::CreateListenSocketIP(const pSteamNetworkingIPAddr pSteamNetworkingIPAddr, Int32 nOptions, const pSteamNetworkingConfigValue_t pOptions) {
 
 	return k_HSteamListenSocket_Invalid;
@@ -17,6 +35,30 @@ HSteamNetConnection _SteamNetworkingSockets_::ConnectByIPAddress(const pSteamNet
 HSteamListenSocket _SteamNetworkingSockets_::CreateListenSocketP2P(Int32 nLocalVirtualPort, Int32 nOptions, const pSteamNetworkingConfigValue_t pOptions) {
 
 	return k_HSteamListenSocket_Invalid;
+
+}
+
+HSteamListenSocket _SteamNetworkingSockets_::CreateListenSocketIP(const pSteamNetworkingIPAddr pSteamNetworkingIPAddr) {
+
+	return k_HSteamListenSocket_Invalid;
+
+}
+
+HSteamNetConnection _SteamNetworkingSockets_::ConnectByIPAddress(const pSteamNetworkingIPAddr pSteamNetworkingIPAddr) {
+
+	return k_HSteamListenSocket_Invalid;
+
+}
+
+HSteamListenSocket _SteamNetworkingSockets_::CreateListenSocketP2P(Int32 nLocalVirtualPort) {
+
+	return k_HSteamListenSocket_Invalid;
+
+}
+
+HSteamNetConnection _SteamNetworkingSockets_::ConnectP2P(const pSteamNetworkingIdentity pIdentityRemote, Int32 nRemoteVirtualPort) {
+
+	return k_HSteamNetConnection_Invalid;
 
 }
 
@@ -90,9 +132,45 @@ EResult _SteamNetworkingSockets_::FlushMessagesOnConnection(HSteamNetConnection 
 
 }
 
+Int32 _SteamNetworkingSockets_::ReceiveMessagesOnConnection(HSteamNetConnection hConnection, pSteamNetworkingMessage_t_Old *ppMessages, Int32 nMessages) {
+
+	return 0;
+
+}
+
+Int32 _SteamNetworkingSockets_::ReceiveMessagesOnListenSocket(HSteamListenSocket hSocket, pSteamNetworkingMessage_t_Old *ppMessages, Int32 nMaxMessages) {
+
+	return 0;
+
+}
+
+Int32 _SteamNetworkingSockets_::ReceiveMessagesOnListenSocket(HSteamListenSocket hSocket, pSteamNetworkingMessage_t *ppMessages, Int32 nMaxMessages) {
+
+	return 0;
+
+}
+
 Int32 _SteamNetworkingSockets_::ReceiveMessagesOnConnection(HSteamNetConnection hConnection, pSteamNetworkingMessage_t *ppMessages, Int32 nMessages) {
 
 	return 0;
+
+}
+
+Bool _SteamNetworkingSockets_::GetConnectionInfo(HSteamNetConnection hConnection, pSteamNetConnectionInfo_t_Old pInfo) {
+
+	return False;
+
+}
+
+Bool _SteamNetworkingSockets_::GetQuickConnectionStatus(HSteamNetConnection hConnection, pSteamNetConnectionRealTimeStatus_t pStats) {
+
+	return False;
+
+}
+
+Bool _SteamNetworkingSockets_::GetListenSocketInfo(HSteamListenSocket hSocket, pUint32 nIP, pUint16 pPort) {
+
+	return False;
 
 }
 
@@ -196,6 +274,24 @@ Int32 _SteamNetworkingSockets_::FindRelayAuthTicketForServer(const pSteamNetwork
 
 }
 
+HSteamNetConnection _SteamNetworkingSockets_::ConnectToHostedDedicatedServer(const pSteamNetworkingIdentity pIdentityTarget, Int32 nRemoteVirtualPort) {
+
+	return k_HSteamNetConnection_Invalid;
+
+}
+
+Bool _SteamNetworkingSockets_::GetHostedDedicatedServerAddress_Old(pSteamDatagramHostedAddress pRouting) {
+
+	return False;
+
+}
+
+HSteamListenSocket _SteamNetworkingSockets_::CreateHostedDedicatedServerListenSocket(Int32 nLocalVirtualPort) {
+	
+	return k_HSteamListenSocket_Invalid;
+
+}
+
 HSteamNetConnection _SteamNetworkingSockets_::ConnectToHostedDedicatedServer(const pSteamNetworkingIdentity pIdentityTarget, Int32 nRemoteVirtualPort, Int32 nOptions, const pSteamNetworkingConfigValue_t pOptions) {
 
 	return k_HSteamNetConnection_Invalid;
@@ -293,6 +389,12 @@ void _SteamNetworkingSockets_::ResetIdentity(const pSteamNetworkingIdentity pIde
 
 }
 
+void _SteamNetworkingSockets_::RunCallbacks(IpSteamNetworkingSocketsCallbacks pCallbacks) {
+
+	/* Empty Method */
+
+}
+
 void _SteamNetworkingSockets_::RunCallbacks() {
 
 	/* Empty Method */
@@ -326,5 +428,109 @@ EResult _SteamNetworkingSockets_::GetRemoteFakeIPForConnection(HSteamNetConnecti
 IpSteamNetworkingFakeUDPPort _SteamNetworkingSockets_::CreateFakeUDPPort(Int32 iFakeServerPort) {
 
 	return NULL;
+
+}
+
+pCStrA _SteamNetworkingSockets_::GetConfigurationValueName(ESteamNetworkingConfigurationValue eConfigValue) {
+	
+	switch (eConfigValue) {
+		case k_ESteamNetworkingConfigurationValue_FakeMessageLoss_Send:
+			return (pCStrA)("FakeMessageLoss_Send");
+		case k_ESteamNetworkingConfigurationValue_FakeMessageLoss_Recv:
+			return (pCStrA)("FakeMessageLoss_Recv");
+		case k_ESteamNetworkingConfigurationValue_FakePacketLoss_Send:
+			return (pCStrA)("FakePacketLoss_Send");
+		case k_ESteamNetworkingConfigurationValue_FakePacketLoss_Recv:
+			return (pCStrA)("FakePacketLoss_Recv");
+		case k_ESteamNetworkingConfigurationValue_FakePacketLag_Send:
+			return (pCStrA)("FakePacketLag_Send");
+		case k_ESteamNetworkingConfigurationValue_FakePacketLag_Recv:
+			return (pCStrA)("FakePacketLag_Recv");
+		case k_ESteamNetworkingConfigurationValue_FakePacketReorder_Send:
+			return (pCStrA)("FakePacketReorder_Send");
+		case k_ESteamNetworkingConfigurationValue_FakePacketReorder_Recv:
+			return (pCStrA)("FakePacketReorder_Recv");
+		case k_ESteamNetworkingConfigurationValue_FakePacketReorder_Time:
+			return (pCStrA)("FakePacketReorder_Time");
+		case k_ESteamNetworkingConfigurationValue_SendBufferSize:
+			return (pCStrA)("SendBufferSize");
+		case k_ESteamNetworkingConfigurationValue_MaxRate:
+			return (pCStrA)("MaxRate");
+		case k_ESteamNetworkingConfigurationValue_MinRate:
+			return (pCStrA)("MinRate");
+		case k_ESteamNetworkingConfigurationValue_Nagle_Time:
+			return (pCStrA)("Nagle_Time");
+		case k_ESteamNetworkingConfigurationValue_LogLevel_AckRTT:
+			return (pCStrA)("LogLevel_AckRTT");
+		case k_ESteamNetworkingConfigurationValue_LogLevel_Packet:
+			return (pCStrA)("LogLevel_Packet");
+		case k_ESteamNetworkingConfigurationValue_LogLevel_Message:
+			return (pCStrA)("LogLevel_Message");
+		case k_ESteamNetworkingConfigurationValue_LogLevel_PacketGaps:
+			return (pCStrA)("LogLevel_PacketGaps");
+		case k_ESteamNetworkingConfigurationValue_LogLevel_P2PRendezvous:
+			return (pCStrA)("LogLevel_P2PRendezvous");
+		case k_ESteamNetworkingConfigurationValue_LogLevel_RelayPings:
+			return (pCStrA)("LogLevel_RelayPings");
+		case k_ESteamNetworkingConfigurationValue_ClientConsecutitivePingTimeoutsFailInitial:
+			return (pCStrA)("ClientConsecutitivePingTimeoutsFailInitial");
+		case k_ESteamNetworkingConfigurationValue_ClientConsecutitivePingTimeoutsFail:
+			return (pCStrA)("ClientConsecutitivePingTimeoutsFail");
+		case k_ESteamNetworkingConfigurationValue_ClientMinPingsBeforePingAccurate:
+			return (pCStrA)("ClientMinPingsBeforePingAccurate");
+		case k_ESteamNetworkingConfigurationValue_ClientSingleSocket:
+			return (pCStrA)("ClientSingleSocket");
+		case k_ESteamNetworkingConfigurationValue_IP_Allow_Without_Auth:
+			return (pCStrA)("IP_Allow_Without_Auth");
+		case k_ESteamNetworkingConfigurationValue_Timeout_Seconds_Initial:
+			return (pCStrA)("Timeout_Seconds_Initial");
+		case k_ESteamNetworkingConfigurationValue_Timeout_Seconds_Connected:
+			return (pCStrA)("Timeout_Seconds_Connected");
+	}
+
+	return (pCStrA)(
+		""
+	);
+
+}
+
+Int32 _SteamNetworkingSockets_::GetConfigurationString(ESteamNetworkingConfigurationString eConfigString, pStrA pchDest, Int32 cchDest) {
+	
+	return 0;
+
+}
+
+Bool _SteamNetworkingSockets_::SetConfigurationString(ESteamNetworkingConfigurationString eConfigString, pCStrA pchString) {
+	
+	return False;
+
+}
+
+pCStrA _SteamNetworkingSockets_::GetConfigurationStringName(ESteamNetworkingConfigurationString eConfigString) {
+	
+	switch (eConfigString) {
+		case k_ESteamNetworkingConfigurationString_ClientForceRelayCluster:
+			return (pCStrA)("ClientForceRelayCluster");
+		case k_ESteamNetworkingConfigurationString_ClientDebugTicketAddress:
+			return (pCStrA)("ClientDebugTicketAddress");
+		case k_ESteamNetworkingConfigurationString_ClientForceProxyAddr:
+			return (pCStrA)("ClientForceProxyAddr");
+	}
+
+	return (pCStrA)(
+		""
+	);
+
+}
+
+Int32 _SteamNetworkingSockets_::GetConnectionConfigurationValue(HSteamNetConnection hConnection, ESteamNetworkingConnectionConfigurationValue eConfigValue) {
+	
+	return 0;
+
+}
+
+Bool _SteamNetworkingSockets_::SetConnectionConfigurationValue(HSteamNetConnection hConnection, ESteamNetworkingConnectionConfigurationValue eConfigValue, Int32 nValue) {
+	
+	return False;
 
 }

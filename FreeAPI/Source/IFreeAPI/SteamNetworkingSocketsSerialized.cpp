@@ -44,7 +44,7 @@ Uint32 _SteamNetworkingSocketsSerialized_::GetCachedRelayTicket(Uint32 iTicket, 
 
 }
 
-void _SteamNetworkingSocketsSerialized_::PostConnectionStateMsg(const pVoid pMsg, Uint32 cbMsg) {
+void _SteamNetworkingSocketsSerialized_::PostConnectionStateMsg(const pVoid pvMsg, Uint32 cbMsg) {
 
 	/* Empty Method */
 

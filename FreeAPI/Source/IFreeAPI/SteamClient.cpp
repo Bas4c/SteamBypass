@@ -325,27 +325,31 @@ pVoid _SteamClient_::GetISteamGenericInterface(HSteamUser hSteamUser, HSteamPipe
 			StrA_Cmp(pchVersion, (pCStrA)(STEAMNETWORKINGUTILS_INTERFACE_VERSION), True)
 		)
 			return (IpSteamNetworkingUtils)(&this->SteamNetworkingUtils);
-		if (
-			StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingSockets001"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingSockets002"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingSockets003"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingSockets004"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingSockets005"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingSockets006"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingSockets007"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingSockets008"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingSockets009"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingSockets010"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingSockets011"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)(STEAMNETWORKINGSOCKETS_INTERFACE_VERSION), True)
-		)
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingSockets001"), True))
+			return (IpSteamNetworkingSockets)((pVoid)((IpSteamNetworkingSockets001)(&this->SteamNetworkingSockets)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingSockets002"), True))
+			return (IpSteamNetworkingSockets)((pVoid)((IpSteamNetworkingSockets002)(&this->SteamNetworkingSockets)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingSockets003"), True))
+			return (IpSteamNetworkingSockets)((pVoid)((IpSteamNetworkingSockets003)(&this->SteamNetworkingSockets)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingSockets004"), True))
+			return (IpSteamNetworkingSockets)((pVoid)((IpSteamNetworkingSockets004)(&this->SteamNetworkingSockets)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingSockets006"), True))
+			return (IpSteamNetworkingSockets)((pVoid)((IpSteamNetworkingSockets006)(&this->SteamNetworkingSockets)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingSockets008"), True))
+			return (IpSteamNetworkingSockets)((pVoid)((IpSteamNetworkingSockets008)(&this->SteamNetworkingSockets)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingSockets009"), True))
+			return (IpSteamNetworkingSockets)((pVoid)((IpSteamNetworkingSockets009)(&this->SteamNetworkingSockets)));
+		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMNETWORKINGSOCKETS_INTERFACE_VERSION), True))
 			return (IpSteamNetworkingSockets)(&this->SteamNetworkingSockets);
 		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMNETWORKINGMESSAGES_INTERFACE_VERSION), True))
 			return (IpSteamNetworkingMessages)(&this->SteamNetworkingMessages);
-		if (
-			StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingSocketsSerialized001"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)(STEAMNETWORKINGSOCKETSSERIALIZED_INTERFACE_VERSION), True)
-		)
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingSocketsSerialized002"), True))
+			return (IpSteamNetworkingSocketsSerialized)((pVoid)((IpSteamNetworkingSocketsSerialized002)(&this->SteamNetworkingSocketsSerialized)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingSocketsSerialized003"), True))
+			return (IpSteamNetworkingSocketsSerialized)((pVoid)((IpSteamNetworkingSocketsSerialized003)(&this->SteamNetworkingSocketsSerialized)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingSocketsSerialized004"), True))
+			return (IpSteamNetworkingSocketsSerialized)((pVoid)((IpSteamNetworkingSocketsSerialized004)(&this->SteamNetworkingSocketsSerialized)));
+		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMNETWORKINGSOCKETSSERIALIZED_INTERFACE_VERSION), True))
 			return (IpSteamNetworkingSocketsSerialized)(&this->SteamNetworkingSocketsSerialized);
 
 	}
@@ -469,11 +473,7 @@ IpSteamRemoteStorage _SteamClient_::GetISteamRemoteStorage(HSteamUser hSteamUser
 IpSteamScreenshots _SteamClient_::GetISteamScreenshots(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
 
 	if (pchVersion != NULL) {
-		if (
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMSCREENSHOTS_INTERFACE_VERSION001"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMSCREENSHOTS_INTERFACE_VERSION002"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)(STEAMSCREENSHOTS_INTERFACE_VERSION), True)
-			) {
+		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMSCREENSHOTS_INTERFACE_VERSION), True)) {
 			return (IpSteamScreenshots)(&this->SteamScreenshots);
 		}
 	}

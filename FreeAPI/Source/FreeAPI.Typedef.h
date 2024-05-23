@@ -854,6 +854,21 @@ typedef Uint32 HSteamNetPollGroup, *pHSteamNetPollGroup;
 #define k_HSteamNetPollGroup_Invalid ((HSteamNetPollGroup)(0x00000000));
 
 typedef Int64 SteamNetworkingMicroseconds, *pSteamNetworkingMicroseconds;
+typedef struct _SteamNetworkingMessage_t_Old_ {
+
+	SteamId_t SteamIdSender;
+	Int64 nConnectionUserData;
+	SteamNetworkingMicroseconds TimeReceived;
+	Int64 nMessageNumber;
+	void(*Release)
+		(_SteamNetworkingMessage_t_Old_ *pSteamNetworkingMessage);
+	pVoid pvData;
+	Int32 cbSize;
+	HSteamNetConnection hSteamNetConnection;
+	Int32 nChannel;
+	Int32 Padding;
+
+} SteamNetworkingMessage_t_Old, *pSteamNetworkingMessage_t_Old;
 typedef struct _SteamNetworkingMessage_t_ {
 
 	pVoid pvData;
@@ -915,6 +930,21 @@ typedef enum _ESteamNetworkingConnectionState_ {
 #define k_cchSteamNetworkingMaxConnectionAppName ((Int32)(32))
 
 typedef Uint32 SteamNetworkingPOPID, *pSteamNetworkingPOPID;
+typedef struct _SteamNetConnectionInfo_t_Old_ {
+
+	SteamId_t SteamIdRemote;
+	Int64 nUserData;
+	HSteamListenSocket hListenSocket;
+	Uint32 nIPRemote;
+	Uint16 PortRemote;
+	Uint16 Padding;
+	SteamNetworkingPOPID IdPOPRemote;
+	SteamNetworkingPOPID IdPOPRelay;
+	Int32 eState;
+	Int32 eEndReason;
+	CharA chEndDebug[k_cchSteamNetworkingMaxConnectionCloseReason];
+
+} SteamNetConnectionInfo_t_Old, *pSteamNetConnectionInfo_t_Old;
 typedef struct _SteamNetConnectionInfo_t_ {
 
 	SteamNetworkingIdentity IdentityRemote;
@@ -1037,6 +1067,62 @@ typedef struct _SteamNetworkingConfigValue_t_ {
 	};
 
 } SteamNetworkingConfigValue_t, *pSteamNetworkingConfigValue_t;
+
+typedef enum _ESteamNetworkingSendType_ {
+
+	k_ESteamNetworkingSendType_Unreliable,
+	k_ESteamNetworkingSendType_UnreliableNoNagle = 1,
+	k_ESteamNetworkingSendType_UnreliableNoDelay = (2 | 1),
+	k_ESteamNetworkingSendType_Reliable = 8,
+	k_ESteamNetworkingSendType_ReliableNoNagle = (8 | 1)
+
+} ESteamNetworkingSendType, *pESteamNetworkingSendType;
+typedef enum _ESteamNetworkingConfigurationValue_ {
+
+	k_ESteamNetworkingConfigurationValue_FakeMessageLoss_Send,
+	k_ESteamNetworkingConfigurationValue_FakeMessageLoss_Recv,
+	k_ESteamNetworkingConfigurationValue_FakePacketLoss_Send,
+	k_ESteamNetworkingConfigurationValue_FakePacketLoss_Recv,
+	k_ESteamNetworkingConfigurationValue_FakePacketLag_Send,
+	k_ESteamNetworkingConfigurationValue_FakePacketLag_Recv,
+	k_ESteamNetworkingConfigurationValue_FakePacketReorder_Send,
+	k_ESteamNetworkingConfigurationValue_FakePacketReorder_Recv,
+	k_ESteamNetworkingConfigurationValue_FakePacketReorder_Time,
+	k_ESteamNetworkingConfigurationValue_SendBufferSize,
+	k_ESteamNetworkingConfigurationValue_MaxRate,
+	k_ESteamNetworkingConfigurationValue_MinRate,
+	k_ESteamNetworkingConfigurationValue_Nagle_Time,
+	k_ESteamNetworkingConfigurationValue_LogLevel_AckRTT,
+	k_ESteamNetworkingConfigurationValue_LogLevel_Packet,
+	k_ESteamNetworkingConfigurationValue_LogLevel_Message,
+	k_ESteamNetworkingConfigurationValue_LogLevel_PacketGaps,
+	k_ESteamNetworkingConfigurationValue_LogLevel_P2PRendezvous,
+	k_ESteamNetworkingConfigurationValue_LogLevel_RelayPings,
+	k_ESteamNetworkingConfigurationValue_ClientConsecutitivePingTimeoutsFailInitial,
+	k_ESteamNetworkingConfigurationValue_ClientConsecutitivePingTimeoutsFail,
+	k_ESteamNetworkingConfigurationValue_ClientMinPingsBeforePingAccurate,
+	k_ESteamNetworkingConfigurationValue_ClientSingleSocket,
+	k_ESteamNetworkingConfigurationValue_IP_Allow_Without_Auth,
+	k_ESteamNetworkingConfigurationValue_Timeout_Seconds_Initial,
+	k_ESteamNetworkingConfigurationValue_Timeout_Seconds_Connected,
+	k_ESteamNetworkingConfigurationValue_Count
+
+} ESteamNetworkingConfigurationValue, *pESteamNetworkingConfigurationValue;
+typedef enum _ESteamNetworkingConfigurationString_ {
+	
+	k_ESteamNetworkingConfigurationString_ClientForceRelayCluster,
+	k_ESteamNetworkingConfigurationString_ClientDebugTicketAddress,
+	k_ESteamNetworkingConfigurationString_ClientForceProxyAddr,
+	k_ESteamNetworkingConfigurationString_Count
+
+} ESteamNetworkingConfigurationString, *pESteamNetworkingConfigurationString;
+typedef enum _ESteamNetworkingConnectionConfigurationValue_ {
+
+	k_ESteamNetworkingConnectionConfigurationValue_SNP_MaxRate,
+	k_ESteamNetworkingConnectionConfigurationValue_SNP_MinRate,
+	k_ESteamNetworkingConnectionConfigurationValue_Count
+
+} ESteamNetworkingConnectionConfigurationValue, *pESteamNetworkingConnectionConfigurationValue;
 
 typedef struct _SteamNetConnectionRealTimeLaneStatus_t_ {
 	

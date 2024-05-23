@@ -7,7 +7,9 @@
 #include "IFreeAPI.Contract\ISteamNetworkingSocketsSerialized.h"
 // -----------------------------------------------------------------------------
 
-typedef class _SteamNetworkingSocketsSerialized_ : public _ISteamNetworkingSocketsSerialized_ {
+typedef class _SteamNetworkingSocketsSerialized_ : public _ISteamNetworkingSocketsSerialized002_,
+ public _ISteamNetworkingSocketsSerialized003_, public _ISteamNetworkingSocketsSerialized004_,
+ public _ISteamNetworkingSocketsSerialized_ {
 public:
 
 	_SteamNetworkingSocketsSerialized_() = default;
@@ -21,7 +23,7 @@ public:
 	void CacheRelayTicket(const pVoid pvTicket, Uint32 cbTicket) override;
 	Uint32 GetCachedRelayTicketCount() override;
 	Uint32 GetCachedRelayTicket(Uint32 iTicket, pVoid pvTicket, Uint32 cbTicket) override;
-	void PostConnectionStateMsg(const pVoid pMsg, Uint32 cbMsg) override;
+	void PostConnectionStateMsg(const pVoid pvMsg, Uint32 cbMsg) override;
 	Bool GetSTUNServer(Int32 nNumPort, pStrA pchSTUN, Uint32 cchSTUN) override;
 	Bool BAllowDirectConnectToPeer(pSteamNetworkingIdentity pSteamNetworkingIdentity) override;
 	Bool BeginAsyncRequestFakeIP(Int32 nNumPorts) override;
