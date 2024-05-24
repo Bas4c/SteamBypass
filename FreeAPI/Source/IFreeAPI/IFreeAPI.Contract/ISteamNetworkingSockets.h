@@ -57,7 +57,7 @@ typedef class _ISteamNetworkingSockets001_ {
 public:
 
 	virtual HSteamListenSocket CreateListenSocket(Int32 nSteamConnectVirtualPort, Uint32 IP, Uint16 Port) = 0;
-	virtual HSteamNetConnection ConnectBySteamID(SteamId_t steamIdTarget, Int32 nVirtualPort) = 0;
+	virtual HSteamNetConnection ConnectBySteamID(SteamId_t SteamIdTarget, Int32 nVirtualPort) = 0;
 	virtual HSteamNetConnection ConnectByIPv4Address(Uint32 nIP, Uint16 Port) = 0;
 	virtual EResult AcceptConnection(HSteamNetConnection hConnection) = 0;
 	virtual Bool CloseConnection(HSteamNetConnection hPeer, Int32 nReason, pCStrA pchDebug, Bool bEnableLinger) = 0;

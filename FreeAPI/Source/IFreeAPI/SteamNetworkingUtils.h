@@ -3,11 +3,14 @@
 
 #include <Windows.h>
 // -----------------------------------------------------------------------------
+#include "..\CommonX.h"
 #include "..\StrX.h"
 #include "IFreeAPI.Contract\ISteamNetworkingUtils.h"
 // -----------------------------------------------------------------------------
 
-typedef class _SteamNetworkingUtils_ : public _ISteamNetworkingUtils_ {
+typedef class _SteamNetworkingUtils_ : public _ISteamNetworkingUtils001_,
+ public _ISteamNetworkingUtils002_, public _ISteamNetworkingUtils003_,
+ public _ISteamNetworkingUtils_ {
 public:
 
 	_SteamNetworkingUtils_() = default;
@@ -23,6 +26,7 @@ public:
 	void ConvertPingLocationToString(const pSteamNetworkPingLocation_t pLocation, pStrA pchBuf, Int32 cchBuf) override;
 	Bool ParsePingLocationString(pCStrA pchString, pSteamNetworkPingLocation_t pResult) override;
 	Bool CheckPingDataUpToDate(Float MaxAgeSeconds) override;
+	Bool IsPingMeasurementInProgress() override;
 	Int32 GetPingToDataCenter(SteamNetworkingPOPID PopId, pSteamNetworkingPOPID pViaRelayPoP) override;
 	Int32 GetDirectPingToPOP(SteamNetworkingPOPID PopId) override;
 	Int32 GetPOPCount() override;
@@ -33,9 +37,13 @@ public:
 	ESteamNetworkingFakeIPType GetIPv4FakeIPType(Uint32 IPv4) override;
 	EResult GetRealIdentityForFakeIP(const pSteamNetworkingIPAddr pFakeIP, pSteamNetworkingIdentity pRealIdentity) override;
 
-	Bool SetConfigValue(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, ESteamNetworkingConfigScope eScopeType, pVoid scopeObj, ESteamNetworkingConfigDataType eDataType, const pVoid pArg) override;
-	ESteamNetworkingGetConfigValueResult GetConfigValue(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, ESteamNetworkingConfigScope eScopeType, pVoid scopeObj, pESteamNetworkingConfigDataType pDataType, pVoid pResult, pSizeOF cbResult) override;
+	Bool SetConfigValue(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, ESteamNetworkingConfigScope eScopeType, pVoid ScopeObj, ESteamNetworkingConfigDataType eDataType, const pVoid pArg) override;
+	ESteamNetworkingGetConfigValueResult GetConfigValue(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, ESteamNetworkingConfigScope eScopeType, pVoid ScopeObj, pESteamNetworkingConfigDataType pDataType, pVoid pResult, pSizeOF cbResult) override;
+	/* Return True of config value or False if not exist */
+	Bool GetConfigValueInfo(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, pCStrA *pchName, pESteamNetworkingConfigDataType pDataType, pESteamNetworkingConfigScope pScope, pESteamNetworkingConfigValue pNextValue) override;
+	/* Return name of config value or NULL if not exist */
 	pCStrA GetConfigValueInfo(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, pESteamNetworkingConfigDataType pDataType, pESteamNetworkingConfigScope pScope) override;
+	ESteamNetworkingConfigValue GetFirstConfigValue() override;
 	ESteamNetworkingConfigValue IterateGenericEditableConfigValues(ESteamNetworkingConfigValue eCurrent, Bool bEnumerateDevVars) override;
 	void SteamNetworkingIPAddr_ToString(const pSteamNetworkingIPAddr pAddr, pStrA pchStr, SizeOF cchStr, Bool bWithPort) override;
 	Bool SteamNetworkingIPAddr_ParseString(pSteamNetworkingIPAddr pAddr, pCStrA pchStr) override;

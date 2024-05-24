@@ -3,6 +3,7 @@
 
 #include <Windows.h>
 // -----------------------------------------------------------------------------
+#include "..\CommonX.h"
 #include "..\StrX.h"
 #include "IFreeAPI.Contract\ISteamMatchmaking.h"
 // -----------------------------------------------------------------------------
@@ -75,6 +76,10 @@ public:
 	SteamId_t GetLobbyOwner(SteamId_t SteamIdLobby) override;
 	Bool SetLobbyOwner(SteamId_t SteamIdLobby, SteamId_t SteamIdNewOwner) override;
 	Bool SetLinkedLobby(SteamId_t SteamIdLobby, SteamId_t SteamIdLobbyDependent) override;
+
+	#ifdef _PS3
+	void CheckForPSNGameBootInvite(Uint32 iGameBootAttributes) override;
+	#endif
 
 	Bool RequestFriendsLobbies() override;
 	Float GetLobbyDistance(SteamId_t SteamIdLobby) override;

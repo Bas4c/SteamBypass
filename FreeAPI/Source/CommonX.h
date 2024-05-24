@@ -190,4 +190,37 @@ _COMMON_X_API_ Uint32 __stdcall GetGameAppId(
 	void
 );
 
+_COMMON_X_API_ void __stdcall DebugFuncEntryW(
+	_In_z_ pCStrW pchFuncName
+);
+
+_COMMON_X_API_ void __stdcall DebugFuncEntryA(
+	_In_z_ pCStrA pchFuncName
+);
+
+#ifdef UNICODE
+	#define DebugFuncEntry DebugFuncEntryW
+#else // ANSI
+	#define DebugFuncEntry DebugFuncEntryA
+#endif
+
+#ifndef NOBRAKE
+	#define NOBRAKE
+#endif
+
+#ifdef DEBUG
+	#ifdef NOBRAKE
+		#define DEBUGBREAK(FuncName) if (IsDebuggerPresent()) { \
+  DebugFuncEntryA(FuncName); \
+ }
+	#else // BRAKE
+		#define DEBUGBREAK(FuncName) if (IsDebuggerPresent()) { \
+  DebugFuncEntryA(FuncName); \
+  __debugbreak(); \
+ }
+	#endif
+#else
+	#define DEBUGBREAK(FuncName)
+#endif
+
 #endif // !_COMMON_X_

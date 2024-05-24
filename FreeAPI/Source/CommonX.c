@@ -1134,3 +1134,163 @@ _COMMON_X_API_ Uint32 __stdcall GetGameAppId(
 	return 0U;
 
 }
+
+_COMMON_X_API_ void __stdcall DebugFuncEntryW(
+	_In_z_ pCStrW pchFuncName
+) {
+
+	if (pchFuncName != NULL) {
+
+		HMODULE hModule = NULL;
+		GetModuleHandleExW(
+			GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS |
+			GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
+			(LPCWSTR)(DebugFuncEntryW),
+			&hModule
+		);
+		
+		/* Excludes '!' Character */
+		const SizeOF cchMax = (SizeOF_MAX / sizeof(CharW)) - 4U;
+		pStrW pchModuleDirectory = LoadModuleNameW(hModule, False);
+
+		if (pchModuleDirectory != NULL) {
+
+			SizeOF cchModuleDirectory =
+				StrW_Count(pchModuleDirectory);
+
+			while (cchModuleDirectory != 0) {
+
+				if (
+					pchModuleDirectory[cchModuleDirectory - 1] == L'\\' ||
+					pchModuleDirectory[cchModuleDirectory - 1] == L'/'
+					) {
+					cchModuleDirectory--;
+					break;
+				}
+
+				cchModuleDirectory--;
+
+			}
+
+			SizeOF cchModuleName = StrW_Count(pchModuleDirectory + cchModuleDirectory + 1U);
+			SizeOF cchFuncName = StrW_Count(pchFuncName);
+			if (cchModuleName <= cchMax && cchFuncName <= cchMax) {
+				
+				SizeOF cchFree = cchMax - cchModuleName;
+				if (cchFuncName <= cchFree) {
+
+					SizeOF cchDbgMsg = cchModuleName + cchFuncName + 3U;
+					pStrW pchDbgMsg = HeapAlloc(
+						GetProcessHeap(), HEAP_ZERO_MEMORY,
+						(cchDbgMsg + 1U) * sizeof(CharW)
+					);
+
+					if (pchDbgMsg != NULL) {
+
+						/* Format: "<Module>!<FuncName>" */
+
+						StrW_Copy(pchDbgMsg, cchDbgMsg, pchModuleDirectory + cchModuleDirectory + 1U);
+						StrW_Cat(pchDbgMsg, cchDbgMsg, L"!");
+						StrW_Cat(pchDbgMsg, cchDbgMsg, pchFuncName);
+						StrW_Cat(pchDbgMsg, cchDbgMsg, L"\r\n");
+
+						OutputDebugStringW(pchDbgMsg);
+
+						HeapFree(
+							GetProcessHeap(), 0U,
+							pchDbgMsg
+						);
+
+					}
+
+				}
+
+			}
+
+			LocalFree(pchModuleDirectory);
+
+		}
+
+	}
+
+}
+
+_COMMON_X_API_ void __stdcall DebugFuncEntryA(
+	_In_z_ pCStrA pchFuncName
+) {
+
+	if (pchFuncName != NULL) {
+
+		HMODULE hModule = NULL;
+		GetModuleHandleExA(
+			GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS |
+			GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
+			(LPCSTR)(DebugFuncEntryA),
+			&hModule
+		);
+
+		/* Excludes '!' Character */
+		const SizeOF cchMax = (SizeOF_MAX / sizeof(CharA)) - 4U;
+		pStrA pchModuleDirectory = LoadModuleNameA(hModule, False);
+
+		if (pchModuleDirectory != NULL) {
+
+			SizeOF cchModuleDirectory =
+				StrA_Count(pchModuleDirectory);
+
+			while (cchModuleDirectory != 0) {
+
+				if (
+					pchModuleDirectory[cchModuleDirectory - 1] == '\\' ||
+					pchModuleDirectory[cchModuleDirectory - 1] == '/'
+					) {
+					cchModuleDirectory--;
+					break;
+				}
+
+				cchModuleDirectory--;
+
+			}
+
+			SizeOF cchModuleName = StrA_Count(pchModuleDirectory + cchModuleDirectory + 1U);
+			SizeOF cchFuncName = StrA_Count(pchFuncName);
+			if (cchModuleName <= cchMax && cchFuncName <= cchMax) {
+
+				SizeOF cchFree = cchMax - cchModuleName;
+				if (cchFuncName <= cchFree) {
+
+					SizeOF cchDbgMsg = cchModuleName + cchFuncName + 3U;
+					pStrA pchDbgMsg = HeapAlloc(
+						GetProcessHeap(), HEAP_ZERO_MEMORY,
+						(cchDbgMsg + 1U) * sizeof(CharA)
+					);
+
+					if (pchDbgMsg != NULL) {
+
+						/* Format: "<Module>!<FuncName>" */
+
+						StrA_Copy(pchDbgMsg, cchDbgMsg, pchModuleDirectory + cchModuleDirectory + 1U);
+						StrA_Cat(pchDbgMsg, cchDbgMsg, "!");
+						StrA_Cat(pchDbgMsg, cchDbgMsg, pchFuncName);
+						StrA_Cat(pchDbgMsg, cchDbgMsg, "\r\n");
+
+						OutputDebugStringA(pchDbgMsg);
+
+						HeapFree(
+							GetProcessHeap(), 0U,
+							pchDbgMsg
+						);
+
+					}
+
+				}
+
+			}
+
+			LocalFree(pchModuleDirectory);
+
+		}
+
+	}
+
+}

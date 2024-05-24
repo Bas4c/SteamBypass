@@ -3,6 +3,7 @@
 
 #include <Windows.h>
 // -----------------------------------------------------------------------------
+#include "..\CommonX.h"
 #include "..\StrX.h"
 #include "IFreeAPI.Contract\ISteamNetworkingSockets.h"
 // -----------------------------------------------------------------------------
@@ -19,7 +20,7 @@ public:
 	_SteamNetworkingSockets_& operator=(const _SteamNetworkingSockets_&) = delete;
 
 	HSteamListenSocket CreateListenSocket(Int32 nSteamConnectVirtualPort, Uint32 IP, Uint16 Port) override;
-	HSteamNetConnection ConnectBySteamID(SteamId_t steamIdTarget, Int32 nVirtualPort) override;
+	HSteamNetConnection ConnectBySteamID(SteamId_t SteamIdTarget, Int32 nVirtualPort) override;
 	HSteamNetConnection ConnectByIPv4Address(Uint32 nIP, Uint16 Port) override;
 	HSteamListenSocket CreateListenSocketIP(const pSteamNetworkingIPAddr pSteamNetworkingIPAddr, Int32 nOptions, const pSteamNetworkingConfigValue_t pOptions) override;
 	HSteamNetConnection ConnectByIPAddress(const pSteamNetworkingIPAddr pSteamNetworkingIPAddr, Int32 nOptions, const pSteamNetworkingConfigValue_t pOptions) override;

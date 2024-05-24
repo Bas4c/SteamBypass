@@ -81,6 +81,9 @@ public:
 	Bool BIsSubscribedFromFamilySharing() override;
 	Bool BIsTimedTrial(pUint32 pnSecondsAllowed, pUint32 pnSecondsPlayed) override;
 	Bool SetDlcContext(AppId_t iAppId) override;
+	#ifdef _PS3
+	SteamAPICall_t RegisterActivationCode(pCStrA pchActivationCode) override;
+	#endif
 	
 	~_SteamApps_() = default;
 

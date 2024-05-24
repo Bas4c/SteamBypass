@@ -140,6 +140,13 @@ typedef enum _ERemoteStorageFilePathType_ {
 
 } ERemoteStorageFilePathType, *pERemoteStorageFilePathType;
 
+typedef class _ISteamRemoteStorage001_ {
+public:
+
+
+
+} ISteamRemoteStorage001, *IpSteamRemoteStorage001;
+
 // -----------------------------------------------------------------------------
 // Purpose: Functions for accessing, reading and writing files stored remotely 
 //  and cached locally

@@ -3,60 +3,70 @@
 // -----------------------------------------------------------------------------
 
 Int32 _SteamApps_::GetAppData(AppId_t iAppId, pCStrA pchKey, pStrA pchValue, Int32 cchValueMax) {
+	DEBUGBREAK("ISteamApps::GetAppData");
 
 	return 0;
 
 }
 
 Bool _SteamApps_::BIsSubscribed() {
+	DEBUGBREAK("ISteamApps::BIsSubscribed");
 
 	return True;
 
 }
 
 Bool _SteamApps_::BIsLowViolence() {
+	DEBUGBREAK("ISteamApps::BIsLowViolence");
 
 	return False;
 
 }
 
 Bool _SteamApps_::BIsCybercafe() {
+	DEBUGBREAK("ISteamApps::BIsCybercafe");
 
 	return False;
 
 }
 
 Bool _SteamApps_::BIsVACBanned() {
+	DEBUGBREAK("ISteamApps::BIsVACBanned");
 
 	return False;
 
 }
 
 pCStrA _SteamApps_::GetCurrentGameLanguage() {
+	DEBUGBREAK("ISteamApps::GetCurrentGameLanguage");
 
 	return GetUserUILanguageA();
 
 }
 
 pCStrA _SteamApps_::GetAvailableGameLanguages() {
+	DEBUGBREAK("ISteamApps::GetAvailableGameLanguages");
 
 	return GetUserUILanguageA();
 
 }
 
 Bool _SteamApps_::BIsSubscribedApp(AppId_t iAppId) {
+	DEBUGBREAK("ISteamApps::BIsSubscribedApp");
 
 	return True;
 
 }
 
 Bool _SteamApps_::BIsDlcInstalled(AppId_t iAppId) {
+	DEBUGBREAK("ISteamApps::BIsDlcInstalled");
 
 	return True;
 
 }
 
 Uint32 _SteamApps_::GetEarliestPurchaseUnixTime(AppId_t iAppId) {
+	DEBUGBREAK("ISteamApps::GetEarliestPurchaseUnixTime");
 
 	/* January 1, 1970 (start of Unix epoch) in "ticks" */
 	const Int64 UnixTimeStart = 0x019DB1DED53E8000;
@@ -69,42 +79,49 @@ Uint32 _SteamApps_::GetEarliestPurchaseUnixTime(AppId_t iAppId) {
 }
 
 Bool _SteamApps_::BIsSubscribedFromFreeWeekend() {
+	DEBUGBREAK("ISteamApps::BIsSubscribedFromFreeWeekend");
 
 	return False;
 
 }
 
 Int32 _SteamApps_::GetDLCCount() {
+	DEBUGBREAK("ISteamApps::GetDLCCount");
 
 	return Int32_MAX;
 
 }
 
 Bool _SteamApps_::BGetDLCDataByIndex(Int32 iDLC, pAppId_t pnAppId, pBool pbAvailable, pStrA pchName, Int32 cchNameMax) {
+	DEBUGBREAK("ISteamApps::BGetDLCDataByIndex");
 
 	return False;
 
 }
 
 void _SteamApps_::InstallDLC(AppId_t iAppId) {
+	DEBUGBREAK("ISteamApps::InstallDLC");
 
 	/* Empty Method */
 
 }
 
 void _SteamApps_::UninstallDLC(AppId_t iAppId) {
+	DEBUGBREAK("ISteamApps::UninstallDLC");
 
 	/* Empty Method */
 
 }
 
 void _SteamApps_::RequestAppProofOfPurchaseKey(AppId_t iAppId) {
+	DEBUGBREAK("ISteamApps::RequestAppProofOfPurchaseKey");
 
 	/* Empty Method */
 
 }
 
 Bool _SteamApps_::GetCurrentBetaName(pStrA pchName, Int32 cchNameMax) {
+	DEBUGBREAK("ISteamApps::GetCurrentBetaName");
 
 	pCStrA pchBetaName = (pCStrA)("public");
 	if (pchName != NULL && cchNameMax > 0) {
@@ -119,18 +136,21 @@ Bool _SteamApps_::GetCurrentBetaName(pStrA pchName, Int32 cchNameMax) {
 }
 
 Bool _SteamApps_::MarkContentCorrupt(Bool bMissingFilesOnly) {
+	DEBUGBREAK("ISteamApps::MarkContentCorrupt");
 
 	return False;
 
 }
 
 Uint32 _SteamApps_::GetInstalledDepots(AppId_t iAppId, pDepotId_t pnDepotId, Uint32 nDepotId) {
+	DEBUGBREAK("ISteamApps::GetInstalledDepots");
 
 	return 0U;
 
 }
 
 Uint32 _SteamApps_::GetAppInstallDir(AppId_t iAppId, pStrA pchFolder, Uint32 cchFolderMax) {
+	DEBUGBREAK("ISteamApps::GetAppInstallDir");
 
 	Uint32 cchCopied = 0U;
 
@@ -159,6 +179,7 @@ Uint32 _SteamApps_::GetAppInstallDir(AppId_t iAppId, pStrA pchFolder, Uint32 cch
 }
 
 Bool _SteamApps_::BIsAppInstalled(AppId_t iAppId) {
+	DEBUGBREAK("ISteamApps::BIsAppInstalled");
 
 	if (iAppId == (AppId_t)(GetGameAppId())) {
 		return True;
@@ -169,6 +190,7 @@ Bool _SteamApps_::BIsAppInstalled(AppId_t iAppId) {
 }
 
 SteamId_t _SteamApps_::GetAppOwner() {
+	DEBUGBREAK("ISteamApps::GetAppOwner");
 
 	return k_SteamId_t_Create(
 		k_EUniversePublic, k_EAccountTypeIndividual,
@@ -178,6 +200,7 @@ SteamId_t _SteamApps_::GetAppOwner() {
 }
 
 pCStrA _SteamApps_::GetLaunchQueryParam(pCStrA pchKey) {
+	DEBUGBREAK("ISteamApps::GetLaunchQueryParam");
 
 	return (pCStrA)(
 		""
@@ -186,6 +209,7 @@ pCStrA _SteamApps_::GetLaunchQueryParam(pCStrA pchKey) {
 }
 
 Bool _SteamApps_::GetDlcDownloadProgress(AppId_t iAppId, pUint64 pnBytesDownloaded, pUint64 pnBytesTotal) {
+	DEBUGBREAK("ISteamApps::GetDlcDownloadProgress");
 
 	if (pnBytesDownloaded != NULL) {
 		*pnBytesDownloaded = 1000ULL;
@@ -200,24 +224,28 @@ Bool _SteamApps_::GetDlcDownloadProgress(AppId_t iAppId, pUint64 pnBytesDownload
 }
 
 Int32 _SteamApps_::GetAppBuildId() {
+	DEBUGBREAK("ISteamApps::GetAppBuildId");
 
 	return 1;
 
 }
 
 void _SteamApps_::RequestAllProofOfPurchaseKeys() {
+	DEBUGBREAK("ISteamApps::RequestAllProofOfPurchaseKeys");
 
 	/* Empty Method */
 
 }
 
 SteamAPICall_t _SteamApps_::GetFileDetails(pCStrA pchFileName) {
+	DEBUGBREAK("ISteamApps::GetFileDetails");
 
 	return k_SteamAPICall_Invalid;
 
 }
 
 Int32 _SteamApps_::GetLaunchCommandLine(pStrA pchCommandLine, Int32 cchCommandLine) {
+	DEBUGBREAK("ISteamApps::GetLaunchCommandLine");
 
 	pStrA pchCmdLine = GetCommandLineA();
 	if (pchCommandLine != NULL && cchCommandLine > 0) {
@@ -232,12 +260,14 @@ Int32 _SteamApps_::GetLaunchCommandLine(pStrA pchCommandLine, Int32 cchCommandLi
 }
 
 Bool _SteamApps_::BIsSubscribedFromFamilySharing() {
+	DEBUGBREAK("ISteamApps::BIsSubscribedFromFamilySharing");
 
 	return False;
 
 }
 
 Bool _SteamApps_::BIsTimedTrial(pUint32 pnSecondsAllowed, pUint32 pnSecondsPlayed) {
+	DEBUGBREAK("ISteamApps::BIsTimedTrial");
 
 	if (pnSecondsAllowed != NULL) {
 		*pnSecondsAllowed = Uint32_MAX;
@@ -252,7 +282,17 @@ Bool _SteamApps_::BIsTimedTrial(pUint32 pnSecondsAllowed, pUint32 pnSecondsPlaye
 }
 
 Bool _SteamApps_::SetDlcContext(AppId_t iAppId) {
+	DEBUGBREAK("ISteamApps::SetDlcContext");
 
 	return True;
 
 }
+
+#ifdef _PS3
+SteamAPICall_t _SteamApps_::RegisterActivationCode(pCStrA pchActivationCode) {
+	DEBUGBREAK("ISteamApps::RegisterActivationCode");
+
+	return k_SteamAPICall_Invalid;
+
+}
+#endif

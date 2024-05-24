@@ -3,24 +3,25 @@
 
 #include <Windows.h>
 // -----------------------------------------------------------------------------
+#include "..\CommonX.h"
 #include "..\StrX.h"
 #include "IFreeAPI.Contract\ISteamPS3OverlayRenderer.h"
 // -----------------------------------------------------------------------------
 
-typedef class _SteamPS3OverlayRenderer_ : public _ISteamPS3OverlayRenderer_ {
+typedef class _SteamPS3OverlayRender_ : public _ISteamPS3OverlayRender_ {
 public:
 
-	_SteamPS3OverlayRenderer_() = default;
-	_SteamPS3OverlayRenderer_(const _SteamPS3OverlayRenderer_&) = delete;
-	_SteamPS3OverlayRenderer_& operator=(const _SteamPS3OverlayRenderer_&) = delete;
+	_SteamPS3OverlayRender_() = default;
+	_SteamPS3OverlayRender_(const _SteamPS3OverlayRender_&) = delete;
+	_SteamPS3OverlayRender_& operator=(const _SteamPS3OverlayRender_&) = delete;
 
 	Bool BHostInitialize(Uint32 nScreenWidth, Uint32 nScreenHeight, Uint32 nRefreshRate, IpSteamPS3OverlayRenderHost pRenderHost, pVoid pCellFontLibrary) override;
 	void Render() override;
 	Bool BHandleCellPadData(const pVoid pCellPadData) override;
 	Bool BResetInputState() override;
 
-	~_SteamPS3OverlayRenderer_() = default;
+	~_SteamPS3OverlayRender_() = default;
 
-} SteamPS3OverlayRenderer, *pSteamPS3OverlayRenderer;
+} SteamPS3OverlayRender, *pSteamPS3OverlayRender;
 
 #endif // !_STEAMPS3OVERLAYRENDERER_

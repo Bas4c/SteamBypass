@@ -3,12 +3,14 @@
 // -----------------------------------------------------------------------------
 
 Uint32 _SteamAppList_::GetNumInstalledApps() {
+	DEBUGBREAK("ISteamAppList::GetNumInstalledApps");
 
 	return 1U;
 
 }
 
 Uint32 _SteamAppList_::GetInstalledApps(pAppId_t pnAppId, Uint32 nAppId) {
+	DEBUGBREAK("ISteamAppList::GetInstalledApps");
 
 	if (pnAppId != NULL && nAppId != 0) {
 		pnAppId[0] = (AppId_t)(GetGameAppId());
@@ -20,6 +22,7 @@ Uint32 _SteamAppList_::GetInstalledApps(pAppId_t pnAppId, Uint32 nAppId) {
 }
 
 Int32 _SteamAppList_::GetAppName(AppId_t iAppId, pStrA pchName, Int32 cchNameMax) {
+	DEBUGBREAK("ISteamAppList::GetAppName");
 
 	Int32 cchCopied = (-1);
 
@@ -37,8 +40,8 @@ Int32 _SteamAppList_::GetAppName(AppId_t iAppId, pStrA pchName, Int32 cchNameMax
 				while (cchModuleDirectory != 0) {
 
 					if (
-						pchModuleDirectory[cchModuleDirectory - 1] == L'\\' ||
-						pchModuleDirectory[cchModuleDirectory - 1] == L'/'
+						pchModuleDirectory[cchModuleDirectory - 1] == '\\' ||
+						pchModuleDirectory[cchModuleDirectory - 1] == '/'
 					) {
 						cchModuleDirectory--;
 						break;
@@ -65,6 +68,7 @@ Int32 _SteamAppList_::GetAppName(AppId_t iAppId, pStrA pchName, Int32 cchNameMax
 }
 
 Int32 _SteamAppList_::GetAppInstallDir(AppId_t iAppId, pStrA pchDirectory, Int32 cchNameMax) {
+	DEBUGBREAK("ISteamAppList::GetAppInstallDir");
 
 	Int32 cchCopied = (-1);
 
@@ -93,6 +97,7 @@ Int32 _SteamAppList_::GetAppInstallDir(AppId_t iAppId, pStrA pchDirectory, Int32
 }
 
 Int32 _SteamAppList_::GetAppBuildId(AppId_t iAppId) {
+	DEBUGBREAK("ISteamAppList::GetAppBuildId");
 
 	return 1;
 

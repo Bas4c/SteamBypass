@@ -7,7 +7,8 @@ Uint32 _SteamAppTicket_::GetAppOwnershipTicketData(
 	pUint32 piAppId, pUint32 piSteamId,
 	pUint32 piSignature, pUint32 pcbSignature
 ) {
-	
+	DEBUGBREAK("ISteamAppTicket::GetAppOwnershipTicketData");
+
 	/* (Fake-Ticket) Signature */
 	pCStrA pchSignature = (pCStrA)("++++");
 	SizeOF cchSignature = StrA_Count(pchSignature);

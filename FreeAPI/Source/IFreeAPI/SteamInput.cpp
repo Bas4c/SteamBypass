@@ -3,108 +3,126 @@
 // -----------------------------------------------------------------------------
 
 Bool _SteamInput_::Init(Bool bExplicitlyCallRunFrame) {
+	DEBUGBREAK("ISteamInput::Init");
 
 	return True;
 
 }
 
 Bool _SteamInput_::Shutdown() {
+	DEBUGBREAK("ISteamInput::Shutdown");
 
 	return True;
 
 }
 
 Bool _SteamInput_::SetInputActionManifestFilePath(pCStrA pchInputActionManifestAbsolutePath) {
+	DEBUGBREAK("ISteamInput::SetInputActionManifestFilePath");
 
 	return True;
 
 }
 
 void _SteamInput_::RunFrame(Bool bReservedValue) {
+	DEBUGBREAK("ISteamInput::RunFrame");
 
 	/* Empty Method */
 
 }
 
 Bool _SteamInput_::BWaitForData(Bool bWaitForever, Uint32 Timeout) {
+	DEBUGBREAK("ISteamInput::BWaitForData");
 
 	return False;
 
 }
 
 Bool _SteamInput_::BNewDataAvailable() {
+	DEBUGBREAK("ISteamInput::BNewDataAvailable");
 
 	return False;
 
 }
 
 Int32 _SteamInput_::GetConnectedControllers(pInputHandle_t hController) {
+	DEBUGBREAK("ISteamInput::GetConnectedControllers");
 
 	return 0;
 
 }
 
 void _SteamInput_::EnableDeviceCallbacks() {
+	DEBUGBREAK("ISteamInput::EnableDeviceCallbacks");
 
 	/* Empty Method */
 
 }
 
 void _SteamInput_::EnableActionEventCallbacks(SteamInputActionEventCallback pFunction) {
+	DEBUGBREAK("ISteamInput::EnableActionEventCallbacks");
 
 	/* Empty Method */
 
 }
 
 InputActionSetHandle_t _SteamInput_::GetActionSetHandle(pCStrA pszActionSetName) {
+	DEBUGBREAK("ISteamInput::GetActionSetHandle");
 
 	return (InputActionSetHandle_t)(0x0000000000000000);
 
 }
 
 void _SteamInput_::ActivateActionSet(InputHandle_t hController, InputActionSetHandle_t hActionSet) {
+	DEBUGBREAK("ISteamInput::ActivateActionSet");
 
 	/* Empty Method */
 
 }
 
 InputActionSetHandle_t _SteamInput_::GetCurrentActionSet(InputHandle_t hController) {
+	DEBUGBREAK("ISteamInput::GetCurrentActionSet");
 
 	return (InputActionSetHandle_t)(0x0000000000000000);
 
 }
 
 void _SteamInput_::ActivateActionSetLayer(InputHandle_t hController, InputActionSetHandle_t hActionSetLayer) {
+	DEBUGBREAK("ISteamInput::ActivateActionSetLayer");
 
 	/* Empty Method */
 
 }
 
 void _SteamInput_::DeactivateActionSetLayer(InputHandle_t hController, InputActionSetHandle_t hActionSetLayer) {
+	DEBUGBREAK("ISteamInput::DeactivateActionSetLayer");
 
 	/* Empty Method */
 
 }
 
 void _SteamInput_::DeactivateAllActionSetLayers(InputHandle_t hController) {
+	DEBUGBREAK("ISteamInput::DeactivateAllActionSetLayers");
 
 	/* Empty Method */
 
 }
 
 Int32 _SteamInput_::GetActiveActionSetLayers(InputHandle_t hController, pInputActionSetHandle_t phController) {
+	DEBUGBREAK("ISteamInput::GetActiveActionSetLayers");
 
 	return 0;
 
 }
 
 InputDigitalActionHandle_t _SteamInput_::GetDigitalActionHandle(pCStrA pszActionName) {
+	DEBUGBREAK("ISteamInput::GetDigitalActionHandle");
 
 	return (InputDigitalActionHandle_t)(0x0000000000000000);
 
 }
 
 InputDigitalActionData_t _SteamInput_::GetDigitalActionData(InputHandle_t hController, InputDigitalActionHandle_t hDigitalAction) {
+	DEBUGBREAK("ISteamInput::GetDigitalActionData");
 
 	InputDigitalActionData_t inputDigitalActionData{};
 	inputDigitalActionData.bActive = False;
@@ -115,12 +133,14 @@ InputDigitalActionData_t _SteamInput_::GetDigitalActionData(InputHandle_t hContr
 }
 
 Int32 _SteamInput_::GetDigitalActionOrigins(InputHandle_t hController, InputActionSetHandle_t hActionSet, InputDigitalActionHandle_t hDigitalAction, pEInputActionOrigin peInputActionOrigin) {
+	DEBUGBREAK("ISteamInput::GetDigitalActionOrigins");
 
 	return 0;
 
 }
 
 pCStrA _SteamInput_::GetStringForDigitalActionName(InputDigitalActionHandle_t hDigitalAction) {
+	DEBUGBREAK("ISteamInput::GetStringForDigitalActionName");
 
 	return (pCStrA)(
 		""
@@ -129,12 +149,14 @@ pCStrA _SteamInput_::GetStringForDigitalActionName(InputDigitalActionHandle_t hD
 }
 
 InputAnalogActionHandle_t _SteamInput_::GetAnalogActionHandle(pCStrA pszActionName) {
+	DEBUGBREAK("ISteamInput::GetAnalogActionHandle");
 
 	return (InputAnalogActionHandle_t)(0x0000000000000000);
 
 }
 
 InputAnalogActionData_t _SteamInput_::GetAnalogActionData(InputHandle_t hController, InputAnalogActionHandle_t hAnalogAction) {
+	DEBUGBREAK("ISteamInput::GetAnalogActionData");
 
 	InputAnalogActionData_t inputAnalogActionData{};
 	inputAnalogActionData.bActive = False;
@@ -147,12 +169,14 @@ InputAnalogActionData_t _SteamInput_::GetAnalogActionData(InputHandle_t hControl
 }
 
 Int32 _SteamInput_::GetAnalogActionOrigins(InputHandle_t hController, InputActionSetHandle_t hActionSet, InputAnalogActionHandle_t hAnalogAction, pEInputActionOrigin peInputActionOrigin) {
+	DEBUGBREAK("ISteamInput::GetAnalogActionOrigins");
 
 	return 0;
 
 }
 
 pCStrA _SteamInput_::GetGlyphPNGForActionOrigin(EInputActionOrigin eInputActionOrigin, ESteamInputGlyphSize eSteamInputGlyphSize, Uint32 nFlags) {
+	DEBUGBREAK("ISteamInput::GetGlyphPNGForActionOrigin");
 
 	return (pCStrA)(
 		""
@@ -161,6 +185,7 @@ pCStrA _SteamInput_::GetGlyphPNGForActionOrigin(EInputActionOrigin eInputActionO
 }
 
 pCStrA _SteamInput_::GetGlyphSVGForActionOrigin(EInputActionOrigin eInputActionOrigin, Uint32 nFlags) {
+	DEBUGBREAK("ISteamInput::GetGlyphSVGForActionOrigin");
 
 	return (pCStrA)(
 		""
@@ -169,6 +194,7 @@ pCStrA _SteamInput_::GetGlyphSVGForActionOrigin(EInputActionOrigin eInputActionO
 }
 
 pCStrA _SteamInput_::GetGlyphForActionOrigin_Legacy(EInputActionOrigin eInputActionOrigin) {
+	DEBUGBREAK("ISteamInput::GetGlyphForActionOrigin_Legacy");
 
 	switch (eInputActionOrigin) {
 		case k_EInputActionOrigin_SteamController_A:
@@ -2205,12 +2231,14 @@ pCStrA _SteamInput_::GetGlyphForActionOrigin_Legacy(EInputActionOrigin eInputAct
 }
 
 pCStrA _SteamInput_::GetStringForActionOrigin(EInputActionOrigin eInputActionOrigin) {
+	DEBUGBREAK("ISteamInput::GetStringForActionOrigin");
 
 	return this->GetGlyphForActionOrigin_Legacy(eInputActionOrigin);
 
 }
 
 pCStrA _SteamInput_::GetStringForAnalogActionName(InputAnalogActionHandle_t hDigitalAction) {
+	DEBUGBREAK("ISteamInput::GetStringForAnalogActionName");
 
 	return (pCStrA)(
 		""
@@ -2219,12 +2247,14 @@ pCStrA _SteamInput_::GetStringForAnalogActionName(InputAnalogActionHandle_t hDig
 }
 
 void _SteamInput_::StopAnalogActionMomentum(InputHandle_t hController, InputAnalogActionHandle_t hAnalogAction) {
+	DEBUGBREAK("ISteamInput::StopAnalogActionMomentum");
 
 	/* Empty Method */
 
 }
 
 InputMotionData_t _SteamInput_::GetMotionData(InputHandle_t hController) {
+	DEBUGBREAK("ISteamInput::GetMotionData");
 
 	InputMotionData_t inputMotionData{};
 
@@ -2246,72 +2276,84 @@ InputMotionData_t _SteamInput_::GetMotionData(InputHandle_t hController) {
 }
 
 void _SteamInput_::TriggerVibration(InputHandle_t hController, Uint16 LeftSpeed, Uint16 RightSpeed) {
+	DEBUGBREAK("ISteamInput::TriggerVibration");
 
 	/* Empty Method */
 
 }
 
 void _SteamInput_::TriggerVibrationExtended(InputHandle_t hController, Uint16 LeftSpeed, Uint16 RightSpeed, Uint16 LeftTriggerSpeed, Uint16 RightTriggerSpeed) {
+	DEBUGBREAK("ISteamInput::TriggerVibrationExtended");
 
 	/* Empty Method */
 
 }
 
 void _SteamInput_::TriggerSimpleHapticEvent(InputHandle_t hController, EControllerHapticLocation eControllerHapticLocation, Uint8 nIntensity, Uint8 nGainDB, Uint8 nOtherIntensity, Uint8 nOtherGainDB) {
+	DEBUGBREAK("ISteamInput::TriggerSimpleHapticEvent");
 
 	/* Empty Method */
 
 }
 
 void _SteamInput_::SetLEDColor(InputHandle_t hController, Uint8 nColorR, Uint8 nColorG, Uint8 nColorB, Uint32 nFlags) {
+	DEBUGBREAK("ISteamInput::SetLEDColor");
 
 	/* Empty Method */
 
 }
 
 void _SteamInput_::Legacy_TriggerHapticPulse(InputHandle_t hController, ESteamControllerPad eTargetPad, Uint16 DurationMicroSeconds) {
+	DEBUGBREAK("ISteamInput::Legacy_TriggerHapticPulse");
 
 	/* Empty Method */
 
 }
 
 void _SteamInput_::Legacy_TriggerRepeatedHapticPulse(InputHandle_t hController, ESteamControllerPad eTargetPad, Uint16 DurationMicroSeconds, Uint16 OffMicroSeconds, Uint16 nRepeat, Uint32 nFlags) {
+	DEBUGBREAK("ISteamInput::Legacy_TriggerRepeatedHapticPulse");
 
 	/* Empty Method */
 
 }
 
 Bool _SteamInput_::ShowBindingPanel(InputHandle_t hController) {
+	DEBUGBREAK("ISteamInput::ShowBindingPanel");
 
 	return True;
 
 }
 
 ESteamInputType _SteamInput_::GetInputTypeForHandle(InputHandle_t hController) {
+	DEBUGBREAK("ISteamInput::GetInputTypeForHandle");
 
 	return k_ESteamInputType_Unknown;
 
 }
 
 InputHandle_t _SteamInput_::GetControllerForGamepadIndex(Int32 nIndex) {
+	DEBUGBREAK("ISteamInput::GetControllerForGamepadIndex");
 
 	return (InputHandle_t)(0x0000000000000000);
 
 }
 
 Int32 _SteamInput_::GetGamepadIndexForController(InputHandle_t ulhController) {
+	DEBUGBREAK("ISteamInput::GetGamepadIndexForController");
 
 	return 0;
 
 }
 
 pCStrA _SteamInput_::GetStringForXboxOrigin(EXboxOrigin eXboxOrigin) {
+	DEBUGBREAK("ISteamInput::GetStringForXboxOrigin");
 
 	return this->GetGlyphForXboxOrigin(eXboxOrigin);
 
 }
 
 pCStrA _SteamInput_::GetGlyphForXboxOrigin(EXboxOrigin eXboxOrigin) {
+	DEBUGBREAK("ISteamInput::GetGlyphForXboxOrigin");
 
 	switch (eXboxOrigin) {
 		case k_EXboxOrigin_A:
@@ -2463,18 +2505,21 @@ pCStrA _SteamInput_::GetGlyphForXboxOrigin(EXboxOrigin eXboxOrigin) {
 }
 
 EInputActionOrigin _SteamInput_::GetActionOriginFromXboxOrigin(InputHandle_t hController, EXboxOrigin eXboxOrigin) {
+	DEBUGBREAK("ISteamInput::GetActionOriginFromXboxOrigin");
 
 	return k_EInputActionOrigin_None;
 
 }
 
 EInputActionOrigin _SteamInput_::TranslateActionOrigin(ESteamInputType eDestinationInputType, EInputActionOrigin eSourceXboxOrigin) {
+	DEBUGBREAK("ISteamInput::TranslateActionOrigin");
 
 	return k_EInputActionOrigin_None;
 
 }
 
 Bool _SteamInput_::GetDeviceBindingRevision(InputHandle_t hController, pInt32 pMajor, pInt32 pMinor) {
+	DEBUGBREAK("ISteamInput::GetDeviceBindingRevision");
 
 	if (pMajor != NULL) {
 		*pMajor = 0;
@@ -2489,18 +2534,21 @@ Bool _SteamInput_::GetDeviceBindingRevision(InputHandle_t hController, pInt32 pM
 }
 
 Uint32 _SteamInput_::GetRemotePlaySessionID(InputHandle_t hController) {
+	DEBUGBREAK("ISteamInput::GetRemotePlaySessionID");
 
 	return 0x00000000;
 
 }
 
 Uint16 _SteamInput_::GetSessionInputConfigurationSettings() {
+	DEBUGBREAK("ISteamInput::GetSessionInputConfigurationSettings");
 
 	return 0x0000;
 
 }
 
 void _SteamInput_::SetDualSenseTriggerEffect(InputHandle_t hController, const pScePadTriggerEffect pScePadTriggerEffect) {
+	DEBUGBREAK("ISteamInput::SetDualSenseTriggerEffect");
 
 	/* Empty Method */
 

@@ -27,7 +27,7 @@ public:
 // -----------------------------------------------------------------------------
 // Purpose: Interface Steam exposes for the game to tell it when to render
 // -----------------------------------------------------------------------------
-typedef class _ISteamPS3OverlayRenderer_ {
+typedef class _ISteamPS3OverlayRender_ {
 public:
 
 	virtual Bool BHostInitialize(Uint32 nScreenWidth, Uint32 nScreenHeight, Uint32 nRefreshRate, IpSteamPS3OverlayRenderHost pRenderHost, pVoid pCellFontLibrary) = 0;
@@ -35,6 +35,6 @@ public:
 	virtual Bool BHandleCellPadData(const pVoid pCellPadData) = 0;
 	virtual Bool BResetInputState() = 0;
 
-} ISteamPS3OverlayRenderer, *IpSteamPS3OverlayRenderer;
+} ISteamPS3OverlayRender, *IpSteamPS3OverlayRender;
 
 #endif // _ISTEAMPS3OVERLAYRENDERER_

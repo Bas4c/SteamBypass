@@ -95,6 +95,9 @@ public:
 	void SetWarningMessageHook(SteamAPIWarningMessageHook_t pFunction) override;
 	Bool BShutdownIfAllPipesClosed() override;
 
+	#ifdef _PS3
+	IpSteamPS3OverlayRender GetISteamPS3OverlayRender() override;
+	#endif
 	IpSteamHTTP GetISteamHTTP(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
 	IpSteamUnifiedMessages DEPRECATED_GetISteamUnifiedMessages(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
 	IpSteamController GetISteamController(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) override;
@@ -153,7 +156,9 @@ private:
 	SteamInput SteamInput;
 	SteamRemotePlay SteamRemotePlay;
 	SteamGameCoordinator SteamGameCoordinator;
-	SteamPS3OverlayRenderer SteamPS3OverlayRenderer;
+	#ifdef _PS3
+	SteamPS3OverlayRender SteamPS3OverlayRender;
+	#endif
 	SteamMasterServerUpdater SteamMasterServerUpdater;
 	SteamTV SteamTV;
 	SteamNetworkingUtils SteamNetworkingUtils;

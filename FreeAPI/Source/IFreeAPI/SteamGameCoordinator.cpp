@@ -3,6 +3,7 @@
 // -----------------------------------------------------------------------------
 
 EGCResults _SteamGameCoordinator_::SendMessage_(Uint32 nMsgType, pVoid pvData, Uint32 cbData) {
+	DEBUGBREAK("ISteamGameCoordinator::SendMessage_");
 
 	if (pvData != NULL && cbData != 0) {
 		return k_EGCResultOK;
@@ -13,6 +14,7 @@ EGCResults _SteamGameCoordinator_::SendMessage_(Uint32 nMsgType, pVoid pvData, U
 }
 
 Bool _SteamGameCoordinator_::IsMessageAvailable(pUint32 pcbMsgSize) {
+	DEBUGBREAK("ISteamGameCoordinator::IsMessageAvailable");
 
 	if (pcbMsgSize != NULL) {
 		*pcbMsgSize = 0xDEEDBEEF;
@@ -23,6 +25,7 @@ Bool _SteamGameCoordinator_::IsMessageAvailable(pUint32 pcbMsgSize) {
 }
 
 EGCResults _SteamGameCoordinator_::RetrieveMessage(pUint32 pnMsgType, pVoid pvDest, Uint32 cbDest, pUint32 pcbMsgSize) {
+	DEBUGBREAK("ISteamGameCoordinator::RetrieveMessage");
 
 	if (pvDest != NULL && cbDest != 0) {
 

@@ -394,6 +394,10 @@ public:
 	virtual Bool SetLobbyOwner(SteamId_t SteamIdLobby, SteamId_t SteamIdNewOwner) = 0;
 	virtual Bool SetLinkedLobby(SteamId_t SteamIdLobby, SteamId_t SteamIdLobbyDependent) = 0;
 
+	#ifdef _PS3
+	virtual void CheckForPSNGameBootInvite(Uint32 iGameBootAttributes) = 0;
+	#endif
+
 } ISteamMatchmaking, *IpSteamMatchmaking;
 
 #define STEAMMATCHMAKING_INTERFACE_VERSION "SteamMatchMaking009"

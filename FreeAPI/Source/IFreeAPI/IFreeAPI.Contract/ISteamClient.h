@@ -148,6 +148,9 @@ public:
 	virtual Uint32 GetIPCCallCount() = 0;
 	virtual void SetWarningMessageHook(SteamAPIWarningMessageHook_t pFunction) = 0;
 	virtual Bool BShutdownIfAllPipesClosed() = 0;
+	#ifdef _PS3
+	virtual IpSteamPS3OverlayRender GetISteamPS3OverlayRender() = 0;
+	#endif
 	virtual IpSteamHTTP GetISteamHTTP(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) = 0;
 
 } ISteamClient010, *IpSteamClient010;
@@ -178,6 +181,9 @@ public:
 	virtual Uint32 GetIPCCallCount() = 0;
 	virtual void SetWarningMessageHook(SteamAPIWarningMessageHook_t pFunction) = 0;
 	virtual Bool BShutdownIfAllPipesClosed() = 0;
+	#ifdef _PS3
+	virtual IpSteamPS3OverlayRender GetISteamPS3OverlayRender() = 0;
+	#endif
 	virtual IpSteamHTTP GetISteamHTTP(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) = 0;
 
 } ISteamClient011, *IpSteamClient011;
@@ -208,6 +214,9 @@ public:
 	virtual Uint32 GetIPCCallCount() = 0;
 	virtual void SetWarningMessageHook(SteamAPIWarningMessageHook_t pFunction) = 0;
 	virtual Bool BShutdownIfAllPipesClosed() = 0;
+	#ifdef _PS3
+	virtual IpSteamPS3OverlayRender GetISteamPS3OverlayRender() = 0;
+	#endif
 	virtual IpSteamHTTP GetISteamHTTP(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) = 0;
 	virtual IpSteamUnifiedMessages DEPRECATED_GetISteamUnifiedMessages(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) = 0;
 	virtual IpSteamController GetISteamController(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) = 0;
@@ -241,6 +250,9 @@ public:
 	virtual Uint32 GetIPCCallCount() = 0;
 	virtual void SetWarningMessageHook(SteamAPIWarningMessageHook_t pFunction) = 0;
 	virtual Bool BShutdownIfAllPipesClosed() = 0;
+	#ifdef _PS3
+	virtual IpSteamPS3OverlayRender GetISteamPS3OverlayRender() = 0;
+	#endif
 	virtual IpSteamHTTP GetISteamHTTP(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) = 0;
 	virtual IpSteamUnifiedMessages DEPRECATED_GetISteamUnifiedMessages(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) = 0;
 	virtual IpSteamController GetISteamController(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) = 0;
@@ -277,6 +289,9 @@ public:
 	virtual Uint32 GetIPCCallCount() = 0;
 	virtual void SetWarningMessageHook(SteamAPIWarningMessageHook_t pFunction) = 0;
 	virtual Bool BShutdownIfAllPipesClosed() = 0;
+	#ifdef _PS3
+	virtual IpSteamPS3OverlayRender GetISteamPS3OverlayRender() = 0;
+	#endif
 	virtual IpSteamHTTP GetISteamHTTP(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) = 0;
 	virtual IpSteamUnifiedMessages DEPRECATED_GetISteamUnifiedMessages(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) = 0;
 	virtual IpSteamController GetISteamController(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) = 0;
@@ -312,6 +327,9 @@ public:
 	virtual Uint32 GetIPCCallCount() = 0;
 	virtual void SetWarningMessageHook(SteamAPIWarningMessageHook_t pFunction) = 0;
 	virtual Bool BShutdownIfAllPipesClosed() = 0;
+	#ifdef _PS3
+	virtual IpSteamPS3OverlayRender GetISteamPS3OverlayRender() = 0;
+	#endif
 	virtual IpSteamHTTP GetISteamHTTP(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) = 0;
 	virtual IpSteamUnifiedMessages DEPRECATED_GetISteamUnifiedMessages(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) = 0;
 	virtual IpSteamController GetISteamController(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) = 0;
@@ -348,6 +366,9 @@ public:
 	virtual Uint32 GetIPCCallCount() = 0;
 	virtual void SetWarningMessageHook(SteamAPIWarningMessageHook_t pFunction) = 0;
 	virtual Bool BShutdownIfAllPipesClosed() = 0;
+	#ifdef _PS3
+	virtual IpSteamPS3OverlayRender GetISteamPS3OverlayRender() = 0;
+	#endif
 	virtual IpSteamHTTP GetISteamHTTP(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) = 0;
 	virtual IpSteamUnifiedMessages DEPRECATED_GetISteamUnifiedMessages(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) = 0;
 	virtual IpSteamController GetISteamController(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) = 0;

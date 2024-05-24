@@ -7,6 +7,7 @@
 // -----------------------------------------------------------------------------
 
 static void SteamAPI_ISteamNetworkingUtils_AllocateMessage_FreeData(pSteamNetworkingMessage_t pSteamNetworkingMessage) {
+	DEBUGBREAK("SteamAPI_ISteamNetworkingUtils_AllocateMessage_FreeData");
 
 	if (pSteamNetworkingMessage != NULL) {
 		if (pSteamNetworkingMessage->FreeData == SteamAPI_ISteamNetworkingUtils_AllocateMessage_FreeData) {
@@ -22,6 +23,7 @@ static void SteamAPI_ISteamNetworkingUtils_AllocateMessage_FreeData(pSteamNetwor
 }
 
 static void SteamAPI_ISteamNetworkingUtils_AllocateMessage_Release(pSteamNetworkingMessage_t pSteamNetworkingMessage) {
+	DEBUGBREAK("SteamAPI_ISteamNetworkingUtils_AllocateMessage_Release");
 
 	if (pSteamNetworkingMessage != NULL) {
 		/* FreeData can be pointing to Our Free Function or Game Free Function */
@@ -33,6 +35,7 @@ static void SteamAPI_ISteamNetworkingUtils_AllocateMessage_Release(pSteamNetwork
 }
 
 pSteamNetworkingMessage_t _SteamNetworkingUtils_::AllocateMessage(Int32 cbAllocateData) {
+	DEBUGBREAK("ISteamNetworkingUtils::AllocateMessage");
 
 	pSteamNetworkingMessage_t pSteamNetworkingMessage = (pSteamNetworkingMessage_t)(LocalAlloc(
 		LPTR, sizeof(SteamNetworkingMessage_t)
@@ -73,39 +76,44 @@ pSteamNetworkingMessage_t _SteamNetworkingUtils_::AllocateMessage(Int32 cbAlloca
 }
 
 void _SteamNetworkingUtils_::InitRelayNetworkAccess() {
+	DEBUGBREAK("ISteamNetworkingUtils::InitRelayNetworkAccess");
 
 	/* Empty Method */
 
 }
 
 ESteamNetworkingAvailability _SteamNetworkingUtils_::GetRelayNetworkStatus(pSteamRelayNetworkStatus_t pDetails) {
+	DEBUGBREAK("ISteamNetworkingUtils::GetRelayNetworkStatus");
 
 	return k_ESteamNetworkingAvailability_Current;
 
 }
 
 Float _SteamNetworkingUtils_::GetLocalPingLocation(SteamNetworkPingLocation_t pResult) {
+	DEBUGBREAK("ISteamNetworkingUtils::GetLocalPingLocation");
 
 	return (-1.0F);
 
 }
 
 Int32 _SteamNetworkingUtils_::EstimatePingTimeBetweenTwoLocations(const pSteamNetworkPingLocation_t pLocation1, const pSteamNetworkPingLocation_t pLocation2) {
+	DEBUGBREAK("ISteamNetworkingUtils::EstimatePingTimeBetweenTwoLocations");
 
 	return 0;
 
 }
 
 Int32 _SteamNetworkingUtils_::EstimatePingTimeFromLocalHost(const pSteamNetworkPingLocation_t pRemoteLocation) {
+	DEBUGBREAK("ISteamNetworkingUtils::EstimatePingTimeFromLocalHost");
 
 	return 0;
 
 }
 
 void _SteamNetworkingUtils_::ConvertPingLocationToString(const pSteamNetworkPingLocation_t pLocation, pStrA pchBuf, Int32 cchBuf) {
+	DEBUGBREAK("ISteamNetworkingUtils::ConvertPingLocationToString");
 
 	pCStrA pchLocation = (pCStrA)("Local");
-
 	if (pLocation != NULL && pchBuf != NULL && (SizeOF)(cchBuf) > StrA_Count(pchLocation) + 1U) {
 		StrA_Copy(pchBuf, cchBuf, pchLocation);
 	}
@@ -113,6 +121,7 @@ void _SteamNetworkingUtils_::ConvertPingLocationToString(const pSteamNetworkPing
 }
 
 Bool _SteamNetworkingUtils_::ParsePingLocationString(pCStrA pchString, pSteamNetworkPingLocation_t pResult) {
+	DEBUGBREAK("ISteamNetworkingUtils::ParsePingLocationString");
 
 	if (pchString != NULL && pResult != NULL) {
 		
@@ -129,12 +138,21 @@ Bool _SteamNetworkingUtils_::ParsePingLocationString(pCStrA pchString, pSteamNet
 }
 
 Bool _SteamNetworkingUtils_::CheckPingDataUpToDate(Float MaxAgeSeconds) {
+	DEBUGBREAK("ISteamNetworkingUtils::CheckPingDataUpToDate");
 
 	return True;
 
 }
 
+Bool _SteamNetworkingUtils_::IsPingMeasurementInProgress() {
+	DEBUGBREAK("ISteamNetworkingUtils::IsPingMeasurementInProgress");
+	
+	return False;
+
+}
+
 Int32 _SteamNetworkingUtils_::GetPingToDataCenter(SteamNetworkingPOPID PopId, pSteamNetworkingPOPID pViaRelayPoP) {
+	DEBUGBREAK("ISteamNetworkingUtils::GetPingToDataCenter");
 
 	if (pViaRelayPoP != NULL) {
 		*pViaRelayPoP = (SteamNetworkingPOPID)(0x00000000);
@@ -145,24 +163,28 @@ Int32 _SteamNetworkingUtils_::GetPingToDataCenter(SteamNetworkingPOPID PopId, pS
 }
 
 Int32 _SteamNetworkingUtils_::GetDirectPingToPOP(SteamNetworkingPOPID PopId) {
+	DEBUGBREAK("ISteamNetworkingUtils::GetDirectPingToPOP");
 
 	return 0;
 
 }
 
 Int32 _SteamNetworkingUtils_::GetPOPCount() {
+	DEBUGBREAK("ISteamNetworkingUtils::GetPOPCount");
 
 	return 0;
 
 }
 
 Int32 _SteamNetworkingUtils_::GetPOPList(pSteamNetworkingPOPID pList, Int32 nList) {
+	DEBUGBREAK("ISteamNetworkingUtils::GetPOPList");
 
 	return 0;
 
 }
 
 SteamNetworkingMicroseconds _SteamNetworkingUtils_::GetLocalTimestamp() {
+	DEBUGBREAK("ISteamNetworkingUtils::GetLocalTimestamp");
 
 	Uint64 UTCTime = 0U;
 	GetSystemTimeAsFileTime((LPFILETIME)(&UTCTime));
@@ -174,55 +196,78 @@ SteamNetworkingMicroseconds _SteamNetworkingUtils_::GetLocalTimestamp() {
 }
 
 void _SteamNetworkingUtils_::SetDebugOutputFunction(ESteamNetworkingSocketsDebugOutputType eDetailLevel, FSteamNetworkingSocketsDebugOutput pFunction) {
+	DEBUGBREAK("ISteamNetworkingUtils::SetDebugOutputFunction");
 
 	/* Empty Method */
 
 }
 
 Bool _SteamNetworkingUtils_::IsFakeIPv4(Uint32 IPv4) {
+	DEBUGBREAK("ISteamNetworkingUtils::IsFakeIPv4");
 
 	return False;
 
 }
 
 ESteamNetworkingFakeIPType _SteamNetworkingUtils_::GetIPv4FakeIPType(Uint32 IPv4) {
+	DEBUGBREAK("ISteamNetworkingUtils::GetIPv4FakeIPType");
 
 	return k_ESteamNetworkingFakeIPType_NotFake;
 
 }
 
 EResult _SteamNetworkingUtils_::GetRealIdentityForFakeIP(const pSteamNetworkingIPAddr pFakeIP, pSteamNetworkingIdentity pRealIdentity) {
+	DEBUGBREAK("ISteamNetworkingUtils::GetRealIdentityForFakeIP");
 
 	return k_EResultNoMatch;
 
 }
 
 
-Bool _SteamNetworkingUtils_::SetConfigValue(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, ESteamNetworkingConfigScope eScopeType, pVoid scopeObj, ESteamNetworkingConfigDataType eDataType, const pVoid pArg) {
+Bool _SteamNetworkingUtils_::SetConfigValue(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, ESteamNetworkingConfigScope eScopeType, pVoid ScopeObj, ESteamNetworkingConfigDataType eDataType, const pVoid pArg) {
+	DEBUGBREAK("ISteamNetworkingUtils::SetConfigValue");
 
 	return True;
 
 }
 
-ESteamNetworkingGetConfigValueResult _SteamNetworkingUtils_::GetConfigValue(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, ESteamNetworkingConfigScope eScopeType, pVoid scopeObj, pESteamNetworkingConfigDataType pDataType, pVoid pResult, pSizeOF cbResult) {
+ESteamNetworkingGetConfigValueResult _SteamNetworkingUtils_::GetConfigValue(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, ESteamNetworkingConfigScope eScopeType, pVoid ScopeObj, pESteamNetworkingConfigDataType pDataType, pVoid pResult, pSizeOF cbResult) {
+	DEBUGBREAK("ISteamNetworkingUtils::GetConfigValue");
 
 	return k_ESteamNetworkingGetConfigValue_OK;
 
 }
 
+Bool _SteamNetworkingUtils_::GetConfigValueInfo(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, pCStrA *pchName, pESteamNetworkingConfigDataType pDataType, pESteamNetworkingConfigScope pScope, pESteamNetworkingConfigValue pNextValue) {
+	DEBUGBREAK("ISteamNetworkingUtils::GetConfigValueInfo");
+
+	return False;
+
+}
+
 pCStrA _SteamNetworkingUtils_::GetConfigValueInfo(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, pESteamNetworkingConfigDataType pDataType, pESteamNetworkingConfigScope pScope) {
+	DEBUGBREAK("ISteamNetworkingUtils::GetConfigValueInfo");
 
 	return NULL;
 
 }
 
+ESteamNetworkingConfigValue _SteamNetworkingUtils_::GetFirstConfigValue() {
+	DEBUGBREAK("ISteamNetworkingUtils::GetFirstConfigValue");
+	
+	return k_ESteamNetworkingConfig_Invalid;
+
+}
+
 ESteamNetworkingConfigValue _SteamNetworkingUtils_::IterateGenericEditableConfigValues(ESteamNetworkingConfigValue eCurrent, Bool bEnumerateDevVars) {
+	DEBUGBREAK("ISteamNetworkingUtils::IterateGenericEditableConfigValues");
 
 	return k_ESteamNetworkingConfig_Invalid;
 
 }
 
 void _SteamNetworkingUtils_::SteamNetworkingIPAddr_ToString(const pSteamNetworkingIPAddr pAddr, pStrA pchStr, SizeOF cchStr, Bool bWithPort) {
+	DEBUGBREAK("ISteamNetworkingUtils::SteamNetworkingIPAddr_ToString");
 
 	/* "0000:0000:0000:0000:0000:0000:0000:0000%12345" */
 	const SizeOF cchIPv6Addr = 16U * 2U + 7U + 1U + 5U + 1U;
@@ -289,6 +334,7 @@ void _SteamNetworkingUtils_::SteamNetworkingIPAddr_ToString(const pSteamNetworki
 }
 
 Bool _SteamNetworkingUtils_::SteamNetworkingIPAddr_ParseString(pSteamNetworkingIPAddr pAddr, pCStrA pchStr) {
+	DEBUGBREAK("ISteamNetworkingUtils::SteamNetworkingIPAddr_ParseString");
 
 	if (pAddr != NULL && pchStr != NULL) {
 
@@ -358,12 +404,14 @@ Bool _SteamNetworkingUtils_::SteamNetworkingIPAddr_ParseString(pSteamNetworkingI
 }
 
 ESteamNetworkingFakeIPType _SteamNetworkingUtils_::SteamNetworkingIPAddr_GetFakeIPType(const pSteamNetworkingIPAddr pAddr) {
+	DEBUGBREAK("ISteamNetworkingUtils::SteamNetworkingIPAddr_GetFakeIPType");
 
 	return k_ESteamNetworkingFakeIPType_NotFake;
 
 }
 
 void _SteamNetworkingUtils_::SteamNetworkingIdentity_ToString(const pSteamNetworkingIdentity pIdentity, pStrA pchStr, SizeOF cchStr) {
+	DEBUGBREAK("ISteamNetworkingUtils::SteamNetworkingIdentity_ToString");
 
 	if (pIdentity != NULL && pchStr != NULL && cchStr > 0) {
 		pchStr[0] = '\0';
@@ -371,6 +419,7 @@ void _SteamNetworkingUtils_::SteamNetworkingIdentity_ToString(const pSteamNetwor
 }
 
 Bool _SteamNetworkingUtils_::SteamNetworkingIdentity_ParseString(pSteamNetworkingIdentity pIdentity, pCStrA pchStr) {
+	DEBUGBREAK("ISteamNetworkingUtils::SteamNetworkingIdentity_ParseString");
 
 	if (pIdentity != NULL && pchStr != NULL) {
 

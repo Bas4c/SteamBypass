@@ -7,6 +7,9 @@
 
 #include "Typedef.h"
 
+// #define _SERVER
+// #define _PS3
+
 // ----
 // Current Game AppId
 // ----
@@ -568,10 +571,10 @@ typedef struct _SteamNetworkingIdentity_ {
 // ----
 
 #ifdef __cplusplus
-	extern "C" typedef void (*PFNPreMinidumpCallback)
+	extern "C" typedef void (*FNPreMinidumpCallback)
 		(pVoid pvContext);
 #else // !C++
-	typedef void (*PFNPreMinidumpCallback)
+	typedef void (*FNPreMinidumpCallback)
 		(pVoid pvContext);
 #endif
 

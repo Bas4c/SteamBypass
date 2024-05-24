@@ -56,6 +56,9 @@ public:
 	virtual Bool BGetDLCDataByIndex(Int32 iDLC, pAppId_t pAppId, pBool pbAvailable, pStrA pchName, Int32 cchNameBufferSize) = 0;
 	virtual void InstallDLC(AppId_t iAppId) = 0;
 	virtual void UninstallDLC(AppId_t iAppId) = 0;
+	#ifdef _PS3
+	virtual SteamAPICall_t RegisterActivationCode(pCStrA pchActivationCode) = 0;
+	#endif
 
 } ISteamApps004, *IpSteamApps004;
 
@@ -82,6 +85,9 @@ public:
 	virtual Uint32 GetInstalledDepots(AppId_t AppId, pDepotId_t pvecDepots, Uint32 cMaxDepots) = 0;
 	virtual Uint32 GetAppInstallDir(AppId_t AppId, pStrA pchFolder, Uint32 cchFolderBufferSize) = 0;
 	virtual Bool BIsAppInstalled(AppId_t AppId) = 0;
+	#ifdef _PS3
+	virtual SteamAPICall_t RegisterActivationCode(pCStrA pchActivationCode) = 0;
+	#endif
 
 } ISteamApps005, *IpSteamApps005;
 
@@ -110,6 +116,9 @@ public:
 	virtual Bool BIsAppInstalled(AppId_t AppId) = 0;
 	virtual SteamId_t GetAppOwner() = 0;
 	virtual pCStrA GetLaunchQueryParam(pCStrA pchKey) = 0;
+	#ifdef _PS3
+	virtual SteamAPICall_t RegisterActivationCode(pCStrA pchActivationCode) = 0;
+	#endif
 
 } ISteamApps006, *IpSteamApps006;
 

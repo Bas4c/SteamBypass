@@ -3,24 +3,28 @@
 // -----------------------------------------------------------------------------
 
 HSteamPipe _SteamClient_::CreateSteamPipe() {
+	DEBUGBREAK("ISteamClient::CreateSteamPipe");
 
 	return k_HSteamPipe_Client;
 
 }
 
 Bool _SteamClient_::BReleaseSteamPipe(HSteamPipe hSteamPipe) {
+	DEBUGBREAK("ISteamClient::BReleaseSteamPipe");
 
 	return True;
 
 }
 
 HSteamUser _SteamClient_::ConnectToGlobalUser(HSteamPipe hSteamPipe) {
+	DEBUGBREAK("ISteamClient::ConnectToGlobalUser");
 
 	return k_HSteamUser_LocalUser;
 
 }
 
 HSteamUser _SteamClient_::CreateLocalUser(pHSteamPipe phSteamPipe) {
+	DEBUGBREAK("ISteamClient::CreateLocalUser");
 	
 	if (phSteamPipe != NULL) {
 		*phSteamPipe = k_HSteamPipe_Client;
@@ -31,6 +35,7 @@ HSteamUser _SteamClient_::CreateLocalUser(pHSteamPipe phSteamPipe) {
 }
 
 HSteamUser _SteamClient_::CreateLocalUser(pHSteamPipe phSteamPipe, EAccountType eAccountType) {
+	DEBUGBREAK("ISteamClient::CreateLocalUser");
 
 	if (phSteamPipe != NULL) {
 		*phSteamPipe = k_HSteamPipe_Client;
@@ -41,12 +46,14 @@ HSteamUser _SteamClient_::CreateLocalUser(pHSteamPipe phSteamPipe, EAccountType 
 }
 
 void _SteamClient_::ReleaseUser(HSteamPipe hSteamPipe, HSteamUser hSteamUser) {
+	DEBUGBREAK("ISteamClient::ReleaseUser");
 
 	/* Empty Method */
 
 }
 
 IpSteamUser _SteamClient_::GetISteamUser(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamUser");
 
 	if (pchVersion != NULL) {
 		if (
@@ -83,6 +90,7 @@ IpSteamUser _SteamClient_::GetISteamUser(HSteamUser hSteamUser, HSteamPipe hStea
 }
 
 IpSteamGameServer _SteamClient_::GetISteamGameServer(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamGameServer");
 
 	if (pchVersion != NULL) {
 		if (StrA_Cmp(pchVersion, (pCStrA)("SteamGameServer004"), True))
@@ -112,18 +120,21 @@ IpSteamGameServer _SteamClient_::GetISteamGameServer(HSteamUser hSteamUser, HSte
 }
 
 void _SteamClient_::SetLocalIPBinding(Uint32 nIP, Uint16 Port) {
+	DEBUGBREAK("ISteamClient::SetLocalIPBinding");
 
 	/* Empty Method */
 
 }
 
 void _SteamClient_::SetLocalIPBinding(const pSteamIPAddress_t pSteamIPAdrr, Uint16 Port) {
+	DEBUGBREAK("ISteamClient::SetLocalIPBinding");
 
 	/* Empty Method */
 
 }
 
 IpSteamFriends _SteamClient_::GetISteamFriends(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamFriends");
 
 	if (pchVersion != NULL) {
 		if (StrA_Cmp(pchVersion, (pCStrA)("SteamFriends003"), True))
@@ -161,6 +172,7 @@ IpSteamFriends _SteamClient_::GetISteamFriends(HSteamUser hSteamUser, HSteamPipe
 }
 
 IpSteamUtils _SteamClient_::GetISteamUtils(HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamUtils");
 
 	if (pchVersion != NULL) {
 		if (
@@ -184,6 +196,7 @@ IpSteamUtils _SteamClient_::GetISteamUtils(HSteamPipe hSteamPipe, pCStrA pchVers
 }
 
 IpSteamMatchmaking _SteamClient_::GetISteamMatchmaking(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamMatchmaking");
 
 	if (pchVersion != NULL) {
 		if (StrA_Cmp(pchVersion, (pCStrA)("SteamMatchMaking002"), True))
@@ -209,6 +222,7 @@ IpSteamMatchmaking _SteamClient_::GetISteamMatchmaking(HSteamUser hSteamUser, HS
 }
 
 IpSteamMatchmakingServers _SteamClient_::GetISteamMatchmakingServers(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamMatchmakingServers");
 
 	if (pchVersion != NULL) {
 		if (StrA_Cmp(pchVersion, (pCStrA)("SteamMatchMakingServers001"), True))
@@ -222,6 +236,7 @@ IpSteamMatchmakingServers _SteamClient_::GetISteamMatchmakingServers(HSteamUser 
 }
 
 pVoid _SteamClient_::GetISteamGenericInterface(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamGenericInterface");
 
 	if (pchVersion != NULL) {
 
@@ -309,21 +324,25 @@ pVoid _SteamClient_::GetISteamGenericInterface(HSteamUser hSteamUser, HSteamPipe
 		pGeneric = this->GetISteamRemotePlay(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		#ifdef _PS3
+		pGeneric = this->GetISteamPS3OverlayRender();
+		if (pGeneric != NULL)
+			return pGeneric;
+		#endif
 		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMGAMECOORDINATOR_INTERFACE_VERSION), True))
 			return (IpSteamGameCoordinator)(&this->SteamGameCoordinator);
-		if (StrA_StrA(pchVersion, (pCStrA)("SteamPS3OverlayRenderer"), True) != SizeOF_MAX)
-			return (IpSteamPS3OverlayRenderer)(&this->SteamPS3OverlayRenderer);
 		pGeneric = this->GetISteamMasterServerUpdater(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
 		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMTV_INTERFACE_VERSION), True))
 			return (IpSteamTV)(&this->SteamTV);
-		if (
-			StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingUtils001"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingUtils002"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingUtils003"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)(STEAMNETWORKINGUTILS_INTERFACE_VERSION), True)
-		)
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingUtils001"), True))
+			return (IpSteamNetworkingUtils)((pVoid)((IpSteamNetworkingUtils001)(&this->SteamNetworkingUtils)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingUtils002"), True))
+			return (IpSteamNetworkingUtils)((pVoid)((IpSteamNetworkingUtils002)(&this->SteamNetworkingUtils)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingUtils003"), True))
+			return (IpSteamNetworkingUtils)((pVoid)((IpSteamNetworkingUtils003)(&this->SteamNetworkingUtils)));
+		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMNETWORKINGUTILS_INTERFACE_VERSION), True))
 			return (IpSteamNetworkingUtils)(&this->SteamNetworkingUtils);
 		if (StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingSockets001"), True))
 			return (IpSteamNetworkingSockets)((pVoid)((IpSteamNetworkingSockets001)(&this->SteamNetworkingSockets)));
@@ -359,6 +378,7 @@ pVoid _SteamClient_::GetISteamGenericInterface(HSteamUser hSteamUser, HSteamPipe
 }
 
 IpSteamUserStats _SteamClient_::GetISteamUserStats(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamUserStats");
 
 	if (pchVersion != NULL) {
 		if (
@@ -384,6 +404,7 @@ IpSteamUserStats _SteamClient_::GetISteamUserStats(HSteamUser hSteamUser, HSteam
 }
 
 IpSteamGameServerStats _SteamClient_::GetISteamGameServerStats(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamGameServerStats");
 
 	if (pchVersion != NULL) {
 		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMGAMESERVERSTATS_INTERFACE_VERSION), True)) {
@@ -396,6 +417,7 @@ IpSteamGameServerStats _SteamClient_::GetISteamGameServerStats(HSteamUser hSteam
 }
 
 IpSteamApps _SteamClient_::GetISteamApps(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamApps");
 
 	if (pchVersion != NULL) {
 		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMAPPS_INTERFACE_VERSION001"), True))
@@ -421,6 +443,7 @@ IpSteamApps _SteamClient_::GetISteamApps(HSteamUser hSteamUser, HSteamPipe hStea
 }
 
 IpSteamNetworking _SteamClient_::GetISteamNetworking(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamNetworking");
 
 	if (pchVersion != NULL) {
 		if (StrA_Cmp(pchVersion, (pCStrA)("SteamNetworking001"), True))
@@ -442,6 +465,7 @@ IpSteamNetworking _SteamClient_::GetISteamNetworking(HSteamUser hSteamUser, HSte
 }
 
 IpSteamRemoteStorage _SteamClient_::GetISteamRemoteStorage(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamRemoteStorage");
 
 	if (pchVersion != NULL) {
 		if (
@@ -471,6 +495,7 @@ IpSteamRemoteStorage _SteamClient_::GetISteamRemoteStorage(HSteamUser hSteamUser
 }
 
 IpSteamScreenshots _SteamClient_::GetISteamScreenshots(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamScreenshots");
 
 	if (pchVersion != NULL) {
 		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMSCREENSHOTS_INTERFACE_VERSION), True)) {
@@ -483,6 +508,7 @@ IpSteamScreenshots _SteamClient_::GetISteamScreenshots(HSteamUser hSteamUser, HS
 }
 
 IpSteamGameSearch _SteamClient_::GetISteamGameSearch(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamGameSearch");
 
 	if (pchVersion != NULL) {
 		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMGAMESEARCH_INTERFACE_VERSION), True)) {
@@ -495,30 +521,44 @@ IpSteamGameSearch _SteamClient_::GetISteamGameSearch(HSteamUser hSteamUser, HSte
 }
 
 void _SteamClient_::RunFrame() {
+	DEBUGBREAK("ISteamClient::RunFrame");
 
 	/* Empty Method */
 
 }
 
 Uint32 _SteamClient_::GetIPCCallCount() {
+	DEBUGBREAK("ISteamClient::GetIPCCallCount");
 
 	return 0U;
 
 }
 
 void _SteamClient_::SetWarningMessageHook(SteamAPIWarningMessageHook_t pFunction) {
+	DEBUGBREAK("ISteamClient::SetWarningMessageHook");
 
 	/* Empty Method */
 
 }
 
 Bool _SteamClient_::BShutdownIfAllPipesClosed() {
+	DEBUGBREAK("ISteamClient::BShutdownIfAllPipesClosed");
 
 	return True;
 
 }
 
+#ifdef _PS3
+IpSteamPS3OverlayRender _SteamClient_::GetISteamPS3OverlayRender() {
+	DEBUGBREAK("ISteamClient::GetISteamPS3OverlayRender");
+
+	return (IpSteamPS3OverlayRender)(&this->SteamPS3OverlayRender);
+
+}
+#endif
+
 IpSteamHTTP _SteamClient_::GetISteamHTTP(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamHTTP");
 
 	if (pchVersion != NULL) {
 		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMHTTP_INTERFACE_VERSION001"), True))
@@ -534,6 +574,7 @@ IpSteamHTTP _SteamClient_::GetISteamHTTP(HSteamUser hSteamUser, HSteamPipe hStea
 }
 
 IpSteamUnifiedMessages _SteamClient_::DEPRECATED_GetISteamUnifiedMessages(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::DEPRECATED_GetISteamUnifiedMessages");
 
 	if (pchVersion != NULL) {
 		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMUNIFIEDMESSAGES_INTERFACE_VERSION), True)) {
@@ -546,6 +587,7 @@ IpSteamUnifiedMessages _SteamClient_::DEPRECATED_GetISteamUnifiedMessages(HSteam
 }
 
 IpSteamController _SteamClient_::GetISteamController(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamController");
 
 	if (pchVersion != NULL) {
 		if (StrA_Cmp(pchVersion, (pCStrA)("SteamController001"), True))
@@ -571,6 +613,7 @@ IpSteamController _SteamClient_::GetISteamController(HSteamUser hSteamUser, HSte
 }
 
 IpSteamUGC _SteamClient_::GetISteamUGC(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamUGC");
 
 	if (pchVersion != NULL) {
 		if (
@@ -601,6 +644,7 @@ IpSteamUGC _SteamClient_::GetISteamUGC(HSteamUser hSteamUser, HSteamPipe hSteamP
 }
 
 IpSteamAppList _SteamClient_::GetISteamAppList(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamAppList");
 
 	if (pchVersion != NULL) {
 		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMAPPLIST_INTERFACE_VERSION), True)) {
@@ -613,6 +657,7 @@ IpSteamAppList _SteamClient_::GetISteamAppList(HSteamUser hSteamUser, HSteamPipe
 }
 
 IpSteamMusic _SteamClient_::GetISteamMusic(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamMusic");
 
 	if (pchVersion != NULL) {
 		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMMUSIC_INTERFACE_VERSION), True)) {
@@ -625,6 +670,7 @@ IpSteamMusic _SteamClient_::GetISteamMusic(HSteamUser hSteamUser, HSteamPipe hSt
 }
 
 IpSteamMusicRemote _SteamClient_::GetISteamMusicRemote(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamMusicRemote");
 
 	if (pchVersion != NULL) {
 		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMMUSICREMOTE_INTERFACE_VERSION), True)) {
@@ -637,6 +683,7 @@ IpSteamMusicRemote _SteamClient_::GetISteamMusicRemote(HSteamUser hSteamUser, HS
 }
 
 IpSteamHTMLSurface _SteamClient_::GetISteamHTMLSurface(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamHTMLSurface");
 
 	if (pchVersion != NULL) {
 		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMHTMLSURFACE_INTERFACE_VERSION_001"), True))
@@ -656,24 +703,28 @@ IpSteamHTMLSurface _SteamClient_::GetISteamHTMLSurface(HSteamUser hSteamUser, HS
 }
 
 void _SteamClient_::DEPRECATED_Set_SteamAPI_CPostAPIResultInProcess(void(*pFunction)()) {
+	DEBUGBREAK("ISteamClient::DEPRECATED_Set_SteamAPI_CPostAPIResultInProcess");
 
 	/* Empty Method */
 
 }
 
 void _SteamClient_::DEPRECATED_Remove_SteamAPI_CPostAPIResultInProcess(void(*pFunction)()) {
+	DEBUGBREAK("ISteamClient::DEPRECATED_Remove_SteamAPI_CPostAPIResultInProcess");
 
 	/* Empty Method */
 
 }
 
 void _SteamClient_::Set_SteamAPI_CCheckCallbackRegisteredInProcess(SteamAPI_CheckCallbackRegistered_t pFunction) {
+	DEBUGBREAK("ISteamClient::Set_SteamAPI_CCheckCallbackRegisteredInProcess");
 
 	/* Empty Method */
 
 }
 
 IpSteamInventory _SteamClient_::GetISteamInventory(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamInventory");
 
 	if (pchVersion != NULL) {
 		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMINVENTORY_INTERFACE_V001"), True))
@@ -689,6 +740,7 @@ IpSteamInventory _SteamClient_::GetISteamInventory(HSteamUser hSteamUser, HSteam
 }
 
 IpSteamVideo _SteamClient_::GetISteamVideo(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamVideo");
 
 	if (pchVersion != NULL) {
 		if (
@@ -704,6 +756,7 @@ IpSteamVideo _SteamClient_::GetISteamVideo(HSteamUser hSteamUser, HSteamPipe hSt
 }
 
 IpSteamParentalSettings _SteamClient_::GetISteamParentalSettings(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamParentalSettings");
 
 	if (pchVersion != NULL) {
 		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMPARENTALSETTINGS_INTERFACE_VERSION), True)) {
@@ -716,6 +769,7 @@ IpSteamParentalSettings _SteamClient_::GetISteamParentalSettings(HSteamUser hSte
 }
 
 IpSteamInput _SteamClient_::GetISteamInput(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamInput");
 
 	if (pchVersion != NULL) {
 		if (StrA_Cmp(pchVersion, (pCStrA)("SteamInput001"), True))
@@ -733,6 +787,7 @@ IpSteamInput _SteamClient_::GetISteamInput(HSteamUser hSteamUser, HSteamPipe hSt
 }
 
 IpSteamParties _SteamClient_::GetISteamParties(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamParties");
 
 	if (pchVersion != NULL) {
 		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMPARTIES_INTERFACE_VERSION), True))
@@ -744,6 +799,7 @@ IpSteamParties _SteamClient_::GetISteamParties(HSteamUser hSteamUser, HSteamPipe
 }
 
 IpSteamRemotePlay _SteamClient_::GetISteamRemotePlay(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamRemotePlay");
 
 	if (pchVersion != NULL) {
 		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMREMOTEPLAY_INTERFACE_VERSION), True)) {
@@ -756,6 +812,7 @@ IpSteamRemotePlay _SteamClient_::GetISteamRemotePlay(HSteamUser hSteamUser, HSte
 }
 
 IpSteamContentServer _SteamClient_::GetISteamContentServer(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamContentServer");
 	
 	if (pchVersion != NULL) {
 		return NULL;
@@ -766,6 +823,7 @@ IpSteamContentServer _SteamClient_::GetISteamContentServer(HSteamUser hSteamUser
 }
 
 IpSteamMasterServerUpdater _SteamClient_::GetISteamMasterServerUpdater(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pCStrA pchVersion) {
+	DEBUGBREAK("ISteamClient::GetISteamMasterServerUpdater");
 	
 	if (pchVersion != NULL) {
 		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMMASTERSERVERUPDATER_INTERFACE_VERSION), True)) {
@@ -778,6 +836,7 @@ IpSteamMasterServerUpdater _SteamClient_::GetISteamMasterServerUpdater(HSteamUse
 }
 
 void _SteamClient_::DestroyAllInterfaces() {
+	DEBUGBREAK("ISteamClient::DestroyAllInterfaces");
 
 	/* Empty Method */
 
