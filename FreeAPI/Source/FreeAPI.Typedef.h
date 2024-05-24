@@ -76,16 +76,21 @@ typedef enum _EAccountType_ {
 // -----------------------------------------------------------------------------
 typedef Uint64 SteamId_t, *pSteamId_t;
 
-#define k_SteamId_t_Create(eUniverse, eAccountType, ObjectId, AccountId) ( \
+#define k_SteamId_t_Create(eUniverse, eAccountType, ObjectId, Instance) ( \
  ((((SteamId_t)((EUniverse)(eUniverse))) << 56) & 0xFF00000000000000) | \
  ((((SteamId_t)((EAccountType)(eAccountType))) << 52) & 0x00F0000000000000) | \
  ((((SteamId_t)(ObjectId)) << 32) & 0x000FFFFF00000000) | \
- ((((SteamId_t)(AccountId)) & 0x00000000FFFFFFFF)) \
+ ((((SteamId_t)(Instance)) & 0x00000000FFFFFFFF)) \
 )
 
 #define k_SteamId_t_Invalid k_SteamId_t_Create( \
  k_EUniverseInvalid, k_EAccountTypeInvalid, \
  0x00000, 0x00000000 \
+)
+
+#define k_SteamId_t_LocalUser k_SteamId_t_Create( \
+ k_EUniversePublic, k_EAccountTypeIndividual, \
+ 0xFFFFF, 0x00000001 \
 )
 
 // ----

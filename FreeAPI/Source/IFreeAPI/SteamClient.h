@@ -125,7 +125,7 @@ public:
 
 	~_SteamClient_() = default;
 
-private:
+public:
 
 	SteamUser SteamUser;
 	SteamGameServer SteamGameServer;

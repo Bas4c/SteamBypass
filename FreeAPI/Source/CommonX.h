@@ -223,4 +223,25 @@ _COMMON_X_API_ void __stdcall DebugFuncEntryA(
 	#define DEBUGBREAK(FuncName)
 #endif
 
+_COMMON_X_API_ void __stdcall DebugOutputW(
+	_In_z_ pCStrW pchStr
+);
+
+_COMMON_X_API_ void __stdcall DebugOutputA(
+	_In_z_ pCStrA pchStr
+);
+
+#ifdef UNICODE
+	#define DebugOutput DebugOutputW
+#else // ANSI
+	#define DebugOutput DebugOutputA
+#endif
+
+#ifdef DEBUG
+	#define DEBUG_OUT(TxT) if (IsDebuggerPresent()) \
+  DebugOutputA(TxT)
+#else
+	#define DEBUG_OUT(TxT)
+#endif
+
 #endif // !_COMMON_X_

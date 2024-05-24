@@ -110,10 +110,7 @@ void _SteamMatchmaking_::AddRequestLobbyListCompatibleMembersFilter(SteamId_t St
 SteamId_t _SteamMatchmaking_::GetLobbyByIndex(Int32 iLobby) {
 	DEBUGBREAK("ISteamMatchmaking::GetLobbyByIndex");
 
-	return k_SteamId_t_Create(
-		k_EUniversePublic, k_EAccountTypeIndividual,
-		 0xFFFFF, 0xFFFFFFFF
-	);
+	return k_SteamId_t_LocalUser;
 
 }
 
@@ -176,10 +173,7 @@ Int32 _SteamMatchmaking_::GetNumLobbyMembers(SteamId_t SteamIdLobby) {
 SteamId_t _SteamMatchmaking_::GetLobbyMemberByIndex(SteamId_t SteamIdLobby, Int32 iMember) {
 	DEBUGBREAK("ISteamMatchmaking::GetLobbyMemberByIndex");
 
-	return k_SteamId_t_Create(
-		k_EUniversePublic, k_EAccountTypeIndividual,
-		0xFFFFF, 0xFFFFFFFF
-	);
+	return k_SteamId_t_LocalUser;
 
 }
 
@@ -302,10 +296,7 @@ Bool _SteamMatchmaking_::SetLobbyJoinable(SteamId_t SteamIdLobby, Bool bLobbyJoi
 SteamId_t _SteamMatchmaking_::GetLobbyOwner(SteamId_t SteamIdLobby) {
 	DEBUGBREAK("ISteamMatchmaking::GetLobbyOwner");
 
-	return k_SteamId_t_Create(
-		k_EUniversePublic, k_EAccountTypeIndividual,
-		0xFFFFF, 0xFFFFFFFF
-	);
+	return k_SteamId_t_LocalUser;
 
 }
 

@@ -46,6 +46,256 @@ typedef enum _ETextFilteringContext_ {
 
 } ETextFilteringContext, *pETextFilteringContext;
 
+typedef class _ISteamUtils002_ {
+public:
+
+	virtual Uint32 GetSecondsSinceAppActive() = 0;
+	virtual Uint32 GetSecondsSinceComputerActive() = 0;
+	virtual EUniverse GetConnectedUniverse() = 0;
+	virtual Uint32 GetServerRealTime() = 0;
+	virtual pCStrA GetIPCountry() = 0;
+	virtual Bool GetImageSize(Int32 iImage, pUint32 pCx, pUint32 pCy) = 0;
+	virtual Bool GetImageRGBA(Int32 iImage, pUint8 pbDest, Int32 nDestSize) = 0;
+	virtual Bool GetCSERIPPort(pUint32 nIP, pUint16 Port) = 0;
+	virtual Uint8 GetCurrentBatteryPower() = 0;
+	virtual AppId_t GetAppId() = 0;
+	virtual void SetOverlayNotificationPosition(ENotificationPosition eNotificationPosition) = 0;
+	virtual Bool IsAPICallCompleted(SteamAPICall_t hSteamAPICall, pBool pbFailed) = 0;
+	virtual ESteamAPICallFailure GetAPICallFailureReason(SteamAPICall_t hSteamAPICall) = 0;
+	virtual Bool GetAPICallResult(SteamAPICall_t hSteamAPICall, pVoid pvCallback, Int32 cbCallback, Int32 iCallbackExpected, pBool pbFailed) = 0;
+
+} ISteamUtils002, *IpSteamUtils002;
+
+typedef class _ISteamUtils003_ {
+public:
+
+	virtual Uint32 GetSecondsSinceAppActive() = 0;
+	virtual Uint32 GetSecondsSinceComputerActive() = 0;
+	virtual EUniverse GetConnectedUniverse() = 0;
+	virtual Uint32 GetServerRealTime() = 0;
+	virtual pCStrA GetIPCountry() = 0;
+	virtual Bool GetImageSize(Int32 iImage, pUint32 pCx, pUint32 pCy) = 0;
+	virtual Bool GetImageRGBA(Int32 iImage, pUint8 pbDest, Int32 nDestSize) = 0;
+	virtual Bool GetCSERIPPort(pUint32 nIP, pUint16 Port) = 0;
+	virtual Uint8 GetCurrentBatteryPower() = 0;
+	virtual AppId_t GetAppId() = 0;
+	virtual void SetOverlayNotificationPosition(ENotificationPosition eNotificationPosition) = 0;
+	virtual Bool IsAPICallCompleted(SteamAPICall_t hSteamAPICall, pBool pbFailed) = 0;
+	virtual ESteamAPICallFailure GetAPICallFailureReason(SteamAPICall_t hSteamAPICall) = 0;
+	virtual Bool GetAPICallResult(SteamAPICall_t hSteamAPICall, pVoid pvCallback, Int32 cbCallback, Int32 iCallbackExpected, pBool pbFailed) = 0;
+	virtual void RunFrame() = 0;
+	virtual Uint32 GetIPCCallCount() = 0;
+	virtual void SetWarningMessageHook(SteamAPIWarningMessageHook_t pFunction) = 0;
+	virtual Bool IsOverlayEnabled() = 0;
+
+} ISteamUtils003, *IpSteamUtils003;
+
+typedef class _ISteamUtils004_ {
+public:
+
+	virtual Uint32 GetSecondsSinceAppActive() = 0;
+	virtual Uint32 GetSecondsSinceComputerActive() = 0;
+	virtual EUniverse GetConnectedUniverse() = 0;
+	virtual Uint32 GetServerRealTime() = 0;
+	virtual pCStrA GetIPCountry() = 0;
+	virtual Bool GetImageSize(Int32 iImage, pUint32 pCx, pUint32 pCy) = 0;
+	virtual Bool GetImageRGBA(Int32 iImage, pUint8 pbDest, Int32 nDestSize) = 0;
+	virtual Bool GetCSERIPPort(pUint32 nIP, pUint16 Port) = 0;
+	virtual Uint8 GetCurrentBatteryPower() = 0;
+	virtual AppId_t GetAppId() = 0;
+	virtual void SetOverlayNotificationPosition(ENotificationPosition eNotificationPosition) = 0;
+	virtual Bool IsAPICallCompleted(SteamAPICall_t hSteamAPICall, pBool pbFailed) = 0;
+	virtual ESteamAPICallFailure GetAPICallFailureReason(SteamAPICall_t hSteamAPICall) = 0;
+	virtual Bool GetAPICallResult(SteamAPICall_t hSteamAPICall, pVoid pvCallback, Int32 cbCallback, Int32 iCallbackExpected, pBool pbFailed) = 0;
+	virtual void RunFrame() = 0;
+	virtual Uint32 GetIPCCallCount() = 0;
+	virtual void SetWarningMessageHook(SteamAPIWarningMessageHook_t pFunction) = 0;
+	virtual Bool IsOverlayEnabled() = 0;
+
+} ISteamUtils004, *IpSteamUtils004;
+
+typedef class _ISteamUtils005_ {
+public:
+
+	virtual Uint32 GetSecondsSinceAppActive() = 0;
+	virtual Uint32 GetSecondsSinceComputerActive() = 0;
+	virtual EUniverse GetConnectedUniverse() = 0;
+	virtual Uint32 GetServerRealTime() = 0;
+	virtual pCStrA GetIPCountry() = 0;
+	virtual Bool GetImageSize(Int32 iImage, pUint32 pCx, pUint32 pCy) = 0;
+	virtual Bool GetImageRGBA(Int32 iImage, pUint8 pbDest, Int32 nDestSize) = 0;
+	virtual Bool GetCSERIPPort(pUint32 nIP, pUint16 Port) = 0;
+	virtual Uint8 GetCurrentBatteryPower() = 0;
+	virtual AppId_t GetAppId() = 0;
+	virtual void SetOverlayNotificationPosition(ENotificationPosition eNotificationPosition) = 0;
+	virtual Bool IsAPICallCompleted(SteamAPICall_t hSteamAPICall, pBool pbFailed) = 0;
+	virtual ESteamAPICallFailure GetAPICallFailureReason(SteamAPICall_t hSteamAPICall) = 0;
+	virtual Bool GetAPICallResult(SteamAPICall_t hSteamAPICall, pVoid pvCallback, Int32 cbCallback, Int32 iCallbackExpected, pBool pbFailed) = 0;
+	virtual void RunFrame() = 0;
+	virtual Uint32 GetIPCCallCount() = 0;
+	virtual void SetWarningMessageHook(SteamAPIWarningMessageHook_t pFunction) = 0;
+	virtual Bool IsOverlayEnabled() = 0;
+	virtual Bool BOverlayNeedsPresent() = 0;
+	#ifndef _PS3
+	virtual SteamAPICall_t CheckFileSignature(pCStrA pchFileName) = 0;
+	#endif
+	#ifdef _PS3
+	virtual void PostPS3SysutilCallback(Uint64 Status, Uint64 Arg, pVoid pvUserData) = 0;
+	virtual Bool BIsReadyToShutdown() = 0;
+	virtual Bool BIsPSNOnline() = 0;
+	virtual void SetPSNGameBootInviteStrings(pCStrA pchSubject, pCStrA pchBody) = 0;
+	#endif
+	virtual Bool ShowGamepadTextInput(EGamepadTextInputMode eGamepadTextInputMode, EGamepadTextInputLineMode eGamepadTextInputLineMode, pCStrA pchDescription, Uint32 cchDescription, pCStrA pchExistingText) = 0;
+	virtual Uint32 GetEnteredGamepadTextLength() = 0;
+	virtual Bool GetEnteredGamepadTextInput(pStrA pchText, Uint32 cchText) = 0;
+
+} ISteamUtils005, *IpSteamUtils005;
+
+typedef class _ISteamUtils006_ {
+public:
+
+	virtual Uint32 GetSecondsSinceAppActive() = 0;
+	virtual Uint32 GetSecondsSinceComputerActive() = 0;
+	virtual EUniverse GetConnectedUniverse() = 0;
+	virtual Uint32 GetServerRealTime() = 0;
+	virtual pCStrA GetIPCountry() = 0;
+	virtual Bool GetImageSize(Int32 iImage, pUint32 pCx, pUint32 pCy) = 0;
+	virtual Bool GetImageRGBA(Int32 iImage, pUint8 pbDest, Int32 nDestSize) = 0;
+	virtual Bool GetCSERIPPort(pUint32 nIP, pUint16 Port) = 0;
+	virtual Uint8 GetCurrentBatteryPower() = 0;
+	virtual AppId_t GetAppId() = 0;
+	virtual void SetOverlayNotificationPosition(ENotificationPosition eNotificationPosition) = 0;
+	virtual Bool IsAPICallCompleted(SteamAPICall_t hSteamAPICall, pBool pbFailed) = 0;
+	virtual ESteamAPICallFailure GetAPICallFailureReason(SteamAPICall_t hSteamAPICall) = 0;
+	virtual Bool GetAPICallResult(SteamAPICall_t hSteamAPICall, pVoid pvCallback, Int32 cbCallback, Int32 iCallbackExpected, pBool pbFailed) = 0;
+	virtual void RunFrame() = 0;
+	virtual Uint32 GetIPCCallCount() = 0;
+	virtual void SetWarningMessageHook(SteamAPIWarningMessageHook_t pFunction) = 0;
+	virtual Bool IsOverlayEnabled() = 0;
+	virtual Bool BOverlayNeedsPresent() = 0;
+	#ifndef _PS3
+	virtual SteamAPICall_t CheckFileSignature(pCStrA pchFileName) = 0;
+	#endif
+	#ifdef _PS3
+	virtual void PostPS3SysutilCallback(Uint64 Status, Uint64 Arg, pVoid pvUserData) = 0;
+	virtual Bool BIsReadyToShutdown() = 0;
+	virtual Bool BIsPSNOnline() = 0;
+	virtual void SetPSNGameBootInviteStrings(pCStrA pchSubject, pCStrA pchBody) = 0;
+	#endif
+	virtual Bool ShowGamepadTextInput(EGamepadTextInputMode eGamepadTextInputMode, EGamepadTextInputLineMode eGamepadTextInputLineMode, pCStrA pchDescription, Uint32 cchDescription, pCStrA pchExistingText) = 0;
+	virtual Uint32 GetEnteredGamepadTextLength() = 0;
+	virtual Bool GetEnteredGamepadTextInput(pStrA pchText, Uint32 cchText) = 0;
+	virtual pCStrA GetSteamUILanguage() = 0;
+	virtual Bool IsSteamRunningInVR() = 0;
+
+} ISteamUtils006, *IpSteamUtils006;
+
+typedef class _ISteamUtils007_ {
+public:
+
+	virtual Uint32 GetSecondsSinceAppActive() = 0;
+	virtual Uint32 GetSecondsSinceComputerActive() = 0;
+	virtual EUniverse GetConnectedUniverse() = 0;
+	virtual Uint32 GetServerRealTime() = 0;
+	virtual pCStrA GetIPCountry() = 0;
+	virtual Bool GetImageSize(Int32 iImage, pUint32 pCx, pUint32 pCy) = 0;
+	virtual Bool GetImageRGBA(Int32 iImage, pUint8 pbDest, Int32 nDestSize) = 0;
+	virtual Bool GetCSERIPPort(pUint32 nIP, pUint16 Port) = 0;
+	virtual Uint8 GetCurrentBatteryPower() = 0;
+	virtual AppId_t GetAppId() = 0;
+	virtual void SetOverlayNotificationPosition(ENotificationPosition eNotificationPosition) = 0;
+	virtual Bool IsAPICallCompleted(SteamAPICall_t hSteamAPICall, pBool pbFailed) = 0;
+	virtual ESteamAPICallFailure GetAPICallFailureReason(SteamAPICall_t hSteamAPICall) = 0;
+	virtual Bool GetAPICallResult(SteamAPICall_t hSteamAPICall, pVoid pvCallback, Int32 cbCallback, Int32 iCallbackExpected, pBool pbFailed) = 0;
+	virtual void RunFrame() = 0;
+	virtual Uint32 GetIPCCallCount() = 0;
+	virtual void SetWarningMessageHook(SteamAPIWarningMessageHook_t pFunction) = 0;
+	virtual Bool IsOverlayEnabled() = 0;
+	virtual Bool BOverlayNeedsPresent() = 0;
+	virtual SteamAPICall_t CheckFileSignature(pCStrA pchFileName) = 0;
+	virtual Bool ShowGamepadTextInput(EGamepadTextInputMode eGamepadTextInputMode, EGamepadTextInputLineMode eGamepadTextInputLineMode, pCStrA pchDescription, Uint32 cchDescription, pCStrA pchExistingText) = 0;
+	virtual Uint32 GetEnteredGamepadTextLength() = 0;
+	virtual Bool GetEnteredGamepadTextInput(pStrA pchText, Uint32 cchText) = 0;
+	virtual pCStrA GetSteamUILanguage() = 0;
+	virtual Bool IsSteamRunningInVR() = 0;
+	virtual void SetOverlayNotificationInset(Int32 nHorizontalInset, Int32 nVerticalInset) = 0;
+
+} ISteamUtils007, *IpSteamUtils007;
+
+typedef class _ISteamUtils008_ {
+public:
+
+	virtual Uint32 GetSecondsSinceAppActive() = 0;
+	virtual Uint32 GetSecondsSinceComputerActive() = 0;
+	virtual EUniverse GetConnectedUniverse() = 0;
+	virtual Uint32 GetServerRealTime() = 0;
+	virtual pCStrA GetIPCountry() = 0;
+	virtual Bool GetImageSize(Int32 iImage, pUint32 pCx, pUint32 pCy) = 0;
+	virtual Bool GetImageRGBA(Int32 iImage, pUint8 pbDest, Int32 nDestSize) = 0;
+	virtual Bool GetCSERIPPort(pUint32 nIP, pUint16 Port) = 0;
+	virtual Uint8 GetCurrentBatteryPower() = 0;
+	virtual AppId_t GetAppId() = 0;
+	virtual void SetOverlayNotificationPosition(ENotificationPosition eNotificationPosition) = 0;
+	virtual Bool IsAPICallCompleted(SteamAPICall_t hSteamAPICall, pBool pbFailed) = 0;
+	virtual ESteamAPICallFailure GetAPICallFailureReason(SteamAPICall_t hSteamAPICall) = 0;
+	virtual Bool GetAPICallResult(SteamAPICall_t hSteamAPICall, pVoid pvCallback, Int32 cbCallback, Int32 iCallbackExpected, pBool pbFailed) = 0;
+	virtual void RunFrame() = 0;
+	virtual Uint32 GetIPCCallCount() = 0;
+	virtual void SetWarningMessageHook(SteamAPIWarningMessageHook_t pFunction) = 0;
+	virtual Bool IsOverlayEnabled() = 0;
+	virtual Bool BOverlayNeedsPresent() = 0;
+	virtual SteamAPICall_t CheckFileSignature(pCStrA pchFileName) = 0;
+	virtual Bool ShowGamepadTextInput(EGamepadTextInputMode eGamepadTextInputMode, EGamepadTextInputLineMode eGamepadTextInputLineMode, pCStrA pchDescription, Uint32 cchDescription, pCStrA pchExistingText) = 0;
+	virtual Uint32 GetEnteredGamepadTextLength() = 0;
+	virtual Bool GetEnteredGamepadTextInput(pStrA pchText, Uint32 cchText) = 0;
+	virtual pCStrA GetSteamUILanguage() = 0;
+	virtual Bool IsSteamRunningInVR() = 0;
+	virtual void SetOverlayNotificationInset(Int32 nHorizontalInset, Int32 nVerticalInset) = 0;
+	virtual Bool IsSteamInBigPictureMode() = 0;
+	virtual void StartVRDashboard() = 0;
+
+} ISteamUtils008, *IpSteamUtils008;
+
+typedef class _ISteamUtils009_ {
+public:
+
+	virtual Uint32 GetSecondsSinceAppActive() = 0;
+	virtual Uint32 GetSecondsSinceComputerActive() = 0;
+	virtual EUniverse GetConnectedUniverse() = 0;
+	virtual Uint32 GetServerRealTime() = 0;
+	virtual pCStrA GetIPCountry() = 0;
+	virtual Bool GetImageSize(Int32 iImage, pUint32 pCx, pUint32 pCy) = 0;
+	virtual Bool GetImageRGBA(Int32 iImage, pUint8 pbDest, Int32 nDestSize) = 0;
+	virtual Bool GetCSERIPPort(pUint32 nIP, pUint16 Port) = 0;
+	virtual Uint8 GetCurrentBatteryPower() = 0;
+	virtual AppId_t GetAppId() = 0;
+	virtual void SetOverlayNotificationPosition(ENotificationPosition eNotificationPosition) = 0;
+	virtual Bool IsAPICallCompleted(SteamAPICall_t hSteamAPICall, pBool pbFailed) = 0;
+	virtual ESteamAPICallFailure GetAPICallFailureReason(SteamAPICall_t hSteamAPICall) = 0;
+	virtual Bool GetAPICallResult(SteamAPICall_t hSteamAPICall, pVoid pvCallback, Int32 cbCallback, Int32 iCallbackExpected, pBool pbFailed) = 0;
+	virtual void RunFrame() = 0;
+	virtual Uint32 GetIPCCallCount() = 0;
+	virtual void SetWarningMessageHook(SteamAPIWarningMessageHook_t pFunction) = 0;
+	virtual Bool IsOverlayEnabled() = 0;
+	virtual Bool BOverlayNeedsPresent() = 0;
+	virtual SteamAPICall_t CheckFileSignature(pCStrA pchFileName) = 0;
+	virtual Bool ShowGamepadTextInput(EGamepadTextInputMode eGamepadTextInputMode, EGamepadTextInputLineMode eGamepadTextInputLineMode, pCStrA pchDescription, Uint32 cchDescription, pCStrA pchExistingText) = 0;
+	virtual Uint32 GetEnteredGamepadTextLength() = 0;
+	virtual Bool GetEnteredGamepadTextInput(pStrA pchText, Uint32 cchText) = 0;
+	virtual pCStrA GetSteamUILanguage() = 0;
+	virtual Bool IsSteamRunningInVR() = 0;
+	virtual void SetOverlayNotificationInset(Int32 nHorizontalInset, Int32 nVerticalInset) = 0;
+	virtual Bool IsSteamInBigPictureMode() = 0;
+	virtual void StartVRDashboard() = 0;
+	virtual Bool IsVRHeadsetStreamingEnabled() = 0;
+	virtual void SetVRHeadsetStreamingEnabled(Bool bEnabled) = 0;
+	virtual Bool IsSteamChinaLauncher() = 0;
+	virtual Bool InitFilterText(Uint32 nFilterOptions) = 0;
+	virtual Int32 FilterText(ETextFilteringContext eContext, SteamId_t SourceSteamId, pCStrA pchInputMessage, pStrA pchFilteredText, Uint32 cchFilteredText) = 0;
+	virtual ESteamIPv6ConnectivityState GetIPv6ConnectivityState(ESteamIPv6ConnectivityProtocol eSteamIPv6ConnectivityProtocol) = 0;
+
+} ISteamUtils009, *IpSteamUtils009;
+
 // -----------------------------------------------------------------------------
 // Purpose: interface to user independent utility functions
 // -----------------------------------------------------------------------------

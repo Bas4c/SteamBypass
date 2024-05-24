@@ -14,7 +14,14 @@ typedef struct _UGCFileWriteStreamHandle_Value_ {
 
 } UGCFileWriteStreamHandle_Value, *pFileWriteStreamHandle_Value;
 
-typedef class _SteamRemoteStorage_ : public _ISteamRemoteStorage_ {
+typedef class _SteamRemoteStorage_ : public _ISteamRemoteStorage001_,
+ public _ISteamRemoteStorage002_, public _ISteamRemoteStorage003_,
+ public _ISteamRemoteStorage004_, public _ISteamRemoteStorage005_,
+ public _ISteamRemoteStorage006_, public _ISteamRemoteStorage007_,
+ public _ISteamRemoteStorage008_, public _ISteamRemoteStorage009_,
+ public _ISteamRemoteStorage010_, public _ISteamRemoteStorage011_,
+ public _ISteamRemoteStorage012_, public _ISteamRemoteStorage013_,
+ public _ISteamRemoteStorage014_, public _ISteamRemoteStorage_ {
 public:
 
 	_SteamRemoteStorage_();
@@ -51,14 +58,28 @@ public:
 	Bool IsCloudEnabledForApp() override;
 	void SetCloudEnabledForApp(Bool bEnabled) override;
 
+	SteamAPICall_t UGCDownload(UGCHandle_t hUGC) override;
 	SteamAPICall_t UGCDownload(UGCHandle_t hUGC, Uint32 nPriority) override;
 	Bool GetUGCDownloadProgress(UGCHandle_t hUGC, pInt32 pnBytesDownloaded, pInt32 pnBytesExpected) override;
-	Bool GetUGCDetails(UGCHandle_t hUGC, pAppId_t piAppId, pStrA* ppchName, pInt32 pnFileSizeInBytes, pSteamId_t pSteamIdOwner) override;
+	Bool GetUGCDetails(UGCHandle_t hUGC, pAppId_t piAppId, pStrA *ppchName, pInt32 pnFileSizeInBytes, pSteamId_t pSteamIdOwner) override;
+	Int32 UGCRead(UGCHandle_t hUGC, pVoid pvData, Int32 cbDataToRead) override;
+	Int32 UGCRead(UGCHandle_t hUGC, pVoid pvData, Int32 cbDataToRead, Uint32 cOffset) override;
 	Int32 UGCRead(UGCHandle_t hUGC, pVoid pvData, Int32 cbDataToRead, Uint32 cOffset, EUGCReadAction eAction) override;
 	Int32 GetCachedUGCCount() override;
 	UGCHandle_t GetCachedUGCHandle(Int32 iCachedContent) override;
 
+	#if defined(_PS3) || defined(_SERVER)
+	void GetFileListFromServer() override;
+	Bool FileFetch(pCStrA pchFile) override;
+	Bool FilePersist(pCStrA pchFile) override;
+	Bool SynchronizeToClient() override;
+	Bool SynchronizeToServer() override;
+	Bool ResetFileRequestState() override;
+	#endif
+
+	SteamAPICall_t PublishFile(pCStrA pchFile, pCStrA pchPreviewFile, AppId_t nConsumerAppId, pCStrA pchTitle, pCStrA pchDescription, ERemoteStoragePublishedFileVisibility eRemoteStoragePublishedFileVisibility, pSteamParamStringArray_t pTags) override;
 	SteamAPICall_t PublishWorkshopFile(pCStrA pchFile, pCStrA pchPreviewFile, AppId_t nConsumerAppId, pCStrA pchTitle, pCStrA pchDescription, ERemoteStoragePublishedFileVisibility eRemoteStoragePublishedFileVisibility, pSteamParamStringArray_t pTags, EWorkshopFileType eWorkshopFileType) override;
+	Bool UpdatePublishedFile(RemoteStorageUpdatePublishedFileRequest_t UpdatePublishedFileRequest) override;
 	PublishedFileUpdateHandle_t CreatePublishedFileUpdateRequest(PublishedFileId_t PublishedFileId) override;
 	Bool UpdatePublishedFileFile(PublishedFileUpdateHandle_t hPublishedFileUpdate, pCStrA pchFile) override;
 	Bool UpdatePublishedFilePreviewFile(PublishedFileUpdateHandle_t hPublishedFileUpdate, pCStrA pchPreviewFile) override;
@@ -68,6 +89,7 @@ public:
 	Bool UpdatePublishedFileTags(PublishedFileUpdateHandle_t hPublishedFileUpdate, pSteamParamStringArray_t pTags) override;
 
 	SteamAPICall_t CommitPublishedFileUpdate(PublishedFileUpdateHandle_t hPublishedFileUpdate) override;
+	SteamAPICall_t GetPublishedFileDetails(PublishedFileId_t PublishedFileId) override;
 	SteamAPICall_t GetPublishedFileDetails(PublishedFileId_t PublishedFileId, Uint32 nSeconds) override;
 	SteamAPICall_t DeletePublishedFile(PublishedFileId_t PublishedFileId) override;
 	SteamAPICall_t EnumerateUserPublishedFiles(Uint32 iStart) override;
@@ -95,8 +117,8 @@ public:
 
 private:
 
-	UGCFileWriteStreamHandle_Value UGCHandles[256];
+	UGCFileWriteStreamHandle_Value UGCHandle[256];
 
-} SteamRemoteStorage, *pSteamRemoteStorage;
+ } SteamRemoteStorage, *pSteamRemoteStorage;
 
 #endif // !_STEAMREMOTESTORAGE_

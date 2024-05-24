@@ -16,10 +16,7 @@ Bool _SteamUser_::BLoggedOn() {
 
 SteamId_t _SteamUser_::GetSteamId() {
 
-	return k_SteamId_t_Create(
-		k_EUniversePublic, k_EAccountTypeIndividual,
-		0xFFFFF, 0xFFFFFFFF
-	);
+	return k_SteamId_t_LocalUser;
 
 }
 

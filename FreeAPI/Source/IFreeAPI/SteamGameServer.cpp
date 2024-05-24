@@ -89,10 +89,7 @@ Bool _SteamGameServer_::BSecure() {
 SteamId_t _SteamGameServer_::GetSteamID() {
 	DEBUGBREAK("ISteamGameServer::GetSteamID");
 
-	return k_SteamId_t_Create(
-		k_EUniversePublic, k_EAccountTypeIndividual,
-		0xFFFFF, 0xFFFFFFFF
-	);
+	return k_SteamId_t_LocalUser;
 
 }
 
@@ -358,10 +355,7 @@ Bool _SteamGameServer_::SendUserConnectAndAuthenticate(Uint32 nIPClient, const p
 	DEBUGBREAK("ISteamGameServer::SendUserConnectAndAuthenticate");
 
 	if (pSteamIdUser != NULL) {
-		*pSteamIdUser = k_SteamId_t_Create(
-			k_EUniversePublic, k_EAccountTypeIndividual,
-			0xFFFFF, 0xFFFFFFFF
-		);
+		*pSteamIdUser = k_SteamId_t_LocalUser;
 	}
 
 	return True;
@@ -371,10 +365,7 @@ Bool _SteamGameServer_::SendUserConnectAndAuthenticate(Uint32 nIPClient, const p
 SteamId_t _SteamGameServer_::CreateUnauthenticatedUserConnection() {
 	DEBUGBREAK("ISteamGameServer::CreateUnauthenticatedUserConnection");
 
-	return k_SteamId_t_Create(
-		k_EUniversePublic, k_EAccountTypeIndividual,
-		0xFFFFF, 0xFFFFFFFF
-	);
+	return k_SteamId_t_LocalUser;
 
 }
 

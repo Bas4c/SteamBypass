@@ -3,12 +3,14 @@
 // -----------------------------------------------------------------------------
 
 void _SteamVideo_::GetVideoURL(AppId_t iVideoAppId) {
+	DEBUGBREAK("ISteamVideo::GetVideoURL");
 
 	/* Empty Method */
 
 }
 
 Bool _SteamVideo_::IsBroadcasting(pInt32 pnNumViewers) {
+	DEBUGBREAK("ISteamVideo::IsBroadcasting");
 
 	if (pnNumViewers != NULL) {
 		*pnNumViewers = 0;
@@ -19,12 +21,14 @@ Bool _SteamVideo_::IsBroadcasting(pInt32 pnNumViewers) {
 }
 
 void _SteamVideo_::GetOPFSettings(AppId_t iVideoAppId) {
+	DEBUGBREAK("ISteamVideo::GetOPFSettings");
 
 	/* Empty Method */
 
 }
 
 Bool _SteamVideo_::GetOPFStringForApp(AppId_t iVideoAppId, pStrA pchOPFString, pInt32 pnOPFString) {
+	DEBUGBREAK("ISteamVideo::GetOPFStringForApp");
 
 	if (pchOPFString != NULL && pnOPFString != NULL) {
 		if (*pnOPFString > 0) {

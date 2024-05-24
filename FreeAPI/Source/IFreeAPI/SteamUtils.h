@@ -8,7 +8,11 @@
 #include "IFreeAPI.Contract\ISteamUtils.h"
 // -----------------------------------------------------------------------------
 
-typedef class _SteamUtils_ : public _ISteamUtils_ {
+typedef class _SteamUtils_ : public _ISteamUtils002_,
+ public _ISteamUtils003_, public _ISteamUtils004_,
+ public _ISteamUtils005_, public _ISteamUtils006_,
+ public _ISteamUtils007_, public _ISteamUtils008_,
+ public _ISteamUtils009_, public _ISteamUtils_ {
 public:
 
 	_SteamUtils_();
@@ -64,6 +68,14 @@ public:
 		k_ECheckFileSignatureInvalidSignature - The file exists, and the signing tab has been set for this file, but the file is either not signed or the signature does not match.
 		k_ECheckFileSignatureValidSignature - The file is signed and the signature is valid. */
 	SteamAPICall_t CheckFileSignature(pCStrA pchFileName) override;
+
+	#ifdef _PS3
+	void PostPS3SysutilCallback(Uint64 Status, Uint64 Arg, pVoid pvUserData) override;
+	Bool BIsReadyToShutdown() override;
+	Bool BIsPSNOnline() override;
+	void SetPSNGameBootInviteStrings(pCStrA pchSubject, pCStrA pchBody) override;
+	#endif
+
 	Bool ShowGamepadTextInput(EGamepadTextInputMode eGamepadTextInputMode, EGamepadTextInputLineMode eGamepadTextInputLineMode, pCStrA pchDescription, Uint32 cchDescription, pCStrA pchExistingText) override;
 	Uint32 GetEnteredGamepadTextLength() override;
 	Bool GetEnteredGamepadTextInput(pStrA pchText, Uint32 cchText) override;

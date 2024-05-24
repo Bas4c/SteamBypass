@@ -1294,3 +1294,75 @@ _COMMON_X_API_ void __stdcall DebugFuncEntryA(
 	}
 
 }
+
+_COMMON_X_API_ void __stdcall DebugOutputW(
+	_In_z_ pCStrW pchStr
+) {
+
+	if (pchStr != NULL) {
+
+		const SizeOF cchMax = (SizeOF_MAX / sizeof(CharW)) - 4U;
+		SizeOF cchStr = StrW_Count(pchStr);
+		if (cchStr <= cchMax) {
+
+			pStrW pchDbgOut = HeapAlloc(
+				GetProcessHeap(), HEAP_ZERO_MEMORY,
+				(cchStr + 3U) * sizeof(CharW)
+			);
+
+			if (pchDbgOut != NULL) {
+
+				StrW_Copy(pchDbgOut, cchStr + 3U, L"\t");
+				StrW_Cat(pchDbgOut, cchStr + 3U, pchStr);
+				StrW_Cat(pchDbgOut, cchStr + 3U, L"\r\n");
+
+				OutputDebugStringW(pchDbgOut);
+
+				HeapFree(
+					GetProcessHeap(), 0U,
+					pchDbgOut
+				);
+
+			}
+
+		}
+
+	}
+
+}
+
+_COMMON_X_API_ void __stdcall DebugOutputA(
+	_In_z_ pCStrA pchStr
+) {
+
+	if (pchStr != NULL) {
+
+		const SizeOF cchMax = (SizeOF_MAX / sizeof(CharA)) - 4U;
+		SizeOF cchStr = StrA_Count(pchStr);
+		if (cchStr <= cchMax) {
+
+			pStrA pchDbgOut = HeapAlloc(
+				GetProcessHeap(), HEAP_ZERO_MEMORY,
+				(cchStr + 3U) * sizeof(CharA)
+			);
+
+			if (pchDbgOut != NULL) {
+
+				StrA_Copy(pchDbgOut, cchStr + 3U, "\t");
+				StrA_Cat(pchDbgOut, cchStr + 3U, pchStr);
+				StrA_Cat(pchDbgOut, cchStr + 3U, "\r\n");
+
+				OutputDebugStringA(pchDbgOut);
+
+				HeapFree(
+					GetProcessHeap(), 0U,
+					pchDbgOut
+				);
+
+			}
+
+		}
+
+	}
+
+}
