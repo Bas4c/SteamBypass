@@ -21,7 +21,14 @@ typedef Uint32 AppId_t, *pAppId_t;
 // Current Game SessionId and Current User AccountId
 // ----
 
-typedef Uint64 GameId_t, *pGameId_t;
+typedef Uint64 GameId_t_Uint64, *pGameId_t_Uint64;
+
+typedef struct _GameId_t_ {
+
+	GameId_t_Uint64 GameId_Uint64;
+
+} GameId_t, *pGameId_t;
+
 typedef Uint32 AccountId_t, *pAccountId_t;
 
 // ----
@@ -72,15 +79,21 @@ typedef enum _EAccountType_ {
 // XX00000000000000: EUniverse
 // 00X0000000000000: EAccountType
 // 000XXXXX00000000: ObjectId
-// 00000000XXXXXXXX: AccountId
+// 00000000XXXXXXXX: Instance
 // -----------------------------------------------------------------------------
-typedef Uint64 SteamId_t, *pSteamId_t;
+typedef Uint64 SteamId_t_Uint64, *pSteamId_t_Uint64;
+
+typedef struct _SteamId_t_ {
+
+	SteamId_t_Uint64 SteamId_Uint64;
+
+} SteamId_t, *pSteamId_t;
 
 #define k_SteamId_t_Create(eUniverse, eAccountType, ObjectId, Instance) ( \
- ((((SteamId_t)((EUniverse)(eUniverse))) << 56) & 0xFF00000000000000) | \
- ((((SteamId_t)((EAccountType)(eAccountType))) << 52) & 0x00F0000000000000) | \
- ((((SteamId_t)(ObjectId)) << 32) & 0x000FFFFF00000000) | \
- ((((SteamId_t)(Instance)) & 0x00000000FFFFFFFF)) \
+ ((((SteamId_t_Uint64)((EUniverse)(eUniverse))) << 56) & 0xFF00000000000000) | \
+ ((((SteamId_t_Uint64)((EAccountType)(eAccountType))) << 52) & 0x00F0000000000000) | \
+ ((((SteamId_t_Uint64)(ObjectId)) << 32) & 0x000FFFFF00000000) | \
+ ((((SteamId_t_Uint64)(Instance)) & 0x00000000FFFFFFFF)) \
 )
 
 #define k_SteamId_t_Invalid k_SteamId_t_Create( \
@@ -341,6 +354,22 @@ typedef enum _EChatEntryType_ {
 	k_EChatEntryTypeLinkBlocked
 
 } EChatEntryType, *pEChatEntryType;
+
+// ----
+// User Stat Type
+// ----
+
+typedef enum _ESteamUserStatType_ {
+	
+	k_ESteamUserStatTypeINVALID,
+	k_ESteamUserStatTypeINT,
+	k_ESteamUserStatTypeFLOAT,
+	k_ESteamUserStatTypeAVGRATE,
+	k_ESteamUserStatTypeACHIEVEMENTS,
+	k_ESteamUserStatTypeGROUPACHIEVEMENTS,
+	k_ESteamUserStatTypeMAX
+
+} ESteamUserStatType, *pESteamUserStatType;
 
 // ----
 // Chat Room Enter Responses

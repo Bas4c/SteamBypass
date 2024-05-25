@@ -5,6 +5,7 @@
 #include <Shlobj_core.h>
 #include <Windows.h>
 // -----------------------------------------------------------------------------
+#include "..\CommonX.h"
 #include "..\StrX.h"
 #include "IFreeAPI.Contract\ISteamUser.h"
 // -----------------------------------------------------------------------------

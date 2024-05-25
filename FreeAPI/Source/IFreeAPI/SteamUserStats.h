@@ -3,16 +3,31 @@
 
 #include <Windows.h>
 // -----------------------------------------------------------------------------
+#include "..\CommonX.h"
 #include "..\StrX.h"
 #include "IFreeAPI.Contract\ISteamUserStats.h"
 // -----------------------------------------------------------------------------
 
-typedef class _SteamUserStats_ : public _ISteamUserStats_ {
+typedef class _SteamUserStats_ : public _ISteamUserStats001_,
+ public _ISteamUserStats002_, public _ISteamUserStats003_,
+ public _ISteamUserStats004_, public _ISteamUserStats005_,
+ public _ISteamUserStats006_, public _ISteamUserStats007_,
+ public _ISteamUserStats008_, public _ISteamUserStats009_,
+ public _ISteamUserStats010_, public _ISteamUserStats011_,
+ public _ISteamUserStats_ {
 public:
 
 	_SteamUserStats_() = default;
 	_SteamUserStats_(const _SteamUserStats_&) = delete;
 	_SteamUserStats_& operator=(const _SteamUserStats_&) = delete;
+
+	Uint32 GetNumStats(GameId_t GameId) override;
+	pCStrA GetStatName(GameId_t GameId, Uint32 iStat) override;
+	ESteamUserStatType GetStatType(GameId_t GameId, pCStrA pchName) override;
+	Uint32 GetNumAchievements(GameId_t GameId) override;
+	pCStrA GetAchievementName(GameId_t GameId, Uint32 iAchievement) override;
+	Uint32 GetNumGroupAchievements(GameId_t GameId) override;
+	pCStrA GetGroupAchievementName(GameId_t GameId, Uint32 iAchievement) override;
 
 	/* Result in UserStatsReceived_t */
 	Bool RequestCurrentStats() override;
@@ -22,8 +37,11 @@ public:
 	Bool SetStat(pCStrA pchName, Float Data) override;
 	Bool UpdateAvgRateStat(pCStrA pchName, Float CountThisSession, Double SessionLength) override;
 	Bool GetAchievement(pCStrA pchName, pBool pbAchieved) override;
+	Bool GetGroupAchievement(GameId_t GameId, pCStrA pchName, pBool pbAchieved) override;
 	Bool SetAchievement(pCStrA pchName) override;
+	Bool SetGroupAchievement(GameId_t GameId, pCStrA pchName) override;
 	Bool ClearAchievement(pCStrA pchName) override;
+	Bool ClearGroupAchievement(GameId_t GameId, pCStrA pchName) override;
 	Bool GetAchievementAndUnlockTime(pCStrA pchName, pBool pbAchieved, pUint32 pnUnlockTime) override;
 	Bool StoreStats() override;
 	Int32 GetAchievementIcon(pCStrA pchName) override;
@@ -69,6 +87,13 @@ public:
 	Bool GetGlobalStat(pCStrA pchStatName, pDouble pData) override;
 	Int32 GetGlobalStatHistory(pCStrA pchStatName, pInt64 pData, Uint32 cbData) override;
 	Int32 GetGlobalStatHistory(pCStrA pchStatName, pDouble pData, Uint32 cbData) override;
+
+	#ifdef _PS3
+	Bool InstallPS3Trophies() override;
+	Uint64 GetTrophySpaceRequiredBeforeInstall() override;
+	Bool SetUserStatsData(const pVoid pvData, Uint32 cbData) override;
+	Bool GetUserStatsData(pVoid pvData, Uint32 cbData, pUint32 pcbWritten) override;
+	#endif
 
 	Bool GetAchievementProgressLimits(pCStrA pchName, pInt32 pProgressMin, pInt32 pProgressMax) override;
 	Bool GetAchievementProgressLimits(pCStrA pchName, pFloat pProgressMin, pFloat pProgressMax) override;

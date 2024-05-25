@@ -19,7 +19,7 @@ RemotePlaySessionId_t _SteamRemotePlay_::GetSessionID(Int32 iSessionIndex) {
 SteamId_t _SteamRemotePlay_::GetSessionSteamID(RemotePlaySessionId_t SessionId) {
 	DEBUGBREAK("ISteamRemotePlay::GetSessionSteamID");
 
-	return k_SteamId_t_Invalid;
+	return SteamId_t{ k_SteamId_t_Invalid };
 
 }
 

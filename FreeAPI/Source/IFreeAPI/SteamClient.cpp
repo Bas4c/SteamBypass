@@ -394,22 +394,30 @@ IpSteamUserStats _SteamClient_::GetISteamUserStats(HSteamUser hSteamUser, HSteam
 
 	if (pchVersion != NULL) {
 		DEBUG_OUT(pchVersion);
-		if (
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUSERSTATS_INTERFACE_VERSION001"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUSERSTATS_INTERFACE_VERSION002"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUSERSTATS_INTERFACE_VERSION003"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUSERSTATS_INTERFACE_VERSION004"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUSERSTATS_INTERFACE_VERSION005"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUSERSTATS_INTERFACE_VERSION006"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUSERSTATS_INTERFACE_VERSION007"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUSERSTATS_INTERFACE_VERSION008"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUSERSTATS_INTERFACE_VERSION009"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUSERSTATS_INTERFACE_VERSION010"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUSERSTATS_INTERFACE_VERSION011"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)(STEAMUSERSTATS_INTERFACE_VERSION), True)
-		) {
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMUSERSTATS_INTERFACE_VERSION001"), True))
+			return (IpSteamUserStats)((pVoid)((IpSteamUserStats001)(&this->SteamUserStats)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMUSERSTATS_INTERFACE_VERSION002"), True))
+			return (IpSteamUserStats)((pVoid)((IpSteamUserStats002)(&this->SteamUserStats)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMUSERSTATS_INTERFACE_VERSION003"), True))
+			return (IpSteamUserStats)((pVoid)((IpSteamUserStats003)(&this->SteamUserStats)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMUSERSTATS_INTERFACE_VERSION004"), True))
+			return (IpSteamUserStats)((pVoid)((IpSteamUserStats004)(&this->SteamUserStats)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMUSERSTATS_INTERFACE_VERSION005"), True))
+			return (IpSteamUserStats)((pVoid)((IpSteamUserStats005)(&this->SteamUserStats)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMUSERSTATS_INTERFACE_VERSION006"), True))
+			return (IpSteamUserStats)((pVoid)((IpSteamUserStats006)(&this->SteamUserStats)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMUSERSTATS_INTERFACE_VERSION007"), True))
+			return (IpSteamUserStats)((pVoid)((IpSteamUserStats007)(&this->SteamUserStats)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMUSERSTATS_INTERFACE_VERSION008"), True))
+			return (IpSteamUserStats)((pVoid)((IpSteamUserStats008)(&this->SteamUserStats)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMUSERSTATS_INTERFACE_VERSION009"), True))
+			return (IpSteamUserStats)((pVoid)((IpSteamUserStats009)(&this->SteamUserStats)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMUSERSTATS_INTERFACE_VERSION010"), True))
+			return (IpSteamUserStats)((pVoid)((IpSteamUserStats010)(&this->SteamUserStats)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMUSERSTATS_INTERFACE_VERSION011"), True))
+			return (IpSteamUserStats)((pVoid)((IpSteamUserStats011)(&this->SteamUserStats)));
+		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMUSERSTATS_INTERFACE_VERSION), True))
 			return (IpSteamUserStats)(&this->SteamUserStats);
-		}
 	}
 
 	return NULL;

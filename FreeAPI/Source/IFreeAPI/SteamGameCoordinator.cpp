@@ -17,10 +17,10 @@ Bool _SteamGameCoordinator_::IsMessageAvailable(pUint32 pcbMsgSize) {
 	DEBUGBREAK("ISteamGameCoordinator::IsMessageAvailable");
 
 	if (pcbMsgSize != NULL) {
-		*pcbMsgSize = 0xDEEDBEEF;
+		*pcbMsgSize = 0x00000000;
 	}
 
-	return True;
+	return False;
 
 }
 
@@ -30,7 +30,7 @@ EGCResults _SteamGameCoordinator_::RetrieveMessage(pUint32 pnMsgType, pVoid pvDe
 	if (pvDest != NULL && cbDest != 0) {
 
 		for (Uint32 i = 0; i < cbDest; i++) {
-			((pByte)(pvDest))[i] = (Byte)(i % 256);
+			((pByte)(pvDest))[i] = 0x00;
 		}
 
 		if (pnMsgType != NULL) {

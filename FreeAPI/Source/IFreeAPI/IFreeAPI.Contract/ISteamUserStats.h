@@ -62,6 +62,382 @@ typedef struct _LeaderboardEntry_t_ {
 
 #pragma pack(pop)
 
+typedef class _ISteamUserStats001_ {
+public:
+
+	virtual Uint32 GetNumStats(GameId_t GameId) = 0;
+	virtual pCStrA GetStatName(GameId_t GameId, Uint32 iStat) = 0;
+	virtual ESteamUserStatType GetStatType(GameId_t GameId, pCStrA pchName) = 0;
+	virtual Uint32 GetNumAchievements(GameId_t GameId) = 0;
+	virtual pCStrA GetAchievementName(GameId_t GameId, Uint32 iAchievement) = 0;
+	virtual Uint32 GetNumGroupAchievements(GameId_t GameId) = 0;
+	virtual pCStrA GetGroupAchievementName(GameId_t GameId, Uint32 iAchievement) = 0;
+	virtual Bool RequestCurrentStats() = 0;
+	virtual Bool GetStat(pCStrA pchName, pInt32 pData) = 0;
+	virtual Bool GetStat(pCStrA pchName, pFloat pData) = 0;
+	virtual Bool SetStat(pCStrA pchName, Int32 Data) = 0;
+	virtual Bool SetStat(pCStrA pchName, Float Data) = 0;
+	virtual Bool UpdateAvgRateStat(pCStrA pchName, Float CountThisSession, Double SessionLength) = 0;
+	virtual Bool GetAchievement(pCStrA pchName, pBool pbAchieved) = 0;
+	virtual Bool GetGroupAchievement(GameId_t GameId, pCStrA pchName, pBool pbAchieved) = 0;
+	virtual Bool SetAchievement(pCStrA pchName) = 0;
+	virtual Bool SetGroupAchievement(GameId_t GameId, pCStrA pchName) = 0;
+	virtual Bool ClearAchievement(pCStrA pchName) = 0;
+	virtual Bool ClearGroupAchievement(GameId_t GameId, pCStrA pchName) = 0;
+	virtual Int32 GetAchievementIcon(pCStrA pchName) = 0;
+	virtual pCStrA GetAchievementDisplayAttribute(pCStrA pchName, pCStrA pchKey) = 0;
+
+} ISteamUserStats001, *IpSteamUserStats001;
+
+typedef class _ISteamUserStats002_ {
+public:
+
+	virtual Uint32 GetNumStats(GameId_t GameId) = 0;
+	virtual pCStrA GetStatName(GameId_t GameId, Uint32 iStat) = 0;
+	virtual ESteamUserStatType GetStatType(GameId_t GameId, pCStrA pchName) = 0;
+	virtual Uint32 GetNumAchievements(GameId_t GameId) = 0;
+	virtual pCStrA GetAchievementName(GameId_t GameId, Uint32 iAchievement) = 0;
+	virtual Bool RequestCurrentStats() = 0;
+	virtual Bool GetStat(pCStrA pchName, pInt32 pData) = 0;
+	virtual Bool GetStat(pCStrA pchName, pFloat pData) = 0;
+	virtual Bool SetStat(pCStrA pchName, Int32 Data) = 0;
+	virtual Bool SetStat(pCStrA pchName, Float Data) = 0;
+	virtual Bool UpdateAvgRateStat(pCStrA pchName, Float CountThisSession, Double SessionLength) = 0;
+	virtual Bool GetAchievement(pCStrA pchName, pBool pbAchieved) = 0;
+	virtual Bool SetAchievement(pCStrA pchName) = 0;
+	virtual Bool ClearAchievement(pCStrA pchName) = 0;
+	virtual Bool StoreStats() = 0;
+	virtual Int32 GetAchievementIcon(pCStrA pchName) = 0;
+	virtual pCStrA GetAchievementDisplayAttribute(pCStrA pchName, pCStrA pchKey) = 0;
+	virtual Bool IndicateAchievementProgress(pCStrA pchName, Uint32 nCurProgress, Uint32 nMaxProgress) = 0;
+
+} ISteamUserStats002, *IpSteamUserStats002;
+
+typedef class _ISteamUserStats003_ {
+public:
+
+	virtual Bool RequestCurrentStats() = 0;
+	virtual Bool GetStat(pCStrA pchName, pInt32 pData) = 0;
+	virtual Bool GetStat(pCStrA pchName, pFloat pData) = 0;
+	virtual Bool SetStat(pCStrA pchName, Int32 Data) = 0;
+	virtual Bool SetStat(pCStrA pchName, Float Data) = 0;
+	virtual Bool UpdateAvgRateStat(pCStrA pchName, Float CountThisSession, Double SessionLength) = 0;
+	virtual Bool GetAchievement(pCStrA pchName, pBool pbAchieved) = 0;
+	virtual Bool SetAchievement(pCStrA pchName) = 0;
+	virtual Bool ClearAchievement(pCStrA pchName) = 0;
+	virtual Bool StoreStats() = 0;
+	virtual Int32 GetAchievementIcon(pCStrA pchName) = 0;
+	virtual pCStrA GetAchievementDisplayAttribute(pCStrA pchName, pCStrA pchKey) = 0;
+	virtual Bool IndicateAchievementProgress(pCStrA pchName, Uint32 nCurProgress, Uint32 nMaxProgress) = 0;
+
+} ISteamUserStats003, *IpSteamUserStats003;
+
+typedef class _ISteamUserStats004_ {
+public:
+
+	virtual Bool RequestCurrentStats() = 0;
+	virtual Bool GetStat(pCStrA pchName, pInt32 pData) = 0;
+	virtual Bool GetStat(pCStrA pchName, pFloat pData) = 0;
+	virtual Bool SetStat(pCStrA pchName, Int32 Data) = 0;
+	virtual Bool SetStat(pCStrA pchName, Float Data) = 0;
+	virtual Bool UpdateAvgRateStat(pCStrA pchName, Float CountThisSession, Double SessionLength) = 0;
+	virtual Bool GetAchievement(pCStrA pchName, pBool pbAchieved) = 0;
+	virtual Bool SetAchievement(pCStrA pchName) = 0;
+	virtual Bool ClearAchievement(pCStrA pchName) = 0;
+	virtual Bool StoreStats() = 0;
+	virtual Int32 GetAchievementIcon(pCStrA pchName) = 0;
+	virtual pCStrA GetAchievementDisplayAttribute(pCStrA pchName, pCStrA pchKey) = 0;
+	virtual Bool IndicateAchievementProgress(pCStrA pchName, Uint32 nCurProgress, Uint32 nMaxProgress) = 0;
+	virtual SteamAPICall_t RequestUserStats(SteamId_t SteamIdUser) = 0;
+	virtual Bool GetUserStat(SteamId_t SteamIdUser, pCStrA pchName, pInt32 pData) = 0;
+	virtual Bool GetUserStat(SteamId_t SteamIdUser, pCStrA pchName, pFloat pData) = 0;
+	virtual Bool GetUserAchievement(SteamId_t SteamIdUser, pCStrA pchName, pBool pbAchieved) = 0;
+
+} ISteamUserStats004, *IpSteamUserStats004;
+
+typedef class _ISteamUserStats005_ {
+public:
+
+	virtual Bool RequestCurrentStats() = 0;
+	virtual Bool GetStat(pCStrA pchName, pInt32 pData) = 0;
+	virtual Bool GetStat(pCStrA pchName, pFloat pData) = 0;
+	virtual Bool SetStat(pCStrA pchName, Int32 Data) = 0;
+	virtual Bool SetStat(pCStrA pchName, Float Data) = 0;
+	virtual Bool UpdateAvgRateStat(pCStrA pchName, Float CountThisSession, Double SessionLength) = 0;
+	virtual Bool GetAchievement(pCStrA pchName, pBool pbAchieved) = 0;
+	virtual Bool SetAchievement(pCStrA pchName) = 0;
+	virtual Bool ClearAchievement(pCStrA pchName) = 0;
+	virtual Bool StoreStats() = 0;
+	virtual Int32 GetAchievementIcon(pCStrA pchName) = 0;
+	virtual pCStrA GetAchievementDisplayAttribute(pCStrA pchName, pCStrA pchKey) = 0;
+	virtual Bool IndicateAchievementProgress(pCStrA pchName, Uint32 nCurProgress, Uint32 nMaxProgress) = 0;
+	virtual SteamAPICall_t RequestUserStats(SteamId_t SteamIdUser) = 0;
+	virtual Bool GetUserStat(SteamId_t SteamIdUser, pCStrA pchName, pInt32 pData) = 0;
+	virtual Bool GetUserStat(SteamId_t SteamIdUser, pCStrA pchName, pFloat pData) = 0;
+	virtual Bool GetUserAchievement(SteamId_t SteamIdUser, pCStrA pchName, pBool pbAchieved) = 0;
+	virtual Bool ResetAllStats(Bool bAchievementsToo) = 0;
+	virtual SteamAPICall_t FindOrCreateLeaderboard(pCStrA pchLeaderboardName, ELeaderboardSortMethod eLeaderboardSortMethod, ELeaderboardDisplayType eLeaderboardDisplayType) = 0;
+	virtual SteamAPICall_t FindLeaderboard(pCStrA pchLeaderboardName) = 0;
+	virtual pCStrA GetLeaderboardName(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual Int32 GetLeaderboardEntryCount(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual ELeaderboardSortMethod GetLeaderboardSortMethod(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual ELeaderboardDisplayType GetLeaderboardDisplayType(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual SteamAPICall_t DownloadLeaderboardEntries(SteamLeaderboard_t hSteamLeaderboard, ELeaderboardDataRequest eLeaderboardDataRequest, Int32 nRangeStart, Int32 nRangeEnd) = 0;
+	virtual Bool GetDownloadedLeaderboardEntry(SteamLeaderboardEntries_t hSteamLeaderboardEntries, Int32 index, pLeaderboardEntry_t pLeaderboardEntry, pInt32 pDetails, Int32 cDetailsMax) = 0;
+	virtual SteamAPICall_t UploadLeaderboardScore(SteamLeaderboard_t hSteamLeaderboard, ELeaderboardUploadScoreMethod eLeaderboardUploadScoreMethod, Int32 nScore, const pInt32 pScoreDetails, Int32 cScoreDetailsCount) = 0;
+
+} ISteamUserStats005, *IpSteamUserStats005;
+
+typedef class _ISteamUserStats006_ {
+public:
+
+	virtual Bool RequestCurrentStats() = 0;
+	virtual Bool GetStat(pCStrA pchName, pInt32 pData) = 0;
+	virtual Bool GetStat(pCStrA pchName, pFloat pData) = 0;
+	virtual Bool SetStat(pCStrA pchName, Int32 Data) = 0;
+	virtual Bool SetStat(pCStrA pchName, Float Data) = 0;
+	virtual Bool UpdateAvgRateStat(pCStrA pchName, Float CountThisSession, Double SessionLength) = 0;
+	virtual Bool GetAchievement(pCStrA pchName, pBool pbAchieved) = 0;
+	virtual Bool SetAchievement(pCStrA pchName) = 0;
+	virtual Bool ClearAchievement(pCStrA pchName) = 0;
+	virtual Bool GetAchievementAndUnlockTime(pCStrA pchName, pBool pbAchieved, pUint32 pnUnlockTime) = 0;
+	virtual Bool StoreStats() = 0;
+	virtual Int32 GetAchievementIcon(pCStrA pchName) = 0;
+	virtual pCStrA GetAchievementDisplayAttribute(pCStrA pchName, pCStrA pchKey) = 0;
+	virtual Bool IndicateAchievementProgress(pCStrA pchName, Uint32 nCurProgress, Uint32 nMaxProgress) = 0;
+	virtual SteamAPICall_t RequestUserStats(SteamId_t SteamIdUser) = 0;
+	virtual Bool GetUserStat(SteamId_t SteamIdUser, pCStrA pchName, pInt32 pData) = 0;
+	virtual Bool GetUserStat(SteamId_t SteamIdUser, pCStrA pchName, pFloat pData) = 0;
+	virtual Bool GetUserAchievement(SteamId_t SteamIdUser, pCStrA pchName, pBool pbAchieved) = 0;
+	virtual Bool ResetAllStats(Bool bAchievementsToo) = 0;
+	virtual SteamAPICall_t FindOrCreateLeaderboard(pCStrA pchLeaderboardName, ELeaderboardSortMethod eLeaderboardSortMethod, ELeaderboardDisplayType eLeaderboardDisplayType) = 0;
+	virtual SteamAPICall_t FindLeaderboard(pCStrA pchLeaderboardName) = 0;
+	virtual pCStrA GetLeaderboardName(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual Int32 GetLeaderboardEntryCount(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual ELeaderboardSortMethod GetLeaderboardSortMethod(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual ELeaderboardDisplayType GetLeaderboardDisplayType(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual SteamAPICall_t DownloadLeaderboardEntries(SteamLeaderboard_t hSteamLeaderboard, ELeaderboardDataRequest eLeaderboardDataRequest, Int32 nRangeStart, Int32 nRangeEnd) = 0;
+	virtual Bool GetDownloadedLeaderboardEntry(SteamLeaderboardEntries_t hSteamLeaderboardEntries, Int32 index, pLeaderboardEntry_t pLeaderboardEntry, pInt32 pDetails, Int32 cDetailsMax) = 0;
+	virtual SteamAPICall_t UploadLeaderboardScore(SteamLeaderboard_t hSteamLeaderboard, ELeaderboardUploadScoreMethod eLeaderboardUploadScoreMethod, Int32 nScore, const pInt32 pScoreDetails, Int32 cScoreDetailsCount) = 0;
+	virtual SteamAPICall_t GetNumberOfCurrentPlayers() = 0;
+
+} ISteamUserStats006, *IpSteamUserStats006;
+
+typedef class _ISteamUserStats007_ {
+public:
+
+	virtual Bool RequestCurrentStats() = 0;
+	virtual Bool GetStat(pCStrA pchName, pInt32 pData) = 0;
+	virtual Bool GetStat(pCStrA pchName, pFloat pData) = 0;
+	virtual Bool SetStat(pCStrA pchName, Int32 Data) = 0;
+	virtual Bool SetStat(pCStrA pchName, Float Data) = 0;
+	virtual Bool UpdateAvgRateStat(pCStrA pchName, Float CountThisSession, Double SessionLength) = 0;
+	virtual Bool GetAchievement(pCStrA pchName, pBool pbAchieved) = 0;
+	virtual Bool SetAchievement(pCStrA pchName) = 0;
+	virtual Bool ClearAchievement(pCStrA pchName) = 0;
+	virtual Bool GetAchievementAndUnlockTime(pCStrA pchName, pBool pbAchieved, pUint32 pnUnlockTime) = 0;
+	virtual Bool StoreStats() = 0;
+	virtual Int32 GetAchievementIcon(pCStrA pchName) = 0;
+	virtual pCStrA GetAchievementDisplayAttribute(pCStrA pchName, pCStrA pchKey) = 0;
+	virtual Bool IndicateAchievementProgress(pCStrA pchName, Uint32 nCurProgress, Uint32 nMaxProgress) = 0;
+	virtual SteamAPICall_t RequestUserStats(SteamId_t SteamIdUser) = 0;
+	virtual Bool GetUserStat(SteamId_t SteamIdUser, pCStrA pchName, pInt32 pData) = 0;
+	virtual Bool GetUserStat(SteamId_t SteamIdUser, pCStrA pchName, pFloat pData) = 0;
+	virtual Bool GetUserAchievement(SteamId_t SteamIdUser, pCStrA pchName, pBool pbAchieved) = 0;
+	virtual Bool GetUserAchievementAndUnlockTime(SteamId_t SteamIdUser, pCStrA pchName, pBool pbAchieved, pUint32 punUnlockTime) = 0;
+	virtual Bool ResetAllStats(Bool bAchievementsToo) = 0;
+	virtual SteamAPICall_t FindOrCreateLeaderboard(pCStrA pchLeaderboardName, ELeaderboardSortMethod eLeaderboardSortMethod, ELeaderboardDisplayType eLeaderboardDisplayType) = 0;
+	virtual SteamAPICall_t FindLeaderboard(pCStrA pchLeaderboardName) = 0;
+	virtual pCStrA GetLeaderboardName(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual Int32 GetLeaderboardEntryCount(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual ELeaderboardSortMethod GetLeaderboardSortMethod(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual ELeaderboardDisplayType GetLeaderboardDisplayType(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual SteamAPICall_t DownloadLeaderboardEntries(SteamLeaderboard_t hSteamLeaderboard, ELeaderboardDataRequest eLeaderboardDataRequest, Int32 nRangeStart, Int32 nRangeEnd) = 0;
+	virtual Bool GetDownloadedLeaderboardEntry(SteamLeaderboardEntries_t hSteamLeaderboardEntries, Int32 index, pLeaderboardEntry_t pLeaderboardEntry, pInt32 pDetails, Int32 cDetailsMax) = 0;
+	virtual SteamAPICall_t UploadLeaderboardScore(SteamLeaderboard_t hSteamLeaderboard, ELeaderboardUploadScoreMethod eLeaderboardUploadScoreMethod, Int32 nScore, const pInt32 pScoreDetails, Int32 cScoreDetailsCount) = 0;
+	virtual SteamAPICall_t GetNumberOfCurrentPlayers() = 0;
+
+} ISteamUserStats007, *IpSteamUserStats007;
+
+typedef class _ISteamUserStats008_ {
+public:
+
+	virtual Bool RequestCurrentStats() = 0;
+	virtual Bool GetStat(pCStrA pchName, pInt32 pData) = 0;
+	virtual Bool GetStat(pCStrA pchName, pFloat pData) = 0;
+	virtual Bool SetStat(pCStrA pchName, Int32 Data) = 0;
+	virtual Bool SetStat(pCStrA pchName, Float Data) = 0;
+	virtual Bool UpdateAvgRateStat(pCStrA pchName, Float CountThisSession, Double SessionLength) = 0;
+	virtual Bool GetAchievement(pCStrA pchName, pBool pbAchieved) = 0;
+	virtual Bool SetAchievement(pCStrA pchName) = 0;
+	virtual Bool ClearAchievement(pCStrA pchName) = 0;
+	virtual Bool GetAchievementAndUnlockTime(pCStrA pchName, pBool pbAchieved, pUint32 pnUnlockTime) = 0;
+	virtual Bool StoreStats() = 0;
+	virtual Int32 GetAchievementIcon(pCStrA pchName) = 0;
+	virtual pCStrA GetAchievementDisplayAttribute(pCStrA pchName, pCStrA pchKey) = 0;
+	virtual Bool IndicateAchievementProgress(pCStrA pchName, Uint32 nCurProgress, Uint32 nMaxProgress) = 0;
+	virtual SteamAPICall_t RequestUserStats(SteamId_t SteamIdUser) = 0;
+	virtual Bool GetUserStat(SteamId_t SteamIdUser, pCStrA pchName, pInt32 pData) = 0;
+	virtual Bool GetUserStat(SteamId_t SteamIdUser, pCStrA pchName, pFloat pData) = 0;
+	virtual Bool GetUserAchievement(SteamId_t SteamIdUser, pCStrA pchName, pBool pbAchieved) = 0;
+	virtual Bool GetUserAchievementAndUnlockTime(SteamId_t SteamIdUser, pCStrA pchName, pBool pbAchieved, pUint32 punUnlockTime) = 0;
+	virtual Bool ResetAllStats(Bool bAchievementsToo) = 0;
+	virtual SteamAPICall_t FindOrCreateLeaderboard(pCStrA pchLeaderboardName, ELeaderboardSortMethod eLeaderboardSortMethod, ELeaderboardDisplayType eLeaderboardDisplayType) = 0;
+	virtual SteamAPICall_t FindLeaderboard(pCStrA pchLeaderboardName) = 0;
+	virtual pCStrA GetLeaderboardName(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual Int32 GetLeaderboardEntryCount(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual ELeaderboardSortMethod GetLeaderboardSortMethod(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual ELeaderboardDisplayType GetLeaderboardDisplayType(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual SteamAPICall_t DownloadLeaderboardEntries(SteamLeaderboard_t hSteamLeaderboard, ELeaderboardDataRequest eLeaderboardDataRequest, Int32 nRangeStart, Int32 nRangeEnd) = 0;
+	virtual Bool GetDownloadedLeaderboardEntry(SteamLeaderboardEntries_t hSteamLeaderboardEntries, Int32 index, pLeaderboardEntry_t pLeaderboardEntry, pInt32 pDetails, Int32 cDetailsMax) = 0;
+	virtual SteamAPICall_t UploadLeaderboardScore(SteamLeaderboard_t hSteamLeaderboard, ELeaderboardUploadScoreMethod eLeaderboardUploadScoreMethod, Int32 nScore, const pInt32 pScoreDetails, Int32 cScoreDetailsCount) = 0;
+	virtual SteamAPICall_t AttachLeaderboardUGC(SteamLeaderboard_t hSteamLeaderboard, UGCHandle_t hUGC) = 0;
+	virtual SteamAPICall_t GetNumberOfCurrentPlayers() = 0;
+
+} ISteamUserStats008, *IpSteamUserStats008;
+
+typedef class _ISteamUserStats009_ {
+public:
+
+	virtual Bool RequestCurrentStats() = 0;
+	virtual Bool GetStat(pCStrA pchName, pInt32 pData) = 0;
+	virtual Bool GetStat(pCStrA pchName, pFloat pData) = 0;
+	virtual Bool SetStat(pCStrA pchName, Int32 Data) = 0;
+	virtual Bool SetStat(pCStrA pchName, Float Data) = 0;
+	virtual Bool UpdateAvgRateStat(pCStrA pchName, Float CountThisSession, Double SessionLength) = 0;
+	virtual Bool GetAchievement(pCStrA pchName, pBool pbAchieved) = 0;
+	virtual Bool SetAchievement(pCStrA pchName) = 0;
+	virtual Bool ClearAchievement(pCStrA pchName) = 0;
+	virtual Bool GetAchievementAndUnlockTime(pCStrA pchName, pBool pbAchieved, pUint32 pnUnlockTime) = 0;
+	virtual Bool StoreStats() = 0;
+	virtual Int32 GetAchievementIcon(pCStrA pchName) = 0;
+	virtual pCStrA GetAchievementDisplayAttribute(pCStrA pchName, pCStrA pchKey) = 0;
+	virtual Bool IndicateAchievementProgress(pCStrA pchName, Uint32 nCurProgress, Uint32 nMaxProgress) = 0;
+	virtual SteamAPICall_t RequestUserStats(SteamId_t SteamIdUser) = 0;
+	virtual Bool GetUserStat(SteamId_t SteamIdUser, pCStrA pchName, pInt32 pData) = 0;
+	virtual Bool GetUserStat(SteamId_t SteamIdUser, pCStrA pchName, pFloat pData) = 0;
+	virtual Bool GetUserAchievement(SteamId_t SteamIdUser, pCStrA pchName, pBool pbAchieved) = 0;
+	virtual Bool GetUserAchievementAndUnlockTime(SteamId_t SteamIdUser, pCStrA pchName, pBool pbAchieved, pUint32 punUnlockTime) = 0;
+	virtual Bool ResetAllStats(Bool bAchievementsToo) = 0;
+	virtual SteamAPICall_t FindOrCreateLeaderboard(pCStrA pchLeaderboardName, ELeaderboardSortMethod eLeaderboardSortMethod, ELeaderboardDisplayType eLeaderboardDisplayType) = 0;
+	virtual SteamAPICall_t FindLeaderboard(pCStrA pchLeaderboardName) = 0;
+	virtual pCStrA GetLeaderboardName(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual Int32 GetLeaderboardEntryCount(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual ELeaderboardSortMethod GetLeaderboardSortMethod(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual ELeaderboardDisplayType GetLeaderboardDisplayType(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual SteamAPICall_t DownloadLeaderboardEntries(SteamLeaderboard_t hSteamLeaderboard, ELeaderboardDataRequest eLeaderboardDataRequest, Int32 nRangeStart, Int32 nRangeEnd) = 0;
+	virtual SteamAPICall_t DownloadLeaderboardEntriesForUsers(SteamLeaderboard_t hSteamLeaderboard, pSteamId_t prgUsers, Int32 cUsers) = 0;
+	virtual Bool GetDownloadedLeaderboardEntry(SteamLeaderboardEntries_t hSteamLeaderboardEntries, Int32 index, pLeaderboardEntry_t pLeaderboardEntry, pInt32 pDetails, Int32 cDetailsMax) = 0;
+	virtual SteamAPICall_t UploadLeaderboardScore(SteamLeaderboard_t hSteamLeaderboard, ELeaderboardUploadScoreMethod eLeaderboardUploadScoreMethod, Int32 nScore, const pInt32 pScoreDetails, Int32 cScoreDetailsCount) = 0;
+	virtual SteamAPICall_t AttachLeaderboardUGC(SteamLeaderboard_t hSteamLeaderboard, UGCHandle_t hUGC) = 0;
+	virtual SteamAPICall_t GetNumberOfCurrentPlayers() = 0;
+
+} ISteamUserStats009, *IpSteamUserStats009;
+
+typedef class _ISteamUserStats010_ {
+public:
+
+	virtual Bool RequestCurrentStats() = 0;
+	virtual Bool GetStat(pCStrA pchName, pInt32 pData) = 0;
+	virtual Bool GetStat(pCStrA pchName, pFloat pData) = 0;
+	virtual Bool SetStat(pCStrA pchName, Int32 Data) = 0;
+	virtual Bool SetStat(pCStrA pchName, Float Data) = 0;
+	virtual Bool UpdateAvgRateStat(pCStrA pchName, Float CountThisSession, Double SessionLength) = 0;
+	virtual Bool GetAchievement(pCStrA pchName, pBool pbAchieved) = 0;
+	virtual Bool SetAchievement(pCStrA pchName) = 0;
+	virtual Bool ClearAchievement(pCStrA pchName) = 0;
+	virtual Bool GetAchievementAndUnlockTime(pCStrA pchName, pBool pbAchieved, pUint32 pnUnlockTime) = 0;
+	virtual Bool StoreStats() = 0;
+	virtual Int32 GetAchievementIcon(pCStrA pchName) = 0;
+	virtual pCStrA GetAchievementDisplayAttribute(pCStrA pchName, pCStrA pchKey) = 0;
+	virtual Bool IndicateAchievementProgress(pCStrA pchName, Uint32 nCurProgress, Uint32 nMaxProgress) = 0;
+	virtual Uint32 GetNumAchievements() = 0;
+	virtual pCStrA GetAchievementName(Uint32 iAchievement) = 0;
+	virtual SteamAPICall_t RequestUserStats(SteamId_t SteamIdUser) = 0;
+	virtual Bool GetUserStat(SteamId_t SteamIdUser, pCStrA pchName, pInt32 pData) = 0;
+	virtual Bool GetUserStat(SteamId_t SteamIdUser, pCStrA pchName, pFloat pData) = 0;
+	virtual Bool GetUserAchievement(SteamId_t SteamIdUser, pCStrA pchName, pBool pbAchieved) = 0;
+	virtual Bool GetUserAchievementAndUnlockTime(SteamId_t SteamIdUser, pCStrA pchName, pBool pbAchieved, pUint32 punUnlockTime) = 0;
+	virtual Bool ResetAllStats(Bool bAchievementsToo) = 0;
+	virtual SteamAPICall_t FindOrCreateLeaderboard(pCStrA pchLeaderboardName, ELeaderboardSortMethod eLeaderboardSortMethod, ELeaderboardDisplayType eLeaderboardDisplayType) = 0;
+	virtual SteamAPICall_t FindLeaderboard(pCStrA pchLeaderboardName) = 0;
+	virtual pCStrA GetLeaderboardName(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual Int32 GetLeaderboardEntryCount(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual ELeaderboardSortMethod GetLeaderboardSortMethod(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual ELeaderboardDisplayType GetLeaderboardDisplayType(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual SteamAPICall_t DownloadLeaderboardEntries(SteamLeaderboard_t hSteamLeaderboard, ELeaderboardDataRequest eLeaderboardDataRequest, Int32 nRangeStart, Int32 nRangeEnd) = 0;
+	virtual SteamAPICall_t DownloadLeaderboardEntriesForUsers(SteamLeaderboard_t hSteamLeaderboard, pSteamId_t prgUsers, Int32 cUsers) = 0;
+	virtual Bool GetDownloadedLeaderboardEntry(SteamLeaderboardEntries_t hSteamLeaderboardEntries, Int32 index, pLeaderboardEntry_t pLeaderboardEntry, pInt32 pDetails, Int32 cDetailsMax) = 0;
+	virtual SteamAPICall_t UploadLeaderboardScore(SteamLeaderboard_t hSteamLeaderboard, ELeaderboardUploadScoreMethod eLeaderboardUploadScoreMethod, Int32 nScore, const pInt32 pScoreDetails, Int32 cScoreDetailsCount) = 0;
+	virtual SteamAPICall_t AttachLeaderboardUGC(SteamLeaderboard_t hSteamLeaderboard, UGCHandle_t hUGC) = 0;
+	virtual SteamAPICall_t GetNumberOfCurrentPlayers() = 0;
+	virtual SteamAPICall_t RequestGlobalAchievementPercentages() = 0;
+	virtual Int32 GetMostAchievedAchievementInfo(pStrA pchName, Uint32 cchNameLen, pFloat pPercent, pBool pbAchieved) = 0;
+	virtual Int32 GetNextMostAchievedAchievementInfo(Int32 iIteratorPrevious, pStrA pchName, Uint32 cchName, pFloat pPercent, pBool pbAchieved) = 0;
+	virtual Bool GetAchievementAchievedPercent(pCStrA pchName, pFloat pPercent) = 0;
+	virtual SteamAPICall_t RequestGlobalStats(Int32 nHistoryDays) = 0;
+	virtual Bool GetGlobalStat(pCStrA pchStatName, pInt64 pData) = 0;
+	virtual Bool GetGlobalStat(pCStrA pchStatName, pDouble pData) = 0;
+	virtual Int32 GetGlobalStatHistory(pCStrA pchStatName, pInt64 pData, Uint32 cbData) = 0;
+	virtual Int32 GetGlobalStatHistory(pCStrA pchStatName, pDouble pData, Uint32 cbData) = 0;
+
+} ISteamUserStats010, *IpSteamUserStats010;
+
+typedef class _ISteamUserStats011_ {
+public:
+
+	virtual Bool RequestCurrentStats() = 0;
+	virtual Bool GetStat(pCStrA pchName, pInt32 pData) = 0;
+	virtual Bool GetStat(pCStrA pchName, pFloat pData) = 0;
+	virtual Bool SetStat(pCStrA pchName, Int32 Data) = 0;
+	virtual Bool SetStat(pCStrA pchName, Float Data) = 0;
+	virtual Bool UpdateAvgRateStat(pCStrA pchName, Float CountThisSession, Double SessionLength) = 0;
+	virtual Bool GetAchievement(pCStrA pchName, pBool pbAchieved) = 0;
+	virtual Bool SetAchievement(pCStrA pchName) = 0;
+	virtual Bool ClearAchievement(pCStrA pchName) = 0;
+	virtual Bool GetAchievementAndUnlockTime(pCStrA pchName, pBool pbAchieved, pUint32 pnUnlockTime) = 0;
+	virtual Bool StoreStats() = 0;
+	virtual Int32 GetAchievementIcon(pCStrA pchName) = 0;
+	virtual pCStrA GetAchievementDisplayAttribute(pCStrA pchName, pCStrA pchKey) = 0;
+	virtual Bool IndicateAchievementProgress(pCStrA pchName, Uint32 nCurProgress, Uint32 nMaxProgress) = 0;
+	virtual Uint32 GetNumAchievements() = 0;
+	virtual pCStrA GetAchievementName(Uint32 iAchievement) = 0;
+	virtual SteamAPICall_t RequestUserStats(SteamId_t SteamIdUser) = 0;
+	virtual Bool GetUserStat(SteamId_t SteamIdUser, pCStrA pchName, pInt32 pData) = 0;
+	virtual Bool GetUserStat(SteamId_t SteamIdUser, pCStrA pchName, pFloat pData) = 0;
+	virtual Bool GetUserAchievement(SteamId_t SteamIdUser, pCStrA pchName, pBool pbAchieved) = 0;
+	virtual Bool GetUserAchievementAndUnlockTime(SteamId_t SteamIdUser, pCStrA pchName, pBool pbAchieved, pUint32 punUnlockTime) = 0;
+	virtual Bool ResetAllStats(Bool bAchievementsToo) = 0;
+	virtual SteamAPICall_t FindOrCreateLeaderboard(pCStrA pchLeaderboardName, ELeaderboardSortMethod eLeaderboardSortMethod, ELeaderboardDisplayType eLeaderboardDisplayType) = 0;
+	virtual SteamAPICall_t FindLeaderboard(pCStrA pchLeaderboardName) = 0;
+	virtual pCStrA GetLeaderboardName(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual Int32 GetLeaderboardEntryCount(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual ELeaderboardSortMethod GetLeaderboardSortMethod(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual ELeaderboardDisplayType GetLeaderboardDisplayType(SteamLeaderboard_t hSteamLeaderboard) = 0;
+	virtual SteamAPICall_t DownloadLeaderboardEntries(SteamLeaderboard_t hSteamLeaderboard, ELeaderboardDataRequest eLeaderboardDataRequest, Int32 nRangeStart, Int32 nRangeEnd) = 0;
+	virtual SteamAPICall_t DownloadLeaderboardEntriesForUsers(SteamLeaderboard_t hSteamLeaderboard, pSteamId_t prgUsers, Int32 cUsers) = 0;
+	virtual Bool GetDownloadedLeaderboardEntry(SteamLeaderboardEntries_t hSteamLeaderboardEntries, Int32 index, pLeaderboardEntry_t pLeaderboardEntry, pInt32 pDetails, Int32 cDetailsMax) = 0;
+	virtual SteamAPICall_t UploadLeaderboardScore(SteamLeaderboard_t hSteamLeaderboard, ELeaderboardUploadScoreMethod eLeaderboardUploadScoreMethod, Int32 nScore, const pInt32 pScoreDetails, Int32 cScoreDetailsCount) = 0;
+	virtual SteamAPICall_t AttachLeaderboardUGC(SteamLeaderboard_t hSteamLeaderboard, UGCHandle_t hUGC) = 0;
+	virtual SteamAPICall_t GetNumberOfCurrentPlayers() = 0;
+	virtual SteamAPICall_t RequestGlobalAchievementPercentages() = 0;
+	virtual Int32 GetMostAchievedAchievementInfo(pStrA pchName, Uint32 cchNameLen, pFloat pPercent, pBool pbAchieved) = 0;
+	virtual Int32 GetNextMostAchievedAchievementInfo(Int32 iIteratorPrevious, pStrA pchName, Uint32 cchName, pFloat pPercent, pBool pbAchieved) = 0;
+	virtual Bool GetAchievementAchievedPercent(pCStrA pchName, pFloat pPercent) = 0;
+	virtual SteamAPICall_t RequestGlobalStats(Int32 nHistoryDays) = 0;
+	virtual Bool GetGlobalStat(pCStrA pchStatName, pInt64 pData) = 0;
+	virtual Bool GetGlobalStat(pCStrA pchStatName, pDouble pData) = 0;
+	virtual Int32 GetGlobalStatHistory(pCStrA pchStatName, pInt64 pData, Uint32 cbData) = 0;
+	virtual Int32 GetGlobalStatHistory(pCStrA pchStatName, pDouble pData, Uint32 cbData) = 0;
+	#ifdef _PS3
+	virtual Bool InstallPS3Trophies() = 0;
+	virtual Uint64 GetTrophySpaceRequiredBeforeInstall() = 0;
+	virtual Bool SetUserStatsData(const pVoid pvData, Uint32 cbData) = 0;
+	virtual Bool GetUserStatsData(pVoid pvData, Uint32 cbData, pUint32 pcbWritten) = 0;
+	#endif
+
+} ISteamUserStats011, *IpSteamUserStats011;
+
 // -----------------------------------------------------------------------------
 // Purpose: Functions to access user stats, achievements, and leaderboard information
 // -----------------------------------------------------------------------------

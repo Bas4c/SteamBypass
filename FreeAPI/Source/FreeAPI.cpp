@@ -392,6 +392,8 @@ _FREE_API_ pVoid __cdecl SteamInternal_CreateInterface(
 		return NULL;
 	}
 
+	DEBUG_OUT(pchVersion);
+
 	if (StrA_Cmp(pchVersion, (pCStrA)("SteamClient007"), True))
 		return (pVoid)((IpSteamClient007)(g_SteamClientGameServer));
 	if (StrA_Cmp(pchVersion, (pCStrA)("SteamClient008"), True))
@@ -585,7 +587,7 @@ _FREE_API_ SteamId_t __cdecl SteamGameServer_GetSteamID(
 ) {
 	DEBUGBREAK("SteamGameServer_GetSteamID");
 
-	return k_SteamId_t_LocalUser;
+	return SteamId_t{ k_SteamId_t_LocalUser };
 
 }
 

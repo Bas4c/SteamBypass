@@ -192,7 +192,7 @@ Bool _SteamApps_::BIsAppInstalled(AppId_t iAppId) {
 SteamId_t _SteamApps_::GetAppOwner() {
 	DEBUGBREAK("ISteamApps::GetAppOwner");
 
-	return k_SteamId_t_LocalUser;
+	return SteamId_t{ k_SteamId_t_LocalUser };
 
 }
 

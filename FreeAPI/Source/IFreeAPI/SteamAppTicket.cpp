@@ -22,7 +22,7 @@ Uint32 _SteamAppTicket_::GetAppOwnershipTicketData(
 			iAppId;
 		
 		*((pSteamId_t)(((pByte)(pvTicket)) + sizeof(AppId_t))) =
-			k_SteamId_t_LocalUser;
+			SteamId_t{ k_SteamId_t_LocalUser };
 
 		StrA_Copy(
 			(pStrA)(((pByte)(pvTicket)) + sizeof(AppId_t) + sizeof(SteamId_t)),

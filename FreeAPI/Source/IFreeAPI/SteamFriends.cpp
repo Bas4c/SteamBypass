@@ -41,7 +41,7 @@ Int32 _SteamFriends_::GetFriendCount(Int32 iFriendFlags) {
 SteamId_t _SteamFriends_::GetFriendByIndex(Int32 iFriend, Int32 iFriendFlags) {
 	DEBUGBREAK("ISteamFriends::GetFriendByIndex");
 
-	return k_SteamId_t_Invalid;
+	return SteamId_t{ k_SteamId_t_Invalid };
 
 }
 
@@ -142,7 +142,7 @@ void _SteamFriends_::GetFriendsGroupMembersList(FriendsGroupId_t FriendsGroupId,
 
 	if (pnSteamIdMembers != NULL && nMembers > 0) {
 		for (Int32 i = 0; i < nMembers; i++) {
-			pnSteamIdMembers[i] = k_SteamId_t_Invalid;
+			pnSteamIdMembers[i] = SteamId_t{ k_SteamId_t_Invalid };
 		}
 	}
 
@@ -165,7 +165,7 @@ Int32 _SteamFriends_::GetClanCount() {
 SteamId_t _SteamFriends_::GetClanByIndex(Int32 iClan) {
 	DEBUGBREAK("ISteamFriends::GetClanByIndex");
 
-	return k_SteamId_t_Invalid;
+	return SteamId_t{ k_SteamId_t_Invalid };
 
 }
 
@@ -208,7 +208,7 @@ Int32 _SteamFriends_::GetFriendCountFromSource(SteamId_t SteamIdSource) {
 SteamId_t _SteamFriends_::GetFriendFromSourceByIndex(SteamId_t SteamIdSource, Int32 iFriend) {
 	DEBUGBREAK("ISteamFriends::GetFriendFromSourceByIndex");
 
-	return k_SteamId_t_Invalid;
+	return SteamId_t{ k_SteamId_t_Invalid };
 
 }
 
@@ -306,7 +306,7 @@ SteamAPICall_t _SteamFriends_::RequestClanOfficerList(SteamId_t SteamIdClan) {
 SteamId_t _SteamFriends_::GetClanOwner(SteamId_t SteamIdClan) {
 	DEBUGBREAK("ISteamFriends::GetClanOwner");
 
-	return k_SteamId_t_Invalid;
+	return SteamId_t{ k_SteamId_t_Invalid };
 
 }
 
@@ -320,7 +320,7 @@ Int32 _SteamFriends_::GetClanOfficerCount(SteamId_t SteamIdClan) {
 SteamId_t _SteamFriends_::GetClanOfficerByIndex(SteamId_t SteamIdClan, Int32 iOfficer) {
 	DEBUGBREAK("ISteamFriends::GetClanOfficerByIndex");
 
-	return k_SteamId_t_Invalid;
+	return SteamId_t{ k_SteamId_t_Invalid };
 
 }
 
@@ -394,7 +394,7 @@ Int32 _SteamFriends_::GetCoplayFriendCount() {
 SteamId_t _SteamFriends_::GetCoplayFriend(Int32 iCoplayFriend) {
 	DEBUGBREAK("ISteamFriends::GetCoplayFriend");
 
-	return k_SteamId_t_Invalid;
+	return SteamId_t{ k_SteamId_t_Invalid };
 
 }
 
@@ -436,7 +436,7 @@ Int32 _SteamFriends_::GetClanChatMemberCount(SteamId_t SteamIdClan) {
 SteamId_t _SteamFriends_::GetChatMemberByIndex(SteamId_t SteamIdClan, Int32 iUser) {
 	DEBUGBREAK("ISteamFriends::GetChatMemberByIndex");
 
-	return k_SteamId_t_Invalid;
+	return SteamId_t{ k_SteamId_t_Invalid };
 
 }
 
@@ -459,7 +459,7 @@ Int32 _SteamFriends_::GetClanChatMessage(SteamId_t SteamIdClanChat, Int32 iMessa
 	}
 
 	if (pSteamIdChatter != NULL) {
-		*pSteamIdChatter = k_SteamId_t_Invalid;
+		*pSteamIdChatter = SteamId_t{ k_SteamId_t_Invalid };
 	}
 
 	return 0;
