@@ -10,7 +10,14 @@
 #include "IFreeAPI.Contract\ISteamUser.h"
 // -----------------------------------------------------------------------------
 
-typedef class _SteamUser_ : public _ISteamUser_ {
+typedef class _SteamUser_ : public _ISteamUser009_,
+ public _ISteamUser010_, public _ISteamUser011_,
+ public _ISteamUser012_, public _ISteamUser013_,
+ public _ISteamUser014_, public _ISteamUser015_,
+ public _ISteamUser016_, public _ISteamUser017_,
+ public _ISteamUser018_, public _ISteamUser019_,
+ public _ISteamUser020_, public _ISteamUser021_,
+ public _ISteamUser022_, public _ISteamUser_ {
 public:
 
 	_SteamUser_() = default;
@@ -41,9 +48,12 @@ public:
 	void StopVoiceRecording() override;
 
 	/* Read Voice Audio */
+	EVoiceResult GetCompressedVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) override;
 	EVoiceResult GetAvailableVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) override;
+	EVoiceResult GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, pVoid pUncompressedDest_Deprecated, Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated) override;
 	EVoiceResult GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, pVoid pUncompressedDest_Deprecated, Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) override;
 	/* PCM (16-Bit) Voice Audio */
+	EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten) override;
 	EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) override;
 	/* Usually 48000 or 44100 */
 	Uint32 GetVoiceOptimalSampleRate() override;
@@ -75,6 +85,8 @@ public:
 	SteamAPICall_t GetMarketEligibility() override;
 	SteamAPICall_t GetDurationControl() override;
 	Bool BSetDurationControlOnlineState(EDurationControlOnlineState eDurationControlOnlineState) override;
+
+	void RefreshSteam2Login() override;
 
 	~_SteamUser_() = default;
 

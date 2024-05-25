@@ -57,33 +57,36 @@ IpSteamUser _SteamClient_::GetISteamUser(HSteamUser hSteamUser, HSteamPipe hStea
 
 	if (pchVersion != NULL) {
 		DEBUG_OUT(pchVersion);
-		if (
-			StrA_Cmp(pchVersion, (pCStrA)("SteamUser001"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamUser002"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamUser003"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamUser004"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamUser005"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamUser006"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamUser007"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamUser008"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamUser009"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamUser010"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamUser011"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamUser012"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamUser013"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamUser014"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamUser015"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamUser016"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamUser017"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamUser018"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamUser019"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamUser020"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamUser021"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("SteamUser022"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)(STEAMUSER_INTERFACE_VERSION), True)
-		) {
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamUser009"), True))
+			return (IpSteamUser)((pVoid)((IpSteamUser009)(&this->SteamUser)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamUser010"), True))
+			return (IpSteamUser)((pVoid)((IpSteamUser010)(&this->SteamUser)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamUser011"), True))
+			return (IpSteamUser)((pVoid)((IpSteamUser011)(&this->SteamUser)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamUser012"), True))
+			return (IpSteamUser)((pVoid)((IpSteamUser012)(&this->SteamUser)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamUser013"), True))
+			return (IpSteamUser)((pVoid)((IpSteamUser013)(&this->SteamUser)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamUser014"), True))
+			return (IpSteamUser)((pVoid)((IpSteamUser014)(&this->SteamUser)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamUser015"), True))
+			return (IpSteamUser)((pVoid)((IpSteamUser015)(&this->SteamUser)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamUser016"), True))
+			return (IpSteamUser)((pVoid)((IpSteamUser016)(&this->SteamUser)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamUser017"), True))
+			return (IpSteamUser)((pVoid)((IpSteamUser017)(&this->SteamUser)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamUser018"), True))
+			return (IpSteamUser)((pVoid)((IpSteamUser018)(&this->SteamUser)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamUser019"), True))
+			return (IpSteamUser)((pVoid)((IpSteamUser019)(&this->SteamUser)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamUser020"), True))
+			return (IpSteamUser)((pVoid)((IpSteamUser020)(&this->SteamUser)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamUser021"), True))
+			return (IpSteamUser)((pVoid)((IpSteamUser021)(&this->SteamUser)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("SteamUser022"), True))
+			return (IpSteamUser)((pVoid)((IpSteamUser022)(&this->SteamUser)));
+		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMUSER_INTERFACE_VERSION), True))
 			return (IpSteamUser)(&this->SteamUser);
-		}
 	}
 
 	return NULL;

@@ -92,6 +92,14 @@ void _SteamUser_::StopVoiceRecording() {
 
 }
 
+EVoiceResult _SteamUser_::GetCompressedVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) {
+	DEBUGBREAK("ISteamUser::GetCompressedVoice");
+
+	return k_EVoiceResultOK;
+
+}
+
+
 EVoiceResult _SteamUser_::GetAvailableVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) {
 	DEBUGBREAK("ISteamUser::GetAvailableVoice");
 
@@ -99,8 +107,22 @@ EVoiceResult _SteamUser_::GetAvailableVoice(pUint32 pcbCompressed, pUint32 pcbUn
 
 }
 
+EVoiceResult _SteamUser_::GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, pVoid pUncompressedDest_Deprecated, Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated) {
+	DEBUGBREAK("ISteamUser::GetVoice");
+
+	return k_EVoiceResultOK;
+
+}
+
 EVoiceResult _SteamUser_::GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, pVoid pUncompressedDest_Deprecated, Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) {
 	DEBUGBREAK("ISteamUser::GetVoice");
+
+	return k_EVoiceResultOK;
+
+}
+
+EVoiceResult _SteamUser_::DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten) {
+	DEBUGBREAK("ISteamUser::DecompressVoice");
 
 	return k_EVoiceResultOK;
 
@@ -270,5 +292,12 @@ Bool _SteamUser_::BSetDurationControlOnlineState(EDurationControlOnlineState eDu
 	DEBUGBREAK("ISteamUser::BSetDurationControlOnlineState");
 
 	return True;
+
+}
+
+void _SteamUser_::RefreshSteam2Login() {
+	DEBUGBREAK("ISteamUser::RefreshSteam2Login");
+
+	/* Empty Method */
 
 }

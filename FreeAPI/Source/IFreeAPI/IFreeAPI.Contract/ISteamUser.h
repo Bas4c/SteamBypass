@@ -3,6 +3,385 @@
 
 #include "..\..\FreeAPI.Typedef.h"
 
+typedef class _ISteamUser009_ {
+public:
+
+	virtual HSteamUser GetHSteamUser() = 0;
+	virtual Bool BLoggedOn() = 0;
+	virtual SteamId_t GetSteamId() = 0;
+	virtual Int32 InitiateGameConnection(pVoid pvAuthBlob, Int32 cbMaxAuthBlob, SteamId_t SteamIdGameServer, Uint32 nIPServer, Uint16 PortServer, Bool bSecure) = 0;
+	virtual void TerminateGameConnection(Uint32 nIPServer, Uint16 PortServer) = 0;
+	virtual void TrackAppUsageEvent(SteamId_t GameId, Int32 eAppUsageEvent, pCStrA pchExtraInfo) = 0;
+	virtual void RefreshSteam2Login() = 0;
+
+} ISteamUser009, *IpSteamUser009;
+
+typedef class _ISteamUser010_ {
+public:
+
+	virtual HSteamUser GetHSteamUser() = 0;
+	virtual Bool BLoggedOn() = 0;
+	virtual SteamId_t GetSteamId() = 0;
+	virtual Int32 InitiateGameConnection(pVoid pvAuthBlob, Int32 cbMaxAuthBlob, SteamId_t SteamIdGameServer, Uint32 nIPServer, Uint16 PortServer, Bool bSecure) = 0;
+	virtual void TerminateGameConnection(Uint32 nIPServer, Uint16 PortServer) = 0;
+	virtual void TrackAppUsageEvent(SteamId_t GameId, Int32 eAppUsageEvent, pCStrA pchExtraInfo) = 0;
+
+} ISteamUser010, *IpSteamUser010;
+
+typedef class _ISteamUser011_ {
+public:
+
+	virtual HSteamUser GetHSteamUser() = 0;
+	virtual Bool BLoggedOn() = 0;
+	virtual SteamId_t GetSteamId() = 0;
+	virtual Int32 InitiateGameConnection(pVoid pvAuthBlob, Int32 cbMaxAuthBlob, SteamId_t SteamIdGameServer, Uint32 nIPServer, Uint16 PortServer, Bool bSecure) = 0;
+	virtual void TerminateGameConnection(Uint32 nIPServer, Uint16 PortServer) = 0;
+	virtual void TrackAppUsageEvent(SteamId_t GameId, Int32 eAppUsageEvent, pCStrA pchExtraInfo) = 0;
+	virtual Bool GetUserDataFolder(pStrA pchFolder, Int32 cchFolder) = 0;
+	virtual void StartVoiceRecording() = 0;
+	virtual void StopVoiceRecording() = 0;
+	virtual EVoiceResult GetCompressedVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
+	virtual EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten) = 0;
+
+} ISteamUser011, *IpSteamUser011;
+
+typedef class _ISteamUser012_ {
+public:
+
+	virtual HSteamUser GetHSteamUser() = 0;
+	virtual Bool BLoggedOn() = 0;
+	virtual SteamId_t GetSteamId() = 0;
+	virtual Int32 InitiateGameConnection(pVoid pvAuthBlob, Int32 cbMaxAuthBlob, SteamId_t SteamIdGameServer, Uint32 nIPServer, Uint16 PortServer, Bool bSecure) = 0;
+	virtual void TerminateGameConnection(Uint32 nIPServer, Uint16 PortServer) = 0;
+	virtual void TrackAppUsageEvent(SteamId_t GameId, Int32 eAppUsageEvent, pCStrA pchExtraInfo) = 0;
+	virtual Bool GetUserDataFolder(pStrA pchFolder, Int32 cchFolder) = 0;
+	virtual void StartVoiceRecording() = 0;
+	virtual void StopVoiceRecording() = 0;
+	virtual EVoiceResult GetCompressedVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
+	virtual EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten) = 0;
+	virtual HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSteamNetworkingIdentity) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual void EndAuthSession(SteamId_t SteamId) = 0;
+	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
+	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t iAppId) = 0;
+
+} ISteamUser012, *IpSteamUser012;
+
+typedef class _ISteamUser013_ {
+public:
+
+	virtual HSteamUser GetHSteamUser() = 0;
+	virtual Bool BLoggedOn() = 0;
+	virtual SteamId_t GetSteamId() = 0;
+	virtual Int32 InitiateGameConnection(pVoid pvAuthBlob, Int32 cbMaxAuthBlob, SteamId_t SteamIdGameServer, Uint32 nIPServer, Uint16 PortServer, Bool bSecure) = 0;
+	virtual void TerminateGameConnection(Uint32 nIPServer, Uint16 PortServer) = 0;
+	virtual void TrackAppUsageEvent(SteamId_t GameId, Int32 eAppUsageEvent, pCStrA pchExtraInfo) = 0;
+	virtual Bool GetUserDataFolder(pStrA pchFolder, Int32 cchFolder) = 0;
+	virtual void StartVoiceRecording() = 0;
+	virtual void StopVoiceRecording() = 0;
+	virtual EVoiceResult GetAvailableVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
+	virtual EVoiceResult GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, pVoid pUncompressedDest_Deprecated, Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated) = 0;
+	virtual EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten) = 0;
+	virtual HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSteamNetworkingIdentity) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual void EndAuthSession(SteamId_t SteamId) = 0;
+	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
+	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t iAppId) = 0;
+
+} ISteamUser013, *IpSteamUser013;
+
+typedef class _ISteamUser014_ {
+public:
+
+	virtual HSteamUser GetHSteamUser() = 0;
+	virtual Bool BLoggedOn() = 0;
+	virtual SteamId_t GetSteamId() = 0;
+	virtual Int32 InitiateGameConnection(pVoid pvAuthBlob, Int32 cbMaxAuthBlob, SteamId_t SteamIdGameServer, Uint32 nIPServer, Uint16 PortServer, Bool bSecure) = 0;
+	virtual void TerminateGameConnection(Uint32 nIPServer, Uint16 PortServer) = 0;
+	virtual void TrackAppUsageEvent(SteamId_t GameId, Int32 eAppUsageEvent, pCStrA pchExtraInfo) = 0;
+	virtual Bool GetUserDataFolder(pStrA pchFolder, Int32 cchFolder) = 0;
+	virtual void StartVoiceRecording() = 0;
+	virtual void StopVoiceRecording() = 0;
+	virtual EVoiceResult GetAvailableVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
+	virtual EVoiceResult GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, pVoid pUncompressedDest_Deprecated, Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated) = 0;
+	virtual EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten) = 0;
+	virtual HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSteamNetworkingIdentity) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual void EndAuthSession(SteamId_t SteamId) = 0;
+	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
+	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t iAppId) = 0;
+	virtual Bool BIsBehindNAT() = 0;
+	virtual void AdvertiseGame(SteamId_t SteamIdGameServer, Uint32 nIPServer, Uint16 PortServer) = 0;
+	virtual SteamAPICall_t RequestEncryptedAppTicket(pVoid pvDataToInclude, Int32 cbDataToInclude) = 0;
+	virtual Bool GetEncryptedAppTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket) = 0;
+
+} ISteamUser014, *IpSteamUser014;
+
+typedef class _ISteamUser015_ {
+public:
+
+	virtual HSteamUser GetHSteamUser() = 0;
+	virtual Bool BLoggedOn() = 0;
+	virtual SteamId_t GetSteamId() = 0;
+	virtual Int32 InitiateGameConnection(pVoid pvAuthBlob, Int32 cbMaxAuthBlob, SteamId_t SteamIdGameServer, Uint32 nIPServer, Uint16 PortServer, Bool bSecure) = 0;
+	virtual void TerminateGameConnection(Uint32 nIPServer, Uint16 PortServer) = 0;
+	virtual void TrackAppUsageEvent(SteamId_t GameId, Int32 eAppUsageEvent, pCStrA pchExtraInfo) = 0;
+	virtual Bool GetUserDataFolder(pStrA pchFolder, Int32 cchFolder) = 0;
+	virtual void StartVoiceRecording() = 0;
+	virtual void StopVoiceRecording() = 0;
+	virtual EVoiceResult GetAvailableVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
+	virtual EVoiceResult GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, pVoid pUncompressedDest_Deprecated, Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated) = 0;
+	virtual EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;
+	virtual Uint32 GetVoiceOptimalSampleRate() = 0;
+	virtual HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSteamNetworkingIdentity) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual void EndAuthSession(SteamId_t SteamId) = 0;
+	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
+	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t iAppId) = 0;
+	virtual Bool BIsBehindNAT() = 0;
+	virtual void AdvertiseGame(SteamId_t SteamIdGameServer, Uint32 nIPServer, Uint16 PortServer) = 0;
+	virtual SteamAPICall_t RequestEncryptedAppTicket(pVoid pvDataToInclude, Int32 cbDataToInclude) = 0;
+	virtual Bool GetEncryptedAppTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket) = 0;
+
+} ISteamUser015, *IpSteamUser015;
+
+typedef class _ISteamUser016_ {
+public:
+
+	virtual HSteamUser GetHSteamUser() = 0;
+	virtual Bool BLoggedOn() = 0;
+	virtual SteamId_t GetSteamId() = 0;
+	virtual Int32 InitiateGameConnection(pVoid pvAuthBlob, Int32 cbMaxAuthBlob, SteamId_t SteamIdGameServer, Uint32 nIPServer, Uint16 PortServer, Bool bSecure) = 0;
+	virtual void TerminateGameConnection(Uint32 nIPServer, Uint16 PortServer) = 0;
+	virtual void TrackAppUsageEvent(SteamId_t GameId, Int32 eAppUsageEvent, pCStrA pchExtraInfo) = 0;
+	virtual Bool GetUserDataFolder(pStrA pchFolder, Int32 cchFolder) = 0;
+	virtual void StartVoiceRecording() = 0;
+	virtual void StopVoiceRecording() = 0;
+	virtual EVoiceResult GetAvailableVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
+	virtual EVoiceResult GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, pVoid pUncompressedDest_Deprecated, Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
+	virtual EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;
+	virtual Uint32 GetVoiceOptimalSampleRate() = 0;
+	virtual HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSteamNetworkingIdentity) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual void EndAuthSession(SteamId_t SteamId) = 0;
+	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
+	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t iAppId) = 0;
+	virtual Bool BIsBehindNAT() = 0;
+	virtual void AdvertiseGame(SteamId_t SteamIdGameServer, Uint32 nIPServer, Uint16 PortServer) = 0;
+	virtual SteamAPICall_t RequestEncryptedAppTicket(pVoid pvDataToInclude, Int32 cbDataToInclude) = 0;
+	virtual Bool GetEncryptedAppTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket) = 0;
+
+} ISteamUser016, *IpSteamUser016;
+
+typedef class _ISteamUser017_ {
+public:
+
+	virtual HSteamUser GetHSteamUser() = 0;
+	virtual Bool BLoggedOn() = 0;
+	virtual SteamId_t GetSteamId() = 0;
+	virtual Int32 InitiateGameConnection(pVoid pvAuthBlob, Int32 cbMaxAuthBlob, SteamId_t SteamIdGameServer, Uint32 nIPServer, Uint16 PortServer, Bool bSecure) = 0;
+	virtual void TerminateGameConnection(Uint32 nIPServer, Uint16 PortServer) = 0;
+	virtual void TrackAppUsageEvent(SteamId_t GameId, Int32 eAppUsageEvent, pCStrA pchExtraInfo) = 0;
+	virtual Bool GetUserDataFolder(pStrA pchFolder, Int32 cchFolder) = 0;
+	virtual void StartVoiceRecording() = 0;
+	virtual void StopVoiceRecording() = 0;
+	virtual EVoiceResult GetAvailableVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
+	virtual EVoiceResult GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, pVoid pUncompressedDest_Deprecated, Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
+	virtual EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;
+	virtual Uint32 GetVoiceOptimalSampleRate() = 0;
+	virtual HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSteamNetworkingIdentity) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual void EndAuthSession(SteamId_t SteamId) = 0;
+	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
+	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t iAppId) = 0;
+	virtual Bool BIsBehindNAT() = 0;
+	virtual void AdvertiseGame(SteamId_t SteamIdGameServer, Uint32 nIPServer, Uint16 PortServer) = 0;
+	virtual SteamAPICall_t RequestEncryptedAppTicket(pVoid pvDataToInclude, Int32 cbDataToInclude) = 0;
+	virtual Bool GetEncryptedAppTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket) = 0;
+	virtual Int32 GetGameBadgeLevel(Int32 nSeries, Bool bFoil) = 0;
+	virtual Int32 GetPlayerSteamLevel() = 0;
+
+} ISteamUser017, *IpSteamUser017;
+
+typedef class _ISteamUser018_ {
+public:
+
+	virtual HSteamUser GetHSteamUser() = 0;
+	virtual Bool BLoggedOn() = 0;
+	virtual SteamId_t GetSteamId() = 0;
+	virtual Int32 InitiateGameConnection(pVoid pvAuthBlob, Int32 cbMaxAuthBlob, SteamId_t SteamIdGameServer, Uint32 nIPServer, Uint16 PortServer, Bool bSecure) = 0;
+	virtual void TerminateGameConnection(Uint32 nIPServer, Uint16 PortServer) = 0;
+	virtual void TrackAppUsageEvent(SteamId_t GameId, Int32 eAppUsageEvent, pCStrA pchExtraInfo) = 0;
+	virtual Bool GetUserDataFolder(pStrA pchFolder, Int32 cchFolder) = 0;
+	virtual void StartVoiceRecording() = 0;
+	virtual void StopVoiceRecording() = 0;
+	virtual EVoiceResult GetAvailableVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
+	virtual EVoiceResult GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, pVoid pUncompressedDest_Deprecated, Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
+	virtual EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;
+	virtual Uint32 GetVoiceOptimalSampleRate() = 0;
+	virtual HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSteamNetworkingIdentity) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual void EndAuthSession(SteamId_t SteamId) = 0;
+	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
+	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t iAppId) = 0;
+	virtual Bool BIsBehindNAT() = 0;
+	virtual void AdvertiseGame(SteamId_t SteamIdGameServer, Uint32 nIPServer, Uint16 PortServer) = 0;
+	virtual SteamAPICall_t RequestEncryptedAppTicket(pVoid pvDataToInclude, Int32 cbDataToInclude) = 0;
+	virtual Bool GetEncryptedAppTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket) = 0;
+	virtual Int32 GetGameBadgeLevel(Int32 nSeries, Bool bFoil) = 0;
+	virtual Int32 GetPlayerSteamLevel() = 0;
+	virtual SteamAPICall_t RequestStoreAuthURL(pCStrA pchRedirectURL) = 0;
+
+} ISteamUser018, *IpSteamUser018;
+
+typedef class _ISteamUser019_ {
+public:
+
+	virtual HSteamUser GetHSteamUser() = 0;
+	virtual Bool BLoggedOn() = 0;
+	virtual SteamId_t GetSteamId() = 0;
+	virtual Int32 InitiateGameConnection(pVoid pvAuthBlob, Int32 cbMaxAuthBlob, SteamId_t SteamIdGameServer, Uint32 nIPServer, Uint16 PortServer, Bool bSecure) = 0;
+	virtual void TerminateGameConnection(Uint32 nIPServer, Uint16 PortServer) = 0;
+	virtual void TrackAppUsageEvent(SteamId_t GameId, Int32 eAppUsageEvent, pCStrA pchExtraInfo) = 0;
+	virtual Bool GetUserDataFolder(pStrA pchFolder, Int32 cchFolder) = 0;
+	virtual void StartVoiceRecording() = 0;
+	virtual void StopVoiceRecording() = 0;
+	virtual EVoiceResult GetAvailableVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
+	virtual EVoiceResult GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, pVoid pUncompressedDest_Deprecated, Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
+	virtual EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;
+	virtual Uint32 GetVoiceOptimalSampleRate() = 0;
+	virtual HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSteamNetworkingIdentity) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual void EndAuthSession(SteamId_t SteamId) = 0;
+	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
+	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t iAppId) = 0;
+	virtual Bool BIsBehindNAT() = 0;
+	virtual void AdvertiseGame(SteamId_t SteamIdGameServer, Uint32 nIPServer, Uint16 PortServer) = 0;
+	virtual SteamAPICall_t RequestEncryptedAppTicket(pVoid pvDataToInclude, Int32 cbDataToInclude) = 0;
+	virtual Bool GetEncryptedAppTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket) = 0;
+	virtual Int32 GetGameBadgeLevel(Int32 nSeries, Bool bFoil) = 0;
+	virtual Int32 GetPlayerSteamLevel() = 0;
+	virtual SteamAPICall_t RequestStoreAuthURL(pCStrA pchRedirectURL) = 0;
+	virtual Bool BIsPhoneVerified() = 0;
+	virtual Bool BIsTwoFactorEnabled() = 0;
+	virtual Bool BIsPhoneIdentifying() = 0;
+	virtual Bool BIsPhoneRequiringVerification() = 0;
+
+} ISteamUser019, *IpSteamUser019;
+
+typedef class _ISteamUser020_ {
+public:
+
+	virtual HSteamUser GetHSteamUser() = 0;
+	virtual Bool BLoggedOn() = 0;
+	virtual SteamId_t GetSteamId() = 0;
+	virtual Int32 InitiateGameConnection(pVoid pvAuthBlob, Int32 cbMaxAuthBlob, SteamId_t SteamIdGameServer, Uint32 nIPServer, Uint16 PortServer, Bool bSecure) = 0;
+	virtual void TerminateGameConnection(Uint32 nIPServer, Uint16 PortServer) = 0;
+	virtual void TrackAppUsageEvent(SteamId_t GameId, Int32 eAppUsageEvent, pCStrA pchExtraInfo) = 0;
+	virtual Bool GetUserDataFolder(pStrA pchFolder, Int32 cchFolder) = 0;
+	virtual void StartVoiceRecording() = 0;
+	virtual void StopVoiceRecording() = 0;
+	virtual EVoiceResult GetAvailableVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
+	virtual EVoiceResult GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, pVoid pUncompressedDest_Deprecated, Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
+	virtual EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;
+	virtual Uint32 GetVoiceOptimalSampleRate() = 0;
+	virtual HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSteamNetworkingIdentity) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual void EndAuthSession(SteamId_t SteamId) = 0;
+	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
+	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t iAppId) = 0;
+	virtual Bool BIsBehindNAT() = 0;
+	virtual void AdvertiseGame(SteamId_t SteamIdGameServer, Uint32 nIPServer, Uint16 PortServer) = 0;
+	virtual SteamAPICall_t RequestEncryptedAppTicket(pVoid pvDataToInclude, Int32 cbDataToInclude) = 0;
+	virtual Bool GetEncryptedAppTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket) = 0;
+	virtual Int32 GetGameBadgeLevel(Int32 nSeries, Bool bFoil) = 0;
+	virtual Int32 GetPlayerSteamLevel() = 0;
+	virtual SteamAPICall_t RequestStoreAuthURL(pCStrA pchRedirectURL) = 0;
+	virtual Bool BIsPhoneVerified() = 0;
+	virtual Bool BIsTwoFactorEnabled() = 0;
+	virtual Bool BIsPhoneIdentifying() = 0;
+	virtual Bool BIsPhoneRequiringVerification() = 0;
+	virtual SteamAPICall_t GetMarketEligibility() = 0;
+	virtual SteamAPICall_t GetDurationControl() = 0;
+
+} ISteamUser020, *IpSteamUser020;
+
+typedef class _ISteamUser021_ {
+public:
+
+	virtual HSteamUser GetHSteamUser() = 0;
+	virtual Bool BLoggedOn() = 0;
+	virtual SteamId_t GetSteamId() = 0;
+	virtual Int32 InitiateGameConnection(pVoid pvAuthBlob, Int32 cbMaxAuthBlob, SteamId_t SteamIdGameServer, Uint32 nIPServer, Uint16 PortServer, Bool bSecure) = 0;
+	virtual void TerminateGameConnection(Uint32 nIPServer, Uint16 PortServer) = 0;
+	virtual void TrackAppUsageEvent(SteamId_t GameId, Int32 eAppUsageEvent, pCStrA pchExtraInfo) = 0;
+	virtual Bool GetUserDataFolder(pStrA pchFolder, Int32 cchFolder) = 0;
+	virtual void StartVoiceRecording() = 0;
+	virtual void StopVoiceRecording() = 0;
+	virtual EVoiceResult GetAvailableVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
+	virtual EVoiceResult GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, pVoid pUncompressedDest_Deprecated, Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
+	virtual EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;
+	virtual Uint32 GetVoiceOptimalSampleRate() = 0;
+	virtual HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSteamNetworkingIdentity) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual void EndAuthSession(SteamId_t SteamId) = 0;
+	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
+	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t iAppId) = 0;
+	virtual Bool BIsBehindNAT() = 0;
+	virtual void AdvertiseGame(SteamId_t SteamIdGameServer, Uint32 nIPServer, Uint16 PortServer) = 0;
+	virtual SteamAPICall_t RequestEncryptedAppTicket(pVoid pvDataToInclude, Int32 cbDataToInclude) = 0;
+	virtual Bool GetEncryptedAppTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket) = 0;
+	virtual Int32 GetGameBadgeLevel(Int32 nSeries, Bool bFoil) = 0;
+	virtual Int32 GetPlayerSteamLevel() = 0;
+	virtual SteamAPICall_t RequestStoreAuthURL(pCStrA pchRedirectURL) = 0;
+	virtual Bool BIsPhoneVerified() = 0;
+	virtual Bool BIsTwoFactorEnabled() = 0;
+	virtual Bool BIsPhoneIdentifying() = 0;
+	virtual Bool BIsPhoneRequiringVerification() = 0;
+	virtual SteamAPICall_t GetMarketEligibility() = 0;
+	virtual SteamAPICall_t GetDurationControl() = 0;
+	virtual Bool BSetDurationControlOnlineState(EDurationControlOnlineState eDurationControlOnlineState) = 0;
+
+} ISteamUser021, *IpSteamUser021;
+
+typedef class _ISteamUser022_ {
+public:
+
+	virtual HSteamUser GetHSteamUser() = 0;
+	virtual Bool BLoggedOn() = 0;
+	virtual SteamId_t GetSteamId() = 0;
+	virtual Int32 InitiateGameConnection(pVoid pvAuthBlob, Int32 cbMaxAuthBlob, SteamId_t SteamIdGameServer, Uint32 nIPServer, Uint16 PortServer, Bool bSecure) = 0;
+	virtual void TerminateGameConnection(Uint32 nIPServer, Uint16 PortServer) = 0;
+	virtual void TrackAppUsageEvent(SteamId_t GameId, Int32 eAppUsageEvent, pCStrA pchExtraInfo) = 0;
+	virtual Bool GetUserDataFolder(pStrA pchFolder, Int32 cchFolder) = 0;
+	virtual void StartVoiceRecording() = 0;
+	virtual void StopVoiceRecording() = 0;
+	virtual EVoiceResult GetAvailableVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
+	virtual EVoiceResult GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, pVoid pUncompressedDest_Deprecated, Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
+	virtual EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;
+	virtual Uint32 GetVoiceOptimalSampleRate() = 0;
+	virtual HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSteamNetworkingIdentity) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual void EndAuthSession(SteamId_t SteamId) = 0;
+	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
+	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t iAppId) = 0;
+	virtual Bool BIsBehindNAT() = 0;
+	virtual void AdvertiseGame(SteamId_t SteamIdGameServer, Uint32 nIPServer, Uint16 PortServer) = 0;
+	virtual SteamAPICall_t RequestEncryptedAppTicket(pVoid pvDataToInclude, Int32 cbDataToInclude) = 0;
+	virtual Bool GetEncryptedAppTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket) = 0;
+	virtual Int32 GetGameBadgeLevel(Int32 nSeries, Bool bFoil) = 0;
+	virtual Int32 GetPlayerSteamLevel() = 0;
+	virtual SteamAPICall_t RequestStoreAuthURL(pCStrA pchRedirectURL) = 0;
+	virtual Bool BIsPhoneVerified() = 0;
+	virtual Bool BIsTwoFactorEnabled() = 0;
+	virtual Bool BIsPhoneIdentifying() = 0;
+	virtual Bool BIsPhoneRequiringVerification() = 0;
+	virtual SteamAPICall_t GetMarketEligibility() = 0;
+	virtual SteamAPICall_t GetDurationControl() = 0;
+	virtual Bool BSetDurationControlOnlineState(EDurationControlOnlineState eDurationControlOnlineState) = 0;
+
+} ISteamUser022, *IpSteamUser022;
+
 // -----------------------------------------------------------------------------
 // Purpose: Functions for accessing and manipulating a steam account
 //  associated with one client instance
