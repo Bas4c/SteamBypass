@@ -41,7 +41,7 @@ void _SteamTV_::RemoveTimelineMarker() {
 
 }
 
-Uint32 _SteamTV_::AddRegion(pCStrA pchElementName, pCStrA pchTimelineDataSection, const pVoid pSteamTVRegion, Int32 eSteamTVRegionBehavior) {
+Uint32 _SteamTV_::AddRegion(pCStrA pchElementName, pCStrA pchTimelineDataSection, pCVoid pSteamTVRegion, Int32 eSteamTVRegionBehavior) {
 	DEBUGBREAK("ISteamTV::AddRegion");
 
 	return 0U;

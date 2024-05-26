@@ -32,7 +32,7 @@ public:
 
 	virtual Bool BHostInitialize(Uint32 nScreenWidth, Uint32 nScreenHeight, Uint32 nRefreshRate, IpSteamPS3OverlayRenderHost pRenderHost, pVoid pCellFontLibrary) = 0;
 	virtual void Render() = 0;
-	virtual Bool BHandleCellPadData(const pVoid pCellPadData) = 0;
+	virtual Bool BHandleCellPadData(pCVoid pCellPadData) = 0;
 	virtual Bool BResetInputState() = 0;
 
 } ISteamPS3OverlayRender, *IpSteamPS3OverlayRender;

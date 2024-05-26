@@ -91,7 +91,7 @@ public:
 	#ifdef _PS3
 	Bool InstallPS3Trophies() override;
 	Uint64 GetTrophySpaceRequiredBeforeInstall() override;
-	Bool SetUserStatsData(const pVoid pvData, Uint32 cbData) override;
+	Bool SetUserStatsData(pCVoid pvData, Uint32 cbData) override;
 	Bool GetUserStatsData(pVoid pvData, Uint32 cbData, pUint32 pcbWritten) override;
 	#endif
 

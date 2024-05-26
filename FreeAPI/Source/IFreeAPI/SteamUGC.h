@@ -8,7 +8,15 @@
 #include "IFreeAPI.Contract\ISteamUGC.h"
 // -----------------------------------------------------------------------------
 
-typedef class _SteamUGC_ : public _ISteamUGC_ {
+typedef class _SteamUGC_ : public _ISteamUGC001_,
+ public _ISteamUGC002_, public _ISteamUGC003_,
+ public _ISteamUGC004_, public _ISteamUGC005_,
+ public _ISteamUGC006_, public _ISteamUGC007_,
+ public _ISteamUGC008_, public _ISteamUGC009_,
+ public _ISteamUGC010_, public _ISteamUGC012_,
+ public _ISteamUGC013_, public _ISteamUGC014_,
+ public _ISteamUGC015_, public _ISteamUGC016_,
+ public _ISteamUGC_ {
 public:
 
 	_SteamUGC_() = default;

@@ -26,8 +26,8 @@ public:
 		nChannel is a routing number you can use to help route message to different systems - you'll have to call ReadP2PPacket()
 		with the same channel number in order to retrieve the data on the other end
 		using different channels to talk to the same user will still use the same underlying p2p connection, saving on resources */
-	Bool SendP2PPacket(SteamId_t SteamIdRemote, pVoid pbData, Uint32 cbData, EP2PSend eP2PSendType) override;
-	Bool SendP2PPacket(SteamId_t SteamIdRemote, pVoid pbData, Uint32 cbData, EP2PSend eP2PSendType, Int32 nChannel) override;
+	Bool SendP2PPacket(SteamId_t SteamIdRemote, pCVoid pbData, Uint32 cbData, EP2PSend eP2PSendType) override;
+	Bool SendP2PPacket(SteamId_t SteamIdRemote, pCVoid pbData, Uint32 cbData, EP2PSend eP2PSendType, Int32 nChannel) override;
 	Bool IsP2PPacketAvailable(pUint32 pcbMsgSize) override;
 	Bool IsP2PPacketAvailable(pUint32 pcbMsgSize, Int32 nChannel) override;
 

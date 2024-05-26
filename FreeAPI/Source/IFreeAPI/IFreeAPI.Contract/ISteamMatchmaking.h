@@ -108,7 +108,7 @@ public:
 	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
 	virtual pCStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, pCStrA pchKey) = 0;
 	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
-	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, const pVoid pvMsgBody, Int32 cbMsgBody) = 0;
+	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, pCVoid pvMsgBody, Int32 cbMsgBody) = 0;
 	virtual Int32 GetLobbyChatEntry(SteamId_t SteamIdLobby, Int32 iChatId, pSteamId_t pSteamIdUser, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
 	virtual Bool RequestLobbyData(SteamId_t SteamIdLobby) = 0;
 	virtual void SetLobbyGameServer(SteamId_t SteamIdLobby, Uint32 nGameServerIP, Uint16 nGameServerPort, SteamId_t SteamIdGameServer) = 0;
@@ -137,7 +137,7 @@ public:
 	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
 	virtual pCStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, pCStrA pchKey) = 0;
 	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
-	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, const pVoid pvMsgBody, Int32 cbMsgBody) = 0;
+	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, pCVoid pvMsgBody, Int32 cbMsgBody) = 0;
 	virtual Int32 GetLobbyChatEntry(SteamId_t SteamIdLobby, Int32 iChatId, pSteamId_t pSteamIdUser, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
 	virtual Bool RequestLobbyData(SteamId_t SteamIdLobby) = 0;
 	virtual void SetLobbyGameServer(SteamId_t SteamIdLobby, Uint32 nGameServerIP, Uint16 nGameServerPort, SteamId_t SteamIdGameServer) = 0;
@@ -171,7 +171,7 @@ public:
 	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
 	virtual pCStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, pCStrA pchKey) = 0;
 	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
-	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, const pVoid pvMsgBody, Int32 cbMsgBody) = 0;
+	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, pCVoid pvMsgBody, Int32 cbMsgBody) = 0;
 	virtual Int32 GetLobbyChatEntry(SteamId_t SteamIdLobby, Int32 iChatId, pSteamId_t pSteamIdUser, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
 	virtual Bool RequestLobbyData(SteamId_t SteamIdLobby) = 0;
 	virtual void SetLobbyGameServer(SteamId_t SteamIdLobby, Uint32 nGameServerIP, Uint16 nGameServerPort, SteamId_t SteamIdGameServer) = 0;
@@ -205,7 +205,7 @@ public:
 	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
 	virtual pCStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, pCStrA pchKey) = 0;
 	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
-	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, const pVoid pvMsgBody, Int32 cbMsgBody) = 0;
+	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, pCVoid pvMsgBody, Int32 cbMsgBody) = 0;
 	virtual Int32 GetLobbyChatEntry(SteamId_t SteamIdLobby, Int32 iChatId, pSteamId_t pSteamIdUser, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
 	virtual Bool RequestLobbyData(SteamId_t SteamIdLobby) = 0;
 	virtual void SetLobbyGameServer(SteamId_t SteamIdLobby, Uint32 nGameServerIP, Uint16 nGameServerPort, SteamId_t SteamIdGameServer) = 0;
@@ -241,7 +241,7 @@ public:
 	virtual Bool SetLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
 	virtual pCStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, pCStrA pchKey) = 0;
 	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
-	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, const pVoid pvMsgBody, Int32 cbMsgBody) = 0;
+	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, pCVoid pvMsgBody, Int32 cbMsgBody) = 0;
 	virtual Int32 GetLobbyChatEntry(SteamId_t SteamIdLobby, Int32 iChatId, pSteamId_t pSteamIdUser, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
 	virtual Bool RequestLobbyData(SteamId_t SteamIdLobby) = 0;
 	virtual void SetLobbyGameServer(SteamId_t SteamIdLobby, Uint32 nGameServerIP, Uint16 nGameServerPort, SteamId_t SteamIdGameServer) = 0;
@@ -279,7 +279,7 @@ public:
 	virtual Bool DeleteLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey) = 0;
 	virtual pCStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, pCStrA pchKey) = 0;
 	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
-	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, const pVoid pvMsgBody, Int32 cbMsgBody) = 0;
+	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, pCVoid pvMsgBody, Int32 cbMsgBody) = 0;
 	virtual Int32 GetLobbyChatEntry(SteamId_t SteamIdLobby, Int32 iChatId, pSteamId_t pSteamIdUser, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
 	virtual Bool RequestLobbyData(SteamId_t SteamIdLobby) = 0;
 	virtual void SetLobbyGameServer(SteamId_t SteamIdLobby, Uint32 nGameServerIP, Uint16 nGameServerPort, SteamId_t SteamIdGameServer) = 0;
@@ -321,7 +321,7 @@ public:
 	virtual Bool DeleteLobbyData(SteamId_t SteamIdLobby, pCStrA pchKey) = 0;
 	virtual pCStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, pCStrA pchKey) = 0;
 	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
-	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, const pVoid pvMsgBody, Int32 cbMsgBody) = 0;
+	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, pCVoid pvMsgBody, Int32 cbMsgBody) = 0;
 	virtual Int32 GetLobbyChatEntry(SteamId_t SteamIdLobby, Int32 iChatId, pSteamId_t pSteamIdUser, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) = 0;
 	virtual Bool RequestLobbyData(SteamId_t SteamIdLobby) = 0;
 	virtual void SetLobbyGameServer(SteamId_t SteamIdLobby, Uint32 nGameServerIP, Uint16 nGameServerPort, SteamId_t SteamIdGameServer) = 0;
@@ -378,7 +378,7 @@ public:
 	virtual pCStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, pCStrA pchKey) = 0;
 	virtual void SetLobbyMemberData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) = 0;
 
-	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, const pVoid pvMsgBody, Int32 cbMsgBody) = 0;
+	virtual Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, pCVoid pvMsgBody, Int32 cbMsgBody) = 0;
 	virtual Int32 GetLobbyChatEntry(SteamId_t SteamIdLobby, Int32 iChatId, /* [out] */ pSteamId_t pSteamIdUser, /* [out] */ pVoid pvData, Int32 cbData, /* [out] */ pEChatEntryType peChatEntryType) = 0;
 	virtual Bool RequestLobbyData(SteamId_t SteamIdLobby) = 0;
 	

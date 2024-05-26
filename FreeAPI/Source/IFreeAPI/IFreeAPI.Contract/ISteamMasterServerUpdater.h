@@ -12,7 +12,7 @@ public:
 
 	virtual void SetActive(Bool bActive) = 0;
 	virtual void SetHeartbeatInterval(Int32 iHeartbeatInterval) = 0;
-	virtual Bool HandleIncomingPacket(const pVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) = 0;
+	virtual Bool HandleIncomingPacket(pCVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) = 0;
 	virtual Int32 GetNextOutgoingPacket(/* [out] */ pVoid pvOut, Int32 cbMaxOut, pUint32 pNetAdr, pUint16 pPort) = 0;
 	virtual void SetBasicServerData(Uint16 nProtocolVersion, Bool bDedicatedServer, pCStrA pchRegionName, pCStrA pchProductName, Uint16 nMaxReportedClients, Bool bPasswordProtected, pCStrA pchGameDescription) = 0;
 	virtual void ClearAllKeyValues() = 0;

@@ -9,7 +9,7 @@
 // -----------------------------------------------------------------------------
 typedef class _ISteamNetworkingConnectionCustomSignaling_ {
 
-	virtual Bool SendSignal(HSteamNetConnection hConnection, const pSteamNetConnectionInfo_t pInfo, const pVoid pvMsg, Int32 cbMsg) = 0;
+	virtual Bool SendSignal(HSteamNetConnection hConnection, const pSteamNetConnectionInfo_t pInfo, pCVoid pvMsg, Int32 cbMsg) = 0;
 	virtual void Release(void) = 0;
 
 } ISteamNetworkingConnectionCustomSignaling, *IpSteamNetworkingConnectionCustomSignaling;
@@ -20,7 +20,7 @@ typedef class _ISteamNetworkingConnectionCustomSignaling_ {
 typedef class _ISteamNetworkingCustomSignalingRecvContext_ {
 
 	virtual IpSteamNetworkingConnectionCustomSignaling _OnConnectRequest(HSteamNetConnection hConnection, const pSteamNetworkingIdentity pIdentityPeer) = 0;
-	virtual void SendRejectionSignal(const pSteamNetworkingIdentity pidentityPeer, const pVoid pvMsg, Int32 cbMsg) = 0;
+	virtual void SendRejectionSignal(const pSteamNetworkingIdentity pidentityPeer, pCVoid pvMsg, Int32 cbMsg) = 0;
 
 } ISteamNetworkingCustomSignalingRecvContext, *IpSteamNetworkingCustomSignalingRecvContext;
 
@@ -28,7 +28,7 @@ typedef class _ISteamNetworkingFakeUDPPort_ {
 public:
 
 	virtual void DestroyFakeUDPPort() = 0;
-	virtual EResult SendMessageToFakeIP(const pSteamNetworkingIPAddr pRemoteAddress, const pVoid pData, Uint32 cbData, Int32 nSendFlags) = 0;
+	virtual EResult SendMessageToFakeIP(const pSteamNetworkingIPAddr pRemoteAddress, pCVoid pData, Uint32 cbData, Int32 nSendFlags) = 0;
 	virtual Int32 ReceiveMessages(/* [out] */ pSteamNetworkingMessage_t *ppMessages, Int32 nMaxMessages) = 0;
 	virtual void ScheduleCleanup(const pSteamNetworkingIPAddr pRemoteAddress) = 0;
 
@@ -66,7 +66,7 @@ public:
 	virtual Int64 GetConnectionUserData(HSteamNetConnection hPeer) = 0;
 	virtual void SetConnectionName(HSteamNetConnection hPeer, pCStrA pchName) = 0;
 	virtual Bool GetConnectionName(HSteamNetConnection hPeer, pStrA pchName, Int32 cchName) = 0;
-	virtual EResult SendMessageToConnection(HSteamNetConnection hConnection, const pVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) = 0;
+	virtual EResult SendMessageToConnection(HSteamNetConnection hConnection, pCVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) = 0;
 	virtual void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t pMessages, pInt64 pMessageNumberOrResult) = 0;
 	virtual EResult FlushMessagesOnConnection(HSteamNetConnection hConnection) = 0;
 	virtual Int32 ReceiveMessagesOnConnection(HSteamNetConnection hConnection, pSteamNetworkingMessage_t_Old *ppMessages, Int32 nMessages) = 0;
@@ -76,7 +76,7 @@ public:
 	virtual Int32 GetDetailedConnectionStatus(HSteamNetConnection hConnection, pStrA pchBuf, Int32 cchBuf) = 0;
 	virtual Bool GetListenSocketInfo(HSteamListenSocket hSocket, pUint32 nIP, pUint16 pPort) = 0;
 	virtual Bool CreateSocketPair(pHSteamNetConnection pConnection1, pHSteamNetConnection pConnection2, Bool bUseNetworkLoopback, const pSteamNetworkingIdentity pIdentity1, const pSteamNetworkingIdentity pIdentity2) = 0;
-	virtual Bool ReceivedRelayAuthTicket(const pVoid pvTicket, Int32 cbTicket, pSteamDatagramRelayAuthTicket pParsedTicket) = 0;
+	virtual Bool ReceivedRelayAuthTicket(pCVoid pvTicket, Int32 cbTicket, pSteamDatagramRelayAuthTicket pParsedTicket) = 0;
 	virtual Int32 FindRelayAuthTicketForServer(const pSteamNetworkingIdentity pIdentityGameServer, Int32 nRemoteVirtualPort, pSteamDatagramRelayAuthTicket pParsedTicket) = 0;
 	virtual HSteamNetConnection ConnectToHostedDedicatedServer(const pSteamNetworkingIdentity pIdentityTarget, Int32 nRemoteVirtualPort) = 0;
 	virtual Uint16 GetHostedDedicatedServerPort() = 0;
@@ -107,7 +107,7 @@ public:
 	virtual Int64 GetConnectionUserData(HSteamNetConnection hPeer) = 0;
 	virtual void SetConnectionName(HSteamNetConnection hPeer, pCStrA pchName) = 0;
 	virtual Bool GetConnectionName(HSteamNetConnection hPeer, pStrA pchName, Int32 cchName) = 0;
-	virtual EResult SendMessageToConnection(HSteamNetConnection hConnection, const pVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) = 0;
+	virtual EResult SendMessageToConnection(HSteamNetConnection hConnection, pCVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) = 0;
 	virtual void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t pMessages, pInt64 pMessageNumberOrResult) = 0;
 	virtual EResult FlushMessagesOnConnection(HSteamNetConnection hConnection) = 0;
 	virtual Int32 ReceiveMessagesOnConnection(HSteamNetConnection hConnection, pSteamNetworkingMessage_t *ppMessages, Int32 nMessages) = 0;
@@ -118,7 +118,7 @@ public:
 	virtual Bool GetListenSocketAddress(HSteamListenSocket hSocket, pSteamNetworkingIPAddr pSteamNetworkingIPAddr) = 0;
 	virtual Bool CreateSocketPair(pHSteamNetConnection pConnection1, pHSteamNetConnection pConnection2, Bool bUseNetworkLoopback, const pSteamNetworkingIdentity pIdentity1, const pSteamNetworkingIdentity pIdentity2) = 0;
 	virtual Bool GetIdentity(pSteamNetworkingIdentity pIdentity) = 0;
-	virtual Bool ReceivedRelayAuthTicket(const pVoid pvTicket, Int32 cbTicket, pSteamDatagramRelayAuthTicket pParsedTicket) = 0;
+	virtual Bool ReceivedRelayAuthTicket(pCVoid pvTicket, Int32 cbTicket, pSteamDatagramRelayAuthTicket pParsedTicket) = 0;
 	virtual Int32 FindRelayAuthTicketForServer(const pSteamNetworkingIdentity pIdentityGameServer, Int32 nRemoteVirtualPort, pSteamDatagramRelayAuthTicket pParsedTicket) = 0;
 	virtual HSteamNetConnection ConnectToHostedDedicatedServer(const pSteamNetworkingIdentity pIdentityTarget, Int32 nRemoteVirtualPort) = 0;
 	virtual Uint16 GetHostedDedicatedServerPort() = 0;
@@ -143,7 +143,7 @@ public:
 	virtual Int64 GetConnectionUserData(HSteamNetConnection hPeer) = 0;
 	virtual void SetConnectionName(HSteamNetConnection hPeer, pCStrA pchName) = 0;
 	virtual Bool GetConnectionName(HSteamNetConnection hPeer, pStrA pchName, Int32 cchName) = 0;
-	virtual EResult SendMessageToConnection(HSteamNetConnection hConnection, const pVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) = 0;
+	virtual EResult SendMessageToConnection(HSteamNetConnection hConnection, pCVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) = 0;
 	virtual void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t pMessages, pInt64 pMessageNumberOrResult) = 0;
 	virtual EResult FlushMessagesOnConnection(HSteamNetConnection hConnection) = 0;
 	virtual Int32 ReceiveMessagesOnConnection(HSteamNetConnection hConnection, pSteamNetworkingMessage_t *ppMessages, Int32 nMessages) = 0;
@@ -157,8 +157,8 @@ public:
 	virtual ESteamNetworkingAvailability InitAuthentication() = 0;
 	virtual ESteamNetworkingAvailability GetAuthenticationStatus(pSteamNetAuthenticationStatus_t pDetails) = 0;
 	virtual Bool GetCertificateRequest(pInt32 pcbBlob, pVoid pvBlob, pSteamNetworkingErrMsg pErrMsg) = 0;
-	virtual Bool SetCertificate(const pVoid pCertificate, Int32 cbCertificate, pSteamNetworkingErrMsg pErrMsg) = 0;
-	virtual Bool ReceivedRelayAuthTicket(const pVoid pvTicket, Int32 cbTicket, pSteamDatagramRelayAuthTicket pParsedTicket) = 0;
+	virtual Bool SetCertificate(pCVoid pCertificate, Int32 cbCertificate, pSteamNetworkingErrMsg pErrMsg) = 0;
+	virtual Bool ReceivedRelayAuthTicket(pCVoid pvTicket, Int32 cbTicket, pSteamDatagramRelayAuthTicket pParsedTicket) = 0;
 	virtual Int32 FindRelayAuthTicketForServer(const pSteamNetworkingIdentity pIdentityGameServer, Int32 nRemoteVirtualPort, pSteamDatagramRelayAuthTicket pParsedTicket) = 0;
 	virtual HSteamNetConnection ConnectToHostedDedicatedServer(const pSteamNetworkingIdentity pIdentityTarget, Int32 nRemoteVirtualPort) = 0;
 	virtual Uint16 GetHostedDedicatedServerPort() = 0;
@@ -184,7 +184,7 @@ public:
 	virtual Int64 GetConnectionUserData(HSteamNetConnection hPeer) = 0;
 	virtual void SetConnectionName(HSteamNetConnection hPeer, pCStrA pchName) = 0;
 	virtual Bool GetConnectionName(HSteamNetConnection hPeer, pStrA pchName, Int32 cchName) = 0;
-	virtual EResult SendMessageToConnection(HSteamNetConnection hConnection, const pVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) = 0;
+	virtual EResult SendMessageToConnection(HSteamNetConnection hConnection, pCVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) = 0;
 	virtual void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t pMessages, pInt64 pMessageNumberOrResult) = 0;
 	virtual EResult FlushMessagesOnConnection(HSteamNetConnection hConnection) = 0;
 	virtual Int32 ReceiveMessagesOnConnection(HSteamNetConnection hConnection, pSteamNetworkingMessage_t *ppMessages, Int32 nMessages) = 0;
@@ -198,8 +198,8 @@ public:
 	virtual ESteamNetworkingAvailability InitAuthentication() = 0;
 	virtual ESteamNetworkingAvailability GetAuthenticationStatus(pSteamNetAuthenticationStatus_t pDetails) = 0;
 	virtual Bool GetCertificateRequest(pInt32 pcbBlob, pVoid pvBlob, pSteamNetworkingErrMsg pErrMsg) = 0;
-	virtual Bool SetCertificate(const pVoid pCertificate, Int32 cbCertificate, pSteamNetworkingErrMsg pErrMsg) = 0;
-	virtual Bool ReceivedRelayAuthTicket(const pVoid pvTicket, Int32 cbTicket, pSteamDatagramRelayAuthTicket pParsedTicket) = 0;
+	virtual Bool SetCertificate(pCVoid pCertificate, Int32 cbCertificate, pSteamNetworkingErrMsg pErrMsg) = 0;
+	virtual Bool ReceivedRelayAuthTicket(pCVoid pvTicket, Int32 cbTicket, pSteamDatagramRelayAuthTicket pParsedTicket) = 0;
 	virtual Int32 FindRelayAuthTicketForServer(const pSteamNetworkingIdentity pIdentityGameServer, Int32 nRemoteVirtualPort, pSteamDatagramRelayAuthTicket pParsedTicket) = 0;
 	virtual HSteamNetConnection ConnectToHostedDedicatedServer(const pSteamNetworkingIdentity pIdentityTarget, Int32 nRemoteVirtualPort) = 0;
 	virtual Uint16 GetHostedDedicatedServerPort() = 0;
@@ -225,7 +225,7 @@ public:
 	virtual Int64 GetConnectionUserData(HSteamNetConnection hPeer) = 0;
 	virtual void SetConnectionName(HSteamNetConnection hPeer, pCStrA pchName) = 0;
 	virtual Bool GetConnectionName(HSteamNetConnection hPeer, pStrA pchName, Int32 cchName) = 0;
-	virtual EResult SendMessageToConnection(HSteamNetConnection hConnection, const pVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) = 0;
+	virtual EResult SendMessageToConnection(HSteamNetConnection hConnection, pCVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) = 0;
 	virtual void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t pMessages, pInt64 pMessageNumberOrResult) = 0;
 	virtual EResult FlushMessagesOnConnection(HSteamNetConnection hConnection) = 0;
 	virtual Int32 ReceiveMessagesOnConnection(HSteamNetConnection hConnection, pSteamNetworkingMessage_t *ppMessages, Int32 nMessages) = 0;
@@ -238,7 +238,7 @@ public:
 	virtual Bool GetIdentity(pSteamNetworkingIdentity pIdentity) = 0;
 	virtual ESteamNetworkingAvailability InitAuthentication() = 0;
 	virtual ESteamNetworkingAvailability GetAuthenticationStatus(pSteamNetAuthenticationStatus_t pDetails) = 0;
-	virtual Bool ReceivedRelayAuthTicket(const pVoid pvTicket, Int32 cbTicket, pSteamDatagramRelayAuthTicket pParsedTicket) = 0;
+	virtual Bool ReceivedRelayAuthTicket(pCVoid pvTicket, Int32 cbTicket, pSteamDatagramRelayAuthTicket pParsedTicket) = 0;
 	virtual Int32 FindRelayAuthTicketForServer(const pSteamNetworkingIdentity pIdentityGameServer, Int32 nRemoteVirtualPort, pSteamDatagramRelayAuthTicket pParsedTicket) = 0;
 	virtual HSteamNetConnection ConnectToHostedDedicatedServer(const pSteamNetworkingIdentity pIdentityTarget, Int32 nRemoteVirtualPort, Int32 nOptions, const pSteamNetworkingConfigValue_t pOptions) = 0;
 	virtual Uint16 GetHostedDedicatedServerPort() = 0;
@@ -247,9 +247,9 @@ public:
 	virtual HSteamListenSocket CreateHostedDedicatedServerListenSocket(Int32 nLocalVirtualPort, Int32 nOptions, const pSteamNetworkingConfigValue_t pOptions) = 0;
 	virtual EResult GetGameCoordinatorServerLogin(pSteamDatagramGameCoordinatorServerLogin pLoginInfo, pInt32 pcbSignedBlob, pVoid pvBlob) = 0;
 	virtual HSteamNetConnection ConnectP2PCustomSignaling(IpSteamNetworkingConnectionCustomSignaling pSignaling, const pSteamNetworkingIdentity pPeerIdentity, Int32 nRemoteVirtualPort, Int32 nOptions, const pSteamNetworkingConfigValue_t pOptions) = 0;
-	virtual Bool ReceivedP2PCustomSignal(const pVoid pMsg, Int32 cbMsg, IpSteamNetworkingCustomSignalingRecvContext pContext) = 0;
+	virtual Bool ReceivedP2PCustomSignal(pCVoid pMsg, Int32 cbMsg, IpSteamNetworkingCustomSignalingRecvContext pContext) = 0;
 	virtual Bool GetCertificateRequest(pInt32 pcbBlob, pVoid pvBlob, pSteamNetworkingErrMsg pErrMsg) = 0;
-	virtual Bool SetCertificate(const pVoid pCertificate, Int32 cbCertificate, pSteamNetworkingErrMsg pErrMsg) = 0;
+	virtual Bool SetCertificate(pCVoid pCertificate, Int32 cbCertificate, pSteamNetworkingErrMsg pErrMsg) = 0;
 	virtual void RunCallbacks(IpSteamNetworkingSocketsCallbacks pCallbacks) = 0;
 
 } ISteamNetworkingSockets006, *IpSteamNetworkingSockets006;
@@ -268,7 +268,7 @@ public:
 	virtual Int64 GetConnectionUserData(HSteamNetConnection hPeer) = 0;
 	virtual void SetConnectionName(HSteamNetConnection hPeer, pCStrA pchName) = 0;
 	virtual Bool GetConnectionName(HSteamNetConnection hPeer, pStrA pchName, Int32 cchName) = 0;
-	virtual EResult SendMessageToConnection(HSteamNetConnection hConnection, const pVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) = 0;
+	virtual EResult SendMessageToConnection(HSteamNetConnection hConnection, pCVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) = 0;
 	virtual void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t pMessages, pInt64 pMessageNumberOrResult) = 0;
 	virtual EResult FlushMessagesOnConnection(HSteamNetConnection hConnection) = 0;
 	virtual Int32 ReceiveMessagesOnConnection(HSteamNetConnection hConnection, pSteamNetworkingMessage_t *ppMessages, Int32 nMessages) = 0;
@@ -284,7 +284,7 @@ public:
 	virtual Bool DestroyPollGroup(HSteamNetPollGroup hSteamNetPollGroup) = 0;
 	virtual Bool SetConnectionPollGroup(HSteamNetConnection hConnection, HSteamNetPollGroup hSteamNetPollGroup) = 0;
 	virtual Int32 ReceiveMessagesOnPollGroup(HSteamNetPollGroup hSteamNetPollGroup, pSteamNetworkingMessage_t *ppMessages, Int32 nMessages) = 0;
-	virtual Bool ReceivedRelayAuthTicket(const pVoid pvTicket, Int32 cbTicket, pSteamDatagramRelayAuthTicket pParsedTicket) = 0;
+	virtual Bool ReceivedRelayAuthTicket(pCVoid pvTicket, Int32 cbTicket, pSteamDatagramRelayAuthTicket pParsedTicket) = 0;
 	virtual Int32 FindRelayAuthTicketForServer(const pSteamNetworkingIdentity pIdentityGameServer, Int32 nRemoteVirtualPort, pSteamDatagramRelayAuthTicket pParsedTicket) = 0;
 	virtual HSteamNetConnection ConnectToHostedDedicatedServer(const pSteamNetworkingIdentity pIdentityTarget, Int32 nRemoteVirtualPort, Int32 nOptions, const pSteamNetworkingConfigValue_t pOptions) = 0;
 	virtual Uint16 GetHostedDedicatedServerPort() = 0;
@@ -293,9 +293,9 @@ public:
 	virtual HSteamListenSocket CreateHostedDedicatedServerListenSocket(Int32 nLocalVirtualPort, Int32 nOptions, const pSteamNetworkingConfigValue_t pOptions) = 0;
 	virtual EResult GetGameCoordinatorServerLogin(pSteamDatagramGameCoordinatorServerLogin pLoginInfo, pInt32 pcbSignedBlob, pVoid pvBlob) = 0;
 	virtual HSteamNetConnection ConnectP2PCustomSignaling(IpSteamNetworkingConnectionCustomSignaling pSignaling, const pSteamNetworkingIdentity pPeerIdentity, Int32 nRemoteVirtualPort, Int32 nOptions, const pSteamNetworkingConfigValue_t pOptions) = 0;
-	virtual Bool ReceivedP2PCustomSignal(const pVoid pMsg, Int32 cbMsg, IpSteamNetworkingCustomSignalingRecvContext pContext) = 0;
+	virtual Bool ReceivedP2PCustomSignal(pCVoid pMsg, Int32 cbMsg, IpSteamNetworkingCustomSignalingRecvContext pContext) = 0;
 	virtual Bool GetCertificateRequest(pInt32 pcbBlob, pVoid pvBlob, pSteamNetworkingErrMsg pErrMsg) = 0;
-	virtual Bool SetCertificate(const pVoid pCertificate, Int32 cbCertificate, pSteamNetworkingErrMsg pErrMsg) = 0;
+	virtual Bool SetCertificate(pCVoid pCertificate, Int32 cbCertificate, pSteamNetworkingErrMsg pErrMsg) = 0;
 	virtual void RunCallbacks() = 0;
 
 } ISteamNetworkingSockets008, *IpSteamNetworkingSockets008;
@@ -314,7 +314,7 @@ public:
 	virtual Int64 GetConnectionUserData(HSteamNetConnection hPeer) = 0;
 	virtual void SetConnectionName(HSteamNetConnection hPeer, pCStrA pchName) = 0;
 	virtual Bool GetConnectionName(HSteamNetConnection hPeer, pStrA pchName, Int32 cchName) = 0;
-	virtual EResult SendMessageToConnection(HSteamNetConnection hConnection, const pVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) = 0;
+	virtual EResult SendMessageToConnection(HSteamNetConnection hConnection, pCVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) = 0;
 	virtual void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t pMessages, pInt64 pMessageNumberOrResult) = 0;
 	virtual EResult FlushMessagesOnConnection(HSteamNetConnection hConnection) = 0;
 	virtual Int32 ReceiveMessagesOnConnection(HSteamNetConnection hConnection, pSteamNetworkingMessage_t *ppMessages, Int32 nMessages) = 0;
@@ -330,7 +330,7 @@ public:
 	virtual Bool DestroyPollGroup(HSteamNetPollGroup hSteamNetPollGroup) = 0;
 	virtual Bool SetConnectionPollGroup(HSteamNetConnection hConnection, HSteamNetPollGroup hSteamNetPollGroup) = 0;
 	virtual Int32 ReceiveMessagesOnPollGroup(HSteamNetPollGroup hSteamNetPollGroup, pSteamNetworkingMessage_t *ppMessages, Int32 nMessages) = 0;
-	virtual Bool ReceivedRelayAuthTicket(const pVoid pvTicket, Int32 cbTicket, pSteamDatagramRelayAuthTicket pParsedTicket) = 0;
+	virtual Bool ReceivedRelayAuthTicket(pCVoid pvTicket, Int32 cbTicket, pSteamDatagramRelayAuthTicket pParsedTicket) = 0;
 	virtual Int32 FindRelayAuthTicketForServer(const pSteamNetworkingIdentity pIdentityGameServer, Int32 nRemoteVirtualPort, pSteamDatagramRelayAuthTicket pParsedTicket) = 0;
 	virtual HSteamNetConnection ConnectToHostedDedicatedServer(const pSteamNetworkingIdentity pIdentityTarget, Int32 nRemoteVirtualPort, Int32 nOptions, const pSteamNetworkingConfigValue_t pOptions) = 0;
 	virtual Uint16 GetHostedDedicatedServerPort() = 0;
@@ -339,9 +339,9 @@ public:
 	virtual HSteamListenSocket CreateHostedDedicatedServerListenSocket(Int32 nLocalVirtualPort, Int32 nOptions, const pSteamNetworkingConfigValue_t pOptions) = 0;
 	virtual EResult GetGameCoordinatorServerLogin(pSteamDatagramGameCoordinatorServerLogin pLoginInfo, pInt32 pcbSignedBlob, pVoid pvBlob) = 0;
 	virtual HSteamNetConnection ConnectP2PCustomSignaling(IpSteamNetworkingConnectionCustomSignaling pSignaling, const pSteamNetworkingIdentity pPeerIdentity, Int32 nRemoteVirtualPort, Int32 nOptions, const pSteamNetworkingConfigValue_t pOptions) = 0;
-	virtual Bool ReceivedP2PCustomSignal(const pVoid pMsg, Int32 cbMsg, IpSteamNetworkingCustomSignalingRecvContext pContext) = 0;
+	virtual Bool ReceivedP2PCustomSignal(pCVoid pMsg, Int32 cbMsg, IpSteamNetworkingCustomSignalingRecvContext pContext) = 0;
 	virtual Bool GetCertificateRequest(pInt32 pcbBlob, pVoid pvBlob, pSteamNetworkingErrMsg pErrMsg) = 0;
-	virtual Bool SetCertificate(const pVoid pCertificate, Int32 cbCertificate, pSteamNetworkingErrMsg pErrMsg) = 0;
+	virtual Bool SetCertificate(pCVoid pCertificate, Int32 cbCertificate, pSteamNetworkingErrMsg pErrMsg) = 0;
 	virtual void RunCallbacks() = 0;
 
 } ISteamNetworkingSockets009, *IpSteamNetworkingSockets009;
@@ -361,7 +361,7 @@ public:
 	virtual Int64 GetConnectionUserData(HSteamNetConnection hPeer) = 0;
 	virtual void SetConnectionName(HSteamNetConnection hPeer, pCStrA pchName) = 0;
 	virtual Bool GetConnectionName(HSteamNetConnection hPeer, /* [out] */ pStrA pchName, Int32 cchName) = 0;
-	virtual EResult SendMessageToConnection(HSteamNetConnection hConnection, const pVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) = 0;
+	virtual EResult SendMessageToConnection(HSteamNetConnection hConnection, pCVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) = 0;
 	virtual void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t pMessages, pInt64 pMessageNumberOrResult) = 0;
 	virtual EResult FlushMessagesOnConnection(HSteamNetConnection hConnection) = 0;
 	virtual Int32 ReceiveMessagesOnConnection(HSteamNetConnection hConnection, /* [out] */ pSteamNetworkingMessage_t *ppMessages, Int32 nMessages) = 0;
@@ -379,7 +379,7 @@ public:
 	virtual Bool DestroyPollGroup(HSteamNetPollGroup hSteamNetPollGroup) = 0;
 	virtual Bool SetConnectionPollGroup(HSteamNetConnection hConnection, HSteamNetPollGroup hSteamNetPollGroup) = 0;
 	virtual Int32 ReceiveMessagesOnPollGroup(HSteamNetPollGroup hSteamNetPollGroup, /* [out] */ pSteamNetworkingMessage_t *ppMessages, Int32 nMessages) = 0;
-	virtual Bool ReceivedRelayAuthTicket(const pVoid pvTicket, Int32 cbTicket, /* [out] */ pSteamDatagramRelayAuthTicket pParsedTicket) = 0;
+	virtual Bool ReceivedRelayAuthTicket(pCVoid pvTicket, Int32 cbTicket, /* [out] */ pSteamDatagramRelayAuthTicket pParsedTicket) = 0;
 	virtual Int32 FindRelayAuthTicketForServer(const pSteamNetworkingIdentity pIdentityGameServer, Int32 nRemoteVirtualPort, /* [out] */ pSteamDatagramRelayAuthTicket pParsedTicket) = 0;
 	virtual HSteamNetConnection ConnectToHostedDedicatedServer(const pSteamNetworkingIdentity pIdentityTarget, Int32 nRemoteVirtualPort, Int32 nOptions, const pSteamNetworkingConfigValue_t pOptions) = 0;
 	virtual Uint16 GetHostedDedicatedServerPort() = 0;
@@ -388,9 +388,9 @@ public:
 	virtual HSteamListenSocket CreateHostedDedicatedServerListenSocket(Int32 nLocalVirtualPort, Int32 nOptions, const pSteamNetworkingConfigValue_t pOptions) = 0;
 	virtual EResult GetGameCoordinatorServerLogin(/* [out] */ pSteamDatagramGameCoordinatorServerLogin pLoginInfo, pInt32 pcbSignedBlob, pVoid pvBlob) = 0;
 	virtual HSteamNetConnection ConnectP2PCustomSignaling(IpSteamNetworkingConnectionCustomSignaling pSignaling, const pSteamNetworkingIdentity pPeerIdentity, Int32 nRemoteVirtualPort, Int32 nOptions, const pSteamNetworkingConfigValue_t pOptions) = 0;
-	virtual Bool ReceivedP2PCustomSignal(const pVoid pMsg, Int32 cbMsg, IpSteamNetworkingCustomSignalingRecvContext pContext) = 0;
+	virtual Bool ReceivedP2PCustomSignal(pCVoid pMsg, Int32 cbMsg, IpSteamNetworkingCustomSignalingRecvContext pContext) = 0;
 	virtual Bool GetCertificateRequest(pInt32 pcbBlob, /* [out] */ pVoid pvBlob, /* [out] */ pSteamNetworkingErrMsg pErrMsg) = 0;
-	virtual Bool SetCertificate(const pVoid pCertificate, Int32 cbCertificate, /* [out] */ pSteamNetworkingErrMsg pErrMsg) = 0;
+	virtual Bool SetCertificate(pCVoid pCertificate, Int32 cbCertificate, /* [out] */ pSteamNetworkingErrMsg pErrMsg) = 0;
 	virtual void ResetIdentity(const pSteamNetworkingIdentity pIdentity) = 0;
 
 	/* Applications should use SteamAPI_RunCallbacks() or SteamGameServer_RunCallbacks() instead */

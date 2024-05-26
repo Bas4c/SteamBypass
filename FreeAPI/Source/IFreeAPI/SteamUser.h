@@ -53,15 +53,15 @@ public:
 	EVoiceResult GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, pVoid pUncompressedDest_Deprecated, Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated) override;
 	EVoiceResult GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, pVoid pUncompressedDest_Deprecated, Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) override;
 	/* PCM (16-Bit) Voice Audio */
-	EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten) override;
-	EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) override;
+	EVoiceResult DecompressVoice(pCVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten) override;
+	EVoiceResult DecompressVoice(pCVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) override;
 	/* Usually 48000 or 44100 */
 	Uint32 GetVoiceOptimalSampleRate() override;
 
 	HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSteamNetworkingIdentity) override;
 	HAuthTicket GetAuthTicketForWebApi(pCStrA pchIdentity) override;
 
-	EBeginAuthSessionResult BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) override;
+	EBeginAuthSessionResult BeginAuthSession(pCVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) override;
 	void EndAuthSession(SteamId_t SteamId) override;
 	void CancelAuthTicket(HAuthTicket hAuthTicket) override;
 

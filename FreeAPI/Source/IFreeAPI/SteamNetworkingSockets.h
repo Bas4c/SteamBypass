@@ -38,7 +38,7 @@ public:
 	Int64 GetConnectionUserData(HSteamNetConnection hPeer) override;
 	void SetConnectionName(HSteamNetConnection hPeer, pCStrA pchName) override;
 	Bool GetConnectionName(HSteamNetConnection hPeer, pStrA pchName, Int32 cchName) override;
-	EResult SendMessageToConnection(HSteamNetConnection hConnection, const pVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) override;
+	EResult SendMessageToConnection(HSteamNetConnection hConnection, pCVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) override;
 	void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t pMessages, pInt64 pMessageNumberOrResult) override;
 	EResult FlushMessagesOnConnection(HSteamNetConnection hConnection) override;
 	Int32 ReceiveMessagesOnConnection(HSteamNetConnection hConnection, pSteamNetworkingMessage_t_Old *ppMessages, Int32 nMessages) override;
@@ -63,7 +63,7 @@ public:
 	Bool DestroyPollGroup(HSteamNetPollGroup hSteamNetPollGroup) override;
 	Bool SetConnectionPollGroup(HSteamNetConnection hConnection, HSteamNetPollGroup hSteamNetPollGroup) override;
 	Int32 ReceiveMessagesOnPollGroup(HSteamNetPollGroup hSteamNetPollGroup, pSteamNetworkingMessage_t *ppMessages, Int32 nMessages) override;
-	Bool ReceivedRelayAuthTicket(const pVoid pvTicket, Int32 cbTicket, pSteamDatagramRelayAuthTicket pParsedTicket) override;
+	Bool ReceivedRelayAuthTicket(pCVoid pvTicket, Int32 cbTicket, pSteamDatagramRelayAuthTicket pParsedTicket) override;
 	Int32 FindRelayAuthTicketForServer(const pSteamNetworkingIdentity pIdentityGameServer, Int32 nRemoteVirtualPort, pSteamDatagramRelayAuthTicket pParsedTicket) override;
 	HSteamNetConnection ConnectToHostedDedicatedServer(const pSteamNetworkingIdentity pIdentityTarget, Int32 nRemoteVirtualPort) override;
 	Bool GetHostedDedicatedServerAddress_Old(pSteamDatagramHostedAddress pRouting) override;
@@ -75,9 +75,9 @@ public:
 	HSteamListenSocket CreateHostedDedicatedServerListenSocket(Int32 nLocalVirtualPort, Int32 nOptions, const pSteamNetworkingConfigValue_t pOptions) override;
 	EResult GetGameCoordinatorServerLogin(pSteamDatagramGameCoordinatorServerLogin pLoginInfo, pInt32 pcbSignedBlob, pVoid pvBlob) override;
 	HSteamNetConnection ConnectP2PCustomSignaling(IpSteamNetworkingConnectionCustomSignaling pSignaling, const pSteamNetworkingIdentity pPeerIdentity, Int32 nRemoteVirtualPort, Int32 nOptions, const pSteamNetworkingConfigValue_t pOptions) override;
-	Bool ReceivedP2PCustomSignal(const pVoid pMsg, Int32 cbMsg, IpSteamNetworkingCustomSignalingRecvContext pContext) override;
+	Bool ReceivedP2PCustomSignal(pCVoid pMsg, Int32 cbMsg, IpSteamNetworkingCustomSignalingRecvContext pContext) override;
 	Bool GetCertificateRequest(pInt32 pcbBlob, pVoid pvBlob, pSteamNetworkingErrMsg pErrMsg) override;
-	Bool SetCertificate(const pVoid pCertificate, Int32 cbCertificate, pSteamNetworkingErrMsg pErrMsg) override;
+	Bool SetCertificate(pCVoid pCertificate, Int32 cbCertificate, pSteamNetworkingErrMsg pErrMsg) override;
 	void ResetIdentity(const pSteamNetworkingIdentity pIdentity) override;
 
 	/* Applications should use SteamAPI_RunCallbacks() or SteamGameServer_RunCallbacks() instead */

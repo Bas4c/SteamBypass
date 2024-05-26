@@ -61,7 +61,7 @@ public:
 	pCStrA GetLobbyMemberData(SteamId_t SteamIdLobby, SteamId_t SteamIdUser, pCStrA pchKey) override;
 	void SetLobbyMemberData(SteamId_t SteamIdLobby, pCStrA pchKey, pCStrA pchValue) override;
 
-	Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, const pVoid pvMsgBody, Int32 cbMsgBody) override;
+	Bool SendLobbyChatMsg(SteamId_t SteamIdLobby, pCVoid pvMsgBody, Int32 cbMsgBody) override;
 	Int32 GetLobbyChatEntry(SteamId_t SteamIdLobby, Int32 iChatId, pSteamId_t pSteamIdUser, pVoid pvData, Int32 cbData, pEChatEntryType peChatEntryType) override;
 	Bool RequestLobbyData(SteamId_t SteamIdLobby) override;
 

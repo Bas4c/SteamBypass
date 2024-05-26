@@ -20,7 +20,7 @@ typedef enum _EGCResults_ {
 typedef class _ISteamGameCoordinator_ {
 public:
 
-	virtual EGCResults SendMessage_(Uint32 nMsgType, const pVoid pvData, Uint32 cbData) = 0;
+	virtual EGCResults SendMessage_(Uint32 nMsgType, pCVoid pvData, Uint32 cbData) = 0;
 	virtual Bool IsMessageAvailable(/* [out] */ pUint32 pcbMsgSize) = 0;
 	virtual EGCResults RetrieveMessage(/* [out] */ pUint32 pnMsgType, /* [out] */ pVoid pvDest, Uint32 cbDest, /* [out] */ pUint32 pcbMsgSize) = 0;
 

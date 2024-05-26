@@ -256,99 +256,129 @@ pVoid _SteamClient_::GetISteamGenericInterface(HSteamUser hSteamUser, HSteamPipe
 		DEBUG_OUT(pchVersion);
 
 		pVoid pGeneric = NULL;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->GetISteamUser(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->GetISteamGameServer(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->GetISteamFriends(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->GetISteamUtils(hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->GetISteamGameSearch(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->GetISteamMatchmaking(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->GetISteamMatchmakingServers(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->GetISteamParties(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->GetISteamUserStats(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->GetISteamGameServerStats(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMAPPTICKET_INTERFACE_VERSION), True))
 			return (IpSteamAppTicket)(&this->SteamAppTicket);
 		pGeneric = this->GetISteamApps(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->GetISteamNetworking(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->GetISteamRemoteStorage(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->GetISteamScreenshots(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->GetISteamHTTP(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->DEPRECATED_GetISteamUnifiedMessages(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->GetISteamController(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->GetISteamUGC(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->GetISteamAppList(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->GetISteamMusic(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->GetISteamMusicRemote(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->GetISteamHTMLSurface(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->GetISteamInventory(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->GetISteamVideo(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->GetISteamParentalSettings(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->GetISteamInput(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->GetISteamRemotePlay(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
 		#ifdef _PS3
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		pGeneric = this->GetISteamPS3OverlayRender();
 		if (pGeneric != NULL)
 			return pGeneric;
 		#endif
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMGAMECOORDINATOR_INTERFACE_VERSION), True))
 			return (IpSteamGameCoordinator)(&this->SteamGameCoordinator);
 		pGeneric = this->GetISteamMasterServerUpdater(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
+		DEBUG_OUT("[GetISteamGenericInterface]");
 		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMTV_INTERFACE_VERSION), True))
 			return (IpSteamTV)(&this->SteamTV);
 		if (StrA_Cmp(pchVersion, (pCStrA)("SteamNetworkingUtils001"), True))
@@ -657,27 +687,38 @@ IpSteamUGC _SteamClient_::GetISteamUGC(HSteamUser hSteamUser, HSteamPipe hSteamP
 
 	if (pchVersion != NULL) {
 		DEBUG_OUT(pchVersion);
-		if (
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION001"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION002"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION003"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION004"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION005"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION006"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION007"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION008"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION009"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION010"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION011"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION012"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION013"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION014"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION015"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION016"), True) ||
-			StrA_Cmp(pchVersion, (pCStrA)(STEAMUGC_INTERFACE_VERSION), True)
-		) {
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION001"), True))
+			return (IpSteamUGC)((pVoid)((IpSteamUGC001)(&this->SteamUGC)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION002"), True))
+			return (IpSteamUGC)((pVoid)((IpSteamUGC002)(&this->SteamUGC)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION003"), True))
+			return (IpSteamUGC)((pVoid)((IpSteamUGC003)(&this->SteamUGC)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION004"), True))
+			return (IpSteamUGC)((pVoid)((IpSteamUGC004)(&this->SteamUGC)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION005"), True))
+			return (IpSteamUGC)((pVoid)((IpSteamUGC005)(&this->SteamUGC)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION006"), True))
+			return (IpSteamUGC)((pVoid)((IpSteamUGC006)(&this->SteamUGC)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION007"), True))
+			return (IpSteamUGC)((pVoid)((IpSteamUGC007)(&this->SteamUGC)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION008"), True))
+			return (IpSteamUGC)((pVoid)((IpSteamUGC008)(&this->SteamUGC)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION009"), True))
+			return (IpSteamUGC)((pVoid)((IpSteamUGC009)(&this->SteamUGC)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION010"), True))
+			return (IpSteamUGC)((pVoid)((IpSteamUGC010)(&this->SteamUGC)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION012"), True))
+			return (IpSteamUGC)((pVoid)((IpSteamUGC012)(&this->SteamUGC)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION013"), True))
+			return (IpSteamUGC)((pVoid)((IpSteamUGC013)(&this->SteamUGC)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION014"), True))
+			return (IpSteamUGC)((pVoid)((IpSteamUGC014)(&this->SteamUGC)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION015"), True))
+			return (IpSteamUGC)((pVoid)((IpSteamUGC015)(&this->SteamUGC)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMUGC_INTERFACE_VERSION016"), True))
+			return (IpSteamUGC)((pVoid)((IpSteamUGC016)(&this->SteamUGC)));
+		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMUGC_INTERFACE_VERSION), True))
 			return (IpSteamUGC)(&this->SteamUGC);
-		}
 	}
 
 	return NULL;

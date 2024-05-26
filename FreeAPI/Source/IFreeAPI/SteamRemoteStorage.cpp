@@ -12,7 +12,7 @@ _SteamRemoteStorage_::_SteamRemoteStorage_() {
 
 }
 
-Bool _SteamRemoteStorage_::FileWrite(pCStrA pchFile, const pVoid pvData, Int32 cbData) {
+Bool _SteamRemoteStorage_::FileWrite(pCStrA pchFile, pCVoid pvData, Int32 cbData) {
 	DEBUGBREAK("ISteamRemoteStorage::FileWrite");
 
 	Bool bSuccess = False;
@@ -27,6 +27,13 @@ Bool _SteamRemoteStorage_::FileWrite(pCStrA pchFile, const pVoid pvData, Int32 c
 		);
 
 		if (pchGameSaveFileName != NULL) {
+
+			SizeOF cchGameSaveFileName = StrA_Count(pchGameSaveFileName);
+			for (SizeOF i = 0; i < cchGameSaveFileName; i++) {
+				if (pchGameSaveFileName[i] == '/') {
+					pchGameSaveFileName[i] = '\\';
+				}
+			}
 
 			HANDLE hFile = FSCreateFileA(
 				pchGameSaveFileName, GENERIC_WRITE,
@@ -79,6 +86,13 @@ Int32 _SteamRemoteStorage_::FileRead(pCStrA pchFile, pVoid pvData, Int32 cbDataT
 
 		if (pchGameSaveFileName != NULL) {
 
+			SizeOF cchGameSaveFileName = StrA_Count(pchGameSaveFileName);
+			for (SizeOF i = 0; i < cchGameSaveFileName; i++) {
+				if (pchGameSaveFileName[i] == '/') {
+					pchGameSaveFileName[i] = '\\';
+				}
+			}
+
 			HANDLE hFile = FSCreateFileA(
 				pchGameSaveFileName, GENERIC_READ,
 				OPEN_EXISTING
@@ -110,7 +124,7 @@ Int32 _SteamRemoteStorage_::FileRead(pCStrA pchFile, pVoid pvData, Int32 cbDataT
 
 }
 
-SteamAPICall_t _SteamRemoteStorage_::FileWriteAsync(pCStrA pchFile, const pVoid pvData, Uint32 cbData) {
+SteamAPICall_t _SteamRemoteStorage_::FileWriteAsync(pCStrA pchFile, pCVoid pvData, Uint32 cbData) {
 	DEBUGBREAK("ISteamRemoteStorage::FileWriteAsync");
 
 	return k_SteamAPICall_Invalid;
@@ -153,6 +167,13 @@ Bool _SteamRemoteStorage_::FileDelete(pCStrA pchFile) {
 		);
 
 		if (pchGameSaveFileName != NULL) {
+
+			SizeOF cchGameSaveFileName = StrA_Count(pchGameSaveFileName);
+			for (SizeOF i = 0; i < cchGameSaveFileName; i++) {
+				if (pchGameSaveFileName[i] == '/') {
+					pchGameSaveFileName[i] = '\\';
+				}
+			}
 
 			if (FileExistsA(pchGameSaveFileName)) {
 				DeleteFileA(pchGameSaveFileName);
@@ -204,6 +225,13 @@ UGCFileWriteStreamHandle_t _SteamRemoteStorage_::FileWriteStreamOpen(pCStrA pchF
 
 				if (pchGameSaveFileName != NULL) {
 
+					SizeOF cchGameSaveFileName = StrA_Count(pchGameSaveFileName);
+					for (SizeOF i = 0; i < cchGameSaveFileName; i++) {
+						if (pchGameSaveFileName[i] == '/') {
+							pchGameSaveFileName[i] = '\\';
+						}
+					}
+
 					HANDLE hFile = FSCreateFileA(
 						pchGameSaveFileName, GENERIC_WRITE,
 						CREATE_ALWAYS
@@ -229,7 +257,7 @@ UGCFileWriteStreamHandle_t _SteamRemoteStorage_::FileWriteStreamOpen(pCStrA pchF
 
 }
 
-Bool _SteamRemoteStorage_::FileWriteStreamWriteChunk(UGCFileWriteStreamHandle_t hWriteStream, const pVoid pvData, Int32 cbData) {
+Bool _SteamRemoteStorage_::FileWriteStreamWriteChunk(UGCFileWriteStreamHandle_t hWriteStream, pCVoid pvData, Int32 cbData) {
 	DEBUGBREAK("ISteamRemoteStorage::FileWriteStreamWriteChunk");
 
 	Bool bSuccess = False;
@@ -321,6 +349,13 @@ Bool _SteamRemoteStorage_::FileExists_(pCStrA pchFile) {
 
 		if (pchGameSaveFileName != NULL) {
 
+			SizeOF cchGameSaveFileName = StrA_Count(pchGameSaveFileName);
+			for (SizeOF i = 0; i < cchGameSaveFileName; i++) {
+				if (pchGameSaveFileName[i] == '/') {
+					pchGameSaveFileName[i] = '\\';
+				}
+			}
+
 			bSuccess = FileExistsA(pchGameSaveFileName);
 			LocalFree(pchGameSaveFileName);
 
@@ -354,6 +389,13 @@ Int32 _SteamRemoteStorage_::GetFileSize(pCStrA pchFile) {
 		);
 
 		if (pchGameSaveFileName != NULL) {
+
+			SizeOF cchGameSaveFileName = StrA_Count(pchGameSaveFileName);
+			for (SizeOF i = 0; i < cchGameSaveFileName; i++) {
+				if (pchGameSaveFileName[i] == '/') {
+					pchGameSaveFileName[i] = '\\';
+				}
+			}
 
 			HANDLE hFile = FSCreateFileA(
 				pchGameSaveFileName, 0U,
@@ -403,6 +445,13 @@ Int64 _SteamRemoteStorage_::GetFileTimestamp(pCStrA pchFile) {
 		);
 
 		if (pchGameSaveFileName != NULL) {
+
+			SizeOF cchGameSaveFileName = StrA_Count(pchGameSaveFileName);
+			for (SizeOF i = 0; i < cchGameSaveFileName; i++) {
+				if (pchGameSaveFileName[i] == '/') {
+					pchGameSaveFileName[i] = '\\';
+				}
+			}
 
 			HANDLE hFile = FSCreateFileA(
 				pchGameSaveFileName, 0U,

@@ -51,7 +51,7 @@ _COMMON_X_API_ _Success_(return != NULL) pStrW __stdcall MultiByteToWideCharAllo
 	if (pchStr != NULL) {
 
 		Int32 cchWideStr = MultiByteToWideChar(
-			CP_UTF8, WC_COMPOSITECHECK, (LPCSTR)(pchStr), -1,
+			CP_UTF8, MB_PRECOMPOSED, (LPCSTR)(pchStr), -1,
 			NULL, 0
 		);
 
@@ -66,7 +66,7 @@ _COMMON_X_API_ _Success_(return != NULL) pStrW __stdcall MultiByteToWideCharAllo
 			if (pchWideStr != NULL) {
 
 				MultiByteToWideChar(
-					CP_UTF8, WC_COMPOSITECHECK, (LPCSTR)(pchStr), -1,
+					CP_UTF8, MB_PRECOMPOSED, (LPCSTR)(pchStr), -1,
 					pchWideStr, cchWideStr
 				);
 
@@ -491,12 +491,16 @@ _COMMON_X_API_ HANDLE _Success_(return != INVALID_HANDLE_VALUE) __stdcall FSCrea
 		sCode = ERROR_NOT_ENOUGH_MEMORY;
 		if (pchFileDir != NULL) {
 
+			sCode = ERROR_SUCCESS;
+
 			StrW_Copy(pchFileDir, cchFileSpec, pchFileSpec);
 			PathRemoveFileSpecExW(pchFileDir);
 
-			sCode = (Dword)(SHCreateDirectoryExW(
-				NULL, pchFileDir, NULL
-			));
+			if (dwCreationDisposition != OPEN_EXISTING && dwCreationDisposition != TRUNCATE_EXISTING) {
+				sCode = (Dword)(SHCreateDirectoryExW(
+					NULL, pchFileDir, NULL
+				));
+			}
 
 			sCode = (sCode == ERROR_ALREADY_EXISTS) ?
 				ERROR_SUCCESS : sCode;
@@ -548,12 +552,16 @@ _COMMON_X_API_ HANDLE _Success_(return != INVALID_HANDLE_VALUE) __stdcall FSCrea
 		sCode = ERROR_NOT_ENOUGH_MEMORY;
 		if (pchFileDir != NULL) {
 
+			sCode = ERROR_SUCCESS;
+
 			StrA_Copy(pchFileDir, cchFileSpec, pchFileSpec);
 			PathRemoveFileSpecExA(pchFileDir);
 
-			sCode = (Dword)(SHCreateDirectoryExA(
-				NULL, pchFileDir, NULL
-			));
+			if (dwCreationDisposition != OPEN_EXISTING && dwCreationDisposition != TRUNCATE_EXISTING) {
+				sCode = (Dword)(SHCreateDirectoryExA(
+					NULL, pchFileDir, NULL
+				));
+			}
 
 			sCode = (sCode == ERROR_ALREADY_EXISTS) ?
 				ERROR_SUCCESS : sCode;
@@ -585,7 +593,7 @@ _COMMON_X_API_ HANDLE _Success_(return != INVALID_HANDLE_VALUE) __stdcall FSCrea
 }
 
 _COMMON_X_API_ _Success_(return == True) Bool __stdcall SaveScreenshot(
-	_In_bytecount_(cbRGB) const pVoid pvRGB,
+	_In_bytecount_(cbRGB) pCVoid pvRGB,
 	_In_ Uint32 cbRGB,
 	_In_ Int32 Cx,
 	_In_ Int32 Cy
@@ -1079,13 +1087,13 @@ _COMMON_X_API_ Uint32 __stdcall GetGameAppId(
 				if (hFile != INVALID_HANDLE_VALUE) {
 
 					Uint32 GameAppId = 0U;
-					CharW cDigit = 0x00;
+					CharA cDigit = 0x00;
 
 					while(True) {
 
 						Dword dwReadAmount = 0U;
 						Bool bSuccess = ReadFile(
-							hFile, &cDigit, 1U,
+							hFile, &cDigit, sizeof(CharA),
 							&dwReadAmount, NULL
 						);
 

@@ -2,7 +2,7 @@
 #include "SteamNetworkingSocketsSerialized.h"
 // -----------------------------------------------------------------------------
 
-void _SteamNetworkingSocketsSerialized_::SendP2PRendezvous(SteamId_t SteamIdRemote, Uint32 ConnectionIdSrc, const pVoid pMsgRendezvous, Uint32 cbRendezvous) {
+void _SteamNetworkingSocketsSerialized_::SendP2PRendezvous(SteamId_t SteamIdRemote, Uint32 ConnectionIdSrc, pCVoid pMsgRendezvous, Uint32 cbRendezvous) {
 	DEBUGBREAK("ISteamNetworkingSocketsSerialized::SendP2PRendezvous");
 
 	/* Empty Method */
@@ -30,7 +30,7 @@ Int32 _SteamNetworkingSocketsSerialized_::GetNetworkConfigJSON(pVoid pvJSON, Uin
 
 }
 
-void _SteamNetworkingSocketsSerialized_::CacheRelayTicket(const pVoid pvTicket, Uint32 cbTicket) {
+void _SteamNetworkingSocketsSerialized_::CacheRelayTicket(pCVoid pvTicket, Uint32 cbTicket) {
 	DEBUGBREAK("ISteamNetworkingSocketsSerialized::CacheRelayTicket");
 
 	/* Empty Method */
@@ -51,7 +51,7 @@ Uint32 _SteamNetworkingSocketsSerialized_::GetCachedRelayTicket(Uint32 iTicket, 
 
 }
 
-void _SteamNetworkingSocketsSerialized_::PostConnectionStateMsg(const pVoid pvMsg, Uint32 cbMsg) {
+void _SteamNetworkingSocketsSerialized_::PostConnectionStateMsg(pCVoid pvMsg, Uint32 cbMsg) {
 	DEBUGBREAK("ISteamNetworkingSocketsSerialized::PostConnectionStateMsg");
 
 	/* Empty Method */

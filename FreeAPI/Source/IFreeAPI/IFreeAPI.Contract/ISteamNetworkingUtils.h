@@ -64,7 +64,7 @@ public:
 	virtual Int32 GetPOPList(pSteamNetworkingPOPID pList, Int32 nList) = 0;
 	virtual SteamNetworkingMicroseconds GetLocalTimestamp() = 0;
 	virtual void SetDebugOutputFunction(ESteamNetworkingSocketsDebugOutputType eDetailLevel, FSteamNetworkingSocketsDebugOutput pFunction) = 0;
-	virtual Bool SetConfigValue(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, ESteamNetworkingConfigScope eScopeType, pVoid ScopeObj, ESteamNetworkingConfigDataType eDataType, const pVoid pArg) = 0;
+	virtual Bool SetConfigValue(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, ESteamNetworkingConfigScope eScopeType, pVoid ScopeObj, ESteamNetworkingConfigDataType eDataType, pCVoid pArg) = 0;
 	virtual ESteamNetworkingGetConfigValueResult GetConfigValue(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, ESteamNetworkingConfigScope eScopeType, pVoid ScopeObj, pESteamNetworkingConfigDataType pDataType, pVoid pResult, pSizeOF cbResult) = 0;
 	virtual Bool GetConfigValueInfo(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, pCStrA *pchName, pESteamNetworkingConfigDataType pDataType, pESteamNetworkingConfigScope pScope, pESteamNetworkingConfigValue pNextValue) = 0;
 	virtual ESteamNetworkingConfigValue GetFirstConfigValue() = 0;
@@ -92,7 +92,7 @@ public:
 	virtual Int32 GetPOPList(pSteamNetworkingPOPID pList, Int32 nList) = 0;
 	virtual SteamNetworkingMicroseconds GetLocalTimestamp() = 0;
 	virtual void SetDebugOutputFunction(ESteamNetworkingSocketsDebugOutputType eDetailLevel, FSteamNetworkingSocketsDebugOutput pFunction) = 0;
-	virtual Bool SetConfigValue(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, ESteamNetworkingConfigScope eScopeType, pVoid ScopeObj, ESteamNetworkingConfigDataType eDataType, const pVoid pArg) = 0;
+	virtual Bool SetConfigValue(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, ESteamNetworkingConfigScope eScopeType, pVoid ScopeObj, ESteamNetworkingConfigDataType eDataType, pCVoid pArg) = 0;
 	virtual ESteamNetworkingGetConfigValueResult GetConfigValue(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, ESteamNetworkingConfigScope eScopeType, pVoid ScopeObj, pESteamNetworkingConfigDataType pDataType, pVoid pResult, pSizeOF cbResult) = 0;
 	virtual Bool GetConfigValueInfo(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, pCStrA *pchName, pESteamNetworkingConfigDataType pDataType, pESteamNetworkingConfigScope pScope, pESteamNetworkingConfigValue pNextValue) = 0;
 	virtual ESteamNetworkingConfigValue GetFirstConfigValue() = 0;
@@ -121,7 +121,7 @@ public:
 	virtual Int32 GetPOPList(pSteamNetworkingPOPID pList, Int32 nList) = 0;
 	virtual SteamNetworkingMicroseconds GetLocalTimestamp() = 0;
 	virtual void SetDebugOutputFunction(ESteamNetworkingSocketsDebugOutputType eDetailLevel, FSteamNetworkingSocketsDebugOutput pFunction) = 0;
-	virtual Bool SetConfigValue(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, ESteamNetworkingConfigScope eScopeType, pVoid ScopeObj, ESteamNetworkingConfigDataType eDataType, const pVoid pArg) = 0;
+	virtual Bool SetConfigValue(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, ESteamNetworkingConfigScope eScopeType, pVoid ScopeObj, ESteamNetworkingConfigDataType eDataType, pCVoid pArg) = 0;
 	virtual ESteamNetworkingGetConfigValueResult GetConfigValue(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, ESteamNetworkingConfigScope eScopeType, pVoid ScopeObj, pESteamNetworkingConfigDataType pDataType, pVoid pResult, pSizeOF cbResult) = 0;
 	virtual Bool GetConfigValueInfo(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, pCStrA *pchName, pESteamNetworkingConfigDataType pDataType, pESteamNetworkingConfigScope pScope, pESteamNetworkingConfigValue pNextValue) = 0;
 	virtual ESteamNetworkingConfigValue GetFirstConfigValue() = 0;
@@ -154,7 +154,7 @@ public:
 	virtual ESteamNetworkingFakeIPType GetIPv4FakeIPType(Uint32 IPv4) = 0;
 	virtual EResult GetRealIdentityForFakeIP(const pSteamNetworkingIPAddr pFakeIP, /* [out] */ pSteamNetworkingIdentity pRealIdentity) = 0;
 
-	virtual Bool SetConfigValue(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, ESteamNetworkingConfigScope eScopeType, pVoid ScopeObj, ESteamNetworkingConfigDataType eDataType, const pVoid pArg) = 0;
+	virtual Bool SetConfigValue(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, ESteamNetworkingConfigScope eScopeType, pVoid ScopeObj, ESteamNetworkingConfigDataType eDataType, pCVoid pArg) = 0;
 	virtual ESteamNetworkingGetConfigValueResult GetConfigValue(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, ESteamNetworkingConfigScope eScopeType, /* [out] */ pVoid ScopeObj, /* [out] */ pESteamNetworkingConfigDataType pDataType, /* [out] */ pVoid pResult, pSizeOF cbResult) = 0;
 	/* Return name of config value or NULL if not exist */
 	virtual pCStrA GetConfigValueInfo(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, /* [out] */ pESteamNetworkingConfigDataType pDataType, /* [out] */ pESteamNetworkingConfigScope pScope) = 0;

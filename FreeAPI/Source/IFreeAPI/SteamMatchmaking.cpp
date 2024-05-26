@@ -230,7 +230,7 @@ void _SteamMatchmaking_::SetLobbyMemberData(SteamId_t SteamIdLobby, pCStrA pchKe
 
 }
 
-Bool _SteamMatchmaking_::SendLobbyChatMsg(SteamId_t SteamIdLobby, const pVoid pvMsgBody, Int32 cbMsgBody) {
+Bool _SteamMatchmaking_::SendLobbyChatMsg(SteamId_t SteamIdLobby, pCVoid pvMsgBody, Int32 cbMsgBody) {
 	DEBUGBREAK("ISteamMatchmaking::SendLobbyChatMsg");
 
 	return False;

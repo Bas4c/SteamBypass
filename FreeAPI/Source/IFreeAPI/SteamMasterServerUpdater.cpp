@@ -16,7 +16,7 @@ void _SteamMasterServerUpdater_::SetHeartbeatInterval(Int32 iHeartbeatInterval) 
 
 }
 
-Bool _SteamMasterServerUpdater_::HandleIncomingPacket(const pVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) {
+Bool _SteamMasterServerUpdater_::HandleIncomingPacket(pCVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) {
 	DEBUGBREAK("ISteamMasterServerUpdater::HandleIncomingPacket");
 
 	return False;

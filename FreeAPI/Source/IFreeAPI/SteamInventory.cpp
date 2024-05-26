@@ -71,7 +71,7 @@ Bool _SteamInventory_::SerializeResult(SteamInventoryResult_t hSteamInventoryRes
 
 }
 
-Bool _SteamInventory_::DeserializeResult(pSteamInventoryResult_t pOuthSteamInventoryResult, const pVoid pvData, Uint32 nData, Bool bRESERVED_MUST_BE_FALSE) {
+Bool _SteamInventory_::DeserializeResult(pSteamInventoryResult_t pOuthSteamInventoryResult, pCVoid pvData, Uint32 nData, Bool bRESERVED_MUST_BE_FALSE) {
 	DEBUGBREAK("ISteamInventory::DeserializeResult");
 
 	return False;

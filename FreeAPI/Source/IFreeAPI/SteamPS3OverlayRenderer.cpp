@@ -16,7 +16,7 @@ void _SteamPS3OverlayRender_::Render() {
 
 }
 
-Bool _SteamPS3OverlayRender_::BHandleCellPadData(const pVoid pCellPadData) {
+Bool _SteamPS3OverlayRender_::BHandleCellPadData(pCVoid pCellPadData) {
 	DEBUGBREAK("ISteamPS3OverlayRender::BHandleCellPadData");
 
 	return False;

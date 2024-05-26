@@ -43,7 +43,7 @@ public:
 	virtual Bool GetAllItems(pSteamInventoryResult_t phSteamInventoryResult) = 0;
 	virtual Bool GetItemsById(pSteamInventoryResult_t phSteamInventoryResult, const pSteamItemInstanceId_t pSteamItemInstanceId, Uint32 nCountSteamItemInstanceId) = 0;
 	virtual Bool SerializeResult(SteamInventoryResult_t hSteamInventoryResult, pVoid pvData, pUint32 pnData) = 0;
-	virtual Bool DeserializeResult(pSteamInventoryResult_t pOuthSteamInventoryResult, const pVoid pvData, Uint32 nData, Bool bRESERVED_MUST_BE_FALSE) = 0;
+	virtual Bool DeserializeResult(pSteamInventoryResult_t pOuthSteamInventoryResult, pCVoid pvData, Uint32 nData, Bool bRESERVED_MUST_BE_FALSE) = 0;
 	virtual Bool GenerateItems(pSteamInventoryResult_t phSteamInventoryResult, const pSteamSteamItemDef_t pArraySteamItemDef, const pUint32 pnArrayQuantity, Uint32 nArrayLength) = 0;
 	virtual Bool GrantPromoItems(pSteamInventoryResult_t phSteamInventoryResult) = 0;
 	virtual Bool AddPromoItem(pSteamInventoryResult_t phSteamInventoryResult, SteamSteamItemDef_t SteamSteamItemDef) = 0;
@@ -74,7 +74,7 @@ public:
 	virtual Bool GetAllItems(pSteamInventoryResult_t phSteamInventoryResult) = 0;
 	virtual Bool GetItemsById(pSteamInventoryResult_t phSteamInventoryResult, const pSteamItemInstanceId_t pSteamItemInstanceId, Uint32 nCountSteamItemInstanceId) = 0;
 	virtual Bool SerializeResult(SteamInventoryResult_t hSteamInventoryResult, pVoid pvData, pUint32 pnData) = 0;
-	virtual Bool DeserializeResult(pSteamInventoryResult_t pOuthSteamInventoryResult, const pVoid pvData, Uint32 nData, Bool bRESERVED_MUST_BE_FALSE) = 0;
+	virtual Bool DeserializeResult(pSteamInventoryResult_t pOuthSteamInventoryResult, pCVoid pvData, Uint32 nData, Bool bRESERVED_MUST_BE_FALSE) = 0;
 	virtual Bool GenerateItems(pSteamInventoryResult_t phSteamInventoryResult, const pSteamSteamItemDef_t pArraySteamItemDef, const pUint32 pnArrayQuantity, Uint32 nArrayLength) = 0;
 	virtual Bool GrantPromoItems(pSteamInventoryResult_t phSteamInventoryResult) = 0;
 	virtual Bool AddPromoItem(pSteamInventoryResult_t phSteamInventoryResult, SteamSteamItemDef_t SteamSteamItemDef) = 0;
@@ -129,7 +129,7 @@ public:
 	virtual Bool GetAllItems(/* [out] */ pSteamInventoryResult_t phSteamInventoryResult) = 0;
 	virtual Bool GetItemsById(/* [out] */ pSteamInventoryResult_t phSteamInventoryResult, const pSteamItemInstanceId_t pSteamItemInstanceId, Uint32 nCountSteamItemInstanceId) = 0;
 	virtual Bool SerializeResult(SteamInventoryResult_t hSteamInventoryResult, /* [out] */ pVoid pvData, pUint32 pnData) = 0;
-	virtual Bool DeserializeResult(pSteamInventoryResult_t pOuthSteamInventoryResult, const pVoid pvData, Uint32 nData, Bool bRESERVED_MUST_BE_FALSE) = 0;
+	virtual Bool DeserializeResult(pSteamInventoryResult_t pOuthSteamInventoryResult, pCVoid pvData, Uint32 nData, Bool bRESERVED_MUST_BE_FALSE) = 0;
 
 	virtual Bool GenerateItems(pSteamInventoryResult_t phSteamInventoryResult, const pSteamSteamItemDef_t pArraySteamItemDef, const pUint32 pnArrayQuantity, Uint32 nArrayLength) = 0;
 	virtual Bool GrantPromoItems(pSteamInventoryResult_t phSteamInventoryResult) = 0;

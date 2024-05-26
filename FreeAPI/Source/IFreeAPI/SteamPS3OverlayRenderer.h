@@ -17,7 +17,7 @@ public:
 
 	Bool BHostInitialize(Uint32 nScreenWidth, Uint32 nScreenHeight, Uint32 nRefreshRate, IpSteamPS3OverlayRenderHost pRenderHost, pVoid pCellFontLibrary) override;
 	void Render() override;
-	Bool BHandleCellPadData(const pVoid pCellPadData) override;
+	Bool BHandleCellPadData(pCVoid pCellPadData) override;
 	Bool BResetInputState() override;
 
 	~_SteamPS3OverlayRender_() = default;

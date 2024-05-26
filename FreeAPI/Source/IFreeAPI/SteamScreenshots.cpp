@@ -2,7 +2,7 @@
 #include "SteamScreenshots.h"
 // -----------------------------------------------------------------------------
 
-ScreenshotHandle _SteamScreenshots_::WriteScreenshot(const pVoid pvRGB, Uint32 cbRGB, Int32 Cx, Int32 Cy) {
+ScreenshotHandle _SteamScreenshots_::WriteScreenshot(pCVoid pvRGB, Uint32 cbRGB, Int32 Cx, Int32 Cy) {
 	DEBUGBREAK("ISteamScreenshots::WriteScreenshot");
 
 	SaveScreenshot(pvRGB, cbRGB, Cx, Cy);

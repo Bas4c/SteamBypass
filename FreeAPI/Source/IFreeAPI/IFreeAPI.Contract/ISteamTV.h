@@ -11,7 +11,7 @@ public:
 	virtual void RemoveBroadcastGameData(pCStrA pchKey) = 0;
 	virtual void AddTimelineMarker(pCStrA pchTemplateName, Bool bPersistent, Uint8 nColorR, Uint8 nColorG, Uint8 nColorB) = 0;
 	virtual void RemoveTimelineMarker() = 0;
-	virtual Uint32 AddRegion(pCStrA pchElementName, pCStrA pchTimelineDataSection, const pVoid pSteamTVRegion, Int32 eSteamTVRegionBehavior) = 0;
+	virtual Uint32 AddRegion(pCStrA pchElementName, pCStrA pchTimelineDataSection, pCVoid pSteamTVRegion, Int32 eSteamTVRegionBehavior) = 0;
 	virtual void RemoveRegion(Uint32 hRegion) = 0;
 
 } ISteamTV, *IpSteamTV;

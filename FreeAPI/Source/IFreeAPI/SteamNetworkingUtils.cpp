@@ -224,7 +224,7 @@ EResult _SteamNetworkingUtils_::GetRealIdentityForFakeIP(const pSteamNetworkingI
 }
 
 
-Bool _SteamNetworkingUtils_::SetConfigValue(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, ESteamNetworkingConfigScope eScopeType, pVoid ScopeObj, ESteamNetworkingConfigDataType eDataType, const pVoid pArg) {
+Bool _SteamNetworkingUtils_::SetConfigValue(ESteamNetworkingConfigValue eSteamNetworkingConfigValue, ESteamNetworkingConfigScope eScopeType, pVoid ScopeObj, ESteamNetworkingConfigDataType eDataType, pCVoid pArg) {
 	DEBUGBREAK("ISteamNetworkingUtils::SetConfigValue");
 
 	return True;

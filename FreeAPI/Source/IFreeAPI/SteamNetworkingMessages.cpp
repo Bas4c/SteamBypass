@@ -2,7 +2,7 @@
 #include "SteamNetworkingMessages.h"
 // -----------------------------------------------------------------------------
 
-EResult _SteamNetworkingMessages_::SendMessageToUser(const pSteamNetworkingIdentity pIdentityRemote, const pVoid pvData, Uint32 cbData, Int32 nSendFlags, Int32 nRemoteChannel) {
+EResult _SteamNetworkingMessages_::SendMessageToUser(const pSteamNetworkingIdentity pIdentityRemote, pCVoid pvData, Uint32 cbData, Int32 nSendFlags, Int32 nRemoteChannel) {
 	DEBUGBREAK("ISteamNetworkingMessages::SendMessageToUser");
 
 	return k_EResultNoConnection;

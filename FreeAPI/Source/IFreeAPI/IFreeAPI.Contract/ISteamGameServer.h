@@ -11,7 +11,7 @@ public:
 	virtual Bool BLoggedOn() = 0;
 	virtual Bool BSecure() = 0;
 	virtual SteamId_t GetSteamID() = 0;
-	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, const pVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
+	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, pCVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
 	virtual SteamId_t CreateUnauthenticatedUserConnection() = 0;
 	virtual void SendUserDisconnect(SteamId_t SteamIdUser) = 0;
 	virtual Bool BUpdateUserData(SteamId_t SteamIdUser, pCStrA pchPlayerName, Uint32 Score) = 0;
@@ -31,7 +31,7 @@ public:
 	virtual Bool BLoggedOn() = 0;
 	virtual Bool BSecure() = 0;
 	virtual SteamId_t GetSteamID() = 0;
-	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, const pVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
+	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, pCVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
 	virtual SteamId_t CreateUnauthenticatedUserConnection() = 0;
 	virtual void SendUserDisconnect(SteamId_t SteamIdUser) = 0;
 	virtual Bool BUpdateUserData(SteamId_t SteamIdUser, pCStrA pchPlayerName, Uint32 Score) = 0;
@@ -51,7 +51,7 @@ public:
 	virtual Bool BLoggedOn() = 0;
 	virtual Bool BSecure() = 0;
 	virtual SteamId_t GetSteamID() = 0;
-	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, const pVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
+	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, pCVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
 	virtual SteamId_t CreateUnauthenticatedUserConnection() = 0;
 	virtual void SendUserDisconnect(SteamId_t SteamIdUser) = 0;
 	virtual Bool BUpdateUserData(SteamId_t SteamIdUser, pCStrA pchPlayerName, Uint32 Score) = 0;
@@ -74,7 +74,7 @@ public:
 	virtual Bool BLoggedOn() = 0;
 	virtual Bool BSecure() = 0;
 	virtual SteamId_t GetSteamID() = 0;
-	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, const pVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
+	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, pCVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
 	virtual SteamId_t CreateUnauthenticatedUserConnection() = 0;
 	virtual void SendUserDisconnect(SteamId_t SteamIdUser) = 0;
 	virtual Bool BUpdateUserData(SteamId_t SteamIdUser, pCStrA pchPlayerName, Uint32 Score) = 0;
@@ -99,7 +99,7 @@ public:
 	virtual Bool BLoggedOn() = 0;
 	virtual Bool BSecure() = 0;
 	virtual SteamId_t GetSteamID() = 0;
-	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, const pVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
+	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, pCVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
 	virtual SteamId_t CreateUnauthenticatedUserConnection() = 0;
 	virtual void SendUserDisconnect(SteamId_t SteamIdUser) = 0;
 	virtual Bool BUpdateUserData(SteamId_t SteamIdUser, pCStrA pchPlayerName, Uint32 Score) = 0;
@@ -113,7 +113,7 @@ public:
 	virtual void SetGameData(pCStrA pchGameData) = 0;
 	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t AppId) = 0;
 	virtual HAuthTicket GetAuthSessionTicket_Old(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket) = 0;
-	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pbAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(pCVoid pbAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
 	virtual void EndAuthSession(SteamId_t SteamId) = 0;
 	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
 
@@ -146,12 +146,12 @@ public:
 	virtual void SetGameTags(pCStrA pchGameTags) = 0;
 	virtual void SetGameData(pCStrA pchGameData) = 0;
 	virtual void SetRegion(pCStrA pchRegion) = 0;
-	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, const pVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
+	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, pCVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
 	virtual SteamId_t CreateUnauthenticatedUserConnection() = 0;
 	virtual void SendUserDisconnect(SteamId_t SteamIdUser) = 0;
 	virtual Bool BUpdateUserData(SteamId_t SteamIdUser, pCStrA pchPlayerName, Uint32 Score) = 0;
 	virtual HAuthTicket GetAuthSessionTicket_Old(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket) = 0;
-	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pbAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(pCVoid pbAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
 	virtual void EndAuthSession(SteamId_t SteamId) = 0;
 	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
 	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t AppId) = 0;
@@ -159,7 +159,7 @@ public:
 	virtual void GetGameplayStats() = 0;
 	virtual SteamAPICall_t GetServerReputation() = 0;
 	virtual Uint32 GetPublicIP_Old() = 0;
-	virtual Bool HandleIncomingPacket(const pVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) = 0;
+	virtual Bool HandleIncomingPacket(pCVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) = 0;
 	virtual Int32 GetNextOutgoingPacket(pVoid pvOut, Int32 cbMaxOut, pUint32 pNetAdrr, pUint16 pPort) = 0;
 	virtual void EnableHeartbeats(Bool bActive) = 0;
 	virtual void SetHeartbeatInterval(Int32 iHeartbeatInterval) = 0;
@@ -196,12 +196,12 @@ public:
 	virtual void SetGameTags(pCStrA pchGameTags) = 0;
 	virtual void SetGameData(pCStrA pchGameData) = 0;
 	virtual void SetRegion(pCStrA pchRegion) = 0;
-	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, const pVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
+	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, pCVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
 	virtual SteamId_t CreateUnauthenticatedUserConnection() = 0;
 	virtual void SendUserDisconnect(SteamId_t SteamIdUser) = 0;
 	virtual Bool BUpdateUserData(SteamId_t SteamIdUser, pCStrA pchPlayerName, Uint32 Score) = 0;
 	virtual HAuthTicket GetAuthSessionTicket_Old(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket) = 0;
-	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pbAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(pCVoid pbAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
 	virtual void EndAuthSession(SteamId_t SteamId) = 0;
 	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
 	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t AppId) = 0;
@@ -209,7 +209,7 @@ public:
 	virtual void GetGameplayStats() = 0;
 	virtual SteamAPICall_t GetServerReputation() = 0;
 	virtual Uint32 GetPublicIP_Old() = 0;
-	virtual Bool HandleIncomingPacket(const pVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) = 0;
+	virtual Bool HandleIncomingPacket(pCVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) = 0;
 	virtual Int32 GetNextOutgoingPacket(pVoid pvOut, Int32 cbMaxOut, pUint32 pNetAdrr, pUint16 pPort) = 0;
 	virtual void EnableHeartbeats(Bool bActive) = 0;
 	virtual void SetHeartbeatInterval(Int32 iHeartbeatInterval) = 0;
@@ -246,12 +246,12 @@ public:
 	virtual void SetGameTags(pCStrA pchGameTags) = 0;
 	virtual void SetGameData(pCStrA pchGameData) = 0;
 	virtual void SetRegion(pCStrA pchRegion) = 0;
-	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, const pVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
+	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, pCVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
 	virtual SteamId_t CreateUnauthenticatedUserConnection() = 0;
 	virtual void SendUserDisconnect(SteamId_t SteamIdUser) = 0;
 	virtual Bool BUpdateUserData(SteamId_t SteamIdUser, pCStrA pchPlayerName, Uint32 Score) = 0;
 	virtual HAuthTicket GetAuthSessionTicket_Old(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket) = 0;
-	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pbAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(pCVoid pbAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
 	virtual void EndAuthSession(SteamId_t SteamId) = 0;
 	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
 	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t AppId) = 0;
@@ -259,7 +259,7 @@ public:
 	virtual void GetGameplayStats() = 0;
 	virtual SteamAPICall_t GetServerReputation() = 0;
 	virtual SteamIPAddress_t GetPublicIP() = 0;
-	virtual Bool HandleIncomingPacket(const pVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) = 0;
+	virtual Bool HandleIncomingPacket(pCVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) = 0;
 	virtual Int32 GetNextOutgoingPacket(pVoid pvOut, Int32 cbMaxOut, pUint32 pNetAdrr, pUint16 pPort) = 0;
 	virtual void EnableHeartbeats(Bool bActive) = 0;
 	virtual void SetHeartbeatInterval(Int32 iHeartbeatInterval) = 0;
@@ -298,7 +298,7 @@ public:
 	virtual void SetRegion(pCStrA pchRegion) = 0;
 	virtual void SetAdvertiseServerActive(Bool bActive) = 0;
 	virtual HAuthTicket GetAuthSessionTicket_Old(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket) = 0;
-	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pbAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(pCVoid pbAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
 	virtual void EndAuthSession(SteamId_t SteamId) = 0;
 	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
 	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t AppId) = 0;
@@ -306,11 +306,11 @@ public:
 	virtual void GetGameplayStats() = 0;
 	virtual SteamAPICall_t GetServerReputation() = 0;
 	virtual SteamIPAddress_t GetPublicIP() = 0;
-	virtual Bool HandleIncomingPacket(const pVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) = 0;
+	virtual Bool HandleIncomingPacket(pCVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) = 0;
 	virtual Int32 GetNextOutgoingPacket(pVoid pvOut, Int32 cbMaxOut, pUint32 pNetAdrr, pUint16 pPort) = 0;
 	virtual SteamAPICall_t AssociateWithClan(SteamId_t SteamIdClan) = 0;
 	virtual SteamAPICall_t ComputeNewPlayerCompatibility(SteamId_t SteamIdNewPlayer) = 0;
-	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, const pVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
+	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, pCVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) = 0;
 	virtual SteamId_t CreateUnauthenticatedUserConnection() = 0;
 	virtual void SendUserDisconnect(SteamId_t SteamIdUser) = 0;
 	virtual Bool BUpdateUserData(SteamId_t SteamIdUser, pCStrA pchPlayerName, Uint32 Score) = 0;
@@ -373,7 +373,7 @@ public:
 	    SteamNetworkingIdentity is an optional parameter to hold the public IP address of the entity you are connecting to
 	     if an IP address is passed Steam will only allow the ticket to be used by an entity with that IP address */
 	virtual HAuthTicket GetAuthSessionTicket(/* [out] */ pVoid pvTicket, Int32 cbMaxTicket, /* [out] */ pUint32 pcbTicket, /* [out] */ const pSteamNetworkingIdentity pSnId) = 0;
-	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pbAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(pCVoid pbAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
 	virtual void EndAuthSession(SteamId_t SteamId) = 0;
 	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
 	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t AppId) = 0;
@@ -385,7 +385,7 @@ public:
 	virtual void GetGameplayStats() = 0;
 	virtual SteamAPICall_t GetServerReputation() = 0;
 	virtual SteamIPAddress_t GetPublicIP() = 0;
-	virtual Bool HandleIncomingPacket(const pVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) = 0;
+	virtual Bool HandleIncomingPacket(pCVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) = 0;
 	virtual Int32 GetNextOutgoingPacket(/* [out] */ pVoid pvOut, Int32 cbMaxOut, pUint32 pNetAdrr, pUint16 pPort) = 0;
 
 	virtual SteamAPICall_t AssociateWithClan(SteamId_t SteamIdClan) = 0;
@@ -394,7 +394,7 @@ public:
 	/* Return Value: Returns True if the users ticket passes basic checks. pSteamIDUser will contain the SteamId of this user. pSteamIDUser must NOT be NULL
 	   If the call succeeds then you should expect a GSClientApprove_t or GSClientDeny_t callback which will tell you whether authentication
 	    for the user has succeeded or failed (the steamid in the callback will match the one returned by this call) */
-	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, const pVoid pvAuthBlob, Uint32 cbAuthBlobSize, /* [out] */ pSteamId_t pSteamIdUser) = 0;
+	virtual Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, pCVoid pvAuthBlob, Uint32 cbAuthBlobSize, /* [out] */ pSteamId_t pSteamIdUser) = 0;
 	virtual SteamId_t CreateUnauthenticatedUserConnection() = 0;
 	virtual void SendUserDisconnect(SteamId_t SteamIdUser) = 0;
 

@@ -34,7 +34,7 @@ public:
 	Bool GetAllItems(pSteamInventoryResult_t phSteamInventoryResult) override;
 	Bool GetItemsById(pSteamInventoryResult_t phSteamInventoryResult, const pSteamItemInstanceId_t pSteamItemInstanceId, Uint32 nCountSteamItemInstanceId) override;
 	Bool SerializeResult(SteamInventoryResult_t hSteamInventoryResult, pVoid pvData, pUint32 pnData) override;
-	Bool DeserializeResult(pSteamInventoryResult_t pOuthSteamInventoryResult, const pVoid pvData, Uint32 nData, Bool bRESERVED_MUST_BE_FALSE) override;
+	Bool DeserializeResult(pSteamInventoryResult_t pOuthSteamInventoryResult, pCVoid pvData, Uint32 nData, Bool bRESERVED_MUST_BE_FALSE) override;
 
 	Bool GenerateItems(pSteamInventoryResult_t phSteamInventoryResult, const pSteamSteamItemDef_t pArraySteamItemDef, const pUint32 pnArrayQuantity, Uint32 nArrayLength) override;
 	Bool GrantPromoItems(pSteamInventoryResult_t phSteamInventoryResult) override;

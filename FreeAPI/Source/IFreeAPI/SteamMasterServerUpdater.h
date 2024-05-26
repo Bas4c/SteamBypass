@@ -17,7 +17,7 @@ public:
 
 	void SetActive(Bool bActive) override;
 	void SetHeartbeatInterval(Int32 iHeartbeatInterval) override;
-	Bool HandleIncomingPacket(const pVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) override;
+	Bool HandleIncomingPacket(pCVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) override;
 	Int32 GetNextOutgoingPacket(pVoid pvOut, Int32 cbMaxOut, pUint32 pNetAdr, pUint16 pPort) override;
 	void SetBasicServerData(Uint16 nProtocolVersion, Bool bDedicatedServer, pCStrA pchRegionName, pCStrA pchProductName, Uint16 nMaxReportedClients, Bool bPasswordProtected, pCStrA pchGameDescription) override;
 	void ClearAllKeyValues() override;

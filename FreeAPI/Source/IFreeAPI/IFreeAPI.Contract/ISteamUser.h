@@ -41,7 +41,7 @@ public:
 	virtual void StartVoiceRecording() = 0;
 	virtual void StopVoiceRecording() = 0;
 	virtual EVoiceResult GetCompressedVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
-	virtual EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten) = 0;
+	virtual EVoiceResult DecompressVoice(pCVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten) = 0;
 
 } ISteamUser011, *IpSteamUser011;
 
@@ -58,9 +58,9 @@ public:
 	virtual void StartVoiceRecording() = 0;
 	virtual void StopVoiceRecording() = 0;
 	virtual EVoiceResult GetCompressedVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
-	virtual EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten) = 0;
+	virtual EVoiceResult DecompressVoice(pCVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten) = 0;
 	virtual HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSteamNetworkingIdentity) = 0;
-	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(pCVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
 	virtual void EndAuthSession(SteamId_t SteamId) = 0;
 	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
 	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t iAppId) = 0;
@@ -81,9 +81,9 @@ public:
 	virtual void StopVoiceRecording() = 0;
 	virtual EVoiceResult GetAvailableVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
 	virtual EVoiceResult GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, pVoid pUncompressedDest_Deprecated, Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated) = 0;
-	virtual EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten) = 0;
+	virtual EVoiceResult DecompressVoice(pCVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten) = 0;
 	virtual HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSteamNetworkingIdentity) = 0;
-	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(pCVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
 	virtual void EndAuthSession(SteamId_t SteamId) = 0;
 	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
 	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t iAppId) = 0;
@@ -104,9 +104,9 @@ public:
 	virtual void StopVoiceRecording() = 0;
 	virtual EVoiceResult GetAvailableVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
 	virtual EVoiceResult GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, pVoid pUncompressedDest_Deprecated, Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated) = 0;
-	virtual EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten) = 0;
+	virtual EVoiceResult DecompressVoice(pCVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten) = 0;
 	virtual HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSteamNetworkingIdentity) = 0;
-	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(pCVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
 	virtual void EndAuthSession(SteamId_t SteamId) = 0;
 	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
 	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t iAppId) = 0;
@@ -131,10 +131,10 @@ public:
 	virtual void StopVoiceRecording() = 0;
 	virtual EVoiceResult GetAvailableVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
 	virtual EVoiceResult GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, pVoid pUncompressedDest_Deprecated, Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated) = 0;
-	virtual EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;
+	virtual EVoiceResult DecompressVoice(pCVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;
 	virtual Uint32 GetVoiceOptimalSampleRate() = 0;
 	virtual HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSteamNetworkingIdentity) = 0;
-	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(pCVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
 	virtual void EndAuthSession(SteamId_t SteamId) = 0;
 	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
 	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t iAppId) = 0;
@@ -159,10 +159,10 @@ public:
 	virtual void StopVoiceRecording() = 0;
 	virtual EVoiceResult GetAvailableVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
 	virtual EVoiceResult GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, pVoid pUncompressedDest_Deprecated, Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
-	virtual EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;
+	virtual EVoiceResult DecompressVoice(pCVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;
 	virtual Uint32 GetVoiceOptimalSampleRate() = 0;
 	virtual HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSteamNetworkingIdentity) = 0;
-	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(pCVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
 	virtual void EndAuthSession(SteamId_t SteamId) = 0;
 	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
 	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t iAppId) = 0;
@@ -187,10 +187,10 @@ public:
 	virtual void StopVoiceRecording() = 0;
 	virtual EVoiceResult GetAvailableVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
 	virtual EVoiceResult GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, pVoid pUncompressedDest_Deprecated, Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
-	virtual EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;
+	virtual EVoiceResult DecompressVoice(pCVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;
 	virtual Uint32 GetVoiceOptimalSampleRate() = 0;
 	virtual HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSteamNetworkingIdentity) = 0;
-	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(pCVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
 	virtual void EndAuthSession(SteamId_t SteamId) = 0;
 	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
 	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t iAppId) = 0;
@@ -217,10 +217,10 @@ public:
 	virtual void StopVoiceRecording() = 0;
 	virtual EVoiceResult GetAvailableVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
 	virtual EVoiceResult GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, pVoid pUncompressedDest_Deprecated, Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
-	virtual EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;
+	virtual EVoiceResult DecompressVoice(pCVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;
 	virtual Uint32 GetVoiceOptimalSampleRate() = 0;
 	virtual HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSteamNetworkingIdentity) = 0;
-	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(pCVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
 	virtual void EndAuthSession(SteamId_t SteamId) = 0;
 	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
 	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t iAppId) = 0;
@@ -248,10 +248,10 @@ public:
 	virtual void StopVoiceRecording() = 0;
 	virtual EVoiceResult GetAvailableVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
 	virtual EVoiceResult GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, pVoid pUncompressedDest_Deprecated, Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
-	virtual EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;
+	virtual EVoiceResult DecompressVoice(pCVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;
 	virtual Uint32 GetVoiceOptimalSampleRate() = 0;
 	virtual HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSteamNetworkingIdentity) = 0;
-	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(pCVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
 	virtual void EndAuthSession(SteamId_t SteamId) = 0;
 	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
 	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t iAppId) = 0;
@@ -283,10 +283,10 @@ public:
 	virtual void StopVoiceRecording() = 0;
 	virtual EVoiceResult GetAvailableVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
 	virtual EVoiceResult GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, pVoid pUncompressedDest_Deprecated, Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
-	virtual EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;
+	virtual EVoiceResult DecompressVoice(pCVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;
 	virtual Uint32 GetVoiceOptimalSampleRate() = 0;
 	virtual HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSteamNetworkingIdentity) = 0;
-	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(pCVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
 	virtual void EndAuthSession(SteamId_t SteamId) = 0;
 	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
 	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t iAppId) = 0;
@@ -320,10 +320,10 @@ public:
 	virtual void StopVoiceRecording() = 0;
 	virtual EVoiceResult GetAvailableVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
 	virtual EVoiceResult GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, pVoid pUncompressedDest_Deprecated, Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
-	virtual EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;
+	virtual EVoiceResult DecompressVoice(pCVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;
 	virtual Uint32 GetVoiceOptimalSampleRate() = 0;
 	virtual HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSteamNetworkingIdentity) = 0;
-	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(pCVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
 	virtual void EndAuthSession(SteamId_t SteamId) = 0;
 	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
 	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t iAppId) = 0;
@@ -358,10 +358,10 @@ public:
 	virtual void StopVoiceRecording() = 0;
 	virtual EVoiceResult GetAvailableVoice(pUint32 pcbCompressed, pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
 	virtual EVoiceResult GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, pVoid pUncompressedDest_Deprecated, Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
-	virtual EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;
+	virtual EVoiceResult DecompressVoice(pCVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;
 	virtual Uint32 GetVoiceOptimalSampleRate() = 0;
 	virtual HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSteamNetworkingIdentity) = 0;
-	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(pCVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
 	virtual void EndAuthSession(SteamId_t SteamId) = 0;
 	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
 	virtual EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t iAppId) = 0;
@@ -416,14 +416,14 @@ public:
 	virtual EVoiceResult GetAvailableVoice(/* [out] */ pUint32 pcbCompressed, /* [out] */ pUint32 pcbUncompressed_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
 	virtual EVoiceResult GetVoice(Bool bWantCompressed, /* [out] */ pVoid pvDest, Uint32 cbDestSize, /* [out] */ pUint32 nBytesWritten, Bool bWantUncompressed_Deprecated, /* [out] */ pVoid pUncompressedDest_Deprecated, /* [out] */ Uint32 cbUncompressedDestSize_Deprecated, pUint32 nUncompressBytesWritten_Deprecated, Uint32 nUncompressedVoiceDesiredSampleRate_Deprecated) = 0;
 	/* PCM (16-Bit) Voice Audio */
-	virtual EVoiceResult DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, /* [out] */ pVoid pvDest, Uint32 cbDestSize, /* [out] */ pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;
+	virtual EVoiceResult DecompressVoice(pCVoid pCompressed, Uint32 cbCompressed, /* [out] */ pVoid pvDest, Uint32 cbDestSize, /* [out] */ pUint32 nBytesWritten, Uint32 nDesiredSampleRate) = 0;
 	/* Usually 48000 or 44100 */
 	virtual Uint32 GetVoiceOptimalSampleRate() = 0;
 
 	virtual HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, /* [out] */ pUint32 pcbTicket, /* [opt] */ const pSteamNetworkingIdentity pSteamNetworkingIdentity) = 0;
 	virtual HAuthTicket GetAuthTicketForWebApi(pCStrA pchIdentity) = 0;
 
-	virtual EBeginAuthSessionResult BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
+	virtual EBeginAuthSessionResult BeginAuthSession(pCVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) = 0;
 	virtual void EndAuthSession(SteamId_t SteamId) = 0;
 	virtual void CancelAuthTicket(HAuthTicket hAuthTicket) = 0;
 

@@ -2,7 +2,7 @@
 #include "SteamUnifiedMessages.h"
 // -----------------------------------------------------------------------------
 
-ClientUnifiedMessageHandle _SteamUnifiedMessages_::SendMethod(pCStrA pchServiceMethod, const pVoid pvRequestData, Uint32 nRequestDataSize, Uint64 nContext) {
+ClientUnifiedMessageHandle _SteamUnifiedMessages_::SendMethod(pCStrA pchServiceMethod, pCVoid pvRequestData, Uint32 nRequestDataSize, Uint64 nContext) {
 	DEBUGBREAK("ISteamUnifiedMessages::SendMethod");
 	
 	return k_UnifiedMessageHandle_Invalid;
@@ -37,7 +37,7 @@ Bool _SteamUnifiedMessages_::ReleaseMethod(ClientUnifiedMessageHandle hHandle) {
 
 }
 
-Bool _SteamUnifiedMessages_::SendNotification(pCStrA pchServiceNotification, const pVoid pvDataNotificationData, Uint32 nNotificationDataSize) {
+Bool _SteamUnifiedMessages_::SendNotification(pCStrA pchServiceNotification, pCVoid pvDataNotificationData, Uint32 nNotificationDataSize) {
 	DEBUGBREAK("ISteamUnifiedMessages::SendNotification");
 
 	return False;

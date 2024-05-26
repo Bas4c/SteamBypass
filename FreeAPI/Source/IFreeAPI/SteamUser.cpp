@@ -19,7 +19,7 @@ Bool _SteamUser_::BLoggedOn() {
 SteamId_t _SteamUser_::GetSteamId() {
 	DEBUGBREAK("ISteamUser::GetSteamId");
 
-	return SteamId_t{ k_SteamId_t_LocalUser };
+ 	return SteamId_t{ k_SteamId_t_LocalUser };
 
 }
 
@@ -121,14 +121,14 @@ EVoiceResult _SteamUser_::GetVoice(Bool bWantCompressed, pVoid pvDest, Uint32 cb
 
 }
 
-EVoiceResult _SteamUser_::DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten) {
+EVoiceResult _SteamUser_::DecompressVoice(pCVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten) {
 	DEBUGBREAK("ISteamUser::DecompressVoice");
 
 	return k_EVoiceResultOK;
 
 }
 
-EVoiceResult _SteamUser_::DecompressVoice(const pVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) {
+EVoiceResult _SteamUser_::DecompressVoice(pCVoid pCompressed, Uint32 cbCompressed, pVoid pvDest, Uint32 cbDestSize, pUint32 nBytesWritten, Uint32 nDesiredSampleRate) {
 	DEBUGBREAK("ISteamUser::DecompressVoice");
 
 	return k_EVoiceResultOK;
@@ -156,7 +156,7 @@ HAuthTicket _SteamUser_::GetAuthTicketForWebApi(pCStrA pchIdentity) {
 
 }
 
-EBeginAuthSessionResult _SteamUser_::BeginAuthSession(const pVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) {
+EBeginAuthSessionResult _SteamUser_::BeginAuthSession(pCVoid pAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) {
 	DEBUGBREAK("ISteamUser::BeginAuthSession");
 
 	return k_EBeginAuthSessionResultOK;

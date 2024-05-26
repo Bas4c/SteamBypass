@@ -132,7 +132,7 @@ Bool _SteamNetworkingSockets_::GetConnectionName(HSteamNetConnection hPeer, pStr
 
 }
 
-EResult _SteamNetworkingSockets_::SendMessageToConnection(HSteamNetConnection hConnection, const pVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) {
+EResult _SteamNetworkingSockets_::SendMessageToConnection(HSteamNetConnection hConnection, pCVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) {
 	DEBUGBREAK("ISteamNetworkingSockets::SendMessageToConnection");
 
 	return k_EResultNoConnection;
@@ -303,7 +303,7 @@ Int32 _SteamNetworkingSockets_::ReceiveMessagesOnPollGroup(HSteamNetPollGroup hS
 
 }
 
-Bool _SteamNetworkingSockets_::ReceivedRelayAuthTicket(const pVoid pvTicket, Int32 cbTicket, pSteamDatagramRelayAuthTicket pParsedTicket) {
+Bool _SteamNetworkingSockets_::ReceivedRelayAuthTicket(pCVoid pvTicket, Int32 cbTicket, pSteamDatagramRelayAuthTicket pParsedTicket) {
 	DEBUGBREAK("ISteamNetworkingSockets::ReceivedRelayAuthTicket");
 
 	return False;
@@ -418,7 +418,7 @@ HSteamNetConnection _SteamNetworkingSockets_::ConnectP2PCustomSignaling(IpSteamN
 
 }
 
-Bool _SteamNetworkingSockets_::ReceivedP2PCustomSignal(const pVoid pMsg, Int32 cbMsg, IpSteamNetworkingCustomSignalingRecvContext pContext) {
+Bool _SteamNetworkingSockets_::ReceivedP2PCustomSignal(pCVoid pMsg, Int32 cbMsg, IpSteamNetworkingCustomSignalingRecvContext pContext) {
 	DEBUGBREAK("ISteamNetworkingSockets::ReceivedP2PCustomSignal");
 
 	return False;
@@ -432,7 +432,7 @@ Bool _SteamNetworkingSockets_::GetCertificateRequest(pInt32 pcbBlob, pVoid pvBlo
 
 }
 
-Bool _SteamNetworkingSockets_::SetCertificate(const pVoid pCertificate, Int32 cbCertificate, pSteamNetworkingErrMsg pErrMsg) {
+Bool _SteamNetworkingSockets_::SetCertificate(pCVoid pCertificate, Int32 cbCertificate, pSteamNetworkingErrMsg pErrMsg) {
 	DEBUGBREAK("ISteamNetworkingSockets::SetCertificate");
 
 	return False;

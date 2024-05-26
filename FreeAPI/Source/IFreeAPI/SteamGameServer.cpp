@@ -231,7 +231,7 @@ HAuthTicket _SteamGameServer_::GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxT
 
 }
 
-EBeginAuthSessionResult _SteamGameServer_::BeginAuthSession(const pVoid pbAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) {
+EBeginAuthSessionResult _SteamGameServer_::BeginAuthSession(pCVoid pbAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) {
 	DEBUGBREAK("ISteamGameServer::BeginAuthSession");
 
 	return k_EBeginAuthSessionResultOK;
@@ -302,7 +302,7 @@ SteamIPAddress_t _SteamGameServer_::GetPublicIP() {
 
 }
 
-Bool _SteamGameServer_::HandleIncomingPacket(const pVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) {
+Bool _SteamGameServer_::HandleIncomingPacket(pCVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) {
 	DEBUGBREAK("ISteamGameServer::HandleIncomingPacket");
 
 	return True;
@@ -351,7 +351,7 @@ SteamAPICall_t _SteamGameServer_::ComputeNewPlayerCompatibility(SteamId_t SteamI
 
 }
 
-Bool _SteamGameServer_::SendUserConnectAndAuthenticate(Uint32 nIPClient, const pVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) {
+Bool _SteamGameServer_::SendUserConnectAndAuthenticate(Uint32 nIPClient, pCVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) {
 	DEBUGBREAK("ISteamGameServer::SendUserConnectAndAuthenticate");
 
 	if (pSteamIdUser != NULL) {

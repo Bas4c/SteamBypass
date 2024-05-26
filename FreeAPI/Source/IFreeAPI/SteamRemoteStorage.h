@@ -29,9 +29,9 @@ public:
 	_SteamRemoteStorage_& operator=(const _SteamRemoteStorage_&) = delete;
 
 	/* Local IO */
-	Bool FileWrite(pCStrA pchFile, const pVoid pvData, Int32 cbData) override;
+	Bool FileWrite(pCStrA pchFile, pCVoid pvData, Int32 cbData) override;
 	Int32 FileRead(pCStrA pchFile, pVoid pvData, Int32 cbDataToRead) override;
-	SteamAPICall_t FileWriteAsync(pCStrA pchFile, const pVoid pvData, Uint32 cbData) override;
+	SteamAPICall_t FileWriteAsync(pCStrA pchFile, pCVoid pvData, Uint32 cbData) override;
 	SteamAPICall_t FileReadAsync(pCStrA pchFile, Uint32 nOffset, Uint32 cbToRead) override;
 	Bool FileReadAsyncComplete(SteamAPICall_t hReadCall, pVoid pvData, Uint32 cbToRead) override;
 	Bool FileForget(pCStrA pchFile) override;
@@ -41,7 +41,7 @@ public:
 
 	/* Network IO */
 	UGCFileWriteStreamHandle_t FileWriteStreamOpen(pCStrA pchFile) override;
-	Bool FileWriteStreamWriteChunk(UGCFileWriteStreamHandle_t hWriteStream, const pVoid pvData, Int32 cbData) override;
+	Bool FileWriteStreamWriteChunk(UGCFileWriteStreamHandle_t hWriteStream, pCVoid pvData, Int32 cbData) override;
 	Bool FileWriteStreamClose(UGCFileWriteStreamHandle_t hWriteStream) override;
 	Bool FileWriteStreamCancel(UGCFileWriteStreamHandle_t hWriteStream) override;
 

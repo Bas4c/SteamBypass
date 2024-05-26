@@ -18,7 +18,7 @@ public:
 	/*Returns:
 	  k_EREsultOK on success.
 	  k_EResultNoConnection */
-	EResult SendMessageToUser(const pSteamNetworkingIdentity pIdentityRemote, const pVoid pvData, Uint32 cbData, Int32 nSendFlags, Int32 nRemoteChannel) override;
+	EResult SendMessageToUser(const pSteamNetworkingIdentity pIdentityRemote, pCVoid pvData, Uint32 cbData, Int32 nSendFlags, Int32 nRemoteChannel) override;
 
 	Int32 ReceiveMessagesOnChannel(Int32 nLocalChannel, pSteamNetworkingMessage_t *ppMessages, Int32 nMessages) override;
 	Bool AcceptSessionWithUser(const pSteamNetworkingIdentity pIdentityRemote) override;

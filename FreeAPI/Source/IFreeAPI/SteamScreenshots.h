@@ -15,7 +15,7 @@ public:
 	_SteamScreenshots_(const _SteamScreenshots_&) = delete;
 	_SteamScreenshots_& operator=(const _SteamScreenshots_&) = delete;
 
-	ScreenshotHandle WriteScreenshot(const pVoid pvRGB, Uint32 cbRGB, Int32 Cx, Int32 Cy) override;
+	ScreenshotHandle WriteScreenshot(pCVoid pvRGB, Uint32 cbRGB, Int32 Cx, Int32 Cy) override;
 	ScreenshotHandle AddScreenshotToLibrary(pCStrA pchFilename, pCStrA pchThumbnailFilename, Int32 Cx, Int32 Cy) override;
 	void TriggerScreenshot() override;
 	void HookScreenshots(Bool bHook) override;

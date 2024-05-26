@@ -9,7 +9,7 @@ public:
 	/*Returns:
 	  k_EREsultOK on success.
 	  k_EResultNoConnection */
-	virtual EResult SendMessageToUser(const pSteamNetworkingIdentity pIdentityRemote, const pVoid pvData, Uint32 cbData, Int32 nSendFlags, Int32 nRemoteChannel) = 0;
+	virtual EResult SendMessageToUser(const pSteamNetworkingIdentity pIdentityRemote, pCVoid pvData, Uint32 cbData, Int32 nSendFlags, Int32 nRemoteChannel) = 0;
 
 	virtual Int32 ReceiveMessagesOnChannel(Int32 nLocalChannel, /* [out] */ pSteamNetworkingMessage_t *ppMessages, Int32 nMessages) = 0;
 	virtual Bool AcceptSessionWithUser(const pSteamNetworkingIdentity pIdentityRemote) = 0;

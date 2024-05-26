@@ -432,7 +432,7 @@ public:
 	#ifdef _PS3
 	virtual Bool InstallPS3Trophies() = 0;
 	virtual Uint64 GetTrophySpaceRequiredBeforeInstall() = 0;
-	virtual Bool SetUserStatsData(const pVoid pvData, Uint32 cbData) = 0;
+	virtual Bool SetUserStatsData(pCVoid pvData, Uint32 cbData) = 0;
 	virtual Bool GetUserStatsData(pVoid pvData, Uint32 cbData, pUint32 pcbWritten) = 0;
 	#endif
 

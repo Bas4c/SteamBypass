@@ -15,7 +15,7 @@ public:
 	_SteamGameCoordinator_(const _SteamGameCoordinator_&) = delete;
 	_SteamGameCoordinator_& operator=(const _SteamGameCoordinator_&) = delete;
 
-	EGCResults SendMessage_(Uint32 nMsgType, pVoid pvData, Uint32 cbData) override;
+	EGCResults SendMessage_(Uint32 nMsgType, pCVoid pvData, Uint32 cbData) override;
 	Bool IsMessageAvailable(pUint32 pcbMsgSize) override;
 	EGCResults RetrieveMessage(pUint32 pnMsgType, pVoid pvDest, Uint32 cbDest, pUint32 pcbMsgSize) override;
 

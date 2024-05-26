@@ -112,7 +112,7 @@ public:
 typedef class _ISteamNetworking003_ {
 public:
 
-	virtual Bool SendP2PPacket(SteamId_t SteamIdRemote, const pVoid pbData, Uint32 cbData, EP2PSend eP2PSendType) = 0;
+	virtual Bool SendP2PPacket(SteamId_t SteamIdRemote, pCVoid pbData, Uint32 cbData, EP2PSend eP2PSendType) = 0;
 	virtual Bool IsP2PPacketAvailable(pUint32 pcbMsgSize) = 0;
 	virtual Bool ReadP2PPacket(pVoid pbDest, Uint32 cbDest, pUint32 pcbMsgSize, pSteamId_t pSteamIdRemote) = 0;
 	virtual Bool AcceptP2PSessionWithUser(SteamId_t SteamIdRemote) = 0;
@@ -138,7 +138,7 @@ public:
 typedef class _ISteamNetworking004_ {
 public:
 
-	virtual Bool SendP2PPacket(SteamId_t SteamIdRemote, const pVoid pbData, Uint32 cbData, EP2PSend eP2PSendType, Int32 nChannel) = 0;
+	virtual Bool SendP2PPacket(SteamId_t SteamIdRemote, pCVoid pbData, Uint32 cbData, EP2PSend eP2PSendType, Int32 nChannel) = 0;
 	virtual Bool IsP2PPacketAvailable(pUint32 pcbMsgSize, Int32 nChannel) = 0;
 	virtual Bool ReadP2PPacket(pVoid pbDest, Uint32 cbDest, pUint32 pcbMsgSize, pSteamId_t pSteamIdRemote, Int32 nChannel) = 0;
 	virtual Bool AcceptP2PSessionWithUser(SteamId_t SteamIdRemote) = 0;
@@ -164,7 +164,7 @@ public:
 typedef class _ISteamNetworking005_ {
 public:
 
-	virtual Bool SendP2PPacket(SteamId_t SteamIdRemote, const pVoid pbData, Uint32 cbData, EP2PSend eP2PSendType, Int32 nChannel) = 0;
+	virtual Bool SendP2PPacket(SteamId_t SteamIdRemote, pCVoid pbData, Uint32 cbData, EP2PSend eP2PSendType, Int32 nChannel) = 0;
 	virtual Bool IsP2PPacketAvailable(pUint32 pcbMsgSize, Int32 nChannel) = 0;
 	virtual Bool ReadP2PPacket(pVoid pbDest, Uint32 cbDest, pUint32 pcbMsgSize, pSteamId_t pSteamIdRemote, Int32 nChannel) = 0;
 	virtual Bool AcceptP2PSessionWithUser(SteamId_t SteamIdRemote) = 0;
@@ -204,7 +204,7 @@ public:
 	    nChannel is a routing number you can use to help route message to different systems - you'll have to call ReadP2PPacket() 
 	    with the same channel number in order to retrieve the data on the other end
 	    using different channels to talk to the same user will still use the same underlying p2p connection, saving on resources */
-	virtual Bool SendP2PPacket(SteamId_t SteamIdRemote, const pVoid pbData, Uint32 cbData, EP2PSend eP2PSendType, Int32 nChannel) = 0;
+	virtual Bool SendP2PPacket(SteamId_t SteamIdRemote, pCVoid pbData, Uint32 cbData, EP2PSend eP2PSendType, Int32 nChannel) = 0;
 	virtual Bool IsP2PPacketAvailable(/* [out] */ pUint32 pcbMsgSize, Int32 nChannel) = 0;
 
 	/* Reads in a packet that has been sent from another user via SendP2PPacket()

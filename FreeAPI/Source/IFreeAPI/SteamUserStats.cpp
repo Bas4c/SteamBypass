@@ -399,7 +399,7 @@ Uint64 _SteamUserStats_::GetTrophySpaceRequiredBeforeInstall() {
 
 }
 
-Bool _SteamUserStats_::SetUserStatsData(const pVoid pvData, Uint32 cbData) {
+Bool _SteamUserStats_::SetUserStatsData(pCVoid pvData, Uint32 cbData) {
 	DEBUGBREAK("ISteamUserStats::SetUserStatsData");
 
 	return False;

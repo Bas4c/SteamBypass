@@ -71,7 +71,7 @@ public:
 		 if an IP address is passed Steam will only allow the ticket to be used by an entity with that IP address */
 	HAuthTicket GetAuthSessionTicket_Old(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket) override;
 	HAuthTicket GetAuthSessionTicket(pVoid pvTicket, Int32 cbMaxTicket, pUint32 pcbTicket, const pSteamNetworkingIdentity pSnId) override;
-	EBeginAuthSessionResult BeginAuthSession(const pVoid pbAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) override;
+	EBeginAuthSessionResult BeginAuthSession(pCVoid pbAuthTicket, Int32 cbAuthTicket, SteamId_t SteamId) override;
 	void EndAuthSession(SteamId_t SteamId) override;
 	void CancelAuthTicket(HAuthTicket hAuthTicket) override;
 	EUserHasLicenseForAppResult UserHasLicenseForApp(SteamId_t SteamId, AppId_t AppId) override;
@@ -84,7 +84,7 @@ public:
 	SteamAPICall_t GetServerReputation() override;
 	Uint32 GetPublicIP_Old() override;
 	SteamIPAddress_t GetPublicIP() override;
-	Bool HandleIncomingPacket(const pVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) override;
+	Bool HandleIncomingPacket(pCVoid pvData, Int32 cbData, Uint32 srcIP, Uint16 srcPort) override;
 	Int32 GetNextOutgoingPacket(pVoid pvOut, Int32 cbMaxOut, pUint32 pNetAdrr, pUint16 pPort) override;
 
 	void EnableHeartbeats(Bool bActive) override;
@@ -97,7 +97,7 @@ public:
 	/* Return Value: Returns True if the users ticket passes basic checks. pSteamIDUser will contain the SteamId of this user. pSteamIDUser must NOT be NULL
 	   If the call succeeds then you should expect a GSClientApprove_t or GSClientDeny_t callback which will tell you whether authentication
 		for the user has succeeded or failed (the steamid in the callback will match the one returned by this call) */
-	Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, const pVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) override;
+	Bool SendUserConnectAndAuthenticate(Uint32 nIPClient, pCVoid pvAuthBlob, Uint32 cbAuthBlobSize, pSteamId_t pSteamIdUser) override;
 	SteamId_t CreateUnauthenticatedUserConnection() override;
 	void SendUserDisconnect(SteamId_t SteamIdUser) override;
 

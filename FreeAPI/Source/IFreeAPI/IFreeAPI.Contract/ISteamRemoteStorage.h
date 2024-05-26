@@ -161,7 +161,7 @@ typedef struct _RemoteStorageUpdatePublishedFileRequest_t_ {
 typedef class _ISteamRemoteStorage001_ {
 public:
 
-	virtual Bool FileWrite(pCStrA pchFile, const pVoid pvData, Int32 cbData) = 0;
+	virtual Bool FileWrite(pCStrA pchFile, pCVoid pvData, Int32 cbData) = 0;
 	virtual Int32 GetFileSize(pCStrA pchFile) = 0;
 	virtual Int32 FileRead(pCStrA pchFile, pVoid pvData, Int32 cbDataToRead) = 0;
 	virtual Bool FileDelete(pCStrA pchFile) = 0;
@@ -174,7 +174,7 @@ public:
 typedef class _ISteamRemoteStorage002_ {
 public:
 
-	virtual Bool FileWrite(pCStrA pchFile, const pVoid pvData, Int32 cbData) = 0;
+	virtual Bool FileWrite(pCStrA pchFile, pCVoid pvData, Int32 cbData) = 0;
 	virtual Int32 GetFileSize(pCStrA pchFile) = 0;
 	virtual Int32 FileRead(pCStrA pchFile, pVoid pvData, Int32 cbDataToRead) = 0;
 	virtual Bool FileExists_(pCStrA pchFile) = 0;
@@ -187,7 +187,7 @@ public:
 typedef class _ISteamRemoteStorage003_ {
 public:
 
-	virtual Bool FileWrite(pCStrA pchFile, const pVoid pvData, Int32 cbData) = 0;
+	virtual Bool FileWrite(pCStrA pchFile, pCVoid pvData, Int32 cbData) = 0;
 	virtual Int32 FileRead(pCStrA pchFile, pVoid pvData, Int32 cbDataToRead) = 0;
 	virtual Bool FileForget(pCStrA pchFile) = 0;
 	virtual Bool FileDelete(pCStrA pchFile) = 0;
@@ -213,7 +213,7 @@ public:
 typedef class _ISteamRemoteStorage004_ {
 public:
 
-	virtual Bool FileWrite(pCStrA pchFile, const pVoid pvData, Int32 cbData) = 0;
+	virtual Bool FileWrite(pCStrA pchFile, pCVoid pvData, Int32 cbData) = 0;
 	virtual Int32 FileRead(pCStrA pchFile, pVoid pvData, Int32 cbDataToRead) = 0;
 	virtual Bool FileForget(pCStrA pchFile) = 0;
 	virtual Bool FileDelete(pCStrA pchFile) = 0;
@@ -240,7 +240,7 @@ public:
 typedef class _ISteamRemoteStorage005_ {
 public:
 
-	virtual Bool FileWrite(pCStrA pchFile, const pVoid pvData, Int32 cbData) = 0;
+	virtual Bool FileWrite(pCStrA pchFile, pCVoid pvData, Int32 cbData) = 0;
 	virtual Int32 FileRead(pCStrA pchFile, pVoid pvData, Int32 cbDataToRead) = 0;
 	virtual Bool FileForget(pCStrA pchFile) = 0;
 	virtual Bool FileDelete(pCStrA pchFile) = 0;
@@ -284,7 +284,7 @@ public:
 typedef class _ISteamRemoteStorage006_ {
 public:
 
-	virtual Bool FileWrite(pCStrA pchFile, const pVoid pvData, Int32 cbData) = 0;
+	virtual Bool FileWrite(pCStrA pchFile, pCVoid pvData, Int32 cbData) = 0;
 	virtual Int32 FileRead(pCStrA pchFile, pVoid pvData, Int32 cbDataToRead) = 0;
 	virtual Bool FileForget(pCStrA pchFile) = 0;
 	virtual Bool FileDelete(pCStrA pchFile) = 0;
@@ -337,7 +337,7 @@ public:
 typedef class _ISteamRemoteStorage007_ {
 public:
 
-	virtual Bool FileWrite(pCStrA pchFile, const pVoid pvData, Int32 cbData) = 0;
+	virtual Bool FileWrite(pCStrA pchFile, pCVoid pvData, Int32 cbData) = 0;
 	virtual Int32 FileRead(pCStrA pchFile, pVoid pvData, Int32 cbDataToRead) = 0;
 	virtual Bool FileForget(pCStrA pchFile) = 0;
 	virtual Bool FileDelete(pCStrA pchFile) = 0;
@@ -390,14 +390,14 @@ public:
 typedef class _ISteamRemoteStorage008_ {
 public:
 
-	virtual Bool FileWrite(pCStrA pchFile, const pVoid pvData, Int32 cbData) = 0;
+	virtual Bool FileWrite(pCStrA pchFile, pCVoid pvData, Int32 cbData) = 0;
 	virtual Int32 FileRead(pCStrA pchFile, pVoid pvData, Int32 cbDataToRead) = 0;
 	virtual Bool FileForget(pCStrA pchFile) = 0;
 	virtual Bool FileDelete(pCStrA pchFile) = 0;
 	virtual SteamAPICall_t FileShare(pCStrA pchFile) = 0;
 	virtual Bool SetSyncPlatforms(pCStrA pchFile, ERemoteStoragePlatform eRemoteStoragePlatform) = 0;
 	virtual UGCFileWriteStreamHandle_t FileWriteStreamOpen(pCStrA pchFile) = 0;
-	virtual Bool FileWriteStreamWriteChunk(UGCFileWriteStreamHandle_t hWriteStream, const pVoid pvData, Int32 cbData) = 0;
+	virtual Bool FileWriteStreamWriteChunk(UGCFileWriteStreamHandle_t hWriteStream, pCVoid pvData, Int32 cbData) = 0;
 	virtual Bool FileWriteStreamClose(UGCFileWriteStreamHandle_t hWriteStream) = 0;
 	virtual Bool FileWriteStreamCancel(UGCFileWriteStreamHandle_t hWriteStream) = 0;
 	virtual Bool FileExists_(pCStrA pchFile) = 0;
@@ -447,14 +447,14 @@ public:
 typedef class _ISteamRemoteStorage009_ {
 public:
 
-	virtual Bool FileWrite(pCStrA pchFile, const pVoid pvData, Int32 cbData) = 0;
+	virtual Bool FileWrite(pCStrA pchFile, pCVoid pvData, Int32 cbData) = 0;
 	virtual Int32 FileRead(pCStrA pchFile, pVoid pvData, Int32 cbDataToRead) = 0;
 	virtual Bool FileForget(pCStrA pchFile) = 0;
 	virtual Bool FileDelete(pCStrA pchFile) = 0;
 	virtual SteamAPICall_t FileShare(pCStrA pchFile) = 0;
 	virtual Bool SetSyncPlatforms(pCStrA pchFile, ERemoteStoragePlatform eRemoteStoragePlatform) = 0;
 	virtual UGCFileWriteStreamHandle_t FileWriteStreamOpen(pCStrA pchFile) = 0;
-	virtual Bool FileWriteStreamWriteChunk(UGCFileWriteStreamHandle_t hWriteStream, const pVoid pvData, Int32 cbData) = 0;
+	virtual Bool FileWriteStreamWriteChunk(UGCFileWriteStreamHandle_t hWriteStream, pCVoid pvData, Int32 cbData) = 0;
 	virtual Bool FileWriteStreamClose(UGCFileWriteStreamHandle_t hWriteStream) = 0;
 	virtual Bool FileWriteStreamCancel(UGCFileWriteStreamHandle_t hWriteStream) = 0;
 	virtual Bool FileExists_(pCStrA pchFile) = 0;
@@ -504,14 +504,14 @@ public:
 typedef class _ISteamRemoteStorage010_ {
 public:
 
-	virtual Bool FileWrite(pCStrA pchFile, const pVoid pvData, Int32 cbData) = 0;
+	virtual Bool FileWrite(pCStrA pchFile, pCVoid pvData, Int32 cbData) = 0;
 	virtual Int32 FileRead(pCStrA pchFile, pVoid pvData, Int32 cbDataToRead) = 0;
 	virtual Bool FileForget(pCStrA pchFile) = 0;
 	virtual Bool FileDelete(pCStrA pchFile) = 0;
 	virtual SteamAPICall_t FileShare(pCStrA pchFile) = 0;
 	virtual Bool SetSyncPlatforms(pCStrA pchFile, ERemoteStoragePlatform eRemoteStoragePlatform) = 0;
 	virtual UGCFileWriteStreamHandle_t FileWriteStreamOpen(pCStrA pchFile) = 0;
-	virtual Bool FileWriteStreamWriteChunk(UGCFileWriteStreamHandle_t hWriteStream, const pVoid pvData, Int32 cbData) = 0;
+	virtual Bool FileWriteStreamWriteChunk(UGCFileWriteStreamHandle_t hWriteStream, pCVoid pvData, Int32 cbData) = 0;
 	virtual Bool FileWriteStreamClose(UGCFileWriteStreamHandle_t hWriteStream) = 0;
 	virtual Bool FileWriteStreamCancel(UGCFileWriteStreamHandle_t hWriteStream) = 0;
 	virtual Bool FileExists_(pCStrA pchFile) = 0;
@@ -562,14 +562,14 @@ public:
 typedef class _ISteamRemoteStorage011_ {
 public:
 
-	virtual Bool FileWrite(pCStrA pchFile, const pVoid pvData, Int32 cbData) = 0;
+	virtual Bool FileWrite(pCStrA pchFile, pCVoid pvData, Int32 cbData) = 0;
 	virtual Int32 FileRead(pCStrA pchFile, pVoid pvData, Int32 cbDataToRead) = 0;
 	virtual Bool FileForget(pCStrA pchFile) = 0;
 	virtual Bool FileDelete(pCStrA pchFile) = 0;
 	virtual SteamAPICall_t FileShare(pCStrA pchFile) = 0;
 	virtual Bool SetSyncPlatforms(pCStrA pchFile, ERemoteStoragePlatform eRemoteStoragePlatform) = 0;
 	virtual UGCFileWriteStreamHandle_t FileWriteStreamOpen(pCStrA pchFile) = 0;
-	virtual Bool FileWriteStreamWriteChunk(UGCFileWriteStreamHandle_t hWriteStream, const pVoid pvData, Int32 cbData) = 0;
+	virtual Bool FileWriteStreamWriteChunk(UGCFileWriteStreamHandle_t hWriteStream, pCVoid pvData, Int32 cbData) = 0;
 	virtual Bool FileWriteStreamClose(UGCFileWriteStreamHandle_t hWriteStream) = 0;
 	virtual Bool FileWriteStreamCancel(UGCFileWriteStreamHandle_t hWriteStream) = 0;
 	virtual Bool FileExists_(pCStrA pchFile) = 0;
@@ -620,14 +620,14 @@ public:
 typedef class _ISteamRemoteStorage012_ {
 public:
 
-	virtual Bool FileWrite(pCStrA pchFile, const pVoid pvData, Int32 cbData) = 0;
+	virtual Bool FileWrite(pCStrA pchFile, pCVoid pvData, Int32 cbData) = 0;
 	virtual Int32 FileRead(pCStrA pchFile, pVoid pvData, Int32 cbDataToRead) = 0;
 	virtual Bool FileForget(pCStrA pchFile) = 0;
 	virtual Bool FileDelete(pCStrA pchFile) = 0;
 	virtual SteamAPICall_t FileShare(pCStrA pchFile) = 0;
 	virtual Bool SetSyncPlatforms(pCStrA pchFile, ERemoteStoragePlatform eRemoteStoragePlatform) = 0;
 	virtual UGCFileWriteStreamHandle_t FileWriteStreamOpen(pCStrA pchFile) = 0;
-	virtual Bool FileWriteStreamWriteChunk(UGCFileWriteStreamHandle_t hWriteStream, const pVoid pvData, Int32 cbData) = 0;
+	virtual Bool FileWriteStreamWriteChunk(UGCFileWriteStreamHandle_t hWriteStream, pCVoid pvData, Int32 cbData) = 0;
 	virtual Bool FileWriteStreamClose(UGCFileWriteStreamHandle_t hWriteStream) = 0;
 	virtual Bool FileWriteStreamCancel(UGCFileWriteStreamHandle_t hWriteStream) = 0;
 	virtual Bool FileExists_(pCStrA pchFile) = 0;
@@ -686,9 +686,9 @@ public:
 typedef class _ISteamRemoteStorage013_ {
 public:
 
-	virtual Bool FileWrite(pCStrA pchFile, const pVoid pvData, Int32 cbData) = 0;
+	virtual Bool FileWrite(pCStrA pchFile, pCVoid pvData, Int32 cbData) = 0;
 	virtual Int32 FileRead(pCStrA pchFile, pVoid pvData, Int32 cbDataToRead) = 0;
-	virtual SteamAPICall_t FileWriteAsync(pCStrA pchFile, const pVoid pvData, Uint32 cbData) = 0;
+	virtual SteamAPICall_t FileWriteAsync(pCStrA pchFile, pCVoid pvData, Uint32 cbData) = 0;
 	virtual SteamAPICall_t FileReadAsync(pCStrA pchFile, Uint32 nOffset, Uint32 cbToRead) = 0;
 	virtual Bool FileReadAsyncComplete(SteamAPICall_t hReadCall, pVoid pvData, Uint32 cbToRead) = 0;
 	virtual Bool FileForget(pCStrA pchFile) = 0;
@@ -696,7 +696,7 @@ public:
 	virtual SteamAPICall_t FileShare(pCStrA pchFile) = 0;
 	virtual Bool SetSyncPlatforms(pCStrA pchFile, ERemoteStoragePlatform eRemoteStoragePlatform) = 0;
 	virtual UGCFileWriteStreamHandle_t FileWriteStreamOpen(pCStrA pchFile) = 0;
-	virtual Bool FileWriteStreamWriteChunk(UGCFileWriteStreamHandle_t hWriteStream, const pVoid pvData, Int32 cbData) = 0;
+	virtual Bool FileWriteStreamWriteChunk(UGCFileWriteStreamHandle_t hWriteStream, pCVoid pvData, Int32 cbData) = 0;
 	virtual Bool FileWriteStreamClose(UGCFileWriteStreamHandle_t hWriteStream) = 0;
 	virtual Bool FileWriteStreamCancel(UGCFileWriteStreamHandle_t hWriteStream) = 0;
 	virtual Bool FileExists_(pCStrA pchFile) = 0;
@@ -755,9 +755,9 @@ public:
 typedef class _ISteamRemoteStorage014_ {
 public:
 
-	virtual Bool FileWrite(pCStrA pchFile, const pVoid pvData, Int32 cbData) = 0;
+	virtual Bool FileWrite(pCStrA pchFile, pCVoid pvData, Int32 cbData) = 0;
 	virtual Int32 FileRead(pCStrA pchFile, pVoid pvData, Int32 cbDataToRead) = 0;
-	virtual SteamAPICall_t FileWriteAsync(pCStrA pchFile, const pVoid pvData, Uint32 cbData) = 0;
+	virtual SteamAPICall_t FileWriteAsync(pCStrA pchFile, pCVoid pvData, Uint32 cbData) = 0;
 	virtual SteamAPICall_t FileReadAsync(pCStrA pchFile, Uint32 nOffset, Uint32 cbToRead) = 0;
 	virtual Bool FileReadAsyncComplete(SteamAPICall_t hReadCall, pVoid pvData, Uint32 cbToRead) = 0;
 	virtual Bool FileForget(pCStrA pchFile) = 0;
@@ -765,7 +765,7 @@ public:
 	virtual SteamAPICall_t FileShare(pCStrA pchFile) = 0;
 	virtual Bool SetSyncPlatforms(pCStrA pchFile, ERemoteStoragePlatform eRemoteStoragePlatform) = 0;
 	virtual UGCFileWriteStreamHandle_t FileWriteStreamOpen(pCStrA pchFile) = 0;
-	virtual Bool FileWriteStreamWriteChunk(UGCFileWriteStreamHandle_t hWriteStream, const pVoid pvData, Int32 cbData) = 0;
+	virtual Bool FileWriteStreamWriteChunk(UGCFileWriteStreamHandle_t hWriteStream, pCVoid pvData, Int32 cbData) = 0;
 	virtual Bool FileWriteStreamClose(UGCFileWriteStreamHandle_t hWriteStream) = 0;
 	virtual Bool FileWriteStreamCancel(UGCFileWriteStreamHandle_t hWriteStream) = 0;
 	virtual Bool FileExists_(pCStrA pchFile) = 0;
@@ -829,9 +829,9 @@ typedef class _ISteamRemoteStorage_ {
 public:
 
 	/* Local IO */
-	virtual Bool FileWrite(pCStrA pchFile, const pVoid pvData, Int32 cbData) = 0;
+	virtual Bool FileWrite(pCStrA pchFile, pCVoid pvData, Int32 cbData) = 0;
 	virtual Int32 FileRead(pCStrA pchFile, /* [out] */ pVoid pvData, Int32 cbDataToRead) = 0;
-	virtual SteamAPICall_t FileWriteAsync(pCStrA pchFile, const pVoid pvData, Uint32 cbData) = 0;
+	virtual SteamAPICall_t FileWriteAsync(pCStrA pchFile, pCVoid pvData, Uint32 cbData) = 0;
 	virtual SteamAPICall_t FileReadAsync(pCStrA pchFile, Uint32 nOffset, Uint32 cbToRead) = 0;
 	virtual Bool FileReadAsyncComplete(SteamAPICall_t hReadCall, /* [out] */ pVoid pvData, Uint32 cbToRead) = 0;
 	virtual Bool FileForget(pCStrA pchFile) = 0;
@@ -841,7 +841,7 @@ public:
 	
 	/* Network IO */
 	virtual UGCFileWriteStreamHandle_t FileWriteStreamOpen(pCStrA pchFile) = 0;
-	virtual Bool FileWriteStreamWriteChunk(UGCFileWriteStreamHandle_t hWriteStream, const pVoid pvData, Int32 cbData) = 0;
+	virtual Bool FileWriteStreamWriteChunk(UGCFileWriteStreamHandle_t hWriteStream, pCVoid pvData, Int32 cbData) = 0;
 	virtual Bool FileWriteStreamClose(UGCFileWriteStreamHandle_t hWriteStream) = 0;
 	virtual Bool FileWriteStreamCancel(UGCFileWriteStreamHandle_t hWriteStream) = 0;
 
