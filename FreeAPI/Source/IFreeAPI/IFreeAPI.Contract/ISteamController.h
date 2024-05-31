@@ -570,7 +570,7 @@ public:
 	virtual Int32 GetConnectedControllers(pControllerHandle_t phController) = 0;
 	virtual Bool ShowBindingPanel(ControllerHandle_t hController) = 0;
 	virtual ControllerActionSetHandle_t GetActionSetHandle(pCStrA pchActionSetName) = 0;
-	virtual ControllerActionSetHandle_t GetCurrentActionSet(ControllerHandle_t hController) = 0;
+	virtual ControllerActionSetHandle_t GetCurrentActionSet(ControllerHandle_t hController, Uint64 x) = 0;
 	virtual ControllerDigitalActionHandle_t GetDigitalActionHandle(pCStrA pchActionName) = 0;
 	virtual ControllerDigitalActionData_t GetDigitalActionData(ControllerHandle_t hController, ControllerDigitalActionHandle_t hDigitalAction) = 0;
 	virtual Int32 GetDigitalActionOrigins(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet, ControllerDigitalActionHandle_t hDigitalAction, pEControllerActionOrigin peControllerActionOrigin) = 0;

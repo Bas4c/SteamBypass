@@ -103,7 +103,7 @@ typedef struct _SteamId_t_ {
 
 #define k_SteamId_t_LocalUser k_SteamId_t_Create( \
  k_EUniversePublic, k_EAccountTypeIndividual, \
- 0xFFFFF, 0x00000001 \
+ 0x00001, 0x00000001 \
 )
 
 // ----

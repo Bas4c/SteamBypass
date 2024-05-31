@@ -19,21 +19,21 @@ Bool _SteamUser_::BLoggedOn() {
 SteamId_t _SteamUser_::GetSteamId() {
 	DEBUGBREAK("ISteamUser::GetSteamId");
 
- 	return SteamId_t{ k_SteamId_t_LocalUser };
+	return SteamId_t{ k_SteamId_t_LocalUser };
 
 }
 
 Int32 _SteamUser_::InitiateGameConnection(pVoid pvAuthBlob, Int32 cbMaxAuthBlob, SteamId_t SteamIdGameServer, Uint32 nIPServer, Uint16 PortServer, Bool bSecure) {
 	DEBUGBREAK("ISteamUser::InitiateGameConnection");
 
-	if (pvAuthBlob != NULL && cbMaxAuthBlob > 0) {
+	if (pvAuthBlob != NULL && cbMaxAuthBlob >= 206) {
 		
 		for (Int32 i = 0; i < cbMaxAuthBlob; i++) {
 			((pByte)(pvAuthBlob))[i] =
 				(Byte)((SteamIdGameServer.SteamId_Uint64 >> ((i % sizeof(SteamId_t)) * 8)) & 0xFF);
 		}
 
-		return cbMaxAuthBlob;
+		return 206;
 
 	}
 
@@ -58,23 +58,42 @@ void _SteamUser_::TrackAppUsageEvent(SteamId_t GameId, Int32 eAppUsageEvent, pCS
 Bool _SteamUser_::GetUserDataFolder(pStrA pchFolder, Int32 cchFolder) {
 	DEBUGBREAK("ISteamUser::GetUserDataFolder");
 
+	Bool bSuccess = False;
+
 	if (pchFolder != NULL && cchFolder > 0) {
 
-		CharA chLocalAppDataFolder[MAX_PATH] = { 0 };
-		if (SHGetSpecialFolderPathA(
-			NULL, chLocalAppDataFolder, CSIDL_LOCAL_APPDATA, True
-		)) {
+		pStrA pchModuleDirectory = LoadModuleNameA(
+			GetModuleHandleA(NULL),
+			True
+		);
 
-			if ((SizeOF)(cchFolder) >= StrA_Count(chLocalAppDataFolder) + 1U) {
-				StrA_Copy(pchFolder, cchFolder, chLocalAppDataFolder);
-				return True;
+		if (pchModuleDirectory != NULL) {
+
+			SizeOF cchModuleDirectory = StrA_Count(pchModuleDirectory);
+			if (cchModuleDirectory <= SizeOF_MAX - 1U) {
+				
+				pCStrA pchUserDataFileSpec = "\\Storage";
+				SizeOF cchUserDataFileSpec = StrA_Count(pchUserDataFileSpec);
+				
+				if (cchUserDataFileSpec <= (SizeOF_MAX - 1U) - cchModuleDirectory) {
+
+					if ((SizeOF)(cchFolder) >= cchModuleDirectory + cchUserDataFileSpec + 1U) {
+						StrA_Copy(pchFolder, cchFolder, pchModuleDirectory);
+						StrA_Cat(pchFolder, cchFolder, pchUserDataFileSpec);
+						bSuccess = True;
+					}
+
+				}
+
 			}
+
+			LocalFree(pchModuleDirectory);
 
 		}
 
 	}
 
-	return False;
+	return bSuccess;
 
 }
 

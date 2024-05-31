@@ -40,7 +40,7 @@ Int32 _SteamController_::GetConnectedControllers(pControllerHandle_t phControlle
 ControllerActionSetHandle_t _SteamController_::GetActionSetHandle(pCStrA pchActionSetName) {
 	DEBUGBREAK("ISteamController::GetActionSetHandle");
 
-	return (ControllerActionSetHandle_t)(0x0000000000000000);
+	return (ControllerActionSetHandle_t)(0xFFFFFFFFFFFFFFFF);
 
 }
 
@@ -51,10 +51,17 @@ void _SteamController_::ActivateActionSet(ControllerHandle_t hController, Contro
 
 }
 
+ControllerActionSetHandle_t _SteamController_::GetCurrentActionSet(ControllerHandle_t hController, Uint64 x) {
+	DEBUGBREAK("ISteamController::GetCurrentActionSet");
+
+	return (ControllerActionSetHandle_t)(0xFFFFFFFFFFFFFFFF);
+
+}
+
 ControllerActionSetHandle_t _SteamController_::GetCurrentActionSet(ControllerHandle_t hController) {
 	DEBUGBREAK("ISteamController::GetCurrentActionSet");
 
-	return (ControllerActionSetHandle_t)(0x0000000000000000);
+	return (ControllerActionSetHandle_t)(0xFFFFFFFFFFFFFFFF);
 
 }
 
