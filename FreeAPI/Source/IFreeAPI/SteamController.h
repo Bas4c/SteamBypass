@@ -33,7 +33,6 @@ public:
 	
 	ControllerActionSetHandle_t GetActionSetHandle(pCStrA pchActionSetName) override;
 	void ActivateActionSet(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSet) override;
-	ControllerActionSetHandle_t GetCurrentActionSet(ControllerHandle_t hController, Uint64 x) override;
 	ControllerActionSetHandle_t GetCurrentActionSet(ControllerHandle_t hController) override;
 	void ActivateActionSetLayer(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSetLayer) override;
 	void DeactivateActionSetLayer(ControllerHandle_t hController, ControllerActionSetHandle_t hActionSetLayer) override;

@@ -51,13 +51,6 @@ void _SteamController_::ActivateActionSet(ControllerHandle_t hController, Contro
 
 }
 
-ControllerActionSetHandle_t _SteamController_::GetCurrentActionSet(ControllerHandle_t hController, Uint64 x) {
-	DEBUGBREAK("ISteamController::GetCurrentActionSet");
-
-	return (ControllerActionSetHandle_t)(0xFFFFFFFFFFFFFFFF);
-
-}
-
 ControllerActionSetHandle_t _SteamController_::GetCurrentActionSet(ControllerHandle_t hController) {
 	DEBUGBREAK("ISteamController::GetCurrentActionSet");
 

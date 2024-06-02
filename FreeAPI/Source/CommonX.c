@@ -1315,14 +1315,14 @@ _COMMON_X_API_ void __stdcall DebugOutputW(
 
 			pStrW pchDbgOut = HeapAlloc(
 				GetProcessHeap(), HEAP_ZERO_MEMORY,
-				(cchStr + 3U) * sizeof(CharW)
+				(cchStr + 4U) * sizeof(CharW)
 			);
 
 			if (pchDbgOut != NULL) {
 
-				StrW_Copy(pchDbgOut, cchStr + 3U, L"\t");
-				StrW_Cat(pchDbgOut, cchStr + 3U, pchStr);
-				StrW_Cat(pchDbgOut, cchStr + 3U, L"\r\n");
+				StrW_Copy(pchDbgOut, cchStr + 4U, L"\t");
+				StrW_Cat(pchDbgOut, cchStr + 4U, pchStr);
+				StrW_Cat(pchDbgOut, cchStr + 4U, L"\r\n");
 
 				OutputDebugStringW(pchDbgOut);
 
@@ -1351,14 +1351,14 @@ _COMMON_X_API_ void __stdcall DebugOutputA(
 
 			pStrA pchDbgOut = HeapAlloc(
 				GetProcessHeap(), HEAP_ZERO_MEMORY,
-				(cchStr + 3U) * sizeof(CharA)
+				(cchStr + 4U) * sizeof(CharA)
 			);
 
 			if (pchDbgOut != NULL) {
 
-				StrA_Copy(pchDbgOut, cchStr + 3U, "\t");
-				StrA_Cat(pchDbgOut, cchStr + 3U, pchStr);
-				StrA_Cat(pchDbgOut, cchStr + 3U, "\r\n");
+				StrA_Copy(pchDbgOut, cchStr + 4U, "\t");
+				StrA_Cat(pchDbgOut, cchStr + 4U, pchStr);
+				StrA_Cat(pchDbgOut, cchStr + 4U, "\r\n");
 
 				OutputDebugStringA(pchDbgOut);
 
