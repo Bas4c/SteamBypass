@@ -769,17 +769,17 @@ public:
 	virtual Bool Shutdown() = 0;
 	virtual void RunFrame(Bool bReservedValue) = 0;
 	virtual Int32 GetConnectedControllers(pInputHandle_t hController) = 0;
-	virtual InputActionSetHandle_t GetActionSetHandle(pCStrA pszActionSetName) = 0;
+	virtual InputActionSetHandle_t GetActionSetHandle(pCStrA pchActionSetName) = 0;
 	virtual void ActivateActionSet(InputHandle_t hController, InputActionSetHandle_t hActionSet) = 0;
 	virtual InputActionSetHandle_t GetCurrentActionSet(InputHandle_t hController) = 0;
 	virtual void ActivateActionSetLayer(InputHandle_t hController, InputActionSetHandle_t hActionSetLayer) = 0;
 	virtual void DeactivateActionSetLayer(InputHandle_t hController, InputActionSetHandle_t hActionSetLayer) = 0;
 	virtual void DeactivateAllActionSetLayers(InputHandle_t hController) = 0;
 	virtual Int32 GetActiveActionSetLayers(InputHandle_t hController, pInputActionSetHandle_t phController) = 0;
-	virtual InputDigitalActionHandle_t GetDigitalActionHandle(pCStrA pszActionName) = 0;
+	virtual InputDigitalActionHandle_t GetDigitalActionHandle(pCStrA pchActionSetName) = 0;
 	virtual InputDigitalActionData_t GetDigitalActionData(InputHandle_t hController, InputDigitalActionHandle_t hDigitalAction) = 0;
 	virtual Int32 GetDigitalActionOrigins(InputHandle_t hController, InputActionSetHandle_t hActionSet, InputDigitalActionHandle_t hDigitalAction, pEInputActionOrigin peInputActionOrigin) = 0;
-	virtual InputAnalogActionHandle_t GetAnalogActionHandle(pCStrA pszActionName) = 0;
+	virtual InputAnalogActionHandle_t GetAnalogActionHandle(pCStrA pchActionSetName) = 0;
 	virtual InputAnalogActionData_t GetAnalogActionData(InputHandle_t hController, InputAnalogActionHandle_t hAnalogAction) = 0;
 	virtual Int32 GetAnalogActionOrigins(InputHandle_t hController, InputActionSetHandle_t hActionSet, InputAnalogActionHandle_t hAnalogAction, pEInputActionOrigin peInputActionOrigin) = 0;
 	virtual pCStrA GetGlyphForActionOrigin_Legacy(EInputActionOrigin eInputActionOrigin) = 0;
@@ -810,17 +810,17 @@ public:
 	virtual Bool Shutdown() = 0;
 	virtual void RunFrame(Bool bReservedValue) = 0;
 	virtual Int32 GetConnectedControllers(pInputHandle_t hController) = 0;
-	virtual InputActionSetHandle_t GetActionSetHandle(pCStrA pszActionSetName) = 0;
+	virtual InputActionSetHandle_t GetActionSetHandle(pCStrA pchActionSetName) = 0;
 	virtual void ActivateActionSet(InputHandle_t hController, InputActionSetHandle_t hActionSet) = 0;
 	virtual InputActionSetHandle_t GetCurrentActionSet(InputHandle_t hController) = 0;
 	virtual void ActivateActionSetLayer(InputHandle_t hController, InputActionSetHandle_t hActionSetLayer) = 0;
 	virtual void DeactivateActionSetLayer(InputHandle_t hController, InputActionSetHandle_t hActionSetLayer) = 0;
 	virtual void DeactivateAllActionSetLayers(InputHandle_t hController) = 0;
 	virtual Int32 GetActiveActionSetLayers(InputHandle_t hController, pInputActionSetHandle_t phController) = 0;
-	virtual InputDigitalActionHandle_t GetDigitalActionHandle(pCStrA pszActionName) = 0;
+	virtual InputDigitalActionHandle_t GetDigitalActionHandle(pCStrA pchActionSetName) = 0;
 	virtual InputDigitalActionData_t GetDigitalActionData(InputHandle_t hController, InputDigitalActionHandle_t hDigitalAction) = 0;
 	virtual Int32 GetDigitalActionOrigins(InputHandle_t hController, InputActionSetHandle_t hActionSet, InputDigitalActionHandle_t hDigitalAction, pEInputActionOrigin peInputActionOrigin) = 0;
-	virtual InputAnalogActionHandle_t GetAnalogActionHandle(pCStrA pszActionName) = 0;
+	virtual InputAnalogActionHandle_t GetAnalogActionHandle(pCStrA pchActionSetName) = 0;
 	virtual InputAnalogActionData_t GetAnalogActionData(InputHandle_t hController, InputAnalogActionHandle_t hAnalogAction) = 0;
 	virtual Int32 GetAnalogActionOrigins(InputHandle_t hController, InputActionSetHandle_t hActionSet, InputAnalogActionHandle_t hAnalogAction, pEInputActionOrigin peInputActionOrigin) = 0;
 	virtual pCStrA GetGlyphForActionOrigin_Legacy(EInputActionOrigin eInputActionOrigin) = 0;
@@ -856,18 +856,18 @@ public:
 	virtual Int32 GetConnectedControllers(pInputHandle_t hController) = 0;
 	virtual void EnableDeviceCallbacks() = 0;
 	virtual void EnableActionEventCallbacks(SteamInputActionEventCallback pFunction) = 0;
-	virtual InputActionSetHandle_t GetActionSetHandle(pCStrA pszActionSetName) = 0;
+	virtual InputActionSetHandle_t GetActionSetHandle(pCStrA pchActionSetName) = 0;
 	virtual void ActivateActionSet(InputHandle_t hController, InputActionSetHandle_t hActionSet) = 0;
 	virtual InputActionSetHandle_t GetCurrentActionSet(InputHandle_t hController) = 0;
 	virtual void ActivateActionSetLayer(InputHandle_t hController, InputActionSetHandle_t hActionSetLayer) = 0;
 	virtual void DeactivateActionSetLayer(InputHandle_t hController, InputActionSetHandle_t hActionSetLayer) = 0;
 	virtual void DeactivateAllActionSetLayers(InputHandle_t hController) = 0;
 	virtual Int32 GetActiveActionSetLayers(InputHandle_t hController, pInputActionSetHandle_t phController) = 0;
-	virtual InputDigitalActionHandle_t GetDigitalActionHandle(pCStrA pszActionName) = 0;
+	virtual InputDigitalActionHandle_t GetDigitalActionHandle(pCStrA pchActionSetName) = 0;
 	virtual InputDigitalActionData_t GetDigitalActionData(InputHandle_t hController, InputDigitalActionHandle_t hDigitalAction) = 0;
 	virtual Int32 GetDigitalActionOrigins(InputHandle_t hController, InputActionSetHandle_t hActionSet, InputDigitalActionHandle_t hDigitalAction, pEInputActionOrigin peInputActionOrigin) = 0;
 	virtual pCStrA GetStringForDigitalActionName(InputDigitalActionHandle_t hDigitalAction) = 0;
-	virtual InputAnalogActionHandle_t GetAnalogActionHandle(pCStrA pszActionName) = 0;
+	virtual InputAnalogActionHandle_t GetAnalogActionHandle(pCStrA pchActionSetName) = 0;
 	virtual InputAnalogActionData_t GetAnalogActionData(InputHandle_t hController, InputAnalogActionHandle_t hAnalogAction) = 0;
 	virtual Int32 GetAnalogActionOrigins(InputHandle_t hController, InputActionSetHandle_t hActionSet, InputAnalogActionHandle_t hAnalogAction, pEInputActionOrigin peInputActionOrigin) = 0;
 	virtual pCStrA GetGlyphPNGForActionOrigin(EInputActionOrigin eInputActionOrigin, ESteamInputGlyphSize eSteamInputGlyphSize, Uint32 nFlags) = 0;
@@ -919,7 +919,7 @@ public:
 	virtual void EnableDeviceCallbacks() = 0;
 	virtual void EnableActionEventCallbacks(SteamInputActionEventCallback pFunction) = 0;
 
-	virtual InputActionSetHandle_t GetActionSetHandle(pCStrA pszActionSetName) = 0;
+	virtual InputActionSetHandle_t GetActionSetHandle(pCStrA pchActionSetName) = 0;
 	virtual void ActivateActionSet(InputHandle_t hController, InputActionSetHandle_t hActionSet) = 0;
 	virtual InputActionSetHandle_t GetCurrentActionSet(InputHandle_t hController) = 0;
 
@@ -928,12 +928,12 @@ public:
 	virtual void DeactivateAllActionSetLayers(InputHandle_t hController) = 0;
 	virtual Int32 GetActiveActionSetLayers(InputHandle_t hController, /* [out(k_SteamInputMaxActiveLayers)] */ pInputActionSetHandle_t phController) = 0;
 
-	virtual InputDigitalActionHandle_t GetDigitalActionHandle(pCStrA pszActionName) = 0;
+	virtual InputDigitalActionHandle_t GetDigitalActionHandle(pCStrA pchActionSetName) = 0;
 	virtual InputDigitalActionData_t GetDigitalActionData(InputHandle_t hController, InputDigitalActionHandle_t hDigitalAction) = 0;
 	virtual Int32 GetDigitalActionOrigins(InputHandle_t hController, InputActionSetHandle_t hActionSet, InputDigitalActionHandle_t hDigitalAction, /* [out(k_SteamInputMaxOrigins)]*/ pEInputActionOrigin peInputActionOrigin) = 0;
 	virtual pCStrA GetStringForDigitalActionName(InputDigitalActionHandle_t hDigitalAction) = 0;
 
-	virtual InputAnalogActionHandle_t GetAnalogActionHandle(pCStrA pszActionName) = 0;
+	virtual InputAnalogActionHandle_t GetAnalogActionHandle(pCStrA pchActionSetName) = 0;
 	virtual InputAnalogActionData_t GetAnalogActionData(InputHandle_t hController, InputAnalogActionHandle_t hAnalogAction) = 0;
 	virtual Int32 GetAnalogActionOrigins(InputHandle_t hController, InputActionSetHandle_t hActionSet, InputAnalogActionHandle_t hAnalogAction, /* [out(k_SteamInputMaxOrigins)]*/ pEInputActionOrigin peInputActionOrigin) = 0;
 	

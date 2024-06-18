@@ -20,7 +20,7 @@ public:
 	pSteamNetworkingMessage_t AllocateMessage(Int32 cbAllocateData) override;
 	void InitRelayNetworkAccess() override;
 	ESteamNetworkingAvailability GetRelayNetworkStatus(pSteamRelayNetworkStatus_t pDetails) override;
-	Float GetLocalPingLocation(SteamNetworkPingLocation_t pResult) override;
+	Float GetLocalPingLocation(pSteamNetworkPingLocation_t pResult) override;
 	Int32 EstimatePingTimeBetweenTwoLocations(const pSteamNetworkPingLocation_t pLocation1, const pSteamNetworkPingLocation_t pLocation2) override;
 	Int32 EstimatePingTimeFromLocalHost(const pSteamNetworkPingLocation_t pRemoteLocation) override;
 	void ConvertPingLocationToString(const pSteamNetworkPingLocation_t pLocation, pStrA pchBuf, Int32 cchBuf) override;

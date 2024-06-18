@@ -190,6 +190,47 @@ _COMMON_X_API_ Uint32 __stdcall GetGameAppId(
 	void
 );
 
+typedef struct _SteamAPI_VerT_ {
+
+	CharA chSteamAppList[128];
+	CharA chSteamApps[128];
+	CharA chSteamClient[128];
+	CharA chSteamController[128];
+	CharA chSteamFriends[128];
+	CharA chSteamGameServer[128];
+	CharA chSteamGameServerStats[128];
+	CharA chSteamHTMLSurface[128];
+	CharA chSteamHTTP[128];
+	CharA chSteamInput[128];
+	CharA chSteamInventory[128];
+	CharA chSteamMatchmaking[128];
+	CharA chSteamMatchmakingServers[128];
+	CharA chSteamMusicRemote[128];
+	CharA chSteamGameSearch[128];
+	CharA chSteamParties[128];
+	CharA chSteamMusic[128];
+	CharA chSteamNetworking[128];
+	CharA chSteamNetworkingMessages[128];
+	CharA chSteamNetworkingSockets[128];
+	CharA chSteamNetworkingUtils[128];
+	CharA chSteamParentalSettings[128];
+	CharA chSteamRemotePlay[128];
+	CharA chSteamRemoteStorage[128];
+	CharA chSteamScreenshots[128];
+	CharA chSteamUGC[128];
+	CharA chSteamUnifiedMessages[128];
+	CharA chSteamUser[128];
+	CharA chSteamUserStats[128];
+	CharA chSteamUtils[128];
+	CharA chSteamVideo[128];
+	CharA chSteamMasterServerUpdater[128];
+
+} SteamAPI_VerT, *pSteamAPI_VerT;
+
+_COMMON_X_API_ Bool __stdcall SteamAPI_VerT_Construct(
+	pSteamAPI_VerT pSteamAPI_VerT
+);
+
 _COMMON_X_API_ void __stdcall DebugFuncEntryW(
 	_In_z_ pCStrW pchFuncName
 );

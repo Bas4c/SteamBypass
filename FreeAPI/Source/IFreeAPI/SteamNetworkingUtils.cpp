@@ -89,7 +89,7 @@ ESteamNetworkingAvailability _SteamNetworkingUtils_::GetRelayNetworkStatus(pStea
 
 }
 
-Float _SteamNetworkingUtils_::GetLocalPingLocation(SteamNetworkPingLocation_t pResult) {
+Float _SteamNetworkingUtils_::GetLocalPingLocation(pSteamNetworkPingLocation_t pResult) {
 	DEBUGBREAK("ISteamNetworkingUtils::GetLocalPingLocation");
 
 	return (-1.0F);

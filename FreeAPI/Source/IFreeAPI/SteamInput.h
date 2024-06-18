@@ -33,7 +33,7 @@ public:
 	void EnableDeviceCallbacks() override;
 	void EnableActionEventCallbacks(SteamInputActionEventCallback pFunction) override;
 
-	InputActionSetHandle_t GetActionSetHandle(pCStrA pszActionSetName) override;
+	InputActionSetHandle_t GetActionSetHandle(pCStrA pchActionSetName) override;
 	void ActivateActionSet(InputHandle_t hController, InputActionSetHandle_t hActionSet) override;
 	InputActionSetHandle_t GetCurrentActionSet(InputHandle_t hController) override;
 
@@ -42,12 +42,12 @@ public:
 	void DeactivateAllActionSetLayers(InputHandle_t hController) override;
 	Int32 GetActiveActionSetLayers(InputHandle_t hController, pInputActionSetHandle_t phController) override;
 
-	InputDigitalActionHandle_t GetDigitalActionHandle(pCStrA pszActionName) override;
+	InputDigitalActionHandle_t GetDigitalActionHandle(pCStrA pchActionSetName) override;
 	InputDigitalActionData_t GetDigitalActionData(InputHandle_t hController, InputDigitalActionHandle_t hDigitalAction) override;
 	Int32 GetDigitalActionOrigins(InputHandle_t hController, InputActionSetHandle_t hActionSet, InputDigitalActionHandle_t hDigitalAction, pEInputActionOrigin peInputActionOrigin) override;
 	pCStrA GetStringForDigitalActionName(InputDigitalActionHandle_t hDigitalAction) override;
 
-	InputAnalogActionHandle_t GetAnalogActionHandle(pCStrA pszActionName) override;
+	InputAnalogActionHandle_t GetAnalogActionHandle(pCStrA pchActionSetName) override;
 	InputAnalogActionData_t GetAnalogActionData(InputHandle_t hController, InputAnalogActionHandle_t hAnalogAction) override;
 	Int32 GetAnalogActionOrigins(InputHandle_t hController, InputActionSetHandle_t hActionSet, InputAnalogActionHandle_t hAnalogAction, pEInputActionOrigin peInputActionOrigin) override;
 
@@ -71,7 +71,7 @@ public:
 	Bool ShowBindingPanel(InputHandle_t hController) override;
 	ESteamInputType GetInputTypeForHandle(InputHandle_t hController) override;
 	InputHandle_t GetControllerForGamepadIndex(Int32 nIndex) override;
-	Int32 GetGamepadIndexForController(InputHandle_t ulhController) override;
+	Int32 GetGamepadIndexForController(InputHandle_t hController) override;
 
 	pCStrA GetStringForXboxOrigin(EXboxOrigin eXboxOrigin) override;
 	pCStrA GetGlyphForXboxOrigin(EXboxOrigin eXboxOrigin) override;

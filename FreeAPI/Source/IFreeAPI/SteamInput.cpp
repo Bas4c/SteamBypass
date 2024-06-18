@@ -65,7 +65,7 @@ void _SteamInput_::EnableActionEventCallbacks(SteamInputActionEventCallback pFun
 
 }
 
-InputActionSetHandle_t _SteamInput_::GetActionSetHandle(pCStrA pszActionSetName) {
+InputActionSetHandle_t _SteamInput_::GetActionSetHandle(pCStrA pchActionSetName) {
 	DEBUGBREAK("ISteamInput::GetActionSetHandle");
 
 	return (InputActionSetHandle_t)(0x0000000000000000);
@@ -114,7 +114,7 @@ Int32 _SteamInput_::GetActiveActionSetLayers(InputHandle_t hController, pInputAc
 
 }
 
-InputDigitalActionHandle_t _SteamInput_::GetDigitalActionHandle(pCStrA pszActionName) {
+InputDigitalActionHandle_t _SteamInput_::GetDigitalActionHandle(pCStrA pchActionSetName) {
 	DEBUGBREAK("ISteamInput::GetDigitalActionHandle");
 
 	return (InputDigitalActionHandle_t)(0x0000000000000000);
@@ -148,7 +148,7 @@ pCStrA _SteamInput_::GetStringForDigitalActionName(InputDigitalActionHandle_t hD
 
 }
 
-InputAnalogActionHandle_t _SteamInput_::GetAnalogActionHandle(pCStrA pszActionName) {
+InputAnalogActionHandle_t _SteamInput_::GetAnalogActionHandle(pCStrA pchActionSetName) {
 	DEBUGBREAK("ISteamInput::GetAnalogActionHandle");
 
 	return (InputAnalogActionHandle_t)(0x0000000000000000);
@@ -2338,7 +2338,7 @@ InputHandle_t _SteamInput_::GetControllerForGamepadIndex(Int32 nIndex) {
 
 }
 
-Int32 _SteamInput_::GetGamepadIndexForController(InputHandle_t ulhController) {
+Int32 _SteamInput_::GetGamepadIndexForController(InputHandle_t hController) {
 	DEBUGBREAK("ISteamInput::GetGamepadIndexForController");
 
 	return 0;

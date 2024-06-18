@@ -78,7 +78,7 @@ Bool _SteamInventory_::DeserializeResult(pSteamInventoryResult_t pOuthSteamInven
 
 }
 
-Bool _SteamInventory_::GenerateItems(pSteamInventoryResult_t phSteamInventoryResult, const pSteamSteamItemDef_t pArraySteamItemDef, const pUint32 pnArrayQuantity, Uint32 nArrayLength) {
+Bool _SteamInventory_::GenerateItems(pSteamInventoryResult_t phSteamInventoryResult, const pSteamItemDef_t pArraySteamItemDef, const pUint32 pnArrayQuantity, Uint32 nArrayLength) {
 	DEBUGBREAK("ISteamInventory::GenerateItems");
 
 	return False;
@@ -92,14 +92,14 @@ Bool _SteamInventory_::GrantPromoItems(pSteamInventoryResult_t phSteamInventoryR
 
 }
 
-Bool _SteamInventory_::AddPromoItem(pSteamInventoryResult_t phSteamInventoryResult, SteamSteamItemDef_t SteamSteamItemDef) {
+Bool _SteamInventory_::AddPromoItem(pSteamInventoryResult_t phSteamInventoryResult, SteamItemDef_t SteamItemDef) {
 	DEBUGBREAK("ISteamInventory::AddPromoItem");
 
 	return False;
 
 }
 
-Bool _SteamInventory_::AddPromoItems(pSteamInventoryResult_t phSteamInventoryResult, const pSteamSteamItemDef_t pArraySteamItemDef, Uint32 nArrayLength) {
+Bool _SteamInventory_::AddPromoItems(pSteamInventoryResult_t phSteamInventoryResult, const pSteamItemDef_t pArraySteamItemDef, Uint32 nArrayLength) {
 	DEBUGBREAK("ISteamInventory::AddPromoItems");
 
 	return False;
@@ -113,7 +113,7 @@ Bool _SteamInventory_::ConsumeItem(pSteamInventoryResult_t phSteamInventoryResul
 
 }
 
-Bool _SteamInventory_::ExchangeItems(pSteamInventoryResult_t phSteamInventoryResult, const pSteamSteamItemDef_t pArrayGenerate, const pUint32 pnArrayGenerateQuantity, Uint32 nArrayGenerateLength, const pSteamItemInstanceId_t pArrayDestroy, const pUint32 pnArrayDestroyQuantity, Uint32 nArrayDestroyLength) {
+Bool _SteamInventory_::ExchangeItems(pSteamInventoryResult_t phSteamInventoryResult, const pSteamItemDef_t pArrayGenerate, const pUint32 pnArrayGenerateQuantity, Uint32 nArrayGenerateLength, const pSteamItemInstanceId_t pArrayDestroy, const pUint32 pnArrayDestroyQuantity, Uint32 nArrayDestroyLength) {
 	DEBUGBREAK("ISteamInventory::ExchangeItems");
 
 	return False;
@@ -134,7 +134,7 @@ void _SteamInventory_::SendItemDropHeartbeat() {
 
 }
 
-Bool _SteamInventory_::TriggerItemDrop(pSteamInventoryResult_t phSteamInventoryResult, SteamSteamItemDef_t DropListDefinition) {
+Bool _SteamInventory_::TriggerItemDrop(pSteamInventoryResult_t phSteamInventoryResult, SteamItemDef_t DropListDefinition) {
 	DEBUGBREAK("ISteamInventory::TriggerItemDrop");
 
 	return False;
@@ -155,14 +155,14 @@ Bool _SteamInventory_::LoadSteamItemDefinitions() {
 
 }
 
-Bool _SteamInventory_::GetSteamItemDefinitionIds(pSteamSteamItemDef_t pSteamItemDefId, pUint32 pnSteamItemDefIdsArraySize) {
+Bool _SteamInventory_::GetSteamItemDefinitionIds(pSteamItemDef_t pSteamItemDefId, pUint32 pnSteamItemDefIdsArraySize) {
 	DEBUGBREAK("ISteamInventory::GetSteamItemDefinitionIds");
 
 	return False;
 
 }
 
-Bool _SteamInventory_::GetSteamItemDefinitionProperty(SteamSteamItemDef_t SteamSteamItemDef, pCStrA pchPropertyName, pStrA pchValue, pUint32 pnValueSize) {
+Bool _SteamInventory_::GetSteamItemDefinitionProperty(SteamItemDef_t SteamItemDef, pCStrA pchPropertyName, pStrA pchValue, pUint32 pnValueSize) {
 	DEBUGBREAK("ISteamInventory::GetSteamItemDefinitionProperty");
 
 	return False;
@@ -176,14 +176,14 @@ SteamAPICall_t _SteamInventory_::RequestEligiblePromoSteamItemDefinitionsIds(Ste
 
 }
 
-Bool _SteamInventory_::GetEligiblePromoSteamItemDefinitionIds(SteamId_t SteamId, pSteamSteamItemDef_t pSteamItemDefId, pUint32 pnSteamItemDefIdArraySize) {
+Bool _SteamInventory_::GetEligiblePromoSteamItemDefinitionIds(SteamId_t SteamId, pSteamItemDef_t pSteamItemDefId, pUint32 pnSteamItemDefIdArraySize) {
 	DEBUGBREAK("ISteamInventory::GetEligiblePromoSteamItemDefinitionIds");
 
 	return False;
 
 }
 
-SteamAPICall_t _SteamInventory_::StartPurchase(const pSteamSteamItemDef_t pArraySteamItemDefs, const pUint32 punArrayQuantity, Uint32 nArrayLength) {
+SteamAPICall_t _SteamInventory_::StartPurchase(const pSteamItemDef_t pArraySteamItemDefs, const pUint32 pnArrayQuantity, Uint32 nArrayLength) {
 	DEBUGBREAK("ISteamInventory::StartPurchase");
 
 	return k_SteamAPICall_Invalid;
@@ -204,14 +204,14 @@ Uint32 _SteamInventory_::GetNumItemsWithPrices() {
 
 }
 
-Bool _SteamInventory_::GetItemsWithPrices(pSteamSteamItemDef_t pArraySteamItemDefs, pUint64 pCurrentPrices, pUint64 pBasePrices, Uint32 nArrayLength) {
+Bool _SteamInventory_::GetItemsWithPrices(pSteamItemDef_t pArraySteamItemDefs, pUint64 pCurrentPrices, pUint64 pBasePrices, Uint32 nArrayLength) {
 	DEBUGBREAK("ISteamInventory::GetItemsWithPrices");
 
 	return False;
 
 }
 
-Bool _SteamInventory_::GetItemPrice(SteamSteamItemDef_t SteamSteamItemDef, pUint64 pCurrentPrice, pUint64 pBasePrice) {
+Bool _SteamInventory_::GetItemPrice(SteamItemDef_t SteamItemDef, pUint64 pCurrentPrice, pUint64 pBasePrice) {
 	DEBUGBREAK("ISteamInventory::GetItemPrice");
 
 	return False;

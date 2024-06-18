@@ -76,16 +76,16 @@ public:
 	Bool SetItemMetadata(UGCUpdateHandle_t hUGCQuery, pCStrA pchMetaData) override;
 	Bool SetItemVisibility(UGCUpdateHandle_t hUGCQuery, ERemoteStoragePublishedFileVisibility eRemoteStoragePublishedFileVisibility) override;
 	Bool SetItemTags(UGCUpdateHandle_t hUGCUpdate, const pSteamParamStringArray_t pTags) override;
-	Bool SetItemContent(UGCUpdateHandle_t hUGCQuery, pCStrA pszContentFolder) override;
-	Bool SetItemPreview(UGCUpdateHandle_t hUGCQuery, pCStrA pszPreviewFile) override;
+	Bool SetItemContent(UGCUpdateHandle_t hUGCQuery, pCStrA pchContentFolder) override;
+	Bool SetItemPreview(UGCUpdateHandle_t hUGCQuery, pCStrA pchPreviewFile) override;
 	Bool SetAllowLegacyUpload(UGCUpdateHandle_t hUGCQuery, Bool bAllowLegacyUpload) override;
 	Bool RemoveAllItemKeyValueTags(UGCUpdateHandle_t hUGCQuery) override;
 	Bool RemoveItemKeyValueTags(UGCUpdateHandle_t hUGCQuery, pCStrA pchKey) override;
 	Bool AddItemKeyValueTag(UGCUpdateHandle_t hUGCQuery, pCStrA pchKey, pCStrA pchValue) override;
-	Bool AddItemPreviewFile(UGCUpdateHandle_t hUGCQuery, pCStrA pszPreviewFile, EItemPreviewType type) override;
-	Bool AddItemPreviewVideo(UGCUpdateHandle_t hUGCQuery, pCStrA pszVideoId) override;
-	Bool UpdateItemPreviewFile(UGCUpdateHandle_t hUGCQuery, Uint32 i, pCStrA pszPreviewFile) override;
-	Bool UpdateItemPreviewVideo(UGCUpdateHandle_t hUGCQuery, Uint32 i, pCStrA pszVideoId) override;
+	Bool AddItemPreviewFile(UGCUpdateHandle_t hUGCQuery, pCStrA pchPreviewFile, EItemPreviewType type) override;
+	Bool AddItemPreviewVideo(UGCUpdateHandle_t hUGCQuery, pCStrA pchVideoId) override;
+	Bool UpdateItemPreviewFile(UGCUpdateHandle_t hUGCQuery, Uint32 i, pCStrA pchPreviewFile) override;
+	Bool UpdateItemPreviewVideo(UGCUpdateHandle_t hUGCQuery, Uint32 i, pCStrA pchVideoId) override;
 	Bool RemoveItemPreview(UGCUpdateHandle_t hUGCQuery, Uint32 i) override;
 	Bool AddContentDescriptor(UGCUpdateHandle_t hUGCQuery, EUGCContentDescriptorId eUGCContentDescriptorId) override;
 	Bool RemoveContentDescriptor(UGCUpdateHandle_t hUGCQuery, EUGCContentDescriptorId eUGCContentDescriptorId) override;
@@ -104,7 +104,7 @@ public:
 	Bool GetItemInstallInfo(PublishedFileId_t PublishedFileId, pUint64 pnSizeOnDisk, pStrA pchFolder, Uint32 cchFolderSize, pUint32 pnTimeStamp) override;
 	Bool GetItemDownloadInfo(PublishedFileId_t PublishedFileId, pUint64 pnBytesDownloaded, pUint64 pnBytesTotal) override;
 	Bool DownloadItem(PublishedFileId_t PublishedFileId, Bool bHighPriority) override;
-	Bool BInitWorkshopForGameServer(DepotId_t WorkshopDepotId, pCStrA pszFolder) override;
+	Bool BInitWorkshopForGameServer(DepotId_t WorkshopDepotId, pCStrA pchFolder) override;
 	void SuspendDownloads(Bool bSuspend) override;
 
 	SteamAPICall_t StartPlaytimeTracking(pPublishedFileId_t pPublishedFileId, Uint32 nNumPublishedFileIds) override;

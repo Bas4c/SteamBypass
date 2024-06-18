@@ -21,7 +21,7 @@ public:
 	void HookScreenshots(Bool bHook) override;
 	Bool SetLocation(ScreenshotHandle hScreenshot, pCStrA pchLocation) override;
 	Bool TagUser(ScreenshotHandle hScreenshot, SteamId_t SteamId) override;
-	Bool TagPublishedFile(ScreenshotHandle hScreenshot, PublishedFileId_t unPublishedFileID) override;
+	Bool TagPublishedFile(ScreenshotHandle hScreenshot, PublishedFileId_t PublishedFileId) override;
 	Bool IsScreenshotsHooked() override;
 	ScreenshotHandle AddVRScreenshotToLibrary(EVRScreenshotType eVRScreenshotType, pCStrA pchFilename, pCStrA pchVRFilename) override;
 

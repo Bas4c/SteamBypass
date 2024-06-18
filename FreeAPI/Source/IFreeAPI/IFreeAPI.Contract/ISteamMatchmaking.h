@@ -408,7 +408,7 @@ typedef class _ISteamMatchmakingServerListResponse001_ {
 public:
 
 	virtual void ServerResponded(Int32 iServer) = 0;
-	virtual void ServerFailedToRespond( Int32 iServer) = 0;
+	virtual void ServerFailedToRespond(Int32 iServer) = 0;
 	virtual void RefreshComplete(EMatchMakingServerResponse eMatchMakingServerResponse) = 0;
 
 } ISteamMatchmakingServerListResponse001, *IpSteamMatchmakingServerListResponse001;

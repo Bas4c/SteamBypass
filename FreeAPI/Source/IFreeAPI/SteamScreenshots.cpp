@@ -45,7 +45,7 @@ Bool _SteamScreenshots_::TagUser(ScreenshotHandle hScreenshot, SteamId_t SteamId
 
 }
 
-Bool _SteamScreenshots_::TagPublishedFile(ScreenshotHandle hScreenshot, PublishedFileId_t unPublishedFileID) {
+Bool _SteamScreenshots_::TagPublishedFile(ScreenshotHandle hScreenshot, PublishedFileId_t PublishedFileId) {
 	DEBUGBREAK("ISteamScreenshots::TagPublishedFile");
 
 	return False;

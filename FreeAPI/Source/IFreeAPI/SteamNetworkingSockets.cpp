@@ -139,7 +139,7 @@ EResult _SteamNetworkingSockets_::SendMessageToConnection(HSteamNetConnection hC
 
 }
 
-void _SteamNetworkingSockets_::SendMessages(Int32 nMessages, pSteamNetworkingMessage_t pMessages, pInt64 pMessageNumberOrResult) {
+void _SteamNetworkingSockets_::SendMessages(Int32 nMessages, pSteamNetworkingMessage_t *pMessages, pInt64 pMessageNumberOrResult) {
 	DEBUGBREAK("ISteamNetworkingSockets::SendMessages");
 
 	/* Empty Method */

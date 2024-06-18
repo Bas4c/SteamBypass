@@ -39,7 +39,7 @@ public:
 	void SetConnectionName(HSteamNetConnection hPeer, pCStrA pchName) override;
 	Bool GetConnectionName(HSteamNetConnection hPeer, pStrA pchName, Int32 cchName) override;
 	EResult SendMessageToConnection(HSteamNetConnection hConnection, pCVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) override;
-	void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t pMessages, pInt64 pMessageNumberOrResult) override;
+	void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t *pMessages, pInt64 pMessageNumberOrResult) override;
 	EResult FlushMessagesOnConnection(HSteamNetConnection hConnection) override;
 	Int32 ReceiveMessagesOnConnection(HSteamNetConnection hConnection, pSteamNetworkingMessage_t_Old *ppMessages, Int32 nMessages) override;
 	Int32 ReceiveMessagesOnListenSocket(HSteamListenSocket hSocket, pSteamNetworkingMessage_t_Old *ppMessages, Int32 nMaxMessages) override;

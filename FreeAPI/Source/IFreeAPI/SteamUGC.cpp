@@ -344,14 +344,14 @@ Bool _SteamUGC_::SetItemTags(UGCUpdateHandle_t hUGCUpdate, const pSteamParamStri
 
 }
 
-Bool _SteamUGC_::SetItemContent(UGCUpdateHandle_t hUGCQuery, pCStrA pszContentFolder) {
+Bool _SteamUGC_::SetItemContent(UGCUpdateHandle_t hUGCQuery, pCStrA pchContentFolder) {
 	DEBUGBREAK("ISteamUGC::SetItemContent");
 	
 	return False;
 
 }
 
-Bool _SteamUGC_::SetItemPreview(UGCUpdateHandle_t hUGCQuery, pCStrA pszPreviewFile) {
+Bool _SteamUGC_::SetItemPreview(UGCUpdateHandle_t hUGCQuery, pCStrA pchPreviewFile) {
 	DEBUGBREAK("ISteamUGC::SetItemPreview");
 	
 	return False;
@@ -386,28 +386,28 @@ Bool _SteamUGC_::AddItemKeyValueTag(UGCUpdateHandle_t hUGCQuery, pCStrA pchKey, 
 
 }
 
-Bool _SteamUGC_::AddItemPreviewFile(UGCUpdateHandle_t hUGCQuery, pCStrA pszPreviewFile, EItemPreviewType type) {
+Bool _SteamUGC_::AddItemPreviewFile(UGCUpdateHandle_t hUGCQuery, pCStrA pchPreviewFile, EItemPreviewType type) {
 	DEBUGBREAK("ISteamUGC::AddItemPreviewFile");
 	
 	return False;
 
 }
 
-Bool _SteamUGC_::AddItemPreviewVideo(UGCUpdateHandle_t hUGCQuery, pCStrA pszVideoId) {
+Bool _SteamUGC_::AddItemPreviewVideo(UGCUpdateHandle_t hUGCQuery, pCStrA pchVideoId) {
 	DEBUGBREAK("ISteamUGC::AddItemPreviewVideo");
 	
 	return False;
 
 }
 
-Bool _SteamUGC_::UpdateItemPreviewFile(UGCUpdateHandle_t hUGCQuery, Uint32 i, pCStrA pszPreviewFile) {
+Bool _SteamUGC_::UpdateItemPreviewFile(UGCUpdateHandle_t hUGCQuery, Uint32 i, pCStrA pchPreviewFile) {
 	DEBUGBREAK("ISteamUGC::UpdateItemPreviewFile");
 	
 	return False;
 
 }
 
-Bool _SteamUGC_::UpdateItemPreviewVideo(UGCUpdateHandle_t hUGCQuery, Uint32 i, pCStrA pszVideoId) {
+Bool _SteamUGC_::UpdateItemPreviewVideo(UGCUpdateHandle_t hUGCQuery, Uint32 i, pCStrA pchVideoId) {
 	DEBUGBREAK("ISteamUGC::UpdateItemPreviewVideo");
 	
 	return False;
@@ -532,7 +532,7 @@ Bool _SteamUGC_::DownloadItem(PublishedFileId_t PublishedFileId, Bool bHighPrior
 
 }
 
-Bool _SteamUGC_::BInitWorkshopForGameServer(DepotId_t WorkshopDepotId, pCStrA pszFolder) {
+Bool _SteamUGC_::BInitWorkshopForGameServer(DepotId_t WorkshopDepotId, pCStrA pchFolder) {
 	DEBUGBREAK("ISteamUGC::BInitWorkshopForGameServer");
 	
 	return False;

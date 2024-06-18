@@ -51,7 +51,7 @@ typedef class _ISteamNetworkingUtils001_ {
 public:
 
 	virtual ESteamNetworkingAvailability GetRelayNetworkStatus(pSteamRelayNetworkStatus_t pDetails) = 0;
-	virtual Float GetLocalPingLocation(SteamNetworkPingLocation_t pResult) = 0;
+	virtual Float GetLocalPingLocation(pSteamNetworkPingLocation_t pResult) = 0;
 	virtual Int32 EstimatePingTimeBetweenTwoLocations(const pSteamNetworkPingLocation_t pLocation1, const pSteamNetworkPingLocation_t pLocation2) = 0;
 	virtual Int32 EstimatePingTimeFromLocalHost(const pSteamNetworkPingLocation_t pRemoteLocation) = 0;
 	virtual void ConvertPingLocationToString(const pSteamNetworkPingLocation_t pLocation, pStrA pchBuf, Int32 cchBuf) = 0;
@@ -80,7 +80,7 @@ public:
 
 	virtual void InitRelayNetworkAccess() = 0;
 	virtual ESteamNetworkingAvailability GetRelayNetworkStatus(pSteamRelayNetworkStatus_t pDetails) = 0;
-	virtual Float GetLocalPingLocation(SteamNetworkPingLocation_t pResult) = 0;
+	virtual Float GetLocalPingLocation(pSteamNetworkPingLocation_t pResult) = 0;
 	virtual Int32 EstimatePingTimeBetweenTwoLocations(const pSteamNetworkPingLocation_t pLocation1, const pSteamNetworkPingLocation_t pLocation2) = 0;
 	virtual Int32 EstimatePingTimeFromLocalHost(const pSteamNetworkPingLocation_t pRemoteLocation) = 0;
 	virtual void ConvertPingLocationToString(const pSteamNetworkPingLocation_t pLocation, pStrA pchBuf, Int32 cchBuf) = 0;
@@ -109,7 +109,7 @@ public:
 	virtual pSteamNetworkingMessage_t AllocateMessage(Int32 cbAllocateData) = 0;
 	virtual void InitRelayNetworkAccess() = 0;
 	virtual ESteamNetworkingAvailability GetRelayNetworkStatus(pSteamRelayNetworkStatus_t pDetails) = 0;
-	virtual Float GetLocalPingLocation(SteamNetworkPingLocation_t pResult) = 0;
+	virtual Float GetLocalPingLocation(pSteamNetworkPingLocation_t pResult) = 0;
 	virtual Int32 EstimatePingTimeBetweenTwoLocations(const pSteamNetworkPingLocation_t pLocation1, const pSteamNetworkPingLocation_t pLocation2) = 0;
 	virtual Int32 EstimatePingTimeFromLocalHost(const pSteamNetworkPingLocation_t pRemoteLocation) = 0;
 	virtual void ConvertPingLocationToString(const pSteamNetworkPingLocation_t pLocation, pStrA pchBuf, Int32 cchBuf) = 0;
@@ -138,7 +138,7 @@ public:
 	virtual pSteamNetworkingMessage_t AllocateMessage(Int32 cbAllocateData) = 0;
 	virtual void InitRelayNetworkAccess() = 0;
 	virtual ESteamNetworkingAvailability GetRelayNetworkStatus(/* [out] */ pSteamRelayNetworkStatus_t pDetails) = 0;
-	virtual Float GetLocalPingLocation(/* [out] */ SteamNetworkPingLocation_t pResult) = 0;
+	virtual Float GetLocalPingLocation(/* [out] */ pSteamNetworkPingLocation_t pResult) = 0;
 	virtual Int32 EstimatePingTimeBetweenTwoLocations(const pSteamNetworkPingLocation_t pLocation1, const pSteamNetworkPingLocation_t pLocation2) = 0;
 	virtual Int32 EstimatePingTimeFromLocalHost(const pSteamNetworkPingLocation_t pRemoteLocation) = 0;
 	virtual void ConvertPingLocationToString(const pSteamNetworkPingLocation_t pLocation, /* [out] */ pStrA pchBuf, Int32 cchBuf) = 0;

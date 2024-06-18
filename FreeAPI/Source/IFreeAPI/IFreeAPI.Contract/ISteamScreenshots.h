@@ -35,7 +35,7 @@ public:
 	virtual void HookScreenshots(Bool bHook) = 0;
 	virtual Bool SetLocation(ScreenshotHandle hScreenshot, pCStrA pchLocation) = 0;
 	virtual Bool TagUser(ScreenshotHandle hScreenshot, SteamId_t SteamId) = 0;
-	virtual Bool TagPublishedFile(ScreenshotHandle hScreenshot, PublishedFileId_t unPublishedFileID) = 0;
+	virtual Bool TagPublishedFile(ScreenshotHandle hScreenshot, PublishedFileId_t PublishedFileId) = 0;
 	virtual Bool IsScreenshotsHooked() = 0;
 	virtual ScreenshotHandle AddVRScreenshotToLibrary(EVRScreenshotType eVRScreenshotType, pCStrA pchFilename, pCStrA pchVRFilename) = 0;
 

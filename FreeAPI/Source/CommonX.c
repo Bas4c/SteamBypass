@@ -1143,6 +1143,92 @@ _COMMON_X_API_ Uint32 __stdcall GetGameAppId(
 
 }
 
+_COMMON_X_API_ Bool __stdcall SteamAPI_VerT_Construct(
+	pSteamAPI_VerT pSteamAPI_VerT
+) {
+
+	if (pSteamAPI_VerT == NULL) {
+		SetLastError(ERROR_INVALID_PARAMETER);
+		return False;
+	}
+
+	Bool bSuccess = False;
+
+	const Dword cchMax = MAX_PATH - 1U;
+	pStrA pchModuleDirectory = LoadModuleNameA(GetModuleHandleA(NULL), True);
+
+	Dword sCode = GetLastError();
+	if (pchModuleDirectory != NULL) {
+
+		Dword cchModuleDirectory =
+			(Dword)(StrA_Count(pchModuleDirectory));
+
+		sCode = ERROR_MRM_FILEPATH_TOO_LONG;
+		if (cchModuleDirectory <= cchMax) {
+
+			pCStrA pchSteamAPIFileSpec = "\\steam_api.ini";
+			Dword cchSteamAPIFileSpec =
+				(Dword)(StrA_Count(pchSteamAPIFileSpec));
+
+			sCode = ERROR_MRM_FILEPATH_TOO_LONG;
+			if (cchModuleDirectory + cchSteamAPIFileSpec <= cchMax) {
+
+				CharA chSteamAPIFilePath[MAX_PATH] = { 0 };
+				StrA_Copy(chSteamAPIFilePath, MAX_PATH, pchModuleDirectory);
+				StrA_Cat(chSteamAPIFilePath, MAX_PATH, pchSteamAPIFileSpec);
+
+				/* Default Version Strings is used
+				   in case of (File Not Found) or (Key Not Found) */
+
+				bSuccess = True;
+				sCode = ERROR_SUCCESS;
+
+				GetPrivateProfileStringA("SteamAPI", "SteamAppList", "STEAMAPPLIST_INTERFACE_VERSION001", pSteamAPI_VerT->chSteamAppList, sizeof(pSteamAPI_VerT->chSteamAppList) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamApps", "STEAMAPPS_INTERFACE_VERSION007", pSteamAPI_VerT->chSteamApps, sizeof(pSteamAPI_VerT->chSteamApps) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamClient", "SteamClient017", pSteamAPI_VerT->chSteamClient, sizeof(pSteamAPI_VerT->chSteamClient) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamController", "SteamController003", pSteamAPI_VerT->chSteamController, sizeof(pSteamAPI_VerT->chSteamController) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamFriends", "SteamFriends015", pSteamAPI_VerT->chSteamFriends, sizeof(pSteamAPI_VerT->chSteamFriends) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamGameServer", "SteamGameServer012", pSteamAPI_VerT->chSteamGameServer, sizeof(pSteamAPI_VerT->chSteamGameServer) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamGameServerStats", "SteamGameServerStats001", pSteamAPI_VerT->chSteamGameServerStats, sizeof(pSteamAPI_VerT->chSteamGameServerStats) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamHTMLSurface", "STEAMHTMLSURFACE_INTERFACE_VERSION_003", pSteamAPI_VerT->chSteamHTMLSurface, sizeof(pSteamAPI_VerT->chSteamHTMLSurface) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamHTTP", "STEAMHTTP_INTERFACE_VERSION002", pSteamAPI_VerT->chSteamHTTP, sizeof(pSteamAPI_VerT->chSteamHTTP) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamInput", "SteamInput006", pSteamAPI_VerT->chSteamInput, sizeof(pSteamAPI_VerT->chSteamInput) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamInventory", "STEAMINVENTORY_INTERFACE_V001", pSteamAPI_VerT->chSteamInventory, sizeof(pSteamAPI_VerT->chSteamInventory) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamMatchmaking", "SteamMatchMaking009", pSteamAPI_VerT->chSteamMatchmaking, sizeof(pSteamAPI_VerT->chSteamMatchmaking) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamMatchmakingServers", "SteamMatchMakingServers002", pSteamAPI_VerT->chSteamMatchmakingServers, sizeof(pSteamAPI_VerT->chSteamMatchmakingServers) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamMusicRemote", "STEAMMUSICREMOTE_INTERFACE_VERSION001", pSteamAPI_VerT->chSteamMusicRemote, sizeof(pSteamAPI_VerT->chSteamMusicRemote) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamGameSearch", "SteamMatchGameSearch001", pSteamAPI_VerT->chSteamGameSearch, sizeof(pSteamAPI_VerT->chSteamGameSearch) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamParties", "SteamParties002", pSteamAPI_VerT->chSteamParties, sizeof(pSteamAPI_VerT->chSteamParties) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamMusic", "STEAMMUSIC_INTERFACE_VERSION001", pSteamAPI_VerT->chSteamMusic, sizeof(pSteamAPI_VerT->chSteamMusic) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamNetworking", "SteamNetworking005", pSteamAPI_VerT->chSteamNetworking, sizeof(pSteamAPI_VerT->chSteamNetworking) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamNetworkingMessages", "SteamNetworkingMessages002", pSteamAPI_VerT->chSteamNetworkingMessages, sizeof(pSteamAPI_VerT->chSteamNetworkingMessages) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamNetworkingSockets", "SteamNetworkingSockets008", pSteamAPI_VerT->chSteamNetworkingSockets, sizeof(pSteamAPI_VerT->chSteamNetworkingSockets) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamNetworkingUtils", "SteamNetworkingUtils002", pSteamAPI_VerT->chSteamNetworkingUtils, sizeof(pSteamAPI_VerT->chSteamNetworkingUtils) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamParentalSettings", "STEAMPARENTALSETTINGS_INTERFACE_VERSION001", pSteamAPI_VerT->chSteamParentalSettings, sizeof(pSteamAPI_VerT->chSteamParentalSettings) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamRemotePlay", "STEAMREMOTEPLAY_INTERFACE_VERSION001", pSteamAPI_VerT->chSteamRemotePlay, sizeof(pSteamAPI_VerT->chSteamRemotePlay) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamRemoteStorage", "STEAMREMOTESTORAGE_INTERFACE_VERSION013", pSteamAPI_VerT->chSteamRemoteStorage, sizeof(pSteamAPI_VerT->chSteamRemoteStorage) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamScreenshots", "STEAMSCREENSHOTS_INTERFACE_VERSION002", pSteamAPI_VerT->chSteamScreenshots, sizeof(pSteamAPI_VerT->chSteamScreenshots) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamUGC", "STEAMUGC_INTERFACE_VERSION007", pSteamAPI_VerT->chSteamUGC, sizeof(pSteamAPI_VerT->chSteamUGC) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamUnifiedMessages", "STEAMUNIFIEDMESSAGES_INTERFACE_VERSION001", pSteamAPI_VerT->chSteamUnifiedMessages, sizeof(pSteamAPI_VerT->chSteamUnifiedMessages) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamUser", "SteamUser018", pSteamAPI_VerT->chSteamUser, sizeof(pSteamAPI_VerT->chSteamUser) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamUserStats", "STEAMUSERSTATS_INTERFACE_VERSION011", pSteamAPI_VerT->chSteamUserStats, sizeof(pSteamAPI_VerT->chSteamUserStats) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamUtils", "SteamUtils007", pSteamAPI_VerT->chSteamUtils, sizeof(pSteamAPI_VerT->chSteamUtils) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamVideo", "STEAMVIDEO_INTERFACE_V001", pSteamAPI_VerT->chSteamVideo, sizeof(pSteamAPI_VerT->chSteamVideo) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("SteamAPI", "SteamMasterServerUpdater", "SteamMasterServerUpdater001", pSteamAPI_VerT->chSteamMasterServerUpdater, sizeof(pSteamAPI_VerT->chSteamMasterServerUpdater) / sizeof(CharA), chSteamAPIFilePath);
+				
+			}
+
+		}
+
+		LocalFree(pchModuleDirectory);
+
+	}
+
+	SetLastError(sCode);
+	return bSuccess;
+
+}
+
 _COMMON_X_API_ void __stdcall DebugFuncEntryW(
 	_In_z_ pCStrW pchFuncName
 ) {

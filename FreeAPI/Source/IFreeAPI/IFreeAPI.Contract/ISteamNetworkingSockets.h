@@ -8,9 +8,10 @@
 // Purpose: Calbback Interface
 // -----------------------------------------------------------------------------
 typedef class _ISteamNetworkingConnectionCustomSignaling_ {
+public:
 
 	virtual Bool SendSignal(HSteamNetConnection hConnection, const pSteamNetConnectionInfo_t pInfo, pCVoid pvMsg, Int32 cbMsg) = 0;
-	virtual void Release(void) = 0;
+	virtual void Release() = 0;
 
 } ISteamNetworkingConnectionCustomSignaling, *IpSteamNetworkingConnectionCustomSignaling;
 
@@ -18,6 +19,7 @@ typedef class _ISteamNetworkingConnectionCustomSignaling_ {
 // Purpose: Calbback Interface
 // -----------------------------------------------------------------------------
 typedef class _ISteamNetworkingCustomSignalingRecvContext_ {
+public:
 
 	virtual IpSteamNetworkingConnectionCustomSignaling _OnConnectRequest(HSteamNetConnection hConnection, const pSteamNetworkingIdentity pIdentityPeer) = 0;
 	virtual void SendRejectionSignal(const pSteamNetworkingIdentity pidentityPeer, pCVoid pvMsg, Int32 cbMsg) = 0;
@@ -28,7 +30,7 @@ typedef class _ISteamNetworkingFakeUDPPort_ {
 public:
 
 	virtual void DestroyFakeUDPPort() = 0;
-	virtual EResult SendMessageToFakeIP(const pSteamNetworkingIPAddr pRemoteAddress, pCVoid pData, Uint32 cbData, Int32 nSendFlags) = 0;
+	virtual EResult SendMessageToFakeIP(const pSteamNetworkingIPAddr pRemoteAddress, pCVoid pvData, Uint32 cbData, Int32 nSendFlags) = 0;
 	virtual Int32 ReceiveMessages(/* [out] */ pSteamNetworkingMessage_t *ppMessages, Int32 nMaxMessages) = 0;
 	virtual void ScheduleCleanup(const pSteamNetworkingIPAddr pRemoteAddress) = 0;
 
@@ -67,7 +69,7 @@ public:
 	virtual void SetConnectionName(HSteamNetConnection hPeer, pCStrA pchName) = 0;
 	virtual Bool GetConnectionName(HSteamNetConnection hPeer, pStrA pchName, Int32 cchName) = 0;
 	virtual EResult SendMessageToConnection(HSteamNetConnection hConnection, pCVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) = 0;
-	virtual void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t pMessages, pInt64 pMessageNumberOrResult) = 0;
+	virtual void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t *pMessages, pInt64 pMessageNumberOrResult) = 0;
 	virtual EResult FlushMessagesOnConnection(HSteamNetConnection hConnection) = 0;
 	virtual Int32 ReceiveMessagesOnConnection(HSteamNetConnection hConnection, pSteamNetworkingMessage_t_Old *ppMessages, Int32 nMessages) = 0;
 	virtual Int32 ReceiveMessagesOnListenSocket(HSteamListenSocket hSocket, pSteamNetworkingMessage_t_Old *ppMessages, Int32 nMaxMessages) = 0;
@@ -108,7 +110,7 @@ public:
 	virtual void SetConnectionName(HSteamNetConnection hPeer, pCStrA pchName) = 0;
 	virtual Bool GetConnectionName(HSteamNetConnection hPeer, pStrA pchName, Int32 cchName) = 0;
 	virtual EResult SendMessageToConnection(HSteamNetConnection hConnection, pCVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) = 0;
-	virtual void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t pMessages, pInt64 pMessageNumberOrResult) = 0;
+	virtual void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t *pMessages, pInt64 pMessageNumberOrResult) = 0;
 	virtual EResult FlushMessagesOnConnection(HSteamNetConnection hConnection) = 0;
 	virtual Int32 ReceiveMessagesOnConnection(HSteamNetConnection hConnection, pSteamNetworkingMessage_t *ppMessages, Int32 nMessages) = 0;
 	virtual Int32 ReceiveMessagesOnListenSocket(HSteamListenSocket hSocket, pSteamNetworkingMessage_t *ppMessages, Int32 nMaxMessages) = 0;
@@ -144,7 +146,7 @@ public:
 	virtual void SetConnectionName(HSteamNetConnection hPeer, pCStrA pchName) = 0;
 	virtual Bool GetConnectionName(HSteamNetConnection hPeer, pStrA pchName, Int32 cchName) = 0;
 	virtual EResult SendMessageToConnection(HSteamNetConnection hConnection, pCVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) = 0;
-	virtual void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t pMessages, pInt64 pMessageNumberOrResult) = 0;
+	virtual void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t *pMessages, pInt64 pMessageNumberOrResult) = 0;
 	virtual EResult FlushMessagesOnConnection(HSteamNetConnection hConnection) = 0;
 	virtual Int32 ReceiveMessagesOnConnection(HSteamNetConnection hConnection, pSteamNetworkingMessage_t *ppMessages, Int32 nMessages) = 0;
 	virtual Int32 ReceiveMessagesOnListenSocket(HSteamListenSocket hSocket, pSteamNetworkingMessage_t *ppMessages, Int32 nMaxMessages) = 0;
@@ -185,7 +187,7 @@ public:
 	virtual void SetConnectionName(HSteamNetConnection hPeer, pCStrA pchName) = 0;
 	virtual Bool GetConnectionName(HSteamNetConnection hPeer, pStrA pchName, Int32 cchName) = 0;
 	virtual EResult SendMessageToConnection(HSteamNetConnection hConnection, pCVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) = 0;
-	virtual void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t pMessages, pInt64 pMessageNumberOrResult) = 0;
+	virtual void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t *pMessages, pInt64 pMessageNumberOrResult) = 0;
 	virtual EResult FlushMessagesOnConnection(HSteamNetConnection hConnection) = 0;
 	virtual Int32 ReceiveMessagesOnConnection(HSteamNetConnection hConnection, pSteamNetworkingMessage_t *ppMessages, Int32 nMessages) = 0;
 	virtual Int32 ReceiveMessagesOnListenSocket(HSteamListenSocket hSocket, pSteamNetworkingMessage_t *ppMessages, Int32 nMaxMessages) = 0;
@@ -226,7 +228,7 @@ public:
 	virtual void SetConnectionName(HSteamNetConnection hPeer, pCStrA pchName) = 0;
 	virtual Bool GetConnectionName(HSteamNetConnection hPeer, pStrA pchName, Int32 cchName) = 0;
 	virtual EResult SendMessageToConnection(HSteamNetConnection hConnection, pCVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) = 0;
-	virtual void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t pMessages, pInt64 pMessageNumberOrResult) = 0;
+	virtual void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t *pMessages, pInt64 pMessageNumberOrResult) = 0;
 	virtual EResult FlushMessagesOnConnection(HSteamNetConnection hConnection) = 0;
 	virtual Int32 ReceiveMessagesOnConnection(HSteamNetConnection hConnection, pSteamNetworkingMessage_t *ppMessages, Int32 nMessages) = 0;
 	virtual Int32 ReceiveMessagesOnListenSocket(HSteamListenSocket hSocket, pSteamNetworkingMessage_t *ppMessages, Int32 nMaxMessages) = 0;
@@ -269,7 +271,7 @@ public:
 	virtual void SetConnectionName(HSteamNetConnection hPeer, pCStrA pchName) = 0;
 	virtual Bool GetConnectionName(HSteamNetConnection hPeer, pStrA pchName, Int32 cchName) = 0;
 	virtual EResult SendMessageToConnection(HSteamNetConnection hConnection, pCVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) = 0;
-	virtual void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t pMessages, pInt64 pMessageNumberOrResult) = 0;
+	virtual void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t *pMessages, pInt64 pMessageNumberOrResult) = 0;
 	virtual EResult FlushMessagesOnConnection(HSteamNetConnection hConnection) = 0;
 	virtual Int32 ReceiveMessagesOnConnection(HSteamNetConnection hConnection, pSteamNetworkingMessage_t *ppMessages, Int32 nMessages) = 0;
 	virtual Bool GetConnectionInfo(HSteamNetConnection hConnection, pSteamNetConnectionInfo_t pInfo) = 0;
@@ -315,7 +317,7 @@ public:
 	virtual void SetConnectionName(HSteamNetConnection hPeer, pCStrA pchName) = 0;
 	virtual Bool GetConnectionName(HSteamNetConnection hPeer, pStrA pchName, Int32 cchName) = 0;
 	virtual EResult SendMessageToConnection(HSteamNetConnection hConnection, pCVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) = 0;
-	virtual void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t pMessages, pInt64 pMessageNumberOrResult) = 0;
+	virtual void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t *pMessages, pInt64 pMessageNumberOrResult) = 0;
 	virtual EResult FlushMessagesOnConnection(HSteamNetConnection hConnection) = 0;
 	virtual Int32 ReceiveMessagesOnConnection(HSteamNetConnection hConnection, pSteamNetworkingMessage_t *ppMessages, Int32 nMessages) = 0;
 	virtual Bool GetConnectionInfo(HSteamNetConnection hConnection, pSteamNetConnectionInfo_t pInfo) = 0;
@@ -362,7 +364,7 @@ public:
 	virtual void SetConnectionName(HSteamNetConnection hPeer, pCStrA pchName) = 0;
 	virtual Bool GetConnectionName(HSteamNetConnection hPeer, /* [out] */ pStrA pchName, Int32 cchName) = 0;
 	virtual EResult SendMessageToConnection(HSteamNetConnection hConnection, pCVoid pvData, Uint32 cbData, Int32 nSendFlags, pInt64 pOutMessageNumber) = 0;
-	virtual void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t pMessages, pInt64 pMessageNumberOrResult) = 0;
+	virtual void SendMessages(Int32 nMessages, pSteamNetworkingMessage_t *pMessages, pInt64 pMessageNumberOrResult) = 0;
 	virtual EResult FlushMessagesOnConnection(HSteamNetConnection hConnection) = 0;
 	virtual Int32 ReceiveMessagesOnConnection(HSteamNetConnection hConnection, /* [out] */ pSteamNetworkingMessage_t *ppMessages, Int32 nMessages) = 0;
 	virtual Bool GetConnectionInfo(HSteamNetConnection hConnection, /* [out] */ pSteamNetConnectionInfo_t pInfo) = 0;

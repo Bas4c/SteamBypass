@@ -10,6 +10,10 @@
 // #define _SERVER
 // #define _PS3
 
+#ifndef _S_CALL_
+	#define _S_CALL_ __cdecl
+#endif
+
 // ----
 // Current Game AppId
 // ----
@@ -24,9 +28,7 @@ typedef Uint32 AppId_t, *pAppId_t;
 typedef Uint64 GameId_t_Uint64, *pGameId_t_Uint64;
 
 typedef struct _GameId_t_ {
-
 	GameId_t_Uint64 GameId_Uint64;
-
 } GameId_t, *pGameId_t;
 
 typedef Uint32 AccountId_t, *pAccountId_t;
@@ -84,9 +86,7 @@ typedef enum _EAccountType_ {
 typedef Uint64 SteamId_t_Uint64, *pSteamId_t_Uint64;
 
 typedef struct _SteamId_t_ {
-
 	SteamId_t_Uint64 SteamId_Uint64;
-
 } SteamId_t, *pSteamId_t;
 
 #define k_SteamId_t_Create(eUniverse, eAccountType, ObjectId, Instance) ( \
@@ -544,6 +544,9 @@ typedef struct _SteamNetworkingIPAddr_ {
 	Uint16 Port;
 
 } SteamNetworkingIPAddr, *pSteamNetworkingIPAddr;
+typedef struct _SteamNetworkingIPAddrRender_ {
+	CharA chArray[48];
+} SteamNetworkingIPAddrRender, *pSteamNetworkingIPAddrRender;
 
 // ----
 // SteamAPI Networking Identity
@@ -581,7 +584,6 @@ typedef enum _ESteamNetworkingIdentityType_ {
 typedef struct _SteamNetworkingIdentity_ {
 
 	ESteamNetworkingIdentityType eSteamNetworkingIdentityType;
-
 	Int32 cbSize;
 
 	union {
@@ -599,24 +601,27 @@ typedef struct _SteamNetworkingIdentity_ {
 	};
 
 } SteamNetworkingIdentity, *pSteamNetworkingIdentity;
+typedef struct _SteamNetworkingIdentityRender_ {
+	CharA chArray[128];
+} SteamNetworkingIdentityRender, *pSteamNetworkingIdentityRender;
 
 // ----
 // Callback Function Prototype
 // ----
 
 #ifdef __cplusplus
-	extern "C" typedef void (*FNPreMinidumpCallback)
+	extern "C" typedef void (*PreMinidumpCallback)
 		(pVoid pvContext);
 #else // !C++
-	typedef void (*FNPreMinidumpCallback)
+	typedef void (*PreMinidumpCallback)
 		(pVoid pvContext);
 #endif
 
 #ifdef __cplusplus
-	extern "C" typedef void (__cdecl *SteamAPIWarningMessageHook_t)
+	extern "C" typedef void (_S_CALL_ *SteamAPIWarningMessageHook_t)
 		(Int32 sCode, pCStrA pText);
 #else // !C++
-	typedef void (__cdecl *SteamAPIWarningMessageHook_t)
+	typedef void (_S_CALL_ *SteamAPIWarningMessageHook_t)
 		(Int32 sCode, pCStrA pText);
 #endif
 
@@ -967,6 +972,9 @@ typedef enum _ESteamNetworkingConnectionState_ {
 #define k_cchSteamNetworkingMaxConnectionAppName ((Int32)(32))
 
 typedef Uint32 SteamNetworkingPOPID, *pSteamNetworkingPOPID;
+typedef struct _SteamNetworkingPOPIDRender_ {
+	CharA chArray[8];
+} SteamNetworkingPOPIDRender, *pSteamNetworkingPOPIDRender;
 typedef struct _SteamNetConnectionInfo_t_Old_ {
 
 	SteamId_t SteamIdRemote;
