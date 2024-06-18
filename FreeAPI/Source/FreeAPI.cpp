@@ -1,3 +1,9 @@
+#pragma comment(linker, \
+	"\"/manifestdependency:type='win32' \
+	name='Microsoft.Windows.Common-Controls' version='6.0.0.0' \
+	processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'\"" \
+)
+
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
 #include <new>
@@ -287,7 +293,7 @@ _FREE_API_ Bool _S_CALL_ SteamAPI_RestartAppIfNecessary() {
 }
 
 _FREE_API_ void _S_CALL_ SteamAPI_RegisterCallback(
-	void(_S_CALL_ *pCallback) (pVoid pStruct),
+	void (_S_CALL_ *pCallback) (pVoid pStruct),
 	Int32 iCallback) {
 	DEBUGBREAK("SteamAPI_RegisterCallback");
 
@@ -296,7 +302,7 @@ _FREE_API_ void _S_CALL_ SteamAPI_RegisterCallback(
 }
 
 _FREE_API_ void _S_CALL_ SteamAPI_UnregisterCallback(
-	void(_S_CALL_ *pCallback) (pVoid pStruct),
+	void (_S_CALL_ *pCallback) (pVoid pStruct),
 	Int32 iCallback) {
 	DEBUGBREAK("SteamAPI_UnregisterCallback");
 
@@ -305,7 +311,7 @@ _FREE_API_ void _S_CALL_ SteamAPI_UnregisterCallback(
 }
 
 _FREE_API_ void _S_CALL_ SteamAPI_RegisterCallResult(
-	void(_S_CALL_ *pCallResult) (pVoid pStruct, Bool bCallResult),
+	void (_S_CALL_ *pCallResult) (pVoid pStruct, Bool bCallResult),
 	SteamAPICall_t hSteamAPICall) {
 	DEBUGBREAK("SteamAPI_RegisterCallResult");
 
@@ -314,7 +320,7 @@ _FREE_API_ void _S_CALL_ SteamAPI_RegisterCallResult(
 }
 
 _FREE_API_ void _S_CALL_ SteamAPI_UnregisterCallResult(
-	void(_S_CALL_ *pCallResult) (pVoid pStruct, Bool bCallResult),
+	void (_S_CALL_ *pCallResult) (pVoid pStruct, Bool bCallResult),
 	SteamAPICall_t hSteamAPICall) {
 	DEBUGBREAK("SteamAPI_UnregisterCallResult");
 
@@ -394,7 +400,7 @@ _FREE_API_ void _S_CALL_  SteamAPI_SetBreakpadAppID(AppId_t AppId) {
 _FREE_API_ void _S_CALL_ SteamAPI_UseBreakpadCrashHandler(
 	pCStrA pchVersion, pCStrA pchDate,
 	pCStrA pchTime, Bool bFullMemoryDumps,
-	pVoid pvUserContext, void(_S_CALL_ *PreMinidumpCallback) (pVoid pvUserContext)) {
+	pVoid pvUserContext, void (_S_CALL_ *PreMinidumpCallback) (pVoid pvUserContext)) {
 	DEBUGBREAK("SteamAPI_UseBreakpadCrashHandler");
 
 	/* Empty Function */
@@ -517,6 +523,13 @@ _FREE_API_ pVoid _S_CALL_ SteamInternal_CreateInterface(pCStrA pchVersion) {
 
 }
 
+_FREE_API_ pVoid _S_CALL_ SteamGameServerInternal_CreateInterface(pCStrA pchVersion) {
+	DEBUGBREAK("SteamGameServerInternal_CreateInterface");
+
+	return SteamInternal_CreateInterface(pchVersion);
+
+}
+
 _FREE_API_ pVoid _S_CALL_ SteamInternal_FindOrCreateUserInterface(
 	HSteamUser hSteamUser,
 	pCStrA pchVersion) {
@@ -549,8 +562,7 @@ typedef struct _CallbackMsg_t_ {
 	Int32 iCallback;
 	pVoid pbParam;
 
-} CallbackMsg_t, * pCallbackMsg_t;
-
+} CallbackMsg_t, *pCallbackMsg_t;
 
 _FREE_API_ void _S_CALL_ SteamAPI_ManualDispatch_Init() {
 	DEBUGBREAK("SteamAPI_ManualDispatch_Init");
@@ -584,7 +596,7 @@ _FREE_API_ void _S_CALL_ SteamAPI_ManualDispatch_FreeLastCallback(HSteamPipe hSt
 
 _FREE_API_ Bool _S_CALL_ SteamAPI_ManualDispatch_GetAPICallResult(
 	HSteamPipe hSteamPipe, SteamAPICall_t hSteamAPICall,
-	void(_S_CALL_* CallResult) (pVoid pStruct, Bool bCallResult),
+	void (_S_CALL_ *CallResult) (pVoid pStruct, Bool bCallResult),
 	Int32 iCallback, Int32 iCallbackExpected, pBool pbFailed) {
 	DEBUGBREAK("SteamAPI_ManualDispatch_GetAPICallResult");
 
@@ -668,6 +680,307 @@ _FREE_API_ void _S_CALL_ SteamGameServer_Shutdown() {
 	DEBUGBREAK("SteamGameServer_Shutdown");
 
 	SteamAPI_Shutdown();
+
+}
+
+
+// -----------------------------------------------------------------------------
+// SteamClient Internal Functions
+// -----------------------------------------------------------------------------
+
+_FREE_API_ void _S_CALL_ Steam_RunCallbacks(HSteamPipe hSteamPipe, Bool bGameServerCallbacks) {
+	DEBUGBREAK("Steam_RunCallbacks");
+
+	SteamAPI_RunCallbacks();
+
+	if (bGameServerCallbacks == True) {
+		SteamGameServer_RunCallbacks();
+	}
+
+}
+
+_FREE_API_ void _S_CALL_ Steam_RegisterInterfaceFuncs(pVoid hModule) {
+	DEBUGBREAK("Steam_RegisterInterfaceFuncs");
+
+	/* Empty Function */
+
+}
+
+_FREE_API_ HSteamUser _S_CALL_ Steam_GetHSteamUserCurrent() {
+	DEBUGBREAK("Steam_GetHSteamUserCurrent");
+	
+	return SteamAPI_GetHSteamUser();
+
+}
+
+_FREE_API_ Bool _S_CALL_ Steam_BGetCallback(HSteamPipe hSteamPipe, pCallbackMsg_t pCallbackMsg) {
+	DEBUGBREAK("Steam_BGetCallback");
+
+	SteamAPI_ManualDispatch_Init();
+	return SteamAPI_ManualDispatch_GetNextCallback(hSteamPipe, pCallbackMsg);
+
+}
+
+_FREE_API_ void _S_CALL_ Steam_FreeLastCallback(HSteamPipe hSteamPipe) {
+	DEBUGBREAK("Steam_FreeLastCallback");
+
+	return SteamAPI_ManualDispatch_FreeLastCallback(hSteamPipe);
+
+}
+
+_FREE_API_ Bool _S_CALL_ Steam_GetAPICallResult(HSteamPipe hSteamPipe, SteamAPICall_t hSteamAPICall, void (_S_CALL_ *CallResult) (pVoid pStruct, Bool bCallResult), Int32 cbCallback, Int32 iCallbackExpected, pBool pbFailed) {
+	DEBUGBREAK("Steam_GetAPICallResult");
+
+	return SteamAPI_ManualDispatch_GetAPICallResult(hSteamPipe, hSteamAPICall, CallResult, cbCallback, iCallbackExpected, pbFailed);
+
+}
+
+_FREE_API_ pVoid _S_CALL_ CreateInterface(pCStrA pchVersion, pInt32 pReturnCode) {
+	DEBUGBREAK("CreateInterface");
+
+	return SteamInternal_CreateInterface(pchVersion);
+
+}
+
+_FREE_API_ void _S_CALL_ Breakpad_SteamMiniDumpInit(Uint32 arg1, pCStrA arg2, pCStrA arg3) {
+	DEBUGBREAK("Breakpad_SteamMiniDumpInit");
+
+	/* Empty Function */
+
+}
+
+_FREE_API_ void _S_CALL_ Breakpad_SteamSetAppID(AppId_t iAppId) {
+	DEBUGBREAK("Breakpad_SteamSetAppID");
+
+	/* Empty Function */
+
+}
+
+_FREE_API_ void _S_CALL_ Breakpad_SteamSetSteamID(SteamId_t_Uint64 SteamId) {
+	DEBUGBREAK("Breakpad_SteamSetSteamID");
+
+	/* Empty Function */
+
+}
+
+_FREE_API_ void _S_CALL_ Breakpad_SteamWriteMiniDumpSetComment(pCStrA pchMsg) {
+	DEBUGBREAK("Breakpad_SteamWriteMiniDumpSetComment");
+
+	/* Empty Function */
+
+}
+
+_FREE_API_ void _S_CALL_ Breakpad_SteamWriteMiniDumpUsingExceptionInfoWithBuildId(Int32 arg1, Int32 arg2) {
+	DEBUGBREAK("Breakpad_SteamWriteMiniDumpUsingExceptionInfoWithBuildId");
+
+	/* Empty Function */
+
+}
+
+_FREE_API_ Bool _S_CALL_ Steam_BConnected(HSteamUser hSteamUser, HSteamPipe hSteamPipe) {
+	DEBUGBREAK("Steam_BConnected");
+	
+	return True;
+
+}
+
+_FREE_API_ Bool _S_CALL_ Steam_BLoggedOn(HSteamUser hSteamUser, HSteamPipe hSteamPipe) {
+	DEBUGBREAK("Steam_BLoggedOn");
+
+	return True;
+
+}
+
+_FREE_API_ Bool _S_CALL_ Steam_BReleaseSteamPipe(HSteamPipe hSteamPipe) {
+	DEBUGBREAK("Steam_BReleaseSteamPipe");
+
+	return False;
+
+}
+
+_FREE_API_ HSteamUser _S_CALL_ Steam_ConnectToGlobalUser(HSteamPipe hSteamPipe) {
+	DEBUGBREAK("Steam_ConnectToGlobalUser");
+	
+	return k_HSteamUser_Invalid;
+
+}
+
+_FREE_API_ HSteamUser _S_CALL_ Steam_CreateGlobalUser(pHSteamPipe phSteamPipe) {
+	DEBUGBREAK("Steam_CreateGlobalUser");
+
+	return k_HSteamUser_Invalid;
+
+}
+
+_FREE_API_ HSteamUser _S_CALL_ Steam_CreateLocalUser(pHSteamPipe phSteamPipe, EAccountType eAccountType) {
+	DEBUGBREAK("Steam_CreateLocalUser");
+
+	if (phSteamPipe != NULL) {
+		*phSteamPipe = k_HSteamPipe_Client;
+	}
+
+	return k_HSteamUser_LocalUser;
+
+}
+
+_FREE_API_ HSteamPipe _S_CALL_ Steam_CreateSteamPipe() {
+	DEBUGBREAK("Steam_CreateSteamPipe");
+	
+	return k_HSteamPipe_Client;
+
+}
+
+_FREE_API_ Bool _S_CALL_ Steam_GSBLoggedOn(pVoid phSteamHandle) {
+	DEBUGBREAK("Steam_GSBLoggedOn");
+	
+	return False;
+
+}
+
+_FREE_API_ Bool _S_CALL_ Steam_GSBSecure(pVoid phSteamHandle) {
+	DEBUGBREAK("Steam_GSBSecure");
+
+	return False;
+
+}
+
+_FREE_API_ Bool _S_CALL_ Steam_GSGetSteam2GetEncryptionKeyToSendToNewClient(pVoid phSteamHandle, pVoid pvEncryptionKey, pUint32 pcbEncryptionKey, Uint32 cbEncryptionKey) {
+	DEBUGBREAK("Steam_GSGetSteam2GetEncryptionKeyToSendToNewClient");
+
+	return False;
+
+}
+
+_FREE_API_ SteamId_t_Uint64 _S_CALL_ Steam_GSGetSteamID() {
+	DEBUGBREAK("Steam_GSGetSteamID");
+
+	return k_SteamId_t_Invalid;
+
+}
+
+_FREE_API_ void _S_CALL_ Steam_GSLogOff(pVoid phSteamHandle) {
+	DEBUGBREAK("Steam_GSLogOff");
+
+	/* Empty Function */
+
+}
+
+_FREE_API_ void _S_CALL_ Steam_GSLogOn(pVoid phSteamHandle) {
+	DEBUGBREAK("Steam_GSLogOn");
+
+	/* Empty Function */
+
+}
+
+_FREE_API_ Bool _S_CALL_ Steam_GSRemoveUserConnect(pVoid phSteamHandle, Uint32 UserId) {
+	DEBUGBREAK("Steam_GSRemoveUserConnect");
+
+	return False;
+
+}
+
+_FREE_API_ Bool _S_CALL_ Steam_GSSendSteam2UserConnect(pVoid phSteamHandle, Uint32 UserId, pCVoid pvRawKey, Uint32 cbKey, Uint32 nIPPublic, Uint16 Port, pCVoid pvCookie, Uint32 cbCookie) {
+	DEBUGBREAK("Steam_GSSendSteam2UserConnect");
+
+	return False;
+
+}
+
+_FREE_API_ Bool _S_CALL_ Steam_GSSendSteam3UserConnect(pVoid phSteamHandle, SteamId_t_Uint64 SteamId, Uint32 nIPPublic, pCVoid pvCookie, Uint32 cbCookie) {
+	DEBUGBREAK("Steam_GSSendSteam3UserConnect");
+
+	return False;
+
+}
+
+_FREE_API_ Bool _S_CALL_ Steam_GSSendUserDisconnect(pVoid phSteamHandle, SteamId_t_Uint64 SteamId, Uint32 UserId) {
+	DEBUGBREAK("Steam_GSSendUserDisconnect");
+
+	return False;
+
+}
+
+_FREE_API_ Bool _S_CALL_ Steam_GSSendUserStatusResponse(pVoid phSteamHandle, SteamId_t_Uint64 SteamId, Int32 nSecondsConnected, Int32 nSecondsSinceLast) {
+	DEBUGBREAK("Steam_GSSendUserStatusResponse");
+
+	return False;
+
+}
+
+_FREE_API_ Bool _S_CALL_ Steam_GSSetServerType(pVoid phSteamHandle, Int32 iAppIdServed, Uint32 nServerFlags, Uint32 nGameIP, Uint32 GamePort, pCStrA pchGameDirectory, pCStrA pchVersion) {
+	DEBUGBREAK("Steam_GSSetServerType");
+
+	return False;
+
+}
+
+_FREE_API_ void _S_CALL_ Steam_GSSetSpawnCount(pVoid phSteamHandle, Uint32 cSpawn) {
+	DEBUGBREAK("Steam_GSSetSpawnCount");
+
+	/* Empty Function */
+
+}
+
+_FREE_API_ Bool _S_CALL_ Steam_GSUpdateStatus(pVoid phSteamHandle, Int32 cPlayers, Int32 cPlayersMax, Int32 cBotPlayers, pCStrA pchServerName, pCStrA pchMapName) {
+	DEBUGBREAK("Steam_GSUpdateStatus");
+
+	return False;
+
+}
+
+_FREE_API_ pVoid _S_CALL_ Steam_GetGSHandle(HSteamUser hSteamUser, HSteamPipe hSteamPipe) {
+	DEBUGBREAK("Steam_GetGSHandle");
+
+	return NULL;
+
+}
+
+_FREE_API_ Int32 _S_CALL_ Steam_InitiateGameConnection(HSteamUser hSteamUser, HSteamPipe hSteamPipe, pVoid pvBlob, Int32 cbMaxBlob, Uint64 steamID, Int32 iGameAppId, Uint32 nIPServer, Uint16 PortServer, Bool bSecure) {
+	DEBUGBREAK("Steam_InitiateGameConnection");
+
+	return 0;
+
+}
+
+_FREE_API_ void _S_CALL_ Steam_LogOff(HSteamUser hSteamUser, HSteamPipe hSteamPipe) {
+	DEBUGBREAK("Steam_LogOff");
+
+	/* Empty Function */
+
+}
+
+_FREE_API_ void _S_CALL_ Steam_LogOn(HSteamUser hSteamUser, HSteamPipe hSteamPipe, SteamId_t_Uint64 SteamId) {
+	DEBUGBREAK("Steam_LogOn");
+
+	/* Empty Function */
+
+}
+
+_FREE_API_ void _S_CALL_ Steam_ReleaseThreadLocalMemory(Bool bThreadExit) {
+	DEBUGBREAK("Steam_ReleaseThreadLocalMemory");
+
+	/* Empty Function */
+
+}
+
+_FREE_API_ void _S_CALL_ Steam_ReleaseUser(HSteamPipe hSteamPipe, HSteamUser hSteamUser) {
+	DEBUGBREAK("Steam_ReleaseUser");
+
+	/* Empty Function */
+
+}
+
+_FREE_API_ void _S_CALL_ Steam_SetLocalIPBinding(Uint32 nIP, Uint16 LocalPort) {
+	DEBUGBREAK("Steam_SetLocalIPBinding");
+
+	/* Empty Function */
+
+}
+
+_FREE_API_ void _S_CALL_ Steam_TerminateGameConnection(HSteamUser hSteamUser, HSteamPipe hSteamPipe, Uint32 nIPServer, Uint16 PortServer) {
+	DEBUGBREAK("Steam_TerminateGameConnection");
+
+	/* Empty Function */
 
 }
 

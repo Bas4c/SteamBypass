@@ -173,6 +173,7 @@ typedef Int32 HSteamPipe, *pHSteamPipe;
 #define k_HSteamPipe_Server  ((HSteamPipe)(0x00000002))
 
 typedef Int32 HSteamUser, *pHSteamUser;
+#define k_HSteamUser_Invalid   ((HSteamUser)(0x00000000))
 #define k_HSteamUser_LocalUser ((HSteamUser)(0x7FFFFFFF))
 
 // ----

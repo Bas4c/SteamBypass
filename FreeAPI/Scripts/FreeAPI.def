@@ -38,6 +38,7 @@ EXPORTS
 ; -----------------------------------------------------------------------------
  SteamInternal_ContextInit
  SteamInternal_CreateInterface
+ SteamGameServerInternal_CreateInterface
  SteamInternal_FindOrCreateGameServerInterface
  SteamInternal_FindOrCreateUserInterface
  SteamInternal_GameServer_Init
@@ -62,6 +63,50 @@ EXPORTS
 ; Global SteamClient Pointer
 ; -----------------------------------------------------------------------------
  g_pSteamClientGameServer DATA
+; -----------------------------------------------------------------------------
+; SteamClient Internal Functions
+; -----------------------------------------------------------------------------
+ Steam_RunCallbacks
+ Steam_RegisterInterfaceFuncs
+ Steam_GetHSteamUserCurrent
+ Steam_BGetCallback
+ Steam_FreeLastCallback
+ Steam_GetAPICallResult
+ CreateInterface
+ Breakpad_SteamMiniDumpInit
+ Breakpad_SteamSetAppID
+ Breakpad_SteamSetSteamID
+ Breakpad_SteamWriteMiniDumpSetComment
+ Breakpad_SteamWriteMiniDumpUsingExceptionInfoWithBuildId
+ Steam_BConnected
+ Steam_BLoggedOn
+ Steam_BReleaseSteamPipe
+ Steam_ConnectToGlobalUser
+ Steam_CreateGlobalUser
+ Steam_CreateLocalUser
+ Steam_CreateSteamPipe
+ Steam_GSBLoggedOn
+ Steam_GSBSecure
+ Steam_GSGetSteam2GetEncryptionKeyToSendToNewClient
+ Steam_GSGetSteamID
+ Steam_GSLogOff
+ Steam_GSLogOn
+ Steam_GSRemoveUserConnect
+ Steam_GSSendSteam2UserConnect
+ Steam_GSSendSteam3UserConnect
+ Steam_GSSendUserDisconnect
+ Steam_GSSendUserStatusResponse
+ Steam_GSSetServerType
+ Steam_GSSetSpawnCount
+ Steam_GSUpdateStatus
+ Steam_GetGSHandle
+ Steam_InitiateGameConnection
+ Steam_LogOff
+ Steam_LogOn
+ Steam_ReleaseThreadLocalMemory
+ Steam_ReleaseUser
+ Steam_SetLocalIPBinding
+ Steam_TerminateGameConnection
 ; -----------------------------------------------------------------------------
 ; FreeAPI Accessor Functions
 ; -----------------------------------------------------------------------------
