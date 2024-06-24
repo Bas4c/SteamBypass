@@ -23,13 +23,37 @@ typedef enum _EVRScreenshotType_ {
 
 } EVRScreenshotType, *pEVRScreenshotType;
 
+typedef class _ISteamScreenshots001_ {
+public:
+	
+	virtual ScreenshotHandle WriteScreenshot(pVoid pvRGB, Uint32 cbRGB, Int32 Cx, Int32 Cy) = 0;
+	virtual ScreenshotHandle AddScreenshotToLibrary(pCStrA pchFilename, pCStrA pchThumbnailFilename, Int32 Cx, Int32 Cy) = 0;
+	virtual void TriggerScreenshot() = 0;
+	virtual void HookScreenshots(Bool bHook) = 0;
+	virtual Bool SetLocation(ScreenshotHandle hScreenshot, pCStrA pchLocation) = 0;
+
+} ISteamScreenshots001, *IpSteamScreenshots001;
+
+typedef class _ISteamScreenshots002_ {
+public:
+	
+	virtual ScreenshotHandle WriteScreenshot(pVoid pvRGB, Uint32 cbRGB, Int32 Cx, Int32 Cy) = 0;
+	virtual ScreenshotHandle AddScreenshotToLibrary(pCStrA pchFilename, pCStrA pchThumbnailFilename, Int32 Cx, Int32 Cy) = 0;
+	virtual void TriggerScreenshot() = 0;
+	virtual void HookScreenshots(Bool bHook) = 0;
+	virtual Bool SetLocation(ScreenshotHandle hScreenshot, pCStrA pchLocation) = 0;
+	virtual Bool TagUser(ScreenshotHandle hScreenshot, SteamId_t SteamId) = 0;
+	virtual Bool TagPublishedFile(ScreenshotHandle hScreenshot, PublishedFileId_t PublishedFileId) = 0;
+
+} ISteamScreenshots002, *IpSteamScreenshots002;
+
 // -----------------------------------------------------------------------------
 // Purpose: Adding screenshots to the user's screenshot library
 // -----------------------------------------------------------------------------
 typedef class _ISteamScreenshots_ {
 public:
 
-	virtual ScreenshotHandle WriteScreenshot(pCVoid pvRGB, Uint32 cbRGB, Int32 Cx, Int32 Cy) = 0;
+	virtual ScreenshotHandle WriteScreenshot(pVoid pvRGB, Uint32 cbRGB, Int32 Cx, Int32 Cy) = 0;
 	virtual ScreenshotHandle AddScreenshotToLibrary(pCStrA pchFilename, pCStrA pchThumbnailFilename, Int32 Cx, Int32 Cy) = 0;
 	virtual void TriggerScreenshot() = 0;
 	virtual void HookScreenshots(Bool bHook) = 0;

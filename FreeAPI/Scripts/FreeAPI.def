@@ -130,10 +130,12 @@ EXPORTS
  SteamHTMLSurface = SteamAPI_SteamHTMLSurface
  SteamAPI_SteamHTTP
  SteamHTTP = SteamAPI_SteamHTTP
+ SteamGameServerHTTP = SteamAPI_SteamHTTP
  SteamAPI_SteamInput
  SteamInput = SteamAPI_SteamInput
  SteamAPI_SteamInventory
  SteamInventory = SteamAPI_SteamInventory
+ SteamGameServerInventory = SteamAPI_SteamInventory
  SteamAPI_SteamMatchmaking
  SteamMatchmaking = SteamAPI_SteamMatchmaking
  SteamAPI_SteamMatchmakingServers
@@ -148,6 +150,7 @@ EXPORTS
  SteamMusicRemote = SteamAPI_SteamMusicRemote
  SteamAPI_SteamNetworking
  SteamNetworking = SteamAPI_SteamNetworking
+ SteamGameServerNetworking = SteamAPI_SteamNetworking
  SteamAPI_SteamNetworkingMessages
  SteamNetworkingMessages = SteamAPI_SteamNetworkingMessages
  SteamNetworkingMessages_SteamAPI = SteamAPI_SteamNetworkingMessages
@@ -646,6 +649,8 @@ EXPORTS
  SteamAPI_ISteamNetworking_GetListenSocketInfo
  SteamAPI_ISteamNetworking_GetSocketConnectionType
  SteamAPI_ISteamNetworking_GetMaxPacketSize
+ SteamAPI_SteamScreenshots_v001
+ SteamAPI_SteamScreenshots_v002
  SteamAPI_SteamScreenshots_v003
  SteamAPI_ISteamScreenshots_WriteScreenshot
  SteamAPI_ISteamScreenshots_AddScreenshotToLibrary

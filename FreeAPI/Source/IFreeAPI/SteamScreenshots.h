@@ -8,14 +8,15 @@
 #include "IFreeAPI.Contract\ISteamScreenshots.h"
 // -----------------------------------------------------------------------------
 
-typedef class _SteamScreenshots_ : public _ISteamScreenshots_ {
+typedef class _SteamScreenshots_ : public _ISteamScreenshots001_,
+ public _ISteamScreenshots002_, public _ISteamScreenshots_ {
 public:
 
 	_SteamScreenshots_() = default;
 	_SteamScreenshots_(const _SteamScreenshots_&) = delete;
 	_SteamScreenshots_& operator=(const _SteamScreenshots_&) = delete;
 
-	ScreenshotHandle WriteScreenshot(pCVoid pvRGB, Uint32 cbRGB, Int32 Cx, Int32 Cy) override;
+	ScreenshotHandle WriteScreenshot(pVoid pvRGB, Uint32 cbRGB, Int32 Cx, Int32 Cy) override;
 	ScreenshotHandle AddScreenshotToLibrary(pCStrA pchFilename, pCStrA pchThumbnailFilename, Int32 Cx, Int32 Cy) override;
 	void TriggerScreenshot() override;
 	void HookScreenshots(Bool bHook) override;
