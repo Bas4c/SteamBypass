@@ -566,6 +566,10 @@ IpSteamScreenshots _SteamClient_::GetISteamScreenshots(HSteamUser hSteamUser, HS
 
 	if (pchVersion != NULL) {
 		DEBUG_OUT(pchVersion);
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMSCREENSHOTS_INTERFACE_VERSION001"), True))
+			return (IpSteamScreenshots)((pVoid)((IpSteamScreenshots001)(&this->SteamScreenshots)));
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMSCREENSHOTS_INTERFACE_VERSION002"), True))
+			return (IpSteamScreenshots)((pVoid)((IpSteamScreenshots002)(&this->SteamScreenshots)));
 		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMSCREENSHOTS_INTERFACE_VERSION), True))
 			return (IpSteamScreenshots)(&this->SteamScreenshots);
 	}

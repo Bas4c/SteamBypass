@@ -34,10 +34,10 @@ VS_VERSION_INFO VERSIONINFO
     VALUE "LegalCopyright", "Copyright (C) 2007"
     #ifdef _WIN64
     VALUE "InternalName", "steam_api64"
-    VALUE "OriginalFilename", "steam_api64.exe"
+    VALUE "OriginalFilename", "steam_api64.dll"
     #else // Win32 (x86)
     VALUE "InternalName", "steam_api"
-    VALUE "OriginalFilename", "steam_api.exe"
+    VALUE "OriginalFilename", "steam_api.dll"
     #endif
     VALUE "ProductName", "Free Client API"
     VALUE "ProductVersion", "1.0.0.1"

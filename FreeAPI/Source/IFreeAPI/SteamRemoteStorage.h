@@ -53,6 +53,7 @@ public:
 
 	Int32 GetFileCount() override;
 	pCStrA GetFileNameAndSize(Int32 iFile, pInt32 pnFileSizeInBytes) override;
+	Bool GetQuota(pUint32 pnTotalBytes, pUint32 pnAvailableBytes) override;
 	Bool GetQuota(pUint64 pnTotalBytes, pUint64 pnAvailableBytes) override;
 	Bool IsCloudEnabledForAccount() override;
 	Bool IsCloudEnabledForApp() override;

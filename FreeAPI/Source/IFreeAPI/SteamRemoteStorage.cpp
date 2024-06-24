@@ -506,6 +506,21 @@ pCStrA _SteamRemoteStorage_::GetFileNameAndSize(Int32 iFile, pInt32 pnFileSizeIn
 
 }
 
+Bool _SteamRemoteStorage_::GetQuota(pUint32 pnTotalBytes, pUint32 pnAvailableBytes) {
+	DEBUGBREAK("ISteamRemoteStorage::GetQuota");
+
+	if (pnTotalBytes != NULL) {
+		*pnTotalBytes = 0;
+	}
+
+	if (pnAvailableBytes != NULL) {
+		*pnAvailableBytes = Uint32_MAX;
+	}
+
+	return True;
+
+}
+
 Bool _SteamRemoteStorage_::GetQuota(pUint64 pnTotalBytes, pUint64 pnAvailableBytes) {
 	DEBUGBREAK("ISteamRemoteStorage::GetQuota");
 

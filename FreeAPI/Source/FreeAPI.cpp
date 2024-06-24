@@ -688,6 +688,8 @@ _FREE_API_ void _S_CALL_ SteamGameServer_Shutdown() {
 // SteamClient Internal Functions
 // -----------------------------------------------------------------------------
 
+#pragma region SteamClient.Internal
+
 _FREE_API_ void _S_CALL_ Steam_RunCallbacks(HSteamPipe hSteamPipe, Bool bGameServerCallbacks) {
 	DEBUGBREAK("Steam_RunCallbacks");
 
@@ -983,6 +985,8 @@ _FREE_API_ void _S_CALL_ Steam_TerminateGameConnection(HSteamUser hSteamUser, HS
 	/* Empty Function */
 
 }
+
+#pragma endregion
 
 // -----------------------------------------------------------------------------
 // FreeAPI Accessor Functions
@@ -3625,6 +3629,22 @@ _FREE_API_ Int32 _S_CALL_ SteamAPI_ISteamNetworking_GetMaxPacketSize(IpSteamNetw
 }
 
 /* ISteamScreenshots */
+
+_FREE_API_ IpSteamScreenshots _S_CALL_ SteamAPI_SteamScreenshots_v001() {
+	DEBUGBREAK("SteamAPI_SteamScreenshots_v001");
+	return g_SteamClientGameServer->GetISteamScreenshots(
+		k_HSteamUser_LocalUser,
+		k_HSteamPipe_Client, "STEAMSCREENSHOTS_INTERFACE_VERSION001"
+	);
+}
+
+_FREE_API_ IpSteamScreenshots _S_CALL_ SteamAPI_SteamScreenshots_v002() {
+	DEBUGBREAK("SteamAPI_SteamScreenshots_v002");
+	return g_SteamClientGameServer->GetISteamScreenshots(
+		k_HSteamUser_LocalUser,
+		k_HSteamPipe_Client, "STEAMSCREENSHOTS_INTERFACE_VERSION002"
+	);
+}
 
 _FREE_API_ IpSteamScreenshots _S_CALL_ SteamAPI_SteamScreenshots_v003() {
 	DEBUGBREAK("SteamAPI_SteamScreenshots_v003");

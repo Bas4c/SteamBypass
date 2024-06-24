@@ -167,7 +167,7 @@ public:
 	virtual Bool FileDelete(pCStrA pchFile) = 0;
 	virtual Int32 GetFileCount() = 0;
 	virtual pCStrA GetFileNameAndSize(Int32 iFile, pInt32 pnFileSizeInBytes) = 0;
-	virtual Bool GetQuota(pUint64 pnTotalBytes, pUint64 pnAvailableBytes) = 0;
+	virtual Bool GetQuota(pUint32 pnTotalBytes, pUint32 pnAvailableBytes) = 0;
 
 } ISteamRemoteStorage001, *IpSteamRemoteStorage001;
 
@@ -180,7 +180,7 @@ public:
 	virtual Bool FileExists_(pCStrA pchFile) = 0;
 	virtual Int32 GetFileCount() = 0;
 	virtual pCStrA GetFileNameAndSize(Int32 iFile, pInt32 pnFileSizeInBytes) = 0;
-	virtual Bool GetQuota(pUint64 pnTotalBytes, pUint64 pnAvailableBytes) = 0;
+	virtual Bool GetQuota(pUint32 pnTotalBytes, pUint32 pnAvailableBytes) = 0;
 
 } ISteamRemoteStorage002, *IpSteamRemoteStorage002;
 
@@ -199,7 +199,7 @@ public:
 	virtual ERemoteStoragePlatform GetSyncPlatforms(pCStrA pchFile) = 0;
 	virtual Int32 GetFileCount() = 0;
 	virtual pCStrA GetFileNameAndSize(Int32 iFile, pInt32 pnFileSizeInBytes) = 0;
-	virtual Bool GetQuota(pUint64 pnTotalBytes, pUint64 pnAvailableBytes) = 0;
+	virtual Bool GetQuota(pUint32 pnTotalBytes, pUint32 pnAvailableBytes) = 0;
 	virtual Bool IsCloudEnabledForAccount() = 0;
 	virtual Bool IsCloudEnabledForApp() = 0;
 	virtual void SetCloudEnabledForApp(Bool bEnabled) = 0;
@@ -226,7 +226,7 @@ public:
 	virtual ERemoteStoragePlatform GetSyncPlatforms(pCStrA pchFile) = 0;
 	virtual Int32 GetFileCount() = 0;
 	virtual pCStrA GetFileNameAndSize(Int32 iFile, pInt32 pnFileSizeInBytes) = 0;
-	virtual Bool GetQuota(pUint64 pnTotalBytes, pUint64 pnAvailableBytes) = 0;
+	virtual Bool GetQuota(pUint32 pnTotalBytes, pUint32 pnAvailableBytes) = 0;
 	virtual Bool IsCloudEnabledForAccount() = 0;
 	virtual Bool IsCloudEnabledForApp() = 0;
 	virtual void SetCloudEnabledForApp(Bool bEnabled) = 0;
@@ -253,7 +253,7 @@ public:
 	virtual ERemoteStoragePlatform GetSyncPlatforms(pCStrA pchFile) = 0;
 	virtual Int32 GetFileCount() = 0;
 	virtual pCStrA GetFileNameAndSize(Int32 iFile, pInt32 pnFileSizeInBytes) = 0;
-	virtual Bool GetQuota(pUint64 pnTotalBytes, pUint64 pnAvailableBytes) = 0;
+	virtual Bool GetQuota(pUint32 pnTotalBytes, pUint32 pnAvailableBytes) = 0;
 	virtual Bool IsCloudEnabledForAccount() = 0;
 	virtual Bool IsCloudEnabledForApp() = 0;
 	virtual void SetCloudEnabledForApp(Bool bEnabled) = 0;
@@ -297,7 +297,7 @@ public:
 	virtual ERemoteStoragePlatform GetSyncPlatforms(pCStrA pchFile) = 0;
 	virtual Int32 GetFileCount() = 0;
 	virtual pCStrA GetFileNameAndSize(Int32 iFile, pInt32 pnFileSizeInBytes) = 0;
-	virtual Bool GetQuota(pUint64 pnTotalBytes, pUint64 pnAvailableBytes) = 0;
+	virtual Bool GetQuota(pUint32 pnTotalBytes, pUint32 pnAvailableBytes) = 0;
 	virtual Bool IsCloudEnabledForAccount() = 0;
 	virtual Bool IsCloudEnabledForApp() = 0;
 	virtual void SetCloudEnabledForApp(Bool bEnabled) = 0;
@@ -350,7 +350,7 @@ public:
 	virtual ERemoteStoragePlatform GetSyncPlatforms(pCStrA pchFile) = 0;
 	virtual Int32 GetFileCount() = 0;
 	virtual pCStrA GetFileNameAndSize(Int32 iFile, pInt32 pnFileSizeInBytes) = 0;
-	virtual Bool GetQuota(pUint64 pnTotalBytes, pUint64 pnAvailableBytes) = 0;
+	virtual Bool GetQuota(pUint32 pnTotalBytes, pUint32 pnAvailableBytes) = 0;
 	virtual Bool IsCloudEnabledForAccount() = 0;
 	virtual Bool IsCloudEnabledForApp() = 0;
 	virtual void SetCloudEnabledForApp(Bool bEnabled) = 0;
@@ -407,7 +407,7 @@ public:
 	virtual ERemoteStoragePlatform GetSyncPlatforms(pCStrA pchFile) = 0;
 	virtual Int32 GetFileCount() = 0;
 	virtual pCStrA GetFileNameAndSize(Int32 iFile, pInt32 pnFileSizeInBytes) = 0;
-	virtual Bool GetQuota(pUint64 pnTotalBytes, pUint64 pnAvailableBytes) = 0;
+	virtual Bool GetQuota(pUint32 pnTotalBytes, pUint32 pnAvailableBytes) = 0;
 	virtual Bool IsCloudEnabledForAccount() = 0;
 	virtual Bool IsCloudEnabledForApp() = 0;
 	virtual void SetCloudEnabledForApp(Bool bEnabled) = 0;
@@ -464,7 +464,7 @@ public:
 	virtual ERemoteStoragePlatform GetSyncPlatforms(pCStrA pchFile) = 0;
 	virtual Int32 GetFileCount() = 0;
 	virtual pCStrA GetFileNameAndSize(Int32 iFile, pInt32 pnFileSizeInBytes) = 0;
-	virtual Bool GetQuota(pUint64 pnTotalBytes, pUint64 pnAvailableBytes) = 0;
+	virtual Bool GetQuota(pUint32 pnTotalBytes, pUint32 pnAvailableBytes) = 0;
 	virtual Bool IsCloudEnabledForAccount() = 0;
 	virtual Bool IsCloudEnabledForApp() = 0;
 	virtual void SetCloudEnabledForApp(Bool bEnabled) = 0;
@@ -521,7 +521,7 @@ public:
 	virtual ERemoteStoragePlatform GetSyncPlatforms(pCStrA pchFile) = 0;
 	virtual Int32 GetFileCount() = 0;
 	virtual pCStrA GetFileNameAndSize(Int32 iFile, pInt32 pnFileSizeInBytes) = 0;
-	virtual Bool GetQuota(pUint64 pnTotalBytes, pUint64 pnAvailableBytes) = 0;
+	virtual Bool GetQuota(pUint32 pnTotalBytes, pUint32 pnAvailableBytes) = 0;
 	virtual Bool IsCloudEnabledForAccount() = 0;
 	virtual Bool IsCloudEnabledForApp() = 0;
 	virtual void SetCloudEnabledForApp(Bool bEnabled) = 0;
@@ -579,7 +579,7 @@ public:
 	virtual ERemoteStoragePlatform GetSyncPlatforms(pCStrA pchFile) = 0;
 	virtual Int32 GetFileCount() = 0;
 	virtual pCStrA GetFileNameAndSize(Int32 iFile, pInt32 pnFileSizeInBytes) = 0;
-	virtual Bool GetQuota(pUint64 pnTotalBytes, pUint64 pnAvailableBytes) = 0;
+	virtual Bool GetQuota(pUint32 pnTotalBytes, pUint32 pnAvailableBytes) = 0;
 	virtual Bool IsCloudEnabledForAccount() = 0;
 	virtual Bool IsCloudEnabledForApp() = 0;
 	virtual void SetCloudEnabledForApp(Bool bEnabled) = 0;
@@ -637,7 +637,7 @@ public:
 	virtual ERemoteStoragePlatform GetSyncPlatforms(pCStrA pchFile) = 0;
 	virtual Int32 GetFileCount() = 0;
 	virtual pCStrA GetFileNameAndSize(Int32 iFile, pInt32 pnFileSizeInBytes) = 0;
-	virtual Bool GetQuota(pUint64 pnTotalBytes, pUint64 pnAvailableBytes) = 0;
+	virtual Bool GetQuota(pUint32 pnTotalBytes, pUint32 pnAvailableBytes) = 0;
 	virtual Bool IsCloudEnabledForAccount() = 0;
 	virtual Bool IsCloudEnabledForApp() = 0;
 	virtual void SetCloudEnabledForApp(Bool bEnabled) = 0;
@@ -706,7 +706,7 @@ public:
 	virtual ERemoteStoragePlatform GetSyncPlatforms(pCStrA pchFile) = 0;
 	virtual Int32 GetFileCount() = 0;
 	virtual pCStrA GetFileNameAndSize(Int32 iFile, pInt32 pnFileSizeInBytes) = 0;
-	virtual Bool GetQuota(pUint64 pnTotalBytes, pUint64 pnAvailableBytes) = 0;
+	virtual Bool GetQuota(pUint32 pnTotalBytes, pUint32 pnAvailableBytes) = 0;
 	virtual Bool IsCloudEnabledForAccount() = 0;
 	virtual Bool IsCloudEnabledForApp() = 0;
 	virtual void SetCloudEnabledForApp(Bool bEnabled) = 0;
