@@ -3,6 +3,14 @@
 
 #include "..\..\FreeAPI.Typedef.h"
 
+typedef class _ISteamVideo001_ {
+public:
+	
+	virtual void GetVideoURL(AppId_t iVideoAppId) = 0;
+	virtual Bool IsBroadcasting(/* [out] */ pInt32 pnNumViewers) = 0;
+
+} ISteamVideo001, *IpSteamVideo001;
+
 // -----------------------------------------------------------------------------
 // Purpose: Steam Video API
 // -----------------------------------------------------------------------------

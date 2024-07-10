@@ -293,6 +293,8 @@ pVoid _SteamClient_::GetISteamGenericInterface(HSteamUser hSteamUser, HSteamPipe
 		if (pGeneric != NULL)
 			return pGeneric;
 		DEBUG_OUT("[GetISteamGenericInterface]");
+		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMGAMESTATS_INTERFACE_VERSION), True))
+			return (IpSteamGameStats)(&this->SteamGameStats);
 		pGeneric = this->GetISteamGameServerStats(hSteamUser, hSteamPipe, pchVersion);
 		if (pGeneric != NULL)
 			return pGeneric;
@@ -832,6 +834,8 @@ IpSteamVideo _SteamClient_::GetISteamVideo(HSteamUser hSteamUser, HSteamPipe hSt
 
 	if (pchVersion != NULL) {
 		DEBUG_OUT(pchVersion);
+		if (StrA_Cmp(pchVersion, (pCStrA)("STEAMVIDEO_INTERFACE_V001"), True))
+			return (IpSteamVideo)((pVoid)((IpSteamVideo001)(&this->SteamVideo)));
 		if (StrA_Cmp(pchVersion, (pCStrA)(STEAMVIDEO_INTERFACE_VERSION), True))
 			return (IpSteamVideo)(&this->SteamVideo);
 	}

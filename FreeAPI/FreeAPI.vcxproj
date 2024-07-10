@@ -253,6 +253,7 @@
     <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamController.h" />
     <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamFriends.h" />
     <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamGameServer.h" />
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamGameStats.h" />
     <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamGameServerStats.h" />
     <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamHTMLSurface.h" />
     <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamHTTP.h" />
@@ -287,6 +288,7 @@
     <ClInclude Include="Source\IFreeAPI\SteamController.h" />
     <ClInclude Include="Source\IFreeAPI\SteamFriends.h" />
     <ClInclude Include="Source\IFreeAPI\SteamGameServer.h" />
+    <ClInclude Include="Source\IFreeAPI\SteamGameStats.h" />
     <ClInclude Include="Source\IFreeAPI\SteamGameServerStats.h" />
     <ClInclude Include="Source\IFreeAPI\SteamHTMLSurface.h" />
     <ClInclude Include="Source\IFreeAPI\SteamHTTP.h" />
@@ -328,6 +330,7 @@
     <ClCompile Include="Source\IFreeAPI\SteamController.cpp" />
     <ClCompile Include="Source\IFreeAPI\SteamFriends.cpp" />
     <ClCompile Include="Source\IFreeAPI\SteamGameServer.cpp" />
+    <ClCompile Include="Source\IFreeAPI\SteamGameStats.cpp" />
     <ClCompile Include="Source\IFreeAPI\SteamGameServerStats.cpp" />
     <ClCompile Include="Source\IFreeAPI\SteamHTMLSurface.cpp" />
     <ClCompile Include="Source\IFreeAPI\SteamHTTP.cpp" />

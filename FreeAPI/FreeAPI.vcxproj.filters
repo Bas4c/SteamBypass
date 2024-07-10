@@ -50,10 +50,13 @@
     <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamController.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\isteamfriends.h">
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamFriends.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\isteamgameserver.h">
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamGameServer.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamGameStats.h">
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamGameServerStats.h">
@@ -74,19 +77,19 @@
     <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamMatchmaking.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\isteammusic.h">
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamMusic.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\isteammusicremote.h">
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamMusicRemote.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\isteamnetworking.h">
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamNetworking.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\isteamparentalsettings.h">
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamParentalSettings.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\isteamremoteplay.h">
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamRemotePlay.h">
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamRemoteStorage.h">
@@ -98,7 +101,7 @@
     <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamUGC.h">
       <Filter>Source</Filter>
     </ClInclude>
-    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\isteamunifiedmessages.h">
+    <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamUnifiedMessages.h">
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="Source\IFreeAPI\IFreeAPI.Contract\ISteamUser.h">
@@ -156,6 +159,9 @@
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="Source\IFreeAPI\SteamGameServer.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\IFreeAPI\SteamGameStats.h">
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="Source\IFreeAPI\SteamGameServerStats.h">
@@ -271,6 +277,9 @@
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Source\IFreeAPI\SteamGameServer.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\IFreeAPI\SteamGameStats.cpp">
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Source\IFreeAPI\SteamGameServerStats.cpp">

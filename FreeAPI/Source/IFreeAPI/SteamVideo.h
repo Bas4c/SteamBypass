@@ -8,7 +8,8 @@
 #include "IFreeAPI.Contract\ISteamVideo.h"
 // -----------------------------------------------------------------------------
 
-typedef class _SteamVideo_ : public _ISteamVideo_ {
+typedef class _SteamVideo_ : public _ISteamVideo001_,
+ public _ISteamVideo_ {
 public:
 
 	_SteamVideo_() = default;

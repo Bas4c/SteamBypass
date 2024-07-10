@@ -14,6 +14,7 @@
 #include "SteamUtils.h"
 #include "SteamMatchmaking.h"
 #include "SteamUserStats.h"
+#include "SteamGameStats.h"
 #include "SteamGameServerStats.h"
 #include "SteamAppTicket.h"
 #include "SteamApps.h"
@@ -136,6 +137,7 @@ public:
 	SteamMatchmakingServers SteamMatchmakingServers;
 	SteamParties SteamParties;
 	SteamUserStats SteamUserStats;
+	SteamGameStats SteamGameStats;
 	SteamGameServerStats SteamGameServerStats;
 	SteamAppTicket SteamAppTicket;
 	SteamApps SteamApps;
