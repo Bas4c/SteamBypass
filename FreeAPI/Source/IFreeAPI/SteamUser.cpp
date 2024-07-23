@@ -19,7 +19,7 @@ Bool _SteamUser_::BLoggedOn() {
 SteamId_t _SteamUser_::GetSteamId() {
 	DEBUGBREAK("ISteamUser::GetSteamId");
 
-	return SteamId_t{ k_SteamId_t_LocalUser };
+	return SteamId_t{ g_SteamId_Uint64 };
 
 }
 

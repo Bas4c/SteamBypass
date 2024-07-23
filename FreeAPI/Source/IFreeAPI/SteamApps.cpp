@@ -40,14 +40,14 @@ Bool _SteamApps_::BIsVACBanned() {
 pCStrA _SteamApps_::GetCurrentGameLanguage() {
 	DEBUGBREAK("ISteamApps::GetCurrentGameLanguage");
 
-	return GetUserUILanguageA();
+	return (pCStrA)(g_chLanguage);
 
 }
 
 pCStrA _SteamApps_::GetAvailableGameLanguages() {
 	DEBUGBREAK("ISteamApps::GetAvailableGameLanguages");
 
-	return GetUserUILanguageA();
+	return (pCStrA)(g_chLanguage);
 
 }
 
@@ -192,7 +192,7 @@ Bool _SteamApps_::BIsAppInstalled(AppId_t iAppId) {
 SteamId_t _SteamApps_::GetAppOwner() {
 	DEBUGBREAK("ISteamApps::GetAppOwner");
 
-	return SteamId_t{ k_SteamId_t_LocalUser };
+	return SteamId_t{ g_SteamId_Uint64 };
 
 }
 

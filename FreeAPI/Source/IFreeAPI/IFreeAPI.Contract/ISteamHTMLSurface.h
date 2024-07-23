@@ -73,6 +73,8 @@ typedef enum _EHTMLKeyModifiers_ {
 typedef class _ISteamHTMLSurface001_ {
 public:
 
+	virtual ~_ISteamHTMLSurface001_() = default;
+
 	virtual Bool Init() = 0;
 	virtual Bool Shutdown() = 0;
 	virtual SteamAPICall_t CreateBrowser(pCStrA pchUserAgent, pCStrA pchUserCSS) = 0;
@@ -110,6 +112,8 @@ public:
 
 typedef class _ISteamHTMLSurface002_ {
 public:
+
+	virtual ~_ISteamHTMLSurface002_() = default;
 
 	virtual Bool Init() = 0;
 	virtual Bool Shutdown() = 0;
@@ -151,6 +155,8 @@ public:
 typedef class _ISteamHTMLSurface003_ {
 public:
 
+	virtual ~_ISteamHTMLSurface003_() = default;
+
 	virtual Bool Init() = 0;
 	virtual Bool Shutdown() = 0;
 	virtual SteamAPICall_t CreateBrowser(pCStrA pchUserAgent, pCStrA pchUserCSS) = 0;
@@ -191,6 +197,8 @@ public:
 
 typedef class _ISteamHTMLSurface004_ {
 public:
+
+	virtual ~_ISteamHTMLSurface004_() = default;
 
 	virtual Bool Init() = 0;
 	virtual Bool Shutdown() = 0;
@@ -237,6 +245,8 @@ public:
 typedef class _ISteamHTMLSurface_ {
 public:
 
+	virtual ~_ISteamHTMLSurface_() = default;
+
 	virtual Bool Init() = 0;
 	virtual Bool Shutdown() = 0;
 	virtual SteamAPICall_t CreateBrowser(pCStrA pchUserAgent, pCStrA pchUserCSS) = 0;
@@ -274,8 +284,6 @@ public:
 	virtual void AllowStartRequest(HTMLBrowser hHTMLBrowser, Bool bAllowed) = 0;
 	virtual void JSDialogResponse(HTMLBrowser hHTMLBrowser, Bool bResult) = 0;
 	virtual void FileLoadDialogResponse(HTMLBrowser hHTMLBrowser, pCStrA *pchSelectedFiles) = 0;
-	
-	virtual ~_ISteamHTMLSurface_() = default;
 
 } ISteamHTMLSurface, *IpSteamHTMLSurface;
 

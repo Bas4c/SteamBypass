@@ -12,7 +12,7 @@ pCStrA _SteamFriends_::GetPersonaName() {
 	DEBUGBREAK("ISteamFriends::GetPersonaName");
 
 	return (pCStrA)(
-		"LocalPlayer"
+		g_chUsername
 	);
 
 }
@@ -62,8 +62,8 @@ EPersonaState _SteamFriends_::GetFriendPersonaState(SteamId_t SteamIdFriend) {
 pCStrA _SteamFriends_::GetFriendPersonaName(SteamId_t SteamIdFriend) {
 	DEBUGBREAK("ISteamFriends::GetFriendPersonaName");
 
-	if (SteamIdFriend.SteamId_Uint64 == k_SteamId_t_LocalUser) {
-		return (pCStrA)("LocalPlayer");
+	if (SteamIdFriend.SteamId_Uint64 == g_SteamId_Uint64) {
+		return (pCStrA)(g_chUsername);
 	}
 
 	return (pCStrA)(
@@ -105,8 +105,8 @@ Int32 _SteamFriends_::GetFriendSteamLevel(SteamId_t SteamIdFriend) {
 pCStrA _SteamFriends_::GetPlayerNickname(SteamId_t SteamIdPlayer) {
 	DEBUGBREAK("ISteamFriends::GetPlayerNickname");
 
-	if (SteamIdPlayer.SteamId_Uint64 == k_SteamId_t_LocalUser) {
-		return (pCStrA)("LocalPlayer");
+	if (SteamIdPlayer.SteamId_Uint64 == g_SteamId_Uint64) {
+		return (pCStrA)(g_chUsername);
 	}
 
 	return (pCStrA)(

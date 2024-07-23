@@ -1055,6 +1055,10 @@ _COMMON_X_API_ Uint32 __stdcall GetGameAppId(
 	void
 ) {
 
+	if (g_GameAppId != 0U) {
+		return g_GameAppId;
+	}
+
 	const Dword cchMax = MAX_PATH - 1U;
 	pStrW pchModuleDirectory = LoadModuleNameW(GetModuleHandleW(NULL), True);
 
@@ -1124,7 +1128,8 @@ _COMMON_X_API_ Uint32 __stdcall GetGameAppId(
 
 						LocalFree(pchModuleDirectory);
 						SetLastError(ERROR_SUCCESS);
-						return GameAppId;
+						g_GameAppId = GameAppId;
+						return g_GameAppId;
 
 					}
 
@@ -1140,6 +1145,113 @@ _COMMON_X_API_ Uint32 __stdcall GetGameAppId(
 
 	SetLastError(sCode);
 	return 0U;
+
+}
+
+_COMMON_X_API_ Bool __stdcall InitGameSettings(
+	void
+) {
+
+	Bool bSuccess = False;
+
+	const Dword cchMax = MAX_PATH - 1U;
+	pStrA pchModuleDirectory = LoadModuleNameA(GetModuleHandleA(NULL), True);
+
+	Dword sCode = GetLastError();
+	if (pchModuleDirectory != NULL) {
+
+		Dword cchModuleDirectory =
+			(Dword)(StrA_Count(pchModuleDirectory));
+
+		sCode = ERROR_MRM_FILEPATH_TOO_LONG;
+		if (cchModuleDirectory <= cchMax) {
+
+			pCStrA pchSteamAPIFileSpec = "\\steam_api.ini";
+			Dword cchSteamAPIFileSpec =
+				(Dword)(StrA_Count(pchSteamAPIFileSpec));
+
+			sCode = ERROR_MRM_FILEPATH_TOO_LONG;
+			if (cchModuleDirectory + cchSteamAPIFileSpec <= cchMax) {
+
+				CharA chSteamAPIFilePath[MAX_PATH] = { 0 };
+				StrA_Copy(chSteamAPIFilePath, MAX_PATH, pchModuleDirectory);
+				StrA_Cat(chSteamAPIFilePath, MAX_PATH, pchSteamAPIFileSpec);
+
+				bSuccess = True;
+				sCode = ERROR_SUCCESS;
+
+				GetPrivateProfileStringA("Username", "Value", "LocalPlayer", g_chUsername, sizeof(g_chUsername) / sizeof(CharA), chSteamAPIFilePath);
+				GetPrivateProfileStringA("Language", "Value", "", g_chLanguage, sizeof(g_chLanguage) / sizeof(CharA), chSteamAPIFilePath);
+
+				if (
+					(!StrA_Cmp(g_chLanguage, "arabic", True)) &&
+					(!StrA_Cmp(g_chLanguage, "bulgarian", True)) &&
+					(!StrA_Cmp(g_chLanguage, "schinese", True)) &&
+					(!StrA_Cmp(g_chLanguage, "tchinese", True)) &&
+					(!StrA_Cmp(g_chLanguage, "czech", True)) &&
+					(!StrA_Cmp(g_chLanguage, "dutch", True)) &&
+					(!StrA_Cmp(g_chLanguage, "english", True)) &&
+					(!StrA_Cmp(g_chLanguage, "finnish", True)) &&
+					(!StrA_Cmp(g_chLanguage, "french", True)) &&
+					(!StrA_Cmp(g_chLanguage, "german", True)) &&
+					(!StrA_Cmp(g_chLanguage, "greek", True)) &&
+					(!StrA_Cmp(g_chLanguage, "hungarian", True)) &&
+					(!StrA_Cmp(g_chLanguage, "indonesian", True)) &&
+					(!StrA_Cmp(g_chLanguage, "italian", True)) &&
+					(!StrA_Cmp(g_chLanguage, "japanese", True)) &&
+					(!StrA_Cmp(g_chLanguage, "koreana", True)) &&
+					(!StrA_Cmp(g_chLanguage, "norwegian", True)) &&
+					(!StrA_Cmp(g_chLanguage, "polish", True)) &&
+					(!StrA_Cmp(g_chLanguage, "brazilian", True)) &&
+					(!StrA_Cmp(g_chLanguage, "portuguese", True)) &&
+					(!StrA_Cmp(g_chLanguage, "romanian", True)) &&
+					(!StrA_Cmp(g_chLanguage, "russian", True)) &&
+					(!StrA_Cmp(g_chLanguage, "latam", True)) &&
+					(!StrA_Cmp(g_chLanguage, "spanish", True)) &&
+					(!StrA_Cmp(g_chLanguage, "swedish", True)) &&
+					(!StrA_Cmp(g_chLanguage, "thai", True)) &&
+					(!StrA_Cmp(g_chLanguage, "turkish", True)) &&
+					(!StrA_Cmp(g_chLanguage, "ukrainian", True)) &&
+					(!StrA_Cmp(g_chLanguage, "vietnamese", True))
+				) {
+					StrA_Copy(g_chLanguage, sizeof(g_chLanguage) / sizeof(CharA), GetUserUILanguageA());
+				}
+
+				pCStrA pchHex = "0123456789abcdef";
+				SizeOF cchHex = StrA_Count(pchHex) + 1U;
+
+				CharA chSteamIdHex[128] = { 0 };
+				GetPrivateProfileStringA("SteamId", "Value", "0110000100000001", chSteamIdHex, sizeof(chSteamIdHex) / sizeof(CharA), chSteamAPIFilePath);
+				CharLowerA(chSteamIdHex);
+				
+				SizeOF cchSteamIdHex = StrA_Count(chSteamIdHex) + 1U;
+				for (SizeOF i = 0; i < cchSteamIdHex - 1U; i++) {
+					
+					SizeOF j;
+					for (j = 0; j < cchHex - 1U; j++) {
+						if (chSteamIdHex[i] == pchHex[j]) {
+							g_SteamId_Uint64 <<= 4;
+							g_SteamId_Uint64 = (g_SteamId_Uint64 | (j & 0x0F));
+							break;
+						}
+					}
+
+					if (j == cchHex - 1U) {
+						break;
+					}
+
+				}
+
+			}
+
+		}
+
+		LocalFree(pchModuleDirectory);
+
+	}
+
+	SetLastError(sCode);
+	return bSuccess;
 
 }
 
