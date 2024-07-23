@@ -897,14 +897,16 @@ typedef Uint32 HSteamNetPollGroup, *pHSteamNetPollGroup;
 #define k_HSteamNetPollGroup_Invalid ((HSteamNetPollGroup)(0x00000000));
 
 typedef Int64 SteamNetworkingMicroseconds, *pSteamNetworkingMicroseconds;
+
+typedef struct _SteamNetworkingMessage_t_Old_ SteamNetworkingMessage_t_Old, *pSteamNetworkingMessage_t_Old;
+typedef void (*SteamNetworkingMessage_t_Old_Release) (pSteamNetworkingMessage_t_Old);
 typedef struct _SteamNetworkingMessage_t_Old_ {
 
 	SteamId_t SteamIdSender;
 	Int64 nConnectionUserData;
 	SteamNetworkingMicroseconds TimeReceived;
 	Int64 nMessageNumber;
-	void(*Release)
-		(_SteamNetworkingMessage_t_Old_ *pSteamNetworkingMessage);
+	SteamNetworkingMessage_t_Old_Release Release;
 	pVoid pvData;
 	Int32 cbSize;
 	HSteamNetConnection hSteamNetConnection;
@@ -912,6 +914,9 @@ typedef struct _SteamNetworkingMessage_t_Old_ {
 	Int32 Padding;
 
 } SteamNetworkingMessage_t_Old, *pSteamNetworkingMessage_t_Old;
+typedef struct _SteamNetworkingMessage_t_ SteamNetworkingMessage_t, *pSteamNetworkingMessage_t;
+typedef void (*SteamNetworkingMessage_t_FreeData) (pSteamNetworkingMessage_t);
+typedef void (*SteamNetworkingMessage_t_Release) (pSteamNetworkingMessage_t);
 typedef struct _SteamNetworkingMessage_t_ {
 
 	pVoid pvData;
@@ -921,10 +926,8 @@ typedef struct _SteamNetworkingMessage_t_ {
 	Int64 nConnectionUserData;
 	SteamNetworkingMicroseconds TimeReceived;
 	Int64 nMessageNumber;
-	void (*FreeData)
-		(_SteamNetworkingMessage_t_ *pSteamNetworkingMessage);
-	void (*Release)
-		(_SteamNetworkingMessage_t_ *pSteamNetworkingMessage);
+	SteamNetworkingMessage_t_FreeData FreeData;
+	SteamNetworkingMessage_t_Release Release;
 	Int32 nChannel;
 	Int32 nFlags;
 	Int64 nUserData;

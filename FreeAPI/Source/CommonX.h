@@ -11,9 +11,27 @@
 #include <Shlobj_core.h>
 #include <Windows.h>
 // -----------------------------------------------------------------------------
-#include "Typedef.h"
+#include "FreeAPI.Typedef.h"
 #include "StrX.h"
 // -----------------------------------------------------------------------------
+
+#if __cplusplus
+	
+	extern "C" CharA g_chUsername[128];
+	extern "C" CharA g_chLanguage[128];
+	
+	extern "C" Uint32 g_GameAppId;
+	extern "C" SteamId_t_Uint64 g_SteamId_Uint64;
+	
+#else // !C++
+	
+	extern CharA g_chUsername[128];
+	extern CharA g_chLanguage[128];
+	
+	extern Uint32 g_GameAppId;
+	extern SteamId_t_Uint64 g_SteamId_Uint64;
+	
+#endif
 
 #ifndef __SAL_H_VERSION
 	#define _Success_(expr)
@@ -187,6 +205,10 @@ _COMMON_X_API_ pCStrA __stdcall GetUserUILanguageA(
 #endif
 
 _COMMON_X_API_ Uint32 __stdcall GetGameAppId(
+	void
+);
+
+_COMMON_X_API_ Bool __stdcall InitGameSettings(
 	void
 );
 

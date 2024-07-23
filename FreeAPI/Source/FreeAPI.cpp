@@ -25,18 +25,24 @@
 
 #pragma region .data
 
-Bool g_bDllLoaded = False;
+extern "C" Bool g_bDllLoaded = False;
 
 /* Global SteamClient Pointer */
-IpSteamClient g_pSteamClientGameServer = NULL;
+extern "C" IpSteamClient g_pSteamClientGameServer = NULL;
 /* Internal SteamClient Pointer */
-pSteamClient g_SteamClientGameServer = NULL;
+extern "C" pSteamClient g_SteamClientGameServer = NULL;
 
-pStrW g_pchModuleDirectory = NULL;
-pStrA g_pchModuleDirectoryUTF8 = NULL;
+extern "C" pStrW g_pchModuleDirectory = NULL;
+extern "C" pStrA g_pchModuleDirectoryUTF8 = NULL;
 
-CharA g_chString[1024] = { 0 };
-pSteamAPI_VerT g_SteamAPI_VerT = NULL;
+extern "C" CharA g_chString[1024] = { 0 };
+extern "C" pSteamAPI_VerT g_SteamAPI_VerT = NULL;
+
+extern "C" CharA g_chUsername[128] = { 0 };
+extern "C" CharA g_chLanguage[128] = { 0 };
+
+extern "C" Uint32 g_GameAppId = 0U;
+extern "C" Uint64 g_SteamId_Uint64 = k_SteamId_t_Invalid;
 
 #pragma endregion
 
@@ -88,7 +94,7 @@ _FREE_API_ Bool WINAPI DllMain(
 
 				if (g_SteamAPI_VerT != NULL) {
 
-					if (SteamAPI_VerT_Construct(g_SteamAPI_VerT)) {
+					if (SteamAPI_VerT_Construct(g_SteamAPI_VerT) && InitGameSettings()) {
 
 						pVoid pMemory = (pVoid)(HeapAlloc(
 							GetProcessHeap(), HEAP_ZERO_MEMORY,
@@ -194,6 +200,12 @@ _FREE_API_ Bool WINAPI DllMain(
 			g_SteamClientGameServer = NULL;
 
 		}
+
+		g_chUsername[0] = '\0';
+		g_chLanguage[0] = '\0';
+
+		g_GameAppId = 0U;
+		g_SteamId_Uint64 = k_SteamId_t_Invalid;
 
 		g_bDllLoaded = False;
 
@@ -665,7 +677,7 @@ _FREE_API_ Uint32 _S_CALL_ SteamGameServer_GetIPCCallCount() {
 _FREE_API_ SteamId_t _S_CALL_ SteamGameServer_GetSteamID() {
 	DEBUGBREAK("SteamGameServer_GetSteamID");
 
-	return SteamId_t{ k_SteamId_t_LocalUser };
+	return SteamId_t{ g_SteamId_Uint64 };
 
 }
 

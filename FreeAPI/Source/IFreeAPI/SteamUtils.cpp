@@ -208,7 +208,7 @@ Bool _SteamUtils_::GetEnteredGamepadTextInput(pStrA pchText, Uint32 cchText) {
 pCStrA _SteamUtils_::GetSteamUILanguage() {
 	DEBUGBREAK("ISteamUtils::GetSteamUILanguage");
 
-	return GetUserUILanguageA();
+	return (pCStrA)(g_chLanguage);
 
 }
 
