@@ -4,4 +4,4 @@
 
 ## About Me
 
- - **Author:** Mārtiņš Andžans (Bas4c)
+ - **Author:** Mārtiņš Andžāns (Bas4c)
