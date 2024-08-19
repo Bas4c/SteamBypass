@@ -94,7 +94,11 @@ void _SteamUtils_::SetOverlayNotificationPosition(ENotificationPosition eNotific
 Bool _SteamUtils_::IsAPICallCompleted(SteamAPICall_t hSteamAPICall, pBool pbFailed) {
 	DEBUGBREAK("ISteamUtils::IsAPICallCompleted");
 
-	return False;
+	if (pbFailed != NULL) {
+		*pbFailed = True;
+	}
+
+	return True;
 
 }
 
